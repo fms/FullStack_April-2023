@@ -1,0 +1,39 @@
+$body-width:500px;
+$std-border:10px;
+
+body {
+    width: $body-width;
+    margin: auto;
+    direction: rtl;
+}
+
+.wrapper {
+    border: $std-border solid black;
+    background-image: url(../images/cloud.jpeg)
+}
+
+.main {
+    border: $std-border dashed gray;
+    margin-bottom: 10px;
+    /* border-radius: 50px; */
+    text-align: justify;
+    height: 100px;
+
+    img {
+        float: left;
+        height: 100%;
+    }
+}
+
+.main-red {
+    background-color: red;
+}
+
+.main-blue {
+    background-color: blue;
+}
+
+.main-green {
+    background-color: green;
+}
+
