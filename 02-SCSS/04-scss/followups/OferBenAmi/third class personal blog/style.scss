@@ -77,7 +77,7 @@ body {
   position: fixed;
   bottom: 0;
   width: 100vw;
-  max-width: 625px;
+  max-width: 600px;
   padding: 10px 5px;
   z-index: 9999;
 
@@ -96,61 +96,33 @@ body {
   }
 
 
-  button:focus {
-    flex-grow: 0.45;
+  button:is(:hover,:focus) {
+    flex-grow: 0.3;
     height: 70px;
     border-radius: 25px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
   }
 
-  button:hover {
-    flex-grow: 0.4;
-    height: 70px;
-    border-radius: 25px;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
-  }
-
-
-  .home:focus {
+  .home:is(:hover,:focus) {
     background-color: #3636af;
   }
 
-  .home:hover {
-    background-color: #3636af;
-  }
-
-  .search:focus {
+  .search:is(:hover,:focus) {
     background-color: $backgroundclr3;
   }
 
-  .search:hover {
-    background-color: $backgroundclr3;
-  }
 
-  .ghost:focus {
+  .ghost:is(:hover,:focus){
     background-color: #F6EFA6;
   }
 
-  .ghost:hover {
-    background-color: #F6EFA6;
-  }
-
-  .chat:focus {
+  .chat:is(:hover,:focus) {
     background-color: #2AFC98;
   }
 
-  .chat:hover {
-    background-color: #2AFC98;
-  }
-
-  .shop:focus {
+  .shop:is(:hover, :focus) {
     background-color: #E55934;
   }
-
-  .shop:hover {
-    background-color: #E55934;
-  }
-
 }
 
 .mainconteiner {
@@ -162,17 +134,51 @@ body {
   background-image: linear-gradient(45deg, rgb(96, 98, 98), rgb(106, 105, 111), rgb(252, 255, 255));
 }
 
-.search-bar {
+.search-div{
+  display: flex;
+  justify-content: center;
+  align-content: center;
   animation: slineintop 1s;
   width: min(80vw, 500px);
-  max-width: 600px;
-  border: 2px solid #146C94;
-  border-radius: 10px;
-  padding: 10px;
-  margin-bottom: 1rem;
-  font-weight: 500;
-  font-size: large;
+
+
+  .search-bar {
+    // width: min(80vw, 500px);
+    flex-grow: 2;
+    min-width: 0;
+    border: 2px solid #146C94;
+    border-radius: 10px 0 0 10px;
+    padding: 10px;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    font-size: large;
+    transition: box-shadow 0.3s;
+    
+  }
+.search-button{
+  width: 45px;
+  height: 44.5px;
+  border-radius: 0 10px 10px 0;
+  background-color: #5dadd2;
+  border: 0 solid #146C94;
+  border-width:2px 2px 2px 0 ;
+  transition: box-shadow 0.3s;
+  img{
+    width: 25px;
+  }
 }
+.search-button:hover{
+  cursor: pointer;
+  box-shadow: 0 0 10px 0 rgba(0,0,0, 0.3);
+}
+.search-bar:hover{
+  box-shadow: 0 0 10px 0 rgba(0,0,0, 0.3);
+}
+.search-bar:focus{
+  outline: none;
+}
+}
+
 
 header {
   animation: slineintop 1s;
@@ -193,6 +199,7 @@ header {
     border-radius: 30%;
     padding: 7px;
     transition: transform 0.5s;
+    margin-left: 10px;
   }
 
   img:hover {

@@ -58,7 +58,7 @@ body {
   position: fixed;
   bottom: 0;
   width: 100vw;
-  max-width: 625px;
+  max-width: 600px;
   padding: 10px 5px;
   z-index: 9999;
 }
@@ -71,46 +71,25 @@ body {
   transition: flex-grow 0.3s, background-color 0.3s, box-shadow 0.3s, height 0.3s, border-radius 0.3s;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
 }
-.navbar button:focus {
-  flex-grow: 0.45;
+.navbar button:is(:hover,:focus) {
+  flex-grow: 0.3;
   height: 70px;
   border-radius: 25px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
 }
-.navbar button:hover {
-  flex-grow: 0.4;
-  height: 70px;
-  border-radius: 25px;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
-}
-.navbar .home:focus {
+.navbar .home:is(:hover,:focus) {
   background-color: #3636af;
 }
-.navbar .home:hover {
-  background-color: #3636af;
-}
-.navbar .search:focus {
+.navbar .search:is(:hover,:focus) {
   background-color: #146C94;
 }
-.navbar .search:hover {
-  background-color: #146C94;
-}
-.navbar .ghost:focus {
+.navbar .ghost:is(:hover,:focus) {
   background-color: #F6EFA6;
 }
-.navbar .ghost:hover {
-  background-color: #F6EFA6;
-}
-.navbar .chat:focus {
+.navbar .chat:is(:hover,:focus) {
   background-color: #2AFC98;
 }
-.navbar .chat:hover {
-  background-color: #2AFC98;
-}
-.navbar .shop:focus {
-  background-color: #E55934;
-}
-.navbar .shop:hover {
+.navbar .shop:is(:hover, :focus) {
   background-color: #E55934;
 }
 
@@ -123,16 +102,45 @@ body {
   background-image: linear-gradient(45deg, #606262, #6a696f, #fcffff);
 }
 
-.search-bar {
+.search-div {
+  display: flex;
+  justify-content: center;
+  align-content: center;
   animation: slineintop 1s;
   width: min(80vw, 500px);
-  max-width: 600px;
+}
+.search-div .search-bar {
+  flex-grow: 2;
+  min-width: 0;
   border: 2px solid #146C94;
-  border-radius: 10px;
+  border-radius: 10px 0 0 10px;
   padding: 10px;
   margin-bottom: 1rem;
   font-weight: 500;
   font-size: large;
+  transition: box-shadow 0.3s;
+}
+.search-div .search-button {
+  width: 45px;
+  height: 44.5px;
+  border-radius: 0 10px 10px 0;
+  background-color: #5dadd2;
+  border: 0 solid #146C94;
+  border-width: 2px 2px 2px 0;
+  transition: box-shadow 0.3s;
+}
+.search-div .search-button img {
+  width: 25px;
+}
+.search-div .search-button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+.search-div .search-bar:hover {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+.search-div .search-bar:focus {
+  outline: none;
 }
 
 header {
@@ -153,6 +161,7 @@ header img {
   border-radius: 30%;
   padding: 7px;
   transition: transform 0.5s;
+  margin-left: 10px;
 }
 header img:hover {
   cursor: pointer;
