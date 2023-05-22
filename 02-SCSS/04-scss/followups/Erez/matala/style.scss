@@ -1,0 +1,151 @@
+$margin-top:15px;
+$width:530px;
+
+body{
+   .bigpage{
+      background-color: rgb(191, 164, 243);
+      width: 680px;
+      margin: auto;
+      height: 1230px;
+      padding-top: 2px;
+      margin-top:$margin-top;
+      .page{
+          background-color: rgb(177, 138, 192);
+          width: 650px;
+          border: 3px;border-radius: 10px; 
+          margin: auto;
+          height: 1200px;
+          margin-top: $margin-top;
+          padding-top: 10px;
+          .pagein{
+            background-image: url(https://e1.pxfuel.com/desktop-wallpaper/630/386/desktop-wallpaper-1920x1080-lovers-night-sky-starry-sky-laptop-full-backgrounds-and-sky-love.jpg);
+            width: 600px;
+            height: 200px;
+            border: 5px;border-radius: 15px;
+            margin: auto;
+            margin-top: 20px;
+            }
+             .main{ 
+               padding: 10px;
+               width: 580px;
+               height: 200px;
+                h1{
+                  font-family: 'Anton', sans-serif;
+                  color: rgba(242, 245, 247, 0.884);
+                  padding-left: 35px;
+                  padding-top: 25px;
+                  }
+                  img{width: 580px;
+                     height: 40px;
+                     padding-bottom: 40px;
+                }
+                }
+                   .bigbox{
+                   background-color: rgb(73, 72, 133);
+                   width: 600px;
+                   height: 940px;
+                   margin: auto;
+                   margin-top: 5px;
+                   border: 5px;border-radius: 15px;
+                   padding-top: 8px;
+
+                   .box1 {height: 250px;
+                     width:$width;
+                     background-image: url(https://e1.pxfuel.com/desktop-wallpaper/751/57/desktop-wallpaper-alto-s-odyssey-the-alto.jpg);
+                  margin: auto;
+                  margin-top: 20px;
+                  border: solid;
+                  border-color: black;
+                  border-radius: 15px;
+                   h3{font-family: 'Anton', sans-serif;
+                    font-size: 50px;
+                    margin-top: 10px;
+                    margin: auto;
+                    margin-left: 170px;
+                    color: rgb(248, 238, 218);}
+                    p{color: white;
+                    font-size: 35px;
+                    padding-left: 20px;
+                    margin: auto;
+                    }
+                    h4{font-size: 20px; 
+                    color: white;
+                    margin: auto;
+                    width: 200px;
+                    margin-left: 420px;
+                    padding-top: 55px;
+                    margin-bottom: -17px;
+                    }
+                    h5{font-size: 20px; 
+                    color: white;
+                    margin: auto;
+                    margin-left: 20px;
+                   } 
+                }
+                .box2{background-image: url(https://e1.pxfuel.com/desktop-wallpaper/878/776/desktop-wallpaper-alto-s-odyssey-the-alto.jpg);
+                  height: 250px;
+                  width:$width;
+                  margin: auto;
+                  margin-top: 20px;
+                  border: solid;
+                  border-color: black;
+                  border-radius: 15px;
+                   h3{font-family: 'Anton', sans-serif;
+                    font-size: 50px;
+                    margin-top: 10px;
+                    margin: auto;
+                    margin-left: 170px;
+                    color: rgb(248, 238, 218);}
+                    p{color: white;
+                    font-size: 35px;
+                    padding-left: 20px;
+                    margin: auto;
+                    }
+                    h4{font-size: 20px; 
+                    color: white;
+                    margin: auto;
+                    width: 200px;
+                    margin-left: 420px;
+                    padding-top: 55px;
+                    margin-bottom: -17px;
+                    }
+                    h5{font-size: 20px; 
+                    color: white;
+                    margin: auto;
+                    margin-left: 20px;
+                   } 
+                }
+                   .box{
+                   height: 80px;
+                   width:$width;
+                   margin: auto;
+                   margin-top: 20px;
+                   border: solid;
+                   border-color: black;
+                   border-radius: 5px;
+                   background-color: white;
+                   img{
+                   width: 160px;
+                   height: 100%;
+                   float: left; margin-right: 5px;
+                  }
+                  p{font-size: 20px;}
+                  h6{font-style: italic;
+                  font-size: 15px;
+                  width: 40px;
+                  border: solid;
+                  border-color: black; 
+                  border-width: 2px;
+                  padding-left: 15px;
+                  margin: auto;
+                  margin-left: 450px;
+                  margin-top: -32px;
+                  
+                  }
+                }
+                  }
+                  }
+               }
+                  }
+            
+               

@@ -1,0 +1,162 @@
+body .bigpage {
+  background-color: #bfa4f3;
+  width: 680px;
+  margin: auto;
+  height: 1230px;
+  padding-top: 2px;
+  margin-top: 15px;
+}
+body .bigpage .page {
+  background-color: #b18ac0;
+  width: 650px;
+  border: 3px;
+  border-radius: 10px;
+  margin: auto;
+  height: 1200px;
+  margin-top: 15px;
+  padding-top: 10px;
+}
+body .bigpage .page .pagein {
+  background-image: url(https://e1.pxfuel.com/desktop-wallpaper/630/386/desktop-wallpaper-1920x1080-lovers-night-sky-starry-sky-laptop-full-backgrounds-and-sky-love.jpg);
+  width: 600px;
+  height: 200px;
+  border: 5px;
+  border-radius: 15px;
+  margin: auto;
+  margin-top: 20px;
+}
+body .bigpage .page .main {
+  padding: 10px;
+  width: 580px;
+  height: 200px;
+}
+body .bigpage .page .main h1 {
+  font-family: "Anton", sans-serif;
+  color: rgba(242, 245, 247, 0.884);
+  padding-left: 35px;
+  padding-top: 25px;
+}
+body .bigpage .page .main img {
+  width: 580px;
+  height: 40px;
+  padding-bottom: 40px;
+}
+body .bigpage .page .bigbox {
+  background-color: #494885;
+  width: 600px;
+  height: 940px;
+  margin: auto;
+  margin-top: 5px;
+  border: 5px;
+  border-radius: 15px;
+  padding-top: 8px;
+}
+body .bigpage .page .bigbox .box1 {
+  height: 250px;
+  width: 530px;
+  background-image: url(https://e1.pxfuel.com/desktop-wallpaper/751/57/desktop-wallpaper-alto-s-odyssey-the-alto.jpg);
+  margin: auto;
+  margin-top: 20px;
+  border: solid;
+  border-color: black;
+  border-radius: 15px;
+}
+body .bigpage .page .bigbox .box1 h3 {
+  font-family: "Anton", sans-serif;
+  font-size: 50px;
+  margin-top: 10px;
+  margin: auto;
+  margin-left: 170px;
+  color: #f8eeda;
+}
+body .bigpage .page .bigbox .box1 p {
+  color: white;
+  font-size: 35px;
+  padding-left: 20px;
+  margin: auto;
+}
+body .bigpage .page .bigbox .box1 h4 {
+  font-size: 20px;
+  color: white;
+  margin: auto;
+  width: 200px;
+  margin-left: 420px;
+  padding-top: 55px;
+  margin-bottom: -17px;
+}
+body .bigpage .page .bigbox .box1 h5 {
+  font-size: 20px;
+  color: white;
+  margin: auto;
+  margin-left: 20px;
+}
+body .bigpage .page .bigbox .box2 {
+  background-image: url(https://e1.pxfuel.com/desktop-wallpaper/878/776/desktop-wallpaper-alto-s-odyssey-the-alto.jpg);
+  height: 250px;
+  width: 530px;
+  margin: auto;
+  margin-top: 20px;
+  border: solid;
+  border-color: black;
+  border-radius: 15px;
+}
+body .bigpage .page .bigbox .box2 h3 {
+  font-family: "Anton", sans-serif;
+  font-size: 50px;
+  margin-top: 10px;
+  margin: auto;
+  margin-left: 170px;
+  color: #f8eeda;
+}
+body .bigpage .page .bigbox .box2 p {
+  color: white;
+  font-size: 35px;
+  padding-left: 20px;
+  margin: auto;
+}
+body .bigpage .page .bigbox .box2 h4 {
+  font-size: 20px;
+  color: white;
+  margin: auto;
+  width: 200px;
+  margin-left: 420px;
+  padding-top: 55px;
+  margin-bottom: -17px;
+}
+body .bigpage .page .bigbox .box2 h5 {
+  font-size: 20px;
+  color: white;
+  margin: auto;
+  margin-left: 20px;
+}
+body .bigpage .page .bigbox .box {
+  height: 80px;
+  width: 530px;
+  margin: auto;
+  margin-top: 20px;
+  border: solid;
+  border-color: black;
+  border-radius: 5px;
+  background-color: white;
+}
+body .bigpage .page .bigbox .box img {
+  width: 160px;
+  height: 100%;
+  float: left;
+  margin-right: 5px;
+}
+body .bigpage .page .bigbox .box p {
+  font-size: 20px;
+}
+body .bigpage .page .bigbox .box h6 {
+  font-style: italic;
+  font-size: 15px;
+  width: 40px;
+  border: solid;
+  border-color: black;
+  border-width: 2px;
+  padding-left: 15px;
+  margin: auto;
+  margin-left: 450px;
+  margin-top: -32px;
+}
