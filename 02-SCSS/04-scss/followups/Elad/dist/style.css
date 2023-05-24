@@ -11,7 +11,7 @@ body {
 
 .boxes {
   display: flex;
-  opacity: 0.4;
+  opacity: 0.5;
 }
 
 .green,
@@ -20,21 +20,30 @@ body {
 .purple {
   width: 140px;
   height: 140px;
-  margin-right: 10px;
+  position: absolute;
 }
 
 .green {
   background-color: green;
+  top: 90px;
+  left: 90px;
 }
 
 .red {
   background-color: red;
+  top: 15px;
+  left: 23px;
+  z-index: 4;
 }
 
 .blue {
   background-color: blue;
+  top: 90px;
+  left: 60px;
 }
 
 .purple {
   background-color: purple;
+  top: 212px;
+  left: 216px;
 }
