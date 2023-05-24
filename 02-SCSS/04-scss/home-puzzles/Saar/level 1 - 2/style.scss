@@ -1,0 +1,161 @@
+.wrapper {
+    margin-left: 500px;
+    margin-top: 30px;
+}
+
+.cube {
+    width: 100px;
+    height: 100px;
+}
+
+.row1 {
+
+    .skyblue {
+        background-color: skyblue;
+        position: relative;
+        left: 500px;
+    }
+
+}
+
+.row2 {
+
+    .blueviolet {
+        background-color: blueviolet;
+        position: relative;
+        left: 125px;
+    }
+
+    .palevioletred {
+        background-color: palevioletred;
+        position: absolute;
+        left: 125px;
+    }
+
+    .aquamarine {
+        background-color: aquamarine;
+        position: absolute;
+        left: 250px;
+    }
+
+    .tomato {
+        background-color: tomato;
+        position: absolute;
+        left: 375px;
+    }
+
+}
+
+.row3 {
+
+    .light-green {
+        background-color: greenyellow;
+        position: relative;
+        left: 125px;
+    }
+
+    .paleturquoise {
+        background-color: paleturquoise;
+        position: absolute;
+        left: 125px;
+    }
+
+    .light-tomato {
+        background-color: tomato;
+        position: absolute;
+        left: 375px;
+    }
+
+    .red {
+        background-color: red;
+        position: absolute;
+        left: 500px;
+    }
+
+    .blueviolet {
+        background-color: blueviolet;
+        position: absolute;
+        left: 625px;
+    }
+
+}
+
+.row4 {
+
+    .plum {
+        background-color: plum;
+        position: relative;
+    }
+
+    .darkkhaki {
+        background-color: darkkhaki;
+        position: absolute;
+        left: 125px;
+    }
+
+    .green {
+        background-color: green;
+        position: absolute;
+        left: 375px;
+    }
+
+    .skyblue {
+        background-color: skyblue;
+        position: absolute;
+        left: 500px;
+    }
+    
+    .light-green {
+        background-color: greenyellow;
+        position: absolute;
+        left: 625px;
+    }
+}
+
+.row5 {
+
+    .aquamarine {
+        background-color: aquamarine;
+        position: relative;
+    }
+
+    .tomato {
+        background-color: tomato;
+        position: absolute;
+        left: 125px;
+    }
+}
+
+.row6 {
+
+    .blueviolet {
+        background-color: blueviolet;
+        position: relative;
+        left: 375px;
+    }
+
+    .palevioletred {
+        background-color: palevioletred;
+        position: absolute;
+        left: 125px;
+    }
+
+}
+
+.row7 {
+
+    .skyblue {
+        background-color: skyblue;
+        position: relative;
+    }
+
+    .tomato {
+        background-color: tomato;
+        position: absolute;
+        left: 125px;
+    }
+}
+
+.mt-25px {
+    margin-top: 25px;
+}

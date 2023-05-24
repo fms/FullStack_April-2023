@@ -1,0 +1,100 @@
+.wrapper {
+    margin: 150px 0px 0px 550px;
+}
+
+
+.cube {
+    width: 150px;
+    height: 150px;
+}
+
+.block-wrapper1 {
+
+    .white {
+        background-color: whitesmoke;
+        position: relative;
+        top: 30px;
+        left: 150px;
+
+
+        .light-brown {
+            background-color: burlywood;
+            position: absolute;
+            top: 50px;
+            left: 100px;
+        }
+    
+        .red {
+            background-color: red;
+            position: absolute;
+            left: 200px;
+        }
+    
+        .plum {
+            background-color: plum;
+            position: absolute;
+            top: 80px;
+            left: 300px;
+        }
+    
+        .light-purple {
+            background-color: purple;
+            position: absolute;
+            left: 400px;
+        }
+
+    }
+
+}
+
+.block-wrapper2 {
+    .light-green {
+        background-color: green;
+        position: relative;
+        top: 220px;
+        left: 150px;
+
+        
+    .light-blue {
+        background-color: rgb(0, 95, 158);
+        position: absolute;
+        bottom: 40px;
+        left: 50px;
+    }
+
+    .dark-yellow {
+        background-color: rgb(168, 157, 0);
+        position: absolute;
+        top: 35px;
+        left: 160px;
+    }
+
+    .brown-purple {
+        background-color: rgb(78, 53, 0);
+        position: absolute;
+        bottom: 5px;
+        left: 240px;
+    }
+
+    .blue {
+        background-color: blue;
+        position: absolute;
+        bottom: 30px;
+        left: 350px;
+    }
+
+    .lighter-green {
+        background-color: rgb(109, 139, 0);
+        position: absolute;
+        top: 40px;
+        left: 345px;
+    }
+
+
+    }
+
+}
+
+.transparency-08 {
+    opacity: 0.8;
+}
