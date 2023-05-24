@@ -1,0 +1,43 @@
+.cube {
+    width: 250px;
+    height: 300px;
+}
+
+.light-blue {
+    background-color: blue;
+    position: relative;
+    top: 200px;
+    left: 500px;
+}
+
+.yellow-green {
+    background-color: yellowgreen;
+    position: absolute;
+    top: 170px;
+    left: 250px;
+}
+
+.burlywood {
+    background-color: burlywood;
+    position: absolute;
+    top: 80px;
+    left: 220px;
+}
+
+.yellow {
+    background-color: yellow;
+    position: absolute;
+    top: 40px;
+    left: 140px;
+}
+
+.palevioletred {
+    background-color: palevioletred;
+    position: absolute;
+    top: 160px;
+    left: 40px;
+}
+
+.gray-border {
+    border: solid 1px gray;
+}
