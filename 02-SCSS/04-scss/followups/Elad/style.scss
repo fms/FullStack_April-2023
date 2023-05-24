@@ -1,28 +1,46 @@
 //Hello World!
+body {
+  max-width: 100%;
+}
 
-#MenuBar {
-        overflow: hidden;
-        background-color: #333;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-  }
-  #MenuBar a {
-    float: left;
-    display: flex;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px;
-    text-decoration: none;
-  }
-  .content {
-    padding: 16px;
-  }
-  .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-  .sticky + .content {
-    padding-top: 60px;
-  }
+//cool $
+$opacity : 0.4;
+$magicstuff : $opacity;
+
+//Boxes Sample
+.helloworld {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.boxes {
+  display: flex;
+  opacity: $magicstuff;
+}
+
+.green,
+.red,
+.blue,
+.purple {
+  width: 140px;
+  height: 140px;
+  margin-right: 10px;
+}
+
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.purple {
+  background-color: purple;
+}

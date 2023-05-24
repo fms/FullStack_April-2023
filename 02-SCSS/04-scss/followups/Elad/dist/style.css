@@ -1,30 +1,40 @@
-#MenuBar {
-  overflow: hidden;
-  background-color: #333;
+body {
+  max-width: 100%;
+}
+
+.helloworld {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
-#MenuBar a {
-  float: left;
+.boxes {
   display: flex;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px;
-  text-decoration: none;
+  opacity: 0.4;
 }
 
-.content {
-  padding: 16px;
+.green,
+.red,
+.blue,
+.purple {
+  width: 140px;
+  height: 140px;
+  margin-right: 10px;
 }
 
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
+.green {
+  background-color: green;
 }
 
-.sticky + .content {
-  padding-top: 60px;
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.purple {
+  background-color: purple;
 }
