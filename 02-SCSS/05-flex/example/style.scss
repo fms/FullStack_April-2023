@@ -1,0 +1,91 @@
+.flex-container {
+    display: flex;
+    width: 100%;
+    border: solid black 1px;
+    background-color: lightblue;
+    flex-direction: row;           // default
+    margin-bottom: 10px;
+}
+
+.flex-item {
+    min-width: 100px;
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    border: 1px dashed gray;
+    color: white;
+}
+
+.reverse-row {
+    flex-direction: row-reverse;
+    background-color: blue;
+}
+
+.column {
+    flex-direction: column;
+    background-color: red;
+}
+
+.column-reverse {
+    flex-direction: column-reverse;
+    background-color: red;
+}
+
+.wrap {
+    flex-wrap: wrap;
+    background-color: yellow;
+}
+
+.wrap-reverse {
+    flex-wrap: wrap-reverse;
+    background-color: teal;
+}
+
+.flex-start {
+    justify-content: flex-start; // default
+    background-color: maroon;
+}
+
+.flex-end {
+    justify-content: flex-end; // default
+    background-color: brown;
+}
+
+.center {
+    justify-content: center; // default
+    background-color: darkgoldenrod;
+}
+.space-between {
+    justify-content: space-between; // default
+    background-color: gold;
+}
+
+.space-around {
+    justify-content: space-around; // default
+    background-color: silver;
+}
+
+.space-evenly {
+    justify-content: space-evenly; // default
+    background-color: pink;
+}
+
+.align-start {
+    align-items: flex-start;
+    background-color: beige;
+}
+
+.align-end {
+    align-items: flex-end;
+    background-color: beige;
+}
+
+.align-center {
+    align-items: center;
+    background-color: cadetblue;
+}
+
+.align-stretch {
+    align-items: stretch;
+    background-color: rgb(95, 160, 148);
+}
