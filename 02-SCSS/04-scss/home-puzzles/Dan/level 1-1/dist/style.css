@@ -1,0 +1,71 @@
+.colum {
+  margin-top: 30px;
+}
+
+.main {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: purple;
+}
+
+.relative0 {
+  position: relative;
+  width: 150px;
+}
+
+.relative1 {
+  position: relative;
+  height: 70px;
+  left: 20px;
+  background-color: green;
+}
+
+.relative2 {
+  position: relative;
+  left: 40px;
+  height: 120px;
+  background-color: gold;
+}
+
+.relative3 {
+  position: relative;
+  height: 180px;
+  background-color: pink;
+}
+
+.relative4 {
+  position: relative;
+  left: 70px;
+  height: 150px;
+  width: 90px;
+  background-color: gray;
+}
+
+.relative5 {
+  position: relative;
+  left: 100px;
+  height: 120px;
+  width: 200px;
+  background-color: cyan;
+}
+
+.relative6 {
+  position: relative;
+  background-color: blue;
+}
+
+.relative7 {
+  position: relative;
+  left: 70px;
+  height: 170px;
+  background-color: white;
+  border: solid 2px black;
+}
+
+.relative8 {
+  position: relative;
+  left: 90px;
+  height: 40px;
+  background-color: red;
+}
