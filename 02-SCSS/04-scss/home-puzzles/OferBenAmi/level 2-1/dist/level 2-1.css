@@ -1,0 +1,53 @@
+body > div {
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  position: absolute;
+}
+
+.main {
+  background-color: black;
+  position: absolute;
+  width: 250px;
+  height: 300px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.blue {
+  background-color: #009dd7;
+  z-index: 1;
+  position: absolute;
+  bottom: 100px;
+  right: 160px;
+}
+
+.pink {
+  background-color: #ef68a7;
+  z-index: 5;
+  position: absolute;
+  top: 50px;
+  right: 110px;
+}
+
+.yellow {
+  background-color: #e9ea6a;
+  z-index: 4;
+  bottom: 50px;
+}
+
+.orange {
+  background-color: #fcb426;
+  z-index: 3;
+  bottom: 20px;
+  left: 50px;
+}
+
+.green {
+  background-color: #b3d337;
+  z-index: 2;
+  top: 90px;
+  left: 90px;
+}
