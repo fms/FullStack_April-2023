@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+}
+
+.main {
+  padding: 15px;
+}
+
+.row1 .purple {
+  background-color: #cf3ada;
+  width: 150px;
+  height: 100px;
+  position: relative;
+  top: 85px;
+  left: 340px;
+}
+.row1 .greyLight {
+  background-color: #60a195;
+  width: 200px;
+  height: 100px;
+  position: relative;
+  left: 650px;
+  bottom: 45px;
+}
+.row1 .cream {
+  background-color: #c5d9bb;
+  width: 120px;
+  height: 130px;
+  position: relative;
+  left: 1000px;
+  bottom: 200px;
+}
+
+.row2 .anotherPurple {
+  background-color: #e42ece;
+  width: 160px;
+  height: 100px;
+  position: relative;
+  left: 340px;
+  bottom: 150px;
+}
+.row2 .mustard {
+  background-color: #d79657;
+  width: 90px;
+  height: 110px;
+  position: relative;
+  left: 650px;
+  bottom: 285px;
+}
+.row2 .gray {
+  background-color: #bab6b4;
+  width: 100px;
+  height: 115px;
+  position: relative;
+  left: 1000px;
+  bottom: 425px;
+}
+
+.row3 .olive {
+  background-color: #688d50;
+  width: 100px;
+  height: 130px;
+  position: relative;
+  left: 340px;
+  bottom: 380px;
+}
+.row3 .darkPurple {
+  background-color: #7525c3;
+  width: 150px;
+  height: 110px;
+  position: relative;
+  left: 650px;
+  bottom: 515px;
+}
+.row3 .greenLight {
+  background-color: #4bddb9;
+  width: 100px;
+  height: 140px;
+  position: relative;
+  left: 1000px;
+  bottom: 675px;
+}
