@@ -1,0 +1,59 @@
+.conteiner {
+  margin: auto;
+  width: 52rem;
+  left: 50%;
+  transform: translate(-50% 0);
+}
+.first-row {
+  margin-top: 100px;
+}
+.second-row {
+  margin-top: 240px;
+}
+.main {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.green {
+  background-color: rgb(43, 194, 117);
+  z-index: -1;
+}
+.yellow {
+  background-color: rgb(231, 221, 108);
+  right: 70px;
+  top: 50px;
+  opacity: 90%;
+}
+.orange {
+  background-color: rgb(229, 185, 120);
+  right: 130px;
+  opacity: 90%;
+}
+.red {
+  background-color: rgb(225, 87, 77);
+  right: 200px;
+  top: 50px;
+}
+.purple {
+  background-color: rgb(169, 99, 162);
+}
+.lightblue {
+  background-color: rgb(85, 49, 179);
+  opacity: 80%;
+  z-index: 2;
+  bottom: 50px;
+  right: 70px;
+}
+.blue {
+  background-color: rgb(79, 90, 179);
+  right: 130px;
+}
+
+.thelet{
+    background-color: rgb(75, 168, 225);
+    right: 200px;
+    bottom: 50px;
+}
