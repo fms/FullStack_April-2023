@@ -1,30 +1,33 @@
-.container{
-width: 400px;
-height: 600px;
-background-color: rgb(255, 255, 255);
-display: flex;
-flex-wrap: wrap;
-flex-direction:row;
-border: 5px;
-border-color: black;
-border-style: dashed;
-justify-content:space-between;
-gap: 15px 15px;
-align-items: center;
+$boxSize:45px;
+$myHeight:45px;
+$fxBase:40px;
 
-
- 
+.container {
+    width: 400px;
+    height: 600px;
+    background-color: rgb(16, 15, 15);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border: 5px;
+    border-color: black;
+    border-style: dashed;
+    justify-content: space-between;
+    gap: 15px 15px;
+    align-items: center;
 }
-.Box1{
-    height: 45px;
-    width: 45x;
+
+.Box1 {
+    height: $boxSize;
+    width: $boxSize;
     background-color: yellow;
-    flex-basis: 40px; 
+    flex-basis: $fxBase;
 }
-.Box_Blank{
-    height: 45px;
-    width: 45px;
-    background-color: rgb(255, 255, 255);
-    flex-basis: 40px;
-     
+
+.Box_Blank {
+    height: $boxSize;
+    width: $boxSize;
+    background-color: rgb(16, 15, 15);
+    flex-basis: $fxBase;
+
 }

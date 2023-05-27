@@ -1,7 +1,7 @@
 .container {
   width: 400px;
   height: 600px;
-  background-color: white;
+  background-color: #100f0f;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -15,7 +15,7 @@
 
 .Box1 {
   height: 45px;
-  width: 45x;
+  width: 45px;
   background-color: yellow;
   flex-basis: 40px;
 }
@@ -23,6 +23,6 @@
 .Box_Blank {
   height: 45px;
   width: 45px;
-  background-color: white;
+  background-color: #100f0f;
   flex-basis: 40px;
 }
