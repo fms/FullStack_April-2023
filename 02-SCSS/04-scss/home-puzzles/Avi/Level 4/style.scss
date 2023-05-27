@@ -1,0 +1,129 @@
+$size: 90px;
+
+body {
+    background-color: black;
+}
+
+.main {
+    height: 320px;
+    width: 650px;
+    margin-left: 500px;
+    margin-top: 250px;
+    background-color: white;
+
+    .box {
+        height: $size;
+        width: $size;
+        position: absolute;
+    }
+
+    .box1 {
+        margin-left: 550px;
+        margin-top: 20px;
+        background-color: #D82A2C;
+        z-index: 1;
+    }
+
+    .box2 {
+        margin-left: 530px;
+        margin-top: 40px;
+        background-color: #C1D62B;
+    }
+
+    .box3 {
+        margin-left: 390px;
+        margin-top: 20px;
+        background-color: white;
+        border: 1px rgb(235, 232, 232);
+        border-style: solid;
+        z-index: 1;
+        opacity: 0.9;
+
+    }
+
+    .box4 {
+        margin-left: 370px;
+        margin-top: 40px;
+        background-color: #620168;
+
+    }
+
+    .box5 {
+        margin-left: 230px;
+        margin-top: 20px;
+        background-color: #4DBE0D;
+        z-index: 1;
+        opacity: 0.9;
+    }
+
+    .box6 {
+        margin-left: 210px;
+        margin-top: 40px;
+        background-color: #354D00;
+    }
+
+    .box7 {
+        margin-left: 70px;
+        margin-top: 20px;
+        background-color: #C3272E;
+        z-index: 1;
+    }
+
+    .box8 {
+        margin-left: 50px;
+        margin-top: 40px;
+        background-color: #D40F78;
+    }
+
+    .box9 {
+        margin-left: 550px;
+        margin-top: 180px;
+        background-color: #6597CB;
+    }
+
+    .box10 {
+        margin-left: 530px;
+        margin-top: 200px;
+        background-color: #558BC2;
+    }
+
+    .box11 {
+        margin-left: 390px;
+        margin-top: 180px;
+        background-color: #11017D;
+        z-index: 1;
+    }
+
+    .box12 {
+        margin-left: 370px;
+        margin-top: 200px;
+        background-color: #7AA016;
+    }
+
+    .box13 {
+        margin-left: 230px;
+        margin-top: 180px;
+        background-color: #DA9D72;
+        z-index: 1;
+        opacity: 0.9;
+    }
+
+    .box14 {
+        margin-left: 210px;
+        margin-top: 200px;
+        background-color: #936BB9;
+    }
+
+    .box15 {
+        margin-left: 70px;
+        margin-top: 180px;
+        background-color: #F4D625;
+        z-index: 1;
+    }
+
+    .box16 {
+        margin-left: 50px;
+        margin-top: 200px;
+        background-color: #FFF874;
+    }
+}
