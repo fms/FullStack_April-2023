@@ -1,4 +1,36 @@
-.body{
-
+.Section_Body {
     background-color: rgb(97, 61, 15);
+    background-image: url(me.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 400px;
+    height: 200px;
+    background-position: center;
+    border: 1px;
+    border-color: black;
+    border-style: groove;
+}
+
+.button {
+    top: 150px;
+    padding: 5px;
+    margin-right: 15px;
+    //margin-top:  115px;
+    font-size: x-large;
+    margin-left: 5px;
+}
+
+.Head {
+    margin-top: 115px;
+    font-size: xx-large;
+    color: rgb(39, 39, 116);
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: oblique;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: blue;
+
+
+
 }
