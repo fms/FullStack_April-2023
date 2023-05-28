@@ -7,7 +7,6 @@ div {
   width: 620px;
   margin: 0 auto;
   height: 720px;
-  border: 2px solid aqua;
   position: relative;
 }
 .container .box {
