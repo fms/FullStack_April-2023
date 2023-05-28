@@ -1,0 +1,80 @@
+.main {
+  border: solid 1px #85888a;
+  width: 120px;
+  height: 100px;
+}
+
+.one {
+  background-color: #c655e2;
+  position: relative;
+  top: 40px;
+}
+
+.two {
+  position: absolute;
+  left: 210px;
+  top: 50px;
+  width: 150px;
+  background-color: #4798a7;
+}
+
+.three {
+  position: relative;
+  left: 400px;
+  top: -100px;
+  width: 140px;
+  height: 140px;
+  background-color: #a8e0b4;
+}
+
+.four {
+  position: relative;
+  top: -10px;
+  width: 140px;
+  background-color: #c05fb0;
+}
+
+.five {
+  position: relative;
+  left: 200px;
+  top: -130px;
+  width: 100px;
+  height: 120px;
+  background-color: #c2704b;
+}
+
+.six {
+  position: relative;
+  left: 400px;
+  top: -265px;
+  width: 130px;
+  height: 130px;
+  background-color: #c0bbc2;
+}
+
+.seven {
+  position: relative;
+  top: -220px;
+  width: 100px;
+  height: 150px;
+  background-color: #3c914e;
+}
+
+.eight {
+  position: relative;
+  top: -360px;
+  left: 200px;
+  width: 100px;
+  background-color: #6820b9;
+  width: 160px;
+  height: 130px;
+}
+
+.nine {
+  position: relative;
+  top: -510px;
+  left: 400px;
+  width: 100px;
+  height: 150px;
+  background-color: #35c8e2;
+}
