@@ -1,0 +1,46 @@
+div {margin: 0; padding: 0;}
+
+.container {
+    width: 620px;
+    margin:  0 auto;
+    height: 720px;
+    border: 2px solid aqua;
+    position: relative;
+
+    .box {
+        position: absolute;
+        height: 350px;
+        width: 300px;
+    }
+
+    .box1 {
+        top: 10px;
+        left: 10px;
+        background-color: #009cd9;
+    }
+
+    .box2 {
+        bottom: 10px;
+        right: 10px;
+        background-color: #b3d337;
+    }
+
+    .box3 {
+        top: 195px;
+        right: 50px;
+        background-color: #fcb426;
+    }
+
+    .box4 {
+        top: 50px;
+        right: 210px;
+        background-color: #e9ea6a;
+    }
+
+    .box5 {
+        bottom: 40px;
+        left: 50px;
+        background-color: #ef68a5;
+    }
+    
+}
