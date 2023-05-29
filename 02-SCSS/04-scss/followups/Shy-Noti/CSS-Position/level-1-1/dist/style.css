@@ -7,7 +7,6 @@ div {
   width: 700px;
   margin: 0 auto;
   height: 700px;
-  border: 2px solid aqua;
 }
 .container .row1 {
   display: flex;

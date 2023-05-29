@@ -1,0 +1,27 @@
+.wrapper {
+    width:50%;
+    border: solid 1px black;
+}
+
+.ch {
+    width:50%;             // ch - width of 0 in current font
+    border: solid 1px red;
+    // font-size: 20px;
+}
+
+.mono {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.ems * {
+    font-size:2em;
+}
+
+.rems * {
+    font-size: 2rem;
+}
+
+html {
+    font-size: 1vw;
+}
+
