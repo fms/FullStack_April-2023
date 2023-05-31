@@ -1,0 +1,33 @@
+.left-section {
+  border: 1px solid black;
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.left-section__hero {
+  border: 1px solid #e01616;
+  height: 400px;
+  width: 100%;
+}
+.left-section__article {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #25ad0a;
+  flex: 1;
+}
+.left-section__article__item {
+  border: 1px solid #901281;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.left-section__article__item__img * {
+  border: 1px solid #fafa00;
+  flex: 1;
+  height: 100%;
+}
+.left-section__article__item__textBlock {
+  border: 1px solid black;
+  display: flex;
+}
