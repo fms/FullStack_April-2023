@@ -10,6 +10,12 @@
   height: 400px;
   width: 100%;
 }
+.left-section__hero__img * {
+  border: 1px solid #fafa00;
+  flex: 1;
+  height: 100%;
+  width: 100%;
+}
 .left-section__article {
   width: 100%;
   display: flex;
@@ -26,6 +32,7 @@
   border: 1px solid #fafa00;
   flex: 1;
   height: 100%;
+  width: 100%;
 }
 .left-section__article__item__textBlock {
   border: 1px solid black;
