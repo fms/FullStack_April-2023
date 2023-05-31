@@ -1,0 +1,41 @@
+.main {
+  width: 283px;
+  height: 360px;
+  background-color: #00a2ff;
+}
+
+.rgreen {
+  position: relative;
+  background-color: #86f371;
+  width: 283px;
+  height: 360px;
+  bottom: 130px;
+  left: 290px;
+}
+
+.rbrow {
+  position: relative;
+  background-color: #ffd06c;
+  width: 283px;
+  height: 360px;
+  bottom: 620px;
+  left: 240px;
+}
+
+.ryel {
+  position: relative;
+  background-color: #e7e95e;
+  width: 283px;
+  height: 360px;
+  bottom: 1030px;
+  left: 150px;
+}
+
+.rpin {
+  position: relative;
+  background-color: #ff5ddc;
+  width: 283px;
+  height: 360px;
+  bottom: 1240px;
+  left: 40px;
+}

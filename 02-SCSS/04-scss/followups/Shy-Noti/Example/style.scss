@@ -1,0 +1,64 @@
+.container {
+    background-color: blueviolet;
+    padding: 50px;
+    height: 3000px;
+
+    .row {
+        margin-bottom: 20px;
+        position: relative;
+
+        .col {
+            height: 100px;
+            width: 100px;
+            border:  1px solid black;
+        }
+
+        .col1 {
+            background-color: aqua;
+            position: relative;
+            left: 20px;
+            top: 40px;
+        }
+
+        .col2 {
+            background-color: rgb(39, 207, 61);
+            position: fixed;
+            left: 100px;
+            top: 100px;
+        }
+
+        .col3 {
+            background-color: rgb(136, 21, 111);
+            position: absolute;
+            left: 200px;
+            top: 40px;
+        }
+
+        .col4 {
+            background-color: rgb(136, 21, 111);
+            position: sticky;
+            left: 200px;
+            top: 40px;
+        }
+    }
+
+    .row1 {
+        background-color: rgb(217, 230, 146);
+        height: 200px;
+    }
+
+    .row2 {
+        background-color: rgb(235, 182, 182);
+        height: 200px;
+    }
+
+    .row3 {
+        background-color: rgb(172, 227, 236);
+        height: 200px;
+    }
+
+    .row4 {
+        background-color: rgb(197, 237, 247);
+        height: 200px;
+    }
+}

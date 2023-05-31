@@ -1,0 +1,87 @@
+.logo {
+  height: 30px;
+  width: 30px;
+  margin-top: 48px;
+  margin-left: 5px;
+  position: fixed;
+}
+
+.bar {
+  border-radius: 50px;
+  padding: 15px;
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.home {
+  background-color: black;
+  color: white;
+  margin-left: 40px;
+  margin-top: 20px;
+}
+
+.home:hover {
+  opacity: 80%;
+}
+
+.create {
+  background-color: white;
+  color: black;
+}
+
+.create:hover {
+  opacity: 80%;
+}
+
+.search {
+  margin-left: 10px;
+  padding-right: 1000px;
+  color: black;
+  border: solid #cac2c2;
+  background-color: #cac2c2;
+  font-weight: normal;
+}
+
+.photos {
+  height: 250px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 25px;
+  margin-bottom: 20px;
+}
+
+.pin {
+  border: solid white;
+  border-radius: 50px;
+}
+
+.people {
+  border: solid white;
+  border-radius: 50px;
+}
+
+.suit {
+  border: solid white;
+  border-radius: 50px;
+}
+
+.screen {
+  border: solid white;
+  border-radius: 50px;
+  height: 250px;
+}
+
+.road {
+  border: solid white;
+  border-radius: 50px;
+  height: 250px;
+}
+
+.chair {
+  border: solid white;
+  border-radius: 50px;
+  height: 250px;
+}

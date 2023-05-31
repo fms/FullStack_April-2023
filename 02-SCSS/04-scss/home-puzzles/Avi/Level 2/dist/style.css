@@ -1,0 +1,121 @@
+body {
+  background-color: black;
+}
+
+.main {
+  height: 900px;
+  width: 900px;
+  margin-left: 500px;
+  background-color: white;
+  display: flex;
+}
+.main .box {
+  height: 90px;
+  width: 90px;
+  position: absolute;
+}
+.main .box1 {
+  margin-left: 550px;
+  margin-top: 20px;
+  background-color: #34A3C6;
+}
+.main .box2 {
+  margin-left: 220px;
+  margin-top: 130px;
+  background-color: #7E69AF;
+}
+.main .box3 {
+  margin-left: 330px;
+  margin-top: 130px;
+  background-color: #EE7F99;
+}
+.main .box4 {
+  margin-left: 440px;
+  margin-top: 130px;
+  background-color: #9ACDC2;
+}
+.main .box5 {
+  margin-left: 550px;
+  margin-top: 130px;
+  background-color: #E57E55;
+}
+.main .box6 {
+  margin-left: 220px;
+  margin-top: 240px;
+  background-color: #91CB80;
+}
+.main .box7 {
+  margin-left: 330px;
+  margin-top: 240px;
+  background-color: #8F9CC7;
+}
+.main .box8 {
+  margin-left: 550px;
+  margin-top: 240px;
+  background-color: #F9A26E;
+}
+.main .box9 {
+  margin-left: 660px;
+  margin-top: 240px;
+  background-color: #EF474D;
+}
+.main .box10 {
+  margin-left: 770px;
+  margin-top: 240px;
+  background-color: #7E69AF;
+}
+.main .box11 {
+  margin-left: 110px;
+  margin-top: 350px;
+  background-color: #F38084;
+}
+.main .box12 {
+  margin-left: 220px;
+  margin-top: 350px;
+  background-color: #CFBD6E;
+}
+.main .box13 {
+  margin-left: 440px;
+  margin-top: 350px;
+  background-color: #3EAF51;
+}
+.main .box14 {
+  margin-left: 550px;
+  margin-top: 350px;
+  background-color: #32ABCC;
+}
+.main .box15 {
+  margin-left: 660px;
+  margin-top: 350px;
+  background-color: #91CB80;
+}
+.main .box16 {
+  margin-left: 110px;
+  margin-top: 460px;
+  background-color: #9BCEC3;
+}
+.main .box17 {
+  margin-left: 220px;
+  margin-top: 460px;
+  background-color: #F58248;
+}
+.main .box18 {
+  margin-left: 440px;
+  margin-top: 590px;
+  background-color: #7E69AF;
+}
+.main .box19 {
+  margin-left: 550px;
+  margin-top: 590px;
+  background-color: #F0596B;
+}
+.main .box20 {
+  margin-left: 110px;
+  margin-top: 680px;
+  background-color: #32ABCC;
+}
+.main .box21 {
+  margin-left: 220px;
+  margin-top: 680px;
+  background-color: #E77534;
+}

@@ -1,0 +1,39 @@
+.main {
+  width: 150px;
+  height: 200px;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.one {
+  background-color: #70b3f3;
+}
+
+.three {
+  background-color: #f8c53a;
+  position: absolute;
+  left: 140px;
+  top: 80px;
+}
+
+.two {
+  background-color: #fcfa83;
+  position: absolute;
+  left: 80px;
+  top: 40px;
+}
+
+.four {
+  background-color: #9af370;
+  position: absolute;
+  left: 170px;
+  top: 130px;
+}
+
+.five {
+  background-color: #ef70f3;
+  position: absolute;
+  left: 40px;
+  top: 110px;
+}
