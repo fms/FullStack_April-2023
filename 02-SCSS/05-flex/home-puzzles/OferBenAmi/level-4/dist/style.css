@@ -112,7 +112,7 @@ nav .down-icon:active {
   display: flex;
   flex-direction: column;
   gap: 2vw;
-  width: 20rem;
+  width: clamp(15rem, 14vw, 20rem);
 }
 .mainconteiner .colombs-divs img {
   max-width: 100%;

@@ -32,8 +32,9 @@ nav {
       background-color: black;
       color: white;
     }
-    &:hover{
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+    &:hover {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
   }
 
@@ -41,7 +42,7 @@ nav {
 
   img {
     width: 40px;
-    
+
   }
 
   .search-bar-div {
@@ -69,7 +70,8 @@ nav {
       position: relative;
       left: 49px;
       top: 8px;
-      &:hover{
+
+      &:hover {
         cursor: pointer;
       }
     }
@@ -84,10 +86,13 @@ nav {
       border-width: 0;
       background-color: rgb(233, 233, 233);
       transition: background-color 0.5s, box-shadow 0.5s;
-      &:hover{
-        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+      &:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       }
-      &:focus , &:active{
+
+      &:focus,
+      &:active {
         outline: none;
         border: none;
         background-color: rgb(212, 212, 212);
@@ -100,47 +105,52 @@ nav {
     padding: 10px;
     width: 22px;
     filter: invert(0.3) sepia(10) saturate(0) hue-rotate(175deg);
+
     &:active {
       cursor: pointer;
     }
   }
-  
+
   .down-icon {
     position: relative;
     bottom: 2px;
     padding: 10px;
     width: 17px;
     filter: invert(0.3) sepia(10) saturate(0) hue-rotate(175deg);
+
     &:active {
       cursor: pointer;
     }
   }
-  
+
 }
-.mainconteiner{
+
+.mainconteiner {
   margin: auto;
   padding-top: 20px;
   width: 95vw;
   display: flex;
   justify-content: center;
-  align-items:flex-start;
+  align-items: flex-start;
   flex-wrap: wrap;
   gap: 2vw;
-  
-  .colombs-divs{
+
+  .colombs-divs {
     display: flex;
     flex-direction: column;
     gap: 2vw;
     // width: min(15vw,250px);
-    width: 20rem;
+    width: clamp(15rem, 14vw, 20rem);
+
     // max-width: 300px;
-    & img{
+    & img {
       max-width: 100%;
       border-radius: 20px;
       transition: filter 0.3s;
-     &:hover{
-      filter: brightness(60%);
-     }
+
+      &:hover {
+        filter: brightness(60%);
+      }
     }
   }
 }
