@@ -1,0 +1,62 @@
+.bbc {
+    font-family: Arial;
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    padding: 30px;
+    position: sticky;
+}
+
+.title {
+    font-size:30px;
+    font-weight: bold;
+    border-left: solid;
+    font-family: Arial;
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 20px;
+
+    .sport {
+        border-color: orange;
+    }
+
+    .travel {
+        border-left-color: green;
+    }
+
+    .news {
+        border-color: red;
+    }
+}
+
+
+
+.sport-section {
+    margin-left: 10px;
+    margin-bottom: 40px;
+    width: 80%;
+    display: flex;
+    column-gap: 10px;
+}
+
+.article {
+    display: flex;
+    flex-direction: column;
+    color: black;
+    flex: 1;
+
+    &__img * {
+        width: 100%;
+    }
+
+    &__text {
+        display: flex;
+        justify-content: center;
+        background-color: black;
+        color: white;
+        padding: 10px;
+    }
+
+}
+

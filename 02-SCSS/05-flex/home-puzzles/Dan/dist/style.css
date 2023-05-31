@@ -15,73 +15,37 @@
   cursor: pointer;
   margin-bottom: 5px;
 }
-
-.home {
+.bar .home {
   background-color: black;
   color: white;
   margin-left: 40px;
   margin-top: 20px;
 }
-
-.home:hover {
+.bar .home:hover {
   opacity: 80%;
 }
-
-.create {
+.bar .create {
   background-color: white;
   color: black;
 }
-
-.create:hover {
+.bar .create:hover {
   opacity: 80%;
 }
-
-.search {
+.bar .search {
   margin-left: 10px;
   padding-right: 1000px;
   color: black;
-  border: solid #cac2c2;
+  border: none;
   background-color: #cac2c2;
   font-weight: normal;
 }
 
 .photos {
   height: 250px;
+  flex-basis: 3;
   display: flex;
   flex-wrap: wrap;
   margin-left: 25px;
   margin-bottom: 20px;
-}
-
-.pin {
-  border: solid white;
   border-radius: 50px;
-}
-
-.people {
-  border: solid white;
-  border-radius: 50px;
-}
-
-.suit {
-  border: solid white;
-  border-radius: 50px;
-}
-
-.screen {
-  border: solid white;
-  border-radius: 50px;
-  height: 250px;
-}
-
-.road {
-  border: solid white;
-  border-radius: 50px;
-  height: 250px;
-}
-
-.chair {
-  border: solid white;
-  border-radius: 50px;
-  height: 250px;
 }
