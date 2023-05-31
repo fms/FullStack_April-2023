@@ -1,0 +1,18 @@
+.article {
+    @include flexed(column);
+    color: black;
+    flex: 1;
+
+    &__img * {
+        border-radius: 20px;
+        width: 100%;
+    }
+
+    &__text {
+        display: flex;
+        justify-content: center;
+        background-color: black;
+        color: white;
+        padding: 10px;
+    }
+}

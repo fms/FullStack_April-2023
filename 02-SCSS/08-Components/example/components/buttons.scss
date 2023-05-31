@@ -1,0 +1,30 @@
+.buttons {
+    @include flexed();
+    margin:auto;
+    width: 80%;
+    column-gap: $column-gap;
+    justify-content: center;
+
+    &__button {
+        @include defaults($font-size--small, $margin: 20px);
+        border: none;
+        padding: 5px;
+        flex-basis: 10%;
+
+        &--is-disabled {
+            border: dashed red 3px;
+        }
+
+        &--add {
+            background-color: green;
+        }
+
+        &--delete {
+            background-color: red;
+        }
+
+        &--cancel {
+            background-color: grey;
+        }
+    }
+}
