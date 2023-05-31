@@ -1,0 +1,14 @@
+.TopImages {
+    margin-right: 20px;
+    justify-content: center;
+    &__images {
+    
+
+        &--marked {
+            border: dashed red 7px;
+        }
+
+
+
+    }
+}
