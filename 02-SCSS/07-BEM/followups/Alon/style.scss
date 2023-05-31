@@ -1,0 +1,97 @@
+.main{
+    display: flex;
+    flex-direction: row;
+    width:80%;
+
+&__right-section{
+    flex:1;
+    border: 1px solid rgb(224, 22, 22);
+
+    &__title{
+        color:white;
+        background-color: #E91802;
+        font-weight: 100;
+
+    }
+
+    &__item{
+        color: white;
+        font-weight: 100;
+        
+        width:100%;
+
+
+        div{
+            display:inline-block;
+            width: 20px;
+            height:20px;
+            text-align: center;
+            padding:5px;
+            margin-right:10px;
+            border-radius: 50px;
+            background-color: #e91802;
+        }
+
+        
+        &:nth-child(even){
+            background-color: #2F2F2F;
+        }
+        &:nth-child(odd){
+            background-color: #363636;
+        }
+
+    }
+
+}
+
+&__left-section{
+    border: 1px solid black;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    flex:3;
+
+    &__hero{
+        border: 1px solid rgb(224, 22, 22);
+        height:400px;
+        width:100%;
+        display:flex;
+        flex-direction: column;
+
+        &__img{
+               border: 1px solid rgb(250, 250, 0);
+               flex:1;
+               height:100%;
+               width:100%;
+               background-image: url('https://cf-images.us-east-1.prod.boltdns.net/v1/jit/4368278029001/49facae4-628f-4a80-ba2c-b66fe211724f/main/1280x720/8s906ms/match/image.jpg');
+               background-size: cover;
+        }
+    }
+
+    &__article{
+        width:100%;
+        display:flex;
+        flex-direction: row;
+         border: 1px solid rgb(37, 173, 10);
+         flex:1;
+
+        &__item{
+            border: 1px solid rgb(144, 18, 129);
+            display:flex;
+            flex-direction: row;
+            flex-wrap:wrap;
+
+            &__img *{
+               border: 1px solid rgb(250, 250, 0);
+               flex:1;
+               height:100%;
+               width:100%;
+            }
+            &__textBlock{
+                border: 1px solid black;
+                display:flex;
+            }
+        }
+    }
+}
+}

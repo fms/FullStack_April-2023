@@ -1,0 +1,79 @@
+.headline {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+}
+.headline .yellow {
+  width: 3px;
+  height: 10px;
+  background-color: #caca0d;
+  position: relative;
+  top: 4px;
+  margin-right: 2px;
+}
+
+h3 {
+  margin-bottom: 1px;
+}
+
+p {
+  margin-top: 2px;
+  font-size: 13px;
+}
+
+.sport-section {
+  width: 100%;
+  display: flex;
+  column-gap: 10px;
+}
+
+.article1 {
+  display: flex;
+  flex-direction: column;
+}
+.article1__img * {
+  width: 100%;
+}
+.article1__text {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  color: white;
+  padding: 10px;
+  color: black;
+}
+
+.article2 {
+  display: flex;
+  flex-direction: column;
+}
+.article2__img * {
+  width: 100%;
+}
+.article2__text {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  color: white;
+  color: black;
+  margin-top: 0;
+}
+
+.article3 {
+  display: flex;
+  flex-direction: column;
+}
+.article3__img * {
+  width: 100%;
+}
+.article3__text {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  color: white;
+  padding: 10px;
+  color: black;
+}
