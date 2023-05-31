@@ -48,8 +48,12 @@
   font-size: 40px;
 }
 .weather__button {
-  color: gray;
+  background-color: gray;
+  border: 0;
+  height: 30px;
+  color: white;
   margin-left: 20px;
+  margin-top: 10px;
 }
 .weather__img {
   margin-left: 210px;
