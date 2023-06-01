@@ -140,3 +140,39 @@ body .block1 .mainsidecontainer .sidecontainer .article .textbox p {
   padding-left: 2px;
   border-color: blue;
 }
+body .box {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  flex: 1;
+}
+body .main_text {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-style: bold;
+}
+body .reels {
+  background-image: url("https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/Zugpsitze_mountain.jpg?crop=0%2C176%2C3008%2C1654&wid=4000&hei=2200&scl=0.752");
+}
+body h2 {
+  color: white;
+}
+body .reels_box {
+  margin: auto;
+  width: 80%;
+  display: flex;
+  column-gap: 10px;
+}
+body .sports {
+  margin: auto;
+  width: 80%;
+  display: flex;
+  column-gap: 10px;
+}
+
+p {
+  font-size: 15px;
+  margin-top: 10px;
+  border-left: solid;
+  padding-left: 2px;
+  border-color: #d9ff00;
+}
