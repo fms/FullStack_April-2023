@@ -1,14 +1,52 @@
-.TopImages {
-    margin-right: 20px;
-    justify-content: center;
-    &__images {
-    
-
-        &--marked {
-            border: dashed red 7px;
-        }
+//ImportSection
+@import 'mainproperties';
 
 
 
+// Main
+.searchbar {
+    position: fixed;
+    height: 64px;
+    width: 100%;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    float: left;
+    align-items: left;
+  }
+  //.searchbar a:hover {
+  //   background-color: #ddd;
+  //  color: black;
+  //}
+  .pinlogo {
+    height: 30px;
+    width: 30px;
+    margin-left: 5%;
+    margin-top: 1%;
+    margin-bottom: -0.4%;
+  }
+  .homebutton {
+    @include defaultnavbarset;
+  }
+  .homebutton {
+    background-color: black;
+    border: none;
+    border-radius: 35%;
+    color: white;
+    height: 44px;
+  }
+  .createbutton {
+    @include defaultnavbarset;
+  }
+  .imgpos {
+    display: grid;
+    grid-template-columns:repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+    gap:10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    img {
+      width: 100%;
     }
-}
+  }
+  .img {
+    @include idealpic;
+  }
