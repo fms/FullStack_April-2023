@@ -1,0 +1,52 @@
+.fixedHeader {
+    @include flexed($position: sticky, $direction: row);
+    @include defaults($height: 100px);
+    top: 0px;
+    justify-content: space-between;
+    background-color: #e5005c;
+    color: white;
+
+    &__scores {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__scores--date {
+        font-size: larger;
+        font-weight: bold;
+    }
+
+    &__scores--button {
+        border-radius: 20px;
+        background-color: #910029;
+        margin-left: 10px;
+    }
+}
+
+.globalHeader {
+    @include flexed();
+    @include defaults();
+    align-items: center;
+    background-color: darkblue;
+    gap: 20px;
+
+    a {
+        color: white;
+    }
+
+    &--firstLink {
+        margin-left: 200px;
+    }
+}
+
+.logoHeader {
+    @include flexed();
+    @include defaults();
+
+    &__israel * {
+        width: 22rem;
+        height: auto;
+    }
+}
