@@ -1,0 +1,53 @@
+@import './config';
+
+@mixin  basic($width: 250px, $height: 100px) {
+  width: $width;
+  height: $height;
+};
+
+.icon {
+  
+  
+  .icon__img {
+    background-color: rgb(0, 122, 184);
+    display: flex;
+    justify-content: space-around;
+    width: 220px;
+    
+    .icon__img1 {
+      width: 170px;
+      height: 90px;
+      color: white;
+    }
+  }
+}
+
+// @import './navi.scss';
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

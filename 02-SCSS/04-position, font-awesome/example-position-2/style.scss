@@ -1,0 +1,53 @@
+.wrapper {
+    background-color: aqua;
+    position: absolute;
+}
+
+.box {
+    position: static;         // Default: no position applied
+    height: 100px;
+    width: 100px;
+    border: solid black 1px;
+    background-color: blue;
+    color: white;
+}
+
+.relative {
+    position: relative;        // Move relative to origin
+    top: 10px;
+    // bottom: 0px;
+    left: 100px;
+    // right: 0px;
+    background-color: red;
+}
+
+.absolute {
+    position: absolute;       // relative to positioned container
+    background-color: blueviolet;
+    top: 150px;
+    left:150px;
+}
+
+.fixed {
+    position: fixed;        // doesn't move. Relative to top container
+    background-color: green;
+    left:250px;
+}
+
+.sticky {                   // Relative to top of container
+    position: sticky;
+    background-color: yellow;
+    top: 0px;               // Must be specified for stickey to work
+    color: black;
+}
+
+.sticky2 {                   // Relative to top of container
+    position: sticky;
+    background-color: yellowgreen;
+    top: 100px;             // Must be specified for stickey to work
+    color: black;
+}
+
+.wide {
+    width: 200px;
+}

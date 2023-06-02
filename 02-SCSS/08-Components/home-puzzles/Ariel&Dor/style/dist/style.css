@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+}
+
+.icon .icon__img {
+  background-color: #007ab8;
+  display: flex;
+  justify-content: space-around;
+  width: 220px;
+}
+.icon .icon__img .icon__img1 {
+  width: 170px;
+  height: 90px;
+  color: white;
+}
