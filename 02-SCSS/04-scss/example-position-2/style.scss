@@ -37,7 +37,15 @@
 .sticky {                   // Relative to top of container
     position: sticky;
     background-color: yellow;
-    top: 0px;
+    top: 0px;               // Must be specified for stickey to work
+    color: black;
+}
+
+.sticky2 {                   // Relative to top of container
+    position: sticky;
+    background-color: yellowgreen;
+    top: 100px;             // Must be specified for stickey to work
+    color: black;
 }
 
 .wide {

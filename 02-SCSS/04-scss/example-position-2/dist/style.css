@@ -36,6 +36,14 @@
   position: sticky;
   background-color: yellow;
   top: 0px;
+  color: black;
+}
+
+.sticky2 {
+  position: sticky;
+  background-color: yellowgreen;
+  top: 100px;
+  color: black;
 }
 
 .wide {
