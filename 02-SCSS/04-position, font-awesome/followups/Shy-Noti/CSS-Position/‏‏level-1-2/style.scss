@@ -1,0 +1,123 @@
+div {margin: 0; padding: 0;}
+
+.container {
+    width: 720px;
+    margin:  0 auto;
+    height: 650px;
+    // border: 2px solid aqua;
+
+    .box {
+        position: relative;
+        height: 80px;
+        width: 80px;
+        top: 10px;
+        left: 10px;
+    }
+
+    .row {
+        display: flex;
+        width: 100%;
+        height: 90px;
+    }
+
+    .row1 {
+        .box6 {
+            background-color: #34a3c6;
+            left: 50px;
+        }
+    }
+
+    .row2 {
+        .box3 {
+            background-color: #7e69af;
+            left: 20px;
+        }
+        .box4 {
+            background-color: #ee7f99;
+            left: 30px;
+        }
+        .box5 {
+            background-color: #9acdc2;
+            left: 40px;
+        }
+        .box6 {
+            background-color: #e57e55;
+            left: 50px;
+        }
+    }
+    .row3 {
+        .box3 {
+            background-color: #91cb80;
+            left: 20px;
+        }
+        .box4 {
+            background-color: #8f9cc7;
+            left: 30px;
+        }
+        .box6 {
+            background-color: #f9a26e;
+            left: 50px;
+        }
+        .box7 {
+            background-color: #ef474d;
+            left: 60px;
+        }
+        .box8 {
+            background-color: #7e69af;
+            left: 70px;
+        }
+    }
+    .row4 {
+        .box2 {
+            background-color: #f38084;
+            left: 10px;
+        }
+        .box3 {
+            background-color: #cfbd6e;
+            left: 20px;
+        }
+        .box5 {
+            background-color: #3eaf51;
+            left: 40px;
+        }
+        .box6 {
+            background-color: #32abcc;
+            left: 50px;
+        }
+        .box7 {
+            background-color: #91cb80;
+            left: 60px;
+        }
+    }
+    .row5 {
+        .box2 {
+            background-color: #9bcec3;
+            left: 10px;
+        }
+        .box3 {
+            background-color: #f58248;
+            left: 20px;
+        }
+    }
+    .row6 {
+        .box5 {
+            background-color: #7e69af;
+            left: 40px;
+        }
+        .box6 {
+            background-color: #f0596b;
+            left: 50px;
+        }
+    }
+    .row7 {
+        .box2 {
+            background-color: #32abcc;
+            left: 10px;
+        }
+        .box3 {
+            background-color: #e77534;
+            left: 20px;
+        }
+    }
+    
+}

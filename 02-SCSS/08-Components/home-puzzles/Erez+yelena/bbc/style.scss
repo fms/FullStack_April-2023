@@ -1,0 +1,179 @@
+body{
+   background-color: rgb(245, 243, 240);
+   .head{ 
+    width: 100%;
+    background-color: white;
+    margin: auto;
+    display: block;
+    margin-top: -7px;
+    .up{
+    width: 100%;
+    height: 64px;
+    border-bottom:solid 1px;
+    border-color: gainsboro;
+    padding-left: 340px;
+    .bbcicon{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; 
+        width: 122px;
+        .bblock{
+            width: 32px;
+            height: 32px;
+            background-color: black;
+            margin-top: 20px;
+            h1{
+                color: white;
+                position: absolute;
+                margin-left: 7px;
+                font-size: 22px;
+                margin-top: 5px;
+
+            }
+        }
+    }
+    .singin{
+     width: 175px;
+     margin-left: 160px;
+     margin-top: -25px;
+     position: absolute;
+     h2{
+        font-size: 22px;
+        margin-left: 30px;
+        margin-top: -20px;
+     }
+    }
+    }
+    .down{
+    width: 100%;
+    height: 68px;}
+   }
+
+  .padding{padding: 10px;}
+
+   .block1{
+   width: 1230px;
+   margin: auto;
+   display: block;
+.mainsidecontainer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+
+    .bigarticle{
+        width:480px;
+        height: 550px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        
+        img{
+           width: 100%;
+            height: 270px;}
+        .textbox{
+            padding-left: 15px;
+            height: 250px;
+        h1{
+            font-size: 30px;
+            overflow-wrap: break-word;
+            margin-bottom: 155px;
+        } 
+        p{
+            font-size: 15px;
+            margin-top: 10px;
+            border-left: solid;
+            padding-left: 2px;
+            border-color: blue;
+        }
+        }
+        }
+    .sidecontainer{
+        width: 237px;
+        height: 550px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; 
+        
+        .articlepic{
+            width: 100%;
+            height: 270px;
+            background-color: white;
+            justify-content: space-between; 
+            img{
+                width: 100%;
+                height: 130px;}
+           .textbox{
+            padding-left: 15px;
+            h1{
+                font-size: 20px;
+                overflow-wrap: break-word;} 
+            p{
+                font-size: 15px;
+                margin-top: 10px;
+                border-left: solid;
+                padding-left: 2px;
+                border-color: blue;
+            }
+        }
+        }
+        .article{
+            width: 100%;
+            height: 130px;
+            background-color: white;
+            .textbox{
+                padding-left: 15px;
+            h1{
+                font-size: 20px;
+                overflow-wrap: break-word;} 
+            p{
+                font-size: 15px;
+                margin-top: 10px;
+                border-left: solid;
+                padding-left: 2px;
+                border-color: blue;
+            }
+        }
+    }
+    
+    }
+}
+   }
+            
+.box {
+    display: flex;
+    flex-direction: column;
+    color: black;
+    flex: 1;
+}
+.main_text{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: bold;
+}
+.reels{
+    background-image: url("https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/Zugpsitze_mountain.jpg?crop=0%2C176%2C3008%2C1654&wid=4000&hei=2200&scl=0.752")
+}
+    
+
+h2{
+    color: white;
+            }
+.reels_box {
+    margin:auto;
+    width: 80%;
+    display: flex;
+    column-gap: 10px;
+    } 
+.sports {
+    margin:auto;
+    width: 80%;
+    display: flex;
+    column-gap: 10px;
+    }              
+p{
+    font-size: 15px;
+    margin-top: 10px;
+    border-left: solid;
+    padding-left: 2px;
+    border-color: rgb(217, 255, 0);
+}

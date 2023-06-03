@@ -1,0 +1,83 @@
+body {
+  background-color: black;
+}
+
+.main {
+  margin-top: 50px;
+  margin-left: 300px;
+  height: 400px;
+  width: 450px;
+  background-color: white;
+}
+.main .one {
+  height: 85px;
+  width: 110px;
+  margin-top: 30px;
+  margin-left: 3px;
+  background-color: #CF3ADA;
+  position: absolute;
+}
+.main .two {
+  height: 80px;
+  width: 140px;
+  margin-top: 35px;
+  margin-left: 170px;
+  background-color: #60A195;
+  position: absolute;
+}
+.main .three {
+  height: 110px;
+  width: 110px;
+  margin-top: 7px;
+  margin-left: 338px;
+  background-color: #C5D9BB;
+  position: absolute;
+}
+.main .four {
+  height: 70px;
+  width: 117px;
+  margin-top: 190px;
+  margin-left: 3px;
+  background-color: #E42ECE;
+  position: absolute;
+}
+.main .five {
+  height: 100px;
+  width: 90px;
+  margin-top: 160px;
+  margin-left: 170px;
+  background-color: #D79657;
+  position: absolute;
+}
+.main .six {
+  height: 110px;
+  width: 100px;
+  margin-top: 150px;
+  margin-left: 338px;
+  background-color: #BAB6B4;
+  position: absolute;
+}
+.main .seven {
+  height: 110px;
+  width: 80px;
+  margin-top: 284px;
+  margin-left: 3px;
+  background-color: #688D50;
+  position: absolute;
+}
+.main .eight {
+  height: 110px;
+  width: 110px;
+  margin-top: 284px;
+  margin-left: 170px;
+  background-color: #7525C3;
+  position: absolute;
+}
+.main .nine {
+  height: 110px;
+  width: 90px;
+  margin-top: 284px;
+  margin-left: 338px;
+  background-color: #4BDDB9;
+  position: absolute;
+}

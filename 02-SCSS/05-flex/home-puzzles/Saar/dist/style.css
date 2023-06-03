@@ -1,0 +1,84 @@
+body {
+  width: 100vw;
+  margin: 0 auto;
+}
+
+nav {
+  width: 90%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 10px auto 0 auto;
+}
+nav .logo {
+  width: 30px;
+}
+nav .nav-button {
+  border-radius: 20px 20px 20px 20px;
+  border: none;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  height: 40px;
+  width: 60px;
+  font-weight: 500;
+}
+nav .nav-button:hover {
+  background-color: black;
+  color: white;
+}
+nav form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav form input {
+  width: 1200px;
+  height: 40px;
+  border-radius: 20px 20px 20px 20px;
+  border: none;
+  background-color: #cfcfcf;
+  color: black;
+  outline: none;
+}
+nav form input[type=text] {
+  padding-left: 30px;
+}
+nav form button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  mix-blend-mode: color-burn;
+  position: relative;
+  left: 30px;
+}
+nav .profile {
+  border-radius: 50%;
+  border: 0;
+  height: 30px;
+  width: 30px;
+  background-color: purple;
+  color: white;
+  cursor: pointer;
+}
+
+.container {
+  width: 90%;
+  margin: 10px auto;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.container img {
+  width: 100%;
+  border-radius: 20px 20px 20px 20px;
+  object-fit: cover;
+  max-width: 300px;
+}
+.container .column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
