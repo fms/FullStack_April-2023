@@ -1,0 +1,135 @@
+.body {
+  background-color: #cbdcdc;
+  font-family: "Segoe UI";
+  align-content: center;
+  width: 750px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.text {
+  flex-basis: 10em;
+  background-color: #e3ebeb;
+  height: 100px;
+}
+
+.MainFlex {
+  width: 750px;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  margin-left: 1em;
+  justify-content: space-between;
+}
+
+.flexhead {
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 1em;
+  justify-content: space-between;
+}
+
+.flexside {
+  width: 210px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 1em;
+  justify-content: space-between;
+  color: antiquewhite;
+  background-color: burlywood;
+  height: 400px;
+}
+
+.Grey {
+  background-color: #ece2e2;
+  height: 20%;
+  background-image: url(../bullet.svg);
+  background-size: 15%;
+  background-repeat: no-repeat;
+  background-position: right;
+  color: black;
+  font-size: 80%;
+  text-align: center;
+}
+
+.Dark {
+  background-color: #b5aaaa;
+  height: 20%;
+  background-image: url(../bullet.svg);
+  background-size: 15%;
+  background-repeat: no-repeat;
+  background-position: 5px;
+  color: black;
+  background-position: right;
+  font-size: 80%;
+  text-align: center;
+}
+
+.child1 {
+  flex-basis: 10em;
+  background-image: url(../1.jpg);
+  height: 100px;
+  margin-top: 10px;
+  position: static;
+  background-position: center;
+  background-size: contain;
+}
+
+.child2 {
+  flex-basis: 10em;
+  background-image: url(../2.jpg);
+  width: 33%;
+  margin-top: 10px;
+  background-position: center;
+  background-size: contain;
+}
+
+.child3 {
+  flex-basis: 10em;
+  background-image: url(../3.jpg);
+  margin-top: 10px;
+  background-position: center;
+  background-size: contain;
+}
+
+.child4 {
+  flex-basis: 10em;
+  background-image: url(../4.jpg);
+  height: 100px;
+  margin-top: 10px;
+  background-position: center;
+  background-size: contain;
+}
+
+.child5 {
+  flex-basis: 10em;
+  background-image: url(../5.jpg);
+  margin-top: 10px;
+  background-position: center;
+  background-size: contain;
+}
+
+.child6 {
+  border: 1px;
+  border-color: blue;
+  border-style: dashed;
+  flex-basis: 10em;
+  background-image: url(../6.jpg);
+  margin-top: 10px;
+  background-position: center;
+  background-size: contain;
+}
+
+.first_child {
+  background-image: url(../head.jpg);
+  flex-basis: 100%;
+  background-size: cover;
+  background-position: center;
+  height: 350px;
+  width: 250px;
+  text-align: center;
+  color: black;
+  text-shadow: 4px 4px 4px #c7ff20;
+}

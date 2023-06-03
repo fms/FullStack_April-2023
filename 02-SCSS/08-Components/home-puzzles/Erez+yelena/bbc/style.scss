@@ -140,40 +140,67 @@ body{
 }
    }
             
-.box {
-    display: flex;
-    flex-direction: column;
-    color: black;
-    flex: 1;
-}
-.main_text{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-style: bold;
-}
-.reels{
-    background-image: url("https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/Zugpsitze_mountain.jpg?crop=0%2C176%2C3008%2C1654&wid=4000&hei=2200&scl=0.752")
-}
+.sport{
     
-
-h2{
-    color: white;
-            }
-.reels_box {
-    margin:auto;
-    width: 80%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    width: 100%;
+}
+.main{
+    border-left: 5px solid yellow;
+    margin-bottom: 20px;
+    padding: 5px;   
+}
+.container{
     display: flex;
-    column-gap: 10px;
-    } 
-.sports {
-    margin:auto;
-    width: 80%;
-    display: flex;
-    column-gap: 10px;
-    }              
-p{
+    width: 100%;
+    background-color: white;
+    flex-wrap: wrap;
+    gap: 20px;
+    
+}
+.column{
+    flex-wrap: wrap;
+    width: 425px;
+}
+.column img{
+    width: 100%;
+    height: 200px;
+}
+.column h1{
+    font-size: 22.5px;
+    margin-top: 5px;
+}
+.column p{
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+.name{
     font-size: 15px;
+    border-left: 5px solid yellow;
     margin-top: 10px;
-    border-left: solid;
-    padding-left: 2px;
-    border-color: rgb(217, 255, 0);
+    padding: 5px;
+}
+.weather{
+    display: flex;
+    width: 100%;
+    background-color: white;
+    padding-top: 30px;
+    gap: 25px;
+}
+.headline{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25rem;
+
+}
+.edit{
+    width: 25px;
+    background-color: rgb(212, 208, 208);
+    font-size: 12px;
+    padding-top: 5px;
+    color: gray;
+}
+.icons{
+    margin-left: -10px;
+}
 }

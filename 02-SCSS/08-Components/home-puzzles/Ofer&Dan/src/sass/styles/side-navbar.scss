@@ -1,0 +1,51 @@
+.side-navbar {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 100vw;
+  hr{
+    margin: 10px 0;
+    border-color: rgb(83, 82, 82);
+    
+  }
+  &__youtubelogo {
+    display: flex;
+    & > a {
+      img {
+        position: relative;
+        top: 40px;
+        width: 30px;
+        filter: invert(1) sepia(10) saturate(0) hue-rotate(175deg);
+      }
+    }
+    .youtube-image {
+      width: 170px;
+    }
+  }
+  &__buttons {
+    background-color: $main-background-color;
+    color: $main-text-color;
+    font-weight: $regular-font-size;
+    font-family: $main-font-family;
+    font-size: 15px;
+    padding-left: 10px;
+
+    height: 40px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    margin: 1px 5px;
+   
+    &:hover{
+      background-color: rgb(57, 57, 57);
+      cursor: pointer;
+    }
+    img {
+      width: 30px;
+      overflow: hidden;
+    }
+  }
+}
