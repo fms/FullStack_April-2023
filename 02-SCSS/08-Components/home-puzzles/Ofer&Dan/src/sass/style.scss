@@ -1,7 +1,13 @@
-@forward 'styles';
+@import "styles/config";
+@import "styles/colors";
+@import "styles/typography";
 
-body{
+body {
   background-color: $main-background-color;
-  width: 90vw;
-  height: 90vw;
+  margin: auto;
+  padding: 0 10px;
+  font-family: $main-font-family;
 }
+
+@import 'styles/side-navbar';
+
