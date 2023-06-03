@@ -44,9 +44,21 @@
 .logoHeader {
     @include flexed();
     @include defaults();
+    flex-grow: 1;
 
-    &__israel * {
+    img {
+        height: 50px;
+    }
+
+    &--israel {
         width: 22rem;
-        height: auto;
+    }
+
+    &--USA {
+        width: 70rem;
+    }
+
+    a {
+        color: green;
     }
 }

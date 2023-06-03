@@ -59,8 +59,17 @@
   margin: auto;
   width: 100%;
   height: 50px;
+  flex-grow: 1;
 }
-.logoHeader__israel * {
+.logoHeader img {
+  height: 50px;
+}
+.logoHeader--israel {
   width: 22rem;
-  height: auto;
+}
+.logoHeader--USA {
+  width: 70rem;
+}
+.logoHeader a {
+  color: green;
 }
