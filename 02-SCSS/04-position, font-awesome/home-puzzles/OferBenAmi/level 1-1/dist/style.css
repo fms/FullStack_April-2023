@@ -1,0 +1,76 @@
+.inside-div {
+  margin-top: 30px;
+}
+
+.all {
+  display: inline-block;
+}
+
+.first {
+  position: relative;
+  width: 100px;
+  height: 80px;
+  background-color: #be3fbe;
+}
+
+.second {
+  position: relative;
+  width: 120px;
+  height: 80px;
+  left: 30px;
+  background-color: #189797;
+}
+
+.third {
+  position: relative;
+  width: 100px;
+  height: 110px;
+  left: 50px;
+  background-color: #8cbeae;
+}
+
+.forth {
+  position: relative;
+  width: 110px;
+  height: 80px;
+  background-color: #d726e7;
+}
+
+.fifth {
+  position: relative;
+  width: 70px;
+  height: 95px;
+  left: 20px;
+  background-color: #d6905d;
+}
+
+.sixth {
+  position: relative;
+  width: 88px;
+  height: 96px;
+  left: 90px;
+  background-color: #a3a3a3;
+}
+
+.seventh {
+  position: relative;
+  width: 80px;
+  height: 96px;
+  background-color: #53aa53;
+}
+
+.eighth {
+  position: relative;
+  width: 100px;
+  height: 80px;
+  left: 48px;
+  background-color: purple;
+}
+
+.ninth {
+  position: relative;
+  width: 77px;
+  height: 96px;
+  left: 90px;
+  background-color: #39d3c4;
+}

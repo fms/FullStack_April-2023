@@ -1,0 +1,13 @@
+@import "styles/config";
+@import "styles/colors";
+@import "styles/typography";
+
+body {
+  background-color: $main-background-color;
+  margin: auto;
+  padding: 0 10px;
+  font-family: $main-font-family;
+}
+
+@import 'styles/side-navbar';
+

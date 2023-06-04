@@ -1,0 +1,75 @@
+.container {
+    background-color: black;
+
+}
+
+.column_1 {
+    position: absolute;
+    left: 100px;
+}
+
+.column_2 {
+    position: absolute;
+    left: 300px;
+}
+
+.column_3 {
+    position: absolute;
+    left: 500px;
+}
+
+.base_element {
+    border: solid black 1px;
+    margin: 10px;
+}
+
+.cube {
+    height: 100px;
+    width: 100px;
+}
+
+.rectangle_ls {
+    height: 100px;
+    width: 150px;
+}
+
+.rectangle_ver {
+    height: 150px;
+    width: 100px;
+}
+
+.a {
+    background-color: violet;    
+}
+
+.b{
+    background-color: fuchsia;
+}
+
+.c{
+    background-color: darkgreen;
+}
+
+.d{
+    background-color: green;
+}
+
+.e{
+    background-color: burlywood;
+}
+
+.f{
+    background-color: purple;
+}
+
+.g{
+    background-color: beige;
+}
+
+.h{
+    background-color: gray;
+}
+
+.i{
+    background-color: aqua;
+}

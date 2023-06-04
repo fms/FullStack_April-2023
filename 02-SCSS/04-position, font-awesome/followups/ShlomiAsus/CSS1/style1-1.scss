@@ -1,0 +1,67 @@
+$mytop: 20px;
+
+.boxLong:hover {
+    background-color: rgb(0, 0, 0);
+    color: rgb(243, 0, 231);
+    background-size: contain;
+    background-image: url(soldier.jpg);
+
+}
+
+.boxWidth:hover {
+    background-color: rgb(0, 0, 0);
+    color: rgb(243, 0, 231);
+    background-size: contain;
+    background-image: url(soldier.jpg);
+
+}
+
+
+.Container {
+    border-color: black;
+    border-style: outset;
+    background-image: url("https://ichef.bbci.co.uk/news/976/cpsprodpb/10C19/production/_128433686_m1abramtank.jpg.webp");
+    margin: 15px;
+    width: 520px;
+    //text-align: center;
+ 
+}
+
+.row2 {
+    display: inline-block;
+    margin: 10px;
+    position: relative;
+}
+
+.box {
+    height: 120px;
+    width: 100px;
+    top: $mytop;
+}
+
+.boxLong {
+    height: 140px;
+    width: 100px;
+
+}
+
+.boxWidth {
+    height: 105px;
+    width: 150px;
+    top: 35px;
+}
+
+.boxCenter {
+    height: 120px;
+    width: 80px;
+    margin: 10px;
+    position: relative;
+    top: 20px;
+}
+
+.square {
+    height: 110px;
+    width: 110px;
+    position: relative;
+    top: 30px;
+}

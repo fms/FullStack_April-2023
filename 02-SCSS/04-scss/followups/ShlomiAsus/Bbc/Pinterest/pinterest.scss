@@ -1,0 +1,203 @@
+$Flex_child: 10em;
+$Img_Marg: 10px;
+
+.body {
+    background-color: rgb(203, 220, 220);
+    font-family: 'Segoe UI';
+    align-content: center;
+    width: 750px;
+    margin: auto;
+    margin-top: 20px;
+
+
+}
+
+.text {
+    //   border: 1px;
+    //   border-color: blue;
+    //   border-style: dashed;
+    flex-basis: $Flex_child;
+    background-color: rgb(227, 235, 235);
+    height: 100px;
+
+
+}
+
+.MainFlex {
+    width: 750px;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    //   border: 3px;
+    //    border-color: rgb(255, 255, 255);
+    //    border-style: dashed;
+    // gap: 5px;
+    margin-left: 1em;
+    justify-content: space-between;
+}
+
+.flexhead {
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    //   border: 3px;
+    //    border-color: rgb(232, 80, 80);
+    //    border-style: inset;
+    //    gap: 5px;
+    margin-left: 1em;
+    justify-content: space-between;
+    //   justify-content: flex-end;
+}
+
+.flexside {
+    width: 210px;
+    display: flex;
+    flex-direction: column;
+    //   flex-wrap: wrap;
+    //  border: 1px;
+    //  border-color: rgb(4, 113, 15);
+    //  border-style: inset;
+    //gap: 5px;
+    margin-left: 1em;
+    justify-content: space-between;
+    color: antiquewhite;
+    background-color: burlywood;
+    height: 400px;
+}
+
+.Grey {
+    background-color: rgb(236, 226, 226);
+    height: 20%;
+    background-image: url(../bullet.svg);
+    background-size: 15%;
+    background-repeat: no-repeat;
+    background-position: right;
+    color: black;
+    font-size: 80%;
+    text-align: center;
+
+
+
+}
+
+.Dark {
+    background-color: rgb(181, 170, 170);
+    height: 20%;
+    background-image: url(../bullet.svg);
+    background-size: 15%;
+    background-repeat: no-repeat;
+    background-position: 5px;
+    color: black;
+    background-position: right;
+    font-size: 80%;
+    text-align: center;
+
+
+}
+
+.child1 {
+    //   border: 1px;
+    // border-color: blue;
+    //    border-style: dashed;
+    flex-basis: $Flex_child;
+    background-image: url(../1.jpg);
+    height: 100px;
+    margin-top: $Img_Marg;
+    position: static;
+    background-position: center;
+    background-size: contain;
+
+}
+
+.child2 {
+    //  border: 1px;
+    //  border-color: blue;
+    //   border-style: dashed;
+    flex-basis: $Flex_child;
+    background-image: url(../2.jpg);
+    width: 33%;
+    margin-top: $Img_Marg;
+    background-position: center;
+    background-size: contain;
+
+
+
+}
+
+.child3 {
+    //   border: 1px;
+    //   border-color: blue;
+    //   border-style: dashed;
+    flex-basis: $Flex_child;
+    background-image: url(../3.jpg);
+    margin-top: $Img_Marg;
+    background-position: center;
+    background-size: contain;
+
+
+
+
+
+
+}
+
+.child4 {
+    //   border: 1px;
+    //  border-color: blue;
+    //    border-style: dashed;
+    flex-basis: $Flex_child;
+    background-image: url(../4.jpg);
+    height: 100px;
+    margin-top: $Img_Marg;
+    background-position: center;
+    background-size: contain;
+
+
+
+}
+
+.child5 {
+    //   border: 1px;
+    //   border-color: blue;
+    //   border-style: dashed;
+    flex-basis: $Flex_child;
+    background-image: url(../5.jpg);
+    margin-top: $Img_Marg;
+    background-position: center;
+    background-size: contain;
+
+
+
+}
+
+.child6 {
+    border: 1px;
+    border-color: blue;
+    border-style: dashed;
+    flex-basis: $Flex_child;
+    background-image: url(../6.jpg);
+    margin-top: $Img_Marg;
+    background-position: center;
+    background-size: contain;
+
+
+}
+
+.first_child {
+    background-image: url(../head.jpg);
+    //   border: 0.1em;
+    //   border-style: outset;
+    flex-basis: 100%;
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+    width: 250px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    text-shadow: 4px 4px 4px #c7ff20;
+
+
+
+    //position:absolute;
+}

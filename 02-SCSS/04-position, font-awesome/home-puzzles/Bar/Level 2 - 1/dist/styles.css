@@ -1,0 +1,43 @@
+.wrapper {
+  margin: 0;
+}
+
+.color {
+  width: 600px;
+  height: 600px;
+}
+
+.green {
+  background-color: green;
+  position: relative;
+  left: 1100px;
+  top: 400px;
+}
+
+.orange {
+  background-color: orange;
+  position: absolute;
+  right: 70px;
+  bottom: 200px;
+}
+
+.yellow {
+  background-color: yellow;
+  position: absolute;
+  right: 200px;
+  bottom: 90px;
+}
+
+.purple {
+  background-color: purple;
+  position: absolute;
+  right: 200px;
+  top: 120px;
+}
+
+.blue {
+  background-color: blue;
+  position: absolute;
+  right: 500px;
+  bottom: 190px;
+}

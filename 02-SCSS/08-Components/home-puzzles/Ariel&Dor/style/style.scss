@@ -1,0 +1,98 @@
+@import './config';
+
+// @mixin  basic($width: 250px, $height: 100px) {
+//   width: $width;
+//   height: $height;
+// };
+
+// Nav bar
+.navb {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  background-color: rgb(46, 44, 45);
+  color: white;
+  font-family: sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.3px;
+
+  .icon {
+    
+    .img__divver__icon {
+      background-color: rgb(0, 122, 184);
+      display: flex;
+      justify-content: space-around;
+      width: 220px;
+      
+      .img__icon-1 {
+        height: 90px;
+      }
+    }
+  }
+
+  .center_navb {
+    width: 100%;
+    background-color: rgb(46, 44, 45);
+    
+    .ul__center__navb {
+      display: flex;
+      justify-content: space-evenly;
+      list-style: none;
+      direction: rtl;
+      padding-left: 80px;
+
+      .ul__center__navb-li{
+        padding: 35px 0 ;
+      }
+    }
+  }
+
+  .search__navb {
+    padding: 35px 35px 35px 0;
+    background-color: rgb(46, 44, 45);
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// @import './navi.scss';
+
+.spacer {
+  padding-bottom: 5000px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

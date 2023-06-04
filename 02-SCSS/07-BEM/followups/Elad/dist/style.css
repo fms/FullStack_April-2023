@@ -1,7 +1,96 @@
-.TopImages {
-  margin-right: 20px;
-  justify-content: center;
+html,
+body {
+  height: 100%;
+  margin: 0;
 }
-.TopImages__images--marked {
-  border: dashed red 7px;
+
+.main {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}
+
+.searchbar {
+  position: fixed;
+  height: 64px;
+  width: 100%;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  float: left;
+  align-items: left;
+}
+
+.pinlogo {
+  height: 30px;
+  width: 30px;
+  margin-left: 5%;
+  margin-top: 1%;
+  margin-bottom: -0.4%;
+}
+
+.homebutton {
+  height: 20px;
+  width: 80px;
+  margin-left: 2%;
+  font-weight: bolder;
+  font-size: small;
+  margin-bottom: 90px;
+  background-color: transparent;
+  border: none;
+  max-width: 40%;
+}
+
+.homebutton {
+  background-color: black;
+  border: none;
+  border-radius: 35%;
+  color: white;
+  height: 44px;
+}
+
+.createbutton {
+  height: 20px;
+  width: 80px;
+  margin-left: 2%;
+  font-weight: bolder;
+  font-size: small;
+  margin-bottom: 90px;
+  background-color: transparent;
+  border: none;
+  max-width: 40%;
+  font-size: 15.3px;
+}
+
+.imgpos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  gap: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.imgpos img {
+  width: 100%;
+}
+
+.img {
+  border: 0;
+  height: auto;
+  vertical-align: middle;
+  border-radius: 10%;
+  position: center;
+}
+
+.searchbar input[type=text] {
+  display: flex;
+  justify-content: flex-start;
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 12px;
+  margin-right: 25%;
+  font-size: 17px;
+  height: 30px;
+  width: 50%;
+  background-color: #dddada;
+  border-radius: 10%;
 }

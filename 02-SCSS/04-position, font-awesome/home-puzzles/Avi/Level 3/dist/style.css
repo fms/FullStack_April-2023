@@ -1,0 +1,42 @@
+body {
+  background-color: black;
+}
+
+.main {
+  height: 900px;
+  width: 900px;
+  margin-left: 500px;
+  background-color: white;
+}
+.main .box {
+  height: 550px;
+  width: 400px;
+  position: absolute;
+}
+.main .blue {
+  margin: 20px;
+  background-color: #009CD9;
+}
+.main .yellow {
+  margin-left: 220px;
+  margin-top: 100px;
+  background-color: #E9EA6A;
+  z-index: 2;
+}
+.main .orange {
+  margin-left: 350px;
+  margin-top: 180px;
+  background-color: #FCB426;
+  z-index: 1;
+}
+.main .green {
+  margin-left: 430px;
+  margin-top: 340px;
+  background-color: #B5D337;
+}
+.main .pink {
+  margin-left: 90px;
+  margin-top: 300px;
+  background-color: #EF68A5;
+  z-index: 3;
+}
