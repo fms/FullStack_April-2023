@@ -1,0 +1,16 @@
+.one {
+  animation-name: one;
+  animation-duration: 10s;
+  background-color: blue;
+  width: 80px;
+  height: 80px;
+}
+
+@keyframes one {
+  from {
+    background-color: aqua;
+  }
+  to {
+    background-color: red;
+  }
+}
