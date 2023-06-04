@@ -1,0 +1,72 @@
+.box {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: purple;
+  animation-name: left-right;
+  animation-duration: 5s;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  margin-top: 10px;
+  animation-timing-function: ease-in-out;
+}
+
+.rotate {
+  animation-name: rotate, left-right;
+  border-radius: 10px 0 0 0;
+}
+
+.scale-up-hor-left {
+  animation: scale-up-hor-left 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) scale(200%);
+  }
+}
+.multiple {
+  animation-name: multiple;
+  animation-timing-function: cubic-bezier(1, 0.44, 0, -1);
+}
+
+@keyframes multiple {
+  0% {
+    background-color: yellow;
+    left: 0px;
+  }
+  25% {
+    top: 0px;
+  }
+  75% {
+    top: 300px;
+  }
+  100% {
+    background-color: red;
+    left: 800px;
+    top: 0px;
+  }
+}
+@keyframes left-right {
+  from {
+    background-color: yellow;
+    left: 0px;
+  }
+  to {
+    background-color: red;
+    left: 800px;
+  }
+}
+@keyframes scale-up-hor-left {
+  0% {
+    transform: scaleX(0.4);
+    transform-origin: 0% 0%;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: 0% 0%;
+  }
+}
