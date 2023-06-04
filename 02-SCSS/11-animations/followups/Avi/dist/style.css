@@ -15,7 +15,7 @@ body {
     background-color: cadetblue;
   }
   to {
-    background-color: darkorange;
+    background-color: red;
   }
 }
 
@@ -49,21 +49,21 @@ body {
     background-color: #1053ac;
   }
   to {
-    background-color: #a52847;
+    background-color: #be05be;
   }
 }
 
 .D {
   height: 100px;
   width: 100px;
-  background-color: darkblue;
+  background-color: #008b84;
   animation-duration: 5s;
   animation-name: four;
   animation-iteration-count: infinite;
 }
 @keyframes four {
   from {
-    background-color: #da0909;
+    background-color: #8074a1;
   }
   to {
     background-color: #b41e1e;
