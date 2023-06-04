@@ -38,17 +38,22 @@ body{
      margin-top: -25px;
      position: absolute;
      h2{
-        font-size: 22px;
+        font-size: 15px;
         margin-left: 30px;
-        margin-top: -20px;
+        margin-top: -18px;
      }
     }
     }
     .down{
     width: 100%;
     height: 68px;}
+    h2{
+        position: absolute;
+        font-size: 35px;
+        margin-top: 20px;
+        margin-left: 340px;
+    }
    }
-
   .padding{padding: 10px;}
 
    .block1{
@@ -139,6 +144,19 @@ body{
     }
 }
    }
+
+   .middlearticle{
+       width: 1230px;
+       margin: auto;
+       display: block;
+    .middleartin{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        height: 405px;
+        background-image: url(https://i.ytimg.com/vi/gb4TuKZGjB0/maxresdefault.jpg);
+    }
+  }
             
 .sport{
     
