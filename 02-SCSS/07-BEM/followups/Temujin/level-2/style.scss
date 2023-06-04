@@ -1,0 +1,25 @@
+.head{
+    display: flex;
+    flex-direction: row;
+}
+
+.container-1{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 62%; /* Adjust the width as needed */
+    height: 100%; /* Adjust the height as needed */
+    background-color: #ccc;
+}
+
+.box-1{
+    position: relative;
+}
+
+  
+.image-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 18px;
+}
