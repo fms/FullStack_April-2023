@@ -24,9 +24,24 @@ body {
   width: 80px;
   margin-left: 2%;
   font-weight: bolder;
-  font-size: large;
+  font-size: small;
   margin-bottom: 90px;
   background-color: transparent;
   border: none;
   max-width: 40%;
+}
+
+@mixin defaultsearchbar {
+    display: flex; 
+    justify-content: flex-start;
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 12px;
+    margin-right: 25%;
+    font-size: 17px;
+    height: 30px;
+    width: 50%;
+    background-color: rgb(221, 218, 218);
+    border-radius: 10%;
 }

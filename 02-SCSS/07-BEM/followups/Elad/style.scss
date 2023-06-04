@@ -12,41 +12,53 @@
     background-color: #f1f1f1;
     float: left;
     align-items: left;
-  }
-  //.searchbar a:hover {
-  //   background-color: #ddd;
-  //  color: black;
-  //}
-  .pinlogo {
+}
+
+//.searchbar a:hover {
+//   background-color: #ddd;
+//  color: black;
+//}
+.pinlogo {
     height: 30px;
     width: 30px;
     margin-left: 5%;
     margin-top: 1%;
     margin-bottom: -0.4%;
-  }
-  .homebutton {
+}
+
+.homebutton {
     @include defaultnavbarset;
-  }
-  .homebutton {
+}
+
+.homebutton {
     background-color: black;
     border: none;
     border-radius: 35%;
     color: white;
     height: 44px;
-  }
-  .createbutton {
+}
+
+.createbutton {
     @include defaultnavbarset;
-  }
-  .imgpos {
+    font-size: 15.3px;
+}
+
+.imgpos {
     display: grid;
-    grid-template-columns:repeat(auto-fit, minmax(min(220px, 100%), 1fr));
-    gap:10px;
+    grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+    gap: 10px;
     margin-left: 10px;
     margin-right: 10px;
+
     img {
-      width: 100%;
+        width: 100%;
     }
-  }
-  .img {
+}
+
+.img {
     @include idealpic;
-  }
+}
+
+.searchbar input[type=text] {
+    @include defaultsearchbar
+}
