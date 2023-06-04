@@ -1,0 +1,108 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+}
+
+@keyframes bottom {
+  0% {
+    top: 0;
+  }
+
+  100% {
+    top: 1000px;
+  }
+}
+
+.animation {
+  // background-color: black;
+  border-radius: 50%;
+  margin: auto;
+  position: fixed;
+  height: 200px;
+  width: 200px;
+}
+
+.a {
+  background-color: blue;
+  animation-iteration-count: infinite;
+  animation-name: bottom;
+  animation-duration: 3s;
+}
+
+.b {
+  background-color: rgb(26, 26, 255);
+  animation-iteration-count: infinite;
+
+  animation-name: bottom;
+  animation-delay: 0.3s;
+  animation-duration: 3s;
+}
+
+.c {
+  background-color: rgb(43, 43, 248);
+  animation-iteration-count: infinite;
+
+  animation-name: bottom;
+  animation-delay: 0.6s;
+  animation-duration: 3s;
+}
+
+.d {
+  background-color: rgb(53, 53, 245);
+  animation-iteration-count: infinite;
+
+  animation-name: bottom;
+  animation-delay: 0.9s;
+  animation-duration: 3s;
+}
+
+.e {
+  background-color: rgb(63, 63, 252);
+  animation-iteration-count: infinite;
+
+  animation-name: bottom;
+  animation-delay: 1.2s;
+  animation-duration: 3s;
+}
+
+.f {
+  background-color: rgb(68, 68, 250);
+  animation-iteration-count: infinite;
+  animation-name: bottom;
+  animation-delay: 1.5s;
+  animation-duration: 3s;
+}
+
+.g {
+  background-color: rgb(84, 84, 253);
+  animation-iteration-count: infinite;
+  animation-name: bottom;
+  animation-delay: 1.8s;
+  animation-duration: 3s;
+}
+
+.h {
+  background-color: rgb(106, 106, 247);
+  animation-iteration-count: infinite;
+  animation-name: bottom;
+  animation-delay: 2.1s;
+  animation-duration: 3s;
+}
+
+.j {
+  background-color: rgb(101, 101, 252);
+  animation-iteration-count: infinite;
+  animation-name: bottom;
+  animation-delay: 2.4s;
+  animation-duration: 3s;
+}
+
+.k {
+  background-color: rgb(112, 112, 248);
+  animation-iteration-count: infinite;
+  animation-name: bottom;
+  animation-delay: 2.7s;
+  animation-duration: 3s;
+}
