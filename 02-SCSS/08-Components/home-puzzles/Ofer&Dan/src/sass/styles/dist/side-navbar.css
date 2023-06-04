@@ -12,6 +12,7 @@
 
 .side-navbar {
   position: fixed;
+  top: 74px;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
@@ -21,21 +22,6 @@
 .side-navbar hr {
   margin: 10px 0;
   border-color: #141516;
-}
-.side-navbar__youtubelogo {
-  display: flex;
-}
-.side-navbar__youtubelogo > a img {
-  position: relative;
-  top: 40px;
-  width: 30px;
-  filter: invert(1) sepia(10) saturate(0) hue-rotate(175deg);
-}
-.side-navbar__youtubelogo .youtube-image {
-  width: 170px;
-}
-.side-navbar__youtubelogo .youtube-image:hover {
-  cursor: pointer;
 }
 .side-navbar__buttons {
   background-color: #141516;

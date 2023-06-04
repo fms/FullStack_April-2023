@@ -4,8 +4,8 @@
 
 .side-navbar {
   position: fixed;
+  top:74px;
   overflow-y: scroll;
-
   display: flex;
   flex-direction: column;
   width: 220px;
@@ -17,26 +17,7 @@
 
   }
 
-  &__youtubelogo {
-    display: flex;
-
-    &>a {
-      img {
-        position: relative;
-        top: 40px;
-        width: 30px;
-        filter: invert(1) sepia(10) saturate(0) hue-rotate(175deg);
-      }
-    }
-
-    .youtube-image {
-      width: 170px;
-
-      &:hover {
-        cursor: pointer;
-      }
-    }
-  }
+  
 
   &__buttons {
     background-color: rgb(20, 21, 22);

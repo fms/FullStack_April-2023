@@ -2,16 +2,19 @@
 @import "styles/colors";
 @import "styles/typography";
 @import "styles/main-container.scss";
-html{
+
+html {
   scroll-behavior: smooth;
 }
+
 body {
   background-color: $main-background-color;
   margin: auto;
   padding: 0 10px;
   font-family: $main-font-family;
+
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
     border-radius: 3px;
   }
 
@@ -30,3 +33,4 @@ body {
 }
 
 @import 'styles/side-navbar';
+@import 'styles/top-navbar.scss';
