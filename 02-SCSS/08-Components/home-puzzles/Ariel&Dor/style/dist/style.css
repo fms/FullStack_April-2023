@@ -8,7 +8,6 @@
   position: fixed;
   width: 100%;
   background-color: #2e2c2d;
-  color: white;
   font-family: sans-serif;
   font-size: 20px;
   letter-spacing: 0.3px;
@@ -36,9 +35,22 @@
 .navb .center_navb .ul__center__navb .ul__center__navb-li {
   padding: 35px 0;
 }
+.navb .center_navb .ul__center__navb a {
+  text-decoration: none;
+  color: white;
+}
+.navb .center_navb .ul__center__navb a:hover {
+  color: #757569;
+}
 .navb .search__navb {
   padding: 35px 35px 35px 0;
   background-color: #2e2c2d;
+}
+.navb .search__navb input {
+  border: 1px solid #a5a5a5;
+  background: none;
+  height: 100%;
+  width: 100%;
 }
 
 .spacer {
