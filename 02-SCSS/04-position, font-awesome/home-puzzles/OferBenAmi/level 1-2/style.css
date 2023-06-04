@@ -1,0 +1,58 @@
+body > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+  -moz-column-count: 7;
+       column-count: 7;
+  gap: 20px;
+}
+
+.main {
+  width: 70px;
+  height: 70px;
+  background-color: red;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.blue {
+  background-color: cornflowerblue;
+}
+
+.purple {
+  background-color: rgb(171, 90, 211);
+}
+
+.pink {
+  background-color: rgb(233, 95, 141);
+}
+
+.turquoise {
+  background-color: rgb(135, 226, 217);
+}
+
+.orange {
+  background-color: rgb(245, 167, 22);
+}
+
+.lightorange {
+  background-color: rgb(255, 192, 74);
+}
+
+.green {
+  background-color: rgb(26, 155, 26);
+}
+
+.lightgreen {
+  background-color: greenyellow;
+}
+
+.brown {
+  background-color: burlywood;
+}/*# sourceMappingURL=style.css.map */

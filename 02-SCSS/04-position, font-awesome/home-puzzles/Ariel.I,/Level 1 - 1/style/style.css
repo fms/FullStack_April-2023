@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+}
+
+.main {
+  padding: 15px;
+}
+
+.row1 .purple {
+  background-color: rgb(207, 58, 218);
+  width: 150px;
+  height: 100px;
+  position: relative;
+  top: 85px;
+  left: 340px;
+}
+.row1 .greyLight {
+  background-color: rgb(96, 161, 149);
+  width: 200px;
+  height: 100px;
+  position: relative;
+  left: 650px;
+  bottom: 45px;
+}
+.row1 .cream {
+  background-color: rgb(197, 217, 187);
+  width: 120px;
+  height: 130px;
+  position: relative;
+  left: 1000px;
+  bottom: 200px;
+}
+
+.row2 .anotherPurple {
+  background-color: rgb(228, 46, 206);
+  width: 160px;
+  height: 100px;
+  position: relative;
+  left: 340px;
+  bottom: 150px;
+}
+.row2 .mustard {
+  background-color: rgb(215, 150, 87);
+  width: 90px;
+  height: 110px;
+  position: relative;
+  left: 650px;
+  bottom: 285px;
+}
+.row2 .gray {
+  background-color: rgb(186, 182, 180);
+  width: 100px;
+  height: 115px;
+  position: relative;
+  left: 1000px;
+  bottom: 425px;
+}
+
+.row3 .olive {
+  background-color: rgb(104, 141, 80);
+  width: 100px;
+  height: 130px;
+  position: relative;
+  left: 340px;
+  bottom: 380px;
+}
+.row3 .darkPurple {
+  background-color: rgb(117, 37, 195);
+  width: 150px;
+  height: 110px;
+  position: relative;
+  left: 650px;
+  bottom: 515px;
+}
+.row3 .greenLight {
+  background-color: rgb(75, 221, 185);
+  width: 100px;
+  height: 140px;
+  position: relative;
+  left: 1000px;
+  bottom: 675px;
+}/*# sourceMappingURL=style.css.map */

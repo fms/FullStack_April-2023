@@ -1,0 +1,83 @@
+.wrapper {
+  margin: 0;
+}
+
+.color {
+  width: 300px;
+  height: 300px;
+}
+
+.row1 .green {
+  background-color: green;
+  position: relative;
+  left: 500px;
+  top: 50px;
+}
+.row1 .yellow {
+  background-color: yellow;
+  position: absolute;
+  opacity: 60%;
+  left: 200px;
+  top: 80px;
+}
+.row1 .brown {
+  background-color: burlywood;
+  position: absolute;
+  opacity: 80%;
+  left: 400px;
+}
+.row1 .red {
+  background-color: red;
+  position: absolute;
+  opacity: 70%;
+  left: 600px;
+  top: 110px;
+}
+.row1 .gray {
+  background-color: gray;
+  position: absolute;
+  left: 800px;
+  opacity: 70%;
+}
+
+.row2 .pink {
+  background-color: pink;
+  position: relative;
+  left: 500px;
+  top: 300px;
+}
+.row2 .purple {
+  background-color: purple;
+  position: absolute;
+  opacity: 80%;
+  left: 90px;
+  bottom: 100px;
+}
+.row2 .light-blue {
+  background-color: aqua;
+  position: absolute;
+  opacity: 60%;
+  left: 330px;
+  top: 80px;
+}
+.row2 .blue {
+  background-color: blue;
+  position: absolute;
+  opacity: 50%;
+  left: 500px;
+  bottom: 10px;
+}
+.row2 .gray {
+  background-color: gray;
+  position: absolute;
+  left: 700px;
+  top: 100px;
+  opacity: 70%;
+}
+.row2 .yellowgreen {
+  background-color: yellowgreen;
+  position: absolute;
+  left: 720px;
+  bottom: 50px;
+  opacity: 70%;
+}/*# sourceMappingURL=styles.css.map */
