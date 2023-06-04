@@ -6,6 +6,7 @@ html{
 
 .page{
   @include flexInItem();
+  padding-top:25px;
 }
 
 .container {
