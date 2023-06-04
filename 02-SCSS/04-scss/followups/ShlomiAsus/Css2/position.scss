@@ -1,0 +1,58 @@
+$myHeight:350px;
+$myWidth:300px;
+
+.body {     
+    background-color: antiquewhite;   
+}
+
+.Blue{
+    height: $myHeight;
+    width: $myWidth;
+    background-color: blue;
+    position: fixed;
+    border-style:outset;
+    border: 1px;
+}
+.Green{
+    height: $myHeight;
+    width: $myWidth;
+    top:250px;
+    left: 250px;
+    background-color: rgb(127, 175, 44);
+    position: fixed;
+    border-style:outset;
+    border: 1px;
+}
+
+.Orange{
+    height: $myHeight;
+    width: $myWidth;
+    background-color: orange;
+    position: fixed;
+    border-style:outset;
+    border: 1px;
+    left: 200px;
+    top: 150px;
+}
+.Pink{
+    left: 200px;
+    top: 150px;
+    height: $myHeight;
+    width: $myWidth;
+    background-color: rgb(238, 94, 195);
+    position: fixed;
+    border-style:outset;
+    border: 1px; 
+    top: 220px;
+    left: 50px;
+}
+.Yellow{
+    height: $myHeight;
+    width: $myWidth;
+    background-color: yellow;
+    position: fixed;
+    border-style:outset;
+    border: 1px;
+    left: 100px;
+    top: 50px;
+}
