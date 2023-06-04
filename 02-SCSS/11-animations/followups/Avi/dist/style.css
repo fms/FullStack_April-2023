@@ -1,0 +1,71 @@
+body {
+  display: flex;
+}
+
+.A {
+  height: 100px;
+  width: 100px;
+  background-color: darkgreen;
+  animation-duration: 5s;
+  animation-name: one;
+  animation-iteration-count: infinite;
+}
+@keyframes one {
+  from {
+    background-color: cadetblue;
+  }
+  to {
+    background-color: darkorange;
+  }
+}
+
+.B {
+  height: 100px;
+  width: 100px;
+  background-color: chartreuse;
+  animation-duration: 5s;
+  animation-name: tow;
+  animation-iteration-count: infinite;
+}
+@keyframes tow {
+  from {
+    background-color: #c41b45;
+  }
+  to {
+    background-color: #0ed1b7;
+  }
+}
+
+.C {
+  height: 100px;
+  width: 100px;
+  background-color: crimson;
+  animation-duration: 5s;
+  animation-name: three;
+  animation-iteration-count: infinite;
+}
+@keyframes three {
+  from {
+    background-color: #1053ac;
+  }
+  to {
+    background-color: #a52847;
+  }
+}
+
+.D {
+  height: 100px;
+  width: 100px;
+  background-color: darkblue;
+  animation-duration: 5s;
+  animation-name: four;
+  animation-iteration-count: infinite;
+}
+@keyframes four {
+  from {
+    background-color: #da0909;
+  }
+  to {
+    background-color: #b41e1e;
+  }
+}
