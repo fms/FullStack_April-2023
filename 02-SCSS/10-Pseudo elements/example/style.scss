@@ -1,0 +1,32 @@
+p:first-child::first-line {
+    color: blue;
+    text-transform: uppercase;
+}
+
+p::first-letter {
+    background-color: black;
+    color: white;
+    font-size: 2lh;
+    float: left;
+}
+
+p:hover::after {
+    content: "This is my lovely comment";
+    color: green;
+}
+
+// p:hover::before {
+//     content: "This is my lovely comment";
+//     color: red;
+// }
+
+label{
+    &::after {
+        content: "*";
+        color: red;
+        font-size: 16px;
+    }
+
+    // req::req
+}
+
