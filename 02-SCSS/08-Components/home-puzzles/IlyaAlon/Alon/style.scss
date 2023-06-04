@@ -1,0 +1,138 @@
+@import 'mixin.scss';
+
+html{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.page{
+  @include flexInItem();
+}
+
+.container {
+  @include random-border();
+  @include flexContainer($colGap:8px, $rowGap:25px, $flexWrap:wrap);
+
+  height: 1800px;
+  width:80%;
+
+
+  &__item {
+    @include random-border();
+
+    &:hover{
+      visibility: visible;
+      img{
+        filter: brightness(40%);
+        cursor:zoom-in;
+      }
+
+    }
+      
+    visibility: hidden;;
+    position: relative;
+    color: rgb(0, 0, 0);
+    width:18%;
+
+    &:nth-of-type(5n+1) { order: 1; }
+    &:nth-of-type(5n+2) { order: 2; }
+    &:nth-of-type(5n+3) { order: 3; }
+    &:nth-of-type(5n+4) { order: 4; }
+    &:nth-of-type(5n) { order: 5; }
+
+
+    &__top-row{
+      @include random-border();
+      @include flexContainer($direction:row-reverse, $justifyContent:space-around);
+
+      font-size: 16px;
+      margin-top:7px;
+      width:100%;
+      color:rgb(255, 255, 255);
+
+
+      &__save{
+        @include createOval(40px,60px ,50px ,red );
+        @include flexInItem();
+
+          &:hover{
+          filter: brightness(60%);
+          cursor:pointer;
+          }
+      }
+
+      &__board{
+        @include flexInItem();
+      }
+    }
+
+
+    &__bootom{
+      @include random-border();
+      @include flexContainer($direction:row-reverse, $justifyContent:space-around );
+
+      margin-bottom:7px;
+      font-size: 14px;
+      font-weight:bold;
+      width:100%;
+      color:rgb(0, 0, 0);
+      
+      &__more{
+      @include random-border();
+      @include flexInItem();
+      @include createOval(30px,30px ,50px ,lightgrey );
+      }
+
+
+      &__upload{
+      @include random-border();
+      @include createOval(30px,30px ,50px ,lightgrey );
+      @include flexInItem();
+
+        span{
+          font-size: 20px;
+        }
+
+      }
+
+      &__link{
+        @include random-border();
+        @include flexInItem(space-evenly);
+        @include createOval(30px,90px ,50px ,lightgrey );
+        span{
+          font-size: 20px;
+        }
+      }
+    }
+
+    img {
+      @include random-border();      
+      visibility:visible;
+      object-fit: contain;
+      width:100%;
+      height:100%;
+      border-radius: 10px;
+    }
+  }
+}
+
+  /* Force new columns */
+.break {
+  flex-basis: 100%;
+  width: 0;
+  margin: 0;
+}
+
+
+.bottom-left {
+position: absolute;
+bottom: 0px;
+left: 0px;
+}
+
+
+.top-left {
+position: absolute;
+top: 0px;
+left: 0px;
+}
+
