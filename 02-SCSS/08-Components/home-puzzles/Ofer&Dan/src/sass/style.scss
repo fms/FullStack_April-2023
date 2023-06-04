@@ -1,13 +1,32 @@
 @import "styles/config";
 @import "styles/colors";
 @import "styles/typography";
-
+@import "styles/main-container.scss";
+html{
+  scroll-behavior: smooth;
+}
 body {
   background-color: $main-background-color;
   margin: auto;
   padding: 0 10px;
   font-family: $main-font-family;
+  ::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $main-background-color;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #555;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #888;
+  }
+
 }
 
 @import 'styles/side-navbar';
-
