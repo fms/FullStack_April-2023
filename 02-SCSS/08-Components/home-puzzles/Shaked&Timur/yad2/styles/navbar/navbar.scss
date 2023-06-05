@@ -1,0 +1,27 @@
+.topnav {
+    background-color: none;
+    overflow: hidden;
+  }
+  
+  .topnav a {
+    margin-top: 10px;
+    float: right;
+    color: #000000;
+    text-align: center;
+    padding: 24px 26px;
+    text-decoration: none;
+    font-size: 40px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #dbdbdb;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: #358b59;
+    color: white;
+    border-radius: 100px;
+  }
+  

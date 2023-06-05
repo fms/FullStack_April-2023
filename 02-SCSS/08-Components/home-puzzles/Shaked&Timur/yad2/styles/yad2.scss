@@ -1,38 +1,7 @@
-.topnav {
-    background-color: none;
-    overflow: hidden;
-}
-
-.topnav a {
-    margin-top: 10px;
-    float: right;
-    color: #000000;
-    text-align: center;
-    padding: 24px 26px;
-    text-decoration: none;
-    font-size: 40px;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-    background-color: #dbdbdb;
-    color: black;
-}
-
-.topnav a.active {
-    background-color: #04AA6D;
-    color: white;
-    border-radius: 100px;
-}
-
-.banner {
-    float: right;
-
-    &__img {
-        padding: 60px;
-        margin-right: 50px;
-    }
-}
+@import "navbar/navbar";
+@import "articles/article";
+@import "banner/mainban";
+@import "mixin/mix";
 
 .flex {
     display: flex;
@@ -43,8 +12,7 @@
     margin-right: 150px;
 
     &__circles {
-        width: 300px;
-        height: 300px;
+        @include wi-he(300px, 300px);
         border-radius: 300px;
         background-color: rgb(235, 233, 233);
     }
@@ -67,29 +35,24 @@ p {
 
 
 p2 {
-    margin-top: 120px;
+    @include mar_l-r-t-b(0, 150px, 120px, 0);
     float: right;
-    margin-right: 150px;
     font-size: 60px;
 }
 
 .appbox {
-    margin-top: 10%;
-    margin-left: 120px;
-    width: 90%;
-    height: 200px;
+    @include mar_l-r-t-b(120px, 0, 10%, 0);
+    @include wi-he(90%, 200px);
     background-color: orange;
     border-radius: 20px;
     opacity: 70%;
 
     &__phone {
-        position: relative;
-        bottom: 100px;
-        left: 88%;
+        @include posty-t-b-l-r(relative, 1, 100px, 88%, 0);
     }
 
     &__text {
-        position: relative;
+        @include posty-t-b-l-r(relative, 1, 150px, 0, 0);
         color: rgb(255, 255, 255);
         font-size: 90px;
         bottom: 150px;
@@ -97,9 +60,8 @@ p2 {
     }
 
     &__buttons {
+        @include posty-t-b-l-r(relative, 1, 280px, 0, 0);
         display: flex;
-        position: relative;
-        bottom: 280px;
         margin-left: 7%;
 
         &__que {
@@ -159,56 +121,10 @@ p2 {
     }
 }
 
-.se-article {
-    float: right;
-
-    &__se-flex {
-        display: flex;
-        flex-wrap: wrap;
-        margin-left: 30px;
-    }
-
-    &__se-box {
-        margin-top: 250px;
-        float: right;
-        width: 550px;
-        height: 450px;
-        border: solid 1px rgb(219, 219, 219);
-        border-radius: 10px;
-    }
-
-    &__se-img {
-        align-items: first baseline;
-        border-radius: 40px;
-    }
-
-    &__se-text {
-        font-size: 40px;
-        color: rgb(114, 114, 114);
-        margin-left: 10px;
-    }
-
-    &__se-headtext {
-        font-size: 40px;
-        float: right;
-        color: rgb(54, 54, 54);
-        margin-left: 68%;
-    }
-
-    &__se-bottext {
-        font-size: 40px;
-        color: rgb(114, 114, 114);
-        margin-left: 100px;
-    }
-
-
-    &__se-box:hover {
-        box-shadow: rgb(216, 216, 216) 0px 0px 40px;
-    }
-}
 
 .bussines {
     float: right;
+
     &__bus-box {
         margin-top: 200px;
         margin-right: 100px;
@@ -219,16 +135,19 @@ p2 {
         border-radius: 10px;
         background-color: rgb(240, 240, 240);
     }
+
     &__bus-text {
         font-size: 60px;
         float: right;
         margin-top: 70px;
         margin-right: 100px;
     }
+
     &__bus-flex {
         display: flex;
         flex-wrap: wrap;
     }
+
     &__bu-box {
         float: right;
         margin-top: 60px;
@@ -239,11 +158,13 @@ p2 {
         box-shadow: 0px 0px 23px rgb(179, 176, 176);
         border-radius: 20px;
     }
+
     &__bus-instext {
         font-size: 40px;
         float: right;
         margin-top: 30px;
     }
+
     &__bus-arrow {
         position: relative;
         right: 160px;
@@ -251,52 +172,55 @@ p2 {
         font-size: 50px;
 
     }
+
     &__bus-img {
         margin-left: 200px;
     }
 }
 
-.question{
+.question {
     float: right;
-  &__ques-box{
-    margin-top: 200px;
-    margin-right: 100px;
-    float: right;
-    width: 90%;
-    height: 200px;
-    border: solid 1px rgb(219, 219, 219);
-    border-radius: 10px;
-    background-color: rgb(255, 255, 255);
-  }
-  &__ques-btext{
-    float: right;
-    margin-top: 50px;
-    margin-right: 140px;
-    font-size: 50px;
-  }
 
-  &__ques-stext{
-    margin-left: 350px;
-    text-align: center;
-    margin-top: 50px;
-    margin-right: 140px;
-    font-size: 40px;
-    color: gray;
-  }
+    &__ques-box {
+        margin-top: 200px;
+        margin-right: 100px;
+        float: right;
+        width: 90%;
+        height: 200px;
+        border: solid 1px rgb(219, 219, 219);
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+    }
 
-  &__ques-talkbox{
-    float: left;
-    border-radius: 30px;
-    border: solid 1px orange;
-    width: 400px;
-    height: 100px;
-    text-align: center;
+    &__ques-btext {
+        float: right;
+        margin-top: 50px;
+        margin-right: 140px;
+        font-size: 50px;
+    }
 
-  }
+    &__ques-stext {
+        margin-left: 350px;
+        text-align: center;
+        margin-top: 50px;
+        margin-right: 140px;
+        font-size: 40px;
+        color: gray;
+    }
 
-  &__ques-talktext{
-    font-size: 40px;
-    color: orange;
-    margin-top: 30px;
-  }
+    &__ques-talkbox {
+        float: left;
+        border-radius: 30px;
+        border: solid 1px orange;
+        width: 400px;
+        height: 100px;
+        text-align: center;
+
+    }
+
+    &__ques-talktext {
+        font-size: 40px;
+        color: orange;
+        margin-top: 30px;
+    }
 }

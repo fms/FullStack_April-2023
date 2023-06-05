@@ -1,0 +1,7 @@
+.banner {
+  float: right;
+}
+.banner__img {
+  padding: 60px;
+  margin-right: 50px;
+}

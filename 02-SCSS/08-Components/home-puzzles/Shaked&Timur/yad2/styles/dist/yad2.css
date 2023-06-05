@@ -20,9 +20,49 @@
 }
 
 .topnav a.active {
-  background-color: #04AA6D;
+  background-color: #358b59;
   color: white;
   border-radius: 100px;
+}
+
+.se-article {
+  float: right;
+}
+.se-article__se-flex {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 30px;
+}
+.se-article__se-box {
+  margin-top: 250px;
+  float: right;
+  width: 550px;
+  height: 450px;
+  border: solid 1px #dbdbdb;
+  border-radius: 10px;
+}
+.se-article__se-img {
+  align-items: first baseline;
+  border-radius: 40px;
+}
+.se-article__se-text {
+  font-size: 40px;
+  color: #727272;
+  margin-left: 10px;
+}
+.se-article__se-headtext {
+  font-size: 40px;
+  float: right;
+  color: #363636;
+  margin-left: 68%;
+}
+.se-article__se-bottext {
+  font-size: 40px;
+  color: #727272;
+  margin-left: 100px;
+}
+.se-article__se-box:hover {
+  box-shadow: #d8d8d8 0px 0px 40px;
 }
 
 .banner {
@@ -62,15 +102,19 @@ p {
 }
 
 p2 {
-  margin-top: 120px;
-  float: right;
+  margin-left: 0;
   margin-right: 150px;
+  margin-top: 120px;
+  margin-bottom: 0;
+  float: right;
   font-size: 60px;
 }
 
 .appbox {
-  margin-top: 10%;
   margin-left: 120px;
+  margin-right: 0;
+  margin-top: 10%;
+  margin-bottom: 0;
   width: 90%;
   height: 200px;
   background-color: orange;
@@ -79,20 +123,29 @@ p2 {
 }
 .appbox__phone {
   position: relative;
+  top: 1;
   bottom: 100px;
   left: 88%;
+  right: 0;
 }
 .appbox__text {
   position: relative;
+  top: 1;
+  bottom: 150px;
+  left: 0;
+  right: 0;
   color: white;
   font-size: 90px;
   bottom: 150px;
   margin-left: 25%;
 }
 .appbox__buttons {
-  display: flex;
   position: relative;
+  top: 1;
   bottom: 280px;
+  left: 0;
+  right: 0;
+  display: flex;
   margin-left: 7%;
 }
 .appbox__buttons__que {
@@ -140,46 +193,6 @@ p2 {
   color: #6b6b6b;
 }
 .popser__popbox:hover {
-  box-shadow: #d8d8d8 0px 0px 40px;
-}
-
-.se-article {
-  float: right;
-}
-.se-article__se-flex {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: 30px;
-}
-.se-article__se-box {
-  margin-top: 250px;
-  float: right;
-  width: 550px;
-  height: 450px;
-  border: solid 1px #dbdbdb;
-  border-radius: 10px;
-}
-.se-article__se-img {
-  align-items: first baseline;
-  border-radius: 40px;
-}
-.se-article__se-text {
-  font-size: 40px;
-  color: #727272;
-  margin-left: 10px;
-}
-.se-article__se-headtext {
-  font-size: 40px;
-  float: right;
-  color: #363636;
-  margin-left: 68%;
-}
-.se-article__se-bottext {
-  font-size: 40px;
-  color: #727272;
-  margin-left: 100px;
-}
-.se-article__se-box:hover {
   box-shadow: #d8d8d8 0px 0px 40px;
 }
 
