@@ -3,7 +3,59 @@
 @import "typography";
 
 .main-container {
-  margin-top: 13px;
+  margin-left: 220px;
+  padding: 10px;
+
+  &__topsuggestions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow-x: scroll;
 
 
+    &__buttons {
+      color: $main-text-color;
+      font-size: 14px;
+      flex-shrink: 0;
+      background-color: rgb(46, 48, 49);
+      border-radius: 10px;
+      padding: 8px;
+      margin: 5px 0;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: rgb(69, 71, 71);
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__videos {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    margin-left: 20px;
+
+    &__toprow {
+      
+
+      &__video {
+
+        width: 300px;
+        height: 300px;
+        overflow: hidden;
+
+        &>img {
+          width: 100%;
+          position: relative;
+          border-radius: 20px;
+          transition: border-radius 0.3s, scale 0.3s;
+
+          &:hover {
+            scale: 110%;
+          }
+        }
+      }
+    }
+  }
 }
