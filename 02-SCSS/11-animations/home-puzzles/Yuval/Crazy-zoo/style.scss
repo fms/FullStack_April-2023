@@ -1,0 +1,21 @@
+.wow {
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+}
+
+h1 {
+    color: black;
+    animation: color 3s infinite 0.5s;
+}
+
+.uv {
+    width: 45px;
+    height: 60px;
+    background-image: url(images/yuval-normal.jpg);
+    background-size: 7.5dvb;
+    animation: crazy 3s ease-in infinite 1s;
+}
+
+@import 'components/animals';
+@import 'components/animations';

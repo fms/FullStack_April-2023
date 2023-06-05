@@ -1,0 +1,33 @@
+.cat {
+    width: 250px;
+    height: 250px;
+    animation: cat 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+
+}
+
+.racc {
+    margin: center;
+    width: 220px;
+    height: 220px;
+    animation: racc 2s ease-out infinite both;
+}
+
+.chase {
+    display: flex;
+    flex-direction: row;
+}
+
+.lion {
+    width: 250px;
+    height: 250px;
+    background-image: url(images/lion-lying.jpg);
+    background-size: 52dvb;
+    animation: roar 3s infinite 2s; 
+}
+
+.zebra {
+    width: 250px;
+    height: 250px;
+    margin-left: 20px;
+    animation: run 3s infinite 2.5s;
+}
