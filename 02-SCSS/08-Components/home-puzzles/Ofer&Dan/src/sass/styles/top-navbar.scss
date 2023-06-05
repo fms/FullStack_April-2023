@@ -3,6 +3,17 @@
 @import "typography";
 
 .top-navbar {
+  position: fixed;
+  z-index: 3;
+  padding: 10px 0;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  background-color: $main-background-color;
+
   &__youtubelogo {
     display: flex;
     width: 220px;
@@ -25,11 +36,6 @@
       }
     }
   }
-
-  height: 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 
   &__searchbar-div {
     display: flex;

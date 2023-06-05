@@ -11,10 +11,16 @@
 }
 
 .top-navbar {
+  position: fixed;
+  z-index: 3;
+  padding: 10px 0;
   height: 60px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: nowrap;
+  background-color: #141516;
 }
 .top-navbar__youtubelogo {
   display: flex;

@@ -27,7 +27,9 @@
   padding: 10px;
 }
 .main-container__topsuggestions {
+  margin-top: 60px;
   display: flex;
+  z-index: 2;
   align-items: center;
   overflow-x: scroll;
   padding: 5px 0;
@@ -164,10 +166,16 @@ body ::-webkit-scrollbar-thumb:vertical {
 }
 
 .top-navbar {
+  position: fixed;
+  z-index: 3;
+  padding: 10px 0;
   height: 60px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: nowrap;
+  background-color: #141516;
 }
 .top-navbar__youtubelogo {
   display: flex;
@@ -272,7 +280,9 @@ body ::-webkit-scrollbar-thumb:vertical {
   padding: 10px;
 }
 .main-container__topsuggestions {
+  margin-top: 60px;
   display: flex;
+  z-index: 2;
   align-items: center;
   overflow-x: scroll;
   padding: 5px 0;

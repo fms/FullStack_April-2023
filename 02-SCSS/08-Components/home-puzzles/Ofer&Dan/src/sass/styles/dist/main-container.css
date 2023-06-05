@@ -15,7 +15,9 @@
   padding: 10px;
 }
 .main-container__topsuggestions {
+  margin-top: 60px;
   display: flex;
+  z-index: 2;
   align-items: center;
   overflow-x: scroll;
   padding: 5px 0;
