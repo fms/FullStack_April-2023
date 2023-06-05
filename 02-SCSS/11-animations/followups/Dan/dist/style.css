@@ -1,0 +1,152 @@
+body {
+  font-size: 50px;
+  font-family: Arial;
+  font-weight: bold;
+  background-image: url(https://media.istockphoto.com/id/1146496553/photo/hardwood-maple-basketball-court-floor-viewed-from-above.jpg?s=612x612&w=0&k=20&c=Co17Ntpv-uPWgsVor66kcQc5SfL-fOK5AiL0bgpBhII=);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.logo {
+  display: block;
+  margin: auto;
+  border-radius: 50px;
+  width: 700px;
+}
+
+.teams {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.miami {
+  width: 220px;
+  animation: miami 5s infinite;
+  cursor: pointer;
+}
+.miami:active {
+  width: 150px;
+}
+@keyframes miami {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.vs {
+  margin: 20px;
+}
+
+.denver {
+  width: 220px;
+  animation: denver 5s infinite;
+  animation-direction: reverse;
+  cursor: pointer;
+}
+.denver:active {
+  width: 150px;
+}
+@keyframes denver {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.number {
+  font-size: 100px;
+  color: red;
+  position: absolute;
+  animation: number 5s linear infinite;
+}
+
+@keyframes number {
+  0% {
+    color: red;
+    top: 0%;
+    left: 0%;
+  }
+  75% {
+    top: 50%;
+    left: 50%;
+  }
+  100% {
+    color: black;
+    top: 0%;
+    left: 100%;
+  }
+}
+.number1 {
+  font-size: 100px;
+  color: red;
+  position: absolute;
+  animation: number1 5s linear 0s infinite;
+}
+
+@keyframes number1 {
+  0% {
+    color: blue;
+    top: 0%;
+    left: 100%;
+  }
+  75% {
+    top: 50%;
+    left: 50%;
+  }
+  100% {
+    color: gold;
+    top: 0%;
+    left: 0%;
+  }
+}
+.win {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  animation: win 3s cubic-bezier(0.215, 0.61, 0.355, 1) both infinite;
+}
+.win:hover {
+  text-shadow: 2px 2px 8px #494949;
+}
+
+@keyframes win {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.buttons {
+  text-align: center;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 30px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.buttons .m {
+  background-color: black;
+  color: red;
+}
+.buttons .m:active {
+  background-color: red;
+  color: black;
+}
+.buttons .d {
+  background-color: blue;
+  color: gold;
+}
+.buttons .d:active {
+  background-color: gold;
+  color: blue;
+}
