@@ -13,11 +13,15 @@
 .side-navbar {
   position: fixed;
   top: 74px;
-  overflow-y: scroll;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   width: 220px;
   height: 100vh;
+  transition: overflow-y 0.3s;
+}
+.side-navbar:hover {
+  overflow-y: scroll;
 }
 .side-navbar hr {
   margin: 10px 0;

@@ -29,8 +29,9 @@
 .main-container__topsuggestions {
   display: flex;
   align-items: center;
-  gap: 10px;
   overflow-x: scroll;
+  padding: 5px 0;
+  gap: 10px;
 }
 .main-container__topsuggestions__buttons {
   color: white;
@@ -113,11 +114,15 @@ body ::-webkit-scrollbar-thumb:vertical {
 .side-navbar {
   position: fixed;
   top: 74px;
-  overflow-y: scroll;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   width: 220px;
   height: 100vh;
+  transition: overflow-y 0.3s;
+}
+.side-navbar:hover {
+  overflow-y: scroll;
 }
 .side-navbar hr {
   margin: 10px 0;
@@ -269,8 +274,9 @@ body ::-webkit-scrollbar-thumb:vertical {
 .main-container__topsuggestions {
   display: flex;
   align-items: center;
-  gap: 10px;
   overflow-x: scroll;
+  padding: 5px 0;
+  gap: 10px;
 }
 .main-container__topsuggestions__buttons {
   color: white;

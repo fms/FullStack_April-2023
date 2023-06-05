@@ -9,9 +9,9 @@
   &__topsuggestions {
     display: flex;
     align-items: center;
-    gap: 10px;
     overflow-x: scroll;
-
+    padding: 5px 0;
+    gap: 10px;
 
     &__buttons {
       color: $main-text-color;
@@ -37,7 +37,7 @@
     margin-left: 20px;
 
     &__toprow {
-      
+
 
       &__video {
 
