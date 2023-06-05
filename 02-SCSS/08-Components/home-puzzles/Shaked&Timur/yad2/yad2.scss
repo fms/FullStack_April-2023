@@ -1,0 +1,302 @@
+.topnav {
+    background-color: none;
+    overflow: hidden;
+}
+
+.topnav a {
+    margin-top: 10px;
+    float: right;
+    color: #000000;
+    text-align: center;
+    padding: 24px 26px;
+    text-decoration: none;
+    font-size: 40px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #dbdbdb;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+    border-radius: 100px;
+}
+
+.banner {
+    float: right;
+
+    &__img {
+        padding: 60px;
+        margin-right: 50px;
+    }
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    flex-direction: row-reverse;
+    margin-right: 150px;
+
+    &__circles {
+        width: 300px;
+        height: 300px;
+        border-radius: 300px;
+        background-color: rgb(235, 233, 233);
+    }
+
+    &__circles:hover {
+        background-color: #ffffff;
+        border: solid 1px rgb(168, 168, 168);
+    }
+
+    &__circles__text {
+        color: black;
+    }
+}
+
+p {
+    float: right;
+    margin-right: 70px;
+    font-size: 45px;
+}
+
+
+p2 {
+    margin-top: 120px;
+    float: right;
+    margin-right: 150px;
+    font-size: 60px;
+}
+
+.appbox {
+    margin-top: 10%;
+    margin-left: 120px;
+    width: 90%;
+    height: 200px;
+    background-color: orange;
+    border-radius: 20px;
+    opacity: 70%;
+
+    &__phone {
+        position: relative;
+        bottom: 100px;
+        left: 88%;
+    }
+
+    &__text {
+        position: relative;
+        color: rgb(255, 255, 255);
+        font-size: 90px;
+        bottom: 150px;
+        margin-left: 25%;
+    }
+
+    &__buttons {
+        display: flex;
+        position: relative;
+        bottom: 280px;
+        margin-left: 7%;
+
+        &__que {
+            border: solid 4px rgb(255, 255, 255);
+            border-radius: 20px;
+        }
+
+        &__appstore {
+            bottom: 430px;
+            margin-left: 13.5%;
+        }
+
+        &__googleplay {
+            bottom: 420px;
+            margin-left: 13.5%;
+        }
+    }
+}
+
+.popser {
+    float: right;
+    font-size: 60px;
+    margin-right: 150px;
+    margin-bottom: 50px;
+
+    &__flex {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__popbox {
+        margin-left: 20px;
+        margin-top: 20px;
+        float: right;
+        width: 580px;
+        height: 150px;
+        border: solid 1px rgb(219, 219, 219);
+        border-radius: 10px;
+    }
+
+    &__maintext {
+        font-size: 30px;
+        float: right;
+        margin-top: 30px;
+        margin-right: 20px;
+    }
+
+    &__text {
+        font-size: 30px;
+        margin-left: 60px;
+        margin-top: 45px;
+        color: rgb(107, 107, 107);
+    }
+
+    &__popbox:hover {
+        box-shadow: rgb(216, 216, 216) 0px 0px 40px;
+    }
+}
+
+.se-article {
+    float: right;
+
+    &__se-flex {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 30px;
+    }
+
+    &__se-box {
+        margin-top: 250px;
+        float: right;
+        width: 550px;
+        height: 450px;
+        border: solid 1px rgb(219, 219, 219);
+        border-radius: 10px;
+    }
+
+    &__se-img {
+        align-items: first baseline;
+        border-radius: 40px;
+    }
+
+    &__se-text {
+        font-size: 40px;
+        color: rgb(114, 114, 114);
+        margin-left: 10px;
+    }
+
+    &__se-headtext {
+        font-size: 40px;
+        float: right;
+        color: rgb(54, 54, 54);
+        margin-left: 68%;
+    }
+
+    &__se-bottext {
+        font-size: 40px;
+        color: rgb(114, 114, 114);
+        margin-left: 100px;
+    }
+
+
+    &__se-box:hover {
+        box-shadow: rgb(216, 216, 216) 0px 0px 40px;
+    }
+}
+
+.bussines {
+    float: right;
+    &__bus-box {
+        margin-top: 200px;
+        margin-right: 100px;
+        float: right;
+        width: 90%;
+        height: 200px;
+        border: solid 1px rgb(219, 219, 219);
+        border-radius: 10px;
+        background-color: rgb(240, 240, 240);
+    }
+    &__bus-text {
+        font-size: 60px;
+        float: right;
+        margin-top: 70px;
+        margin-right: 100px;
+    }
+    &__bus-flex {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__bu-box {
+        float: right;
+        margin-top: 60px;
+        margin-right: 100px;
+        width: 500px;
+        height: 100px;
+        background-color: white;
+        box-shadow: 0px 0px 23px rgb(179, 176, 176);
+        border-radius: 20px;
+    }
+    &__bus-instext {
+        font-size: 40px;
+        float: right;
+        margin-top: 30px;
+    }
+    &__bus-arrow {
+        position: relative;
+        right: 160px;
+        bottom: 50px;
+        font-size: 50px;
+
+    }
+    &__bus-img {
+        margin-left: 200px;
+    }
+}
+
+.question{
+    float: right;
+  &__ques-box{
+    margin-top: 200px;
+    margin-right: 100px;
+    float: right;
+    width: 90%;
+    height: 200px;
+    border: solid 1px rgb(219, 219, 219);
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+  }
+  &__ques-btext{
+    float: right;
+    margin-top: 50px;
+    margin-right: 140px;
+    font-size: 50px;
+  }
+
+  &__ques-stext{
+    margin-left: 350px;
+    text-align: center;
+    margin-top: 50px;
+    margin-right: 140px;
+    font-size: 40px;
+    color: gray;
+  }
+
+  &__ques-talkbox{
+    float: left;
+    border-radius: 30px;
+    border: solid 1px orange;
+    width: 400px;
+    height: 100px;
+    text-align: center;
+
+  }
+
+  &__ques-talktext{
+    font-size: 40px;
+    color: orange;
+    margin-top: 30px;
+  }
+}
