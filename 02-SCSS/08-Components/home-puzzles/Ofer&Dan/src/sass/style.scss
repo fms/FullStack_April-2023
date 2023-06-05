@@ -14,8 +14,9 @@ body {
   font-family: $main-font-family;
 
   ::-webkit-scrollbar {
+    height: 6px;
     width: 6px;
-    border-radius: 3px;
+    border: 0 solid #000 ;
   }
 
   ::-webkit-scrollbar-track {
@@ -29,8 +30,15 @@ body {
   ::-webkit-scrollbar-thumb:hover {
     background: #888;
   }
+  ::-webkit-scrollbar-thumb:horizontal{
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:vertical{
+  border-radius: 10px;
+}
 
 }
 
 @import 'styles/side-navbar';
 @import 'styles/top-navbar.scss';
+@import 'styles/main-container.scss';

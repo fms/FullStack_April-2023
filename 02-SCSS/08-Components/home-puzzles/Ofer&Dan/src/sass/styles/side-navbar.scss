@@ -4,12 +4,17 @@
 
 .side-navbar {
   position: fixed;
-  top:74px;
-  overflow-y: scroll;
+  top: 74px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   width: 220px;
   height: 100vh;
+  transition: overflow-y 0.3s;
+
+  &:hover {
+    overflow-y: scroll;
+  }
 
   hr {
     margin: 10px 0;
@@ -17,14 +22,15 @@
 
   }
 
-  
+
 
   &__buttons {
     background-color: rgb(20, 21, 22);
     color: $main-text-color;
-    font-weight: $regular-font-size;
+    font-weight: 300;
     font-family: $main-font-family;
     font-size: 15px;
+    padding: 5px;
     padding-left: 10px;
     height: 30px;
     display: flex;
