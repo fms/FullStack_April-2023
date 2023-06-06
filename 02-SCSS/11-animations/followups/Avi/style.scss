@@ -5,6 +5,7 @@ body{
     height: 100px;
     width: 100px;
     background-color: darkgreen;
+
     animation-duration: 5s;
     animation-name: one;
     animation-iteration-count: infinite;
@@ -14,7 +15,7 @@ body{
             background-color: cadetblue;
         }
         to{
-            background-color: darkorange;
+            background-color: rgb(255, 0, 0);
         }
     }
 }
@@ -48,21 +49,21 @@ body{
             background-color: rgb(16, 83, 172);
         }
         to{
-            background-color: rgb(165, 40, 71);
+            background-color: rgb(190, 5, 190);
         }
     }
 }
 .D{
     height: 100px;
     width: 100px;
-    background-color:darkblue;
+    background-color:rgb(0, 139, 132);
     animation-duration: 5s;
     animation-name: four;
     animation-iteration-count: infinite;
 
     @keyframes four {
         from{
-            background-color: rgb(218, 9, 9);
+            background-color: rgb(128, 116, 161);
         }
         to{
             background-color: rgb(180, 30, 30);

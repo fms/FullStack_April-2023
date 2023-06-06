@@ -15,7 +15,7 @@ p:hover::after {
   color: green;
 }
 
-label::after {
+label:has(:required:invalid)::after {
   content: "*";
   color: red;
   font-size: 16px;

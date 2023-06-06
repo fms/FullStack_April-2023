@@ -167,8 +167,10 @@ body .main {
   border-left: 5px solid yellow;
   margin-bottom: 20px;
   padding: 5px;
+  display: block;
+  margin: auto;
 }
-body .container {
+body .main .container {
   display: flex;
   width: 100%;
   background-color: white;
