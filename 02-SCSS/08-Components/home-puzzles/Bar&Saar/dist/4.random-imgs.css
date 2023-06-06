@@ -1,0 +1,15 @@
+.container-random {
+  display: flex;
+  margin-top: 30px;
+  margin-left: 116px;
+  width: 90vw;
+}
+
+.content-random {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.content-random img {
+  height: 257px;
+}
