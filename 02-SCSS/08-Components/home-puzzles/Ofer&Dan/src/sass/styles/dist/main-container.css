@@ -17,8 +17,6 @@
 .main-container__topsuggestions {
   margin-top: 60px;
   display: flex;
-  z-index: 2;
-  align-items: center;
   overflow-x: scroll;
   padding: 5px 0;
   gap: 10px;
@@ -39,21 +37,41 @@
 }
 .main-container__videos {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px;
   margin-top: 30px;
   margin-left: 20px;
 }
-.main-container__videos__toprow__video {
-  width: 300px;
-  height: 300px;
+.main-container__videos__video {
+  width: 400px;
+  height: 400px;
   overflow: hidden;
 }
-.main-container__videos__toprow__video > img {
-  width: 100%;
-  position: relative;
-  border-radius: 20px;
-  transition: border-radius 0.3s, scale 0.3s;
+.main-container__videos__video h3 {
+  font-weight: 400;
 }
-.main-container__videos__toprow__video > img:hover {
+.main-container__videos__video h4 {
+  font-weight: 300;
+  color: #a5a5a5;
+}
+.main-container__videos__video .thumbnail-class {
+  margin-bottom: 10px;
+  width: 100%;
+  border-radius: 20px;
+  transition: scale 0.3s;
+}
+.main-container__videos__video .thumbnail-class:hover {
   scale: 110%;
+}
+.main-container__videos__video .creator-pic-class {
+  vertical-align: top;
+  display: inline-block;
+  top: 0;
+  width: 40px;
+}
+.main-container__videos__video .info-class {
+  color: white;
+  display: inline-block;
+  margin-left: 10px;
+  line-height: 25px;
 }
