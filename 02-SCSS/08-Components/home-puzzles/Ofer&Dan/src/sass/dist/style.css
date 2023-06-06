@@ -47,6 +47,10 @@
   background-color: #454747;
   cursor: pointer;
 }
+.main-container__topsuggestions__buttons:focus, .main-container__topsuggestions__buttons:active {
+  background-color: white;
+  color: #0f0f0f;
+}
 .main-container__videos {
   display: flex;
   flex-wrap: wrap;
@@ -330,6 +334,10 @@ body ::-webkit-scrollbar-thumb:vertical {
 .main-container__topsuggestions__buttons:hover {
   background-color: #454747;
   cursor: pointer;
+}
+.main-container__topsuggestions__buttons:focus, .main-container__topsuggestions__buttons:active {
+  background-color: white;
+  color: #0f0f0f;
 }
 .main-container__videos {
   display: flex;
