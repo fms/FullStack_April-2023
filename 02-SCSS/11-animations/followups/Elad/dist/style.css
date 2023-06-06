@@ -1,0 +1,52 @@
+.balloon:hover {
+  background-color: red;
+}
+
+.balloon:before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+}
+
+.popped {
+  transform: scale(0);
+  transition: transform 0.1s ease;
+}
+
+@keyframes bounce {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: 200px;
+    width: 100px;
+    height: 100px;
+  }
+  100% {
+    top: 0;
+  }
+}
+.balloon {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 70px;
+  background-color: #19b0d6;
+  border-radius: 50%;
+  margin: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.basket {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: white;
+  animation: bounce 1s infinite;
+}
