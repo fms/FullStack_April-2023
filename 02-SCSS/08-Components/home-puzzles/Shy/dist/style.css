@@ -55,7 +55,7 @@
 }
 .news .articles .article .category-container a h4 {
   margin: 0;
-  padding-left: 3px;
+  padding-left: 5px;
   font-size: 12px;
   color: #212121;
 }
@@ -88,15 +88,19 @@
 .top-news-container .left .content-container {
   position: absolute;
   bottom: 0;
+  padding-left: 10px;
 }
 .top-news-container .left .content-container h2 {
-  color: black;
+  color: white;
 }
 .top-news-container .left .content-container p {
   color: white;
 }
 .top-news-container .left .content-container h3 {
   color: white;
+  padding-left: 5px;
+  font-size: 12px;
+  border-left: 3px solid #e91802;
 }
 .top-news-container .right {
   width: 50%;
