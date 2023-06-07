@@ -39,12 +39,10 @@ body {
     }
 
     &__bar {
-        // width: $width;
         height: 40px;
         background-color: #FAFAFA;
         display: flex;
         font-size: 13px;
-        // position: absolute;
         margin-left: 45%;
 
 
@@ -56,7 +54,6 @@ body {
         }
 
         &__button {
-            // border: 1px black solid;
             height: 40px;
             width: auto;
             min-width: fit-content;
@@ -119,8 +116,6 @@ body {
         }
 
         &__cart {
-            // height: 100px;
-            // width: 100px;
 
             img {
                 height: 35px;
@@ -143,7 +138,6 @@ body {
             margin: auto;
             display: flex;
             justify-content: space-between;
-            // israel
 
             &__menu {
                 height: 530px;
@@ -202,7 +196,6 @@ body {
 
             }
 
-            // israel
 
 
 
@@ -261,7 +254,6 @@ body {
                     margin-top: 20px;
                     width: 700px;
                     height: 190px;
-                    // background-image: linear-gradient(to top, #1bbc30, #3fbe5b, #5cbf7b, #7abe95, #9abcaa);                    margin-top: 16px;
                     background-image: url(https://answers.unity.com/storage/temp/135164-fade.png);
 
                     h4 {
@@ -422,7 +414,6 @@ body {
             }
         }
 
-        //israel
         &__superdeal {
             width: 1200px;
             height: 325px;
@@ -459,10 +450,6 @@ body {
                     position: absolute;
                     margin-left: 500px;
                 }
-                // margin-left: 590px; 
-                // margin-top: 5px;               
-                // font-size: 18px;
-                // color: #A69999;
             }
             &__superprice2{
            
@@ -520,7 +507,6 @@ body {
             
         }
 
-        //israel
 
 &__more{
     display: flex;
