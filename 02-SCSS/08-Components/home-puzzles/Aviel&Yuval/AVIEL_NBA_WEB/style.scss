@@ -1,0 +1,269 @@
+
+* {
+    /* מרחיב פדינג ובורדינג כלפי פנים */
+    box-sizing: border-box;
+}
+
+body {
+
+    background: white;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.my_header {
+    width: 100%;
+    padding: 0 16px;
+    min-height: 10px;    /* הגובה של ההאדר  */
+    background: white;
+}
+
+
+.container {
+
+    /* כדי שלא תהיה גלילה לרוחב  */
+        max-width: 1000px;
+        margin: 0 auto;
+       
+}
+
+
+
+.logo {
+
+   position: relative;
+   left: 1000px;
+}
+
+
+
+
+.nav1 {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: -150px;
+    right: -190px;
+    
+    
+   
+}
+
+.nav1 a {
+    
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    padding: 0  12px ; 
+    
+}
+
+
+.nav1 a:hover {    
+
+    text-decoration: underline; /* קו תחתון במעבר  */
+    background-color:blue;
+    color: white;
+    
+   }
+
+
+
+.nav2 {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: -120px;
+    right: -140px;
+    border-bottom: 5px solid transparent;
+    border-color: black
+    
+    
+   
+}
+
+.nav2 a {
+    
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    padding: 0  12px ; 
+    
+}
+
+
+.nav2 a:hover {    
+    
+    text-decoration: underline; /* קו תחתון במעבר  */
+    background-color:blue;
+    color: white;
+    
+   }
+
+
+
+
+
+
+.main_img {
+
+    position: relative;
+    left: 160px;
+}
+
+.img_box1 img {
+
+    width: 50px ;
+    position: relative;
+    left: 600px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.img_box2 img {
+
+    width: 50px ;
+    position: relative;
+    left: 600px;
+    margin-bottom: 40px;
+}
+
+
+.left_top {
+
+    background-color: rgb(60, 60, 109);
+    color: white;
+    font-size: 12px;
+    width: 320px;
+    height: auto;
+    position: relative;
+    left: 150px;
+}
+
+.img_nba_logo img {
+
+    width: 30px;
+position: relative;
+top: -40px;
+}
+
+
+
+.BOX_1 {
+    position: relative;
+    top: 17px;
+    left: 35px;
+}
+
+.BOX_2 {
+    position: relative;
+    top: 3px;
+    left: 250px;
+    font-size: 18px;
+}
+
+.BOX_3 {
+    position: relative;
+    top: 230px;
+    left: -7px;
+    font-size: 15px;
+    direction: rtl;
+    
+}
+
+
+
+
+.img_top img {
+
+    width: 260px;
+position: relative;
+top: -30px;
+left: 20px;
+}
+
+
+.left_top_part2 {
+
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+
+
+.center {
+
+    position: relative;
+    top: -460px;
+    left: 480px;
+    display: flex;
+    font-family: sans-serif;
+}
+
+
+.center img {
+
+margin: 20px;
+position:relative;
+top: -20px;
+}
+
+
+.center_text h1 {
+    
+    margin: 0;
+    line-height:35px;
+    
+}
+
+.center_text h1 p {
+    
+    margin: 0;
+    line-height:35px;
+    
+}
+
+.center_text h2 {
+    
+    margin: 0;
+    line-height:35px;
+    
+}
+
+.center_text h2 p {
+    
+    margin: 0;
+    line-height:35px;
+    
+}
+
+
+.center_text h3 {
+    
+    margin: 0;
+    line-height:35px;
+    
+}
+
+.center_text h3 p {
+    
+    margin: 0;
+    line-height:35px;
+    
+}
+
+.news {
+
+    display: flex;
+    font-size: 10px;
+    position: relative;
+    top: -490px;
+    right: -500px;
+    gap: 10px;
+}
+
+.news1 h1 p {
+
+    font-size: 10px;
+}

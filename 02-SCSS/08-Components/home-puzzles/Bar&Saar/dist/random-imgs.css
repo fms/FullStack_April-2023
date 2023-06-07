@@ -1,0 +1,25 @@
+.content-explore-imgs {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 96vw;
+  gap: 8px;
+}
+.content-explore-imgs img {
+  height: 200px;
+  width: 200px;
+}
+
+.container-random {
+  display: flex;
+  margin-top: 30px;
+  margin-left: 140px;
+}
+
+.content-random {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.content-random img {
+  height: 290px;
+}

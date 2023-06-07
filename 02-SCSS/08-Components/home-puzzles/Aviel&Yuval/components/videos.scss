@@ -1,3 +1,69 @@
+.img_box1 img {
+    width: 50px ;
+    position: relative;
+}
+
+.img_box2 img {
+    width: 50px ;
+    position: relative;
+}
+
+.media {
+    @include flexed ($direction: row);
+}
+
+.center {
+    position: relative;
+    display: flex;
+    font-family: sans-serif;
+}
+
+.center img {
+    position:relative;
+}
+
+.center_text h1 {
+    margin: 0;
+    line-height:35px;
+}
+
+.center_text h1 p {
+    margin: 0;
+    line-height:35px;
+}
+
+.center_text h2 {
+    margin: 0;
+    line-height:35px;
+}
+
+.center_text h2 p {
+    margin: 0;
+    line-height:35px;
+}
+
+
+.center_text h3 {
+    margin: 0;
+    line-height:35px;
+}
+
+.center_text h3 p {
+    margin: 0;
+    line-height:35px;
+}
+
+.news {
+    display: flex;
+    font-size: 10px;
+    position: relative;
+    gap: 10px;
+}
+
+.news1 h1 p {
+    font-size: 10px;
+}
+
 .videoBox {
     @include flexed ($direction: column);
     width: 350px;

@@ -1,0 +1,25 @@
+.wrapper {
+  width: 50%;
+  border: solid 1px black;
+}
+
+.ch {
+  width: 50%;
+  border: solid 1px red;
+}
+
+.mono {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.ems * {
+  font-size: 2em;
+}
+
+.rems * {
+  font-size: 2rem;
+}
+
+html {
+  font-size: 1vw;
+}/*# sourceMappingURL=style.css.map */
