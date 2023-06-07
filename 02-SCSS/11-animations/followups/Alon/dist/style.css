@@ -1,143 +1,55 @@
-.line1 {
+.shape hr {
   color: black;
-  position: relative;
-  width: 500px;
+  position: absolute;
+  width: 400px;
+  left: 0px;
   animation-duration: 4s;
   animation-direction: normal;
   animation-fill-mode: forwards;
   animation-delay: 1s;
+}
+.shape hr:nth-child(1) {
   animation-name: line-1;
 }
-
-.line2 {
-  color: black;
-  position: relative;
-  width: 500px;
-  animation-duration: 4s;
-  animation-direction: normal;
-  animation-fill-mode: forwards;
-  animation-delay: 1s;
-  animation-name: line-2;
-}
-
-.line3 {
-  color: black;
-  position: relative;
-  width: 500px;
-  animation-duration: 4s;
-  animation-direction: normal;
-  animation-fill-mode: forwards;
-  animation-delay: 1s;
-  animation-name: line-3;
-}
-
-.line4 {
-  color: black;
-  position: relative;
-  width: 500px;
-  animation-duration: 4s;
-  animation-direction: normal;
-  animation-fill-mode: forwards;
-  animation-delay: 1s;
-  animation-name: line-4;
-}
-
-.line5 {
-  color: black;
-  position: relative;
-  width: 500px;
-  animation-duration: 4s;
-  animation-direction: normal;
-  animation-fill-mode: forwards;
-  animation-delay: 1s;
-  animation-name: line-5;
-}
-
-.line6 {
-  color: black;
-  position: relative;
-  width: 500px;
-  animation-duration: 4s;
-  animation-direction: normal;
-  animation-fill-mode: forwards;
-  animation-delay: 1s;
-  animation-name: line-6;
-}
-
 @keyframes line-1 {
   from {
     left: 0px;
-    top: 0px;
+    top: 500px;
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(90deg);
-    top: 250px;
-    left: 100px;
+    transform: rotate(calc(80deg + 10deg));
+    top: 500px;
+    left: calc(0px + 1000px);
   }
+}
+.shape hr:nth-child(2) {
+  animation-name: line-2;
 }
 @keyframes line-2 {
   from {
     left: 0px;
-    top: 0px;
+    top: 500px;
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(100deg);
-    width: 450px;
-    top: 270px;
-    left: 60px;
+    transform: rotate(calc(calc(80deg + 10deg) + 10deg));
+    top: 500px;
+    left: 100px;
   }
+}
+.shape hr:nth-child(3) {
+  animation-name: line-3;
 }
 @keyframes line-3 {
   from {
     left: 0px;
-    top: 0px;
+    top: 500px;
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(110deg);
-    width: 400px;
-    top: 290px;
-    left: 30px;
-  }
-}
-@keyframes line-4 {
-  from {
-    left: 0px;
-    top: 0px;
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(120deg);
-    width: 350px;
-    top: 310px;
-    left: 14px;
-  }
-}
-@keyframes line-5 {
-  from {
-    left: 0px;
-    top: 0px;
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(130deg);
-    width: 300px;
-    top: 330px;
-    left: 5px;
-  }
-}
-@keyframes line-6 {
-  from {
-    left: 0px;
-    top: 0px;
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(140deg);
-    width: 250px;
-    top: 330px;
-    left: 5px;
+    transform: rotate(calc(calc(calc(80deg + 10deg) + 10deg) + 10deg));
+    top: 500px;
+    left: calc(100px + 1000px);
   }
 }

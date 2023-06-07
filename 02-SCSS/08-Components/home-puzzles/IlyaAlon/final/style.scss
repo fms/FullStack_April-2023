@@ -7,7 +7,6 @@ html{
 .page{
   @include flexInItem();
   padding-top:25px;
-  
 }
 
 .container {
@@ -15,8 +14,7 @@ html{
   @include flexContainer($colGap:8px, $rowGap:25px, $flexWrap:wrap);
 
   height: 1800px;
-  width:80%;
-
+  width:75%;
 
 
   &__item {
