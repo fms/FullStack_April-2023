@@ -1,0 +1,126 @@
+a {
+  border: 1px black solid;
+  background-color: gray;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.flex-container {
+  display: flex;
+  width: 100%;
+  border: solid black 1px;
+  background-color: lightblue;
+  margin-bottom: 10px;
+  gap: 0px;
+}
+
+.high {
+  height: 150px;
+}
+
+.flex-item {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  border: 1px dashed gray;
+  color: white;
+}
+
+.flex-item-no-size {
+  background-color: green;
+  border: 1px dashed gray;
+  color: white;
+  min-height: 100px;
+  width: 100px;
+}
+
+.wide {
+  flex-grow: 3;
+  flex-shrink: 1;
+}
+
+.row-reverse {
+  flex-direction: row-reverse;
+  background-color: blue;
+}
+
+.column {
+  flex-direction: column;
+  background-color: red;
+}
+
+.column-reverse {
+  flex-direction: column-reverse;
+  background-color: lightpink;
+}
+
+.wrap {
+  flex-wrap: wrap;
+  background-color: yellow;
+}
+
+.wrap-reverse {
+  flex-wrap: wrap-reverse;
+  background-color: teal;
+}
+
+.flex-start {
+  justify-content: flex-start;
+  background-color: maroon;
+}
+
+.flex-end {
+  justify-content: flex-end;
+  background-color: brown;
+}
+
+.center {
+  justify-content: center;
+  background-color: darkgoldenrod;
+}
+
+.space-between {
+  justify-content: space-between;
+  background-color: gold;
+}
+
+.space-around {
+  justify-content: space-around;
+  background-color: silver;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+  background-color: pink;
+}
+
+.align-start {
+  align-items: flex-start;
+  background-color: beige;
+}
+
+.align-end {
+  align-items: flex-end;
+  background-color: beige;
+}
+
+.align-center {
+  align-items: center;
+  background-color: cadetblue;
+}
+
+.align-stretch {
+  align-items: stretch;
+  background-color: rgb(95, 160, 148);
+}
+
+.align-baseline {
+  align-items: baseline;
+  background-color: rgb(95, 160, 148);
+}
+
+.text-in-center {
+  display: flex;
+  align-items: center;
+  background-color: blueviolet;
+}/*# sourceMappingURL=style.css.map */

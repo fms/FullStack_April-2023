@@ -1,0 +1,72 @@
+body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.title * {
+  color: rgb(77, 77, 77);
+  border-left: 2px solid yellow;
+  padding-left: 10px;
+  margin-right: 865px;
+}
+
+.sport-section {
+  margin: auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.sport-section__main {
+  display: flex;
+  gap: 10px;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  color: black;
+}
+.article__text {
+  max-width: 300px;
+}
+.article--gray {
+  color: gray;
+  border-left: 2px solid yellow;
+  padding-left: 10px;
+}
+
+.weather-section__sub-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 650px;
+}
+.weather-section__sub-title--para {
+  color: gray;
+}
+.weather-section--button {
+  height: 30px;
+  border: none;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.weather-section__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 520px;
+}
+.weather-section__content img {
+  width: 30px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin: 30px;
+}
+.weather-section__content p {
+  max-width: 30px;
+}/*# sourceMappingURL=style.css.map */

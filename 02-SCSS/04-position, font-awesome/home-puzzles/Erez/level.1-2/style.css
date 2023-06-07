@@ -1,0 +1,181 @@
+body {
+  background-color: gray;
+}
+
+.main {
+  width: 1130px;
+  height: 1030px;
+  margin: auto;
+  background-color: white;
+}
+
+.container1 {
+  display: flex;
+  flex-direction: row;
+  width: 1100px;
+  height: 110px;
+  padding-top: 20px;
+}
+.container1 .item1 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  margin-left: 750px;
+  background-color: rgb(238, 94, 219);
+}
+
+.container2 {
+  display: flex;
+  flex-direction: row;
+  width: 1100px;
+  height: 110px;
+  margin-top: 20px;
+  margin-left: 350px;
+}
+
+.flex-item {
+  width: 100px;
+  height: 100px;
+  margin-left: 25px;
+  background-color: rgb(72, 71, 99);
+}
+
+.container3 {
+  display: flex;
+  flex-direction: row;
+  width: 1100px;
+  height: 110px;
+  margin-top: 20px;
+}
+
+.item1 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  margin-left: 375px;
+  background-color: rgb(141, 138, 236);
+}
+
+.item2 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  margin-left: 500px;
+  background-color: rgb(112, 238, 95);
+}
+
+.item3 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  margin-left: 750px;
+  background-color: rgb(230, 164, 103);
+}
+
+.item4 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  margin-left: 875px;
+  background-color: rgb(214, 231, 114);
+}
+
+.item5 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  margin-left: 1000px;
+  background-color: rgb(228, 77, 90);
+}
+
+.container4 {
+  display: flex;
+  flex-direction: row;
+  width: 1100px;
+  height: 110px;
+  margin-top: 20px;
+  margin-left: 100px;
+}
+.container4 .item1 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  margin-left: 150px;
+  background-color: rgb(145, 143, 197);
+}
+.container4 .item2 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  margin-left: 275px;
+  background-color: rgb(94, 205, 219);
+}
+.container4 .item3 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  margin-left: 525px;
+  background-color: rgb(49, 18, 34);
+}
+.container4 .item4 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  margin-left: 650px;
+  background-color: rgb(193, 212, 84);
+}
+.container4 .item5 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  margin-left: 775px;
+  background-color: rgb(105, 151, 238);
+}
+
+.container5 {
+  display: flex;
+  flex-direction: row;
+  width: 1100px;
+  height: 110px;
+  margin-top: 20px;
+  margin-left: 100px;
+}
+
+.flex-item {
+  width: 100px;
+  height: 100px;
+  margin-left: 25px;
+  background-color: rgb(44, 85, 53);
+}
+
+.container6 {
+  display: flex;
+  flex-direction: row;
+  width: 1100px;
+  height: 110px;
+  margin-top: 20px;
+  margin-left: 600px;
+}
+
+.flex-item {
+  width: 100px;
+  height: 100px;
+  margin-left: 25px;
+  background-color: rgb(44, 85, 53);
+}
+
+.container7 {
+  display: flex;
+  flex-direction: row;
+  width: 1100px;
+  height: 110px;
+  margin-top: 20px;
+  margin-left: 100px;
+}
+
+.flex-item {
+  width: 100px;
+  height: 100px;
+  margin-left: 25px;
+  background-color: rgb(44, 85, 53);
+}/*# sourceMappingURL=style.css.map */

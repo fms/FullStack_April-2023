@@ -1,0 +1,83 @@
+body {
+  margin: 0 auto;
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+
+.pink-1 {
+  background-color: pink;
+  height: 200px;
+  width: 350px;
+}
+
+.green-1 {
+  background-color: greenyellow;
+  height: 200px;
+  width: 400px;
+  position: relative;
+  left: 900px;
+  bottom: 200px;
+}
+
+.green-2 {
+  background-color: green;
+  height: 250px;
+  width: 350px;
+  position: relative;
+  left: 1700px;
+  bottom: 440px;
+}
+
+.pink-2 {
+  background-color: palevioletred;
+  height: 200px;
+  width: 350px;
+  position: relative;
+  bottom: 200px;
+}
+
+.orange {
+  background-color: orange;
+  height: 200px;
+  width: 250px;
+  position: relative;
+  left: 900px;
+  bottom: 400px;
+}
+
+.gray {
+  background-color: gray;
+  height: 250px;
+  width: 250px;
+  position: relative;
+  left: 1700px;
+  bottom: 640px;
+}
+
+.green-3 {
+  background-color: rgb(81, 204, 81);
+  height: 350px;
+  width: 350px;
+  position: relative;
+  bottom: 400px;
+}
+
+.purple {
+  background-color: purple;
+  height: 200px;
+  width: 350px;
+  position: relative;
+  left: 900px;
+  bottom: 600px;
+}
+
+.cyan {
+  background-color: cyan;
+  height: 290px;
+  width: 280px;
+  position: relative;
+  left: 1700px;
+  bottom: 880px;
+}/*# sourceMappingURL=styles.css.map */
