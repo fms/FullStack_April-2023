@@ -23,7 +23,7 @@
       display: flex;
       justify-content: space-around;
       width: 220px;
-      
+
       .img__icon-1 {
         height: 90px;
       }
@@ -38,7 +38,6 @@
       display: flex;
       justify-content: space-evenly;
       list-style: none;
-      direction: rtl;
       padding-left: 80px;
 
       .ul__center__navb-li{
@@ -71,16 +70,111 @@
       outline: none;
       font-size: 16px;
     }
+  }
+}
 
-    .img100 {
-      width: 15px;
-      height: 15px;
+
+// Backgrounder
+.backgrounder {
+  padding-top: 25px;
+
+  img {
+  width: 1519px;
+  }
+  .over__img{
+    position: absolute;
+    top: 370px;
+    left: 1166px;
+    background-color: black;
+    color: white;
+    padding: 20px 50px 20px 35px;
+    font-size: 50px;
+  }
+}
+
+
+// Center content
+.mini__header {
+  margin: 40px;
+
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.7px;
+
+    li {
+      padding-right: 10px;
+      
+      img {
+        width: 7px;
+      }
+    }
+
+    .item1__mini__header {
+      color: #8e9cc0;
+    }
+
+    .item3__mini__header {
+      font-weight: bold;
+
+      a {
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
 
 
+// Main content
+.main__content {
+  display: flex;
+  direction: rtl;
+  margin: 25px 65px;
+  direction: rtl;
 
+  .search__filtering {
+    width: 22%;
+
+    .select__filtering {
+      .select__search__filtering {
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+        padding: 10px 10px 10px 170px;
+        outline: none;
+        appearance: none;
+        font-size: 16px;
+        color: #61696d;
+        font-family: 'Open Sans', sans-serif;
+        }
+
+        img {
+          width: 15px;
+          position: relative;
+          bottom: 28px;
+          right: 280px;
+        }
+        
+    }
+
+    // Button nake hakol
+    .rest__button {
+
+      .btn__rest__button {
+        display: flex;
+        flex-direction: column;
+        font-size: 16px;
+        padding: 0px 143.1px;
+      }
+    }
+  }
+
+
+}
 
 
 

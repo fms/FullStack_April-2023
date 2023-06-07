@@ -35,6 +35,10 @@
   background-color: #454747;
   cursor: pointer;
 }
+.main-container__topsuggestions__buttons:focus, .main-container__topsuggestions__buttons:active {
+  background-color: white;
+  color: #0f0f0f;
+}
 .main-container__videos {
   display: flex;
   flex-wrap: wrap;
@@ -44,7 +48,7 @@
   margin-left: 20px;
 }
 .main-container__videos__video {
-  width: 400px;
+  width: 380px;
   height: 350px;
   overflow: hidden;
   border-radius: 20px;
