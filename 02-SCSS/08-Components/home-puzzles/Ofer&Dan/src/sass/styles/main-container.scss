@@ -28,6 +28,10 @@
         background-color: rgb(69, 71, 71);
         cursor: pointer;
       }
+      &:focus,&:active{
+        background-color: rgb(255, 255, 255);
+        color: rgb(15, 15, 15);
+      }
     }
   }
 
@@ -40,7 +44,7 @@
     margin-left: 20px;
 
     &__video {
-      width: 400px;
+      width: 380px;
       height: 350px;
       overflow: hidden;
       border-radius: 20px;
