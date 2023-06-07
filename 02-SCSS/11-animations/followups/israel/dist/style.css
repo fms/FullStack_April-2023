@@ -14,3 +14,19 @@
     background-color: red;
   }
 }
+.two {
+  animation-name: one;
+  animation-duration: 10s;
+  background-color: blue;
+  width: 80px;
+  height: 80px;
+}
+
+@keyframes two {
+  from {
+    background-color: green;
+  }
+  to {
+    background-color: greenyellow;
+  }
+}
