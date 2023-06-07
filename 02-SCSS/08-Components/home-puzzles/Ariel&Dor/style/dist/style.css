@@ -108,11 +108,16 @@
   direction: rtl;
   margin: 25px 65px;
   direction: rtl;
+  background-color: red;
+}
+.main__content .img__cloth .img__cloth__staf p {
+  color: white;
 }
 .main__content .search__filtering {
-  width: 22%;
+  width: 25%;
 }
 .main__content .search__filtering .select__filtering .select__search__filtering {
+  width: 340px;
   border: 1px solid #ced4da;
   border-radius: 5px;
   padding: 10px 10px 10px 170px;
@@ -125,8 +130,8 @@
 .main__content .search__filtering .select__filtering img {
   width: 15px;
   position: relative;
-  bottom: 28px;
-  right: 280px;
+  bottom: 25px;
+  right: 310px;
 }
 .main__content .search__filtering .rest__button .btn__rest__button {
   font-size: 16px;
