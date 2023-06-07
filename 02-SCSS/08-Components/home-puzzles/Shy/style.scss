@@ -1,0 +1,15 @@
+@import '_config';
+
+.wrapper {
+    width: 60%;
+    margin: 0 auto;
+
+    & .welcome-container {
+        
+        
+    }
+}
+
+@import '_nav';
+@import '_news-article';
+@import '_top-news';

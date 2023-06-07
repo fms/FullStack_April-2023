@@ -19,7 +19,9 @@ body {
     animation-direction: alternate;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
-
+    height: 100px;
+    width: 100px;
+    border-radius: 50% 50% 48px 48px;
 }
 
 @keyframes flying-ballons {
@@ -58,43 +60,28 @@ body {
     }
 
     100% {
-        bottom: 1000px;
+        bottom: 0px;
     }
 }
 
 .ballon-one {
-    height: 100px;
-    width: 100px;
-    border-radius: 50% 50% 46px 46px;
     background-color: blue;
 
 }
 
 .ballon-two {
-    height: 100px;
-    width: 100px;
-    border-radius: 50% 50% 48px 48px;
     background-color: red;
 }
 
 .ballon-three {
-    height: 100px;
-    width: 100px;
-    border-radius: 50% 50% 48px 48px;
     background-color: yellow;
 }
 
 .ballon-four {
-    height: 100px;
-    width: 100px;
-    border-radius: 50% 50% 48px 48px;
     background-color: purple;
 }
 
 .ballon-five {
-    height: 100px;
-    width: 100px;
-    border-radius: 50% 50% 48px 48px;
     background-color: pink;
 }
 
@@ -108,37 +95,6 @@ body {
     animation-direction: alternate;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
-}
-
-.rope-1 {
-    background-color: black;
-    border: 1px solid black;
-    height: 50px;
-    width: 1px;
-}
-
-.rope-2 {
-    background-color: gray;
-    border: 1px solid gray;
-    height: 50px;
-    width: 1px;
-}
-
-.rope-3 {
-    background-color: gray;
-    border: 1px solid gray;
-    height: 50px;
-    width: 1px;
-}
-
-.rope-4 {
-    background-color: gray;
-    border: 1px solid gray;
-    height: 50px;
-    width: 1px;
-}
-
-.rope-5 {
     background-color: gray;
     border: 1px solid gray;
     height: 50px;
