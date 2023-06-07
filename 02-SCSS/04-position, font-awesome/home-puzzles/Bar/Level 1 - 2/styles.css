@@ -1,0 +1,118 @@
+.wrapper {
+  margin-left: 300px;
+}
+
+.color {
+  width: 100px;
+  height: 100px;
+  margin: 1%;
+}
+
+.row .blue {
+  background-color: blue;
+  position: relative;
+  left: 360px;
+}
+
+.row-2 .purple {
+  background-color: purple;
+  position: relative;
+}
+.row-2 .pink {
+  background-color: pink;
+  position: absolute;
+  left: 120px;
+}
+.row-2 .green {
+  background-color: green;
+  position: absolute;
+  left: 240px;
+}
+.row-2 .orange {
+  background-color: orange;
+  position: absolute;
+  left: 360px;
+}
+
+.row-3 .green {
+  background-color: green;
+  position: relative;
+}
+.row-3 .orange {
+  background-color: orange;
+  position: absolute;
+  left: 120px;
+}
+.row-3 .blue {
+  background-color: blue;
+  position: absolute;
+  left: 360px;
+}
+.row-3 .red {
+  background-color: red;
+  position: absolute;
+  left: 480px;
+}
+.row-3 .purple {
+  background-color: purple;
+  position: absolute;
+  left: 600px;
+}
+
+.row-4 .pink {
+  background-color: pink;
+  position: relative;
+  right: 120px;
+}
+.row-4 .yellow {
+  background-color: yellow;
+  position: absolute;
+  left: 120px;
+}
+.row-4 .green {
+  background-color: green;
+  position: absolute;
+  left: 360px;
+}
+.row-4 .blue {
+  background-color: blue;
+  position: absolute;
+  left: 480px;
+}
+.row-4 .greenyellow {
+  background-color: greenyellow;
+  position: absolute;
+  left: 600px;
+}
+
+.row-5 .green {
+  background-color: green;
+  position: relative;
+  right: 120px;
+}
+.row-5 .orange {
+  background-color: orange;
+  position: absolute;
+  left: 120px;
+}
+
+.row-6 .purple {
+  background-color: purple;
+  position: relative;
+  left: 240px;
+}
+.row-6 .pink {
+  background-color: pink;
+  position: absolute;
+  left: 120px;
+}
+
+.row-7 .blue {
+  background-color: rgb(13, 0, 128);
+  position: relative;
+}
+.row-7 .orange {
+  background-color: orange;
+  position: absolute;
+  right: 120px;
+}/*# sourceMappingURL=styles.css.map */

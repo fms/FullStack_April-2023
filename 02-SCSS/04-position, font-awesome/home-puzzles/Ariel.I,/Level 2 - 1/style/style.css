@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+}
+
+.divMesader .main {
+  width: 450px;
+  height: 450px;
+}
+.divMesader .blue {
+  background-color: blue;
+  position: absolute;
+  left: 350px;
+  top: 30px;
+}
+.divMesader .green {
+  background-color: green;
+  height: 550px;
+  position: absolute;
+  left: 750px;
+  top: 150px;
+}
+.divMesader .orange {
+  background-color: orange;
+  height: 500px;
+  position: absolute;
+  left: 650px;
+  top: 80px;
+}
+.divMesader .yellow {
+  background-color: yellow;
+  position: absolute;
+  left: 550px;
+  top: 60px;
+}
+.divMesader .pink {
+  background-color: pink;
+  height: 500px;
+  position: relative;
+  left: 400px;
+  top: 130px;
+}/*# sourceMappingURL=style.css.map */
