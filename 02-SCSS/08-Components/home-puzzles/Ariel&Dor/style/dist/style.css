@@ -30,7 +30,6 @@
   justify-content: space-evenly;
   list-style: none;
   padding-left: 80px;
-  direction: rtl;
 }
 .navb .center_navb .ul__center__navb .ul__center__navb-li {
   padding: 35px 0;
@@ -82,15 +81,56 @@
   list-style: none;
   display: flex;
   justify-content: flex-end;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 0.7px;
 }
 .mini__header ul li {
-  padding-right: 15px;
+  padding-right: 10px;
 }
 .mini__header ul li img {
   width: 7px;
 }
-.mini__header ul .item__mini__header {
-  color: 8000000000cc0;
+.mini__header ul .item1__mini__header {
+  color: #8e9cc0;
+}
+.mini__header ul .item3__mini__header {
+  font-weight: bold;
+}
+.mini__header ul .item3__mini__header a {
+  text-decoration: none;
+}
+.mini__header ul .item3__mini__header a:hover {
+  text-decoration: underline;
+}
+
+.main__content {
+  display: flex;
+  direction: rtl;
+  margin: 25px 65px;
+  direction: rtl;
+}
+.main__content .search__filtering {
+  width: 22%;
+}
+.main__content .search__filtering .select__filtering .select__search__filtering {
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 10px 10px 10px 170px;
+  outline: none;
+  appearance: none;
+  font-size: 16px;
+  color: #61696d;
+  font-family: "Open Sans", sans-serif;
+}
+.main__content .search__filtering .select__filtering img {
+  width: 15px;
+  position: relative;
+  bottom: 28px;
+  right: 280px;
+}
+.main__content .search__filtering .rest__button .btn__rest__button {
+  font-size: 16px;
+  padding: 0px 143.1px;
 }
 
 .spacer {
