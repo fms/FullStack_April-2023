@@ -1,0 +1,27 @@
+*{
+    margin: 0px;
+    padding: 0px
+}
+
+.sport-section{
+    margin: auto;
+    width: 80%;
+    display: flex;
+}
+
+article{
+    display: flex;
+    &__img *{
+        border-radius: 10px;
+
+    }
+
+    &__text{
+        display: flex;
+        justify-content: center;
+        background-color: black;
+        color: white;
+        padding: 10px;
+
+    }
+}
