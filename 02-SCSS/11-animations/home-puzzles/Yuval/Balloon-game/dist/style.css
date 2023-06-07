@@ -1,0 +1,24 @@
+.balloon {
+  width: 500px;
+  height: 500px;
+  margin-top: 200px;
+  margin-left: 300px;
+  background-image: url(images/balloons.png);
+  background-size: 112dvb;
+  animation: slide-top 2s infinite 2s;
+}
+
+.balloon:active {
+  background-image: url(images/popped-balloons.png);
+  background-size: 128dvb;
+  animation: slide-top step-end;
+}
+
+@keyframes slide-top {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-200px);
+  }
+}

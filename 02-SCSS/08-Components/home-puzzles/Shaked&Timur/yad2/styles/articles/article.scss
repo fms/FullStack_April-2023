@@ -1,0 +1,48 @@
+
+.se-article {
+    float: right;
+
+    &__se-flex {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 30px;
+    }
+
+    &__se-box {
+        margin-top: 250px;
+        float: right;
+        width: 550px;
+        height: 450px;
+        border: solid 1px rgb(219, 219, 219);
+        border-radius: 10px;
+    }
+
+    &__se-img {
+        align-items: first baseline;
+        border-radius: 40px;
+    }
+
+    &__se-text {
+        font-size: 40px;
+        color: rgb(114, 114, 114);
+        margin-left: 10px;
+    }
+
+    &__se-headtext {
+        font-size: 40px;
+        float: right;
+        color: rgb(54, 54, 54);
+        margin-left: 68%;
+    }
+
+    &__se-bottext {
+        font-size: 40px;
+        color: rgb(114, 114, 114);
+        margin-left: 100px;
+    }
+
+
+    &__se-box:hover {
+        box-shadow: rgb(216, 216, 216) 0px 0px 40px;
+    }
+}

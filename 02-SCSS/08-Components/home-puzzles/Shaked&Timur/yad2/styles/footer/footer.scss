@@ -1,0 +1,71 @@
+.footer{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(79, 79, 80);
+    margin-top: 80px;
+    color: white;
+    height: 50vh;
+    padding-left: 100px;
+}
+
+.one{
+    display: flex;
+    flex-direction: row;
+        p{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        margin-left: auto;
+        padding-top: 10px;
+    }
+    h2{
+        margin: 0;
+        padding: 0;
+        margin-left: auto;
+        margin-bottom: 30px;
+    }
+}
+
+.heads{
+    display: flex;
+    flex-direction: column;
+    float: right;
+    margin-left: 200px;
+    margin-top: 300px;
+}
+
+.logos{
+    display: flex;
+    flex-direction: row;
+    margin-top: 160px;
+    justify-content: center;
+    .pic{
+        width: 100px;
+        margin: 200px 100px 100px 0;
+    }
+}
+
+.txt{
+    text-align: center;
+    padding: 0 300px;
+    padding-bottom: 150px;
+    border-bottom: 1px solid black;
+    border-color: white;
+}
+
+.txt2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 150px 50px;
+    div{
+        margin: 0 30px;
+    }
+}
+
+
+
+
+
+

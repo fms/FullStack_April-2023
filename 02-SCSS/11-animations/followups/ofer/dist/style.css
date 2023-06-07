@@ -8,9 +8,14 @@ body {
 @keyframes bottom {
   0% {
     top: 0;
+    box-shadow: 40px 0 10px rgba(0, 0, 0, 0.4);
+    background-color: blue;
   }
   100% {
     top: 1000px;
+    transform: scale(1%);
+    box-shadow: 0 100px 20px 10px rgba(0, 0, 0, 0.4);
+    background-color: #9595fa;
   }
 }
 .animation {
@@ -22,80 +27,70 @@ body {
 }
 
 .a {
-  background-color: blue;
   animation-iteration-count: infinite;
   animation-name: bottom;
-  animation-duration: 3s;
+  animation-duration: 3.2s;
 }
 
 .b {
-  background-color: #1a1aff;
   animation-iteration-count: infinite;
   animation-name: bottom;
   animation-delay: 0.3s;
-  animation-duration: 3s;
+  animation-duration: 3.2s;
 }
 
 .c {
-  background-color: #2b2bf8;
   animation-iteration-count: infinite;
   animation-name: bottom;
   animation-delay: 0.6s;
-  animation-duration: 3s;
+  animation-duration: 3.2s;
 }
 
 .d {
-  background-color: #3535f5;
   animation-iteration-count: infinite;
   animation-name: bottom;
   animation-delay: 0.9s;
-  animation-duration: 3s;
+  animation-duration: 3.2s;
 }
 
 .e {
-  background-color: #3f3ffc;
   animation-iteration-count: infinite;
   animation-name: bottom;
   animation-delay: 1.2s;
-  animation-duration: 3s;
+  animation-duration: 3.2s;
 }
 
 .f {
-  background-color: #4444fa;
   animation-iteration-count: infinite;
   animation-name: bottom;
   animation-delay: 1.5s;
-  animation-duration: 3s;
+  animation-duration: 3.2s;
 }
 
 .g {
-  background-color: #5454fd;
   animation-iteration-count: infinite;
   animation-name: bottom;
   animation-delay: 1.8s;
-  animation-duration: 3s;
+  animation-duration: 3.2s;
 }
 
 .h {
-  background-color: #6a6af7;
   animation-iteration-count: infinite;
   animation-name: bottom;
   animation-delay: 2.1s;
-  animation-duration: 3s;
+  animation-duration: 3.2s;
 }
 
 .j {
-  background-color: #6565fc;
   animation-iteration-count: infinite;
   animation-name: bottom;
   animation-delay: 2.4s;
-  animation-duration: 3s;
+  animation-duration: 3.2s;
 }
 
 .k {
-  background-color: #7070f8;
   animation-iteration-count: infinite;
   animation-name: bottom;
   animation-delay: 2.7s;
-  animation-duration: 3s;
+  animation-duration: 3.2s;
 }

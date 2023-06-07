@@ -3,20 +3,33 @@
 @import "typography";
 
 .top-navbar {
+  position: fixed;
+  z-index: 3;
+  padding: 10px 0;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  background-color: $main-background-color;
+
   &__youtubelogo {
     display: flex;
+    width: 220px;
+    flex-shrink: 0;
 
     &>a {
       img {
         position: relative;
-        top: 28px;
+        top: 38px;
         width: 30px;
         filter: invert(1) sepia(10) saturate(0) hue-rotate(175deg);
       }
     }
 
     .youtube-image {
-      width: 130px;
+      width: 160px;
 
       &:hover {
         cursor: pointer;
@@ -24,24 +37,22 @@
     }
   }
 
-  height: 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
   &__searchbar-div {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 700px;
 
     input {
       background-color: $main-background-color;
-      height: 30px;
-      width: 350px;
+      height: 40px;
+      width: 50px;
       color: white;
       border: 1px rgb(75, 75, 75) solid;
       padding-left: 15px;
-      border-radius: 15px 0 0 15px;
+      border-radius: 20px 0 0 20px;
+      flex-grow: 3;
+
 
       &:focus {
         outline: 0;
@@ -50,16 +61,17 @@
     }
 
     button {
-      width: 30px;
-      height: 24px;
+      width: 40px;
+      height: 34px;
       background-color: rgb(34, 34, 34);
       border: 1px rgb(75, 75, 75) solid;
-      border-radius: 0 15px 15px 0;
+      border-radius: 0 20px 20px 0;
       padding: 3px;
+      flex-shrink: 3;
 
       &:hover {
         cursor: pointer;
-        background-color:rgb(54, 54, 54);
+        background-color: rgb(54, 54, 54);
       }
 
       img {

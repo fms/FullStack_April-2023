@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/02-SCSS/08-Components/home-puzzles/Shaked&Timur/yad2/styles/dist/yad2.css">
+</head>
+
+<body>
+
+    <div class="topnav">
+        <a href="#a"><img style="width: 150px; height: 100px;"
+                src="https://assets.yad2.co.il/common/logo-default.svg"></a>
+        <a href="#b" href="#realestate">נדל"ן</a>
+        <a href="#c">רכב</a>
+        <a href="#d">יד שניה</a>
+        <a href="#e">דרושים IL</a>
+        <a href="#f">עסקים למכירה</a>
+        <a href="#g">חיות מחמד</a>
+        <a href="#h">בעלי מקצוע</a>
+        <a href="#i">חיות מחמד</a>
+        <a href="#j">מגזין יד2</a>
+        <a href="#k">מודעות שאהבתי &#9825; </a>
+        <a href="#l">התחברות</a>
+        <a class="active" href="#m">פרסום מודעה +</a>
+    </div>
+    <hr style="box-shadow: 0px 10px 40px black;">
+    <div class="banner">
+        <div class="banner__img">
+            <img style="width: 2500px; height: 500px;" src="https://i.ibb.co/JkJwzpQ/Ynetbanner.png" alt="Ynetbanner"
+                border="0"></a>
+        </div>
+        <div class="flex">
+            <div class="flex__circles"><img style="margin-left: 5px; width: 300px; height: 300px;"
+                    src="https://www.yad2.co.il/home/_next/image?url=https%3A%2F%2Fassets.yad2.co.il%2Fhomepage%2Fleading-category-real-estate.png&w=256&q=75">
+                <p>נדל"ן</p>
+            </div>
+            <div class="flex__circles"><img style="margin-left: 5px; width: 300px; height: 300px;"
+                    src="https://www.yad2.co.il/home/_next/image?url=https%3A%2F%2Fassets.yad2.co.il%2Fhomepage%2Fleading-category-vehicles.png&w=256&q=75">
+                <p>רכב</p>
+            </div>
+            <div class="flex__circles"><img style="margin-left: 5px; width: 300px; height: 300px;"
+                    src="https://www.yad2.co.il/home/_next/image?url=https%3A%2F%2Fassets.yad2.co.il%2Fhomepage%2Fleading-category-second-hand.png&w=256&q=75">
+                <p>יד שנייה</p>
+            </div>
+            <div class="flex__circles"><img style="margin-left: 5px; width: 300px; height: 300px;"
+                    src="https://www.yad2.co.il/home/_next/image?url=https%3A%2F%2Fassets.yad2.co.il%2Fhomepage%2Fleading-category-drushim.png&w=256&q=75">
+                <p>דרושים</p>
+            </div>
+            <div class="flex__circles"><img style="margin-left: 5px; width: 300px; height: 300px;"
+                    src="https://www.yad2.co.il/home/_next/image?url=https%3A%2F%2Fassets.yad2.co.il%2Fhomepage%2Fleading-category-pets.png&w=256&q=75">
+                <p>חיות מחמד</p>
+            </div>
+            <div class="flex__circles"><img style="margin-left: 5px; width: 300px; height: 300px;"
+                    src="https://www.yad2.co.il/home/_next/image?url=https%3A%2F%2Fassets.yad2.co.il%2Fhomepage%2Fleading-category-professional.png&w=256&q=75">
+                <p>בעלי מקצוע</p>
+            </div>
+            <div class="flex__circles"><img style="margin-left: 5px; width: 300px; height: 300px;"
+                    src="https://www.yad2.co.il/home/_next/image?url=https%3A%2F%2Fassets.yad2.co.il%2Fhomepage%2Fleading-category-business.png&w=256&q=75">
+                <p>עסקים למכירה</p>
+            </div>
+        </div>
+        <br>
+        <div class="appbox">
+            <img style="width:250px; height: 300px;" class="appbox__phone"
+                src="https://app-download.yad2.co.il/_next/image?url=https%3A%2F%2Fdev-assets.yad2.co.il%2Fapp-download%2Fmockup.png&w=384&q=75">
+        </div>
+        <div class="appbox__text">
+            <b>
+                <p1>האפליקציה החדשה שלנו לא מפספסת כלום</p1>
+            </b>
+        </div>
+        <div class="appbox__buttons"></div>
+        <img class="appbox__buttons appbox__buttons__que" style="width: 150px; height: 150px;"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAAAklEQVR4AewaftIAAAVgSURBVO3BQY6kWhIAQXeU97+yT8cC6QlBkdX0nxVm9gevv7bxemTj9cjG65GN1yMbr0c+XFD5rYozKqPiSGVVsVK5UjFURsVQ2VWcUfmtiqON1yMfblTcUTmjslKpOFMxVEbFqLhTcUVlVbGquKNyZeP1yIcvqRxVnFEZFUNlpzIqRsVQGRUrlSsVQ2VVsVP5hspRxZ2N1yMf/kMqo2KoXKlYqYwKlVXFqmKlsqv4L228Hvnwf6Cyqxgqo2KlMiqGypHKqBgqRxUrlVHxL334UsVvVXxL5UzFTuVMxVAZFSq/UfE3Nl6PfLih8pTKqFAZFUNlVAyVlUrFqmKojIorFUPljMoTG69HPlyoeEplVAyVilXFUDlTcaRypuJbFf/CxusR+4MTKqNiqNyp+InKrmKo/KTiisqoGCqjQmVVsVK5U3Fn4/XIh3+gYqisKo4qVhVDZVQMlZ3KqmJUDJVRMVR2FUPlJxUqo2KojIorG69HPnyp4orKquJbKiuVUbGrGCorlVGxqlAZKquKoXJUcUZlVBxtvB6xP/iByqrijsqoGCqjQmVVMVRGxRWVVcVQGRVHKt+qOKMyKo4+/CWVKxVDZaVSsVK5o7KqGCorld+qGCoqo2Ko3Nl4PWJ/cEJlVAyVKxVDZVSsVI4qzqiMip3KqmKlMiquqKwqhsqouKIyKo42Xo98uFAxVFYVQ6ViqJxRGRU7lZXKGZVRUTFUhsqq4orKN1R2FUPlzsbrkQ8XVFYVq4pdxU9UrlTcUfmGyqhQGRVD5U7Fb228HvnwJZVVhcqZilFxR2VVcadiqKwqvqUyKobKTmVU3Nl4PfLhQsVQGRVHFSuVn6hU/ERlVbGrGCo/UblSsVIZFbuKoTIqrmy8HvnwSyp3VEbFkcqq4ozKrmJV8S2VMyqjYqcyKlYqo+LowwWVUbGqGCq7ijMqRxVD5YzKqNip/KRiVaGyqjijMiqOKobKlY3XI/YHX1A5qhgqZyr+lsqoUFlVDJU7FSuVVcVQqRgqo+LOxuuRD1+qGCqjYlcxVM6ojIqdyqpiqFypGCqjYqiMiisqq4pVhcqoGCqriqON1yMfLqicqThSGRUrlVExVCpGxUplVAyVXcVPKlYqFUNlVAyVlcoTG69HPtyoGCpHKqNiqKwqVhVXKlYVRyo/URkVRyorlaOK39p4PfLhSxVXVEbFUFmpHFUMlVXFUBkVKqNipXJGpWJVMVTuqKwqrmy8HrE/OKEyKobKqBgqu4pvqNypWKkcVaxURsUVlVGxUhkVKqPiWx++VHFF5VsVK5UzKruKobJSGRVDZVTsVEbFSuWKypmKo43XIx9+SWVUXFFZVQyVncqoGCqrip3KSuVMxU5lpTIq7lR8a+P1iP3BCZVRMVSOKobKqmKlMiqOVH5S8Vsq/0LFUBkVRxuvRz5cqFhVXKlYqYyKb1UMlVExVK5UDJVRMSp2KquKMyq7iqEyKq5svB75cEHltypGxVAZFUcqo2KoXKkYKmcqhspRxVBZqYyKXcVQGRVDZVQcbbwe+XCj4o7KSmWlclQxVH5SsasYKkNlVfGtiiOVUTFU7my8HvnwJZWjip9UDJVRsVP5icqoUBkVo2KonFG5onKlYqh868N/SGVU7FRGxVAZFUPlisqoGBVDZVWhMirOqIyKobKrGCp3Nl6PfPgPVQyVUbFTWamMiqGyqxgqK5VRcUdlVIyKVYXKb228HrE/OKEyKu6ojIrfUllV3FEZFXdUflIxVCrOqIyKo43XIx9uqPyWyqpiqOwqzqisKlRGxagYKqNiqOwqRsVK5Y7KtzZej9gfvP7axuuRjdcjG69HNl6P/A8ewrTaoyWYvAAAAABJRU5ErkJggg==">
+        <img class="appbox__buttons appbox__buttons__appstore" style="width:230px;"
+            src="https://assets.yad2.co.il/homepage/app-download/app-download-apple.svg">
+        <img class="appbox__buttons appbox__buttons__googleplay" style="width:230px;"
+            src="https://assets.yad2.co.il/homepage/app-download/app-download-google.svg">
+        <div class="popser">
+            <p1>שירותים פופולריים</p1>
+        </div>
+    </div>
+    <div class="popser__popbox popbox__flex">
+        <img style="margin-right: 10px; margin-top: 15px; height: 120px; width: 120px; float: right;"
+            src="https://assets.yad2.co.il/homepage/business.svg">
+        <div class="popser__maintext">
+            <b>נדל"ן מסחרי</b>
+        </div>
+        <div class="popser__text"><br>
+            מאגר הנכסים המסחריים הענק והעדכני
+        </div>
+    </div>
+    <div class="popser__popbox popbox__flex">
+        <img style="margin-right: 10px; margin-top: 15px; height: 120px; width: 120px; float: right;"
+            src="https://assets.yad2.co.il/homepage/dooron.svg">
+        <div class="popser__maintext">
+            <b>דורון</b>
+        </div>
+        <div class="popser__text"><br>
+            העוזר האישי שלך שיעזור לך למצוא דירה תיק תק
+        </div>
+    </div>
+    <div class="popser__popbox popbox__flex">
+        <img style="margin-right: 10px; margin-top: 15px; height: 120px; width: 120px; float: right;"
+            src="https://assets.yad2.co.il/homepage/priceList.svg">
+        <div class="popser__maintext">
+            <b>מחירון רכב</b>
+        </div>
+        <div class="popser__text"><br>
+            מידע ומחירים בזמן אמת במחיר השוק האמיתי
+        </div>
+    </div>
+    <div class="popser__popbox popbox__flex">
+        <img style="margin-right: 10px; margin-top: 15px; height: 120px; width: 120px; float: right;"
+            src="https://assets.yad2.co.il/homepage/calculator.svg">
+        <div class="popser__maintext">
+            <b>Yadata</b>
+        </div>
+        <div class="popser__text"><br>
+            לדעת כמה הדירה שווה בעזרת מחשבון חדשני
+        </div>
+    </div>
+    <p2>חיפושים שאסור לפספס</p2>
+    <div class="se-article__se-box se-article__se-flex se-article__se-img">
+        <img style="width: 550px; height: 270px;"
+            src="https://www.yad2.co.il/home/_next/image?url=https%3A%2F%2Fassets.yad2.co.il%2Fhomepage%2Fpopular-searches%2Fvehicles.png&w=256&q=75">
+        <div class="se-article__se-text">
+            הרכבים הכי נחשקים סביבך עד 60,000 ש״ח
+        </div>
+    </div>
+    <div class="se-article__se-box se-article__se-flex se-article__se-img">
+        <img style="width: 550px; height: 270px;"
+            src="https://www.yad2.co.il/home/_next/image?url=https%3A%2F%2Fassets.yad2.co.il%2Fhomepage%2Fpopular-searches%2Freal-estate.png&w=256&q=75">
+        <div class="se-article__se-text">
+            דירות מתחת ל2,000,000 ש״ח באזור תל אביב
+        </div>
+    </div>
+    <div class="se-article__se-box se-article__se-flex se-article__se-img">
+        <img style="width: 550px; height: 270px;"
+            src="https://www.yad2.co.il/home/_next/image?url=https%3A%2F%2Fassets.yad2.co.il%2Fhomepage%2Fpopular-searches%2Fproducts.png&w=256&q=75">
+        <div class="se-article__se-text">
+            המוצרים הפופולרים ביותר מהשבוע האחרון
+        </div>
+    </div>
+    </div>
+
+    <p2>בדרך למשרה הבאה שלך</p2>
+    <div class="se-article__se-box se-article__se-flex se-article__se-img">
+        <img style="width: 550px; height: 270px;"
+            src="https://www.yad2.co.il/home/_next/image?url=https%3A%2F%2Fassets.yad2.co.il%2Fhomepage%2Fdrushim-smart-alerts.png&w=256&q=75">
+        <div class="se-article__se-headtext">
+            סוכן חכם
+        </div>
+        <div class="se-article__se-bottext">
+            קבלו הצעת עבודה ישירות למייל
+        </div>
+    </div>
+    <div class="se-article__se-box se-article__se-flex se-article__se-img">
+        <img style="width: 550px; height: 270px;"
+            src="https://www.yad2.co.il/home/_next/image?url=https%3A%2F%2Fassets.yad2.co.il%2Fhomepage%2Fdrushim-cv.png&w=256&q=75">
+        <div class="se-article__se-headtext">
+            קורות חיים
+        </div>
+        <div class="se-article__se-bottext">
+            כתיבת קורות חיים מקצועיים בחינם
+        </div>
+    </div>
+    <div class="se-article__se-box se-article__se-flex se-article__se-img">
+        <img style="width: 550px; height: 270px;"
+            src="https://www.yad2.co.il/home/_next/image?url=https%3A%2F%2Fassets.yad2.co.il%2Fhomepage%2Fdrushim-calculator.png&w=256&q=75">
+        <div class="se-article__se-headtext">
+            מחשבון שכר
+        </div>
+        <div class="se-article__se-bottext">
+            בו תוכלו לערוך חישוב מדוייק של השכר נטו אותו תקבלו
+        </div>
+    </div>
+    <div class="bussines__bus-box">
+        <div class="bussines__bus-text">
+            יד2 לעסקים
+        </div>
+        <div class="bussines__bu-box bussines__bus-flex">
+            <div class="bussines__bus-img">
+                <img style="width: 100px; height: 100px; float: right;"
+                    src="https://assets.yad2.co.il/yad2site/y2assets/images/pages/home/icons/RE_main.svg">
+                <div class="bussines__bus-instext">
+                    נדל"ן מסחרי
+                    <div class="bussines__bus-arrow">
+                        < </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bussines__bu-box bussines__bus-flex">
+                <div class="bussines__bus-img">
+                    <img style="width: 100px; height: 100px; float: right;"
+                        src="https://assets.yad2.co.il/yad2site/y2assets/images/pages/home/icons/RE_main.svg">
+                    <div class="bussines__bus-instext">
+                        עסקים למכירה
+                        <div class="bussines__bus-arrow">
+                            < </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bussines__bu-box bussines__bus-flex">
+                    <div class="bussines__bus-img">
+                        <img style="width: 100px; height: 100px; float: right;"
+                            src="https://assets.yad2.co.il/yad2site/y2assets/images/pages/home/icons/RE_main.svg">
+                        <div class="bussines__bus-instext">
+                            ציוד לעסקים
+                            <div class="bussines__bus-arrow">
+                                < </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="question__ques-box">
+                        <div class="question__ques-btext">
+                      <b> ?יש לכם שאלה<br> !נשמח לעזור</b>  
+                    </div>
+                    <div class="question__ques-stext">
+                        בימים א׳-ה׳ בין השעות 08:00-17:00<br>ובימי ו׳ בין השעות 08:00-13:00
+                        <div class="question__ques-talkbox">
+                            <div class=" question__ques-talktext">דברו איתנו</div>
+                        </div>
+
+    <div class="footer">
+        <div class="one">
+            <div class="heads">
+                <h2>עוד באתר</h2>
+                <p>חיות מחמד</p>
+                <p>בעלי מקצוע</p>
+                <p>מגזין יד 2</p>
+            </div>
+    
+            <div class="heads">
+                <h2>דרושים</h2>
+                <p>כל הקטגוריות</p>
+                <p>חברות מובילות</p>            
+                <p>דרושים הייטק</p>
+                <p>קורות חיים</p>
+                <p>מגזין קריירה</p>
+                <p>סוכן חכם</p>
+            </div>
+    
+            <div class="heads">
+                <h2>יד שנייה</h2>
+                <p>לכל המוצרים</p>
+                <p>ריהוט</p>
+                <p>סלולרי</p>
+                <p>מוצרי חשמל</p>
+                <p>אופניים</p>
+            </div>
+    
+            <div class="heads">
+                <h2>דרושים</h2>
+                <p>כל הקטגוריות</p>
+                <p>חברות מובילות</p>            
+                <p>דרושים הייטק</p>
+                <p>קורות חיים</p>
+                <p>מגזין קריירה</p>
+                <p>סוכן חכם</p>
+            </div>
+    
+            <div class="heads">
+                <h2>רכב</h2>
+                <p>כל הרכבים</p>
+                <p>מסחרי</p>
+                <p>ג׳יפים</p>
+                <p>משאיות</p>
+                <p>אופנועים</p>
+                <p>קטנועים</p>
+            </div>
+    
+            <div class="heads">
+                <h2>נדלן</h2>
+                <p>מכירה</p>
+                <p>השכרה</p>
+                <p>שותפים</p>
+                <p>כונס נכסים</p>
+                <p>דירות חדשות</p>
+                <p>בונוס החלטות חכמות-Yzer</p>
+                <p>הערכת שווי נכס-Yadata</p>
+            </div>
+        </div>
+        <div class="logos">
+            <img class="pic" src="./../yad2/styles/footer/images/png-transparent-apple-logo-computer-icons-apple-logo-company-heart-logo.png">
+            <img class="pic" src="./../yad2/styles/footer/images/android-app-google-play-round-icon-11639787492n9trjrelmp.png">
+            <img class="pic" src="./../yad2/styles/footer/images/facebook-round-logo-rubber-stamp.webp">
+            <img class="pic" src="./../yad2/styles/footer/images/48968.png">
+        </div>
+
+        <div class="txt">
+            כל הזכויות שמורות לחברת קורל תל מפעילות לוח יד2 - לוח מודעות: דרושים, דירות להשכרה, בתים למכירה, בתים להשכרה, העברת בתים, הובלות, לימודים, קניות, בעלי מקצוע, אצבע, תיירות ועוד. אין לעשות שימוש בכל התכנים המופיעים בלוח יד2.
+        </div>
+
+        <div class="txt2">
+            <div>קריירה ביד2</div>
+            <div>מפת האתר</div>
+            <div>מדיניות פרטיות</div>
+            <div>הצהרת נגישות</div>
+            <div>תקנון</div>
+            <div>מפת האתר</div>
+        </div>
+    </div>
+</body>
+
+</html>

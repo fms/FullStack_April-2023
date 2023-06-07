@@ -20,13 +20,8 @@ p:hover::after {
 //     color: red;
 // }
 
-label{
-    &::after {
-        content: "*";
-        color: red;
-        font-size: 16px;
-    }
-
-    // req::req
+label:has(:required:invalid)::after {
+    content: "*";
+    color: red;
+    font-size: 16px;
 }
-
