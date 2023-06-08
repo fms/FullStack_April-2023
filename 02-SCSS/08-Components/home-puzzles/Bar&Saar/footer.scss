@@ -95,6 +95,10 @@
 .footer-logos {
   position: relative;
   bottom: 85px;
+  
+  img {
+    cursor: pointer;
+  }
 
   .main-logo-footer {
 

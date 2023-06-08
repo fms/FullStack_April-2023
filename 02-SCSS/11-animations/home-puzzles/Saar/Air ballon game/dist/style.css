@@ -142,6 +142,7 @@ body {
   background-color: white;
   z-index: 3;
   height: 1000px;
+  transition: 0.2s;
 }
 
 .button1 {
