@@ -1,0 +1,15 @@
+h1, h3 {
+    border-left: solid orange 3px;
+    padding-left: 10px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.article {
+    width: 400px;
+    justify-content: space-evenly;
+}

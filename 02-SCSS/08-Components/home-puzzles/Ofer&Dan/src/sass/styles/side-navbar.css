@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.side-navbar {
+  position: fixed;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  height: 100vh;
+}
+.side-navbar hr {
+  margin: 10px 0;
+  border-color: rgb(20, 21, 22);
+}
+.side-navbar__youtubelogo {
+  display: flex;
+}
+.side-navbar__youtubelogo > a img {
+  position: relative;
+  top: 40px;
+  width: 30px;
+  filter: invert(1) sepia(10) saturate(0) hue-rotate(175deg);
+}
+.side-navbar__youtubelogo .youtube-image {
+  width: 170px;
+}
+.side-navbar__youtubelogo .youtube-image:hover {
+  cursor: pointer;
+}
+.side-navbar__buttons {
+  background-color: rgb(20, 21, 22);
+  color: white;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  padding-left: 10px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  margin: 1px 5px;
+}
+.side-navbar__buttons:hover {
+  background-color: rgb(57, 57, 57);
+  cursor: pointer;
+}
+.side-navbar__buttons img {
+  height: 100%;
+}/*# sourceMappingURL=side-navbar.css.map */

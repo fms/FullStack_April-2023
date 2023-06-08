@@ -1,0 +1,47 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.main {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}
+
+//MIXINS TEMPLATES
+
+@mixin idealpic {
+  border: 0;
+  height: auto;
+  vertical-align: middle;
+  border-radius: 10%;
+  position: center;
+}
+@mixin defaultnavbarset {
+  height: 20px;
+  width: 80px;
+  margin-left: 2%;
+  font-weight: bolder;
+  font-size: small;
+  margin-bottom: 90px;
+  background-color: transparent;
+  border: none;
+  max-width: 40%;
+}
+
+@mixin defaultsearchbar {
+    display: flex; 
+    justify-content: flex-start;
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 12px;
+    margin-right: 25%;
+    font-size: 17px;
+    height: 30px;
+    width: 50%;
+    background-color: rgb(221, 218, 218);
+    border-radius: 10%;
+}

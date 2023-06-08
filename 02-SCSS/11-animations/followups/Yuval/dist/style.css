@@ -1,0 +1,44 @@
+.cat {
+  width: 250px;
+  height: 250px;
+  animation: cat 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite both;
+}
+
+.racc {
+  margin: center;
+  width: 220px;
+  height: 220px;
+  animation: racc 2s ease-out infinite both;
+}
+
+@keyframes cat {
+  0%, 100% {
+    transform: rotate(0deg);
+    transform-origin: 100% 100%;
+  }
+  10% {
+    transform: rotate(2deg);
+  }
+  20%, 40%, 60% {
+    transform: rotate(-4deg);
+  }
+  30%, 50%, 70% {
+    transform: rotate(4deg);
+  }
+  80% {
+    transform: rotate(-2deg);
+  }
+  90% {
+    transform: rotate(2deg);
+  }
+}
+@keyframes racc {
+  0% {
+    transform: translateX(800px) rotate(540deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+}

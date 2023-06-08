@@ -1,0 +1,39 @@
+.main {
+  border: solid 1px gray;
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+}
+
+.relative {
+  position: relative;
+  left: 20px;
+  top: 40px;
+  background-color: red;
+}
+
+.fixed {
+  position: fixed;
+  left: 100px;
+  top: 100px;
+  background-color: green;
+}
+
+.absolute {
+  position: absolute;
+  left: 200px;
+  top: 40px;
+  background-color: yellow;
+}
+
+.sticky {
+  position: sticky;
+  left: 20px;
+  top: 40px;
+  background-color: cyan;
+}
+
+.wrapper {
+  background-color: lightblue;
+  height: 150px;
+}/*# sourceMappingURL=style.css.map */

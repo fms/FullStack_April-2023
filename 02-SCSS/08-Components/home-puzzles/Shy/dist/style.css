@@ -1,0 +1,121 @@
+.wrapper {
+  width: 60%;
+  margin: 0 auto;
+}
+.nav {
+  height: 50px;
+  background-color: black;
+}
+
+.news .news-title h2 {
+  border-left: 3px solid #e91802;
+}
+.news .sport-title h2 {
+  border-left: 3px solid #ffd930;
+}
+.news .technology-title h2 {
+  border-left: 3px solid #47a1d8;
+}
+.news a {
+  text-decoration: none;
+}
+.news a h2 {
+  border-left: 3px solid #e91802;
+  padding-left: 8px;
+  font-size: 24px;
+  color: #4a4a4a;
+}
+.news .news-articles .article .category-container a h4 {
+  border-left: 3px solid #e91802;
+}
+.news .sport-articles .article .category-container a h4 {
+  border-left: 3px solid #ffd930;
+}
+.news .technology-articles .article .category-container a h4 {
+  border-left: 3px solid #47a1d8;
+}
+.news .articles {
+  display: flex;
+  width: 100%;
+}
+.news .articles .article {
+  padding-right: 15px;
+  width: 33%;
+}
+.news .articles .article a .image-container img {
+  width: 100%;
+}
+.news .articles .article a .content-container h3 {
+  color: #212121;
+  font-size: 20px;
+}
+.news .articles .article a .content-container p {
+  color: #4a4a4a;
+  font-size: 16px;
+}
+.news .articles .article .category-container a h4 {
+  margin: 0;
+  padding-left: 5px;
+  font-size: 12px;
+  color: #212121;
+}
+
+.top-news .top-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.top-news .top-info .welcome h2 {
+  margin: 0;
+  font-size: 22px;
+}
+.top-news .top-info .date p {
+  margin: 0;
+  font-size: 22px;
+  color: #8c8c8c;
+}
+
+.top-news-container {
+  display: flex;
+}
+.top-news-container .left {
+  position: relative;
+  width: 50%;
+}
+.top-news-container .left .image-container img {
+  width: 100%;
+}
+.top-news-container .left .content-container {
+  position: absolute;
+  bottom: 0;
+  padding-left: 10px;
+}
+.top-news-container .left .content-container h2 {
+  color: white;
+}
+.top-news-container .left .content-container p {
+  color: white;
+}
+.top-news-container .left .content-container h3 {
+  color: white;
+  padding-left: 5px;
+  font-size: 12px;
+  border-left: 3px solid #e91802;
+}
+.top-news-container .right {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.top-news-container .right .article {
+  width: 50%;
+}
+.top-news-container .right .article .image-container {
+  padding-left: 5px;
+}
+.top-news-container .right .article .image-container img {
+  width: 100%;
+}
+.top-news-container .right .article-1 .image-container img {
+  width: 100%;
+}

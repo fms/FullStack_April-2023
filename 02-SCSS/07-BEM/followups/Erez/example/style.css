@@ -1,0 +1,52 @@
+.sport-section {
+  margin: auto;
+  width: 80%;
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  flex: 1;
+}
+.article__img * {
+  border-radius: 20px;
+  width: 100%;
+}
+.article__text {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
+
+.buttons {
+  margin: auto;
+  width: 80%;
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  justify-content: center;
+}
+.buttons__button {
+  margin: 10px;
+  border: none;
+  padding: 5px;
+  flex-basis: 10%;
+}
+.buttons__button--is-disabled {
+  border: dashed red 3px;
+}
+.buttons__button--add {
+  background-color: green;
+}
+.buttons__button--delete {
+  background-color: red;
+}
+.buttons__button--cancel {
+  background-color: grey;
+}/*# sourceMappingURL=style.css.map */

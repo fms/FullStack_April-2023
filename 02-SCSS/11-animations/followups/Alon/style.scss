@@ -1,0 +1,128 @@
+$deg:90deg;
+$top:500px;
+$left:0px;
+$deg:80deg;
+$width:400px;
+
+@mixin line(){
+    color:black;
+    position:absolute;
+    width:$width;
+    left:$left;
+    animation-duration: 4s;
+    animation-direction:normal;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+}
+
+@mixin animationStart(){
+    left:$left;
+    top:$top;
+    transform: rotate(0deg);
+}
+
+
+.shape{
+    hr{
+        @include line();
+
+        @for $i from 1 through 3{
+
+            $deg:calc(#{$deg} + 10deg);
+            
+            $left:if($i != 2,calc(#{$left} + 1000px),100px);            
+            // // $triangle-c:calc((200px * sin(10deg)) / (sin((65deg))));
+
+            // // $angle:calc(90deg - ((180deg - 10deg)/2));
+            
+            // // $triangle-a:calc((#{$triangle-c} * sin(#{$angle})) / sin(90deg));
+
+            // // $triangle-b:calc(math.sqrt(pow($triangle-c , 2) / pow($triangle-b)));
+
+            // // $left:calc((#{$triangle-c}));
+              
+            
+            
+            // $top:calc(#{$top} #{$triangle-a});
+            // $left:calc(#{$left} - 500px);
+
+            &:nth-child(#{$i}){
+                animation-name: line-#{$i};
+
+                @keyframes line-#{$i}{
+                    from{
+                        @include animationStart();
+                    }
+                    to{                      
+                        transform: rotate($deg);
+                        top:$top;
+                        left:$left;
+                    }
+                }
+        }
+       
+    }
+
+    }
+
+}
+// //2nd spiral
+// .shape{
+//     hr{
+//         @include line();
+
+//         @for $i from 1 through 24{
+
+//             $deg:calc(#{$deg} + 10deg);
+//             $left:calc(500px/90*10);
+//             $top:calc(#{$top} + 5px);
+
+//             &:nth-child(#{$i}){
+//                 animation-name: line-#{$i};
+
+//                 @keyframes line-#{$i}{
+//                     from{
+//                         @include animationStart();
+//                     }
+//                     to{                      
+//                         transform: rotate($deg);
+//                         top:$top;
+//                         left:$left
+//                     }
+//                 }
+//         }
+       
+//     }
+
+//     }
+
+// }
+
+//Spiral
+// .shape{
+//     hr{
+//         @include line();
+
+//         @for $i from 1 through 24{
+//             $deg:calc(#{$deg}/.9);
+//             &:nth-child(#{$i}){
+//                 animation-name: line-#{$i};
+
+//                 @keyframes line-#{$i}{
+//                     from{
+//                         @include animationStart();
+//                     }
+//                     to{
+//                         // top:calc(#{$top}/#{$i});
+//                         top:calc(#{$top}/1);
+//                         transform: rotate($deg);
+//                         left:calc(#{$left}*.9);
+//                     }
+//                 }
+//         }
+       
+//     }
+
+//     }
+
+// }

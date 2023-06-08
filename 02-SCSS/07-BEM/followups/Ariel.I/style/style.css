@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+}
+
+.all {
+  display: flex;
+}
+.all__imgh {
+  width: 100px;
+  height: 100px;
+}
+.all__content {
+  width: 100px;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,76 @@
+.regular {
+    height: 100px;
+    width: 100px;
+    background-color: aqua;
+}
+
+.regular:hover {
+    box-shadow: 0 0 10px black;
+}
+
+.regular:active {
+    background-color: red;
+}
+
+.req {
+    width: 100px;
+    height: 20px;
+    margin-top: 10px;
+
+    &:hover {
+        border: dashed 10px blue;
+    }
+
+    &:required:invalid {
+        background-color: red;
+    }
+
+    &:focus {
+        background-color: purple;
+    }
+    
+    &:required:valid {
+        border: 5px blue solid
+    }
+
+    &:read-only {
+        background-color: gray;
+    }
+}
+
+.link {
+    font-size: 30px;
+
+    &:visited {
+        color: blue;
+    }
+}
+
+p:target {
+    color: red; 
+}
+
+ul {
+    font-size: 36px;
+    font-family: 'Courier New', Courier, monospace;
+    li:first-child {
+        color: red;
+    }
+
+    li:nth-child(odd) {
+        font-size: 48px;
+    }
+
+    li:nth-child(even) {
+        border: black 3px dashed;
+        width: 280px;
+    }
+
+    li:nth-child(even of .note) {
+        color: gold;
+    }
+
+    .note {
+        background-color: green;
+    }
+}

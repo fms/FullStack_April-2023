@@ -1,0 +1,18 @@
+@mixin wi-he($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin mar_l-r-t-b($margin-left, $margin-right, $margin-top, $margin-bottom) {
+    margin-left: $margin-left;
+    margin-right: $margin-right;
+    margin-top: $margin-top;
+    margin-bottom: $margin-bottom;
+}
+@mixin posty-t-b-l-r($position, $top, $bottom, $left, $right){
+    position: $position;
+    top: $top;
+    bottom: $bottom;
+    left: $left;
+    right: $right;
+}
