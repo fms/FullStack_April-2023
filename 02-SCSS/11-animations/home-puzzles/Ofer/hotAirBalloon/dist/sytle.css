@@ -33,6 +33,7 @@
 }
 body {
   background-color: #0f0f0f;
+  overflow: hidden;
 }
 body div {
   margin-top: 20px;

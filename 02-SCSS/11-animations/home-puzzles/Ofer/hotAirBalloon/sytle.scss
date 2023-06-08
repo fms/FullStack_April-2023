@@ -13,13 +13,13 @@
 
   90% {
     top: 0px;
-    filter: drop-shadow(0px 0px 10px  rgba(146, 21, 21, 0.5));
+    filter: drop-shadow(0px 0px 10px rgba(146, 21, 21, 0.5));
     scale: 60%;
   }
-  
-  100%{
+
+  100% {
     scale: 130%;
-    filter: drop-shadow(0px 0px 40px  rgba(255,0,0, 3));
+    filter: drop-shadow(0px 0px 40px rgba(255, 0, 0, 3));
   }
 }
 
@@ -38,8 +38,9 @@
 }
 
 body {
-  
+
   background-color: rgb(15, 15, 15);
+  overflow:hidden;
 
   div {
     margin-top: 20px;
