@@ -1,0 +1,144 @@
+.wow {
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+}
+
+h1 {
+  color: black;
+  animation: color 3s infinite 0.5s;
+}
+
+.uv {
+  width: 45px;
+  height: 60px;
+  background-image: url(images/yuval-normal.jpg);
+  background-size: 7.5dvb;
+  animation: crazy 3s ease-in infinite 1s;
+}
+
+.cat {
+  width: 250px;
+  height: 250px;
+  animation: cat 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite both;
+}
+
+.racc {
+  margin: center;
+  width: 220px;
+  height: 220px;
+  animation: racc 2s ease-out infinite both;
+}
+
+.chase {
+  display: flex;
+  flex-direction: row;
+}
+
+.lion {
+  width: 250px;
+  height: 250px;
+  background-image: url(images/lion-lying.jpg);
+  background-size: 52dvb;
+  animation: roar 3s infinite 2s;
+}
+
+.zebra {
+  width: 250px;
+  height: 250px;
+  margin-left: 20px;
+  animation: run 3s infinite 2.5s;
+}
+
+@keyframes color {
+  0% {
+    color: tomato;
+  }
+  10% {
+    color: gold;
+  }
+  20% {
+    color: greenyellow;
+  }
+  30% {
+    color: green;
+  }
+  40% {
+    color: blue;
+  }
+  50% {
+    color: red;
+  }
+  60% {
+    color: purple;
+  }
+  70% {
+    color: beige;
+  }
+  80% {
+    color: lightcoral;
+  }
+  90% {
+    color: violet;
+  }
+  100% {
+    color: blueviolet;
+  }
+}
+@keyframes crazy {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  20% {
+    background-image: url(images/yuval-crazy.jpg);
+    background-size: 7.5dvb;
+  }
+  100% {
+    transform: translateX(1000px) rotate(540deg);
+  }
+}
+@keyframes cat {
+  0%, 100% {
+    transform: rotate(0deg);
+    transform-origin: 100% 100%;
+  }
+  10% {
+    transform: rotate(2deg);
+  }
+  20%, 40%, 60% {
+    transform: rotate(-4deg);
+  }
+  30%, 50%, 70% {
+    transform: rotate(4deg);
+  }
+  80% {
+    transform: rotate(-2deg);
+  }
+  90% {
+    transform: rotate(2deg);
+  }
+}
+@keyframes racc {
+  0% {
+    transform: translateX(800px) rotate(540deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+@keyframes roar {
+  100% {
+    background-image: url(images/lion-roar.jpg);
+    background-size: 52dvb;
+  }
+}
+@keyframes run {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(1000px);
+  }
+}

@@ -1,10 +1,10 @@
-.fixedHeader {
-    @include flexed($position: sticky, $direction: row);
+.topHeader {
+    @include flexed($direction: row);
     @include defaults($height: 100px);
     top: 0px;
     justify-content: space-between;
     background-color: #e5005c;
-    color: white;
+    color: $textColor;
 
     &__scores {
         display: flex;
@@ -33,7 +33,7 @@
     gap: 20px;
 
     a {
-        color: white;
+        color: $textColor;
     }
 
     &--firstLink {
@@ -56,5 +56,52 @@
 
     &--USA {
         width: 70rem;
+    }
+}
+
+.navigationHeader {
+    @include flexed($direction: row);
+
+    &__text {
+        @include flexed();
+        flex-wrap: wrap;
+        left: 175px;
+    }
+
+    &__text--top {
+        @include flexed();
+        justify-content: space-between;
+    }
+    
+    &__text--top a {
+        font-size: 25px;
+        color: black;
+        text-decoration: none;
+        padding: 0  12px ; 
+    }
+    
+    
+    &__text--top a:hover {    
+        text-decoration: underline;
+        color: blue;
+    }
+    
+    &__text--bottom {
+        @include flexed();
+        justify-content: space-between;
+        border-bottom: 5px solid transparent;
+        border-color: black
+    }
+    
+    &__text--bottom a {
+        font-size: 25px;
+        color: black;
+        text-decoration: none;
+        padding: 0  12px ;
+    }
+
+    &__text--bottom a:hover {    
+        text-decoration: underline;
+        color: blue;
     }
 }

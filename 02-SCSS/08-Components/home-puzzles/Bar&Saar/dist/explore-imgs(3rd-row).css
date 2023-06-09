@@ -1,0 +1,20 @@
+.container-explore {
+  display: flex;
+  justify-content: space-around;
+  width: 90vw;
+  margin-left: 200px;
+}
+
+.title-explore {
+  display: flex;
+  justify-content: space-between;
+  width: 85vw;
+  color: white;
+}
+.title-explore p {
+  color: white;
+  font-size: 20px;
+}
+.title-explore p span {
+  font-weight: 900;
+}

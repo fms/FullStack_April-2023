@@ -1,0 +1,58 @@
+body {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.navbar {
+  margin: 20px auto;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+}
+.navbar button {
+  border: 0;
+  border-radius: 20px;
+  width: 80px;
+  background-color: white;
+}
+.navbar button:hover {
+  background-color: black;
+  color: white;
+}
+.navbar input {
+  border: 0;
+  width: 1500px;
+  border-radius: 20px;
+  background-color: rgb(218, 216, 216);
+}
+.navbar img {
+  width: 40px;
+}
+
+.container {
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+.container .content {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+.container .content2 {
+  display: flex;
+  align-items: flex-end;
+  gap: 30px;
+}
+.container .img1 {
+  width: 350px;
+  border-radius: 20px;
+}
+.container .img2 {
+  width: 250px;
+  height: 300px;
+  border-radius: 20px;
+}/*# sourceMappingURL=styles.css.map */

@@ -29,7 +29,6 @@
   display: flex;
   justify-content: space-evenly;
   list-style: none;
-  direction: rtl;
   padding-left: 80px;
 }
 .navb .center_navb .ul__center__navb .ul__center__navb-li {
@@ -58,9 +57,87 @@
   outline: none;
   font-size: 16px;
 }
-.navb .search__navb .img100 {
+
+.backgrounder {
+  padding-top: 25px;
+}
+.backgrounder img {
+  width: 1519px;
+}
+.backgrounder .over__img {
+  position: absolute;
+  top: 370px;
+  left: 1166px;
+  background-color: black;
+  color: white;
+  padding: 20px 50px 20px 35px;
+  font-size: 50px;
+}
+
+.mini__header {
+  margin: 40px;
+}
+.mini__header ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 0.7px;
+}
+.mini__header ul li {
+  padding-right: 10px;
+}
+.mini__header ul li img {
+  width: 7px;
+}
+.mini__header ul .item1__mini__header {
+  color: #8e9cc0;
+}
+.mini__header ul .item3__mini__header {
+  font-weight: bold;
+}
+.mini__header ul .item3__mini__header a {
+  text-decoration: none;
+}
+.mini__header ul .item3__mini__header a:hover {
+  text-decoration: underline;
+}
+
+.main__content {
+  display: flex;
+  direction: rtl;
+  margin: 25px 65px;
+  direction: rtl;
+  background-color: red;
+}
+.main__content .img__cloth .img__cloth__staf p {
+  color: white;
+}
+.main__content .search__filtering {
+  width: 25%;
+}
+.main__content .search__filtering .select__filtering .select__search__filtering {
+  width: 340px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 10px 10px 10px 170px;
+  outline: none;
+  appearance: none;
+  font-size: 16px;
+  color: #61696d;
+  font-family: "Open Sans", sans-serif;
+}
+.main__content .search__filtering .select__filtering img {
   width: 15px;
-  height: 15px;
+  position: relative;
+  bottom: 25px;
+  right: 310px;
+}
+.main__content .search__filtering .rest__button .btn__rest__button {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  padding: 0px 143.1px;
 }
 
 .spacer {

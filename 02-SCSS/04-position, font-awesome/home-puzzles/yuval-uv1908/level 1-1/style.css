@@ -1,0 +1,81 @@
+.all {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+#TL {
+  width: 100px;
+  height: 100px;
+  background-color: violet;
+}
+
+#TM {
+  width: 120px;
+  height: 100px;
+  background-color: teal;
+}
+
+#TR {
+  width: 130px;
+  height: 130px;
+  bottom: 30px;
+  background-color: greenyellow;
+}
+
+#ML {
+  width: 110px;
+  height: 90px;
+  background-color: pink;
+}
+
+#MM {
+  width: 70px;
+  height: 120px;
+  bottom: 30px;
+  background-color: orange;
+}
+
+#MR {
+  width: 120px;
+  height: 130px;
+  left: 40px;
+  bottom: 30px;
+  background-color: gray;
+}
+
+#BL {
+  width: 70px;
+  height: 150px;
+  bottom: 35px;
+  background-color: green;
+}
+
+#BM {
+  width: 115px;
+  height: 115px;
+  left: 40px;
+  background-color: purple;
+}
+
+#BR {
+  width: 70px;
+  height: 150px;
+  bottom: 35px;
+  left: 35px;
+  background-color: lightblue;
+}
+
+.square {
+  position: relative;
+  display: flex;
+  border: solid 1px gray;
+  margin-top: 50px;
+}/*# sourceMappingURL=style.css.map */

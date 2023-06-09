@@ -1,0 +1,92 @@
+@keyframes color {
+  0% {
+    color: tomato;
+  }
+  10% {
+    color: gold;
+  }
+  20% {
+    color: greenyellow;
+  }
+  30% {
+    color: green;
+  }
+  40% {
+    color: blue;
+  }
+  50% {
+    color: red;
+  }
+  60% {
+    color: purple;
+  }
+  70% {
+    color: beige;
+  }
+  80% {
+    color: lightcoral;
+  }
+  90% {
+    color: violet;
+  }
+  100% {
+    color: blueviolet;
+  }
+}
+@keyframes crazy {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  20% {
+    background-image: url(images/yuval-crazy.jpg);
+    background-size: 7.5dvb;
+  }
+  100% {
+    transform: translateX(1000px) rotate(540deg);
+  }
+}
+@keyframes cat {
+  0%, 100% {
+    transform: rotate(0deg);
+    transform-origin: 100% 100%;
+  }
+  10% {
+    transform: rotate(2deg);
+  }
+  20%, 40%, 60% {
+    transform: rotate(-4deg);
+  }
+  30%, 50%, 70% {
+    transform: rotate(4deg);
+  }
+  80% {
+    transform: rotate(-2deg);
+  }
+  90% {
+    transform: rotate(2deg);
+  }
+}
+@keyframes racc {
+  0% {
+    transform: translateX(800px) rotate(540deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+@keyframes roar {
+  100% {
+    background-image: url(images/lion-roar.jpg);
+    background-size: 52dvb;
+  }
+}
+@keyframes run {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(1000px);
+  }
+}
