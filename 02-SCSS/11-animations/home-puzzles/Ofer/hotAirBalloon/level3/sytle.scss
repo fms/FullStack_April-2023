@@ -8,7 +8,7 @@
 
 @keyframes ballon {
   0% {
-    top: 720px;
+    top: 65vh;
   }
 
   90% {
@@ -49,15 +49,13 @@ body {
     justify-content: center;
 
     .balloon {
-      max-width: 200px;
-      width: auto;
-      height: auto;
+      width: 150px;
       position: relative;
       z-index: 2;
       animation-name: ballon;
-      animation-duration: 3s;
+      animation-duration: 3.3s;
       animation-iteration-count: infinite;
-      animation-fill-mode: backwards;
+      animation-fill-mode: both;
       // -webkit-filter: drop-shadow(5px 5px 5px #f1f0f0);
 
       &:active {
@@ -67,7 +65,7 @@ body {
       }
     }
 
-    @for $i from 1 through 6 {
+    @for $i from 1 through 8 {
       .balloon-#{$i} {
         animation-delay:#{$i}s;
       }

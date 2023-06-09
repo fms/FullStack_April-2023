@@ -8,7 +8,7 @@
 
 @keyframes ballon {
   0% {
-    top: 720px;
+    top: 65vh;
   }
   90% {
     top: 0px;
@@ -42,15 +42,13 @@ body div {
   justify-content: center;
 }
 body div .balloon {
-  max-width: 200px;
-  width: auto;
-  height: auto;
+  width: 200px;
   position: relative;
   z-index: 2;
   animation-name: ballon;
-  animation-duration: 3s;
+  animation-duration: 4s;
   animation-iteration-count: infinite;
-  animation-fill-mode: backwards;
+  animation-fill-mode: both;
 }
 body div .balloon:active {
   animation-name: hiddenballon;
@@ -63,15 +61,6 @@ body div .balloon-2 {
 }
 body div .balloon-3 {
   animation-delay: 3s;
-}
-body div .balloon-4 {
-  animation-delay: 4s;
-}
-body div .balloon-5 {
-  animation-delay: 5s;
-}
-body div .balloon-6 {
-  animation-delay: 6s;
 }
 body .grass {
   position: fixed;
