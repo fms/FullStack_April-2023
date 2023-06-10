@@ -41,7 +41,13 @@ body {
 
   background-color: rgb(15, 15, 15);
   overflow:hidden;
-
+  .timer {
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    z-index: -1;
+  }
   div {
     margin-top: 20px;
     display: flex;
@@ -54,7 +60,7 @@ body {
       z-index: 2;
       animation-name: ballon;
       animation-duration: 3.3s;
-      animation-iteration-count: infinite;
+      animation-iteration-count: 1;
       animation-fill-mode: both;
       // -webkit-filter: drop-shadow(5px 5px 5px #f1f0f0);
 
