@@ -1,35 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="dist/style.css">
-    <title>Document</title>
+    <title>Components</title>
 </head>
+
 <body>
     <div class="nav"></div>
     <div class="wrapper">
-        <div class="welcom-container">
-            <div class="top-news"></div>
-            <div class="news">
-                <div class="news-articles">
-                    <h2><a href="#">News</a></h2>
-                    <div class="article">
-                        <img src="https://ichef.bbc.co.uk/wwhp/624/cpsprodpb/9521/production/_129977183_gettyimages-1258391759-594x594.jpg" alt="">
-                        <h3>Why do trains in India go off the tracks?</h3>
-                        <p>There are many unanswered questions on what exactly led to a deadly multiple train collision in India.</p>
-                        <h4>INDIA</h4>
+        <div class="welcome-container">
+            <div class="top-news">
+                <div class="top-info">
+                    <div class="welcome">
+                        <h2>Welcom to BBC.com</h2>
+                    </div>
+                    <div class="date">
+                        <p>Tuesday, 6 June</p>
                     </div>
                 </div>
-                <div class="sport-articles"></div>
-                <div class="weekend-aricles"></div>
+            </div>
+            <div class="top-news-container">
+                <div class="left">
+                    <div class="image-container">
+                        <img src="https://ichef.bbc.co.uk/wwhp/999/cpsprodpb/C88C/production/_130004315_ukraine_dam_3.jpg" alt="">
+                    </div>
+                    <div class="content-container">
+                        <h2>Zelensky says Russia blew up dam as thousands evacuated from flood</h2>
+                        <p>More than 17,000 people are being evacuated, Ukraine says, after a major dam is breached.</p>
+                        <h3>EUROPE</h3>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="article article-1">
+                        <div class="image-container">
+                            <img src="https://ichef.bbc.co.uk/wwhp/624/cpsprodpb/DA5C/production/_130000955_a0c3eedf-f816-4fce-ac7d-9e752c18ea73.jpg" alt="">
+                        </div>
+                        <div class="content-container">
+                            <h2>El Niño planet-warming weather phase has begun</h2>
+                            <h3>SCIENCE & ENVIRONMENT</h3>
+                        </div>
+                    </div>
+                    <div class="article article-2">
+                        <div class="image-container">
+                            <img src="https://ichef.bbc.co.uk/wwhp/624/cpsprodpb/1555D/production/_126898378_gettyimages-1423195630.jpg" alt="">
+                        </div>
+                        <div class="content-container">
+                            <h2>Ammonia pipeline blast may end grain deal - Russia</h2>
+                            <h3>EUROPE</h3>
+                        </div>
+                    </div>
+                    <div class="article article-3">
+                        <div class="image-container">
+                            <img src="https://ichef.bbc.co.uk/wwhp/624/ibroadcast/images/live/p0/fs/f9/p0fsf96f.jpg" alt="">
+                        </div>
+                        <div class="content-container">
+                            <h2>The cult filmmaker who broke taboos</h2>
+                            <h3>CULTURE</h3>
+                        </div>
+                    </div>
+                    <div class="article article-4">
+                        <div class="image-container">
+                            <img src="https://ichef.bbc.co.uk/wwhp/624/ibroadcast/images/live/p0/fs/dr/p0fsdr77.jpg" alt="">
+                        </div>
+                        <div class="content-container">
+                            <h2>The world's most underrated dive spots?</h2>
+                            <h3>TRAVEL</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="news">
+                <a class="news-title" href="#">
+                    <h2>News</h2>
+                </a>
+                <div class="articles news-articles">
+                    <div class="article">
+                        <a href="#">
+                        <div class="image-container">
+                            <img src="https://ichef.bbc.co.uk/wwhp/624/cpsprodpb/9521/production/_129977183_gettyimages-1258391759-594x594.jpg"
+                                alt="">
+                        </div>
+                        <div class="content-container">
+                            <h3>Why do trains in India go off the tracks?</h3>
+                            <p>There are many unanswered questions on what exactly led to a deadly multiple train
+                                collision in India.</p>
+                        </div>
+                        </a>
+                        <div class="category-container">
+                            <a href="#">
+                                <h4>INDIA</h4>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="article">
+                        <a href="#">
+                        <div class="image-container">
+                            <img src="https://ichef.bbc.co.uk/wwhp/624/cpsprodpb/3687/production/_129995931_16x9poppy-field---more-remote.jpg"
+                                alt="">
+                        </div>
+                        <div class="content-container">
+                            <h3>Inside the Taliban's drug war - opium poppy crops slashed</h3>
+                            <p>Afghanistan's leaders are following through on their drug crackdown promise to stop cultivation.</p>
+                        </div>
+                        </a>
+                        <div class="category-container">
+                            <a href="#">
+                                <h4>NEWS</h4>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="article">
+                        <a href="#">
+                        <div class="image-container">
+                            <img src="https://ichef.bbc.co.uk/wwhp/624/cpsprodpb/FDB6/production/_130005946_fbi_agent_robert_hanssen_afp.jpg.png"
+                                alt="">
+                        </div>
+                        <div class="content-container">
+                            <h3>The fake job that snared FBI agent spying for Moscow</h3>
+                            <p>Agents who helped to bring down one of the most notorious Cold War spies tell us how they did it.</p>
+                        </div>
+                        </a>
+                        <div class="category-container">
+                            <a href="#">
+                                <h4>US & CANADA</h4>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a class="sport-title" href="#">
+                    <h2>Sport</h2>
+                </a>
+                <div class="articles sport-articles">
+                    <div class="article">
+                        <a href="#">
+                        <div class="image-container">
+                            <img src="https://ichef.bbc.co.uk/wwhp/624/cpsprodpb/1D4D/production/_130010570_djokovic_getty.jpg"
+                                alt="">
+                        </div>
+                        <div class="content-container">
+                            <h3>Listen: French Open - Djokovic leads Khachanov in third set</h3>
+                            <p>Novak Djokovic faces Karen Khachanov for a place in the French Open semi-finals - listen to live radio commentary and follow text updates.</p>
+                        </div>
+                        </a>
+                        <div class="category-container">
+                            <a href="#">
+                                <h4>TENNIS</h4>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="article">
+                        <a href="#">
+                        <div class="image-container">
+                            <img src="https://ichef.bbc.co.uk/wwhp/624/cpsprodpb/11FB2/production/_130005637_post.jpg"
+                                alt="">
+                        </div>
+                        <div class="content-container">
+                            <h3>Tottenham name Postecoglou as new manager</h3>
+                            <p>Tottenham confirm the appointment of Ange Postecoglou as their new manager, with the Australian leaving Celtic to take over at the Premier League club.</p>
+                        </div>
+                        </a>
+                        <div class="category-container">
+                            <a href="#">
+                                <h4>FOOTBALL</h4>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="article">
+                        <a href="#">
+                        <div class="image-container">
+                            <img src="https://ichef.bbc.co.uk/wwhp/624/cpsprodpb/F92E/production/_130009736_sabalenka_presser.jpg"
+                                alt="">
+                        </div>
+                        <div class="content-container">
+                            <h3>I don't support Lukashenko right now - Sabalenka</h3>
+                            <p>Aryna Sabalenka says she does not support Belarusian president Alexander Lukashenko "right now" because of her nation's support of Russia's war in Ukraine.</p>
+                        </div>
+                        </a>
+                        <div class="category-container">
+                            <a href="#">
+                                <h4>TENNIS</h4>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a class="technology-title" href="#">
+                    <h2>Technology</h2>
+                </a>
+                <div class="articles technology-articles">
+                    <div class="article">
+                        <a href="#">
+                        <div class="image-container">
+                            <img src="https://ichef.bbc.co.uk/wwhp/624/cpsprodpb/10FF4/production/_130002696_caz.jpg"
+                                alt="">
+                        </div>
+                        <div class="content-container">
+                            <h3>'Now I finally know how my daughter sees this world'</h3>
+                            <p>A mum says a virtual reality headset gives her a new understanding of her girl's visual impairment</p>
+                        </div>
+                        </a>
+                        <div class="category-container">
+                            <a href="#">
+                                <h4>UK</h4>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="article">
+                        <a href="#">
+                        <div class="image-container">
+                            <img src="https://ichef.bbc.co.uk/wwhp/624/cpsprodpb/14EFC/production/_129965758_thumbnail976x549.png"
+                                alt="">
+                        </div>
+                        <div class="content-container">
+                            <h3>Tech Decoded: The latest news direct to your inbox</h3>
+                            <p>Tech Decoded is the BBC's international technology newsletter, bringing you the latest twice a week</p>
+                        </div>
+                        </a>
+                        <div class="category-container">
+                            <a href="#">
+                                <h4>TECHNOLOGY</h4>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="article">
+                        <a href="#">
+                        <div class="image-container">
+                            <img src="https://ichef.bbc.co.uk/wwhp/624/ibroadcast/images/live/p0/ff/9d/p0ff9dmz.jpg"
+                                alt="">
+                        </div>
+                        <div class="content-container">
+                            <h3>How your phone can check your heart</h3>
+                            <p>Your smartphone can detect some early signs of heart disease</p>
+                        </div>
+                        </a>
+                        <div class="category-container">
+                            <a href="#">
+                                <h4>FUTURE</h4>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="weather"></div>
         </div>
         <div class="reel-container"></div>
         <div class="editor-container"></div>
     </div>
-    
 </body>
+
 </html>
