@@ -26,15 +26,17 @@
 .top-news-container .left .content-container {
   position: absolute;
   bottom: 0;
+  padding-left: 10px;
 }
 .top-news-container .left .content-container h2 {
-  color: black;
+  color: white;
 }
 .top-news-container .left .content-container p {
   color: white;
 }
 .top-news-container .left .content-container h3 {
   color: white;
+  font-size: 12px;
 }
 .top-news-container .right {
   width: 50%;
