@@ -1,0 +1,52 @@
+.background{
+
+    img{
+        height: 100%;
+        width: 100%;
+    }
+
+}
+
+.cartainleft{
+    position:relative;    
+    bottom: 900px;
+    animation-name: openleft;
+    animation-duration: 7s;
+   img{
+    width: 755px;
+    height: 900px;
+   }
+}
+
+@keyframes openleft{
+    from{
+        right:0px;
+    }
+
+    to{
+       right: 755px;
+    }
+}
+
+.cartainright{
+    position:relative;
+   left: 755px;
+    bottom: 1804px;
+    animation-name: openright;
+    animation-duration: 7s;
+   
+   img{
+    width: 755px;
+    height: 900px;
+   }
+}
+
+@keyframes openright{
+    from{
+        left:755px;
+    }
+
+    to{
+       left: 1510px;
+    }
+}
