@@ -3,30 +3,13 @@ body {
   padding: 0;
 }
 
-button {
-  position: fixed;
-  padding: 16px 32px;
-  margin: 4px 2px;
-  border: none;
-  background-color: lightcoral;
-  font-size: large;
-  color: white;
-  border-radius: 2px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-button:hover {
-  background-color: white;
-  color: lightcoral;
-  border: 1px solid lightcoral;
-}
-
 .container {
+  background-color: #9cc9f0;
   display: flex;
   justify-content: space-around;
-  background-color: #9cc9f0;
-  height: 100vh;
   align-items: flex-end;
+  height: 0px;
+  width: 100vw;
 }
 
 .balloons {
@@ -35,6 +18,7 @@ button:hover {
   border-radius: 50% 50% 80% 80%/50% 50% 80% 90%;
   border: 0.3px solid black;
   background-color: #508e8e;
+  opacity: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,6 +52,18 @@ button:hover {
   background-color: #ff7300;
   animation-duration: 2s;
 }
+.balloons__balloon7 {
+  background-color: #9d00ff;
+  animation-duration: 3s;
+}
+.balloons__balloon8 {
+  background-color: #00bbff;
+  animation-duration: 4s;
+}
+.balloons__balloon9 {
+  background-color: #fff200;
+  animation-duration: 2s;
+}
 
 @keyframes bottom-top {
   0% {
@@ -86,7 +82,7 @@ button:hover {
     left: 50px;
   }
   100% {
-    bottom: 650px;
+    bottom: 1000px;
     left: 20px;
   }
 }
