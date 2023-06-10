@@ -32,7 +32,7 @@ button:hover {
 .balloons {
   width: 80px;
   height: 140px;
-  border-radius: 50% 50% 80% 80%/50% 50% 90% 90%;
+  border-radius: 50% 50% 80% 80%/50% 50% 80% 90%;
   border: 0.3px solid black;
   background-color: #508e8e;
   display: flex;

@@ -16,7 +16,7 @@ button {
   cursor: pointer;
 
   &:hover {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     color: lightcoral;
     border: 1px solid lightcoral;
   }
@@ -36,7 +36,9 @@ button {
 .balloons {
   width: 80px;
   height: 140px;
-  border-radius: 50% 50% 80% 80% / 50% 50% 90% 90% ;
+  
+  // border-radius: 100%;
+  border-radius: 50% 50% 80% 80% / 50% 50% 80% 90% ;
   border: 0.3px solid black;
   background-color: rgb(80, 142, 142);
   display: flex;
