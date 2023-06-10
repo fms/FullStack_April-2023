@@ -1,3 +1,123 @@
 body {
   margin: 0;
+  padding: 0;
 }
+
+button {
+  position: fixed;
+  padding: 16px 32px;
+  margin: 4px 2px;
+  border: none;
+  background-color: lightcoral;
+  font-size: large;
+  color: white;
+  border-radius: 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: white;
+    color: lightcoral;
+    border: 1px solid lightcoral;
+  }
+}
+
+.container {
+  // background-image: url(./img/sky.jpg) no-repeat center;
+  // background-size: cover;
+  // position: relative;
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(156, 201, 240);
+  height: 100vh;
+  align-items: flex-end;
+}
+
+.balloons {
+  width: 80px;
+  height: 140px;
+  border-radius: 50% 50% 80% 80% / 50% 50% 90% 90% ;
+  border: 0.3px solid black;
+  background-color: rgb(80, 142, 142);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation-name: bottom-top;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+  &__balloon1 {
+    background-color: rgb(255, 0, 247);
+    animation-duration: 3s;
+  }
+  &__balloon2 {
+    background-color: rgb(0, 255, 55);
+    animation-duration: 2s;
+  }
+  &__balloon3 {
+    background-color: rgb(212, 255, 0);
+    animation-duration: 1.5s;
+  }
+  &__balloon4 {
+    background-color: rgb(255, 0, 43);
+    animation-duration: 4s;
+  }
+  &__balloon5 {
+    background-color: rgb(0, 255, 229);
+    animation-duration: 1.2s;
+  }
+  &__balloon6 {
+    background-color: rgb(255, 115, 0);
+    animation-duration: 2s;
+  }
+}
+
+@keyframes bottom-top {
+  0% {
+    bottom: 0px;
+  }
+  10% {
+    // bottom: 100px;
+    left: 20px;
+  }
+  40% {
+    // bottom: 200px;
+    left: 50px;
+  }
+
+  60% {
+    // bottom: 350px;
+    left: 20px;
+  }
+  80% {
+    // bottom: 500px;
+    left: 50px;
+  }
+
+  100% {
+    bottom: 650px;
+    left: 20px;
+  }
+}
+.balloons:hover {
+  box-shadow: 0 0 10px black;
+}
+
+.balloons:active {
+  opacity: 0%;
+}
+
+// .balloons:active {
+//   top: -40px;
+//   animation: explode 0.5s forwards;
+//   animation-timing-function:unset;
+// }
+
+// @keyframes explode {
+//   // 0% { transform: scale(1); }
+//   50% { transform: scale(1.2); }
+//   100% { transform: scale(0); }
+
+// }
