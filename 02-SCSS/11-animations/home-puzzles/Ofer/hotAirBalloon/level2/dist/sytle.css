@@ -35,6 +35,13 @@ body {
   background-color: #0f0f0f;
   overflow: hidden;
 }
+body .timer {
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  z-index: -1;
+}
 body div {
   margin-top: 20px;
   display: flex;
@@ -47,7 +54,7 @@ body div .balloon {
   z-index: 2;
   animation-name: ballon;
   animation-duration: 3.5s;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 1;
   animation-fill-mode: both;
 }
 body div .balloon:active {
