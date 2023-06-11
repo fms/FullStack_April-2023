@@ -136,20 +136,12 @@
   direction: rtl;
   margin: 25px 65px;
   direction: rtl;
-  background-color: rgb(255, 0, 0);
-  .img__cloth{
-    .img__cloth__staf p{
-      color: white;
-    }
-  }
-  
 
   .search__filtering {
-    width: 25%;
+    width: 22%;
 
     .select__filtering {
       .select__search__filtering {
-        width: 340px;
         border: 1px solid #ced4da;
         border-radius: 5px;
         padding: 10px 10px 10px 170px;
@@ -163,15 +155,17 @@
         img {
           width: 15px;
           position: relative;
-          bottom: 25px;
-          right: 310px;
+          bottom: 28px;
+          right: 280px;
         }
         
     }
 
+
+
     // Button nake hakol
     .rest__button {
-
+      
       .btn__rest__button {
         display: flex;
         flex-direction: column;

@@ -1,3 +1,9 @@
+body, div, p, ul, li, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman", Times, serif;
+}
+
 .wrapper {
   width: 60%;
   margin: 0 auto;
@@ -64,14 +70,15 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  padding: 15px 0;
 }
 .top-news .top-info .welcome h2 {
   margin: 0;
-  font-size: 22px;
+  font-size: 18px;
 }
 .top-news .top-info .date p {
   margin: 0;
-  font-size: 22px;
+  font-size: 18px;
   color: #8c8c8c;
 }
 
@@ -82,16 +89,20 @@
   position: relative;
   width: 50%;
 }
+.top-news-container .left .image-container {
+  padding-right: 3px;
+}
 .top-news-container .left .image-container img {
   width: 100%;
 }
 .top-news-container .left .content-container {
   position: absolute;
   bottom: 0;
-  padding-left: 10px;
+  padding: 0 10px;
 }
 .top-news-container .left .content-container h2 {
   color: white;
+  margin-bottom: 10px;
 }
 .top-news-container .left .content-container p {
   color: white;
@@ -99,8 +110,9 @@
 .top-news-container .left .content-container h3 {
   color: white;
   padding-left: 5px;
+  margin: 10px 0;
   font-size: 12px;
-  border-left: 3px solid #e91802;
+  border-left: 1px solid #e91802;
 }
 .top-news-container .right {
   width: 50%;
@@ -109,13 +121,39 @@
 }
 .top-news-container .right .article {
   width: 50%;
+  position: relative;
 }
 .top-news-container .right .article .image-container {
-  padding-left: 5px;
+  padding-left: 8px;
 }
 .top-news-container .right .article .image-container img {
   width: 100%;
 }
-.top-news-container .right .article-1 .image-container img {
-  width: 100%;
+.top-news-container .right .article .content-container {
+  position: absolute;
+  bottom: 0;
+  padding: 0 10px 5px 20px;
+}
+.top-news-container .right .article .content-container h2 {
+  color: white;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.top-news-container .right .article .content-container h3 {
+  color: white;
+  padding-left: 5px;
+  margin: 10px 0;
+  font-size: 10px;
+}
+.top-news-container .right .article-1 .content-container h3 {
+  border-left: 1px solid #47a1d8;
+}
+.top-news-container .right .article-2 .content-container h3 {
+  border-left: 1px solid #47a1d8;
+}
+.top-news-container .right .article-3 .content-container h3 {
+  border-left: 1px solid #47a1d8;
+}
+.top-news-container .right .article-4 .content-container h3 {
+  border-left: 1px solid #47a1d8;
 }

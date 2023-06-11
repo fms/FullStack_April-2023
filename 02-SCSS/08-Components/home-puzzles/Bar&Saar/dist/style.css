@@ -544,6 +544,9 @@ button:hover {
   position: relative;
   bottom: 85px;
 }
+.footer-logos img {
+  cursor: pointer;
+}
 .footer-logos .main-logo-footer .deviantart-logo-footer {
   width: 100px;
   height: 100px;
