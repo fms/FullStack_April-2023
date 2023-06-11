@@ -1,0 +1,83 @@
+.background{
+
+    img{
+        height: 100%;
+        width: 100%;
+    }
+
+}
+
+.cartainleft{
+    position:relative;    
+    bottom: 1100px;
+    animation-name: openleft;
+    animation-duration: 3ations;
+    animation-fill-mode: forwards;
+   img{
+    width: 920px;
+    height: 1000px;
+   }
+}
+
+@keyframes openleft{
+    from{
+        right:0px;
+    }
+
+    to{
+       right: 820px;
+    }
+}
+
+.cartainright{
+    position:relative;
+   left: 920px;
+    bottom: 2104px;
+    animation-name: openright;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+   
+   img{
+    width: 920px;
+    height: 1000px;
+   }
+}
+
+@keyframes openright{
+    from{
+        left:920px;
+    }
+
+    to{
+       left: 1775px;
+    }
+}
+
+.dollflex{
+    display: flex;
+    gap: 2px;
+}
+
+.doll{
+    position: relative;
+    bottom: 3600px;
+    margin-left: 100px;
+    animation-name: dolly;
+    animation-duration: 6s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+
+    img{
+        position: relative;
+    }
+    
+}
+
+@keyframes dolly{
+    from{
+        bottom: 3600;
+    }
+    to{
+      bottom: 2600px;
+    }
+}
