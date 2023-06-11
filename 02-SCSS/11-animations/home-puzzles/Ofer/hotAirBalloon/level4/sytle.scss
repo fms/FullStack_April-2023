@@ -5,7 +5,17 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+@mixin flexed-column() {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+}
+@mixin flexed-row() {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
 @keyframes ballon {
   0% {
     top: 65vh;
@@ -41,6 +51,40 @@ body {
 
   background-color: rgb(15, 15, 15);
   overflow:hidden;
+  #failed-div {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    padding: 20px;
+    transform: translate(-50%, -80%);
+    color: black;
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: 600;
+    @include flexed-column;
+    width: 500px;
+    height: 200px;
+    background: antiquewhite;
+    border-radius: 30px;
+    display: none;
+    h3{
+      text-align: center;
+      font-family: 'Bebas Neue', sans-serif;
+    }
+    a{
+
+      height: 30px;
+      width: 200px;
+      border-radius: 10px;
+      background-color: rgb(15, 15, 15);
+      color: white;
+      @include flexed-row;
+      font-size: 30px;
+      font-family: 'Bebas Neue', sans-serif;
+      text-decoration: none;
+      height: 300px;
+    }
+  }
   .timer {
     color: white;
     font-size: 30px;
