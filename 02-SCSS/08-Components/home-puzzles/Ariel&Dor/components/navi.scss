@@ -1,22 +1,14 @@
-// .navi {
-  
-//   @include basic(350px, 150px);
-
-//   &__icon__img {
-//     @include basic(50px, 50px);
-//   }
-
-// } 
+@import '../config';
 
 .navb {
-  display: flex;
-  justify-content: space-between;
+  @include flexer (flex, center, none);
   position: fixed;
   width: 100%;
   background-color: rgb(46, 44, 45);
   font-family: sans-serif;
   font-size: 20px;
   letter-spacing: 0.3px;
+  direction: ltr;
 
   .icon {
     
@@ -35,6 +27,7 @@
   .center_navb {
     width: 100%;
     background-color: rgb(46, 44, 45);
+
     
     .ul__center__navb {
       display: flex;
@@ -44,6 +37,7 @@
 
       .ul__center__navb-li{
         padding: 35px 0;
+        
       }
 
       a {

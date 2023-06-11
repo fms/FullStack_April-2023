@@ -1,17 +1,26 @@
 * {
   margin: 0;
   font-family: "Open Sans", sans-serif;
+  direction: rtl;
+}
+
+* {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  direction: rtl;
 }
 
 .navb {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex-direction: none;
   position: fixed;
   width: 100%;
   background-color: #2e2c2d;
   font-family: sans-serif;
   font-size: 20px;
   letter-spacing: 0.3px;
+  direction: ltr;
 }
 .navb .icon .img__divver__icon {
   background-color: #007ab8;
@@ -75,14 +84,20 @@
   font-size: 50px;
 }
 
+* {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  direction: rtl;
+}
+
 .mini__header {
   margin: 40px;
 }
 .mini__header ul {
-  list-style: none;
   display: flex;
-  justify-content: flex-end;
-  font-family: "Open Sans", sans-serif;
+  justify-content: none;
+  flex-direction: none;
+  list-style: none;
   letter-spacing: 0.7px;
 }
 .mini__header ul li {
@@ -107,6 +122,7 @@
 .headerMainContent {
   display: flex;
   justify-content: center;
+  flex-direction: none;
   direction: rtl;
 }
 .headerMainContent .selectHeaderMainContent {
@@ -134,15 +150,15 @@
 .headerMainContent .resultsProductsCards {
   display: flex;
   justify-content: center;
+  flex-direction: none;
   width: 70%;
 }
 
 .main__content {
   display: flex;
   justify-content: space-between;
-  direction: rtl;
+  flex-direction: none;
   margin: 0 65px 25px;
-  direction: rtl;
 }
 .main__content .select__filtering {
   margin: 20px;
@@ -166,13 +182,13 @@
   border: #dfdfdf 1px solid;
   font-size: 16px;
   padding: 12px 20px;
-  margin-top: 15px;
+  margin-top: 5px;
   color: #212529;
 }
 .main__content .select__filtering .categoryEn2 {
   border: #dfdfdf 1px solid;
   font-size: 16px;
-  padding: 20px 20px 45px;
+  padding: 10px 20px 25px;
   color: #212529;
 }
 .main__content .select__filtering .categoryEn2 ul {
@@ -181,27 +197,102 @@
 }
 .main__content .select__filtering .categoryEn2 ul li {
   cursor: pointer;
-  padding: 5px;
+  padding: 3px 5px;
 }
 .main__content .select__filtering .categoryEn2 ul li:hover {
   border-right: 2px solid black;
 }
-.main__content .cards {
-  padding-right: 50px;
-}
 .main__content .cards .rowFlexerCards {
   display: flex;
-  padding: 5px;
+  justify-content: center;
+  flex-direction: none;
   width: 100%;
 }
 .main__content .cards .productsCard1 {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  padding: 10px;
 }
 .main__content .cards .productsCard1 img {
   width: 322.49px;
   height: 322.49px;
+}
+.main__content .cards .productsCard1 .infoCards {
+  display: flex;
+  justify-content: none;
+  flex-direction: column;
+  text-align: center;
+  padding: 0.6875rem 0 3rem;
+}
+.main__content .cards .productsCard1 .infoCards .palateColorFlexer {
+  display: flex;
+  justify-content: center;
+  flex-direction: none;
+}
+.main__content .cards .productsCard1 .infoCards .palateColorFlexer .palateColor {
+  border: #212529 1px solid;
+  width: 27px;
+  height: 25px;
+  padding: 1px 1px 1.2px;
+  margin: 0 3.5px;
+}
+.main__content .cards .productsCard1 .infoCards .palateColorFlexer .multiFlexerPalateColor {
+  display: flex;
+  justify-content: none;
+  flex-direction: none;
+}
+.main__content .cards .productsCard1 .infoCards .palateColorFlexer .blackPalateColor {
+  background-color: black;
+  font-size: 19px;
+  cursor: pointer;
+}
+.main__content .cards .productsCard1 .infoCards .palateColorFlexer .whitePalateColor {
+  background-color: #ffffff;
+  font-size: 19px;
+  color: #ffffff;
+  cursor: pointer;
+}
+.main__content .cards .productsCard1 .infoCards .palateColorFlexer .grayPalateColor {
+  background-color: #4e5359;
+  font-size: 19px;
+  color: #4e5359;
+  cursor: pointer;
+}
+.main__content .cards .productsCard1 .infoCards .kotarot a {
+  font-size: 17px;
+  text-decoration: none;
+  color: black;
+}
+.main__content .cards .productsCard1 .infoCards .kotarot a div {
+  padding: 5px 0;
+}
+.main__content .cards .productsCard1 .infoCards .kotarot a div span:hover {
+  border-bottom: 2px black solid;
+}
+.main__content .cards .productsCard1 .infoCards .kotarot a .kotertMishne {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+.main__content .cards .productsCard1 .infoCards .price {
+  font-size: 14px;
+  font-weight: bold;
+}
+.main__content .cards .productsCard1 .infoCards .price .discountPrice {
+  color: red;
+}
+.main__content .cards .productsCard1 .infoCards .price .clearPrice {
+  border: #212529 1px solid;
+  display: flex;
+  justify-content: none;
+  flex-direction: column;
+  width: 60px;
+  position: relative;
+  bottom: 10px;
+  right: 160px;
+}
+.main__content .cards .productsCard1 .infoCards .descriptoin {
+  font-weight: bold;
 }
 
 .spacer {
