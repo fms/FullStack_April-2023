@@ -18,10 +18,9 @@ html {
   align-content: space-between;
   justify-content: normal;
   height: 1800px;
-  width: 75%;
+  width: 90%;
 }
 .container__item {
-  visibility: hidden;
   position: relative;
   color: black;
   width: 18%;
