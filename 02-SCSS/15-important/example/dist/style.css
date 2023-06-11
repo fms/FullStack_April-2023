@@ -1,0 +1,13 @@
+.button {
+  background-color: gray !important;
+  padding: 10px;
+  margin: 5px;
+}
+
+.buttons {
+  height: 50px;
+}
+
+.wrapper a {
+  background-color: yellow;
+}
