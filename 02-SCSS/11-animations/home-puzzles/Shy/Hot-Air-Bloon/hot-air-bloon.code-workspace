@@ -1,0 +1,53 @@
+{
+	"folders": [
+		{
+			"path": "../Ynet"
+		},
+		{
+			"path": "../SCSS"
+		},
+		{
+			"path": "../Blog"
+		},
+		{
+			"path": "../Float"
+		},
+		{
+			"path": "../CSS- Position/level-1-1"
+		},
+		{
+			"path": "../CSS- Position/‏‏level-1-2"
+		},
+		{
+			"path": "../CSS- Position/‏‏‏‏level-2-1"
+		},
+		{
+			"path": "../CSS- Position/‏‏‏‏‏‏level-2-2"
+		},
+		{
+			"path": "../CSS-Position-class"
+		},
+		{
+			"path": "../CSS- Position/level-3-1"
+		},
+		{
+			"path": "../CSS- Position/‏‏level-3-2"
+		},
+		{
+			"path": "../Components"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../Exploding-bloons"
+		},
+		{
+			"path": "../../Components"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Exploding-bloons",
+		"compile-hero.disable-compile-files-on-did-save-code": false
+	}
+}

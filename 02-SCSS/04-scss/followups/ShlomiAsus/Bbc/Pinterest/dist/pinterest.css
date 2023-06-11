@@ -130,6 +130,11 @@
   height: 350px;
   width: 250px;
   text-align: center;
-  color: black;
+  color: white;
   text-shadow: 4px 4px 4px #c7ff20;
+}
+
+.flip-scale-up-hor {
+  -webkit-animation: flip-scale-up-hor 0.5s linear both;
+  animation: flip-scale-up-hor 0.5s linear both;
 }
