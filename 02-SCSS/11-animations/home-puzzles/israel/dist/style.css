@@ -7,7 +7,7 @@
   position: relative;
   bottom: 1100px;
   animation-name: openleft;
-  animation-duration: 3ations;
+  animation-duration: 3s;
   animation-fill-mode: forwards;
 }
 .cartainleft img {
@@ -55,7 +55,6 @@
   margin-left: 100px;
   animation-name: dolly;
   animation-duration: 6s;
-  animation-delay: 3s;
   animation-fill-mode: forwards;
 }
 .doll img {
@@ -64,9 +63,72 @@
 
 @keyframes dolly {
   from {
-    bottom: 3600;
+    bottom: 3600px;
   }
   to {
+    bottom: 2600px;
+  }
+}
+.dollright {
+  animation-name: dollright;
+  animation-duration: 3s;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dollright {
+  0% {
+    bottom: 3600px;
+  }
+  80% {
+    bottom: 2600px;
+  }
+  97% {
+    bottom: 3000px;
+  }
+  100% {
+    bottom: 2600px;
+  }
+}
+.dollcenter {
+  animation-name: dollright;
+  animation-duration: 3s;
+  animation-delay: 6s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dollcenter {
+  0% {
+    bottom: 3600px;
+  }
+  80% {
+    bottom: 2600px;
+  }
+  97% {
+    bottom: 3000px;
+  }
+  100% {
+    bottom: 2600px;
+  }
+}
+.dollleft {
+  animation-name: dollright;
+  animation-duration: 3s;
+  animation-delay: 9s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dollleft {
+  0% {
+    bottom: 3600px;
+  }
+  80% {
+    bottom: 2600px;
+  }
+  97% {
+    bottom: 3000px;
+  }
+  100% {
     bottom: 2600px;
   }
 }
