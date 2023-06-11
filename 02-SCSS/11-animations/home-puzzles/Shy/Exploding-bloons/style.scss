@@ -1,0 +1,35 @@
+@import '_bloon-animation';
+
+.container {
+    width: 90%;
+    height: 720px;
+    border: 100px solid aqua;
+    position: relative;
+
+    .bloon {
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+        position: absolute;
+        display: block;
+    }
+
+    .bloon-1 {
+        background-color: $color-2;
+    }
+    .bloon-2 {
+        background-color: rgb(111, 0, 255);
+    }
+    .bloon-3 {
+        background-color: rgb(39, 151, 24);
+    }
+    .bloon-4 {
+        background-color: rgb(251, 255, 0);
+    }
+
+    .bloon-1:active{
+        background-color: black;
+        $steps: 0;
+    }
+}
+
