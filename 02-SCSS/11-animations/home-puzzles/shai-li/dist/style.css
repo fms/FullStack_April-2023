@@ -1,3 +1,95 @@
 body {
   margin: 0;
+  padding: 0;
+}
+
+.container {
+  background-color: #9cc9f0;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 0px;
+  width: 100vw;
+}
+
+.balloons {
+  width: 80px;
+  height: 140px;
+  border-radius: 50% 50% 80% 80%/50% 50% 80% 90%;
+  border: 0.3px solid black;
+  background-color: #508e8e;
+  opacity: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation-name: bottom-top;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.balloons__balloon1 {
+  background-color: #ff00f7;
+  animation-duration: 3s;
+}
+.balloons__balloon2 {
+  background-color: #00ff37;
+  animation-duration: 2s;
+}
+.balloons__balloon3 {
+  background-color: #d4ff00;
+  animation-duration: 1.5s;
+}
+.balloons__balloon4 {
+  background-color: #ff002b;
+  animation-duration: 4s;
+}
+.balloons__balloon5 {
+  background-color: #00ffe5;
+  animation-duration: 1.2s;
+}
+.balloons__balloon6 {
+  background-color: #ff7300;
+  animation-duration: 2s;
+}
+.balloons__balloon7 {
+  background-color: #9d00ff;
+  animation-duration: 3s;
+}
+.balloons__balloon8 {
+  background-color: #00bbff;
+  animation-duration: 4s;
+}
+.balloons__balloon9 {
+  background-color: #fff200;
+  animation-duration: 2s;
+}
+
+@keyframes bottom-top {
+  0% {
+    bottom: 0px;
+  }
+  10% {
+    left: 20px;
+  }
+  40% {
+    left: 50px;
+  }
+  60% {
+    left: 20px;
+  }
+  80% {
+    left: 50px;
+  }
+  100% {
+    bottom: 1000px;
+    left: 20px;
+  }
+}
+.balloons:hover {
+  box-shadow: 0 0 10px black;
+}
+
+.balloons:active {
+  opacity: 0%;
 }
