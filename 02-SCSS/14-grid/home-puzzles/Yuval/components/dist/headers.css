@@ -1,19 +1,11 @@
-.all {
-  position: static;
-}
-
-.header {
-  position: static;
-}
-
 .fixedHeader {
   display: flex;
   position: sticky;
-  flex-direction: row;
+  top: 0px;
   margin: auto;
   width: 100%;
   height: 100px;
-  top: 0px;
+  flex-direction: row;
   justify-content: space-between;
   background-color: #e5005c;
   color: white;
@@ -35,9 +27,7 @@
 }
 
 .globalHeader {
-  display: flex;
-  position: relative;
-  flex-direction: row-reverse;
+  @in position: relative;
   margin: auto;
   width: 100%;
   height: 50px;
@@ -51,22 +41,3 @@
 .globalHeader--firstLink {
   margin-left: 200px;
 }
-
-.logoHeader {
-  display: flex;
-  position: relative;
-  flex-direction: row-reverse;
-  margin: auto;
-  width: 100%;
-  height: 50px;
-  flex-grow: 1;
-}
-.logoHeader img {
-  height: 50px;
-}
-.logoHeader--israel {
-  width: 22rem;
-}
-.logoHeader--USA {
-  width: 70rem;
-}/*# sourceMappingURL=style.css.map */
