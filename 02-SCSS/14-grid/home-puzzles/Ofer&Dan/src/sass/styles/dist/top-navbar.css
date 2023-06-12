@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.top-navbar {
+  position: fixed;
+  z-index: 3;
+  padding: 10px 0;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  background-color: #141516;
+}
+.top-navbar__youtubelogo {
+  display: flex;
+  width: 220px;
+  flex-shrink: 0;
+}
+.top-navbar__youtubelogo > a img {
+  position: relative;
+  top: 38px;
+  width: 30px;
+  filter: invert(1) sepia(10) saturate(0) hue-rotate(175deg);
+}
+.top-navbar__youtubelogo .youtube-image {
+  width: 160px;
+}
+.top-navbar__youtubelogo .youtube-image:hover {
+  cursor: pointer;
+}
+.top-navbar__searchbar-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 700px;
+}
+.top-navbar__searchbar-div input {
+  background-color: #141516;
+  height: 40px;
+  width: 50px;
+  color: white;
+  border: 1px #4b4b4b solid;
+  padding-left: 15px;
+  border-radius: 20px 0 0 20px;
+  flex-grow: 3;
+}
+.top-navbar__searchbar-div input:focus {
+  outline: 0;
+}
+.top-navbar__searchbar-div button {
+  width: 40px;
+  height: 34px;
+  background-color: #222222;
+  border: 1px #4b4b4b solid;
+  border-radius: 0 20px 20px 0;
+  padding: 3px;
+  flex-shrink: 3;
+}
+.top-navbar__searchbar-div button:hover {
+  cursor: pointer;
+  background-color: #363636;
+}
+.top-navbar__searchbar-div button img {
+  height: 50%;
+  filter: invert(0.6) sepia(10) saturate(0) hue-rotate(175deg);
+}
+.top-navbar__searchbar-div .mic-white {
+  border-radius: 50%;
+  padding: 8px;
+  background-color: #141414;
+  width: 20px;
+  margin-left: 15px;
+}
+.top-navbar__searchbar-div .mic-white:hover {
+  cursor: pointer;
+  background-color: #353535;
+}
+.top-navbar__right-icons .videos-class {
+  padding: 5px 3px;
+}
+.top-navbar__right-icons .notifications-class {
+  position: relative;
+  top: 5px;
+}
+.top-navbar__right-icons .account-class {
+  position: relative;
+  top: 2px;
+  width: 30px;
+}
+.top-navbar__right-icons img {
+  width: 35px;
+  border-radius: 50%;
+  padding: 5px;
+}
+.top-navbar__right-icons img:hover {
+  cursor: pointer;
+  background-color: #353535;
+}

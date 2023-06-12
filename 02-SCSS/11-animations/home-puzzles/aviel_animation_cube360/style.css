@@ -1,0 +1,88 @@
+body{
+    background: black
+}
+
+.text {
+    color: white;
+    position: relative;
+    left: 530px;
+    animation: tracking-out-contract-bck 5s cubic-bezier(0.550, 0.085, 0.680, 0.530) infinite ;
+   
+}
+
+
+@keyframes tracking-out-contract-bck {
+    0% {
+    
+              left: 200px;
+    }
+    60% {
+      top: 600px;
+    }
+    
+    100% {
+      letter-spacing: 2em;
+      
+      
+              transform: translateZ(-500px);
+      opacity: 0;
+    }
+}
+
+
+
+.wrapper{
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+}
+.cube-wrap {
+width: 200px;
+height: 150px;
+-webkit-perspective: 2000px;
+-webkit-perspective-origin: 50% -500px;
+
+}
+.single-box {
+
+background-size: cover;
+display: block;
+position: absolute;
+width: 300;
+height: 300;
+background-color: #000000;
+-webkit-transform: rotateY(45deg) translateZ(-200px) rotateX(15deg);
+-webkit-transform-origin: 50% 50% 0;
+border: 3px solid #000000;
+}
+
+
+.box {
+-webkit-transform-style: preserve-3d;
+-webkit-animation: rotate 10s infinite linear;
+}
+.side-front { 
+-webkit-transform: translateZ(180px);
+}
+.side-back { 
+-webkit-transform: rotateY(180deg) translateZ(180px);
+}
+.side-top {
+/* background-image: url(image/messi.jpg); */
+-webkit-transform: rotateX(90deg) translateZ(180px);
+}
+.side-bottom { 
+-webkit-transform: rotateX(-90deg) translateZ(180px); 
+}
+.side-left { 
+-webkit-transform: rotateY(-90deg) translateZ(180px); 
+}
+.side-right { 
+-webkit-transform: rotateY(90deg) translateZ(180px); 
+}
+
+@-webkit-keyframes rotate {
+0% { -webkit-transform: rotateY(0); }
+100% { -webkit-transform: rotateY(360deg); }
+}
