@@ -1,0 +1,52 @@
+@import "config";
+@import "colors";
+@import "typography";
+
+.side-navbar {
+  position: fixed;
+  top: 74px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  height: 100vh;
+  transition: overflow-y 0.3s;
+
+  &:hover {
+    overflow-y: scroll;
+  }
+
+  hr {
+    margin: 10px 0;
+    border-color: $main-background-color;
+
+  }
+
+
+
+  &__buttons {
+    background-color: rgb(20, 21, 22);
+    color: $main-text-color;
+    font-weight: 300;
+    font-family: $main-font-family;
+    font-size: 15px;
+    padding: 5px;
+    padding-left: 10px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    margin: 1px 5px;
+
+    &:hover{
+      background-color: rgb(57, 57, 57);
+      cursor: pointer;
+    }
+  
+
+    img {
+      height: 100%;
+    }
+  }
+}

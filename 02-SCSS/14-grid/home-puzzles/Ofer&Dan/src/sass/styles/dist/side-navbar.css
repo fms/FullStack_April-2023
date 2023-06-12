@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.side-navbar {
+  position: fixed;
+  top: 74px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  height: 100vh;
+  transition: overflow-y 0.3s;
+}
+.side-navbar:hover {
+  overflow-y: scroll;
+}
+.side-navbar hr {
+  margin: 10px 0;
+  border-color: #141516;
+}
+.side-navbar__buttons {
+  background-color: #141516;
+  color: white;
+  font-weight: 300;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  padding: 5px;
+  padding-left: 10px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  margin: 1px 5px;
+}
+.side-navbar__buttons:hover {
+  background-color: #393939;
+  cursor: pointer;
+}
+.side-navbar__buttons img {
+  height: 100%;
+}
