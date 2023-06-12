@@ -1,0 +1,39 @@
+body {
+  display: flex;
+  justify-content: center;
+  background-image: url(../assets/49458.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.balloon {
+  position: relative;
+  width: 100px;
+  animation-duration: 3s;
+  animation-delay: 2s;
+  animation-name: balloon;
+}
+.balloon img {
+  width: 100%;
+}
+
+.balloon:active {
+  animation-name: balloon-pop;
+}
+
+@keyframes balloon {
+  from {
+    top: 200px;
+  }
+  to {
+    top: 0px;
+  }
+}
+@keyframes balloon-pop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
