@@ -7,10 +7,43 @@
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
-.side-navbar {
+.side-navbar-narrow {
+  padding-top: 10px;
+  position: fixed;
+  top: 74px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  width: 70px;
+  height: 100vh;
+}
+.side-navbar-narrow__buttons {
+  background-color: #141516;
+  padding: 12px 0;
+  font-weight: 300;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 13px;
+}
+.side-navbar-narrow__buttons:hover {
+  background-color: #393939;
+  cursor: pointer;
+}
+.side-navbar-narrow__buttons img {
+  width: 65%;
+}
+
+.side-navbar-wide {
   position: fixed;
   top: 74px;
   overflow: hidden;
@@ -20,14 +53,14 @@
   height: 100vh;
   transition: overflow-y 0.3s;
 }
-.side-navbar:hover {
+.side-navbar-wide:hover {
   overflow-y: scroll;
 }
-.side-navbar hr {
+.side-navbar-wide hr {
   margin: 10px 0;
   border-color: #141516;
 }
-.side-navbar__buttons {
+.side-navbar-wide__buttons {
   background-color: #141516;
   color: white;
   font-weight: 300;
@@ -42,10 +75,26 @@
   border-radius: 10px;
   margin: 1px 5px;
 }
-.side-navbar__buttons:hover {
+.side-navbar-wide__buttons:hover {
   background-color: #393939;
   cursor: pointer;
 }
-.side-navbar__buttons img {
+.side-navbar-wide__buttons img {
   height: 100%;
+}
+
+@media (max-width: 1000px) {
+  .side-navbar-wide {
+    display: none;
+  }
+}
+@media (min-width: 1000px) {
+  .side-navbar-narrow {
+    display: none;
+  }
+}
+@media (max-width: 500px) {
+  .side-navbar-narrow {
+    display: none;
+  }
 }
