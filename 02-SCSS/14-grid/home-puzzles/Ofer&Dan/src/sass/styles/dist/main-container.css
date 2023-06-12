@@ -7,11 +7,10 @@
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 .main-container {
-  margin-left: 220px;
   padding: 10px;
 }
 .main-container__topsuggestions {
@@ -44,15 +43,14 @@
   grid-auto-rows: 1fr;
   grid-auto-rows: 1fr;
   gap: 20px;
-  margin-top: 30px;
-  margin-left: 20px;
+  margin-top: 20px;
 }
-@media (min-width: 500px) {
+@media (min-width: 400px) {
   .main-container__videos {
     grid-template-columns: repeat(1, 1fr);
   }
 }
-@media (min-width: 845px) {
+@media (min-width: 600px) {
   .main-container__videos {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -114,4 +112,19 @@
 }
 .main-container__videos__video .info-class:hover {
   cursor: pointer;
+}
+@media (min-width: 1000px) {
+  .main-container {
+    margin-left: 220px;
+  }
+}
+@media (max-width: 1000px) {
+  .main-container {
+    margin-left: 70px;
+  }
+}
+@media (max-width: 500px) {
+  .main-container {
+    margin-left: 0;
+  }
 }

@@ -2,7 +2,45 @@
 @import "colors";
 @import "typography";
 
-.side-navbar {
+.side-navbar-narrow {
+  padding-top: 10px;
+  position: fixed;
+  top: 74px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  width: 70px;
+  height: 100vh;
+
+
+  &__buttons {
+    background-color: rgb(20, 21, 22);
+    padding: 12px 0;
+    font-weight: 300;
+    color: $main-text-color;
+    font-family: $main-font-family;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 13px;
+
+    &:hover {
+      background-color: rgb(57, 57, 57);
+      cursor: pointer;
+    }
+
+
+    img {
+      width: 65%;
+    }
+  }
+}
+
+.side-navbar-wide {
   position: fixed;
   top: 74px;
   overflow: hidden;
@@ -39,14 +77,31 @@
     border-radius: 10px;
     margin: 1px 5px;
 
-    &:hover{
+    &:hover {
       background-color: rgb(57, 57, 57);
       cursor: pointer;
     }
-  
+
 
     img {
       height: 100%;
     }
+  }
+}
+
+@media (max-width:1000px) {
+  .side-navbar-wide {
+    display: none;
+  }
+}
+
+@media (min-width:1000px) {
+  .side-navbar-narrow {
+    display: none;
+  }
+}
+@media (max-width:500px) {
+  .side-navbar-narrow {
+    display: none;
   }
 }

@@ -7,7 +7,7 @@
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 .top-navbar {
@@ -24,20 +24,24 @@
 }
 .top-navbar__youtubelogo {
   display: flex;
+  align-items: center;
   width: 220px;
   flex-shrink: 0;
+  gap: 1rem;
 }
 .top-navbar__youtubelogo > a img {
-  position: relative;
-  top: 38px;
   width: 30px;
   filter: invert(1) sepia(10) saturate(0) hue-rotate(175deg);
 }
-.top-navbar__youtubelogo .youtube-image {
+.top-navbar__youtubelogo .youtube-image-wide {
   width: 160px;
+  margin-left: -1rem;
 }
-.top-navbar__youtubelogo .youtube-image:hover {
+.top-navbar__youtubelogo .youtube-image-wide:hover {
   cursor: pointer;
+}
+.top-navbar__youtubelogo .youtube-image-narrow {
+  display: none;
 }
 .top-navbar__searchbar-div {
   display: flex;
@@ -60,7 +64,7 @@
 }
 .top-navbar__searchbar-div button {
   width: 40px;
-  height: 34px;
+  height: 40px;
   background-color: #222222;
   border: 1px #4b4b4b solid;
   border-radius: 0 20px 20px 0;

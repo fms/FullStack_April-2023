@@ -16,24 +16,29 @@
 
   &__youtubelogo {
     display: flex;
+    align-items: center;
     width: 220px;
     flex-shrink: 0;
+    gap: 1rem;
 
     &>a {
       img {
-        position: relative;
-        top: 38px;
         width: 30px;
         filter: invert(1) sepia(10) saturate(0) hue-rotate(175deg);
       }
     }
 
-    .youtube-image {
+    .youtube-image-wide {
       width: 160px;
+      margin-left: -1rem;
 
       &:hover {
         cursor: pointer;
       }
+    }
+
+    .youtube-image-narrow {
+      display: none;
     }
   }
 
@@ -62,7 +67,7 @@
 
     button {
       width: 40px;
-      height: 34px;
+      height: 40px;
       background-color: rgb(34, 34, 34);
       border: 1px rgb(75, 75, 75) solid;
       border-radius: 0 20px 20px 0;
