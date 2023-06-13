@@ -14,7 +14,7 @@ html{
   @include flexContainer($colGap:8px, $rowGap:25px, $flexWrap:wrap);
 
   height: 1800px;
-  width:75%;
+  width:90%;
 
 
   &__item {
@@ -22,14 +22,14 @@ html{
 
     &:hover{
       visibility: visible;
+      
       img{
         filter: brightness(40%);
         cursor:zoom-in;
       }
-
     }
       
-    visibility: hidden;;
+    // visibility: hidden;;
     position: relative;
     color: rgb(0, 0, 0);
     width:18%;

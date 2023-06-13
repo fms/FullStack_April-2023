@@ -1,0 +1,41 @@
+.holder {
+  position: relative;
+  width: 2000px;
+  height: 50px;
+  animation-name: line;
+  animation-direction: alternate;
+  animation-duration: 5s;
+  transition: ease-in;
+}
+
+.clip {
+  /* Clip edges, as some of the lines don't terminate nicely. */
+  overflow: hidden;
+}
+
+.ellipse {
+  position: absolute;
+  background: radial-gradient(transparent 7px, black 7px, black 10px, transparent 11px);
+  background-size: 36px 40px;
+  width: 1000px;
+  height: 20px;
+}
+
+.ellipse2 {
+  top: 20px;
+  left: -18px;
+  background-position: 0px -20px;
+}
+
+@keyframes line {
+  from {
+    top: 0px;
+    left: -1500px;
+    background: radial-gradient(transparent 7px, black 7px, black 10px, transparent 11px);
+  }
+  to {
+    top: 0px;
+    left: 100px;
+    background: radial-gradient(transparent 7px, #f90000 7px, #e30303 10px, transparent 11px);
+  }
+}

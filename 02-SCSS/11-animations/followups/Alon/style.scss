@@ -1,71 +1,112 @@
+html{
+    background-color:black;
+}
 $deg:90deg;
 $top:500px;
-$left:0px;
-$deg:80deg;
-$width:400px;
+$left:500px;
+$comstantLeft:$left;
+$constantTop:$top;
+
+$width:500px;
+$degChange:5deg;
+$deg:calc(90deg - #{$degChange});
 
 @mixin line(){
     color:black;
     position:absolute;
     width:$width;
     left:$left;
-    animation-duration: 4s;
+
+    // animation-delay: 1s;
+    // animation-iteration-count: infinite;
     animation-direction:normal;
-    animation-fill-mode: forwards;
-    animation-delay: 1s;
+    animation-fill-mode:forwards;
+    // animation-delay: 2s;;
+    animation-duration: 10s;
+    // transition-timing-function: ease-in-out;
+    ;
 }
 
 @mixin animationStart(){
     left:$left;
     top:$top;
     transform: rotate(0deg);
+
 }
 
 
 .shape{
-    hr{
+
+    .line{
         @include line();
 
-        @for $i from 1 through 3{
+// 73 is a nice number
+        @for $i from 1 through 73{
+            // The total deg move for the animation
+            $deg:calc(#{$deg} + #{$degChange});
 
-            $deg:calc(#{$deg} + 10deg);
-            
-            $left:if($i != 2,calc(#{$left} + 1000px),100px);            
-            // // $triangle-c:calc((200px * sin(10deg)) / (sin((65deg))));
+            // The equal angle of the equal sided triangle
+            $angle:calc(((180deg - #{$degChange})/2));
 
-            // // $angle:calc(90deg - ((180deg - 10deg)/2));
-            
-            // // $triangle-a:calc((#{$triangle-c} * sin(#{$angle})) / sin(90deg));
+            // The width of half of the line 
+            $halfWidth:calc(#{$width} / 2);
 
-            // // $triangle-b:calc(math.sqrt(pow($triangle-c , 2) / pow($triangle-b)));
+            // Calculating the length of c (the hypotenuse)
+            $c:calc((#{$halfWidth} * sin(calc(#{$deg} - 90deg))) / sin(#{$angle}) );
 
-            // // $left:calc((#{$triangle-c}));
-              
+            // The remaining betwin c and 90 deg angle
+            $equlAngle: calc(90deg - (#{$angle}) );
+            // $equlAngle:5deg;
             
+            $newTop: calc((#{$c} * sin(#{$equlAngle})));
+            // $newLeft: calc(math.pow(#{$newTop} , 2) / math.pow(#{$c} , 2));
+
+            $newLeft: calc((#{$c} * sin(#{$angle})));
+            // $newTop: calc(500px + #{$newTop});
             
-            // $top:calc(#{$top} #{$triangle-a});
-            // $left:calc(#{$left} - 500px);
+            $top:if($i != 1 ,calc(#{$newTop} + #{$top}) ,$top);     
+            $left:if($i != 1 ,calc(#{$left} - #{$newLeft})  ,$left);     
+            
 
             &:nth-child(#{$i}){
                 animation-name: line-#{$i};
-
+                animation-delay: #{$i} + 10ms;
+                animation-iteration-count: infinite;
+                // animation-duration: 10s;
                 @keyframes line-#{$i}{
-                    from{
+                    0% {
                         @include animationStart();
                     }
-                    to{                      
+                    50% {                      
                         transform: rotate($deg);
                         top:$top;
                         left:$left;
                     }
-                }
-        }
-       
-    }
 
+                    100% {
+                        transform: rotate(0deg);
+                        top:$top;
+                        left:$left;
+                        // transform: rotatex($equlAngle);
+                        // transform:scale3d(10 , 3 , 10);
+                        transform:scale(0.001);
+
+                    }
+
+                }
+
+             }
+
+             $top:$constantTop;
+             $left:$comstantLeft;
+       
+        }
     }
 
 }
+
+
+
 // //2nd spiral
 // .shape{
 //     hr{

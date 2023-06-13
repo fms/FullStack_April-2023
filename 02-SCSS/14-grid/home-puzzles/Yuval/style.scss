@@ -1,0 +1,24 @@
+@import 'config';
+
+.all {
+    position: static;
+}
+
+.header {
+    position: static;
+}
+
+@mixin flexed($position: relative, $direction: row-reverse) {
+    display: flex;
+    position: $position;
+    flex-direction: $direction;
+}
+
+@mixin defaults($margin:auto, $height:50px) {
+    margin: $margin;
+    width: 100%;
+    height: $height;
+};
+
+@import 'components/headers';
+@import 'components/videos';

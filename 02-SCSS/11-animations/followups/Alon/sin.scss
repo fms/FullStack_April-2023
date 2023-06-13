@@ -1,0 +1,85 @@
+$top:50px;
+$left:5px;
+$deg:90deg;
+$width:20px;
+$i:1deg;
+$topStart:50px;
+$leftStart:5px;
+
+
+
+@mixin dot(){
+    color:black;
+    position:absolute;
+    width:$width;
+    height:$width;
+    // background-color: purple;
+    border-radius: 10px;
+    left:$left;
+    top:$top;
+
+    // animation-delay: 1s;
+    // animation-iteration-count: infinite;
+    // animation-direction:normal;
+    animation-fill-mode:forwards;
+    // animation-delay: 2s;;
+    // animation-duration: 5s;
+    // transition-timing-function: ease-in-out;
+    ;
+}
+
+
+.dot{
+    @include dot();
+
+    
+    $positionTop: random(700)+4px;
+
+    @for $i from 1 through 361 {
+        $top:if($i < 181 ,calc(#{$positionTop} + (sin(#{$i}deg) * 100px)) ,calc(#{$positionTop} + sin(#{$i}deg) * 100px));    
+        $left: calc(#{$width}  * #{$i} / 5 );
+
+        // $left:calc(30px + #{$i} + 3px);
+        $leftStart:$left;
+        $topStart:$top;
+
+        &:nth-child(#{$i}){
+            animation-name: dot-#{$i};
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            
+            animation-delay: calc(#{$i} * 10ms) ;
+            @keyframes dot-#{$i}{
+                0% {
+                    top:$topStart;
+                    left:$leftStart;
+                    background-color:white;
+                }
+
+                50%{
+                    background-color:purple;
+                    top:$top;
+                    left:$left;
+
+                }
+                100%{
+
+                    background-color:white;
+                    top:$top;
+                    left:$left;
+
+                }
+            }
+
+
+
+         }
+
+        //  $top:$constantTop;
+        //  $left:$comstantLeft;
+   
+    }
+}
+// .dot{
+//     @include dot();
+// }

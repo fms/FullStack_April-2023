@@ -1,0 +1,52 @@
+$width:200px;
+$height:300px;
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    overflow: hidden;
+  }
+
+  section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url(sky.webp);
+    background-position-x: center;
+    background-size: cover;
+    animation: animateBg 50s linear infinite;
+  }
+
+  @keyframes animateBg {
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.25);
+    }
+  }
+
+  .balloon {
+    background-color: yellow;
+    border-radius: 50%; /* creates a circular background */
+    height: 100vh; /* makes the sun the size of the viewport */
+    aspect-ratio: 1 / 1;
+    animation: 4s linear 0s infinite alternate fly;
+  }
+  
+  @keyframes fly {
+    from {
+      /* pushes the sun down past the viewport */
+      transform: translateY(110vh);
+    }
+    to {
+      /* returns the sun to its default position */
+      transform: translateY(0);
+    }
+  }
