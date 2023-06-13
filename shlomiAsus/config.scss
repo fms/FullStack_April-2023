@@ -3,13 +3,19 @@ $centext: center;
 
 
 @mixin border{
-    border: 3px;
-    border-color: rgb(24, 25, 26);
-    border-style: inset;
+    border-radius: 15px;
+    border: 5px;
+    border-color: rgb(255, 255, 255);
+    border-style: outset;   
 }
 @mixin spaces  {
     margin: 50px 0px 10px 200px;
     width: 1635px;
+}
+
+.fix{
+
+    background-color: black;
 }
 
 

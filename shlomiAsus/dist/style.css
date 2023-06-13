@@ -1,50 +1,64 @@
+.fix {
+  background-color: black;
+}
+
+.body {
+  background: #a59999;
+}
+
 .heading {
-  border: 3px;
-  border-color: #18191a;
-  border-style: inset;
+  border-radius: 15px;
+  border: 5px;
+  border-color: white;
+  border-style: outset;
   margin: 50px 0px 10px 200px;
   width: 1635px;
   font-size: 80px;
   height: 300px;
   text-align: center;
   background-size: 50% 100%;
+  border-radius: 0 0 10px 10px;
 }
 
 .main_container {
+  margin: 50px 0px 10px 200px;
+  width: 1635px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   height: 600px;
   gap: 5px;
-  margin: 50px 0px 10px 200px;
-  width: 1635px;
 }
 
 .picbox {
-  border: 3px;
-  border-color: #18191a;
-  border-style: inset;
+  border-radius: 15px;
+  border: 5px;
+  border-color: white;
+  border-style: outset;
   width: 24.5%;
   height: 200px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  transition: scale 0.9s ease-in 0s;
+  transition: transform 2s ease-in;
 }
 .picbox__underpic {
-  height: 25px;
-  width: 22%;
+  height: 45px;
+  width: 24.5%;
   background-color: black;
   color: wheat;
   opacity: 0;
   text-align: center;
   margin: auto;
+  font-size: 35px;
+  transition: 1s ease-in-out;
 }
-
 .picbox__underpic:hover {
-  transform: translateY(-65px);
-  transition: translateY 300ms ease-in 0s;
-  transition: 300ms ease-in-out;
+  border-radius: 15px;
+  border: 5px;
+  border-color: white;
+  border-style: outset;
+  transform: translateY(-95px);
   color: white;
   background-color: #020202;
   opacity: 1;
