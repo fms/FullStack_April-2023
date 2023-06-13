@@ -408,8 +408,8 @@ body {
 .main__center__products {
   width: 100%;
   height: auto;
-  flex-wrap: wrap;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   justify-content: space-around;
 }
 .main__center__products__product {
