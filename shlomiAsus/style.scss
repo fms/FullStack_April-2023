@@ -1,8 +1,12 @@
 @import 'config';
-.body{
+
+.body {
 
     background: rgb(165, 153, 153);
-};
+}
+
+;
+
 .heading {
     @include border();
     @include spaces();
@@ -12,6 +16,7 @@
     background-size: 50% 100%;
     border-radius: 0 0 10px 10px;
 }
+
 .main_container {
     @include spaces();
     display: flex;
@@ -21,6 +26,7 @@
     gap: 5px;
 
 }
+
 .picbox {
     @include border();
     width: 24.5%;
@@ -28,7 +34,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: $centext;
-    transition: transform 2s ease-in;
+    transition: transform 1s ease-in;
+
     &__underpic {
         height: 45px;
         width: 24.5%;
@@ -37,10 +44,11 @@
         opacity: 0.0;
         text-align: $centext;
         margin: auto;
-        font-size: 35px;     
-        transition: 1s ease-in-out;
+        font-size: 35px;
+        transition: transform 1s ease-in-out;
 
     }
+
     &__underpic:hover {
         @include border();
         transform: translateY(-95px);
@@ -49,10 +57,36 @@
         opacity: 1;
     }
 }
-.picbox:hover  {
- //   width: scale(1.5);
-//   height: scale(1.5);
-     transform: scale(1.5);
 
+.picbox:hover {
+    transform: scale(1.5);
+}
 
+.runnig_header {
+    font-size: 35px;
+    height: 40px;
+    width: 100%;
+    //background-color: black;
+    color: white;
+    animation: slide-in-left 17s linear infinite;
+}
+
+.slide-in-left {
+    animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateX(50%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(100%);
+        opacity: 1;
+    }
 }
