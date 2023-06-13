@@ -1,53 +1,92 @@
 @import 'config';
 
+.body {
+
+    background: rgb(165, 153, 153);
+}
+
+;
+
 .heading {
-    @include border;
-    @include spaces;
+    @include border();
+    @include spaces();
     font-size: $font-size--normal;
     height: 300px;
     text-align: $centext;
     background-size: 50% 100%;
+    border-radius: 0 0 10px 10px;
 }
 
 .main_container {
+    @include spaces();
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     height: 600px;
     gap: 5px;
-    @include spaces;
 
 }
 
 .picbox {
-    @include border;
+    @include border();
     width: 24.5%;
     height: 200px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: $centext;
-    transition: scale .9s ease-in 0s;
+    transition: transform 1s ease-in;
 
     &__underpic {
-        height: 25px;
-        width: 22%;
+        height: 45px;
+        width: 24.5%;
         background-color: black;
         color: wheat;
         opacity: 0.0;
         text-align: $centext;
         margin: auto;
+        font-size: 35px;
+        transition: transform 1s ease-in-out;
+
+    }
+
+    &__underpic:hover {
+        @include border();
+        transform: translateY(-95px);
+        color: rgb(255, 255, 255);
+        background-color: rgb(2, 2, 2);
+        opacity: 1;
     }
 }
 
-.picbox__underpic:hover {
-    transform: translateY(-65px);
-    transition: translateY 300ms ease-in 0s;
-    transition: 300ms ease-in-out;
-    color: rgb(255, 255, 255);
-    background-color: rgb(2, 2, 2);
-    opacity: 1;
+.picbox:hover {
+    transform: scale(1.5);
 }
 
-.picbox:hover  {
-transform: scale(1.5);
+.runnig_header {
+    font-size: 35px;
+    height: 40px;
+    width: 100%;
+    //background-color: black;
+    color: white;
+    animation: slide-in-left 17s linear infinite;
+}
+
+.slide-in-left {
+    animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateX(50%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(100%);
+        opacity: 1;
+    }
 }
