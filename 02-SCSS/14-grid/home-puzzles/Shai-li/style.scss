@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "open sans";
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(
+    #009688 0%,
+    #009688 130px,
+    #d9dbd5 130px,
+    #d9dbd5 100%
+  );
+}
+
+.container {
+  position: relative;
+  width: 1396px;
+  max-width: 100%;
+  height: calc(100vh - 40px);
+  background: #e4e6e1;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.06);
+  display: grid;
+  grid-template-columns: 66% 34%;
+}
+
+.grid-item-left {
+  color: #425451;
+  background-color: #efeeee;
+  display: grid;
+  grid-template-rows: 80% auto;
+
+  .middle {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    i {
+      margin-bottom: 30px;
+      font-size: 180px;
+      color: #94b357;
+      opacity: 60%;
+    }
+    h1 {
+      font-size: 40px;
+    }
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    margin-bottom: 20px;
+    span {
+      margin-left: 5px;
+    }
+  }
+}
+
+.grid-item-right {
+  display: grid;
+  grid-template-rows: 70px 45px 50px;
+  img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    margin-left: 180px;
+    cursor: pointer;
+  }
+
+  .rows {
+    border-radius: 3px;
+    background-color: #ffffff;
+    border: 1px solid rgb(190, 190, 190);
+    // text-align: center;
+    &__row-1 {
+      background-color: #f4f4f4;
+      display: flex;
+      align-items: center;
+      i {
+        margin: 20px;
+        cursor: pointer;
+      }
+    }
+    &__row-2{
+      display: grid;
+      grid-template-columns: 10% 90%;
+      align-items: center;
+
+      i{
+        margin-left: 1rem;
+        cursor: pointer;
+      }
+      
+      .search{
+        font-size: small;
+        background-color: #f4f4f4;
+        padding: 7px;
+        border-radius: 7px;
+        display: flex;
+        justify-content: end;
+        margin-right: 10px;
+        opacity: 80%;
+
+        p{
+          margin-right: 40px;
+        }
+        i{
+          margin-right: 5px;
+        }
+
+      }
+      
+    }
+
+
+    &__row-3{
+      display: grid;
+      grid-template-columns: 90% 10%;
+      align-items: center;
+      text-align: end;
+
+      i{
+        color: #009688;
+        margin-right: 100%;
+        cursor: pointer;
+      }
+    
+      p{
+        margin-right: 40px;
+        cursor: pointer;
+
+        
+      }
+    }
+
+  }
+
+
+}
