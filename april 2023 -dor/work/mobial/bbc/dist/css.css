@@ -130,3 +130,10 @@
 .grid2_all {
   display: grid;
 }
+
+.img100 {
+  width: 12px;
+  position: relative;
+  right: 25px;
+  top: 1px;
+}
