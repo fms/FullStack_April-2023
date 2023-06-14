@@ -1,112 +1,169 @@
+html{
+    background-color:black;
+}
+$deg:90deg;
+$top:500px;
+$left:500px;
+$comstantLeft:$left;
+$constantTop:$top;
+
+$width:500px;
+$degChange:5deg;
+$deg:calc(90deg - #{$degChange});
+
 @mixin line(){
     color:black;
-    position:relative;
-    width:500px;
+    position:absolute;
+    width:$width;
+    left:$left;
 
-    animation-duration: 4s;
+    // animation-delay: 1s;
+    // animation-iteration-count: infinite;
     animation-direction:normal;
-    animation-fill-mode: forwards;
-    animation-delay: 1s;
+    animation-fill-mode:forwards;
+    // animation-delay: 2s;;
+    animation-duration: 10s;
+    // transition-timing-function: ease-in-out;
+    ;
 }
 
 @mixin animationStart(){
-    left:0px;
-    top:0px;
+    left:$left;
+    top:$top;
     transform: rotate(0deg);
+
 }
 
-.line1{
-    @include line();
-   animation-name: line-1;
-}
-.line2{
-    @include line();
-    animation-name: line-2;
-}
-.line3{
-    @include line();
-    animation-name: line-3;
-}
-.line4{
-    @include line();
-    animation-name: line-4;
-}
-.line5{
-    @include line();
-    animation-name: line-5;
-}
-.line6{
-    @include line();
-    animation-name: line-6;
-}
-@keyframes line-1{
-    from{
-        @include animationStart();
+
+.shape{
+
+    .line{
+        @include line();
+
+// 73 is a nice number
+        @for $i from 1 through 73{
+            // The total deg move for the animation
+            $deg:calc(#{$deg} + #{$degChange});
+
+            // The equal angle of the equal sided triangle
+            $angle:calc(((180deg - #{$degChange})/2));
+
+            // The width of half of the line 
+            $halfWidth:calc(#{$width} / 2);
+
+            // Calculating the length of c (the hypotenuse)
+            $c:calc((#{$halfWidth} * sin(calc(#{$deg} - 90deg))) / sin(#{$angle}) );
+
+            // The remaining betwin c and 90 deg angle
+            $equlAngle: calc(90deg - (#{$angle}) );
+            // $equlAngle:5deg;
+            
+            $newTop: calc((#{$c} * sin(#{$equlAngle})));
+            // $newLeft: calc(math.pow(#{$newTop} , 2) / math.pow(#{$c} , 2));
+
+            $newLeft: calc((#{$c} * sin(#{$angle})));
+            // $newTop: calc(500px + #{$newTop});
+            
+            $top:if($i != 1 ,calc(#{$newTop} + #{$top}) ,$top);     
+            $left:if($i != 1 ,calc(#{$left} - #{$newLeft})  ,$left);     
+            
+
+            &:nth-child(#{$i}){
+                animation-name: line-#{$i};
+                animation-delay: #{$i} + 10ms;
+                animation-iteration-count: infinite;
+                // animation-duration: 10s;
+                @keyframes line-#{$i}{
+                    0% {
+                        @include animationStart();
+                    }
+                    50% {                      
+                        transform: rotate($deg);
+                        top:$top;
+                        left:$left;
+                    }
+
+                    100% {
+                        transform: rotate(0deg);
+                        top:$top;
+                        left:$left;
+                        // transform: rotatex($equlAngle);
+                        // transform:scale3d(10 , 3 , 10);
+                        transform:scale(0.001);
+
+                    }
+
+                }
+
+             }
+
+             $top:$constantTop;
+             $left:$comstantLeft;
+       
+        }
     }
-    to{
-        transform: rotate(90deg);
-        top:250px;
-        left:100px;
-    }
-}
-@keyframes line-2{
-    from{
-        @include animationStart();
-        
-    }
-    to{
-        transform: rotate(100deg);
-        width:450px;
-        top:270px;
-        left:60px;
-    }
+
 }
 
-@keyframes line-3{
-    from{
-        @include animationStart();
-        
-    }
-    to{
-        transform: rotate(110deg);
-        width:400px;
-        top:290px;
-        left:30px;
-    }
-}
-@keyframes line-4{
-    from{
-        @include animationStart();
-        
-    }
-    to{
-        transform: rotate(120deg);
-        width:350px;
-        top:310px;
-        left:14px;
-    }
-}
-@keyframes line-5{
-    from{
-        @include animationStart();
-        
-    }
-    to{
-        transform: rotate(130deg);
-        width:300px;
-        top:330px;
-        left:5px;;
-    }
-}
-@keyframes line-6{
-    from{
-        @include animationStart();
-        
-    }
-    to{
-        transform: rotate(140deg);
-        width:250px;
-        top:330px;
-        left:5px;
-    }
-}
+
+
+// //2nd spiral
+// .shape{
+//     hr{
+//         @include line();
+
+//         @for $i from 1 through 24{
+
+//             $deg:calc(#{$deg} + 10deg);
+//             $left:calc(500px/90*10);
+//             $top:calc(#{$top} + 5px);
+
+//             &:nth-child(#{$i}){
+//                 animation-name: line-#{$i};
+
+//                 @keyframes line-#{$i}{
+//                     from{
+//                         @include animationStart();
+//                     }
+//                     to{                      
+//                         transform: rotate($deg);
+//                         top:$top;
+//                         left:$left
+//                     }
+//                 }
+//         }
+       
+//     }
+
+//     }
+
+// }
+
+//Spiral
+// .shape{
+//     hr{
+//         @include line();
+
+//         @for $i from 1 through 24{
+//             $deg:calc(#{$deg}/.9);
+//             &:nth-child(#{$i}){
+//                 animation-name: line-#{$i};
+
+//                 @keyframes line-#{$i}{
+//                     from{
+//                         @include animationStart();
+//                     }
+//                     to{
+//                         // top:calc(#{$top}/#{$i});
+//                         top:calc(#{$top}/1);
+//                         transform: rotate($deg);
+//                         left:calc(#{$left}*.9);
+//                     }
+//                 }
+//         }
+       
+//     }
+
+//     }
+
+// }

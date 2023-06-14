@@ -1,0 +1,97 @@
+body {
+    background-image: url(https://img.freepik.com/premium-vector/vector-illustration-blue-sky-with-bright-white-clouds-sunny-day-background_8589-469.jpg);
+    background-size: cover;
+}
+
+.main {
+    height: 100%;
+    width: 100%;
+
+    &__balloons {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        &__article {
+            height: 180px;
+            width: 80px;
+            position: relative;
+            bottom: 0px;
+            display: inline-block;
+            animation: slide-top 22s ease-in both;
+            animation-iteration-count: infinite;
+        }
+
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+
+        @keyframes slide-top {
+            0% {
+                transform: translateY(520%);
+            }
+
+            100% {
+                transform: translateY(-400%);
+            }
+
+
+        }
+
+        .one {
+            animation: slide-top 17s ease-in both;
+
+        }
+
+        @keyframes one_balloon {
+            0% {
+                transform: translateY(520%);
+            }
+            100% {
+                transform: translateY(-400%);
+            }
+
+
+        }
+
+        .two {
+            animation: slide-top 20s ease-in both;
+        }
+
+        @keyframes two_balloon {
+            0% {
+                transform: translateY(520%);
+            }
+
+            100% {
+                transform: translateY(-400%);
+            }
+        }
+
+        .three {
+            animation: slide-top 18s ease-in both;
+
+        }
+
+        @keyframes three_balloon {
+            0% {
+                transform: translateY(520%);
+            }
+
+            100% {
+                transform: translateY(-400%);
+            }
+
+
+        }
+    }
+
+    :target {
+        display: none;
+    }
+
+}

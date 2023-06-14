@@ -1,0 +1,224 @@
+@mixin flexed {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin navBarFont {
+    font-size: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.nav-bar {
+    background-color: #06070d;
+    height: 50px;
+    z-index: 15;
+    border-bottom: 1px ridge rgb(40, 39, 54);
+    position: fixed;
+    width: 100vw;
+    top: 0;
+
+}
+
+nav {
+    margin:0 30px;
+    color: white; 
+
+    @include flexed();
+
+    .nav-bar-btns {
+        border: none;
+        background-color: #06070d;
+        color: white;
+        font-weight: bolder;
+    }
+
+    .nav-bar-btn-color-orange {
+        border: none;
+        background-color: #06070d;
+        color: rgb(184, 120, 3);
+        font-weight: bolder;
+
+        &:hover {
+            color: rgb(233, 188, 106);
+        }
+    }
+
+
+    .nav-bar-font {
+        @include navBarFont();
+    }
+
+    a {
+        color: #06070d;
+        text-decoration: none;
+    }
+
+    .green-on-touch:hover {
+        color: rgb(0, 194, 120);
+        
+    }
+
+
+    .left-nav {
+        @include flexed();
+
+        .left-nav__border--add {
+            border-left: 1px solid rgb(40, 39, 54);
+            border-right: 1px solid rgb(40, 39, 54);
+            padding: 0 20px;
+        }
+
+        .nav-bar-search {
+            background-color: black;
+            border: 1px ridge rgb(40, 39, 54);
+            border-radius: 2px;
+            box-sizing: border-box;
+            padding: 9px 0px;
+            font-size: 13px;
+            background-color: transparent;
+            outline-color: #35363f;
+            width: 190px;
+            height: 32px;
+            color: white;
+        }
+
+        form {
+
+            input[type=text] {
+                padding-left: 28px;
+
+                &:focus {
+                    outline-color: rgb(0, 194, 120);
+                    outline-style: ridge;
+                }
+            }
+
+            i {
+                position: relative;
+                left: 45px;
+                font-size: 13px;
+            }
+        }
+        
+        .burger {
+            fill: white; 
+            transition: fill 0.3s;
+            cursor: pointer;  
+            position: relative;
+            right: 12px;
+        }
+
+        .burger:hover {
+            fill: rgb(0, 194, 120); 
+        }
+    }
+
+
+    .right-nav {
+        @include flexed();
+
+        .profile {
+            background-color: rgb(49, 53, 58);
+            border: none;
+            height: 28px;
+            width: 28px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+        }
+
+
+
+        .nav-bar-sumbit-btn {
+            border: none;
+            padding: 8px;
+            padding-left: 30px;
+            width: 130px;
+            border-radius: 2px;
+            font-weight: bolder;
+            font-size: 14px;
+            background-image: linear-gradient(to left, #55efc4, #27ae60, #55efc4);
+            background-size: 250%;
+            transition: 0.6s;
+            color: black;
+
+            &:hover {
+                background-position: right;
+            }
+        }
+
+        .plus-icon {
+            width: 18px;
+            height: 18px;
+            position: relative;
+            left: 65px;
+        }
+
+        .gif {
+            height: 3.1rem;
+
+        }
+        
+        .ellepsis {
+            color: white;
+            transition: 0.3;
+
+            &:hover {
+                color: rgb(0, 194, 120);
+            }
+        }
+
+    }
+}
+
+
+
+
+
+.column-nav {
+    display: flex;
+    flex-direction: column;
+    z-index: 14;
+    border-right: 1px ridge rgb(40, 39, 54);
+    width: 70px;
+    height: 100vh;
+    background-color: #06070d;
+    position: fixed;
+    top: 50px;
+
+    button {
+        border: none;
+        background-color: inherit;
+        margin: 0 auto;
+        padding: 17px 0;
+        font-size: 17px;
+        cursor: pointer;
+        width: 100%;
+        box-sizing: border-box;
+
+        &:hover {
+            background-color: rgb(49, 49, 49);
+        }
+    }
+}
+
+
+.home-header {
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    background-color: rgba(29, 29, 29, 0.9);
+    top: 50px;
+    
+    h2 {
+        color: white;
+        position: relative;
+        left: 100px;
+        font-size: 20px;
+    }
+}
+

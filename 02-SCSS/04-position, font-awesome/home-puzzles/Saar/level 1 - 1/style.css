@@ -1,0 +1,89 @@
+.row1 {
+  position: relative;
+  left: 550px;
+  top: 50px;
+}
+
+.row2 {
+  position: relative;
+  left: 550px;
+  bottom: 180px;
+}
+
+.row3 {
+  position: relative;
+  left: 550px;
+  bottom: 470px;
+}
+
+.purple {
+  width: 200px;
+  height: 170px;
+  background-color: rgb(212, 0, 255);
+}
+
+.dark-green {
+  position: relative;
+  width: 250px;
+  height: 170px;
+  background-color: rgb(66, 153, 99);
+  left: 280px;
+  bottom: 170px;
+}
+
+.light-green {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: lightgreen;
+  left: 600px;
+  bottom: 370px;
+}
+
+.purple2 {
+  width: 200px;
+  height: 150px;
+  background-color: rgb(212, 0, 255);
+}
+
+.orange {
+  position: relative;
+  width: 150px;
+  height: 170px;
+  background-color: orange;
+  left: 280px;
+  bottom: 170px;
+}
+
+.gray {
+  position: relative;
+  width: 180px;
+  height: 200px;
+  background-color: gray;
+  left: 600px;
+  bottom: 370px;
+}
+
+.green {
+  width: 100px;
+  height: 250px;
+  background-color: green;
+}
+
+.dark-purple {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  background-color: rgb(74, 0, 83);
+  left: 280px;
+  bottom: 200px;
+}
+
+.cyan {
+  position: relative;
+  width: 180px;
+  height: 250px;
+  background-color: cyan;
+  left: 600px;
+  bottom: 450px;
+}/*# sourceMappingURL=style.css.map */

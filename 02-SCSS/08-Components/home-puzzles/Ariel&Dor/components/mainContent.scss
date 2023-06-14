@@ -1,0 +1,235 @@
+
+@import '../config';
+
+// Center content
+.mini__header {
+  margin: 40px;
+
+  ul {
+    @include flexer (flex, none, none);
+    list-style: none;
+    letter-spacing: 0.7px;
+
+    li {
+      padding-right: 10px;
+      
+      img {
+        width: 7px;
+      }
+    }
+
+    .item1__mini__header {
+      color: #8e9cc0;
+    }
+
+    .item3__mini__header {
+      font-weight: bold;
+
+      a {
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+
+// Main content
+
+.headerMainContent {
+  @include flexer (flex, center, none);
+  direction: rtl;
+
+  .selectHeaderMainContent {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 10px 10px 10px 0px;
+    outline: none;
+    appearance: none;
+    font-size: 16px;
+    color: #61696d;
+    font-family: 'Open Sans', sans-serif;
+    width: 314.54px;
+    margin-right: 47px;
+  }
+  .selectHeaderMainContent:hover {
+    background-color: #f5f5f5;          
+    cursor: pointer;
+  }
+
+  img {
+    width: 20px;
+    position: relative;
+    top: 12px;
+    left: 33px;
+  }
+
+  .resultsProductsCards {
+    @include flexer (flex, center, none);
+    width: 70%;
+  }
+}
+
+
+.main__content {
+  @include flexer (flex, space-between, none);
+  margin: 0 65px 25px;
+
+// Aside bar
+  .select__filtering {  
+    margin: 20px;
+
+    // Rest button
+    .rest__button {
+
+      .btn__rest__button {
+        font-size: 16px;
+        padding: 10px 128px;
+        // border-radius: 5px;
+        background-color: white;
+        border: 1px black solid;
+        color: #61696d;
+        cursor: pointer;
+      }
+      .btn__rest__button:hover {
+        background-color: #f5f5f5;
+      }
+      .btn__rest__button:active {
+        background-color: black;
+        color: white;
+      }
+    }
+
+    // Category 
+    .mainCategory {
+      border: #dfdfdf 1px solid;
+      font-size: 16px;
+      padding: 12px 20px;
+      margin-top: 5px;
+      color: #212529;
+    }
+
+    .categoryEn2 {
+      border: #dfdfdf 1px solid;
+      font-size: 16px;
+      padding: 10px 20px 25px;
+      color: #212529;
+
+      ul {
+        list-style: none;
+        padding-right: 0!important;
+
+        li {
+          cursor: pointer;
+          padding: 3px 5px;
+        }
+        li:hover {
+          border-right: 2px solid black;
+        }
+      }
+    }
+  }
+
+// Products
+  .cards {
+    .rowFlexerCards{
+      @include flexer (flex, center, none);
+      width: 100%;
+    }
+    .productsCard1 {
+      @include flexer (flex, center, column);
+      padding: 10px;
+
+      img {
+        width: 322.49px;
+        height: 322.49px;
+      }
+
+      .infoCards {
+        @include flexer (flex, none, column);
+        text-align: center;
+        padding: 0.6875rem 0 3rem;
+
+        .palateColorFlexer {
+          @include flexer (flex, center, none);
+          
+          .palateColor {
+            border: #212529 1px solid;
+            width: 27px;
+            height: 25px;
+            padding: 1px 1px 1.2px;
+            margin: 0 3.5px;
+          }
+          .multiFlexerPalateColor {
+            @include flexer (flex, none, none);
+          }
+          .blackPalateColor {
+            @include backColorCard(black);
+            cursor: pointer;
+          }
+          .whitePalateColor {
+            @include backColorCard(#ffffff);
+            color: #ffffff;
+            cursor: pointer;
+          }
+          .grayPalateColor {
+            @include backColorCard(#4e5359);
+            color: #4e5359;
+            cursor: pointer;
+          }
+        }   
+
+        .kotarot {
+          a {
+            font-size: 17px;
+            text-decoration: none;
+            color: black;
+            
+            div {
+              padding: 5px 0;
+              
+              span:hover {
+                border-bottom: 2px black solid;
+              }
+            }
+            .kotertMishne {
+              font-size: 14px;
+              margin-bottom: 15px;
+            }
+          }
+          
+        }
+
+        .price {
+          font-size: 14px;
+          font-weight: bold;
+          
+          .discountPrice {
+            color: red;
+          }
+
+
+          .clearPrice {
+            border:#212529 1px solid;
+            @include flexer(flex, none, column);
+            width: 60px;
+            position: relative;
+            bottom: 10px;
+            right: 160px;
+          }
+        }
+        
+        .descriptoin {
+          font-weight: bold;
+        }
+
+      }
+    }
+
+  }
+}
+
+
+

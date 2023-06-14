@@ -1,0 +1,163 @@
+body{
+    padding:0;
+    margin:0;
+    background-color: rgb(26, 173, 173);
+    animation-name: dark_sky 4.5s infinite;
+}
+
+.container{
+    height: 500px;
+    width: 500px;
+    position: absolute;
+    margin:auto;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+.cloud{
+    background-color: white;
+    height:50px;
+    width:200px;
+    border-radius:50px;
+    position:absolute;
+    animation: forwards; 
+    animation: fly 4.5s infinite;   
+}   
+@keyframes fly{
+    50%{
+        transform: translateX(200px)
+    }
+}
+
+.cloud:before{
+    position: absolute;
+    content:"";
+    height: 100px;
+    width: 100px;
+    background-color: white;
+    border-radius: 50%;
+    bottom:25px;
+    left:80px;
+}
+.cloud:after{
+    position: absolute;
+    content:"";
+    height: 80px;
+    width: 80px;
+    background-color: white;
+    border-radius: 50%;
+    bottom:25px;
+    left:25px;
+}
+.cloud:nth-child(1){
+    top: 230px;
+    left:0px;
+}
+.cloud:nth-child(2){
+    top:340px;
+    left:260px;
+    transform:scale(0.8);
+
+}
+.balloon{
+    height: 200px;
+    width:200px;
+    background-color: red;
+    border-radius: 50%;
+    position:absolute;
+    top:100px;
+    left: 140px; 
+    animation: float 4.5s infinite;  
+}
+    @keyframes float{
+        50%{
+            transform: translateY(100px)
+        }
+    }
+.balloon:before{
+    position: absolute;
+    content:"";
+    height: 200px;
+    width:140px;
+    background-color:pink;
+    border-radius: 50%;
+    left:30px;
+}
+.balloon:after{
+    position: absolute;
+    content:"";
+    height: 200px;
+    width:80px;
+    background-color: red;
+    border-radius: 50%;
+    left:60px;
+    top: 0;
+}
+.bottom{
+    background-color: red;
+    height: 20px;
+    width:90px;
+    position:relative;
+    top:188px;
+    left:53px;
+}
+.basket{
+    height:50px;
+    width:70px;
+    background-color: red;
+    position: relative;
+    top:240px;
+    left: 62.5px; 
+    border-radius: 0 0 10px 10px;  
+}
+.basket:before{
+    position:absolute;
+    content:"";
+    background-color: red;
+    height: 7px;
+    width:80px;
+    border-radius: 7px;
+    left:-5px;
+}
+.rope{
+    background-color: red;
+    height: 55px;
+    width:3px;
+    position:relative;
+    top:137px;
+    left:96.5px;
+}
+.rope:before{
+    position:absolute;
+    content:"";
+    background-color: red;
+    height:55px;
+    width:3px;
+    top:0;
+    left:-38px;
+    transform: rotated(-8deg);
+}
+.rope:after{
+    position:absolute;
+    content:"";
+    background-color: red;
+    height:55px;
+    width:3px;
+    top:0;
+    left:38px;
+    transform: rotated(8deg);
+}
+
+@keyframes dark_sky{
+    0%{
+        background-color: rgb(26, 173, 173); ;
+    }
+    50%{
+        background-color: rgb(53, 26, 173);
+    }
+    100%{
+        background-color: rgb(70, 75, 75);
+    }    
+}
+

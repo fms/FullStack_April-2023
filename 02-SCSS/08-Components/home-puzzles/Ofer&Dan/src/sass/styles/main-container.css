@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.main-container {
+  margin-left: 220px;
+}
+.main-container__navbar {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-container__navbar input {
+  background-color: rgb(20, 21, 22);
+  height: 30px;
+  width: 350px;
+  color: blue;
+  border: 0;
+  border-radius: 60px;
+}
+.main-container__navbar button img {
+  filter: invert(1) sepia(10) saturate(0) hue-rotate(175deg);
+}/*# sourceMappingURL=main-container.css.map */

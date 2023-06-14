@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/style.css">
+    <title>BalloonsHomework</title>
+</head>
+<body>
+    <div class="balloon 1"></div>
+    <div class="balloon 2"></div>
+    <div class="balloon 3"></div>
+    <div class="balloon 4"></div>
+    <div class="balloon 5"></div>
+    <div class="balloon 6"></div>
+    <div class="balloon 7"></div>
+    <div class="balloon 8"></div>
+    <img class="basket" src="https://static.nike.com/a/images/t_default/c483395e-5fd3-464b-b443-6b5dc7584dc9/skills-basketball-size-3-YPTAr4ED.png">
+    
+    <script>
+        function Testing() {
+          this.classList.add('popped');
+          this.removeEventListener('click', Testing);
+        }
+        var balloons = document.getElementsByClassName('balloon');
+        for (var i = 0; i < balloons.length; i++) {
+          balloons[i].addEventListener('click', Testing);
+        }
+      </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+*{
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  direction: rtl;
+
+}
+
+// @mixin productCarder($display:flex) {
+//   display: $display;
+//   flex-direction: column;
+//   text-align: center;
+//   padding: 0.6875rem 0 3rem;
+// }
+
+@mixin flexer($display:flex, $justify-content, $flex-diraction) {
+  display: flex;
+  justify-content: $justify-content;
+  flex-direction: $flex-diraction;
+}
+
+@mixin backColorCard ($background-color) {
+  background-color: $background-color;
+  font-size: 19px;
+}
+
+
+

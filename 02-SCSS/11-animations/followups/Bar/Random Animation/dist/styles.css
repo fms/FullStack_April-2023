@@ -1,0 +1,57 @@
+body {
+  background-color: black;
+}
+
+.container {
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.sun {
+  background-color: #ff9a03;
+  width: 300px;
+  height: 300px;
+  position: relative;
+}
+
+.earth {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  background-color: blue;
+}
+
+.rotate {
+  animation-name: rotate;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+}
+
+.spin {
+  animation-name: spin;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  transform-origin: center top;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

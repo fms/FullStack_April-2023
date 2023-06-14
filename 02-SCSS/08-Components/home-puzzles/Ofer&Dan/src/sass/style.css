@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.main-container {
+  margin-left: 220px;
+}
+.main-container__navbar {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-container__navbar input {
+  background-color: rgb(20, 21, 22);
+  height: 30px;
+  width: 350px;
+  color: blue;
+  border: 0;
+  border-radius: 60px;
+}
+.main-container__navbar button img {
+  filter: invert(1) sepia(10) saturate(0) hue-rotate(175deg);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(20, 21, 22);
+  margin: auto;
+  padding: 0 10px;
+  font-family: "Roboto", sans-serif;
+}
+body ::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 3px;
+}
+body ::-webkit-scrollbar-track {
+  background: rgb(20, 21, 22);
+}
+body ::-webkit-scrollbar-thumb {
+  background: #555;
+}
+body ::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.side-navbar {
+  position: fixed;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  height: 100vh;
+}
+.side-navbar hr {
+  margin: 10px 0;
+  border-color: rgb(20, 21, 22);
+}
+.side-navbar__youtubelogo {
+  display: flex;
+}
+.side-navbar__youtubelogo > a img {
+  position: relative;
+  top: 40px;
+  width: 30px;
+  filter: invert(1) sepia(10) saturate(0) hue-rotate(175deg);
+}
+.side-navbar__youtubelogo .youtube-image {
+  width: 170px;
+}
+.side-navbar__youtubelogo .youtube-image:hover {
+  cursor: pointer;
+}
+.side-navbar__buttons {
+  background-color: rgb(20, 21, 22);
+  color: white;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  padding-left: 10px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  margin: 1px 5px;
+}
+.side-navbar__buttons:hover {
+  background-color: rgb(57, 57, 57);
+  cursor: pointer;
+}
+.side-navbar__buttons img {
+  height: 100%;
+}/*# sourceMappingURL=style.css.map */

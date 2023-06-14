@@ -1,0 +1,61 @@
+.box {
+  margin-left: 20px;
+  margin-top: 20px;
+  width: 300px;
+  height: 300px;
+}
+
+.row {
+  display: flex;
+}
+.row .green {
+  background-color: green;
+}
+.row .yellow {
+  position: absolute;
+  background-color: yellow;
+  margin-left: 200px;
+  top: 70px;
+  opacity: 40%;
+}
+.row .brown {
+  position: absolute;
+  background-color: rgb(172, 122, 48);
+  margin-left: 400px;
+  opacity: 80%;
+}
+.row .red {
+  position: absolute;
+  background-color: red;
+  margin-left: 600px;
+  top: 70px;
+  opacity: 70%;
+}
+.row .lightpurp {
+  position: absolute;
+  background-color: rgb(151, 78, 151);
+  margin-left: 10px;
+  top: 570px;
+  opacity: 90%;
+}
+.row .purple {
+  position: absolute;
+  background-color: rgb(61, 4, 61);
+  margin-left: 200px;
+  top: 470px;
+  opacity: 70%;
+}
+.row .blue {
+  position: absolute;
+  background-color: blue;
+  margin-left: 400px;
+  top: 570px;
+  opacity: 60%;
+}
+.row .lightblue {
+  position: absolute;
+  background-color: rgb(70, 196, 247);
+  margin-left: 600px;
+  top: 470px;
+  opacity: 70%;
+}/*# sourceMappingURL=posworklvl3.css.map */

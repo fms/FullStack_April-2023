@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.conteiner {
+  margin: auto;
+  width: 76.5rem;
+  left: 50%;
+  transform: translate(-50% 0);
+}
+
+.first-row {
+  margin-top: 100px;
+}
+
+.second-row {
+  margin-top: 180px;
+}
+
+.main {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.grey {
+  background-color: rgb(239, 239, 239);
+}
+
+.orange {
+  background-color: rgb(230, 174, 97);
+  right: 100px;
+  top: 60px;
+  opacity: 90%;
+}
+
+.red {
+  background-color: rgb(194, 57, 65);
+  z-index: 1;
+  right: 190px;
+  opacity: 85%;
+}
+
+.pink {
+  background-color: rgb(212, 124, 185);
+  right: 260px;
+  top: 85px;
+  opacity: 90%;
+  z-index: 2;
+}
+
+.purple {
+  background-color: rgb(139, 108, 201);
+  right: 350px;
+  z-index: 3;
+  opacity: 90%;
+}
+
+.green {
+  background-color: rgb(26, 168, 144);
+}
+
+.blue {
+  background-color: rgb(23, 128, 211);
+  right: 150px;
+  bottom: 50px;
+  opacity: 90%;
+}
+
+.yellow {
+  background-color: rgb(211, 185, 46);
+  right: 190px;
+  top: 50px;
+  opacity: 90%;
+}
+
+.brown {
+  background-color: rgb(128, 114, 113);
+  right: 290px;
+  opacity: 90%;
+}
+
+.lightgreenish {
+  background-color: rgb(207, 219, 155);
+  right: 380px;
+  top: 65px;
+  opacity: 90%;
+}
+
+.darkblue {
+  background-color: rgb(25, 77, 179);
+  right: 570px;
+  z-index: -1;
+  bottom: 40px;
+}/*# sourceMappingURL=level 3-2.css.map */
