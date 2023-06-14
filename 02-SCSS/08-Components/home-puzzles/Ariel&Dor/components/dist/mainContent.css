@@ -132,6 +132,12 @@
   width: 322.49px;
   height: 322.49px;
 }
+.main__content .cards .productsCard1 .img1-1 {
+  transition: 200ms ease-in-out;
+}
+.main__content .cards .productsCard1 .img1-1 img {
+  background-image: url(../imgaes/products/1-1p.jpg);
+}
 .main__content .cards .productsCard1 .infoCards {
   display: flex;
   justify-content: none;
@@ -144,17 +150,17 @@
   justify-content: center;
   flex-direction: none;
 }
+.main__content .cards .productsCard1 .infoCards .palateColorFlexer .multiFlexerPalateColor {
+  display: flex;
+  justify-content: none;
+  flex-direction: none;
+}
 .main__content .cards .productsCard1 .infoCards .palateColorFlexer .palateColor {
   border: #212529 1px solid;
   width: 27px;
   height: 25px;
   padding: 1px 1px 1.2px;
   margin: 0 3.5px;
-}
-.main__content .cards .productsCard1 .infoCards .palateColorFlexer .multiFlexerPalateColor {
-  display: flex;
-  justify-content: none;
-  flex-direction: none;
 }
 .main__content .cards .productsCard1 .infoCards .palateColorFlexer .blackPalateColor {
   background-color: black;
@@ -171,6 +177,42 @@
   background-color: #4e5359;
   font-size: 19px;
   color: #4e5359;
+  cursor: pointer;
+}
+.main__content .cards .productsCard1 .infoCards .palateColorFlexer .olive2PalateColor {
+  background-color: #7c845d;
+  font-size: 19px;
+  color: #7c845d;
+  cursor: pointer;
+}
+.main__content .cards .productsCard1 .infoCards .palateColorFlexer .olivePalateColor {
+  background-color: #8a805d;
+  font-size: 19px;
+  color: #8a805d;
+  cursor: pointer;
+}
+.main__content .cards .productsCard1 .infoCards .palateColorFlexer .bodyPalateColor {
+  background-color: #e3dcd6;
+  font-size: 19px;
+  color: #e3dcd6;
+  cursor: pointer;
+}
+.main__content .cards .productsCard1 .infoCards .palateColorFlexer .whiteyPalateColor {
+  background-color: #f2f3fe;
+  font-size: 19px;
+  color: #f2f3fe;
+  cursor: pointer;
+}
+.main__content .cards .productsCard1 .infoCards .palateColorFlexer .hardGrayPalateColor {
+  background-color: #653f52;
+  font-size: 19px;
+  color: #653f52;
+  cursor: pointer;
+}
+.main__content .cards .productsCard1 .infoCards .palateColorFlexer .creamPalateColor {
+  background-color: #b7ad9e;
+  font-size: 19px;
+  color: #b7ad9e;
   cursor: pointer;
 }
 .main__content .cards .productsCard1 .infoCards .kotarot a {
@@ -196,7 +238,7 @@
   color: red;
 }
 .main__content .cards .productsCard1 .infoCards .price .clearPrice {
-  border: #212529 1px solid;
+  border: #212529 0.5px solid;
   display: flex;
   justify-content: none;
   flex-direction: column;

@@ -1,0 +1,22 @@
+@import '../config';
+.footer {
+  background-color: #2e2c2d;
+
+  .flexContainer {
+    @include flexer(flex, space-between, none);
+  }
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+

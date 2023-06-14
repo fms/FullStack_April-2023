@@ -147,6 +147,13 @@
         height: 322.49px;
       }
 
+      .img1-1 {
+        transition: 200ms ease-in-out;
+        img{
+        background-image: url(../imgaes/products/1-1p.jpg);
+        }
+      } 
+
       .infoCards {
         @include flexer (flex, none, column);
         text-align: center;
@@ -155,15 +162,15 @@
         .palateColorFlexer {
           @include flexer (flex, center, none);
           
+          .multiFlexerPalateColor {
+            @include flexer (flex, none, none);
+          }
           .palateColor {
             border: #212529 1px solid;
             width: 27px;
             height: 25px;
             padding: 1px 1px 1.2px;
             margin: 0 3.5px;
-          }
-          .multiFlexerPalateColor {
-            @include flexer (flex, none, none);
           }
           .blackPalateColor {
             @include backColorCard(black);
@@ -177,6 +184,36 @@
           .grayPalateColor {
             @include backColorCard(#4e5359);
             color: #4e5359;
+            cursor: pointer;
+          }
+          .olive2PalateColor {
+            @include backColorCard(#7c845d);
+            color: #7c845d;
+            cursor: pointer;
+          }
+          .olivePalateColor {
+            @include backColorCard(#8a805d);
+            color: #8a805d;
+            cursor: pointer;
+          }
+          .bodyPalateColor {
+            @include backColorCard(#e3dcd6);
+            color: #e3dcd6;
+            cursor: pointer;
+          }
+          .whiteyPalateColor {
+            @include backColorCard(#f2f3fe);
+            color: #f2f3fe;
+            cursor: pointer;
+          }
+          .hardGrayPalateColor {
+            @include backColorCard(#653f52);
+            color: #653f52;
+            cursor: pointer;
+          }
+          .creamPalateColor {
+            @include backColorCard(#b7ad9e);
+            color: #b7ad9e;
             cursor: pointer;
           }
         }   
@@ -199,9 +236,7 @@
               margin-bottom: 15px;
             }
           }
-          
         }
-
         .price {
           font-size: 14px;
           font-weight: bold;
@@ -210,9 +245,8 @@
             color: red;
           }
 
-
           .clearPrice {
-            border:#212529 1px solid;
+            border:#212529 0.5px solid;
             @include flexer(flex, none, column);
             width: 60px;
             position: relative;
@@ -220,14 +254,11 @@
             right: 160px;
           }
         }
-        
         .descriptoin {
           font-weight: bold;
         }
-
       }
     }
-
   }
 }
 
