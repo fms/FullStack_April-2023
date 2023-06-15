@@ -30,12 +30,14 @@ const count = setInterval(() => {
 }, 10);
 
 ballons.forEach(item => {
-  item.addEventListener('animationend', event => {
+  item.addEventListener('animationend', e => {
     // alert(`You failed, your time is: ${minutes}:${seconds}:${miliseconds}`);
     // document.getElementById("failed-div").style.display = "flex";
-    console.log('test');
+    console.log(e);
     document.getElementById('failed-div').style.display="flex";
     document.getElementById('failed-div').style.zIndex="3";
-    failedMessage.innerHTML = `You failed, your time is: ${minutes}:${seconds}:${miliseconds}`
+    failedMessage.innerHTML = `You failed, your time is: ${minutes}:${seconds}:${miliseconds}`;
+    clearInterval(count);
+
   })
 });
