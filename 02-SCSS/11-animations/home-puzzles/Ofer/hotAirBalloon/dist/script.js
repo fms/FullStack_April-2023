@@ -3,17 +3,7 @@ let miliseconds = '00';
 let seconds = '00';
 let minutes = '00';
 const failedMessage = document.getElementById("falied-message");
-const ballons = [document.getElementById("ballon-1"),
-  document.getElementById("ballon-2"),
-  document.getElementById("ballon-3"),
-  document.getElementById("ballon-4"),
-  document.getElementById("ballon-5"),
-  document.getElementById("ballon-6"),
-  document.getElementById("ballon-7"),
-  document.getElementById("ballon-8"),
-  document.getElementById("ballon-9"),
-  document.getElementById("ballon-10")
-];
+const ballons = document.querySelectorAll(".balloon");
 
 const count = setInterval(() => {
   miliseconds++
