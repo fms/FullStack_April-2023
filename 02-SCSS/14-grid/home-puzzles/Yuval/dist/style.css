@@ -129,12 +129,14 @@
 }
 
 .media {
-  display: flex;
-  position: relative;
-  flex-direction: row;
+  direction: ltr;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas: "videoBox article article article article" "videoBox article article article article" "videoBox . . . .";
 }
 
 .center {
+  grid-area: article;
   position: relative;
   display: flex;
   font-family: sans-serif;
@@ -142,36 +144,6 @@
 
 .center img {
   position: relative;
-}
-
-.center_text h1 {
-  margin: 0;
-  line-height: 35px;
-}
-
-.center_text h1 p {
-  margin: 0;
-  line-height: 35px;
-}
-
-.center_text h2 {
-  margin: 0;
-  line-height: 35px;
-}
-
-.center_text h2 p {
-  margin: 0;
-  line-height: 35px;
-}
-
-.center_text h3 {
-  margin: 0;
-  line-height: 35px;
-}
-
-.center_text h3 p {
-  margin: 0;
-  line-height: 35px;
 }
 
 .news {
@@ -186,9 +158,7 @@
 }
 
 .videoBox {
-  display: flex;
-  position: relative;
-  flex-direction: column;
+  grid-area: videoBox;
   width: 350px;
   height: 500px;
   border: 1px solid black;

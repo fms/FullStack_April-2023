@@ -4,11 +4,12 @@
   direction: rtl;
 }
 
-.footer {
+.footers {
   background-color: #2e2c2d;
 }
-.footer .flexContainer {
+.footers .flexContainer {
   display: flex;
   justify-content: space-between;
   flex-direction: none;
+  padding-bottom: 250px;
 }
