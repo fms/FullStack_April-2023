@@ -37,16 +37,16 @@ body {
   padding-right: 22px;
   display: flex;
 }
-.main__bar__button__arrow {
+.main__bar__button img {
   height: 8px;
   width: 8px;
   margin-left: -4px;
   margin-top: 18px;
 }
 .main__bar__button__icon {
-  height: 18px;
-  width: 22px;
-  margin-top: 11px;
+  height: 18px !important;
+  width: 22px !important;
+  margin-top: 11px !important;
 }
 .main__search {
   width: 100%;
@@ -60,7 +60,8 @@ body {
   margin-left: 350px;
 }
 .main__search__searchbox {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
 }
 .main__search__searchbox input {
   width: 650px;
@@ -176,7 +177,8 @@ body {
   margin-top: 20px;
   width: 700px;
   height: 190px;
-  background-image: url(https://answers.unity.com/storage/temp/135164-fade.png);
+  background: #180024;
+  background: linear-gradient(90deg, #180024 0%, #bf446e 0%, #0070ff 100%);
 }
 .main__center__boxes__sales__salesdown h4 {
   position: absolute;
@@ -341,8 +343,9 @@ body {
   font-size: 18px;
   color: #A69999;
 }
-.main__center__superdeal__productflex {
-  display: flex;
+.main__center__superdeal__productgrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
 }
 .main__center__superdeal__product {
   height: 230px;
@@ -364,27 +367,28 @@ body {
 }
 .main__center__superdeal__product__producttext {
   font-weight: bold;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  margin-left: 10px;
   margin-bottom: 40px;
 }
 .main__center__superdeal__product .producttext1 {
   color: red;
   font-size: 22px;
+  margin-right: 40px;
 }
 .main__center__superdeal__product .producttext2 {
   color: #A69999;
 }
-.main__center__superdeal__product__orders {
-  margin-left: -93px;
+.main__center__superdeal__product p {
+  margin-left: -80px;
   margin-top: 25px;
   font-size: 13px;
   color: #6b6a6a;
   position: absolute;
 }
 .main__center__superdeal .first {
-  margin-left: 25px;
+  margin-left: 10px;
 }
 .main__center__more {
   height: 80px;
@@ -410,7 +414,6 @@ body {
 .main__center__products {
   width: 100%;
   height: auto;
-  flex-wrap: wrap;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   justify-content: space-around;
