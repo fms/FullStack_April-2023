@@ -4,7 +4,6 @@
   background-color: #4f4f50;
   margin-top: 80px;
   color: white;
-  height: 50vh;
   padding-left: 100px;
 }
 
@@ -31,8 +30,9 @@
   display: flex;
   flex-direction: column;
   float: right;
-  margin-left: 200px;
-  margin-top: 300px;
+  margin-left: 80px;
+  margin-top: 100px;
+  flex: none;
 }
 
 .logos {
@@ -42,8 +42,8 @@
   justify-content: center;
 }
 .logos .pic {
-  width: 100px;
-  margin: 200px 100px 100px 0;
+  width: 50px;
+  margin: 50px;
 }
 
 .txt {

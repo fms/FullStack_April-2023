@@ -2,9 +2,8 @@
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   direction: rtl;
-
-}
-
+}  
+  
 // @mixin productCarder($display:flex) {
 //   display: $display;
 //   flex-direction: column;
@@ -18,10 +17,13 @@
   flex-direction: $flex-diraction;
 }
 
-@mixin backColorCard ($background-color) {
+@mixin backColorCard($background-color) {
   background-color: $background-color;
   font-size: 19px;
 }
 
-
+@mixin imgSizer($width, $height) {
+  width: $width;
+  height: $height;
+}
 
