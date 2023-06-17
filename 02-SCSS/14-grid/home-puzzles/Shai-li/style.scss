@@ -69,9 +69,9 @@ body {
   grid-template-rows: 70px 45px 50px 80px;
 
   .rows {
-    border-radius: 4px;
     background-color: #ffffff;
     color: #425451;
+
     &__row-1 {
       background-color: #f4f4f4;
       display: flex;
@@ -92,30 +92,36 @@ body {
     &__row-2 {
       display: grid;
       grid-template-columns: 10% 90%;
-      align-items: center;
-
-      i {
-        margin-left: 1rem;
-        cursor: pointer;
-        color: #425451;
-      }
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 
       .search {
-        font-size: small;
-        background-color: #f4f4f4;
-        padding: 7px;
-        border-radius: 7px;
+        width: 100%;
         display: flex;
-        justify-content: end;
-        margin-right: 10px;
-        opacity: 80%;
 
-        p {
-          margin-right: 40px;
+        input {
+          width: 100%;
+          outline: none;
+          border: none;
+          background-color: #f4f4f4;
+          padding: 7px;
+          border-radius: 10px;
+          margin: 7px 5px;
+          text-align: end;
+          padding-right: 40px;
         }
         i {
-          margin-right: 5px;
+          position: absolute;
+          margin-left: 390px;
+          align-self: center;
+          cursor: pointer;
         }
+      }
+
+      .fa-bars-staggered {
+        align-self: center;
+        justify-self: center;
+        cursor: pointer;
+        color: #425451;
       }
     }
 
@@ -124,6 +130,7 @@ body {
       grid-template-columns: 90% 10%;
       align-items: center;
       text-align: end;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 
       i {
         color: #009688;
@@ -141,7 +148,15 @@ body {
       display: grid;
       grid-template-columns: 10% auto 15%;
       grid-template-rows: 50% 50%;
+      color: #444254;
+      font-size: 0.9em;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
       cursor: pointer;
+
+      &:hover {
+        background-color: #e9e9e9;
+      }
+
       img {
         height: 60px;
         width: 60px;
@@ -157,7 +172,12 @@ body {
         grid-column-start: 1;
         justify-self: center;
         align-self: center;
-        color: #80a831;
+        // font-size: small;
+
+        &__gettingMes {
+          font-weight: bold;
+          color: #80a831;
+        }
       }
       .name {
         grid-row-start: 1;
@@ -165,6 +185,13 @@ body {
         justify-self: end;
         align-self: flex-end;
         margin-right: 20px;
+        font-size: medium;
+
+        &__gettingMes {
+          font-size: 1.1em;
+          color: #2e3130;
+          font-weight: bold;
+        }
       }
 
       .check {
@@ -172,6 +199,9 @@ body {
         grid-column-start: 2;
         justify-self: end;
         margin-right: 20px;
+        color: #727b7a;
+
+        // font-size: smaller;
       }
 
       .message {
@@ -179,9 +209,16 @@ body {
         grid-column-start: 2;
         justify-self: end;
         margin-right: 20px;
+        // font-size: smaller;
+        // color: #869794;
+        color: #646b6a;
 
         &__meSending {
           margin-right: 38px;
+        }
+        &__gettingMes {
+          font-weight: bold;
+          color: #475553;
         }
       }
 
