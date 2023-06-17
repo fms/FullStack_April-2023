@@ -81,6 +81,9 @@ body {
   cursor: pointer;
   color: #425451;
 }
+.grid-item-right .rows__row-1 i:hover {
+  color: #80a831;
+}
 .grid-item-right .rows__row-2 {
   display: grid;
   grid-template-columns: 10% 90%;

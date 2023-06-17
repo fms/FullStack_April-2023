@@ -87,6 +87,9 @@ body {
         margin: 20px;
         cursor: pointer;
         color: #425451;
+        &:hover {
+          color: #80a831;
+        }
       }
     }
     &__row-2 {
