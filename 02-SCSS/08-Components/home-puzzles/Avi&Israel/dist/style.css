@@ -367,22 +367,17 @@ body {
 }
 .main__center__superdeal__product__producttext {
   font-weight: bold;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  margin-left: 10px;
   margin-bottom: 40px;
 }
 .main__center__superdeal__product .producttext1 {
   color: red;
   font-size: 22px;
   margin-right: 40px;
-}
-.main__center__superdeal__product .producttext2 {
-  color: #A69999;
+  margin-left: 10px;
 }
 .main__center__superdeal__product p {
-  margin-left: -80px;
-  margin-top: 25px;
+  margin-left: 10px;
+  margin-top: 5px;
   font-size: 13px;
   color: #6b6a6a;
   position: absolute;
