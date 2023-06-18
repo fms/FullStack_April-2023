@@ -1,4 +1,6 @@
 $font-size--normal: 80px;
+$fa-font-path: "../fontawesome-free-6.4.0-web/webfonts/";
+
 $centext: center;
 
 
@@ -8,9 +10,7 @@ $centext: center;
     border-color: rgb(255, 255, 255);
     border-style: outset;   
 }
-@mixin spaces  {
-    margin: auto;
-}
+
 .fix{
 
     background-color: black;
