@@ -12,37 +12,28 @@
 
 .side-navbar {
   position: fixed;
-  overflow-y: scroll;
+  top: 74px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   width: 220px;
   height: 100vh;
+  transition: overflow-y 0.3s;
+}
+.side-navbar:hover {
+  overflow-y: scroll;
 }
 .side-navbar hr {
   margin: 10px 0;
   border-color: rgb(20, 21, 22);
 }
-.side-navbar__youtubelogo {
-  display: flex;
-}
-.side-navbar__youtubelogo > a img {
-  position: relative;
-  top: 40px;
-  width: 30px;
-  filter: invert(1) sepia(10) saturate(0) hue-rotate(175deg);
-}
-.side-navbar__youtubelogo .youtube-image {
-  width: 170px;
-}
-.side-navbar__youtubelogo .youtube-image:hover {
-  cursor: pointer;
-}
 .side-navbar__buttons {
   background-color: rgb(20, 21, 22);
   color: white;
-  font-weight: 400;
+  font-weight: 300;
   font-family: "Roboto", sans-serif;
   font-size: 15px;
+  padding: 5px;
   padding-left: 10px;
   height: 30px;
   display: flex;

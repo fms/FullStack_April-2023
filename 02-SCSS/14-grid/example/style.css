@@ -1,0 +1,82 @@
+.grid-container {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-areas: "sidebar" "main" "special";
+}
+
+@media (min-width: 600px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "sidebar main " "sidebar . " "sidebar  special" "sidebar  special";
+  }
+}
+@media (min-width: 1200px) {
+  .grid-container {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: "sidebar main main main main" "sidebar . . . ." "sidebar . . special special" "sidebar . . special special";
+  }
+}
+.grid-item {
+  border: 2px black solid;
+  font-size: 1.2rem;
+  background-color: aqua;
+}
+
+.grid-item:first-child {
+  grid-area: sidebar;
+  background-color: yellow;
+}
+
+.grid-item:nth-child(2) {
+  grid-area: main;
+  background-color: blue;
+}
+
+.grid-item:nth-child(5) {
+  grid-area: special;
+  background-color: pink;
+}
+
+.grid-container-2 {
+  margin-top: 50px;
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.grid-item-2 {
+  border: 2px black solid;
+  font-size: 1.2rem;
+  background-color: aqua;
+}
+
+.with-content {
+  display: flex;
+  flex-direction: column;
+}
+.with-content img {
+  max-width: 100%;
+}
+.with-content img + p {
+  background-color: black;
+  color: white;
+  margin: 0;
+  font-weight: bold;
+}
+
+@media (min-width: 1200px) {
+  .grid-item-2:first-child {
+    background-color: yellow;
+    grid-row: 4 span;
+  }
+  .grid-item-2:nth-child(2) {
+    background-color: blue;
+    grid-column-start: 2;
+    grid-column-end: 6;
+  }
+  .grid-item-2:nth-child(5) {
+    background-color: pink;
+    grid-column: 4/6;
+    grid-row: 3/5;
+  }
+}/*# sourceMappingURL=style.css.map */

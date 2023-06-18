@@ -1,0 +1,25 @@
+.wrapper {
+  display: flex;
+  gap: 5px;
+  background-color: red;
+}
+@media screen and (max-width: 600px) {
+  .wrapper {
+    flex-direction: column;
+    background-color: green;
+  }
+}
+
+.box {
+  background-color: aqua;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+@media screen and (orientation: landscape) and (max-width: 900px) {
+  .wrapper {
+    gap: 50px;
+  }
+}/*# sourceMappingURL=style.css.map */

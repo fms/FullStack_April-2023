@@ -5,22 +5,20 @@
 
 .sport-section {
   margin: auto;
-  width: 30%;
+  width: 80%;
   display: flex;
 }
 
 article {
   display: flex;
 }
-.article .img  *{
-  width: 30%;
+article__img * {
   border-radius: 10px;
 }
-.article .text {
-  width: 30%;
+article__text {
   display: flex;
   justify-content: center;
   background-color: black;
   color: white;
   padding: 10px;
-}
+}/*# sourceMappingURL=css.css.map */

@@ -1,0 +1,25 @@
+img {
+  margin-top: 30%;
+  margin-left: 40%;
+  width: 200px;
+  height: 200px;
+  animation: slide-top 5s forwards, slide-bottom 2s forwards;
+  animation-delay: 0s, 4s;
+}
+
+@keyframes slide-top {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-600px);
+  }
+}
+@keyframes slide-bottom {
+  0% {
+    transform: translateY(-1000px);
+  }
+  100% {
+    transform: translateY(-300px);
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,135 @@
+.background img {
+  height: 100%;
+  width: 100%;
+}
+
+.cartainleft {
+  position: relative;
+  bottom: 1100px;
+  animation-name: openleft;
+  animation-duration: 6s;
+  animation-fill-mode: forwards;
+}
+.cartainleft img {
+  width: 920px;
+  height: 1000px;
+}
+
+@keyframes openleft {
+  from {
+    right: 0px;
+  }
+  to {
+    right: 820px;
+  }
+}
+.cartainright {
+  position: relative;
+  left: 920px;
+  bottom: 2104px;
+  animation-name: openright;
+  animation-duration: 6s;
+  animation-fill-mode: forwards;
+}
+.cartainright img {
+  width: 920px;
+  height: 1000px;
+}
+
+@keyframes openright {
+  from {
+    left: 920px;
+  }
+  to {
+    left: 1775px;
+  }
+}
+.dollflex {
+  display: flex;
+  gap: 2px;
+}
+
+.doll {
+  position: relative;
+  bottom: 3600px;
+  margin-left: 100px;
+  animation-name: dolly;
+  animation-duration: 6s;
+  animation-fill-mode: forwards;
+}
+.doll img {
+  position: relative;
+}
+
+@keyframes dolly {
+  from {
+    bottom: 3600px;
+  }
+  to {
+    bottom: 2600px;
+  }
+}
+.dollright {
+  animation-name: dollright;
+  animation-duration: 3s;
+  animation-delay: 6s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dollright {
+  0% {
+    bottom: 3600px;
+  }
+  80% {
+    bottom: 2600px;
+  }
+  97% {
+    bottom: 3000px;
+  }
+  100% {
+    bottom: 2600px;
+  }
+}
+.dollcenter {
+  animation-name: dollright;
+  animation-duration: 3s;
+  animation-delay: 9s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dollcenter {
+  0% {
+    bottom: 3600px;
+  }
+  80% {
+    bottom: 2600px;
+  }
+  97% {
+    bottom: 3000px;
+  }
+  100% {
+    bottom: 2600px;
+  }
+}
+.dollleft {
+  animation-name: dollright;
+  animation-duration: 3s;
+  animation-delay: 12s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.17, 0.67, 1, -1.45);
+}
+
+@keyframes dollleft {
+  0% {
+    bottom: 3600px;
+  }
+  80% {
+    bottom: 2600px;
+  }
+  97% {
+    bottom: 3000px;
+  }
+  100% {
+    bottom: 2600px;
+  }
+}/*# sourceMappingURL=style.css.map */

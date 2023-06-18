@@ -1,0 +1,74 @@
+.container-topics {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 116px;
+}
+
+.title-topics {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title-topics p {
+  color: white;
+  font-size: 20px;
+}
+.title-topics p span {
+  font-weight: 900;
+  cursor: pointer;
+}
+
+button {
+  border: none;
+  background-color: #06070d;
+  color: white;
+  font-weight: bolder;
+  font-weight: 900;
+  font-size: 12px;
+  cursor: pointer;
+}
+button:hover {
+  color: rgb(0, 194, 120);
+}
+
+.row-topics {
+  width: 90vw;
+}
+
+.content-topics-imgs {
+  display: flex;
+  gap: 10px;
+}
+.content-topics-imgs img {
+  height: 100px;
+  width: 238px;
+  -o-object-fit: none;
+     object-fit: none;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.content-topics-imgs img:hover {
+  opacity: 0.8;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.cards {
+  position: relative;
+}
+
+.card-title {
+  position: absolute;
+  bottom: 30px;
+  left: 95px;
+  color: white;
+  font-size: 17px;
+  pointer-events: none;
+}
+
+.mr {
+  margin-left: -35px;
+  width: 100%;
+}/*# sourceMappingURL=2.topics-imgs.css.map */
