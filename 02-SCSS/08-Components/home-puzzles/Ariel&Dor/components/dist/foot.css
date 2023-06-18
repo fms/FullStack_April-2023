@@ -114,6 +114,13 @@
 .foot .flexContainer .leftSideFooter .contactUs ul li:first-child {
   font-weight: bold;
 }
-.foot .flexContainer .copyRightContactUs p {
-  transform: translate(250%, -1370%);
+.foot .copyRightContactUs {
+  background-color: #2e2c2d;
+}
+.foot .copyRightContactUs p {
+  max-width: 1000px;
+  color: white;
+  font-size: 16px;
+  letter-spacing: 0.0375rem;
+  transform: translate(-70px, -77px);
 }

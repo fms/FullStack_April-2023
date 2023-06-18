@@ -132,7 +132,7 @@
     }
   }
 
-// Products
+  // Products
   .cards {
     .rowFlexerCards{
       @include flexer (flex, center, none);
@@ -143,23 +143,25 @@
       padding: 10px;
 
       img {
+        position: relative;
         width: 322.49px;
         height: 322.49px;
       }
 
-      .img1-1 {
-        transition: 200ms ease-in-out;
-        img{
-        background-image: url(../imgaes/products/1-1p.jpg);
+      .h1-1 {
+        img:hover {
+          background-image: url(../imgaes/products/1-1p.jpg);
         }
-      } 
+      }
+      // @import './hoverCardsProductImages';
+    } 
 
-      .infoCards {
-        @include flexer (flex, none, column);
-        text-align: center;
-        padding: 0.6875rem 0 3rem;
+    .infoCards {
+      @include flexer (flex, none, column);
+      text-align: center;
+      padding: 0.6875rem 0 3rem;
 
-        .palateColorFlexer {
+      .palateColorFlexer {
           @include flexer (flex, center, none);
           
           .multiFlexerPalateColor {
@@ -216,9 +218,9 @@
             color: #b7ad9e;
             cursor: pointer;
           }
-        }   
+      }   
 
-        .kotarot {
+      .kotarot {
           a {
             font-size: 17px;
             text-decoration: none;
@@ -236,8 +238,8 @@
               margin-bottom: 15px;
             }
           }
-        }
-        .price {
+      }
+      .price {
           font-size: 14px;
           font-weight: bold;
           
@@ -253,10 +255,9 @@
             bottom: 10px;
             right: 160px;
           }
-        }
-        .descriptoin {
+      }
+      .descriptoin {
           font-weight: bold;
-        }
       }
     }
   }

@@ -1,70 +1,113 @@
 @import '../config';
 
-.navb {
-  @include flexer (flex, center, none);
+.flexStarterNav {
   position: fixed;
-  width: 100%;
-  background-color: rgb(46, 44, 45);
-  font-family: sans-serif;
-  font-size: 20px;
-  letter-spacing: 0.3px;
-  direction: ltr;
+  min-width: 1519px;
 
-  .icon {
-    
-    .img__divver__icon {
-      background-color: rgb(0, 122, 184);
-      display: flex;
-      justify-content: space-around;
-      width: 220px;
+    .preNav {
+    @include flexer (flex, none, none);
+    align-items: flex-start;
+    background-color: white;
+    width: 100%;
+    direction: ltr;
+    height: 48px;
 
-      .img__icon-1 {
-        height: 95px;
-      }
+    .one {
+      width: 37.5px;
+      height: 46px;
+      padding-left: 2px;
+    }
+    .two {
+      width: 43px;
+      height: 47px;
+      padding-left: 4px;
+    }
+    .three {
+      width: 32px;
+      height: 45px;
+      padding: 1px
     }
   }
 
-  .center_navb {
+  .navb {
+    @include flexer (flex, center, none);
     width: 100%;
     background-color: rgb(46, 44, 45);
+    font-family: sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.3px;
+    direction: ltr;
+    height: 84px;
 
-    
-    .ul__center__navb {
-      display: flex;
-      justify-content: space-evenly;
-      list-style: none;
-      padding-left: 80px;
+    .icon {
+      
+      .img__divver__icon {
+        background-color: rgb(0, 122, 184);
+        display: flex;
+        justify-content: space-around;
+        width: 204px;
+        height: 84px;
 
-      .ul__center__navb-li{
-        padding: 35px 0;
-        
-      }
-
-      a {
-        text-decoration: none;
-        color: white;
-      }
-      a:hover{
-        color: rgb(117, 117, 105);
+        .img__icon-1 {
+          height: 78px;
+          width: 174px;
+          padding-top: 2px;
+        }
       }
     }
-  }
 
-  .search__navb {
-    padding: 35px 35px 35px 0;
-    background-color: rgb(46, 44, 45);    
-    margin-right: 20px;
-
-    input {
-      border: 1px solid #a5a5a5;
-      background: none;
-      height: 100%;
+    .center_navb {
       width: 100%;
-      direction: rtl;
-      padding: 2px 10px 2px 10px;
-      color: white;
-      outline: none;
-      font-size: 16px;
+      background-color: rgb(46, 44, 45);
+
+      
+      .ul__center__navb {
+        @include flexer(flex, space-between, none);
+        list-style: none;
+        padding-left: 80px;
+        padding-right: 25px!important;
+
+        .ul__center__navb-li{
+          padding: 27.5px 0;
+          
+        }
+
+        a {
+          text-decoration: none;
+          color: white;
+        }
+        a:hover{
+          color: rgb(117, 117, 105);
+        }
+      }
+    }
+
+    .search__navb {
+      padding: 25px 25px 30px 0;
+      background-color: rgb(46, 44, 45);    
+      margin-right: 5px;
+
+      input {
+        border: 1px solid #a5a5a5;
+        background: none;
+        height: 100%;
+        width: 82%;
+        direction: rtl;
+        padding: 1px 15px 1px 5px;
+        color: white;
+        outline: none;
+        font-size: 16px;
+
+      
+      }
+      img {
+        width: 30px;
+        height: 30px;
+        position: relative;
+        bottom: 31px;
+        right: 135px;
+        cursor: pointer;
+      }
     }
   }
 }

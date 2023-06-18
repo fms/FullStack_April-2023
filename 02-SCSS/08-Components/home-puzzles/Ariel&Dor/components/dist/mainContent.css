@@ -129,115 +129,113 @@
   padding: 10px;
 }
 .main__content .cards .productsCard1 img {
+  position: relative;
   width: 322.49px;
   height: 322.49px;
 }
-.main__content .cards .productsCard1 .img1-1 {
-  transition: 200ms ease-in-out;
-}
-.main__content .cards .productsCard1 .img1-1 img {
+.main__content .cards .productsCard1 .h1-1 img:hover {
   background-image: url(../imgaes/products/1-1p.jpg);
 }
-.main__content .cards .productsCard1 .infoCards {
+.main__content .cards .infoCards {
   display: flex;
   justify-content: none;
   flex-direction: column;
   text-align: center;
   padding: 0.6875rem 0 3rem;
 }
-.main__content .cards .productsCard1 .infoCards .palateColorFlexer {
+.main__content .cards .infoCards .palateColorFlexer {
   display: flex;
   justify-content: center;
   flex-direction: none;
 }
-.main__content .cards .productsCard1 .infoCards .palateColorFlexer .multiFlexerPalateColor {
+.main__content .cards .infoCards .palateColorFlexer .multiFlexerPalateColor {
   display: flex;
   justify-content: none;
   flex-direction: none;
 }
-.main__content .cards .productsCard1 .infoCards .palateColorFlexer .palateColor {
+.main__content .cards .infoCards .palateColorFlexer .palateColor {
   border: #212529 1px solid;
   width: 27px;
   height: 25px;
   padding: 1px 1px 1.2px;
   margin: 0 3.5px;
 }
-.main__content .cards .productsCard1 .infoCards .palateColorFlexer .blackPalateColor {
+.main__content .cards .infoCards .palateColorFlexer .blackPalateColor {
   background-color: black;
   font-size: 19px;
   cursor: pointer;
 }
-.main__content .cards .productsCard1 .infoCards .palateColorFlexer .whitePalateColor {
+.main__content .cards .infoCards .palateColorFlexer .whitePalateColor {
   background-color: #ffffff;
   font-size: 19px;
   color: #ffffff;
   cursor: pointer;
 }
-.main__content .cards .productsCard1 .infoCards .palateColorFlexer .grayPalateColor {
+.main__content .cards .infoCards .palateColorFlexer .grayPalateColor {
   background-color: #4e5359;
   font-size: 19px;
   color: #4e5359;
   cursor: pointer;
 }
-.main__content .cards .productsCard1 .infoCards .palateColorFlexer .olive2PalateColor {
+.main__content .cards .infoCards .palateColorFlexer .olive2PalateColor {
   background-color: #7c845d;
   font-size: 19px;
   color: #7c845d;
   cursor: pointer;
 }
-.main__content .cards .productsCard1 .infoCards .palateColorFlexer .olivePalateColor {
+.main__content .cards .infoCards .palateColorFlexer .olivePalateColor {
   background-color: #8a805d;
   font-size: 19px;
   color: #8a805d;
   cursor: pointer;
 }
-.main__content .cards .productsCard1 .infoCards .palateColorFlexer .bodyPalateColor {
+.main__content .cards .infoCards .palateColorFlexer .bodyPalateColor {
   background-color: #e3dcd6;
   font-size: 19px;
   color: #e3dcd6;
   cursor: pointer;
 }
-.main__content .cards .productsCard1 .infoCards .palateColorFlexer .whiteyPalateColor {
+.main__content .cards .infoCards .palateColorFlexer .whiteyPalateColor {
   background-color: #f2f3fe;
   font-size: 19px;
   color: #f2f3fe;
   cursor: pointer;
 }
-.main__content .cards .productsCard1 .infoCards .palateColorFlexer .hardGrayPalateColor {
+.main__content .cards .infoCards .palateColorFlexer .hardGrayPalateColor {
   background-color: #653f52;
   font-size: 19px;
   color: #653f52;
   cursor: pointer;
 }
-.main__content .cards .productsCard1 .infoCards .palateColorFlexer .creamPalateColor {
+.main__content .cards .infoCards .palateColorFlexer .creamPalateColor {
   background-color: #b7ad9e;
   font-size: 19px;
   color: #b7ad9e;
   cursor: pointer;
 }
-.main__content .cards .productsCard1 .infoCards .kotarot a {
+.main__content .cards .infoCards .kotarot a {
   font-size: 17px;
   text-decoration: none;
   color: black;
 }
-.main__content .cards .productsCard1 .infoCards .kotarot a div {
+.main__content .cards .infoCards .kotarot a div {
   padding: 5px 0;
 }
-.main__content .cards .productsCard1 .infoCards .kotarot a div span:hover {
+.main__content .cards .infoCards .kotarot a div span:hover {
   border-bottom: 2px black solid;
 }
-.main__content .cards .productsCard1 .infoCards .kotarot a .kotertMishne {
+.main__content .cards .infoCards .kotarot a .kotertMishne {
   font-size: 14px;
   margin-bottom: 15px;
 }
-.main__content .cards .productsCard1 .infoCards .price {
+.main__content .cards .infoCards .price {
   font-size: 14px;
   font-weight: bold;
 }
-.main__content .cards .productsCard1 .infoCards .price .discountPrice {
+.main__content .cards .infoCards .price .discountPrice {
   color: red;
 }
-.main__content .cards .productsCard1 .infoCards .price .clearPrice {
+.main__content .cards .infoCards .price .clearPrice {
   border: #212529 0.5px solid;
   display: flex;
   justify-content: none;
@@ -247,6 +245,6 @@
   bottom: 10px;
   right: 160px;
 }
-.main__content .cards .productsCard1 .infoCards .descriptoin {
+.main__content .cards .infoCards .descriptoin {
   font-weight: bold;
 }

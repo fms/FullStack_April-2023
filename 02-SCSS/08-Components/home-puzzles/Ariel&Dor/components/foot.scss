@@ -119,12 +119,17 @@
         }
       }
     }
+  }
 
-    .copyRightContactUs {
-      p {
-        transform: translate(250%, -1370%);
-      }
+  .copyRightContactUs {
+    background-color: #2e2c2d;
 
+    p {
+      max-width: 1000px;
+      color: white;
+      font-size: 16px;
+      letter-spacing: 0.0375rem;
+      transform: translate(-70px, -77px);
     }
   }
 }
