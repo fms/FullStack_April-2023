@@ -1,0 +1,226 @@
+
+body{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: white;
+    .head{ 
+        width: 100%;
+        background-color: white;
+        font-size: 20px;
+        margin: auto;
+        display: block;
+        margin-top: -7px;
+        .up{
+            width: 100%;
+            height: 60px;
+            padding-left: 20px;
+            display: flex;
+            gap: 10px;
+            color: white;
+            background-color:black;
+            }
+            .main-bar{
+                display: flex;
+                gap: 50px;
+                border-left: gray solid 0.5px;
+                padding-left: 60px;
+                padding-top: 15px;
+                justify-items: center;
+            }
+            .home:hover {
+                border-bottom: solid  white;
+            }
+            .news:hover {
+                border-bottom: solid red;
+            }
+            .sport:hover {
+                border-bottom: solid  yellow;
+            }
+            .reel:hover {
+                border-bottom: solid  rgb(105, 105, 196);
+            }
+            .travel:hover {
+                border-bottom: solid  green;
+            }
+            .future:hover {
+                border-bottom: solid blue;
+            }
+            .culture:hover {
+                border-bottom: solid  gray;
+            }
+            .bbcicon{
+                display: flex;
+                gap: 10px; 
+                width: 300px;
+                &__bblock{
+                    width: 35%;
+                    height: 65%;
+                    background-color: white;
+                    margin-top: 15px;
+                }
+            }
+            .signin{
+                width: 200px;
+                margin: 20px 60px;
+            }
+            h1{
+                color: rgb(10, 10, 10);
+                position: absolute;
+                margin-left: 7px;
+                font-size: 22px;
+                margin-top: 5px;
+            }    
+        }
+        }
+        .down{
+            width: 100%;
+            height: 70px;
+            background-color: white;
+            h3{
+                font-size: 20px;
+                padding-top: 30px;
+                padding-left: 20px;
+            }
+        }
+        .headlines{
+            font-size: 1rem;
+            color: white;
+            display:grid;
+            height: 350px;
+            grid-template-rows:repeat(2, 1fr) ;
+            grid-template-columns:repeat(4, 1fr) ;
+            grid-gap: 10px;
+            margin-bottom: 60px;
+        }
+        .headlines-item{
+            background-color: pink;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            &.big{
+                grid-row: span 2;
+                grid-column: span 2;
+                background-image: url("https://ichef.bbci.co.uk/news/976/cpsprodpb/51FF/production/_130119902_ugandabuildingburnt.png");
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            &.one{
+                background-image: url("https://people.com/thmb/dKPqPCNJ9lJsEIzMvqIOgevvdmI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(749x0:751x2)/King-Charles-III-trooping-061723-28-9cd73283bd00481f8a0bfb817edefc4c.jpg");
+                background-size: 100%;
+                
+            }
+            &.two{
+                background-image: url("https://ichef.bbci.co.uk/news/1024/cpsprodpb/0686/production/_129307610_gettyimages-51043045.jpg");
+                background-size: 100%;
+            }
+            &.three{
+                background-image: url("https://ichef.bbci.co.uk/live-experience/cps/1024/cpsprodpb/21F3/production/_130119680_broad.jpg");
+                background-size: 100%;
+            }
+            &.four{
+                background-image: url("https://ychef.files.bbci.co.uk/976x549/p0fvl14j.jpg");
+                background-size: 100%;
+            }
+        }
+        .main-title{
+            font-size: 30px;
+            border-left: solid red;
+        }
+        .box-news{
+            color: rgb(4, 5, 4);
+            font-size: 1rem;
+            display:grid;
+            height: 300px;
+            grid-template-rows:repeat(1, 1fr) ;
+            grid-template-columns:repeat(3, 1fr) ;
+            grid-gap: 20px;
+            margin-bottom: 120px;
+            margin-top: 10px;
+            
+            
+        }
+        .box-news-column>h1{
+            padding-top:17% ;
+        }
+        .box-news-column>p{
+            font-size: 15px;
+        }
+        
+        .box-news-column{
+            background-color: pink;
+            height: 100%;
+            display: grid;
+            img{
+                width: 100%;
+                height: 90%;
+            }
+        }
+        
+    .weather{
+        display: flex;
+        width: 100%;
+        padding-top: 30px;
+        gap: 25px;
+        &__headline{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+        &__edit{
+            width: 25px;
+            background-color: rgb(212, 208, 208);
+            font-size: 12px;
+            padding-top: 5px;
+            color: gray;
+        }
+        &__icons>img{
+            width: 25%;   
+        }
+    }
+    .reels{
+        width: 100%;
+        height: 500px;
+        background-image: url(https://t3.ftcdn.net/jpg/05/22/81/52/360_F_522815294_thxEmIdQ6aVPJbyQrWD2AQh3CHzsyNxK.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    }
+    .reels-title{
+        font-size: 3rem;
+        padding-left: 120px;
+        color: white;
+        &.param{
+            font-size: 1.3rem;
+        }
+    }
+
+
+    .reels-package{       
+        display:grid;
+        gap: 30px;
+        width: 80%;
+        height: 200px;
+        margin: 0px 120px ;
+        grid-template-rows:repeat(1, 1fr) ;
+        grid-template-columns:repeat(3, 1fr) ;
+        gap: 30px;
+
+
+    }
+    .reels-box{
+        background-color: white;
+        height: 60%;
+        font-size: 1.2rem;
+        display:block;
+        img{
+            width: 100%;
+            height: 70%;
+        }
+        P{
+            padding-left: 10px;
+            margin-top: 5px;
+        }
+
+    
+    }
+
+
+
