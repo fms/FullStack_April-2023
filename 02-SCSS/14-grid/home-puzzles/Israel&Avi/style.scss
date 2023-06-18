@@ -467,9 +467,6 @@ body {
                 &__producttext {
 
                     font-weight: bold;
-                    display: grid;
-                    grid-template-columns: repeat(6, 1fr);
-                    margin-left: 10px;
                     margin-bottom: 40px;
                 }
 
@@ -477,19 +474,20 @@ body {
                     color: red;
                     font-size: 22px;
                     margin-right: 40px;
+                    margin-left: 10px;
 
 
                 }
 
-                .producttext2 {
+                // .producttext2 {
 
-                    color: #A69999;
+                    // color: #A69999;
 
-                }
+                // }
 
                 p {
-                    margin-left: -80px;
-                    margin-top: 25px;
+                    margin-left: 10px;
+                    margin-top: 5px;
                     font-size: 13px;
                     color: rgb(107, 106, 106);
                     position: absolute;  

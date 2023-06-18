@@ -367,6 +367,8 @@ body {
 }
 .main__center__superdeal__product__producttext {
   font-weight: bold;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   margin-bottom: 40px;
 }
 .main__center__superdeal__product .producttext1 {
