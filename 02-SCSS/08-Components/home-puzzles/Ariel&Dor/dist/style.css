@@ -218,6 +218,12 @@
   width: 322.49px;
   height: 322.49px;
 }
+.main__content .cards .productsCard1 .img1-1 {
+  transition: 200ms ease-in-out;
+}
+.main__content .cards .productsCard1 .img1-1 img {
+  background-image: url(../imgaes/products/1-1p.jpg);
+}
 .main__content .cards .productsCard1 .infoCards {
   display: flex;
   justify-content: none;
@@ -230,17 +236,17 @@
   justify-content: center;
   flex-direction: none;
 }
+.main__content .cards .productsCard1 .infoCards .palateColorFlexer .multiFlexerPalateColor {
+  display: flex;
+  justify-content: none;
+  flex-direction: none;
+}
 .main__content .cards .productsCard1 .infoCards .palateColorFlexer .palateColor {
   border: #212529 1px solid;
   width: 27px;
   height: 25px;
   padding: 1px 1px 1.2px;
   margin: 0 3.5px;
-}
-.main__content .cards .productsCard1 .infoCards .palateColorFlexer .multiFlexerPalateColor {
-  display: flex;
-  justify-content: none;
-  flex-direction: none;
 }
 .main__content .cards .productsCard1 .infoCards .palateColorFlexer .blackPalateColor {
   background-color: black;
@@ -257,6 +263,42 @@
   background-color: #4e5359;
   font-size: 19px;
   color: #4e5359;
+  cursor: pointer;
+}
+.main__content .cards .productsCard1 .infoCards .palateColorFlexer .olive2PalateColor {
+  background-color: #7c845d;
+  font-size: 19px;
+  color: #7c845d;
+  cursor: pointer;
+}
+.main__content .cards .productsCard1 .infoCards .palateColorFlexer .olivePalateColor {
+  background-color: #8a805d;
+  font-size: 19px;
+  color: #8a805d;
+  cursor: pointer;
+}
+.main__content .cards .productsCard1 .infoCards .palateColorFlexer .bodyPalateColor {
+  background-color: #e3dcd6;
+  font-size: 19px;
+  color: #e3dcd6;
+  cursor: pointer;
+}
+.main__content .cards .productsCard1 .infoCards .palateColorFlexer .whiteyPalateColor {
+  background-color: #f2f3fe;
+  font-size: 19px;
+  color: #f2f3fe;
+  cursor: pointer;
+}
+.main__content .cards .productsCard1 .infoCards .palateColorFlexer .hardGrayPalateColor {
+  background-color: #653f52;
+  font-size: 19px;
+  color: #653f52;
+  cursor: pointer;
+}
+.main__content .cards .productsCard1 .infoCards .palateColorFlexer .creamPalateColor {
+  background-color: #b7ad9e;
+  font-size: 19px;
+  color: #b7ad9e;
   cursor: pointer;
 }
 .main__content .cards .productsCard1 .infoCards .kotarot a {
@@ -282,7 +324,7 @@
   color: red;
 }
 .main__content .cards .productsCard1 .infoCards .price .clearPrice {
-  border: #212529 1px solid;
+  border: #212529 0.5px solid;
   display: flex;
   justify-content: none;
   flex-direction: column;
@@ -295,6 +337,122 @@
   font-weight: bold;
 }
 
-.spacer {
-  padding-bottom: 5000px;
+* {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  direction: rtl;
+}
+
+.foot {
+  font-size: 20px;
+}
+.foot .flexContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: none;
+  padding: 45px 40px 50px;
+  background-color: #2e2c2d;
+  color: white;
+}
+.foot .flexContainer .rightSideFooter {
+  display: flex;
+  justify-content: none;
+  flex-direction: row;
+}
+.foot .flexContainer .rightSideFooter .childSideFooter {
+  width: 220px;
+  height: 350px;
+}
+.foot .flexContainer .rightSideFooter .childSideFooter ul li {
+  list-style-type: none;
+  letter-spacing: 1px;
+}
+.foot .flexContainer .rightSideFooter .childSideFooter ul li span {
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.foot .flexContainer .rightSideFooter .childSideFooter ul li a {
+  text-decoration: none;
+  color: white;
+}
+.foot .flexContainer .rightSideFooter .childSideFooter ul li a:hover {
+  border-bottom: 2px solid white;
+}
+.foot .flexContainer .rightSideFooter .childSideFooter ul li:first-child {
+  padding-bottom: 15px;
+}
+.foot .flexContainer .leftSideFooter {
+  padding-left: 50px;
+  max-width: 462px;
+}
+.foot .flexContainer .leftSideFooter .newsletterFooter {
+  letter-spacing: 2px;
+}
+.foot .flexContainer .leftSideFooter .newsletterFooter input {
+  width: 356px;
+  height: 40px;
+  outline: none;
+  padding-right: 50px;
+  font-size: 20px;
+  margin-top: 13px;
+}
+.foot .flexContainer .leftSideFooter .newsletterFooter img {
+  position: relative;
+  left: 405px;
+  top: 7px;
+  width: 30px;
+  height: 30px;
+}
+.foot .flexContainer .leftSideFooter .contentNewsletterFooter {
+  margin: 15px 5px 15px 30px;
+  letter-spacing: 1px;
+}
+.foot .flexContainer .leftSideFooter .contentNewsletterFooter p {
+  margin-bottom: 15px;
+}
+.foot .flexContainer .leftSideFooter .contentNewsletterFooter a {
+  color: white;
+  text-decoration: underline;
+  font-weight: bold;
+}
+.foot .flexContainer .leftSideFooter .contentNewsletterFooter a:hover {
+  color: black;
+}
+.foot .flexContainer .leftSideFooter .socialIconsLeftSideFooter .img200 {
+  width: 25px;
+  height: 25px;
+  position: relative;
+  right: 10px;
+  padding-left: 7px;
+}
+.foot .flexContainer .leftSideFooter .socialIconsLeftSideFooter .img250 {
+  width: 55px;
+  height: 55px;
+  position: relative;
+  top: 10.5px;
+}
+.foot .flexContainer .leftSideFooter .contactUs {
+  padding-top: 30px;
+  letter-spacing: 0.5px;
+  font-size: 18px;
+  line-height: 30px;
+}
+.foot .flexContainer .leftSideFooter .contactUs ul {
+  padding-right: 10px;
+}
+.foot .flexContainer .leftSideFooter .contactUs ul li {
+  list-style-type: none;
+}
+.foot .flexContainer .leftSideFooter .contactUs ul li a {
+  color: white;
+  text-decoration: none;
+}
+.foot .flexContainer .leftSideFooter .contactUs ul li a:hover {
+  border-bottom: 2px solid white;
+}
+.foot .flexContainer .leftSideFooter .contactUs ul li:first-child {
+  font-weight: bold;
+}
+.foot .flexContainer .copyRightContactUs p {
+  transform: translate(250%, -1370%);
 }

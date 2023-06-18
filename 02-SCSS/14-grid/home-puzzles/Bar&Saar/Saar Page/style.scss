@@ -1,0 +1,120 @@
+@import "../nav-bar.scss";
+@import "../footer.scss";
+@import "./main.scss";
+
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-weight: 400;
+    background-color: #06070d;
+  }
+  
+  .wrapper {
+    width: 100%
+  }
+
+.home-header {
+    z-index: 2;
+  }
+  
+  .column-nav {
+    z-index: 3;
+  }
+  
+  .bottom-nav {
+    z-index: 4;
+  }
+  
+  .mr-20px {
+    margin-right: 20px;
+  }
+  
+  .ml-24px {
+    margin-left: 24px;
+  }
+  
+  .font-size--21px {
+    font-size: 21px;
+  }
+  
+  .logo {
+    width: 100px;
+    cursor: pointer;
+  }
+  
+  .pointer {
+    cursor: pointer;
+  }
+
+.button-next {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    align-items: center;
+    width: 99vw;
+  
+    button {
+      font-size: 18px;
+      border: none;
+      color: rgb(180, 175, 175);
+      font-weight: 700;
+      background-color: #06070d;
+      cursor: pointer;
+  
+      &:hover {
+          color: rgb(0, 194, 120);
+      }
+    }
+  }
+
+.bottom-nav {
+    height: 55px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background-color: white;
+    top: 95vh;
+    opacity: .9;
+  
+    p{
+        margin-right: 20px;
+    }
+  
+    .bottom-nav-button-1 {
+        background-color: inherit;
+        border: 1px solid rgb(77, 77, 77);
+        padding: 9px 35px;
+        margin-right: 7px;
+        color: black;
+  
+        &:hover {
+            background-color: rgb(0, 0, 39);
+            color: white;
+        }
+  
+    }
+  
+    .bottom-nav-button-2 {
+        margin-right: 15px;
+        background-image: linear-gradient(to left, #55efc4, #27ae60, #55efc4);
+        color: black;
+        padding: 10px 45px;
+        border: none;
+    }
+  }
+  
+  .bottom-nav-logos {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 1px solid rgb(194, 193, 193);
+    padding: 7px;
+    background-color: whitesmoke;
+    margin-right: 10px;
+  }
+

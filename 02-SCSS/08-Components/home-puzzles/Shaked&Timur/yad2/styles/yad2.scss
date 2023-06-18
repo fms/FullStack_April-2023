@@ -3,18 +3,26 @@
 @import "banner/mainban";
 @import "mixin/mix";
 @import "footer/footer";
+@import "grid/grid";
+
 
 .flex {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 40px;
     flex-direction: row-reverse;
-    margin-right: 150px;
+
+
+    &--imgsize {
+        width: 150px;
+        height: 150px;
+    }
 
     &__circles {
-        @include wi-he(300px, 300px);
-        border-radius: 300px;
+        margin-top: 40px;
+        @include wi-he(150px, 150px);
+        border-radius: 100px;
         background-color: rgb(235, 233, 233);
     }
 
@@ -30,91 +38,65 @@
 
 p {
     float: right;
-    margin-right: 70px;
-    font-size: 45px;
+    margin-right: 40px;
+    font-size: 20px;
 }
 
 
 p2 {
-    @include mar_l-r-t-b(0, 150px, 120px, 0);
-    float: right;
-    font-size: 60px;
+    margin-left: 83%;
+    font-size: 27px;
 }
 
-.appbox {
-    @include mar_l-r-t-b(120px, 0, 10%, 0);
-    @include wi-he(90%, 200px);
-    background-color: orange;
-    border-radius: 20px;
-    opacity: 70%;
-
-    &__phone {
-        @include posty-t-b-l-r(relative, 1, 100px, 88%, 0);
-    }
-
-    &__text {
-        @include posty-t-b-l-r(relative, 1, 150px, 0, 0);
-        color: rgb(255, 255, 255);
-        font-size: 90px;
-        bottom: 150px;
-        margin-left: 25%;
-    }
-
-    &__buttons {
-        @include posty-t-b-l-r(relative, 1, 280px, 0, 0);
-        display: flex;
-        margin-left: 7%;
-
-        &__que {
-            border: solid 4px rgb(255, 255, 255);
-            border-radius: 20px;
-        }
-
-        &__appstore {
-            bottom: 430px;
-            margin-left: 13.5%;
-        }
-
-        &__googleplay {
-            bottom: 420px;
-            margin-left: 13.5%;
-        }
-    }
+.fllex {
+    display: flex;
+    flex-direction: column;
+    float: right;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
 }
 
 .popser {
+
     float: right;
-    font-size: 60px;
-    margin-right: 150px;
-    margin-bottom: 50px;
+    font-size: 30px;
 
     &__flex {
+
         display: flex;
         flex-wrap: wrap;
     }
 
     &__popbox {
         margin-left: 20px;
-        margin-top: 20px;
         float: right;
-        width: 580px;
-        height: 150px;
-        border: solid 1px rgb(219, 219, 219);
+        width: 310px;
+        height: 70px;
+        border: solid 1px #dbdbdb;
         border-radius: 10px;
     }
 
-    &__maintext {
-        font-size: 30px;
+    &--img {
+
+        margin-top: 15px;
+        width: 60px;
         float: right;
-        margin-top: 30px;
-        margin-right: 20px;
     }
 
+    &__maintext {
+        margin-top: 10px;
+        margin-left: 80px;
+        font-size: 18px;
+        float: right;
+    }
+
+
     &__text {
-        font-size: 30px;
-        margin-left: 60px;
-        margin-top: 45px;
+        float: right;
+        font-size: 14px;
         color: rgb(107, 107, 107);
+
     }
 
     &__popbox:hover {
@@ -127,21 +109,20 @@ p2 {
     float: right;
 
     &__bus-box {
-        margin-top: 200px;
-        margin-right: 100px;
-        float: right;
+        margin-top: 100px;
         width: 90%;
-        height: 200px;
-        border: solid 1px rgb(219, 219, 219);
+        height: 120px;
         border-radius: 10px;
-        background-color: rgb(240, 240, 240);
+        background-color: rgb(244, 244, 244);
     }
 
+
+
     &__bus-text {
-        font-size: 60px;
+        font-size: 40px;
         float: right;
-        margin-top: 70px;
-        margin-right: 100px;
+        margin-top: 40px;
+        margin-right: 10px;
     }
 
     &__bus-flex {
@@ -149,79 +130,57 @@ p2 {
         flex-wrap: wrap;
     }
 
-    &__bu-box {
+    &--bu-img {
+        width: 40px;
+        height: 40px;
         float: right;
-        margin-top: 60px;
-        margin-right: 100px;
-        width: 500px;
-        height: 100px;
-        background-color: white;
-        box-shadow: 0px 0px 23px rgb(179, 176, 176);
-        border-radius: 20px;
-    }
-
-    &__bus-instext {
-        font-size: 40px;
-        float: right;
-        margin-top: 30px;
-    }
-
-    &__bus-arrow {
-        position: relative;
-        right: 160px;
-        bottom: 50px;
-        font-size: 50px;
-
+        margin-top: 3px;
     }
 
     &__bus-img {
-        margin-left: 200px;
+        margin-left: 40px;
+    }
+
+    &__bu-box {
+        float: right;
+        margin-top: 40px;
+        margin-right: 20px;
+        width: 260px;
+        height: 50px;
+        background-color: white;
+        border-radius: 10px;
+        -webkit-box-shadow: 0px 0px 19px 2px rgba(0, 0, 0, 0.38);
+        box-shadow: 0px 0px 19px 0px rgba(129, 128, 128, 0.38);
+    }
+
+    &__bu-box:hover {
+        box-shadow: 0px 0px 23px rgb(179, 176, 176);
+    }
+
+    &__bus-instext {
+        font-size: 20px;
+        float: right;
+        margin-top: -30px;
+        margin-right: 80px;
+        margin-left: 40px;
+    }
+
+    &__bus-arrow {
+        width: 10px;
+        height: 17px;
+        position: relative;
+        right: 30px;
+        bottom: -20px;
+        background-image: url(/Practice/yad2/styles/images/yad2arrow.png);
+        background-position: cover;
     }
 }
 
-.question {
-    float: right;
 
-    &__ques-box {
-        margin-top: 200px;
-        margin-right: 100px;
-        float: right;
-        width: 90%;
-        height: 200px;
-        border: solid 1px rgb(219, 219, 219);
-        border-radius: 10px;
-        background-color: rgb(255, 255, 255);
-    }
+.se-flex {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 20px;
+    flex-wrap: wrap;
 
-    &__ques-btext {
-        float: right;
-        margin-top: 50px;
-        margin-right: 140px;
-        font-size: 50px;
-    }
-
-    &__ques-stext {
-        margin-left: 350px;
-        text-align: center;
-        margin-top: 50px;
-        margin-right: 140px;
-        font-size: 40px;
-        color: gray;
-    }
-
-    &__ques-talkbox {
-        float: left;
-        border-radius: 30px;
-        border: solid 1px orange;
-        width: 400px;
-        height: 100px;
-        text-align: center;
-
-    }
-
-    &__ques-talktext {
-        font-size: 40px;
-        color: orange;
-        margin-top: 30px;
-    }
 }

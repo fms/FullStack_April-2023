@@ -1,0 +1,130 @@
+@import '../config';
+
+.foot {
+  font-size: 20px;
+
+  .flexContainer {
+    @include flexer(flex, space-between, none);
+    padding: 45px 40px 50px;
+    background-color: #2e2c2d;
+    color: white;
+  
+    .rightSideFooter {
+      @include flexer(grid, none, row);
+
+      .childSideFooter {
+        width: 220px;
+        height: 350px;
+
+        ul {
+          li{
+            list-style-type: none; 
+            letter-spacing: 1px;
+
+            span {
+              font-weight: bold;
+              letter-spacing: 2px;
+            }
+            a {
+              text-decoration: none;
+              color: white;
+            }
+            a:hover {
+              border-bottom: 2px solid white;
+            }
+          }
+          li:first-child {
+            padding-bottom: 15px;
+          }
+        }
+      }
+    }
+
+    .leftSideFooter {
+      padding-left: 50px;
+      max-width: 462px;
+      
+
+      .newsletterFooter {
+        letter-spacing: 2px;
+          input {
+            width: 356px;
+            height: 40px;
+            outline: none;
+            padding-right: 50px;
+            font-size: 20px;
+            margin-top: 13px;
+          }
+          
+          img {
+            position: relative;
+            left: 405px;
+            top: 7px;
+            width: 30px;
+            height: 30px;
+          }
+      }
+
+      .contentNewsletterFooter {
+        margin: 15px 5px 15px 30px;
+        letter-spacing: 1px;
+        p {
+          margin-bottom: 15px;
+        }
+        
+        a {
+          color: white;
+          text-decoration: underline;
+          font-weight: bold;
+        }
+        a:hover {
+          color: black;
+        }
+      }
+
+      .socialIconsLeftSideFooter {
+        .img200 {
+          @include imgSizer (25px, 25px);
+          position: relative;
+          right: 10px;
+          padding-left: 7px
+        }
+        .img250 {
+          @include imgSizer (55px, 55px);
+          position: relative;
+          top: 10.5px;
+        }
+      }
+
+      .contactUs {
+        padding-top: 30px;
+        letter-spacing: 0.5px;
+        font-size: 18px;
+        line-height: 30px;
+        ul {
+          padding-right: 10px;
+          li {
+            list-style-type: none; 
+            a {
+              color: white;
+              text-decoration: none;
+            }
+            a:hover {
+              border-bottom: 2px solid white;
+            }
+          }
+          li:first-child {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .copyRightContactUs {
+      p {
+        transform: translate(250%, -1370%);
+      }
+
+    }
+  }
+}

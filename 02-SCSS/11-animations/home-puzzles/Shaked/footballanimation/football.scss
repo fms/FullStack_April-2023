@@ -1,0 +1,107 @@
+.container {
+    &--background {
+        background-image: url(https://bceagles.com/images/2015/9/23/MSOC_FIELD18DART_14_.JPG);
+        width: 100%;
+        height: 640px;
+        background-position: center;
+        background-size: cover;
+    }
+
+&--gate {
+    float: right;
+    top: 300px;
+    animation-name: gate;
+    position: relative;
+    animation-duration: .85s;
+    width: 15%;
+    background-size: 140%;
+    height: 180px;
+    animation-direction: alternate;
+ animation-iteration-count: infinite;
+    background-image: url(/02-SCSS/11-animations/home-puzzles/Shaked/footballanimation/gate.png);
+}
+}
+@keyframes gate {
+    0% {
+        right: 7%;
+        transform: rotate(0deg);
+    }
+
+    50% {
+        right: 7%;
+        transform: rotate(0deg);
+    }
+    100%{
+        right: 5%;
+        transform: rotate(3deg);
+    }
+}
+
+.playercont {
+    &--player {
+        position: relative;
+        width: 200px;
+        height: 150px;
+        background-size: 100%;
+        background-image: url(/02-SCSS/11-animations/home-puzzles/Shaked/footballanimation/footballplayer.png);
+    }
+
+    &--animation {
+        animation-name: player;
+        animation-duration: 2s;
+        position: relative;
+        animation-fill-mode: backwards;
+        animation-iteration-count: infinite;
+    }
+}
+
+@keyframes player {
+    from {
+        left: -600px;
+        top: 600px;
+    }
+
+    to {
+        left: 100px;
+        top: 400px;
+        transform: rotate(400deg);
+    }
+
+}
+
+.ballcontainer {
+    &--animation {
+        position: relative;
+        animation-name: ball;
+        animation-duration: 2s;
+        position: relative;
+        animation-iteration-count: infinite;
+
+    }
+
+    &--ball {
+        height: 80px;
+        width: 80px;
+        top: 100px;
+        background-size: 100%;
+        background-position: center;
+        background-image: url(/02-SCSS/11-animations/home-puzzles/Shaked/footballanimation/ball.png);
+    }
+}
+
+@keyframes ball {
+    0% {
+        top: 150px;
+        left: 550px;
+    }
+
+    50% {
+        top: 250px;
+        left: 100px;
+    }
+
+    100% {
+        top: 200px;
+        left: 1150px;
+    }
+}

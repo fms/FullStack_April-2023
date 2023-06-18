@@ -1,17 +1,17 @@
-.footer{
+.footer {
     display: flex;
     flex-direction: column;
     background-color: rgb(79, 79, 80);
     margin-top: 80px;
     color: white;
-    height: 50vh;
     padding-left: 100px;
 }
 
-.one{
+.one {
     display: flex;
     flex-direction: row;
-        p{
+
+    p {
         display: flex;
         flex-direction: column;
         margin: 0;
@@ -19,7 +19,8 @@
         margin-left: auto;
         padding-top: 10px;
     }
-    h2{
+
+    h2 {
         margin: 0;
         padding: 0;
         margin-left: auto;
@@ -27,26 +28,28 @@
     }
 }
 
-.heads{
+.heads {
     display: flex;
     flex-direction: column;
     float: right;
-    margin-left: 200px;
-    margin-top: 300px;
+    margin-left: 80px;
+    margin-top: 100px;
+    flex: none;
 }
 
-.logos{
+.logos {
     display: flex;
     flex-direction: row;
     margin-top: 160px;
     justify-content: center;
-    .pic{
-        width: 100px;
-        margin: 200px 100px 100px 0;
+
+    .pic {
+        width: 50px;
+        margin: 50px;
     }
 }
 
-.txt{
+.txt {
     text-align: center;
     padding: 0 300px;
     padding-bottom: 150px;
@@ -54,18 +57,13 @@
     border-color: white;
 }
 
-.txt2{
+.txt2 {
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin: 150px 50px;
-    div{
+
+    div {
         margin: 0 30px;
     }
 }
-
-
-
-
-
-

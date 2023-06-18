@@ -4,7 +4,7 @@
 
 .main-container {
 
-  margin-left: 220px;
+  // margin-left: 220px;
   padding: 10px;
 
   &__topsuggestions {
@@ -42,10 +42,10 @@
     display: grid;
     grid-auto-rows: 1fr;
     grid-auto-rows: 1fr;
-    @media (min-width:500px) {
+    @media (min-width:400px) {
       grid-template-columns: repeat(1, 1fr);
     }
-    @media (min-width:845px) {
+    @media (min-width:600px) {
       grid-template-columns: repeat(2, 1fr);
     }
     @media (min-width:1200px) {
@@ -58,8 +58,7 @@
       grid-template-columns: repeat(5, 1fr);
     }
     gap: 20px;
-    margin-top: 30px;
-    margin-left: 20px;
+    margin-top: 20px;
 
     &__video {
       // width: 380px;
@@ -113,5 +112,13 @@
       }
     }
   }
-
+  @media (min-width:1000px) {
+    margin-left: 220px;
+  }
+  @media (max-width:1000px) {
+    margin-left: 70px;
+  }
+  @media (max-width:500px) {
+    margin-left: 0;
+  }
 }

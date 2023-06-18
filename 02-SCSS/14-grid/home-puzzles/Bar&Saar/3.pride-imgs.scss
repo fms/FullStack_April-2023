@@ -1,0 +1,51 @@
+.container-explore {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 116px;
+}
+
+.title-explore {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+
+  p {
+    color: white;
+    font-size: 20px;
+
+    span {
+      font-weight: 900;
+      cursor: pointer;
+    }
+  }
+}
+
+button {
+  border: none;
+  background-color: #06070d;
+  color: white;
+  font-weight: bolder;
+  font-weight: 900;
+  font-size: 12px;
+
+  &:hover {
+    color: rgb(0, 194, 120);
+  }
+}
+
+.row-explore {
+  width: 90vw;
+}
+
+.content-explore-imgs {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 6px;
+
+  img {
+    height: 200px;
+    width: 190px;
+    object-fit: cover;
+  }
+}

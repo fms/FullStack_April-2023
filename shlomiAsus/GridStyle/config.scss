@@ -1,0 +1,20 @@
+$font-size--normal: 80px;
+$fa-font-path: "../fontawesome-free-6.4.0-web/webfonts/";
+
+$centext: center;
+
+
+@mixin border{
+    border-radius: 15px;
+    border: 5px;
+    border-color: rgb(255, 255, 255);
+    border-style: outset;   
+}
+
+.fix{
+
+    background-color: black;
+}
+
+
+
