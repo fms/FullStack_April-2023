@@ -4,6 +4,7 @@
 @import "mixin/mix";
 @import "footer/footer";
 @import "grid/grid";
+@import "responsive/responsive";
 
 
 .flex {
@@ -12,12 +13,6 @@
     flex-wrap: wrap;
     gap: 40px;
     flex-direction: row-reverse;
-
-
-    &--imgsize {
-        width: 150px;
-        height: 150px;
-    }
 
     &__circles {
         margin-top: 40px;
@@ -35,6 +30,7 @@
         color: black;
     }
 }
+
 
 p {
     float: right;
@@ -103,79 +99,6 @@ p2 {
         box-shadow: rgb(216, 216, 216) 0px 0px 40px;
     }
 }
-
-
-.bussines {
-    float: right;
-
-    &__bus-box {
-        margin-top: 100px;
-        width: 90%;
-        height: 120px;
-        border-radius: 10px;
-        background-color: rgb(244, 244, 244);
-    }
-
-
-
-    &__bus-text {
-        font-size: 40px;
-        float: right;
-        margin-top: 40px;
-        margin-right: 10px;
-    }
-
-    &__bus-flex {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    &--bu-img {
-        width: 40px;
-        height: 40px;
-        float: right;
-        margin-top: 3px;
-    }
-
-    &__bus-img {
-        margin-left: 40px;
-    }
-
-    &__bu-box {
-        float: right;
-        margin-top: 40px;
-        margin-right: 20px;
-        width: 260px;
-        height: 50px;
-        background-color: white;
-        border-radius: 10px;
-        -webkit-box-shadow: 0px 0px 19px 2px rgba(0, 0, 0, 0.38);
-        box-shadow: 0px 0px 19px 0px rgba(129, 128, 128, 0.38);
-    }
-
-    &__bu-box:hover {
-        box-shadow: 0px 0px 23px rgb(179, 176, 176);
-    }
-
-    &__bus-instext {
-        font-size: 20px;
-        float: right;
-        margin-top: -30px;
-        margin-right: 80px;
-        margin-left: 40px;
-    }
-
-    &__bus-arrow {
-        width: 10px;
-        height: 17px;
-        position: relative;
-        right: 30px;
-        bottom: -20px;
-        background-image: url(/Practice/yad2/styles/images/yad2arrow.png);
-        background-position: cover;
-    }
-}
-
 
 .se-flex {
     display: flex;
