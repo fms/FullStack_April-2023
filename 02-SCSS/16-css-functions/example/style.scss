@@ -1,0 +1,28 @@
+.container {
+    width: 700px;
+    border: 2px solid red;
+    margin: 1rem ;
+    font-size: 2rem;
+    padding: 1rem;
+
+    > span {
+        background-color: lightgray;
+        border: 1px black solid;
+        display: block;
+        transform: translate(-1.5rem, -1.5rem);
+        padding: 0.3rem;
+        width: fit-content;
+    }
+}
+
+.min {
+    width: min(60%, 700px);
+}
+
+.max {
+    width: max(60%, 700px);
+}
+
+.clamp {
+    width: clamp(700px, 50%, 1000px);
+}
