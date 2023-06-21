@@ -20,3 +20,6 @@ https://picsum.photos
 
 ##### VS.Code Emmet cheat sheet
 https://docs.emmet.io/cheat-sheet/
+
+##### clamp() generator
+https://utopia.fyi/
