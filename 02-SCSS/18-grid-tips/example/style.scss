@@ -1,0 +1,124 @@
+$break-800: 800px;
+$break-1200: 1200px;
+
+// Apply border and bottom margin to the top grid and container only
+body {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body>.grid,
+.container {
+    border: 5px black dashed;
+    margin-top: 100px;
+}
+
+.grid {
+    display: grid;
+    gap: 1rem;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 50px;
+    width: 70%;
+    container-type: inline-size;
+}
+
+.box {
+    height: 100px;
+    border-radius: 1rem;
+    background-color: aqua;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.gold {
+    background-color: gold;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.side-by-side {
+    grid-template-columns: 1fr 1fr;
+}
+
+// @container (width >   $break-800) and (width < $break-1200) {
+//     .c-up-2 {
+//       grid-template-columns: 1fr 1fr;
+//     }
+//   }
+//   @container (width > $break-1200) {
+//   .c-up-2 {
+//       grid-template-columns: 1fr 1fr 1fr;
+//     }
+//   }
+
+.c-up-2 {
+
+    // @container (width > 800px) and (width < $break-1200) {
+    @container (min-width: #{$break-800}) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @container (min-width: #{$break-1200}) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.up-2 {
+    @media (min-width: $break-800) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: $break-1200) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.jump-3-to-1 {
+    @media (min-width: $break-1200) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.ruler {
+    position: fixed ;
+    display: block;
+    width: $break-800;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: -1;
+    border: 1px red dashed;
+
+    p {
+        display: flex;
+    }
+
+    p:before,
+    p:after {
+        content: '';
+        flex: 1;
+        border-bottom: groove 2px;
+        margin: auto 0.25em;
+        box-shadow: 0 -1px;
+    }
+}
+
+.with-width-1200 {
+    width: $break-1200;
+
+    p {
+        margin-top: 50px;
+    }
+}

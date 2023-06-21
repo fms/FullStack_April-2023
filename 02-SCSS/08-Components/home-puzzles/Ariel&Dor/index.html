@@ -12,7 +12,7 @@
   <title>Columbia IL</title>
 
   <!-- SCSS LINK -->
-  <link rel="stylesheet" href="./style/dist/style.css">
+  <link rel="stylesheet" href="./dist/style.css">
 
   <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,37 +25,50 @@
   
   <!-- Nav bar -->
 
-  <div class="navb">
-
-    <div class="icon">
-      <div class="img__divver__icon">
-        <a href="#">
-        <img class="img__icon-1" src="./imgaes/Columbia-Logo.png" alt="">
-        </a>
+  <div class="flexStarterNav">
+    <div class="preNav">
+      <div>
+        <a href="#"><img class="one" src="./imgaes/pre nav/profile.png" alt="profileIcon"></a>
+      </div>
+      <div>
+        <a href="#"><img class="two" src="./imgaes/pre nav/cart.png" alt="cart products"></a>
+      </div>
+      <div>
+        <a href="#"><img class="three" src="./imgaes/pre nav/gps.png" alt="gps icon"></a>
       </div>
     </div>
 
-    <div class="center_navb">
-      <ul class="ul__center__navb">
-        <li class="ul__center__navb-li"><a href="#">גברים</a></li>
-        <li class="ul__center__navb-li"><a href="#">נשים</a></li>
-        <li class="ul__center__navb-li"><a href="#">ילדים</a></li>
-        <li class="ul__center__navb-li"><a href="#">נעליים</a></li>
-        <li class="ul__center__navb-li"><a href="#">פעילויות</a></li>
-        <li class="ul__center__navb-li"><a href="#">New Arrivals</a></li>
-        <li class="ul__center__navb-li"><a href="#">Black Sale 30%</a></li>
-        <li class="ul__center__navb-li"><a href="#">פריט שני ב50%</a></li>
-        <li class="ul__center__navb-li"><a href="#">Last Chance</a></li>
-      </ul>
-    </div>
+    <div class="navb">
+      <div class="icon">
+        <div class="img__divver__icon">
+          <a href="#">
+          <img class="img__icon-1" src="./imgaes/Columbia-Logo.png" alt="">
+          </a>
+        </div>
+      </div>
 
-    <div class="search__navb">
-      <input type="text" action="/search" placeholder="חיפוש (להזין מ' מעקב)">
-      </input>
-    </div>
+      <div class="center_navb">
+        <ul class="ul__center__navb">
+          <li class="ul__center__navb-li"><a href="#">גברים</a></li>
+          <li class="ul__center__navb-li"><a href="#">נשים</a></li>
+          <li class="ul__center__navb-li"><a href="#">ילדים</a></li>
+          <li class="ul__center__navb-li"><a href="#">נעליים</a></li>
+          <li class="ul__center__navb-li"><a href="#">פעילויות</a></li>
+          <li class="ul__center__navb-li"><a href="#">New Arrivals</a></li>
+          <li class="ul__center__navb-li"><a href="#">Black Sale 30%</a></li>
+          <li class="ul__center__navb-li"><a href="#">פריט שני ב50%</a></li>
+          <li class="ul__center__navb-li"><a href="#">Last Chance</a></li>
+        </ul>
+      </div>
 
+      <div class="search__navb">
+        <input type="text" action="/search" placeholder="חיפוש (מ' מעקב)">
+        <img src="./imgaes/p.png" alt="">
+        </input>
+        
+      </div>
+    </div>
   </div>
-
 
   <!-- Backgrounder -->
 
@@ -70,65 +83,656 @@
   
   <div class="mini__header">
     <ul>
-      <li class="item1__mini__header">New Arrival</li>
-      <li><img src="./imgaes/aLeft.png" alt=""></li>
       <li class="item3__mini__header"><a href="#">בית</a></li>
+      <li><img src="./imgaes/aLeft.png" alt=""></li>
+      <li class="item1__mini__header">New Arrival</li>
     </ul>
   </div>
 
 
   <!-- Main content -->
 
-  <!-- Search Filtering -->
+  <!-- Header  -->
+  <div class="headerMainContent">
+
+    <select class="selectHeaderMainContent" name="sort-order" id="">
+      <option value="" selected>סינון לפי</option>
+      <option value="">מחיר מהנמוך לגבוה</option>
+      <option value="">מחיר מהגבוה לנמוך</option>
+      <option value="">פופולרי</option>
+    </select>
+    <div>
+      <img src="./imgaes/aDown.png" alt="">
+    </div>    
+    <div class="resultsProductsCards">
+      <span>213 תוצאות</span>
+    </div>
+
+  </div>
+
+  <!-- Main content -->
   <div class="main__content">
 
-    <div class="search__filtering">
-      <!-- Sinon Lefi -->
-      <div class="select__filtering">
-        <select class="select__search__filtering" name="sort-order" id="">
-          <option value="" selected>סינון לפי</option>
-          <option value="">מחיר מהנמוך לגבוה</option>
-          <option value="">מחיר מהגבוה לנמוך</option>
-          <option value="">פופולרי</option>
-        </select>
-        <div>
-          <img src="./imgaes/aDown.png" alt="">
-        
-        </div>
-        <div class="rest__button">
-          <button class="btn__rest__button">נקה הכל</button>
-        </div>
-      
-        <div class="rest__button">
-          <button class="btn__rest__button"></button>
-        </div>
+    <!-- Search Filtering -->
+    <div class="select__filtering">
 
+      <!-- Rest button -->
+      <div class="rest__button">
+        <button class="btn__rest__button">נקה הכל</button>
+      </div>
+      
+      <!-- Tat category -->
+      <div class="mainCategory">
+        <p class="btn__rest__button">תת קטגוריה</p>
       </div>
 
+      <div class="categoryEn2 tatC">
+        <ul>
+          <li><a href="#"><img src="./imgaes/tatCVerified.png" alt=""></a>New Arrivals</li>
+        </ul>
+      </div>
+
+      <!-- Custom Category -->
+      <div class="mainCategory">
+        <p>Custom Category</p>
+      </div>
+
+      <div class="categoryEn2">
+        <ul>
+          <li>גברים</li>
+          <li>נשים</li>
+          <li>ילדים</li>
+          <li>נעליים</li>
+        </ul>
+      </div>
+
+      <!-- Size -->
+      <div class="mainCategory">
+        <p>מידה</p>
+      </div>
+
+      <div class="categoryEn2">
+        <ul>
+          <li>XS</li>
+          <li>S</li>
+          <li>M</li>
+          <li>L</li>
+          <li>XL</li>
+          <li>XXL</li>
+          <li>4XL</li>
+          <li>5XL</li>
+          <li>01</li>
+          <li>4</li>
+          <li>6</li>
+          <li>8</li>
+          <li>10</li>
+          <li>12</li>
+          <li>14</li>
+          <li>25</li>
+          <li>26</li>
+          <li>27</li>
+          <li>28</li>
+          <li>29</li>
+          <li>30</li>
+          <li>31</li>
+          <li>32</li>
+          <li>33</li>
+          <li>34</li>
+          <li>35</li>
+          <li>36</li>
+          <li>37</li>
+          <li>38</li>
+          <li>39</li>
+          <li>40</li>
+          <li>40.5</li>
+          <li>41</li>
+          <li>42</li>
+          <li>43</li>
+          <li>44</li>
+          <li>45</li>
+          <li>46</li>
+          <li>47</li>
+          <li>48</li>
+          <li>49</li>
+          <li>39-42</li>
+          <li>3XL</li>
+          <li>43-46</li>
+          <li>M/L</li>
+        </ul>
+      </div>
+
+      <!-- Price -->
+      <div class="mainCategory">
+        <p>מחיר</p>
+      </div>
+
+      <div class="categoryEn2">
+        <ul>
+          <li>99 ₪ - 1 ₪</li>
+          <li>199 ₪ - 100</li>
+          <li>299 ₪ - 200 ₪</li>
+          <li> 499 ₪ - 300 ₪</li>
+          <li> 799 ₪ - 500 ₪</li>
+          <li> מעל 800 ₪</li>
+        </ul>
+      </div>
 
     </div>
-
-
 
     <!-- Products Cards -->
-    <div class="products__cards">
+    <div class="cards">
+      <!-- 1 -->
+      <div class="rowFlexerCards">
+        <div class="productsCard1">
+          <a href="#">
+            <div class="h1-1">
+              <img  src="./imgaes/products/1-1.jpg" alt="a shoe">
+            </div>
+          </a>
+          <div class="infoCards">
+            <div class="palateColorFlexer">
+              <div class="palateColor">
+                <div class="blackPalateColor">
+                  a
+                </div>
+              </div>
+            </div>
+            <div class="kotarot">
+              <a href="#">
+                
+                <div><span>Firecamp Remesh</span></div>
+                <div class="kotertMishne"><span>נעלי טיולים ומולטי ספורט לגברים</span></div>
+              </a>
+            </div>
+            <div class="price">
+                <span>
+                <span class="discountPrice">₪299.90</span>
+                <span class="orginalValuePrice">₪459.90</span>
+                <span class="clearPrice"></span>
+              </span>
+            </div>
+            <div class="descriptoin">מחיר מיוחד + משלוח חינם לזמן מגובל</div> 
+          </div>
+        </div>
 
-    </div>
-    <div class="img__cloth">
-      <div class="img_cloth_staf">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
+        <div class="productsCard1">
+          <a href="#">
+            <div>
+              <img src="./imgaes/products/2-1.jpg" alt="a shoe">
+            </div>
+          </a>
+          <div class="infoCards">
+            <div class="palateColorFlexer">
+              <div class="multiFlexerPalateColor">
+                <div class="palateColor">
+                  <div class="whitePalateColor">
+                    a
+                  </div>
+                </div>
+                <div class="palateColor">
+                  <div class="grayPalateColor">
+                    a
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="kotarot">
+              <a href="#">
+                <div><span>Crestwood Waterproof W</span></div>
+                <div class="kotertMishne"><span>נעליים לנשים</span></div>
+              </a>
+            </div>
+            <div class="price">
+              <span>
+                <span class="discountPrice">₪300.93</span>
+                <span class="orginalValuePrice">₪429.90</span>
+                <span class="clearPrice"></span>
+              </span>
+            </div>
+            <div class="descriptoin">OFF 30%</div> 
+          </div>
+        </div>
+
+        <div class="productsCard1">
+          <a href="#">
+            <div>
+              <img src="./imgaes/products/3-1.jpg" alt="a shoe">
+            </div>
+          </a>
+          <div class="infoCards">
+            <div class="palateColorFlexer">
+              <div class="palateColor">
+                <div class="blackPalateColor">
+                  a
+                </div>
+              </div>
+            </div>
+            <div class="kotarot">
+              <a href="#">
+                
+                <div><span>Columbia Sandal</span></div>
+                <div class="kotertMishne"><span>סנדלים לנשים</span></div>
+              </a>
+            </div>
+            <div class="price">
+                <span>
+                <span class="discountPrice">₪239.92</span>
+                <span class="orginalValuePrice">₪299.90</span>
+                <span class="clearPrice"></span>
+              </span>
+            </div>
+            <div class="descriptoin">Online Exclusive 20%</div> 
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="rowFlexerCards">
+        <div class="productsCard1">
+          <a href="#">
+            <div>
+              <img src="./imgaes/products/1-2.jpg" alt="a shoe">
+            </div>
+          </a>
+          <div class="infoCards">
+            <div class="palateColorFlexer">
+              <div class="palateColor">
+                <div class="blackPalateColor">
+                  a
+                </div>
+              </div>
+              <div class="palateColor">
+                <div class="grayPalateColor">
+                  a
+                </div>
+              </div>
+            </div>
+            <div class="kotarot">
+              <a href="#">
+                
+                <div><span>Zero Rules</span></div>
+                <div class="kotertMishne"><span>חולצה קצרה לגברים</span></div>
+              </a>
+            </div>
+            <div class="price">
+                <span>
+                <span class="discountPrice">₪151.92</span>
+                <span class="orginalValuePrice">₪189.90</span>
+                <span class="clearPrice"></span>
+              </span>
+            </div>
+            <div class="descriptoin">Online Exclusive 20%</div> 
+          </div>
+        </div>
+
+        <div class="productsCard1">
+          <a href="#">
+            <div>
+              <img src="./imgaes/products/2-3.jpg" alt="a shoe">
+            </div>
+          </a>
+          <div class="infoCards">
+            <div class="palateColorFlexer">
+              <div class="palateColor">
+                <div class="blackPalateColor">
+                  a
+                </div>
+              </div>
+              <div class="palateColor">
+                <div class="olivePalateColor">
+                  a
+                </div>
+              </div>
+              <div class="palateColor">
+                <div class="bodyPalateColor">
+                  a
+                </div>
+              </div>
+            </div>
+            <div class="kotarot">
+              <a href="#">
+                
+                <div><span>Pine Canyon S/S</span></div>
+                <div class="kotertMishne"><span>חולצה לגברים</span></div>
+              </a>
+            </div>
+            <div class="price">
+              <span>
+                <span class="discountPrice">₪191.92</span>
+                <span class="orginalValuePrice">₪239.90</span>
+                <span class="clearPrice"></span>
+              </span>
+            </div>
+            <div class="descriptoin">Online Exclusive 20%</div> 
+          </div>
+        </div>
+
+        <div class="productsCard1">
+          <a href="#">
+            <div>
+              <img src="./imgaes/products/3-2.jpg" alt="a shoe">
+            </div>
+          </a>
+          <div class="infoCards">
+            <div class="palateColorFlexer">
+              <div class="palateColor">
+                <div class="olive2PalateColor">
+                  a
+                </div>
+              </div>
+            </div>
+            <div class="kotarot">
+              <a href="#">
+                
+                <div><span>Breaksider Sandal</span></div>
+                <div class="kotertMishne"><span>סנדלים לגברים</span></div>
+              </a>
+            </div>
+            <div class="price">
+                <span>
+                <span class="discountPrice">₪230.93</span>
+                <span class="orginalValuePrice">₪329.90</span>
+                <span class="clearPrice"></span>
+              </span>
+            </div>
+            <div class="descriptoin">30% OFF</div> 
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="rowFlexerCards">
+        <div class="productsCard1">
+          <a href="#">
+            <div>
+              <img src="./imgaes/products/1-3.jpg" alt="a shoe">
+            </div>
+          </a>
+          <div class="infoCards">
+            <div class="palateColorFlexer">
+              <div class="palateColor">
+                <div class="blackPalateColor">
+                  a
+                </div>
+              </div>
+              <div class="palateColor">
+                <div class="bodyPalateColor">
+                  a
+                </div>
+              </div>
+            </div>
+            <div class="kotarot">
+              <a href="#">
+                
+                <div><span>Thrive Revive</span></div>
+                <div class="kotertMishne"><span>כפכפים מעוצבים לגברים</span></div>
+              </a>
+            </div>
+            <div class="price">
+                <span>
+                <span class="discountPrice">₪239.92</span>
+                <span class="orginalValuePrice">₪299.90</span>
+                <span class="clearPrice"></span>
+              </span>
+            </div>
+            <div class="descriptoin">Online Exclusive 20%</div> 
+          </div>
+        </div>
+        
+        <div class="productsCard1">
+          <a href="#">
+            <div>
+              <img src="./imgaes/products/2-2.jpg" alt="a shoe">
+            </div>
+          </a>
+          <div class="infoCards">
+            <div class="palateColorFlexer">
+              <div class="palateColor">
+                <div class="blackPalateColor">
+                  a
+                </div>
+              </div>
+            </div>
+            <div class="kotarot">
+              <a href="#">
+                
+                <div><span>Granite Pass Cooler</span></div>
+                <div class="kotertMishne"><span>צידנית</span></div>
+              </a>
+            </div>
+            <div class="price">
+                <span>
+                <span class="discountPrice">₪239.92</span>
+                <span class="orginalValuePrice">₪299.90</span>
+                <span class="clearPrice"></span>
+              </span>
+            </div>
+            <div class="descriptoin">Online Exclusive 20%</div> 
+          </div>
+        </div>
+        
+        <div class="productsCard1">
+          <a href="#">
+            <div>
+              <img src="./imgaes/products/3-3.jpg" alt="a shoe">
+              <!-- insted 3-3 -->
+            </div>
+          </a>
+          <div class="infoCards">
+            <div class="palateColorFlexer">
+              <div class="palateColor">
+                <div class="blackPalateColor">
+                  a
+                </div>
+              </div>
+            </div>
+            <div class="kotarot">
+              <a href="#">
+                
+                <div><span>Tech Trail Polo</span></div>
+                <div class="kotertMishne"><span>חולצת פולו לגברים</span></div>
+              </a>
+            </div>
+            <div class="price">
+              <span>
+                <span class="">₪219.90</span>
+              </span>
+            </div>
+            <div class="descriptoin">פריט שני ב-50% הנחה</div> 
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="rowFlexerCards">
+        <div class="productsCard1">
+          <a href="#">
+            <div>
+              <img src="./imgaes/products/1-4.jpg" alt="a shoe">
+            </div>
+          </a>
+            <div class="infoCards">
+            <div class="palateColorFlexer">
+              <div class="multiFlexerPalateColor">
+                <div class="palateColor">
+                  <div class="blackPalateColor">
+                    a
+                  </div>
+                </div>
+                <div class="palateColor">
+                  <div class="whiteyPalateColor">
+                    a
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="kotarot">
+              <a href="#">
+                
+                <div><span>Explorers Canyon Back S/S T</span></div>
+                <div class="kotertMishne"><span>חולצה לגברים</span></div>
+              </a>
+            </div>
+            <div class="price">
+                <span>
+                <span class="discountPrice">₪159.92</span>
+                <span class="orginalValuePrice">₪199.90</span>
+                <span class="clearPrice"></span>
+              </span>
+            </div>
+            <div class="descriptoin">Online Exclusive 20%</div> 
+          </div>
+        </div>
+    
+        <div class="productsCard1">
+          <a href="#">
+            <div>
+              <img src="./imgaes/products/2-4.jpg" alt="a shoe">
+            </div>
+          </a>
+          <div class="infoCards">
+            <div class="palateColorFlexer">
+              <div class="palateColor">
+                <div class="blackPalateColor">
+                  a
+                </div>
+              </div>
+              <div class="palateColor">
+                <div class="hardGrayPalateColor">
+                  a
+                </div>
+              </div>
+            </div>
+            <div class="kotarot">
+              <a href="#">
+                
+                <div><span>North Cascades Gr T</span></div>
+                <div class="kotertMishne"><span>חולצה לנשים</span></div>
+              </a>
+            </div>
+            <div class="price">
+                <span>
+                <span class="discountPrice">₪111.92</span>
+                <span class="orginalValuePrice">₪139.90</span>
+                <span class="clearPrice"></span>
+              </span>
+            </div>
+            <div class="descriptoin">Online Exclusive 20%</div> 
+          </div>
+        </div>
+    
+        <div class="productsCard1">
+          <a href="#">
+            <div>
+              <img src="./imgaes/products/3-4.jpg" alt="a shoe">
+            </div>
+          </a>
+          <div class="infoCards">
+            <div class="palateColorFlexer">
+              <div class="palateColor">
+                <div class="creamPalateColor">
+                  a
+                </div>
+              </div>
+            </div>
+            <div class="kotarot">
+              <a href="#">
+                
+                <div><span>Coolhead II Zero Booney</span></div>
+                <div class="kotertMishne"><span>כובע רחב שוליים</span></div>
+              </a>
+            </div>
+            <div class="price">
+                <span>
+                <span class="discountPrice">₪143.92</span>
+                <span class="orginalValuePrice">₪179.90</span>
+                <span class="clearPrice"></span>
+              </span>
+            </div>
+            <div class="descriptoin">Online Exclusive 20%</div> 
+          </div>
+        </div>
       </div>
     </div>
+
   </div>
 
 
+  <!-- Footer -->
+  <div class="foot">
+    <div class="flexContainer">
+      <!-- right side -->
+      <div class="rightSideFooter">
+        <div class="childSideFooter">
+          <ul>
+            <li><span>קולומביה</span></li>
+            <li><a href="#">אודות</a></li>
+            <li><a href="#">רשימת חנויות</a></li>
+            <li><a href="#">Ski Rent</a></li>
+            <li><a href="#">הצהרת נגישות</a></li>
+            <li><a href="#">תקנוני מבצעים</a></li>
+          </ul>
+        </div>
+        <div class="childSideFooter">
+          <ul>
+            <li><span>שירות לקוחות</span></li>
+            <li><a href="#">משלוחים והחזרות</a></li>
+            <li><a href="#">ביטול עסקה</a></li>
+            <li><a href="#">מדיניות אחריות</a></li>
+            <li><a href="#">תקנון</a></li>
+            <li><a href="#">מדיניות פרטיות</a></li>
+            <li><a href="#">שאלות ותשובות</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="leftSideFooter">
+        <div class="newsletterFooter">
+          <p>הרשמו לניוזלטר שלנו</p>
+          <input type="text" class="foo" placeholder="כתובת האימייל שלך" name="כתובת האימייל שלך"/>
+          <img src="./imgaes/envelope.png" alt="envelope icon">
+        </div>
+
+        <div class="contentNewsletterFooter">
+          <label for="כתובת האימייל שלך">
+            <p>
+              אני מאשר/ת קבלת דיוור ו/או מידע פרסומי בדוא"ל ו/או במסרונים, מסער א.ת יזמות ומסחר בע"מ וממועדון הלקוחות של <a href="https://ecp.co.il/" target="_blank">קבוצת אלקטרה</a>
+              </p>
+            <p>
+              אני מאשר כי הפרטים שמסרתי ושייאספו אודותיי ישמרו במאגרי חברת סער א.ת יזמות ומסחר בע"מ למטרותיו ובמאגר מועדון הלקוחות של אלקטרה מוצרי צריכה (1970) בע"מ לצורך פעילות מועדון הלקוחות של קבוצת אלקטרה ובהתאם למפורט
+              ב<a href="https://www.columbia.co.il/privacypolicyecp.html" target="_blank">תנאי השימוש</a> שבאתר וב<a href="https://www.columbia.co.il/privacy-policy.html" target="_blank">מדיניות הפרטיות</a> של קבוצת אלקטרה
+            </p>
+          </label>
+        </div>
+
+        <div class="socialIconsLeftSideFooter">
+          <a href="https://www.instagram.com/columbiasportswear_il/">
+            <img class="img200" src="./imgaes/instagram.png" alt="instagram icon"></a>
+          <a href="https://www.facebook.com/columbiaisrael">
+            <img class="img250" src="./imgaes/facebookIcon.png" alt="facebook icon"></a>
+          
+        </div>
+
+        <div class="contactUs">
+          <ul>
+            <li><p>שירות לקוחות:</p></li>
+            <li><a href="mailto:service@columbia.co.il">service@columbia.co.il</a></li>
+            <li><p>ימים א'-ה' 9:00-17:00</p></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="preContactUs">
+      <div class="copyRightContactUs">
+        <p>כל הזכויות שמורות לסער א.ת. יזמות ומסחר בע&quot;מ 2020 |&nbsp;Designed and developed by <a href="https://www.baybridgedigital.com/"><span style="color:#ffffff;">BayBridgeDigital</span></a></p>
+      </div>
+
+      
+    </div>
+
+  </div>
 
 
-
-
-<div class="spacer"></div>
 </body>
 </html>

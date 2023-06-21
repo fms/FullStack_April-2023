@@ -1,0 +1,41 @@
+body {
+  background-image: url("/images/meadow.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bloon-1 {
+  width: 250px;
+  height: 350px;
+  background-image: url("/images/balloons-flying.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 25px;
+}
+
+.slide-right {
+  animation: slide-right 5s steps(200, start) 20ms infinite backwards;
+}
+@keyframes slide-right {
+  0% {
+    transform: translateY(550px) translateX(750px);
+  }
+  10% {
+    transform: translateY(520px) translateX(730px);
+  }
+  20% {
+    transform: translateY(500px) translateX(700px);
+  }
+  40% {
+    transform: translateY(450px) translateX(650px);
+  }
+  60% {
+    transform: translateY(300px) translateX(600px);
+  }
+  80% {
+    transform: translateY(0px) translateX(550px);
+  }
+  100% {
+    transform: translateY(-450px) translateX(580px);
+  }
+}/*# sourceMappingURL=style.css.map */

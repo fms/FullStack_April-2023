@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid tricks</title>
+    <link rel="stylesheet" href="dist/style.css">
+</head>
+
+<body>
+    <div class="ruler">
+        <p>800px</p>
+    </div>
+    <div class="ruler with-width-1200">
+        <p>1200px</p>
+    </div>
+    <div class="grid">
+        <div class="grid side-by-side">
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        <div class="grid up-2">
+            <div class="box red"></div>
+            <div class="box red"></div>
+            <div class="box red"></div>
+        </div>
+        <div class="grid jump-3-to-1">
+            <div class="box green"></div>
+            <div class="box green"></div>
+            <div class="box green"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="grid c-up-2">
+            <div class="box gold"></div>
+            <div class="box gold"></div>
+            <div class="box gold"></div>
+        </div>
+        <div class="grid up-2">
+            <div class="box blue"></div>
+            <div class="box blue"></div>
+            <div class="box blue"></div>
+        </div>
+    </div>
+</body>
+
+</html>

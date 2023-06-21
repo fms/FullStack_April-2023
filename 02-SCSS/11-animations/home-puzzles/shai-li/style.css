@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background-color: rgb(156, 201, 240);
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 0px;
+  width: 100vw;
+}
+
+.balloons {
+  width: 80px;
+  height: 140px;
+  border-radius: 50% 50% 80% 80%/50% 50% 80% 90%;
+  border: 0.3px solid black;
+  background-color: rgb(80, 142, 142);
+  opacity: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation-name: bottom-top;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.balloons__balloon1 {
+  background-color: rgb(255, 0, 247);
+  animation-duration: 3s;
+}
+.balloons__balloon2 {
+  background-color: rgb(0, 255, 55);
+  animation-duration: 2s;
+}
+.balloons__balloon3 {
+  background-color: rgb(212, 255, 0);
+  animation-duration: 1.5s;
+}
+.balloons__balloon4 {
+  background-color: rgb(255, 0, 43);
+  animation-duration: 4s;
+}
+.balloons__balloon5 {
+  background-color: rgb(0, 255, 229);
+  animation-duration: 1.2s;
+}
+.balloons__balloon6 {
+  background-color: rgb(255, 115, 0);
+  animation-duration: 2s;
+}
+.balloons__balloon7 {
+  background-color: rgb(157, 0, 255);
+  animation-duration: 3s;
+}
+.balloons__balloon8 {
+  background-color: rgb(0, 187, 255);
+  animation-duration: 4s;
+}
+.balloons__balloon9 {
+  background-color: rgb(255, 242, 0);
+  animation-duration: 2s;
+}
+
+@keyframes bottom-top {
+  0% {
+    bottom: 0px;
+  }
+  10% {
+    left: 20px;
+  }
+  40% {
+    left: 50px;
+  }
+  60% {
+    left: 20px;
+  }
+  80% {
+    left: 50px;
+  }
+  100% {
+    bottom: 1000px;
+    left: 20px;
+  }
+}
+.balloons:hover {
+  box-shadow: 0 0 10px black;
+}
+
+.balloons:active {
+  opacity: 0%;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,84 @@
+.img_box1 img {
+    width: 50px ;
+    position: relative;
+}
+
+.img_box2 img {
+    width: 50px ;
+    position: relative;
+}
+
+.media {
+    direction: ltr;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: 'videoBox article article article article'
+    'videoBox article article article article'
+    'videoBox . . . .';
+}
+
+
+
+
+
+
+// // .media {
+//     @include flexed ($direction: row);
+// // }
+
+.center {
+    grid-area: article;
+    position: relative;
+    display: flex;
+    font-family: sans-serif;
+}
+
+.center img {
+    position:relative;
+}
+
+.news {
+    display: flex;
+    font-size: 10px;
+    position: relative;
+    gap: 10px;
+}
+
+.news1 h1 p {
+    font-size: 10px;
+}
+
+.videoBox {
+    grid-area: videoBox;
+    // @include flexed ($direction: column);
+    width: 350px;
+    height: 500px;
+    border: 1px solid black;
+    background-color: darkblue;
+
+    &__upperText {
+        @include flexed ($direction: row);
+        gap: 160px;
+        margin-right: 10px;
+        color: $textColor;
+    }
+
+    &__mainVid {
+        @include flexed ($direction: column);
+        align-items: center;
+        color: $textColor;
+        font-size: small;
+    }
+
+    &__secondaryVids {
+        @include flexed ($direction: row);
+    }
+
+    &__secondaryVids__east {
+        color: $textColor;
+    }
+
+    &__secondaryVids__west {
+        color: $textColor;
+    }
+}

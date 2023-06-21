@@ -1,0 +1,102 @@
+.footer {
+  width: 97vw;
+  background: linear-gradient(360deg, rgba(34, 39, 43, 0), #22272b);
+  padding: 90px 20px 60px;
+  height: 200px;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 50vw;
+  margin-left: 700px;
+  color: white;
+  margin: 0 auto;
+}
+.footer-content ul {
+  list-style: none;
+  position: relative;
+  bottom: 30px;
+}
+.footer-content ul li {
+  margin-bottom: 25px;
+}
+.footer-content ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+}
+.footer-content .footer-watch-section {
+  width: 130px;
+  font-weight: 200;
+  font-size: 14px;
+  position: relative;
+  bottom: 50px;
+}
+.footer-content .footer-watch-section .watch-team-btn {
+  border: none;
+  padding-left: 30px;
+  width: 130px;
+  border-radius: 2px;
+  font-weight: bolder;
+  font-size: 14px;
+  background-image: linear-gradient(to left, #55efc4, #27ae60, #55efc4);
+  background-size: 250%;
+  transition: 0.6s;
+  color: black;
+  height: 25px;
+}
+.footer-content .footer-watch-section .watch-team-btn:hover {
+  background-position: right;
+}
+.footer-content .plus-icon {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  bottom: 4px;
+  left: 7px;
+  font-weight: bolder;
+}
+
+.bottom-footer {
+  position: relative;
+  color: white;
+  font-size: 13px;
+}
+.bottom-footer .foot1 {
+  position: absolute;
+  bottom: 40px;
+  left: 815px;
+}
+.bottom-footer .foot2 {
+  position: absolute;
+  bottom: 40px;
+  right: 695px;
+  border-left: 1px solid gray;
+  padding-left: 30px;
+}
+
+.footer-logos {
+  position: relative;
+  bottom: 85px;
+}
+.footer-logos .main-logo-footer .deviantart-logo-footer {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  mix-blend-mode: lighten;
+}
+.footer-logos .social-media-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-logos .social-media-footer .social-media-logos {
+  width: 20px;
+  height: 20px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}/*# sourceMappingURL=footer.css.map */

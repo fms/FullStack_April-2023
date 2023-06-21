@@ -8,8 +8,6 @@ $Img_Marg: 10px;
     width: 750px;
     margin: auto;
     margin-top: 20px;
-
-
 }
 
 .text {
@@ -19,8 +17,6 @@ $Img_Marg: 10px;
     flex-basis: $Flex_child;
     background-color: rgb(227, 235, 235);
     height: 100px;
-
-
 }
 
 .MainFlex {
@@ -76,9 +72,6 @@ $Img_Marg: 10px;
     color: black;
     font-size: 80%;
     text-align: center;
-
-
-
 }
 
 .Dark {
@@ -92,8 +85,6 @@ $Img_Marg: 10px;
     background-position: right;
     font-size: 80%;
     text-align: center;
-
-
 }
 
 .child1 {
@@ -107,7 +98,6 @@ $Img_Marg: 10px;
     position: static;
     background-position: center;
     background-size: contain;
-
 }
 
 .child2 {
@@ -120,9 +110,6 @@ $Img_Marg: 10px;
     margin-top: $Img_Marg;
     background-position: center;
     background-size: contain;
-
-
-
 }
 
 .child3 {
@@ -134,12 +121,6 @@ $Img_Marg: 10px;
     margin-top: $Img_Marg;
     background-position: center;
     background-size: contain;
-
-
-
-
-
-
 }
 
 .child4 {
@@ -152,9 +133,6 @@ $Img_Marg: 10px;
     margin-top: $Img_Marg;
     background-position: center;
     background-size: contain;
-
-
-
 }
 
 .child5 {
@@ -166,9 +144,6 @@ $Img_Marg: 10px;
     margin-top: $Img_Marg;
     background-position: center;
     background-size: contain;
-
-
-
 }
 
 .child6 {
@@ -180,8 +155,6 @@ $Img_Marg: 10px;
     margin-top: $Img_Marg;
     background-position: center;
     background-size: contain;
-
-
 }
 
 .first_child {
@@ -194,10 +167,12 @@ $Img_Marg: 10px;
     height: 350px;
     width: 250px;
     text-align: center;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     text-shadow: 4px 4px 4px #c7ff20;
-
-
-
     //position:absolute;
+}
+
+.flip-scale-up-hor {
+	-webkit-animation: flip-scale-up-hor 0.5s linear both;
+	        animation: flip-scale-up-hor 0.5s linear both;
 }

@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+}
+.container--wi-he {
+  width: 600px;
+  height: 600px;
+}
+.container--animation {
+  animation-name: rotate;
+  animation-direction: alternate;
+  position: relative;
+  animation-iteration-count: infinite;
+}
+.container--imghover:hover {
+  opacity: 0%;
+}
+.container--imgdetails {
+  border-radius: 400px;
+  background-size: 100%;
+  background-position: center;
+}
+.container--img {
+  animation-duration: 3.5s;
+  background-image: url(https://i5.walmartimages.com/asr/66750fe1-aa08-4abc-ba13-d68180c28034_1.d0ca06019c0efaf37ecf967b7a4ff005.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF);
+}
+.container--img1 {
+  animation-duration: 3s;
+  background-image: url(https://m.media-amazon.com/images/I/41tSOKZkspL.jpg);
+}
+.container--img2 {
+  animation-duration: 5s;
+  background-image: url(https://thumbs.dreamstime.com/b/green-balloon-isolated-white-5302113.jpg);
+}
+.container--img3 {
+  animation-duration: 6.2s;
+  background-image: url(https://cdn.shopify.com/s/files/1/0102/3193/9129/products/4dc90a2959a06630108bf020380af9f8078fef65.jpg?v=1555362881&width=1024);
+}
+
+@keyframes rotate {
+  from {
+    margin-top: 600px;
+  }
+  to {
+    margin-top: 0px;
+    transform: rotate(360deg);
+  }
+}

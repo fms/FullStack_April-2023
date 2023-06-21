@@ -1,0 +1,71 @@
+body {
+  display: flex;
+}
+
+.A {
+  height: 100px;
+  width: 100px;
+  background-color: darkgreen;
+  animation-duration: 5s;
+  animation-name: one;
+  animation-iteration-count: infinite;
+}
+@keyframes one {
+  from {
+    background-color: cadetblue;
+  }
+  to {
+    background-color: rgb(255, 0, 0);
+  }
+}
+
+.B {
+  height: 100px;
+  width: 100px;
+  background-color: chartreuse;
+  animation-duration: 5s;
+  animation-name: tow;
+  animation-iteration-count: infinite;
+}
+@keyframes tow {
+  from {
+    background-color: rgb(196, 27, 69);
+  }
+  to {
+    background-color: rgb(14, 209, 183);
+  }
+}
+
+.C {
+  height: 100px;
+  width: 100px;
+  background-color: crimson;
+  animation-duration: 5s;
+  animation-name: three;
+  animation-iteration-count: infinite;
+}
+@keyframes three {
+  from {
+    background-color: rgb(16, 83, 172);
+  }
+  to {
+    background-color: rgb(190, 5, 190);
+  }
+}
+
+.D {
+  height: 100px;
+  width: 100px;
+  background-color: rgb(0, 139, 132);
+  animation-duration: 5s;
+  animation-name: four;
+  animation-iteration-count: infinite;
+}
+@keyframes four {
+  from {
+    background-color: rgb(128, 116, 161);
+  }
+  to {
+    background-color: rgb(180, 30, 30);
+  }
+}/*# sourceMappingURL=style.css.map */

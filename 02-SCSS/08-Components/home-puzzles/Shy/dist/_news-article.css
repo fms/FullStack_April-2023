@@ -1,0 +1,29 @@
+.news a {
+  text-decoration: none;
+}
+.news a h2 {
+  padding-left: 8px;
+  font-size: 24px;
+}
+.news .articles {
+  display: flex;
+  width: 100%;
+}
+.news .articles .article {
+  padding-right: 15px;
+  width: 33%;
+}
+.news .articles .article a .image-container img {
+  width: 100%;
+}
+.news .articles .article a .content-container h3 {
+  font-size: 20px;
+}
+.news .articles .article a .content-container p {
+  font-size: 16px;
+}
+.news .articles .article .category-container a h4 {
+  margin: 0;
+  padding-left: 3px;
+  font-size: 12px;
+}

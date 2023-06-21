@@ -1,0 +1,69 @@
+.regular {
+  height: 100px;
+  width: 100px;
+  background-color: aqua;
+}
+
+.regular:hover {
+  box-shadow: 0 0 10px black;
+}
+
+.regular:active {
+  background-color: red;
+}
+
+.req {
+  width: 100px;
+  height: 20px;
+  margin-top: 10px;
+}
+.req:hover {
+  border: dashed 10px blue;
+}
+.req:required:invalid {
+  background-color: red;
+}
+.req:focus {
+  background-color: purple;
+}
+.req:required:valid {
+  border: 5px blue solid;
+}
+.req:-moz-read-only {
+  background-color: gray;
+}
+.req:read-only {
+  background-color: gray;
+}
+
+.link {
+  font-size: 30px;
+}
+.link:visited {
+  color: blue;
+}
+
+p:target {
+  color: red;
+}
+
+ul {
+  font-size: 36px;
+  font-family: "Courier New", Courier, monospace;
+}
+ul li:first-child {
+  color: red;
+}
+ul li:nth-child(odd) {
+  font-size: 48px;
+}
+ul li:nth-child(even) {
+  border: black 3px dashed;
+  width: 280px;
+}
+ul li:nth-child(even of .note) {
+  color: gold;
+}
+ul .note {
+  background-color: green;
+}/*# sourceMappingURL=style.css.map */

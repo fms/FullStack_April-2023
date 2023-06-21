@@ -14,3 +14,9 @@ https://animista.net/
 
 ##### Clip-path generator
 https://bennettfeely.com/clippy/
+
+##### Random picture genaretor
+https://picsum.photos
+
+##### VS.Code Emmet cheat sheet
+https://docs.emmet.io/cheat-sheet/

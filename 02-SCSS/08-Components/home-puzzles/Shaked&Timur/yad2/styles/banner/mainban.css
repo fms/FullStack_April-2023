@@ -1,0 +1,21 @@
+.banner {
+  position: relative;
+  animation-name: anima;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  background-position: center;
+  width: 90%;
+  height: 270px;
+  background-size: 100%;
+  margin-left: 80px;
+}
+
+@keyframes anima {
+  from {
+    background-image: url(/02-SCSS/08-Components/home-puzzles/Shaked&Timur/yad2/styles/banner/banner1.png);
+  }
+  to {
+    background-image: url(/02-SCSS/08-Components/home-puzzles/Shaked&Timur/yad2/styles/banner/banner2.png);
+  }
+}/*# sourceMappingURL=mainban.css.map */

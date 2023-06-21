@@ -1,0 +1,82 @@
+body {
+  background-color: #0f0f0f;
+  display: flex;
+  justify-content: center;
+  height: 90vh;
+  align-items: center;
+  font-family: "Anton", sans-serif;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+.levelPick {
+  position: relative;
+  width: 500px;
+  height: 600px;
+  padding-top: 20px;
+  background-color: antiquewhite;
+  border-radius: 70px;
+  box-shadow: 0 0 50px 10px rgba(255, 255, 255, 0.4);
+  padding: 20px;
+  transition: box-shadow 0.3s, filter 0.3s, opacity 0.3s;
+}
+.levelPick h3 {
+  text-align: center;
+  font-size: 38px;
+}
+.levelPick h2 {
+  text-align: center;
+  font-size: 28px;
+}
+.levelPick:hover {
+  box-shadow: 0 0 100px 70px rgba(255, 255, 255, 0.3);
+}
+.levelPick::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: antiquewhite;
+  top: 650px;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  transform: perspective(10rem) rotateX(40deg) scale(1, 0.4);
+  filter: blur(8rem);
+  opacity: 0.7;
+}
+.levelPick__levels {
+  margin-top: 30px;
+  position: relative;
+  width: 300px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.levelPick__levels .levelPick__levels__level {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0f0f0f;
+  margin: 20px 0;
+  background-color: aqua;
+  border-radius: 50px;
+  height: 80px;
+  color: white;
+  font-size: 25px;
+}
+.levelPick__levels .level1 {
+  background-color: #0079ff;
+}
+.levelPick__levels .level2 {
+  background-color: #00dfa2;
+}
+.levelPick__levels .level3 {
+  background-color: #d2d64b;
+}
+.levelPick__levels .level4 {
+  background-color: #ff0060;
+}

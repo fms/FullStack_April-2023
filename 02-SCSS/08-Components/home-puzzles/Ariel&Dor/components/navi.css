@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  direction: rtl;
+}
+
+.flexStarterNav {
+  position: fixed;
+  min-width: 1519px;
+}
+.flexStarterNav .preNav {
+  display: flex;
+  justify-content: none;
+  flex-direction: none;
+  align-items: flex-start;
+  background-color: white;
+  width: 100%;
+  direction: ltr;
+  height: 48px;
+}
+.flexStarterNav .preNav .one {
+  width: 37.5px;
+  height: 46px;
+  padding-left: 2px;
+}
+.flexStarterNav .preNav .two {
+  width: 43px;
+  height: 47px;
+  padding-left: 4px;
+}
+.flexStarterNav .preNav .three {
+  width: 32px;
+  height: 45px;
+  padding: 1px;
+}
+.flexStarterNav .navb {
+  display: flex;
+  justify-content: center;
+  flex-direction: none;
+  width: 100%;
+  background-color: rgb(46, 44, 45);
+  font-family: sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.3px;
+  direction: ltr;
+  height: 84px;
+}
+.flexStarterNav .navb .icon .img__divver__icon {
+  background-color: rgb(0, 122, 184);
+  display: flex;
+  justify-content: space-around;
+  width: 204px;
+  height: 84px;
+}
+.flexStarterNav .navb .icon .img__divver__icon .img__icon-1 {
+  height: 78px;
+  width: 174px;
+  padding-top: 2px;
+}
+.flexStarterNav .navb .center_navb {
+  width: 100%;
+  background-color: rgb(46, 44, 45);
+}
+.flexStarterNav .navb .center_navb .ul__center__navb {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: none;
+  list-style: none;
+  padding-left: 80px;
+  padding-right: 25px !important;
+}
+.flexStarterNav .navb .center_navb .ul__center__navb .ul__center__navb-li {
+  padding: 27.5px 0;
+}
+.flexStarterNav .navb .center_navb .ul__center__navb a {
+  text-decoration: none;
+  color: white;
+}
+.flexStarterNav .navb .center_navb .ul__center__navb a:hover {
+  color: rgb(117, 117, 105);
+}
+.flexStarterNav .navb .search__navb {
+  padding: 25px 25px 30px 0;
+  background-color: rgb(46, 44, 45);
+  margin-right: 5px;
+}
+.flexStarterNav .navb .search__navb input {
+  border: 1px solid #a5a5a5;
+  background: none;
+  height: 100%;
+  width: 82%;
+  direction: rtl;
+  padding: 1px 15px 1px 5px;
+  color: white;
+  outline: none;
+  font-size: 16px;
+}
+.flexStarterNav .navb .search__navb img {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  bottom: 31px;
+  right: 135px;
+  cursor: pointer;
+}/*# sourceMappingURL=navi.css.map */

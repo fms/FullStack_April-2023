@@ -1,0 +1,32 @@
+.balloon:hover {
+  background-color: red;
+}
+
+.balloon:before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+}
+
+.popped {
+  transform: scale(0);
+  transition: transform 0.1s ease;
+}
+
+@keyframes bounce {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: 200px;
+    width: 100px;
+    height: 100px;
+  }
+  100% {
+    top: 0;
+  }
+}/*# sourceMappingURL=effect.css.map */

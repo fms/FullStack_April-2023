@@ -1,0 +1,44 @@
+@import "styles/config";
+@import "styles/colors";
+@import "styles/typography";
+@import "styles/main-container.scss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $main-background-color;
+  margin: auto;
+  padding: 0 10px;
+  font-family: $main-font-family;
+
+  ::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+    border: 0 solid #000 ;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $main-background-color;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #555;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #888;
+  }
+  ::-webkit-scrollbar-thumb:horizontal{
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:vertical{
+  border-radius: 10px;
+}
+
+}
+
+@import 'styles/side-navbar';
+@import 'styles/top-navbar.scss';
+@import 'styles/main-container.scss';
