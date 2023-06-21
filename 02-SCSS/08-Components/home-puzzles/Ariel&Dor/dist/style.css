@@ -13,6 +13,7 @@
 .flexStarterNav {
   position: fixed;
   min-width: 1519px;
+  z-index: 1;
 }
 .flexStarterNav .preNav {
   display: flex;
@@ -257,6 +258,7 @@
   padding: 10px;
 }
 .main__content .cards .productsCard1 img {
+  position: relative;
   width: 322.49px;
   height: 322.49px;
 }
