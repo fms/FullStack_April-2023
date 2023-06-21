@@ -142,6 +142,7 @@
   flex-direction: none;
   list-style: none;
   letter-spacing: 0.7px;
+  padding: 0px;
 }
 .mini__header ul li {
   padding-right: 10px;
@@ -154,6 +155,7 @@
 }
 .mini__header ul .item3__mini__header {
   font-weight: bold;
+  color: black;
 }
 .mini__header ul .item3__mini__header a {
   text-decoration: none;
@@ -225,7 +227,7 @@
   border: #dfdfdf 1px solid;
   font-size: 16px;
   padding: 12px 20px;
-  margin-top: 5px;
+  margin-top: 15px;
   color: #212529;
 }
 .main__content .select__filtering .categoryEn2 {
@@ -244,6 +246,17 @@
 }
 .main__content .select__filtering .categoryEn2 ul li:hover {
   border-right: 2px solid black;
+}
+.main__content .select__filtering .categoryEn2 ul li:first-child:hover {
+  border: none;
+}
+.main__content .select__filtering .tatC {
+  padding-right: 0;
+}
+.main__content .select__filtering .tatC img {
+  padding-left: 3px;
+  position: relative;
+  top: 4.7px;
 }
 .main__content .cards .rowFlexerCards {
   display: flex;

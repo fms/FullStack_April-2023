@@ -9,6 +9,7 @@
     @include flexer (flex, none, none);
     list-style: none;
     letter-spacing: 0.7px;
+    padding: 0px;
 
     li {
       padding-right: 10px;
@@ -24,6 +25,8 @@
 
     .item3__mini__header {
       font-weight: bold;
+      color: black;
+
 
       a {
         text-decoration: none;
@@ -107,7 +110,7 @@
       border: #dfdfdf 1px solid;
       font-size: 16px;
       padding: 12px 20px;
-      margin-top: 5px;
+      margin-top: 15px;
       color: #212529;
     }
 
@@ -128,6 +131,17 @@
         li:hover {
           border-right: 2px solid black;
         }
+        li:first-child:hover {
+          border: none;
+        }
+      }
+    }
+    .tatC {
+      padding-right: 0;
+      img {
+        padding-left: 3px;
+        position: relative;
+        top: 4.7px;
       }
     }
   }
