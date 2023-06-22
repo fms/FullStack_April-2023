@@ -13,6 +13,7 @@
   flex-direction: none;
   list-style: none;
   letter-spacing: 0.7px;
+  padding: 0px;
 }
 .mini__header ul li {
   padding-right: 10px;
@@ -25,6 +26,7 @@
 }
 .mini__header ul .item3__mini__header {
   font-weight: bold;
+  color: black;
 }
 .mini__header ul .item3__mini__header a {
   text-decoration: none;
@@ -96,7 +98,7 @@
   border: #dfdfdf 1px solid;
   font-size: 16px;
   padding: 12px 20px;
-  margin-top: 5px;
+  margin-top: 15px;
   color: #212529;
 }
 .main__content .select__filtering .categoryEn2 {
@@ -116,25 +118,41 @@
 .main__content .select__filtering .categoryEn2 ul li:hover {
   border-right: 2px solid black;
 }
-.main__content .cards .rowFlexerCards {
-  display: flex;
-  justify-content: center;
-  flex-direction: none;
-  width: 100%;
+.main__content .select__filtering .categoryEn2 ul li:first-child:hover {
+  border: none;
+}
+.main__content .select__filtering .tatC {
+  padding-right: 0;
+}
+.main__content .select__filtering .tatC img {
+  padding-left: 3px;
+  position: relative;
+  top: 4.7px;
+}
+.main__content .cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
 }
 .main__content .cards .productsCard1 {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 10px;
+  padding: 8px;
+}
+.main__content .cards .productsCard1 .imgCard {
+  position: relative;
+  padding-bottom: 327px;
+}
+.main__content .cards .productsCard1 .imgCard img {
+  position: absolute;
+}
+.main__content .cards .productsCard1 .imgCard .front:hover {
+  opacity: 0;
 }
 .main__content .cards .productsCard1 img {
-  position: relative;
-  width: 322.49px;
-  height: 322.49px;
-}
-.main__content .cards .productsCard1 .h1-1 img:hover {
-  background-image: url(../imgaes/products/1-1p.jpg);
+  max-width: 322.49px;
+  max-height: 322.49px;
 }
 .main__content .cards .infoCards {
   display: flex;
