@@ -1,0 +1,31 @@
+.table,
+th,
+td,
+tr {
+  border: 1px solid black;
+  font-size: 1.2rem;
+  border-collapse: collapse;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+tbody td:hover {
+  transform: scale(1.2);
+  background-color: aquamarine;
+}
+
+tbody > tr:nth-child(even) {
+  background-color: lightskyblue;
+}
+
+tbody > tr:nth-child(odd) {
+  background-color: lightgrey;
+}
+
+.bold-border {
+  border-width: 4px;
+}
+
+.clr-cell-bg {
+  background-color: lightgreen;
+}
