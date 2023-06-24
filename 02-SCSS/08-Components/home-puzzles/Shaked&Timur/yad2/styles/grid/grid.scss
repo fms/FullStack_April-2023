@@ -53,41 +53,6 @@
                 border-radius: 5px;
                 margin-right: 70px;
             }
-
-        }
-
-        // &__phone {
-        //     @include posty-t-b-l-r(relative, 1, 30px, 80%, 0);
-        // }
-
-        &__text {
-            @include posty-t-b-l-r(relative, 1, 150px, 0, 0);
-            color: rgb(255, 255, 255);
-            font-size: 30px;
-            bottom: 90px;
-            margin-left: 16%;
-        }
-
-        &__buttons {
-            @include posty-t-b-l-r(relative, 1, 190px, 0, 0);
-            display: flex;
-            margin-right: 58%;
-
-            &__que {
-                border: solid 4px rgb(255, 255, 255);
-                border-radius: 20px;
-                bottom: 150px;
-            }
-
-            &__appstore {
-                bottom: 190px;
-                margin-left: 19%;
-            }
-
-            &__googleplay {
-                bottom: 255px;
-                margin-left: 19%;
-            }
         }
     }
 }
@@ -109,8 +74,7 @@
 
 .righttext {
     grid-area: rtext;
-    font-size: 28px;
-
+    font-size: clamp(1rem, 5vw, 2rem);
 }
 
 .middletext {
