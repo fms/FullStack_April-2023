@@ -93,7 +93,7 @@ body{
 .main{
     @include random-border;
     grid-area:main;
-
+    gap:$gap;
     display: grid;
     grid-template-columns: repeat(8,1fr);
     grid-template-areas: "bc bc bc . . . . . " 

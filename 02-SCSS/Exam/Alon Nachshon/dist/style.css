@@ -7,8 +7,6 @@ body {
 }
 
 .nav {
-  border: 1px solid;
-  border-color: #63d04a;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,8 +21,6 @@ body {
   filter: brightness(0) saturate(100%) invert(52%) sepia(67%) saturate(303%) hue-rotate(108deg) brightness(96%) contrast(87%);
 }
 .nav li {
-  border: 1px solid;
-  border-color: #cf9dba;
   display: inline;
   grid-area: nav-items;
 }
@@ -45,8 +41,6 @@ body {
 }
 
 .header {
-  border: 1px solid;
-  border-color: #88f355;
   grid-area: header;
   display: flex;
   justify-content: center;
@@ -82,8 +76,6 @@ body {
   grid-area: ppl;
 }
 .header__price {
-  border: 1px solid;
-  border-color: #4d9d99;
   grid-area: price;
   color: #4aa585;
 }
@@ -101,26 +93,19 @@ body {
 }
 
 .main {
-  border: 1px solid;
-  border-color: #5e697f;
   grid-area: main;
+  gap: 1.2rem;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-areas: "bc bc bc . . . . . " "h1 h1 h1 h1 . . share save " "review review review review . . . . " "gallery gallery gallery gallery gallery gallery gallery gallery " "more-nav more-nav more-nav more-nav more-nav data data data" "more-det more-det more-det more-det more-det data data data ";
 }
 .main__bradcrumbs {
-  border: 1px solid;
-  border-color: #e96e96;
   grid-area: bc;
 }
 .main h1 {
-  border: 1px solid;
-  border-color: #58e069;
   grid-area: h1;
 }
 .main__save {
-  border: 1px solid;
-  border-color: #81196f;
   background-color: lightgrey;
   height: 30px;
   width: 80px;
@@ -132,8 +117,6 @@ body {
   grid-area: save;
 }
 .main__share {
-  border: 1px solid;
-  border-color: #62282a;
   background-color: lightgrey;
   height: 30px;
   width: 80px;
@@ -145,13 +128,9 @@ body {
   grid-area: share;
 }
 .main__rating {
-  border: 1px solid;
-  border-color: #29feb2;
   grid-area: review;
 }
 .main__gallery {
-  border: 1px solid;
-  border-color: #0aa5e4;
   grid-area: gallery;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -160,8 +139,6 @@ body {
   grid-template-areas: "cover-pic cover-pic sec-pic sec-pic " "cover-pic cover-pic  small-pic1 small-pic2";
 }
 .main__gallery img {
-  border: 1px solid;
-  border-color: #e19233;
   border-radius: 20px;
 }
 .main__gallery__cover {
@@ -197,8 +174,6 @@ body {
   max-height: 100%;
 }
 .main__more-details-nav {
-  border: 1px solid;
-  border-color: #115c7e;
   grid-area: more-nav;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -245,13 +220,9 @@ body {
   text-align: center;
 }
 .main__more-details-content {
-  border: 1px solid;
-  border-color: #f33c6d;
   grid-area: more-det;
 }
 .main__more-details-review {
-  border: 1px solid;
-  border-color: #494fed;
   grid-area: data;
 }
 .main__more-details-review__raiting {

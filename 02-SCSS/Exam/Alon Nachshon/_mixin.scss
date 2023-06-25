@@ -1,6 +1,6 @@
 @mixin random-border(){
-    border:1px solid;
-    border-color: rgb(random(255), random(255), random(255));
+    // border:1px solid;
+    // border-color: rgb(random(255), random(255), random(255));
   }
 
 @mixin self-flex($jc:center, $ai:center, $ta:center){
@@ -18,16 +18,6 @@
   border-radius: $borderRadius;
 }
 
-// @mixin flexContainer($direction:column,$colGap:0px, $rowGap:0px, $justifyContent:normal,$flexWrap:nowrap){
-//   display: flex;
-//   flex-direction: $direction;
-//   flex-wrap:$flexWrap;
-//   column-gap: $colGap;
-//   row-gap: $rowGap;
-//   align-content: space-between;
-//   justify-content:$justifyContent;
-
-// }
 
 $hightligh: #FCDE34;
 $default: #424143;
