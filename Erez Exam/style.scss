@@ -46,10 +46,9 @@ h1 {
         background-image: url(https://upload.wikimedia.org/wikipedia/commons/c/c8/Altja_j%C3%B5gi_Lahemaal.jpg);
     }
 
-    .medium {
+    &__medium {
         display: flex;
-
-        .sky {
+        &__sky {
             border-radius: 5%;
             margin-left: 1rem;
             width: 610px;
@@ -57,13 +56,13 @@ h1 {
             background-image: url(https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg?w=2000);
         }
 
-        .smallcon {
+        &__smallcon {
             position: absolute;
             display: flex;
             flex-direction: row;
             margin-top: 260px;
 
-            .little {
+            &__little {
                 border-radius: 5%;
                 margin-left: 1rem;
                 width: 300px;
@@ -79,7 +78,7 @@ h1 {
     margin-top: 40px;
     margin-left: -10px;
 
-    .btn {
+    &__btn {
         font-size: 1rem;
         border: 1px solid rgb(202, 193, 193);
         border-radius: 10%;
