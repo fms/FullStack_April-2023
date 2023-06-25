@@ -1,0 +1,267 @@
+body {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+  grid-template-rows: 3rem 4rem auto;
+  grid-template-areas: ". nav ." " . header ." ". main .";
+}
+
+.nav {
+  border: 1px solid;
+  border-color: #63d04a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  grid-area: nav;
+  display: grid;
+  grid-template-columns: 1fr 4fr 2fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: "logo nav-itemn . where currency like profile";
+}
+.nav__logo {
+  grid-area: logo;
+  filter: brightness(0) saturate(100%) invert(52%) sepia(67%) saturate(303%) hue-rotate(108deg) brightness(96%) contrast(87%);
+}
+.nav li {
+  border: 1px solid;
+  border-color: #cf9dba;
+  display: inline;
+  grid-area: nav-items;
+}
+.nav__search-btn {
+  grid-area: where;
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat left;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.nav__select {
+  grid-area: currency;
+}
+.nav__like {
+  grid-area: like;
+}
+.nav__profile {
+  grid-area: profile;
+}
+
+.header {
+  border: 1px solid;
+  border-color: #88f355;
+  grid-area: header;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  grid-template-areas: "choose choose loc loc loc date date date date ppl ppl ppl  price book";
+  gap: 1.2rem;
+}
+.header__back {
+  grid-area: choose;
+}
+.header__button--loc {
+  background-color: #e9e9e9;
+  height: 30px;
+  width: 100%;
+  border-radius: 40px;
+  grid-area: loc;
+}
+.header__button--date {
+  background-color: #e9e9e9;
+  height: 30px;
+  width: 100%;
+  border-radius: 40px;
+  grid-area: date;
+}
+.header__button--ppl {
+  background-color: #e9e9e9;
+  height: 30px;
+  width: 100%;
+  border-radius: 40px;
+  grid-area: ppl;
+}
+.header__price {
+  border: 1px solid;
+  border-color: #4d9d99;
+  grid-area: price;
+  color: #4aa585;
+}
+.header__book {
+  background-color: #4aa585;
+  height: 45px;
+  width: 120px;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  grid-area: book;
+}
+
+.main {
+  border: 1px solid;
+  border-color: #5e697f;
+  grid-area: main;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-areas: "bc bc bc . . . . . " "h1 h1 h1 h1 . . share save " "review review review review . . . . " "gallery gallery gallery gallery gallery gallery gallery gallery " "more-nav more-nav more-nav more-nav more-nav data data data" "more-det more-det more-det more-det more-det data data data ";
+}
+.main__bradcrumbs {
+  border: 1px solid;
+  border-color: #e96e96;
+  grid-area: bc;
+}
+.main h1 {
+  border: 1px solid;
+  border-color: #58e069;
+  grid-area: h1;
+}
+.main__save {
+  border: 1px solid;
+  border-color: #81196f;
+  background-color: lightgrey;
+  height: 30px;
+  width: 80px;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  grid-area: save;
+}
+.main__share {
+  border: 1px solid;
+  border-color: #62282a;
+  background-color: lightgrey;
+  height: 30px;
+  width: 80px;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  grid-area: share;
+}
+.main__rating {
+  border: 1px solid;
+  border-color: #29feb2;
+  grid-area: review;
+}
+.main__gallery {
+  border: 1px solid;
+  border-color: #0aa5e4;
+  grid-area: gallery;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 10rem 10rem;
+  gap: 1.2rem;
+  grid-template-areas: "cover-pic cover-pic sec-pic sec-pic " "cover-pic cover-pic  small-pic1 small-pic2";
+}
+.main__gallery img {
+  border: 1px solid;
+  border-color: #e19233;
+  border-radius: 20px;
+}
+.main__gallery__cover {
+  grid-area: cover-pic;
+}
+.main__gallery__cover > img {
+  object-fit: cover;
+  width: 100%;
+  max-height: 100%;
+}
+.main__gallery__sec-pic {
+  grid-area: sec-pic;
+}
+.main__gallery__sec-pic > img {
+  object-fit: cover;
+  width: 100%;
+  max-height: 100%;
+}
+.main__gallery__small--1 {
+  grid-area: small-pic1;
+}
+.main__gallery__small--1 > img {
+  object-fit: cover;
+  width: 100%;
+  max-height: 100%;
+}
+.main__gallery__small--2 {
+  grid-area: small-pic2;
+}
+.main__gallery__small--2 > img {
+  object-fit: cover;
+  width: 100%;
+  max-height: 100%;
+}
+.main__more-details-nav {
+  border: 1px solid;
+  border-color: #115c7e;
+  grid-area: more-nav;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.2rem;
+}
+.main__more-details-nav__overview {
+  background-color: lightgrey;
+  height: 40px;
+  width: 100%;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.main__more-details-nav__included {
+  background-color: lightgrey;
+  height: 40px;
+  width: 100%;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.main__more-details-nav__faqs {
+  background-color: lightgrey;
+  height: 40px;
+  width: 100%;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.main__more-details-nav__room {
+  background-color: lightgrey;
+  height: 40px;
+  width: 100%;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.main__more-details-content {
+  border: 1px solid;
+  border-color: #f33c6d;
+  grid-area: more-det;
+}
+.main__more-details-review {
+  border: 1px solid;
+  border-color: #494fed;
+  grid-area: data;
+}
+.main__more-details-review__raiting {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: "score star ." "score star . ";
+}
+.main__more-details-review__raiting__star {
+  grid-area: star;
+}
+.main__more-details-review__raitingscore {
+  grid-area: score;
+}

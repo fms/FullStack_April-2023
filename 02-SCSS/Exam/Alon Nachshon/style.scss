@@ -1,0 +1,249 @@
+@import '_mixin';
+$col-primary:#4aa585;
+$radius:20px;
+$gap:1.2rem;
+$col-btn:rgb(233, 233, 233);
+$light:white;
+
+body{
+    margin:0;
+    display:grid;
+    grid-template-columns: 1fr 10fr 1fr;   
+    grid-template-rows: 3rem 4rem auto ;
+    grid-template-areas: ". nav ."
+    " . header ."
+    ". main .";
+}
+.nav{
+    @include random-border;
+    @include self-flex;
+    grid-area:nav;
+    display: grid;
+    grid-template-columns: 1fr 4fr 2fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "logo nav-itemn . where currency like profile";
+
+    &__logo{
+        grid-area: logo;
+        filter:  brightness(0) saturate(100%) invert(52%) sepia(67%) saturate(303%) hue-rotate(108deg) brightness(96%) contrast(87%);
+    }
+
+    li{
+        @include random-border;
+        display: inline;
+        grid-area: nav-items;
+    }
+    
+    &__search-btn{
+        grid-area: where;
+        background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat left;
+        cursor: pointer;
+        opacity: 0.7;
+    }
+
+    &__select{
+        // background-image:url("./imgs/flag.png")
+        grid-area: currency;
+    }
+    &__like{
+        grid-area: like;
+    }
+    &__profile{
+        grid-area: profile;
+    }
+}
+.header{
+    @include random-border;
+    grid-area:header;
+    @include self-flex;
+    display: grid;
+    grid-template-columns: repeat( 14, 1fr);
+    grid-template-areas: "choose choose loc loc loc date date date date ppl ppl ppl  price book";
+    gap:$gap;
+    
+    &__back{
+        grid-area: choose;
+    }
+    &__button--loc{
+        @include createOval(30px ,100%, 40px, $col-btn);
+        grid-area: loc;
+    }
+    &__button--date{
+        @include createOval(30px ,100%, 40px, $col-btn);
+        grid-area: date;
+    }
+    &__button--ppl{
+        @include createOval(30px ,100%, 40px, $col-btn);
+        grid-area: ppl;
+    }
+    &__price{
+        @include random-border;
+
+        grid-area: price;
+        color: $col-primary;
+
+    }
+    &__book{
+        @include createOval(45px ,120px, 40px, $col-primary);
+        @include self-flex;
+        color:$light;
+        grid-area: book;
+    }
+
+}
+.main{
+    @include random-border;
+    grid-area:main;
+
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-areas: "bc bc bc . . . . . " 
+                        "h1 h1 h1 h1 . . share save "
+                        "review review review review . . . . "
+                        "gallery gallery gallery gallery gallery gallery gallery gallery "
+                        "more-nav more-nav more-nav more-nav more-nav data data data"
+                        "more-det more-det more-det more-det more-det data data data "
+                        ;
+
+    &__bradcrumbs{
+        @include random-border;
+        grid-area: bc;
+    }
+
+    h1{
+        @include random-border;
+        grid-area: h1;
+    }
+    &__save{
+        @include random-border;
+        @include createOval(30px ,80px, 40px, lightgrey);
+        @include self-flex;
+        grid-area: save;
+    }
+    &__share{
+        @include random-border;
+        @include createOval(30px ,80px, 40px, lightgrey);
+        @include self-flex;
+        grid-area: share;
+    }
+
+    &__rating{
+        @include random-border;
+        grid-area: review;
+    }
+    
+
+    &__gallery{
+        @include random-border;
+        grid-area: gallery;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows:10rem 10rem;
+        gap:$gap;
+        
+
+        grid-template-areas: "cover-pic cover-pic sec-pic sec-pic "
+                                "cover-pic cover-pic  small-pic1 small-pic2";
+        
+        img{
+            @include random-border;
+            border-radius:$radius;
+        }
+        &__cover{
+            grid-area: cover-pic;
+
+             > img{
+                object-fit: cover;
+                width: 100%;
+                max-height: 100%;
+
+            }
+        }
+        &__sec-pic{
+            grid-area: sec-pic;
+            > img{
+                object-fit: cover;
+                width: 100%;
+                max-height: 100%;
+
+            }
+
+        }
+        &__small--1{
+            grid-area: small-pic1;
+            > img{
+                object-fit: cover;
+                width: 100%;
+                max-height: 100%;
+
+            }
+        }
+        &__small--2{
+            grid-area: small-pic2;
+            > img{
+                object-fit: cover;
+                width: 100%;
+                max-height: 100%;
+
+            }
+
+        }
+    }
+
+    &__more-details-nav{
+        @include random-border;
+        grid-area: more-nav;
+
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap:$gap;
+
+
+        &__overview{
+            @include createOval(40px ,100%, 40px, lightgrey);
+            @include self-flex;
+
+        }
+
+        &__included{
+            @include createOval(40px ,100%, 40px, lightgrey);
+            @include self-flex;
+        }
+
+        &__faqs{
+            @include createOval(40px ,100%, 40px, lightgrey);
+            @include self-flex;
+        }
+
+        &__room{
+            @include createOval(40px ,100%, 40px, lightgrey);
+            @include self-flex;
+        }
+    }
+    &__more-details-content{
+        @include random-border;
+        grid-area: more-det;
+    }
+    &__more-details-review{
+        @include random-border;
+        grid-area: data;
+
+        &__raiting{
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;  
+            grid-template-areas: "score star ." "score star . ";
+            &__star{
+                grid-area: star;
+            }
+            &score{
+                grid-area: score;
+    
+            }
+        }
+
+    }
+
+
+    
+
+}

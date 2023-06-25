@@ -1,0 +1,36 @@
+@mixin random-border(){
+    border:1px solid;
+    border-color: rgb(random(255), random(255), random(255));
+  }
+
+@mixin self-flex($jc:center, $ai:center, $ta:center){
+  display:flex;
+  justify-content: $jc;
+  align-items: $ai;
+  text-align: $ta;
+
+}
+
+@mixin createOval($height:40px, $width:50px, $borderRadius:50px, $backColor:white){
+  background-color: $backColor;
+  height:$height;
+  width:$width;
+  border-radius: $borderRadius;
+}
+
+// @mixin flexContainer($direction:column,$colGap:0px, $rowGap:0px, $justifyContent:normal,$flexWrap:nowrap){
+//   display: flex;
+//   flex-direction: $direction;
+//   flex-wrap:$flexWrap;
+//   column-gap: $colGap;
+//   row-gap: $rowGap;
+//   align-content: space-between;
+//   justify-content:$justifyContent;
+
+// }
+
+$hightligh: #FCDE34;
+$default: #424143;
+$nav:#EFF1ED;
+
+$clip-it:("rtl": polygon(0 35%, 100% 0, 100% 100%, 0% 100%), "ltr": polygon(0 0, 100% 0%, 100% 100%, 0 91%));
