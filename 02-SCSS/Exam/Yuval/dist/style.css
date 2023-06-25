@@ -1,0 +1,286 @@
+@keyframes number {
+  0% {
+    content: "1.0";
+  }
+  10% {
+    content: "1.5";
+  }
+  20% {
+    content: "2.0";
+  }
+  30% {
+    content: "2.2";
+  }
+  40% {
+    content: "2.7";
+  }
+  50% {
+    content: "3.3";
+  }
+  60% {
+    content: "3.5";
+  }
+  70% {
+    content: "4.0";
+  }
+  80% {
+    content: "4.5";
+  }
+  90% {
+    content: "4.8";
+  }
+  100% {
+    content: "5.0";
+  }
+}
+@media screen and (min-width: 1025px) {
+  .topbar {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid gray;
+    gap: 70px;
+  }
+  .topbar__left {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    height: 50px;
+    justify-content: space-around;
+  }
+  .topbar__left img {
+    align-self: center;
+    width: 20px;
+    height: 20px;
+  }
+  .topbar__right {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    height: 50px;
+    justify-content: space-around;
+  }
+  .topbar .search {
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    gap: 5px;
+    border: 1px solid gray;
+    border-radius: 30px;
+    margin-bottom: 5px;
+  }
+  .topbar .search i, .topbar .search h3 {
+    align-self: center;
+  }
+  .topbar .country {
+    display: flex;
+    flex-direction: row;
+    width: 70px;
+    gap: 5px;
+    border: 1px solid gray;
+    border-radius: 30px;
+    margin-bottom: 5px;
+  }
+  .topbar .country img {
+    width: 20px;
+    height: 20px;
+  }
+  .topbar .country img, .topbar .country h3 {
+    align-self: center;
+  }
+  .topbar .heart {
+    display: flex;
+    flex-direction: row;
+    width: 50px;
+    height: 43.667px;
+    align-self: center;
+    border: 1px solid gray;
+    border-radius: 30px;
+    margin-bottom: 5px;
+  }
+  .topbar .heart i {
+    align-self: center;
+    margin-left: 18px;
+  }
+  .topbar .profile {
+    display: flex;
+    flex-direction: row;
+    width: 50px;
+    gap: 5px;
+    border: 1px solid gray;
+    border-radius: 30px;
+    margin-bottom: 5px;
+  }
+  .topbar .profile i, .topbar .profile img {
+    align-self: center;
+  }
+  .topbar .profile img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .book {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-bottom: 1px solid gray;
+    gap: 30px;
+  }
+  .book .date {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    height: 50px;
+  }
+  .book .date button {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    align-self: center;
+    font-size: 40px;
+    font-stretch: 200%;
+    font-optical-sizing: none;
+  }
+  .book .date h2 {
+    align-self: center;
+  }
+  .book .tripDetails {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  }
+  .book .tripDetails__item {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid gray;
+    border-radius: 30px;
+    background-color: gray;
+  }
+  .book .tripDetails__item i, .book .tripDetails__item p {
+    align-self: center;
+  }
+  .book .cost {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  }
+  .book .cost p {
+    color: green;
+  }
+  .book .cost button {
+    width: 90px;
+    background-color: green;
+    color: white;
+    border-radius: 30px;
+  }
+
+  .results {
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+  }
+  .results p:nth-child(3) {
+    color: gray;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    gap: 700px;
+  }
+  .container .hotel {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 70px;
+  }
+  .container .hotel__stats, .container .hotel__stats--item {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  }
+  .container .hotel__stats--item i, .container .hotel__stats--item p {
+    align-self: center;
+    color: gray;
+    font-size: small;
+  }
+  .container .actions {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-top: 30px;
+  }
+  .container .actions .action {
+    display: flex;
+    flex-direction: row;
+    width: 80px;
+    height: 20px;
+    border: 1px solid gray;
+    border-radius: 30px;
+    gap: 5px;
+  }
+  .container .actions .action i, .container .actions .action p {
+    align-self: center;
+  }
+  .container .actions .action i {
+    margin-left: 15px;
+  }
+
+  .grid_images {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "main main secondary secondary" "main main . .";
+    gap: 5px;
+  }
+
+  .grid_item {
+    border-radius: 20px;
+  }
+  .grid_item img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .grid_item:first-child {
+    grid-area: main;
+    box-sizing: border-box;
+  }
+
+  .grid_item:nth-child(2) {
+    grid-area: secondary;
+    box-sizing: border-box;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-top: 50px;
+  }
+  .buttons .button {
+    height: 60px;
+    border: 1px solid gray;
+    border-radius: 30px;
+    color: gray;
+  }
+  .buttons .button:active {
+    background-color: black;
+    color: white;
+  }
+  .buttons .overview {
+    width: 80px;
+  }
+  .buttons .whatsInc {
+    width: 120px;
+  }
+  .buttons .faqs {
+    width: 50px;
+  }
+  .buttons .room {
+    width: 50px;
+  }
+
+  .rate {
+    animation: number 2s infinite;
+  }
+}

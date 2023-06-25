@@ -1,0 +1,343 @@
+$imgSize: 20px;
+$smallGap: 5px;
+$border: 1px solid gray;
+$borderRad: 30px;
+$margLeft: 20px;
+
+@mixin flexed($direction:row) {
+    display: flex;
+    flex-direction: $direction;
+}    
+
+@keyframes number {
+    0% {
+        content: "1.0";
+    }
+    10% {
+        content: "1.5";
+    }
+    20% {
+        content: "2.0";
+    }
+    30% {
+        content: "2.2";
+    }
+    40% {
+        content: "2.7";
+    }
+    50% {
+        content: "3.3";
+    }
+    60% {
+        content: "3.5";
+    }
+    70% {
+        content: "4.0";
+    }
+    80% {
+        content: "4.5";
+    }
+    90% {
+        content: "4.8";
+    }
+    100% {
+        content: "5.0";
+    }
+}
+
+
+@media screen and (min-width: 1025px) {
+    .topbar {
+        @include flexed();
+        border-bottom: $border;
+        gap: 70px;
+
+        &__left {
+            @include flexed();
+            width: 50%;
+            height: 50px;
+            justify-content: space-around;
+
+            img {
+                align-self: center;
+                width: $imgSize;
+                height: $imgSize;
+            }    
+        }    
+
+        &__right {
+            @include flexed();
+            width: 50%;
+            height: 50px;
+            justify-content: space-around;
+        }    
+
+        .search {
+            @include flexed();
+            width: 200px;
+            gap: $smallGap;
+            border: $border;
+            border-radius: $borderRad;
+            margin-bottom: $smallGap;
+
+            i, h3 {
+                align-self: center;
+            }    
+        }    
+
+        .country {
+            @include flexed();
+            width: 70px;
+            gap: $smallGap;
+            border: $border;
+            border-radius: $borderRad;
+            margin-bottom: $smallGap;
+
+            img {
+                width: $imgSize;
+                height: $imgSize; 
+            }    
+
+            img, h3 {
+                align-self: center;
+            }    
+        }    
+
+        .heart {
+            @include flexed();
+            width: 50px;
+            height: 43.667px;
+            align-self: center;
+            border: $border;
+            border-radius: $borderRad;
+            margin-bottom: $smallGap;
+            
+            i {
+                align-self: center;
+                margin-left: 18px;
+            }    
+        }    
+
+        .profile {
+            @include flexed();
+            width: 50px;
+            gap: $smallGap;
+            border: $border;
+            border-radius: $borderRad;
+            margin-bottom: $smallGap;
+
+            i, img{
+                align-self: center; 
+            }    
+
+            img {
+                width: $imgSize;
+                height: $imgSize; 
+            }    
+        }    
+    }    
+
+    .book {
+        @include flexed();
+        justify-content: space-around;
+        border-bottom: $border;
+        gap: 30px;
+
+        .date {
+            @include flexed();
+            gap: $smallGap;
+            height: 50px;
+
+            button {
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                align-self: center;
+                font-size: 40px;
+                font-stretch: 200%;
+                font-optical-sizing: none;
+            }    
+            
+            h2 {
+                align-self: center; 
+            }    
+        }    
+
+        .tripDetails {
+            @include flexed();
+            gap: $smallGap;
+
+            &__item {
+                @include flexed();
+                border: $border;
+                border-radius: $borderRad;
+                background-color: gray;
+
+                i, p {
+                    align-self: center;
+                }    
+            }    
+        }    
+
+        .cost {
+            @include flexed();
+            gap: $smallGap;
+
+            p {
+                color: green;
+            }    
+
+            button {
+                width: 90px;
+                background-color: green;
+                color: white;
+                border-radius: $borderRad;
+            }    
+        }    
+    }    
+
+    .results {
+        @include flexed();
+        margin-left: $margLeft;
+
+        p:nth-child(3) {
+            color: gray;
+        }    
+    }    
+
+    .container {
+        @include flexed();
+        gap: 700px;
+
+        .hotel {
+            @include flexed($direction: column);
+            width: 400px;
+            height: 70px;
+            
+    
+            &__stats, &__stats--item {
+                @include flexed();
+                gap: $smallGap;
+            }    
+            
+            &__stats--item {
+                i, p {
+                    align-self: center;
+                    color: gray;
+                    font-size: small;
+                }    
+            }    
+        }    
+
+        .actions {
+            @include flexed();
+            gap: $smallGap;
+            margin-top: 30px;
+
+            .action {
+                @include flexed();
+                width: 80px;
+                height: 20px;
+                border: $border;
+                border-radius: $borderRad;
+                gap: $smallGap;
+
+                i, p {
+                    align-self: center;
+                }    
+                
+                i {
+                    margin-left: 15px;
+                }    
+            }    
+        }    
+    }    
+
+    .grid_images {
+        margin-top: 100px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 'main main secondary secondary'
+        'main main . .';
+        gap: $smallGap;
+    }    
+
+    .grid_item {
+        border-radius: 20px;
+        
+        img {
+            width: 100%;
+            height: 100%;
+        }    
+    }    
+
+    .grid_item:first-child {
+        grid-area: main;
+        box-sizing: border-box
+    }    
+
+    .grid_item:nth-child(2) {
+        grid-area: secondary;
+        box-sizing: border-box
+    }    
+
+    .buttons {
+        @include flexed();
+        gap: $smallGap;
+        margin-top: 50px;
+
+        .button {
+            height: 60px;
+            border: $border;
+            border-radius: $borderRad;
+            color: gray;
+        }    
+
+        .button:active {
+            background-color: black;
+            color: white;
+        }    
+
+        .overview {
+            width: 80px;
+        }    
+
+        .whatsInc {
+            width: 120px;
+        }    
+
+        .faqs {
+            width: 50px;
+        }    
+
+        .room {
+            width: 50px;
+        }    
+    }    
+
+    // .ratings {
+    //     @include flexed();
+
+    //     .stars {
+    //         // @include flexed($direction: column);
+
+    //         img {
+    //             width: $imgSize;
+    //             height: $imgSize;
+    //         }
+    //     }
+    // }    
+    
+    .rate {
+        animation: number 2s infinite;
+    }    
+}  
+
+
+@media screen and (max-width: 600px) {
+    
+}
+
+
+
+
