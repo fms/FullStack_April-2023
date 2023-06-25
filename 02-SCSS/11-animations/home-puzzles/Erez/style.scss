@@ -1,0 +1,46 @@
+.background {
+    background-image: url(https://images.newscientist.com/wp-content/uploads/2020/10/28143342/credit_ippei-naoi-gettyimages-660363092_web.jpg?width=900);
+    width: 100%;
+    height: 570px;
+}
+
+.balloon {
+    position: relative;
+    animation-duration: 10s;
+    margin: top -100px;
+
+    img {
+        width: 100px;
+        height: 100px;
+    }
+
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-name: rotate,
+    down-up
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(250deg);
+    }
+
+    to {
+        transform: rotate(420deg) scale(80%);
+    }
+}
+
+.red {
+    animation: forwards;
+    animation: fly 7s;
+    margin-left: 150px;
+    margin-top: 400px;
+
+    @keyframes fly {
+        100% {
+            transform: translatey(-700px)
+        }
+
+    }
+}

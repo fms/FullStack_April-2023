@@ -1,0 +1,26 @@
+.wrapper {
+  width: 70%;
+  margin-inline: auto;
+}
+
+.content {
+  padding: 3rem;
+  border: 2px black solid;
+  background-color: aquamarine;
+}
+
+.behind {
+  position: relative;
+  top: -3rem;
+  right: 40px;
+  z-index: -1;
+  background-color: red;
+}
+
+.in-front {
+  position: relative;
+  top: -140px;
+  left: 80px;
+  z-index: 1;
+  background-color: blue;
+}
