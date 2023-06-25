@@ -1,0 +1,31 @@
+.container {
+  background-image: url(/02-SCSS/11-animations/home-puzzles/Shaked/anima1/balloon_image-removebg-preview.png);
+  width: 600px;
+  height: 900px;
+  position: relative;
+  animation-name: flyingballoon;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  background-position: center;
+  background-size: cover;
+}
+
+.background {
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNb48cF8PN8XVgoIiSc1b0ngYkG4Bolxu69hWaHRD0rJpsXnYivCE2NIp46rqG2CO3CE4&usqp=CAU);
+  width: 100%;
+  height: 1800px;
+  background-position: center;
+  background-size: cover;
+}
+
+@keyframes flyingballoon {
+  from {
+    left: 700px;
+    top: 900px;
+  }
+  to {
+    left: 900px;
+    top: 0px;
+  }
+}/*# sourceMappingURL=anima1.css.map */

@@ -1,0 +1,109 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body > .grid,
+.container {
+  border: 5px black dashed;
+  margin-top: 100px;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 50px;
+  width: 70%;
+  container-type: inline-size;
+}
+
+.box {
+  height: 100px;
+  border-radius: 1rem;
+}
+
+.aqua {
+  background-color: aqua;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.gold {
+  background-color: gold;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.side-by-side {
+  grid-template-columns: 1fr 1fr;
+}
+
+@container (min-width: 800px) {
+  .c-up-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@container (min-width: 1200px) {
+  .c-up-2 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 800px) {
+  .up-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1200px) {
+  .up-2 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1200px) {
+  .jump-3-to-1 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.ruler {
+  position: fixed;
+  display: block;
+  width: 800px;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: -1;
+  border: 1px red dashed;
+}
+.ruler p {
+  display: flex;
+}
+.ruler p:before,
+.ruler p:after {
+  content: "";
+  flex: 1;
+  border-bottom: groove 2px;
+  margin: auto 0.25em;
+  box-shadow: 0 -1px;
+}
+
+.with-width-1200 {
+  width: 1200px;
+}
+.with-width-1200 p {
+  margin-top: 50px;
+}

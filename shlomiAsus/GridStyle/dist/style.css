@@ -1,0 +1,134 @@
+.fix {
+  background-color: black;
+}
+
+.body {
+  background: #a59999;
+}
+
+.heading {
+  border-radius: 15px;
+  border: 5px;
+  border-color: white;
+  border-style: outset;
+  font-size: 80px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-size: 50% 100%;
+  border-radius: 0 0 10px 10px;
+  margin-bottom: 80PX;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  grid-column-start: 1;
+  grid-column-end: 6;
+}
+
+.main_container {
+  display: grid;
+  grid-template-columns: 500px repeat(4, 700px);
+  grid-template-rows: 400px 600px 90px 600px 90px 90px;
+  height: 600px;
+  gap: 25px;
+}
+
+.menu {
+  border-radius: 15px;
+  border: 5px;
+  border-color: white;
+  border-style: outset;
+  height: 91.5%;
+  grid-row-start: 2;
+  grid-row-end: 8;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  background-color: #cdb89c;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
+}
+
+.menu_button {
+  border-radius: 15px;
+  border: 5px;
+  border-color: white;
+  border-style: outset;
+  font-size: xx-large;
+  background-color: #ceb296;
+  color: white;
+}
+.menu_button:hover {
+  background-color: #cb4f02;
+}
+
+.picbox {
+  border-radius: 15px;
+  border: 5px;
+  border-color: white;
+  border-style: outset;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 1s ease-in;
+}
+.picbox__underpic {
+  height: 95%;
+  width: 98%;
+  background-color: black;
+  color: wheat;
+  opacity: 0.1;
+  text-align: center;
+  margin: center;
+  font-size: 85px;
+  transition: transform 1s ease-in-out;
+}
+.picbox__underpic:hover {
+  border-radius: 15px;
+  border: 5px;
+  border-color: white;
+  border-style: outset;
+  transform: translateY(-65px);
+  color: white;
+  background-color: #020202;
+  opacity: 1;
+}
+
+.picbox:hover {
+  transform: scale(1.1);
+}
+
+.runnig_header {
+  font-size: 35px;
+  height: 40px;
+  width: 100%;
+  color: white;
+  animation: slide-in-left 17s linear infinite;
+}
+
+.slide-in-left {
+  animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(30%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(50%);
+    opacity: 1;
+  }
+}
+.bottom_div {
+  background-color: black;
+  grid-row-start: 6;
+  grid-column-start: 1;
+  grid-column-end: 6;
+  color: bisque;
+  font-size: 250%;
+  text-align: center;
+}

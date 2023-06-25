@@ -1,4 +1,5 @@
 * {
+  padding: 0;
   margin: 0;
   font-family: "Open Sans", sans-serif;
   direction: rtl;
@@ -13,6 +14,7 @@
   flex-direction: none;
   list-style: none;
   letter-spacing: 0.7px;
+  padding: 0px;
 }
 .mini__header ul li {
   padding-right: 10px;
@@ -25,6 +27,7 @@
 }
 .mini__header ul .item3__mini__header {
   font-weight: bold;
+  color: black;
 }
 .mini__header ul .item3__mini__header a {
   text-decoration: none;
@@ -48,7 +51,8 @@
   font-size: 16px;
   color: #61696d;
   font-family: "Open Sans", sans-serif;
-  width: 314.54px;
+  min-width: 311px;
+  max-width: 311.1px;
   margin-right: 47px;
 }
 .headerMainContent .selectHeaderMainContent:hover {
@@ -67,6 +71,9 @@
   flex-direction: none;
   width: 70%;
 }
+.headerMainContent .resultsProductsCards .w1 {
+  font-size: 14px;
+}
 
 .main__content {
   display: flex;
@@ -79,10 +86,14 @@
 }
 .main__content .select__filtering .rest__button .btn__rest__button {
   font-size: 16px;
-  padding: 10px 128px;
+  padding: 6px 12px;
   background-color: white;
   border: 1px black solid;
   color: #61696d;
+  min-width: 311px;
+  max-width: 311.1px;
+  min-height: 38px;
+  max-height: 38.1px;
   cursor: pointer;
 }
 .main__content .select__filtering .rest__button .btn__rest__button:hover {
@@ -96,7 +107,7 @@
   border: #dfdfdf 1px solid;
   font-size: 16px;
   padding: 12px 20px;
-  margin-top: 5px;
+  margin-top: 15px;
   color: #212529;
 }
 .main__content .select__filtering .categoryEn2 {
@@ -116,87 +127,144 @@
 .main__content .select__filtering .categoryEn2 ul li:hover {
   border-right: 2px solid black;
 }
-.main__content .cards .rowFlexerCards {
-  display: flex;
-  justify-content: center;
-  flex-direction: none;
-  width: 100%;
+.main__content .select__filtering .categoryEn2 ul li:first-child:hover {
+  border: none;
+}
+.main__content .select__filtering .tatC {
+  padding-right: 0;
+}
+.main__content .select__filtering .tatC img {
+  padding-left: 3px;
+  position: relative;
+  top: 4.7px;
+}
+.main__content .cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
 }
 .main__content .cards .productsCard1 {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 10px;
+  padding: 8px;
+}
+.main__content .cards .productsCard1 .imgCard {
+  position: relative;
+  padding-bottom: 327px;
+}
+.main__content .cards .productsCard1 .imgCard img {
+  position: absolute;
+}
+.main__content .cards .productsCard1 .imgCard .front:hover {
+  opacity: 0;
 }
 .main__content .cards .productsCard1 img {
-  width: 322.49px;
-  height: 322.49px;
+  max-width: 322.49px;
+  max-height: 322.49px;
 }
-.main__content .cards .productsCard1 .infoCards {
+.main__content .cards .infoCards {
   display: flex;
   justify-content: none;
   flex-direction: column;
   text-align: center;
-  padding: 0.6875rem 0 3rem;
+  padding: 0.6875rem 0 64px;
+  font-size: 14px;
 }
-.main__content .cards .productsCard1 .infoCards .palateColorFlexer {
+.main__content .cards .infoCards .palateColorFlexer {
   display: flex;
   justify-content: center;
   flex-direction: none;
 }
-.main__content .cards .productsCard1 .infoCards .palateColorFlexer .palateColor {
+.main__content .cards .infoCards .palateColorFlexer .multiFlexerPalateColor {
+  display: flex;
+  justify-content: none;
+  flex-direction: none;
+}
+.main__content .cards .infoCards .palateColorFlexer .palateColor {
   border: #212529 1px solid;
   width: 27px;
   height: 25px;
   padding: 1px 1px 1.2px;
   margin: 0 3.5px;
 }
-.main__content .cards .productsCard1 .infoCards .palateColorFlexer .multiFlexerPalateColor {
-  display: flex;
-  justify-content: none;
-  flex-direction: none;
-}
-.main__content .cards .productsCard1 .infoCards .palateColorFlexer .blackPalateColor {
+.main__content .cards .infoCards .palateColorFlexer .blackPalateColor {
   background-color: black;
   font-size: 19px;
   cursor: pointer;
 }
-.main__content .cards .productsCard1 .infoCards .palateColorFlexer .whitePalateColor {
+.main__content .cards .infoCards .palateColorFlexer .whitePalateColor {
   background-color: #ffffff;
   font-size: 19px;
   color: #ffffff;
   cursor: pointer;
 }
-.main__content .cards .productsCard1 .infoCards .palateColorFlexer .grayPalateColor {
+.main__content .cards .infoCards .palateColorFlexer .grayPalateColor {
   background-color: #4e5359;
   font-size: 19px;
   color: #4e5359;
   cursor: pointer;
 }
-.main__content .cards .productsCard1 .infoCards .kotarot a {
+.main__content .cards .infoCards .palateColorFlexer .olive2PalateColor {
+  background-color: #7c845d;
+  font-size: 19px;
+  color: #7c845d;
+  cursor: pointer;
+}
+.main__content .cards .infoCards .palateColorFlexer .olivePalateColor {
+  background-color: #8a805d;
+  font-size: 19px;
+  color: #8a805d;
+  cursor: pointer;
+}
+.main__content .cards .infoCards .palateColorFlexer .bodyPalateColor {
+  background-color: #e3dcd6;
+  font-size: 19px;
+  color: #e3dcd6;
+  cursor: pointer;
+}
+.main__content .cards .infoCards .palateColorFlexer .whiteyPalateColor {
+  background-color: #f2f3fe;
+  font-size: 19px;
+  color: #f2f3fe;
+  cursor: pointer;
+}
+.main__content .cards .infoCards .palateColorFlexer .hardGrayPalateColor {
+  background-color: #653f52;
+  font-size: 19px;
+  color: #653f52;
+  cursor: pointer;
+}
+.main__content .cards .infoCards .palateColorFlexer .creamPalateColor {
+  background-color: #b7ad9e;
+  font-size: 19px;
+  color: #b7ad9e;
+  cursor: pointer;
+}
+.main__content .cards .infoCards .kotarot a {
   font-size: 17px;
   text-decoration: none;
   color: black;
 }
-.main__content .cards .productsCard1 .infoCards .kotarot a div {
+.main__content .cards .infoCards .kotarot a div {
   padding: 5px 0;
 }
-.main__content .cards .productsCard1 .infoCards .kotarot a div span:hover {
+.main__content .cards .infoCards .kotarot a div span:hover {
   border-bottom: 2px black solid;
 }
-.main__content .cards .productsCard1 .infoCards .kotarot a .kotertMishne {
+.main__content .cards .infoCards .kotarot a .kotertMishne {
   font-size: 14px;
   margin-bottom: 15px;
 }
-.main__content .cards .productsCard1 .infoCards .price {
+.main__content .cards .infoCards .price {
   font-size: 14px;
   font-weight: bold;
 }
-.main__content .cards .productsCard1 .infoCards .price .discountPrice {
+.main__content .cards .infoCards .price .discountPrice {
   color: red;
 }
-.main__content .cards .productsCard1 .infoCards .price .clearPrice {
-  border: #212529 1px solid;
+.main__content .cards .infoCards .price .clearPrice {
+  border: #212529 0.5px solid;
   display: flex;
   justify-content: none;
   flex-direction: column;
@@ -205,6 +273,26 @@
   bottom: 10px;
   right: 160px;
 }
-.main__content .cards .productsCard1 .infoCards .descriptoin {
+.main__content .cards .infoCards .descriptoin {
   font-weight: bold;
+}
+
+.showMore .centerShowMore {
+  text-align: center;
+  margin: 0 0 100px;
+  padding: 10px;
+}
+.showMore .centerShowMore button {
+  border: 1px solid black;
+  padding: 6px 12px;
+  font-size: 16px;
+  width: 332.5px;
+  cursor: pointer;
+  border-radius: 0;
+  background-color: white;
+}
+.showMore .centerShowMore button:active {
+  background-color: black;
+  color: white;
+  border: 2.5px solid #7f7f7f;
 }

@@ -1,38 +1,15 @@
 @import './config';
- 
-          
+
 // Nav bar
 @import './components/navi';
 
 // Backgrounder
 @import './components/backgrounder';
-
+  
 // Center content
-// &
+// &    
 // Main content
 @import './components/mainContent';
 
-  
-
-.spacer {
-  padding-bottom: 5000px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// footer 
+@import './components/foot';

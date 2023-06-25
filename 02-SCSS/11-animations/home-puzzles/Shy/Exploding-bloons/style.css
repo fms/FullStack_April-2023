@@ -1,0 +1,105 @@
+.slide-right-1 {
+  animation: slide-right-1 5s steps(200, start) 20ms infinite backwards;
+}
+@keyframes slide-right-1 {
+  0% {
+    transform: translateY(100px) translateX(0px);
+  }
+  33% {
+    transform: translateY(620px) translateX(1200px);
+  }
+  66% {
+    transform: translateY(350px) translateX(1820px);
+  }
+  100% {
+    transform: translateY(100px) translateX(0px);
+  }
+}
+.slide-right-2 {
+  animation: slide-right-2 5s steps(200, start) 20ms infinite backwards;
+}
+@keyframes slide-right-2 {
+  0% {
+    transform: translateY(0px) translateX(500px);
+  }
+  25% {
+    transform: translateY(480px) translateX(0px);
+  }
+  50% {
+    transform: translateY(620px) translateX(300px);
+  }
+  75% {
+    transform: translateY(150px) translateX(1820px);
+  }
+  100% {
+    transform: translateY(0px) translateX(500px);
+  }
+}
+.slide-right-3 {
+  animation: slide-right-3 5s steps(200, start) 20ms infinite backwards;
+}
+@keyframes slide-right-3 {
+  0% {
+    transform: translateY(0px) translateX(1000px);
+  }
+  25% {
+    transform: translateY(620px) translateX(700px);
+  }
+  50% {
+    transform: translateY(0px) translateX(400px);
+  }
+  75% {
+    transform: translateY(620px) translateX(100px);
+  }
+  100% {
+    transform: translateY(0px) translateX(1000px);
+  }
+}
+.slide-right-4 {
+  animation: slide-right-4 5s steps(200, start) 20ms infinite backwards;
+}
+@keyframes slide-right-4 {
+  0% {
+    transform: translateY(620px) translateX(400px);
+  }
+  25% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(200px) translateX(1820px);
+  }
+  75% {
+    transform: translateY(500px) translateX(0px);
+  }
+  100% {
+    transform: translateY(620px) translateX(400px);
+  }
+}
+.container {
+  width: 90%;
+  height: 720px;
+  border: 100px solid aqua;
+  position: relative;
+}
+.container .bloon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  position: absolute;
+  display: block;
+}
+.container .bloon-1 {
+  background-color: #ff0000;
+}
+.container .bloon-2 {
+  background-color: rgb(111, 0, 255);
+}
+.container .bloon-3 {
+  background-color: rgb(39, 151, 24);
+}
+.container .bloon-4 {
+  background-color: rgb(251, 255, 0);
+}
+.container .bloon-1:active {
+  background-color: black;
+}/*# sourceMappingURL=style.css.map */

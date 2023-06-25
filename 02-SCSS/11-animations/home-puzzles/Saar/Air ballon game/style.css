@@ -1,0 +1,228 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 400px auto 0;
+}
+
+.ballons {
+  position: relative;
+  margin-left: 30px;
+  animation-name: flying-ballons;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+  height: 100px;
+  width: 100px;
+  border-radius: 50% 50% 48px 48px;
+  z-index: 1;
+}
+
+@keyframes flying-ballons {
+  0% {
+    bottom: 0px;
+    opacity: 1;
+  }
+  75% {
+    bottom: 790px;
+  }
+  100% {
+    bottom: 790px;
+    background-color: white;
+  }
+}
+@keyframes rope {
+  0% {
+    bottom: 0px;
+  }
+  75% {
+    bottom: 790px;
+  }
+  100% {
+    bottom: -200px;
+  }
+}
+.ballon-one {
+  background-color: blue;
+  animation-delay: 0.5s;
+}
+
+.rope-1 {
+  animation-delay: 0.5s;
+}
+
+.pop-1 {
+  animation-delay: 0.5s;
+}
+
+.ballon-two {
+  background-color: red;
+}
+
+.ballon-three {
+  background-color: yellow;
+  animation-delay: 2s;
+}
+
+.rope-3 {
+  animation-delay: 2s;
+}
+
+.pop-3 {
+  animation-delay: 2s;
+}
+
+.ballon-four {
+  background-color: purple;
+  animation-delay: 1s;
+}
+
+.rope-4 {
+  animation-delay: 1s;
+}
+
+.pop-4 {
+  animation-delay: 1s;
+}
+
+.ballon-five {
+  background-color: pink;
+  animation-delay: 3s;
+}
+
+.rope-5 {
+  animation-delay: 3s;
+}
+
+.pop-5 {
+  animation-delay: 3s;
+}
+
+.ropes {
+  position: relative;
+  left: 80px;
+  margin: 0;
+  padding: 0;
+  animation-name: rope;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+  background-color: gray;
+  border: 1px solid gray;
+  height: 50px;
+  width: 1px;
+  z-index: 1;
+}
+
+.ballon-pack {
+  position: relative;
+}
+.ballon-pack button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  position: absolute;
+  background-color: inherit;
+  z-index: 3;
+  animation-name: rope;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+}
+.ballon-pack button:focus {
+  background-color: white;
+  z-index: 3;
+  height: 1000px;
+  transition: 0.2s;
+}
+
+.button1 {
+  position: relative;
+  bottom: 800px;
+  left: 300px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 40px 10px rgb(127, 250, 148);
+  background-color: inherit;
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid greenyellow;
+  padding: 10px 15px;
+  width: 150px;
+  cursor: pointer;
+  transition: color 0.5s linear;
+}
+.button1:hover {
+  color: #fff;
+}
+.button1::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: greenyellow;
+  z-index: -1;
+  transition: transform 0.5s;
+  transform-origin: left;
+  transition-timing-function: cubic-bezier(0.5, 1.5, 0.4, 0.7);
+  transform: scaleX(0);
+  border-radius: 17px;
+}
+.button1:hover::before {
+  transform: scaleX(1);
+}
+.button1:focus {
+  background-color: greenyellow;
+  color: white;
+}
+
+.button2 {
+  position: relative;
+  bottom: 800px;
+  left: 1200px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 40px 10px rgb(240, 64, 64);
+  background-color: inherit;
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid red;
+  padding: 10px 15px;
+  width: 150px;
+  cursor: pointer;
+  transition: color 0.5s linear;
+}
+.button2:hover {
+  color: #fff;
+}
+.button2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  z-index: -1;
+  transition: transform 0.5s;
+  transform-origin: right;
+  transition-timing-function: cubic-bezier(0.5, 1.5, 0.4, 0.7);
+  transform: scaleX(0);
+  border-radius: 17px;
+}
+.button2:hover::before {
+  transform: scaleX(1);
+}
+.button2:focus {
+  background-color: red;
+  color: #fff;
+}/*# sourceMappingURL=style.css.map */

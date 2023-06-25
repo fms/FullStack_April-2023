@@ -1,0 +1,48 @@
+.container-explore {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 116px;
+}
+
+.title-explore {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+.title-explore p {
+  color: white;
+  font-size: 20px;
+}
+.title-explore p span {
+  font-weight: 900;
+  cursor: pointer;
+}
+
+button {
+  border: none;
+  background-color: #06070d;
+  color: white;
+  font-weight: bolder;
+  font-weight: 900;
+  font-size: 12px;
+}
+button:hover {
+  color: rgb(0, 194, 120);
+}
+
+.row-explore {
+  width: 90vw;
+}
+
+.content-explore-imgs {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 6px;
+}
+.content-explore-imgs img {
+  height: 200px;
+  width: 190px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=3.pride-imgs.css.map */

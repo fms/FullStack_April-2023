@@ -1,0 +1,131 @@
+@import 'config';
+
+.body {
+
+    background: rgb(165, 153, 153);
+}
+
+.heading {
+    @include border();
+    font-size: $font-size--normal;
+    width: 100%;
+    height: 100%;
+    text-align: $centext;
+    background-size: 50% 100%;
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 80PX;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 1;
+    grid-column-end: 6;
+}
+
+.main_container {
+    display: grid;
+    grid-template-columns: 500px repeat(4, 700px);
+    grid-template-rows: 400px 600px 90px 600px 90px 90px;
+    height: 600px;
+    gap: 25px;
+}
+
+.menu {
+    @include border();
+    height: 91.5%;
+    grid-row-start: 2;
+    grid-row-end: 8;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    background-color: rgb(205, 184, 156);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+}
+
+.menu_button {
+    @include border();
+    font-size: xx-large;
+    background-color: rgb(206, 178, 150);
+    color: white;
+
+    &:hover {
+        background-color: rgb(203, 79, 2);
+    }
+
+}
+
+.picbox {
+    @include border();
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: $centext;
+    transition: transform 1s ease-in;
+
+    &__underpic {
+        height: 95%;
+        width: 98%;
+        background-color: black;
+        color: wheat;
+        opacity: 0.1;
+        text-align: $centext;
+        margin: center;
+        font-size: 85px;
+        ;
+        transition: transform 1s ease-in-out;
+    }
+
+    &__underpic:hover {
+        @include border();
+        transform: translateY(-65px);
+        color: rgb(255, 255, 255);
+        background-color: rgb(2, 2, 2);
+        opacity: 1;
+    }
+}
+
+.picbox:hover {
+    transform: scale(1.1);
+}
+
+.runnig_header {
+    font-size: 35px;
+    height: 40px;
+    width: 100%;
+    //background-color: black;
+    color: white;
+    animation: slide-in-left 17s linear infinite;
+}
+
+.slide-in-left {
+    animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateX(30%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(50%);
+        opacity: 1;
+    }
+}
+
+.bottom_div {
+
+    background-color: black;
+    grid-row-start: 6;
+    grid-column-start: 1;
+    grid-column-end: 6;
+    color: bisque;
+    font-size: 250%;
+    text-align: center;
+
+
+}

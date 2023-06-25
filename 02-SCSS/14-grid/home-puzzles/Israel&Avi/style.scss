@@ -60,17 +60,19 @@ body {
             padding-right: 22px;
             display: flex;
 
-            &__arrow {
+            img {
                 height: 8px;
                 width: 8px;
                 margin-left: -4px;
                 margin-top: 18px;
+                
             }
 
             &__icon {
-                height: 18px;
-                width: 22px;
-                margin-top: 11px;
+                height: 18px !important;
+                width: 22px !important;
+                margin-top: 11px !important;
+                
             }
         }
 
@@ -89,7 +91,8 @@ body {
         }
 
         &__searchbox {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(15,1fr);
 
             input {
                 width: 650px;
@@ -238,7 +241,8 @@ body {
                     margin-top: 20px;
                     width: 700px;
                     height: 190px;
-                    background-image: url(https://answers.unity.com/storage/temp/135164-fade.png);
+                    background: rgb(24,0,36);
+                    background: linear-gradient(90deg, rgba(24,0,36,1) 0%, rgba(191,68,110,1) 0%, rgba(0,112,255,1) 100%);
 
                     h4 {
                         position: absolute;
@@ -290,6 +294,7 @@ body {
                 width: 240px;
                 background-image: linear-gradient(to right bottom, #b51bbc, #b54bbf, #b569bf, #b583bf, #b59abc);
                 margin-top: 50px;
+                
 
 
                 &__profile {
@@ -432,11 +437,9 @@ body {
                 color: #A69999;
             }
 
-            &__productflex {
-                display: flex;
-
-
-
+            &__productgrid {
+                display: grid;
+                grid-template-columns: repeat(6,1fr);
 
             }
 
@@ -464,44 +467,39 @@ body {
                 &__producttext {
 
                     font-weight: bold;
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 40px;
                     margin-bottom: 40px;
-
-
-
-
                 }
 
                 .producttext1 {
                     color: red;
                     font-size: 22px;
+                    margin-right: 40px;
+                    margin-left: 10px;
 
 
                 }
 
-                .producttext2 {
+                // .producttext2 {
 
-                    color: #A69999;
+                    // color: #A69999;
 
-                }
+                // }
 
-
-
-                &__orders {
-                    margin-left: -93px;
-                    margin-top: 25px;
+                p {
+                    margin-left: 10px;
+                    margin-top: 5px;
                     font-size: 13px;
                     color: rgb(107, 106, 106);
-                    position: absolute;
+                    position: absolute;  
                 }
+
+
 
 
             }
 
             .first {
-                margin-left: 25px;
+                margin-left: 10px;
             }
 
 
@@ -510,7 +508,6 @@ body {
         //israel
 
         &__more {
-            // display:grid;
             height: 80px;
 
             p {
@@ -537,7 +534,6 @@ body {
         &__products {
             width: 100%;
             height: auto;
-            flex-wrap: wrap;
             display: grid;
             grid-template-columns: repeat(6, 1fr);
             justify-content: space-around;

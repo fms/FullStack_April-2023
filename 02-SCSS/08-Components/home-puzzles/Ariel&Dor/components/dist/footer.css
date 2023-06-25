@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  direction: rtl;
+}
+
+.footers {
+  background-color: #2e2c2d;
+}
+.footers .flexContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: none;
+  padding-bottom: 250px;
+}
