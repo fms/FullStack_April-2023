@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  direction: ltr;
+}
+
+img {
+  width: 15px;
+  height: 20px;
+}
+
+nav .navBar {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+nav .navBar .item {
+  padding: 15px;
+}
+nav .navBar .logoNavBar {
+  margin-left: 50px;
+}
+nav .navBar .logoNavBar img {
+  width: 55px;
+  height: 45px;
+}
+nav .navBar .ulNavBar {
+  padding-right: 100px;
+  margin-right: 250px;
+}
+nav .navBar .ulNavBar ul {
+  display: flex;
+  justify-content: none;
+  flex-direction: row;
+}
+nav .navBar .ulNavBar ul .first {
+  color: black;
+}
+nav .navBar .ulNavBar ul li {
+  padding: 15px 30px 0;
+  list-style-type: none;
+  font-weight: bold;
+}
+nav .navBar .ulNavBar ul li a {
+  text-decoration: none;
+  color: #827e7e;
+}
+nav .navBar .ulNavBar ul li .AD {
+  width: 18px;
+  height: 10px;
+}
+nav .navBar .searchNavBar input {
+  border: 1px solid #bdb9b9;
+  border-radius: 20px;
+  padding: 10px;
+  padding: 0 0 0 15px;
+}
+nav .navBar .usaNavBar span {
+  border: 1px solid #bdb9b9;
+  border-radius: 20px;
+  padding: 8px;
+}
