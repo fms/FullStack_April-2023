@@ -47,23 +47,23 @@ h1 {
   border-radius: 5%;
   background-image: url(https://upload.wikimedia.org/wikipedia/commons/c/c8/Altja_j%C3%B5gi_Lahemaal.jpg);
 }
-.grid-like__medium {
+.grid-like .medium {
   display: flex;
 }
-.grid-like__medium__sky {
+.grid-like .medium .sky {
   border-radius: 5%;
   margin-left: 1rem;
   width: 610px;
   height: 250px;
   background-image: url(https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg?w=2000);
 }
-.grid-like__medium__smallcon {
+.grid-like .medium .smallcon {
   position: absolute;
   display: flex;
   flex-direction: row;
   margin-top: 260px;
 }
-.grid-like__medium__smallcon__little {
+.grid-like .medium .smallcon .little {
   border-radius: 5%;
   margin-left: 1rem;
   width: 300px;
