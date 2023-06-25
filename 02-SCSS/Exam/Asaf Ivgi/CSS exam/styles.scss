@@ -2,50 +2,48 @@
 	-webkit-animation: scale-up-center 2s linear infinite alternate both;
 	animation: scale-up-center 2s linear infinite alternate both;
     grid-row-start: span 2;
-    // align-items: center;
 }
 
 .top-navbar {
     display: grid;
     height: 50px;
-    background-color: purple;
+    // background-color: purple;
     grid-template-columns: 2fr 1fr 1fr;
     gap: 10px;
 
     &__logo {
         display: flex;
         align-items: center;
-        background-color: grey;
-        // padding-left: 10px;
+        // background-color: grey;
     }
 
     &__search-button {
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: red;
+        // background-color: red;
     }
 
     &__profile-button {
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: pink;
+        // background-color: pink;
     }
 }
 
 .main-content {
-    background-color: bisque;
+    // background-color: bisque;
     padding: 5px;
 
     &__header {
-        background-color: aqua;
+        // background-color: aqua;
         display: flex;
         align-items: center;
         flex-wrap: wrap;
     }
     &__details {
-        background-color: teal;
+        // background-color: teal;
         display: flex;
         flex-wrap: wrap;
     }
@@ -69,7 +67,7 @@
 }
 
 .about-section {
-    background-color: greenyellow;
+    // background-color: greenyellow;
 
     &__buttons {
         display: flex;
@@ -79,12 +77,23 @@
             margin: 5px;
             border: solid 1px black;
             background-color: transparent;
-            border-radius: 30%;
+            border-radius: 25px;
         }
+
+        &__a-button:hover {
+            background-color: black;
+            color: white;
+        }
+
+        // &__a-button:target {
+        //     background-color: black;
+        //     color: white;
+        // }
     }
 
     &__facilities {
-        background-color: darkgreen;
+        // background-color: darkgreen;
+        display: block;
     }
 
     &__reviews {

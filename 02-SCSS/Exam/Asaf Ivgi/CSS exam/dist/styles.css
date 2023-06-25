@@ -7,40 +7,33 @@
 .top-navbar {
   display: grid;
   height: 50px;
-  background-color: purple;
   grid-template-columns: 2fr 1fr 1fr;
   gap: 10px;
 }
 .top-navbar__logo {
   display: flex;
   align-items: center;
-  background-color: grey;
 }
 .top-navbar__search-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: red;
 }
 .top-navbar__profile-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: pink;
 }
 
 .main-content {
-  background-color: bisque;
   padding: 5px;
 }
 .main-content__header {
-  background-color: aqua;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 }
 .main-content__details {
-  background-color: teal;
   display: flex;
   flex-wrap: wrap;
 }
@@ -62,9 +55,6 @@
   grid-area: sml-img-3;
 }
 
-.about-section {
-  background-color: greenyellow;
-}
 .about-section__buttons {
   display: flex;
 }
@@ -73,10 +63,14 @@
   margin: 5px;
   border: solid 1px black;
   background-color: transparent;
-  border-radius: 30%;
+  border-radius: 25px;
+}
+.about-section__buttons__a-button:hover {
+  background-color: black;
+  color: white;
 }
 .about-section__facilities {
-  background-color: darkgreen;
+  display: block;
 }
 .about-section__reviews {
   border: 1.5px solid grey;
