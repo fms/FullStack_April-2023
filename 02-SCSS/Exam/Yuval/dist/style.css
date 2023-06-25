@@ -284,3 +284,37 @@
     animation: number 2s infinite;
   }
 }
+@media screen and (max-width: 600px) {
+  .topbar {
+    display: flex;
+    flex-direction: row;
+  }
+  .topbar__left * {
+    display: none;
+  }
+  .topbar__left img {
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
+  .topbar__right * {
+    display: none;
+  }
+  .topbar__right .profile {
+    display: flex;
+    flex-direction: row;
+    width: 50px;
+    gap: 5px;
+    border: 1px solid gray;
+    border-radius: 30px;
+    margin-bottom: 5px;
+  }
+  .topbar__right .profile i, .topbar__right .profile img {
+    display: block;
+    align-self: center;
+  }
+  .topbar__right .profile img {
+    width: 20px;
+    height: 20px;
+  }
+}

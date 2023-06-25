@@ -335,7 +335,46 @@ $margLeft: 20px;
 
 
 @media screen and (max-width: 600px) {
+    .topbar {
+        @include flexed();
+
+        &__left {
+            * {
+                display: none;
+            }
     
+            img {
+                display: block;
+                width: $imgSize;
+                height: $imgSize;
+            }
+        }
+    
+        &__right {
+            * {
+                display: none;
+            }
+    
+            .profile {
+                @include flexed();
+                width: 50px;
+                gap: $smallGap;
+                border: $border;
+                border-radius: $borderRad;
+                margin-bottom: $smallGap;
+    
+                i, img{
+                    display: block;
+                    align-self: center; 
+                }    
+    
+                img {
+                    width: $imgSize;
+                    height: $imgSize; 
+                }  
+            }
+        }
+    }
 }
 
 
