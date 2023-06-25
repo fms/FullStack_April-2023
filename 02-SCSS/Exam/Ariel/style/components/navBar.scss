@@ -1,4 +1,6 @@
-nav { 
+@import '../config';
+
+.nav { 
   
   .navBar {
     @include flexer(flex, center, row);

@@ -14,22 +14,6 @@ a {
   text-decoration: none;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Open Sans", sans-serif;
-  direction: ltr;
-}
-
-img {
-  width: 15px;
-  height: 20px;
-}
-
-a {
-  text-decoration: none;
-}
-
 .nav .navBar {
   display: flex;
   justify-content: center;

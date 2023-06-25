@@ -1,143 +1,36 @@
 @import './config';
 
-nav {
+@import './components/navBar';
 
-  .navBar {
-    @include flexer(flex, space-around, row);
-    // margin: 0 80px;
-    .item {
-      padding: 15px;
-    }
-
-    .logoNavBar {
-      margin-left: 50px;
-      img {
-        @include imgSizer(55px, 45px); 
-      }
-    }
-
-    .ulNavBar {
-      padding-right: 100px;
-      margin-right: 120px;
-
-      ul {
-        @include flexer(flex, none, row);
-
-        .first {
-          color: black;
-        }
-        li {
-          // width: 50%;
-          padding: 10px 30px 0;
-          list-style-type: none;
-          font-weight: bold;
-
-          a {
-            text-decoration: none;
-            color: #827e7e;
-          }
-
-          .AD {
-            @include imgSizer(18px, 10px);
-          }
-        }
-        
-      }
-    }
-
-    .searchNavBar {
-      img {
-        @include imgSizer(25px, 25px);
-        position: relative;
-        top: 7px;
-        left: 43px;
-      }
-      input {
-        @include navBorder(1px solid #bdb9b9, 20px, 10px);
-        padding-left: 40px;
-      }
-    }
-
-    .usaNavBar {
-      a {
-        .mainSpanUsaNavBar {
-        @include navBorder(1px solid #bdb9b9, 20px, 8px);
-
-          .iconUsa {
-            @include imgSizer(25px, 25px); 
-            position: relative;
-            top: 6px;
-          }
-          .AD2 {
-            @include imgSizer(18px, 10px);
-          }
-        }
-      }
-
-    }
-
-    .heartIconNavBar {
-      .spanHeartIconNavBar {
-        @include navBorder(1px solid #bdb9b9, 20px, 8px);
-        img {
-          @include imgSizer(25px, 25px); 
-          position: relative;
-          top: 7px;
-        }
-      }
-    }
-
-    .profileNavBar {
-
-      .spanProfileNavBar {
-        @include navBorder(1px solid #bdb9b9, 20px, 8px);
-        
-        img {
-          position: relative;
-          top: 3px;
-        }
-        .hamburgerIconProfileNavBar {
-          @include imgSizer(18px, 18px); 
-        }
-
-        .profileIconProfileNavBar {
-          @include imgSizer(23px, 23px); 
-        }
-      }
-    }
-
-  }
-}
-
-@media only screen and (max-width:1024px) {
-  nav {
-    .navBar {
-      .item {
-        padding: 15px 0px;
-        padding-left: 5px;
-    }
-    .logoNavBar {
-      margin-left: 0px;
+// @media only screen and (max-width:1024px) {
+//   nav {
+//     .navBar {
+//       .item {
+//         padding: 15px 0px;
+//         padding-left: 5px;
+//     }
+//     .logoNavBar {
+//       margin-left: 0px;
       
-      img {
-        @include imgSizer(30px, 32px);
-      }
-    }
+//       img {
+//         @include imgSizer(30px, 32px);
+//       }
+//     }
 
-    .ulNavBar {
-      ul {
-        position: absolute;
-        left: 45px;
-        top: 3px;
-      }
-      li {
-        margin-top: 10px;
-        // margin-bottom: 10px;
-        padding: 10px 0 10px;
-      }
-    }
-  }
-    }
+//     .ulNavBar {
+//       ul {
+//         position: absolute;
+//         left: 45px;
+//         top: 3px;
+//       }
+//       li {
+//         margin-top: 10px;
+//         // margin-bottom: 10px;
+//         padding: 10px 0 10px;
+//       }
+//     }
+//   }
+//     }
     
   
-}
+// } 
