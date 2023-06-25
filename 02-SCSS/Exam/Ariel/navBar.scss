@@ -1,0 +1,113 @@
+nav { 
+  
+  .navBar {
+    @include flexer(flex, center, row);
+    
+    .item {
+      padding: 5px;
+    }
+
+    .logoNavBar {
+      margin: 0 50px 0 0;
+      @include flexer(flex, none, none);
+      align-items: center;
+      img {
+        @include imgSizer(55px, 34px);
+      }
+    }
+
+    .ulNavBar {
+      margin-right: 300px;
+      
+      ul {
+        @include flexer(flex, none, none);
+        
+        .first {
+          color: black;
+        }
+        li {
+          padding: 10px 0 0 0;
+          margin: 0 60px 0 0;
+          list-style-type: none;
+          font-weight: bold;
+
+          a {
+            text-decoration: none;
+            color: #827e7e;
+          }
+
+          .AD {
+            @include imgSizer(18px, 10px);
+          }
+        }
+        li:hover {
+          border-bottom: 2px solid black;
+        } 
+      }
+    }
+
+    .searchNavBar {
+      img {
+        @include imgSizer(25px, 25px);
+        position: relative;
+        top: 15%;
+        left: 17%;
+      }
+      input {
+        @include navBorder(1px solid #bdb9b9, 20px, 10px);
+        padding-left: 40px;
+      }
+    }
+
+    .usaNavBar {
+      a {
+        .mainSpanUsaNavBar {
+        @include navBorder(1px solid #bdb9b9, 20px, 8px);
+
+          .iconUsa {
+            @include imgSizer(25px, 25px); 
+            position: relative;
+            top: 6px;
+          }
+          .AD2 {
+            @include imgSizer(18px, 10px);
+          }
+        }
+      }
+
+    }
+
+    .heartIconNavBar {
+      .spanHeartIconNavBar {
+        @include navBorder(1px solid #bdb9b9, 20px, 8px);
+        img {
+          @include imgSizer(25px, 25px); 
+          position: relative;
+          top: 7px;
+        }
+      }
+    }
+
+    .profileNavBar {
+      
+
+      .spanProfileNavBar {
+        @include navBorder(1px solid #bdb9b9, 20px, 8px);
+        position: relative;
+        top: 1.5px;
+
+        img {
+          position: relative;
+          top: 3px;
+        }
+        .hamburgerIconProfileNavBar {
+          @include imgSizer(18px, 20px); 
+        }
+
+        .profileIconProfileNavBar {
+          @include imgSizer(23px, 24px); 
+        }
+      }
+    }
+  }
+}
