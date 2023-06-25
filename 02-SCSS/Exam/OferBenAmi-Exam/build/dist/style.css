@@ -1,0 +1,229 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+nav {
+  position: fixed;
+  background-color: white;
+  z-index: 3;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  border-bottom-color: #bebdbd;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+nav .left-nav-items {
+  padding-left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1vw;
+}
+nav .left-nav-items img {
+  width: 100px;
+}
+nav .left-nav-items a {
+  font-size: 22px;
+  text-decoration: none;
+  color: black;
+  padding: 15px;
+  border-radius: 30px;
+  transition: background-color 0.3s, color 0.3s;
+}
+nav .left-nav-items a:focus {
+  background-color: black;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+nav .right-nav-items {
+  padding-right: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+nav .right-nav-items input {
+  padding: 15px;
+  border-radius: 30px;
+  border-width: 1px;
+}
+nav .right-nav-items .currency-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 7px;
+  border-radius: 30px;
+  border-width: 1px;
+  border-color: #4b4a4a;
+}
+nav .right-nav-items .currency-btn img {
+  width: 30px;
+  margin-left: 5px;
+}
+nav .right-nav-items .like-btn {
+  width: 60px;
+  padding: 10px 15px;
+  background-color: white;
+  border-radius: 30px;
+  border-width: 1px;
+  border-color: #4b4a4a;
+}
+nav .right-nav-items .menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px;
+  border-radius: 30px;
+  border-width: 1px;
+  background-color: white;
+  border-color: #4b4a4a;
+}
+nav .right-nav-items .menu-btn img:first-child {
+  width: 20px;
+}
+nav .right-nav-items .menu-btn img:last-child {
+  width: 40px;
+}
+
+.mainConteiner {
+  position: relative;
+  margin-top: 80px;
+}
+.mainConteiner__booking {
+  padding: 0 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom-color: #bebdbd;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  height: 70px;
+}
+.mainConteiner__booking__choose-date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mainConteiner__booking__choose-date img {
+  width: 7px;
+  margin-right: 10px;
+}
+.mainConteiner__booking__middle-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.mainConteiner__booking__middle-section button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: #f9fbfc;
+  border: 0;
+}
+.mainConteiner__booking__middle-section button img {
+  width: 10px;
+}
+.mainConteiner__booking__right-section span {
+  color: #34987d;
+  font-weight: 600;
+}
+.mainConteiner__booking__right-section button {
+  background-color: #34987d;
+  color: white;
+  font-size: 16px;
+  border: 0;
+  padding: 15px 30px;
+  border-radius: 30px;
+}
+.mainConteiner__main-content {
+  padding: 30px clamp(30px, 10vw, 300px);
+}
+.mainConteiner__main-content h4 {
+  padding: 15px 0;
+  font-weight: 400;
+}
+.mainConteiner__main-content h4 span {
+  color: grey;
+}
+.mainConteiner__main-content__hotel-description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mainConteiner__main-content__hotel-description__left-section h1 {
+  padding: 10px 0;
+}
+.mainConteiner__main-content__hotel-description__left-section span {
+  margin-top: 20px;
+}
+.mainConteiner__main-content__hotel-description__left-section span img {
+  width: 20px;
+}
+.mainConteiner__main-content__hotel-description__left-section span .location-img {
+  width: 13px;
+}
+.mainConteiner__main-content__hotel-description__right-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.mainConteiner__main-content__hotel-description__right-section button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 25px;
+}
+.mainConteiner__main-content__hotel-description__right-section button img {
+  width: 20px;
+}
+.mainConteiner__main-content__img-grid {
+  margin: 30px 0;
+  width: 100%;
+  height: 500px;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "first first second second" "first first third forth";
+}
+.mainConteiner__main-content__img-grid div:nth-child(1) {
+  grid-area: first;
+  background-image: url(../../build/resources/picturs/hotel-imgs/francesca-saraco-_dS27XGgRyQ-unsplash.jpg);
+  background-size: 100%;
+  border-radius: 30px;
+}
+.mainConteiner__main-content__img-grid div:nth-child(2) {
+  grid-area: second;
+  background-image: url(../../build/resources/picturs/hotel-imgs/ultrawide.webp);
+  background-size: 100%;
+  border-radius: 30px;
+}
+.mainConteiner__main-content__img-grid div:nth-child(3) {
+  grid-area: third;
+  background-image: url(../../build/resources/picturs/hotel-imgs/vojtech-bruzek-Yrxr3bsPdS0-unsplash.jpg);
+  background-size: 100%;
+  border-radius: 30px;
+}
+.mainConteiner__main-content__img-grid div:nth-child(4) {
+  grid-area: forth;
+  background-image: url(../../build/resources/picturs/hotel-imgs/roberto-nickson-emqnSQwQQDo-unsplash.jpg);
+  background-size: cover;
+  border-radius: 30px;
+}

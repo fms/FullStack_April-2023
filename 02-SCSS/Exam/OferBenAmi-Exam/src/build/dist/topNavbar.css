@@ -1,0 +1,85 @@
+nav {
+  position: fixed;
+  background-color: white;
+  z-index: 3;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  border-bottom-color: #bebdbd;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+nav .left-nav-items {
+  padding-left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1vw;
+}
+nav .left-nav-items img {
+  width: 100px;
+}
+nav .left-nav-items a {
+  font-size: 22px;
+  text-decoration: none;
+  color: black;
+  padding: 15px;
+  border-radius: 30px;
+  transition: background-color 0.3s, color 0.3s;
+}
+nav .left-nav-items a:focus {
+  background-color: black;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+nav .right-nav-items {
+  padding-right: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+nav .right-nav-items input {
+  padding: 15px;
+  border-radius: 30px;
+  border-width: 1px;
+}
+nav .right-nav-items .currency-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 7px;
+  border-radius: 30px;
+  border-width: 1px;
+  border-color: #4b4a4a;
+}
+nav .right-nav-items .currency-btn img {
+  width: 30px;
+  margin-left: 5px;
+}
+nav .right-nav-items .like-btn {
+  width: 60px;
+  padding: 10px 15px;
+  background-color: white;
+  border-radius: 30px;
+  border-width: 1px;
+  border-color: #4b4a4a;
+}
+nav .right-nav-items .menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px;
+  border-radius: 30px;
+  border-width: 1px;
+  background-color: white;
+  border-color: #4b4a4a;
+}
+nav .right-nav-items .menu-btn img:first-child {
+  width: 20px;
+}
+nav .right-nav-items .menu-btn img:last-child {
+  width: 40px;
+}

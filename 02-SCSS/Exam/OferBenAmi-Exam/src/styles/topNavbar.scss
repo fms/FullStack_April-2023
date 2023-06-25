@@ -1,0 +1,92 @@
+@import './mixins';
+nav {
+  position: fixed;
+  background-color: white;
+  z-index: 3;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  border-bottom-color: rgb(190, 189, 189);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+
+  .left-nav-items {
+    padding-left: 30px;
+    @include flex-row();
+    gap: 1vw;
+
+    img {
+      width: 100px;
+    }
+
+    a {
+      font-size: 22px;
+      text-decoration: none;
+      color: black;
+      padding: 15px;
+      border-radius: 30px;
+      transition: background-color 0.3s, color 0.3s;
+
+      &:focus {
+        background-color: black;
+        color: white;
+        box-shadow: 0 0 10px rgba(black, 0.5);
+      }
+    }
+  }
+
+  .right-nav-items {
+    padding-right: 30px;
+    @include flex-row();
+    gap: 1rem;
+
+    input {
+      padding: 15px;
+      border-radius: 30px;
+      border-width: 1px;
+
+    }
+
+    .currency-btn {
+      @include flex-row();
+      background-color: white;
+      padding: 7px;
+      border-radius: 30px;
+      border-width: 1px;
+      border-color: rgb(75, 74, 74);
+
+      img {
+        width: 30px;
+        margin-left: 5px;
+      }
+    }
+
+    .like-btn {
+      width: 60px;
+      padding: 10px 15px;
+      background-color: white;
+      border-radius: 30px;
+      border-width: 1px;
+      border-color: rgb(75, 74, 74);
+    }
+
+    .menu-btn {
+     
+      @include flex-row();
+      padding: 7px;
+      border-radius: 30px;
+      border-width: 1px;
+      background-color: white;
+      border-color: rgb(75, 74, 74);
+      img:first-child {
+        width: 20px;
+      }
+
+      img:last-child {
+        width: 40px;
+      }
+    }
+
+  }
+}
