@@ -1,0 +1,236 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.wrapper {
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.nav-imgs {
+  display: flex;
+  justify-content: space-between;
+  padding: 2vw;
+
+  .nav-right {
+    display: flex;
+    border: 1px solid rgb(206, 203, 203);
+    border-radius: 2rem;
+    padding: 0.5rem;
+
+    img {
+      width: 10vw;
+    }
+
+    i {
+      font-size: 5vw;
+      margin-top: 1rem;
+      margin-right: 1rem;
+    }
+  }
+
+  .nav-left {
+    img {
+      width: 12vw;
+    }
+  }
+}
+
+.header-categories {
+  p {
+    font-weight: bolder;
+  }
+
+  span {
+    font-weight: 100;
+  }
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+
+  .title-buttons {
+    display: flex;
+    justify-content: flex-end;
+
+    i {
+      font-size: 3vw;
+    }
+
+    button {
+      width: 5rem;
+      border-radius: 3rem;
+      border: none;
+      margin: 0.2rem;
+    }
+  }
+}
+
+.details-about {
+  margin-top: 2rem;
+  width: 70vw;
+
+  i {
+    padding: 2%;
+  }
+
+  span {
+    font-size: 120%;
+  }
+}
+
+.main-images {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0.5rem;
+
+  img {
+    width: 30vw;
+    border-radius: 2rem;
+  }
+
+  .first-img {
+    width: 91vw;
+    height: 20rem;
+    grid-column: 1 / span 3;
+  }
+}
+
+.overview-buttons {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-around;
+
+  button {
+    width: 10rem;
+    font-size: 1.3rem;
+    border-radius: 2rem;
+    border: 1px solid rgb(207, 206, 206);
+    border-width: 0.5px;
+    background-color: white;
+  }
+
+  button:hover {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.856);
+  }
+}
+
+.para-about {
+  margin-top: 3rem;
+  p {
+    line-height: 1.5rem;
+  }
+  a {
+    text-decoration: none;
+    color: blue;
+  }
+}
+
+.facilities {
+  margin-top: 3rem;
+  width: 11rem;
+
+  .facilities-container {
+    line-height: 3rem;
+
+    i {
+      font-size: 1.5rem;
+      margin-right: 0.5rem;
+    }
+
+    span {
+      font-weight: bolder;
+      font-size: 1rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: blue;
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.booking {
+  display: flex;
+  justify-content: space-between;
+  .price {
+    p {
+      font-weight: 600;
+    }
+    span {
+      color: rgb(6, 158, 108);
+      font-size: 1.5rem;
+    }
+  }
+
+  .button-booking {
+    margin-top: 1rem;
+    position: sticky;
+    background-color: white;
+
+    button {
+      width: 10rem;
+      height: 4rem;
+      font-size: 1rem;
+      background-color: rgb(6, 158, 108);
+      border-radius: 2rem;
+      border: none;
+      color: white;
+    }
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+}
+
+@media (min-width: 1025px) {
+  .nav-imgs {
+    img {
+      max-width: 6rem;
+      max-height: 6rem;
+    }
+    .nav-right {
+      border: none;
+      img {
+        max-width: 4rem;
+        max-height: 4rem;
+      }
+      i {
+        font-size: 2rem;
+      }
+    }
+  }
+
+
+
+  .overview-buttons {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: flex-start;
+
+    button {
+      margin: 0.5rem;
+    }
+  }
+
+  .facilities{
+    display: none;
+  }
+  
+  .para-about{
+   p{
+    width: 40rem;
+   } 
+  }
+
+}

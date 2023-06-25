@@ -1,0 +1,199 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.wrapper {
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.nav-imgs {
+  display: flex;
+  justify-content: space-between;
+  padding: 2vw;
+}
+.nav-imgs .nav-right {
+  display: flex;
+  border: 1px solid #cecbcb;
+  border-radius: 2rem;
+  padding: 0.5rem;
+}
+.nav-imgs .nav-right img {
+  width: 10vw;
+}
+.nav-imgs .nav-right i {
+  font-size: 5vw;
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+.nav-imgs .nav-left img {
+  width: 12vw;
+}
+
+.header-categories p {
+  font-weight: bolder;
+}
+.header-categories span {
+  font-weight: 100;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+}
+.title .title-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+.title .title-buttons i {
+  font-size: 3vw;
+}
+.title .title-buttons button {
+  width: 5rem;
+  border-radius: 3rem;
+  border: none;
+  margin: 0.2rem;
+}
+
+.details-about {
+  margin-top: 2rem;
+  width: 70vw;
+}
+.details-about i {
+  padding: 2%;
+}
+.details-about span {
+  font-size: 120%;
+}
+
+.main-images {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0.5rem;
+}
+.main-images img {
+  width: 30vw;
+  border-radius: 2rem;
+}
+.main-images .first-img {
+  width: 91vw;
+  height: 20rem;
+  grid-column: 1/span 3;
+}
+
+.overview-buttons {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-around;
+}
+.overview-buttons button {
+  width: 10rem;
+  font-size: 1.3rem;
+  border-radius: 2rem;
+  border: 1px solid #cfcece;
+  border-width: 0.5px;
+  background-color: white;
+}
+.overview-buttons button:hover {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.856);
+}
+
+.para-about {
+  margin-top: 3rem;
+}
+.para-about p {
+  line-height: 1.5rem;
+}
+.para-about a {
+  text-decoration: none;
+  color: blue;
+}
+
+.facilities {
+  margin-top: 3rem;
+  width: 11rem;
+}
+.facilities .facilities-container {
+  line-height: 3rem;
+}
+.facilities .facilities-container i {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+.facilities .facilities-container span {
+  font-weight: bolder;
+  font-size: 1rem;
+}
+.facilities .facilities-container a {
+  text-decoration: none;
+  color: blue;
+  font-size: 1.1rem;
+}
+
+.booking {
+  display: flex;
+  justify-content: space-between;
+}
+.booking .price p {
+  font-weight: 600;
+}
+.booking .price span {
+  color: #069e6c;
+  font-size: 1.5rem;
+}
+.booking .button-booking {
+  margin-top: 1rem;
+  position: sticky;
+  background-color: white;
+}
+.booking .button-booking button {
+  width: 10rem;
+  height: 4rem;
+  font-size: 1rem;
+  background-color: #069e6c;
+  border-radius: 2rem;
+  border: none;
+  color: white;
+}
+
+@media (min-width: 1025px) {
+  .nav-imgs img {
+    max-width: 6rem;
+    max-height: 6rem;
+  }
+  .nav-imgs .nav-right {
+    border: none;
+  }
+  .nav-imgs .nav-right img {
+    max-width: 4rem;
+    max-height: 4rem;
+  }
+  .nav-imgs .nav-right i {
+    font-size: 2rem;
+  }
+
+  .overview-buttons {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .overview-buttons button {
+    margin: 0.5rem;
+  }
+
+  .facilities {
+    display: none;
+  }
+
+  .para-about p {
+    width: 40rem;
+  }
+}
