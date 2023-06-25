@@ -38,7 +38,7 @@
     background-color: rgb(46, 44, 45);
     font-family: sans-serif;
     font-size: 20px;
-    letter-spacing: 0.3px;
+    // letter-spacing: 0.3px;
     direction: ltr;
     height: 84px;
 
@@ -48,12 +48,11 @@
         background-color: rgb(0, 122, 184);
         display: flex;
         justify-content: space-around;
-        width: 204px;
-        height: 84px;
+        @include imgSizer (204px, 84px);
+
 
         .img__icon-1 {
-          height: 78px;
-          width: 174px;
+          @include imgSizer (174px, 78px);
           padding-top: 2px;
         }
       }
@@ -93,8 +92,7 @@
       input {
         border: 1px solid #a5a5a5;
         background: none;
-        height: 100%;
-        width: 82%;
+        @include imgSizer (82%, 100%);
         direction: rtl;
         padding: 1px 15px 1px 5px;
         color: white;
@@ -108,7 +106,7 @@
         height: 30px;
         position: relative;
         bottom: 31px;
-        right: 135px;
+        right: 134px;
         cursor: pointer;
       }
     }

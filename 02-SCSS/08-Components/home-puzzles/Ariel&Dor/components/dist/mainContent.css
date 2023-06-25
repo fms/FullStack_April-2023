@@ -1,4 +1,5 @@
 * {
+  padding: 0;
   margin: 0;
   font-family: "Open Sans", sans-serif;
   direction: rtl;
@@ -50,7 +51,8 @@
   font-size: 16px;
   color: #61696d;
   font-family: "Open Sans", sans-serif;
-  width: 314.54px;
+  min-width: 311px;
+  max-width: 311.1px;
   margin-right: 47px;
 }
 .headerMainContent .selectHeaderMainContent:hover {
@@ -69,6 +71,9 @@
   flex-direction: none;
   width: 70%;
 }
+.headerMainContent .resultsProductsCards .w1 {
+  font-size: 14px;
+}
 
 .main__content {
   display: flex;
@@ -81,10 +86,14 @@
 }
 .main__content .select__filtering .rest__button .btn__rest__button {
   font-size: 16px;
-  padding: 10px 128px;
+  padding: 6px 12px;
   background-color: white;
   border: 1px black solid;
   color: #61696d;
+  min-width: 311px;
+  max-width: 311.1px;
+  min-height: 38px;
+  max-height: 38.1px;
   cursor: pointer;
 }
 .main__content .select__filtering .rest__button .btn__rest__button:hover {
@@ -159,7 +168,8 @@
   justify-content: none;
   flex-direction: column;
   text-align: center;
-  padding: 0.6875rem 0 3rem;
+  padding: 0.6875rem 0 64px;
+  font-size: 14px;
 }
 .main__content .cards .infoCards .palateColorFlexer {
   display: flex;
@@ -265,4 +275,24 @@
 }
 .main__content .cards .infoCards .descriptoin {
   font-weight: bold;
+}
+
+.showMore .centerShowMore {
+  text-align: center;
+  margin: 0 0 100px;
+  padding: 10px;
+}
+.showMore .centerShowMore button {
+  border: 1px solid black;
+  padding: 6px 12px;
+  font-size: 16px;
+  width: 332.5px;
+  cursor: pointer;
+  border-radius: 0;
+  background-color: white;
+}
+.showMore .centerShowMore button:active {
+  background-color: black;
+  color: white;
+  border: 2.5px solid #7f7f7f;
 }

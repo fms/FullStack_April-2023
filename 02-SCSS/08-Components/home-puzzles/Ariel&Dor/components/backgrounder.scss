@@ -1,20 +1,22 @@
 // Backgrounder
 
 .backgrounder {
-  padding-top: 50px;
-
+  padding-top: 131px;
 
   img {
-  width: 1519px;
+    @include imgSizer (1519px, 384px);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 85.25%, 10% 100%, 0% 100%);
+
+    background: rgb(255, 255, 255);
   }
 
   .over__img{
     position: absolute;
-    top: 420px;
-    left: 1135px;
+    top: 275px;
+    left: 1205px;
     background-color: black;
     color: white;
-    padding: 20px 50px 20px 35px;
-    font-size: 50px;
+    padding: 10px 30px 15px 15px;
+    font-size: 46px;
   }
 }
