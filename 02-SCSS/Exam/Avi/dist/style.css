@@ -8,6 +8,7 @@ body {
   height: 60px;
   border-top: 0.5px solid gray;
   border-bottom: 0.5px solid gray;
+  width: max(360px);
 }
 .main__top__logo img {
   height: 60px;
@@ -110,6 +111,7 @@ body {
 .main__head__buttons {
   display: flex;
   justify-content: space-between;
+  width: max(360px);
 }
 .main__head__buttons__button {
   height: 50px;
@@ -138,6 +140,7 @@ body {
   color: gray;
   font-size: 15px;
   line-height: 20px;
+  width: max(360px);
 }
 .main__text p span {
   color: blue;
@@ -151,18 +154,18 @@ body {
 }
 .main__facilities__facil__icon {
   border-radius: 50px;
-  height: 45px;
-  width: 45px;
+  height: 40px;
+  width: 40px;
   background-color: #dbdbdb;
 }
 .main__facilities__facil__icon img {
   height: 22px;
   width: 22px;
-  margin: 12px;
+  margin: 10px;
 }
 .main__facilities__facil p {
-  font-size: 18px;
-  margin-top: 12px;
+  font-size: 17px;
+  margin-top: 11px;
   margin-left: 10px;
 }
 .main__facilities h4 {
