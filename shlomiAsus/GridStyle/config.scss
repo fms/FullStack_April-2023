@@ -16,5 +16,14 @@ $centext: center;
     background-color: black;
 }
 
+@mixin bgcolor_mine{
+
+    background: rgb(2,0,36);
+    background: -moz-linear-gradient(162deg, rgba(2,0,36,1) 0%, rgba(32,32,38,1) 76%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(162deg, rgba(2,0,36,1) 0%, rgba(32,32,38,1) 76%, rgba(0,212,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#00d4ff",GradientType=1);
+
+}
+
 
 

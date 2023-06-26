@@ -3,7 +3,13 @@
 }
 
 .body {
-  background: #a59999;
+  background: #020024;
+  background: -moz-linear-gradient(162deg, #020024 0%, #202026 76%, #00d4ff 100%);
+  background: linear-gradient(162deg, #020024 0%, #202026 76%, #00d4ff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#00d4ff",GradientType=1);
+  background-repeat: no-repeat;
+  height: 2100px;
+  width: 100%;
 }
 
 .heading {
@@ -42,7 +48,6 @@
   grid-row-end: 8;
   grid-column-start: 1;
   grid-column-end: 1;
-  background-color: #cdb89c;
   display: grid;
   grid-template-columns: 1fr;
   gap: 5px;
@@ -54,11 +59,11 @@
   border-color: white;
   border-style: outset;
   font-size: xx-large;
-  background-color: #ceb296;
+  background-color: #030d1c;
   color: white;
 }
 .menu_button:hover {
-  background-color: #cb4f02;
+  background-color: #2d1c67;
 }
 
 .picbox {
