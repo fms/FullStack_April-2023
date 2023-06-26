@@ -1,0 +1,231 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+.main {
+
+    &__top {
+        padding: 8px;
+        height: 60px;
+        border-top: 0.5px solid gray;
+        border-bottom: 0.5px solid gray;
+        ;
+
+        &__logo {
+            img {
+                height: 60px;
+                width: 60px;
+                margin: 0px;
+            }
+        }
+
+        &__search {
+            border: solid 1px rgb(189, 188, 188);
+            border-radius: 50px;
+            height: 50px;
+            width: 50px;
+            margin-left: 205px;
+            margin-top: -60px;
+            position: absolute;
+
+            img {
+                height: 20px;
+                width: 20px;
+                margin: 15px;
+            }
+        }
+
+        &__menu {
+            display: flex;
+            border: solid 1px rgb(189, 188, 188);
+            border-radius: 50px;
+            height: 50px;
+            width: 90px;
+            margin-left: 270px;
+            margin-top: -60px;
+
+            img {
+                height: 28px;
+                width: 28px;
+                margin: 15px;
+                border-radius: 50%;
+                margin-left: 8px;
+                margin-top: 10px;
+            }
+        }
+
+    }
+
+    &__head {
+
+        p {
+            font-size: 15px;
+            margin-top: 20px;
+        }
+
+        p>span {
+            color: grey;
+        }
+
+        h2 {
+            font-size: 35px;
+            font-weight: 500;
+            margin-top: 35px;
+
+        }
+
+        &__round {
+            border-radius: 50px;
+            height: 45px;
+            width: 45px;
+            margin-top: -60px;
+            background-color: rgb(219, 219, 219);
+            margin-top: -90px;
+            position: absolute;
+
+
+            img {
+                height: 20px;
+                width: 20px;
+                margin: 12px;
+            }
+
+        }
+
+        .heart {
+            margin-left: 320px;
+
+        }
+
+        .share {
+            margin-left: 260px;
+        }
+
+        &__location {
+            img {
+                height: 20px;
+                width: 20px;
+                margin-top: 5px;
+            }
+
+            p {
+                color: gray;
+                line-height: 30px;
+                font-size: 13px;
+            }
+        }
+
+        &__pics {
+            &__mainpic {
+                margin: 15px;
+
+                img {
+                    width: 350px;
+                    height: 250px;
+                    border-radius: 20px;
+                }
+
+            }
+
+            &__otherpics {
+                display: flex;
+                justify-content: space-between;
+                width: 350px;
+                margin: 15px;
+
+                img {
+                    height: 90px;
+                    width: 110px;
+                    border-radius: 10px;
+                    margin-top: -10px;
+                }
+            }
+        }
+
+        &__buttons {
+            display: flex;
+            justify-content: space-between;
+
+            &__button {
+                height: 50px;
+                width: 100px;
+                background-color: black;
+                border-radius: 30px;
+                margin-left: 15px;
+
+                p {
+                    font-size: 15px;
+                    color: white;
+                    margin-top: 15px;
+                    margin-left: 20px;
+                }
+
+            }
+
+            .whats {
+                width: 140px;
+            }
+
+            .faq {
+                width: 70px;
+
+            }
+        }
+    }
+
+    &__text {
+        h2 {
+            font-size: 27px;
+            font-weight: 400;
+        }
+
+        p {
+            color: gray;
+            font-size: 15px;
+            line-height: 20px;
+
+            span {
+                color: blue;
+            }
+        }
+
+    }
+
+    &__facilities {
+        h2 {
+            font-size: 27px;
+            font-weight: 400;
+        }
+
+        &__facil {
+            display: flex;
+
+            &__icon {
+            border-radius: 50px;
+            height: 45px;
+            width: 45px;
+            background-color: rgb(219, 219, 219);
+            // position: absolute;
+
+
+            img {
+                height: 22px;
+                width: 22px;
+                margin: 12px;
+            }
+            }
+            p{
+                font-size: 18px;
+                margin-top: 12px;
+                margin-left: 10px;
+            }
+        }
+        h4{
+            font-size: 17px;
+            margin-left: 5px;
+            color: blue;
+            font-weight: 200;
+        }
+    }
+}

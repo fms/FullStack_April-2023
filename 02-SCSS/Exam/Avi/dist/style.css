@@ -1,0 +1,173 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+.main__top {
+  padding: 8px;
+  height: 60px;
+  border-top: 0.5px solid gray;
+  border-bottom: 0.5px solid gray;
+}
+.main__top__logo img {
+  height: 60px;
+  width: 60px;
+  margin: 0px;
+}
+.main__top__search {
+  border: solid 1px #bdbcbc;
+  border-radius: 50px;
+  height: 50px;
+  width: 50px;
+  margin-left: 205px;
+  margin-top: -60px;
+  position: absolute;
+}
+.main__top__search img {
+  height: 20px;
+  width: 20px;
+  margin: 15px;
+}
+.main__top__menu {
+  display: flex;
+  border: solid 1px #bdbcbc;
+  border-radius: 50px;
+  height: 50px;
+  width: 90px;
+  margin-left: 270px;
+  margin-top: -60px;
+}
+.main__top__menu img {
+  height: 28px;
+  width: 28px;
+  margin: 15px;
+  border-radius: 50%;
+  margin-left: 8px;
+  margin-top: 10px;
+}
+.main__head p {
+  font-size: 15px;
+  margin-top: 20px;
+}
+.main__head p > span {
+  color: grey;
+}
+.main__head h2 {
+  font-size: 35px;
+  font-weight: 500;
+  margin-top: 35px;
+}
+.main__head__round {
+  border-radius: 50px;
+  height: 45px;
+  width: 45px;
+  margin-top: -60px;
+  background-color: #dbdbdb;
+  margin-top: -90px;
+  position: absolute;
+}
+.main__head__round img {
+  height: 20px;
+  width: 20px;
+  margin: 12px;
+}
+.main__head .heart {
+  margin-left: 320px;
+}
+.main__head .share {
+  margin-left: 260px;
+}
+.main__head__location img {
+  height: 20px;
+  width: 20px;
+  margin-top: 5px;
+}
+.main__head__location p {
+  color: gray;
+  line-height: 30px;
+  font-size: 13px;
+}
+.main__head__pics__mainpic {
+  margin: 15px;
+}
+.main__head__pics__mainpic img {
+  width: 350px;
+  height: 250px;
+  border-radius: 20px;
+}
+.main__head__pics__otherpics {
+  display: flex;
+  justify-content: space-between;
+  width: 350px;
+  margin: 15px;
+}
+.main__head__pics__otherpics img {
+  height: 90px;
+  width: 110px;
+  border-radius: 10px;
+  margin-top: -10px;
+}
+.main__head__buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.main__head__buttons__button {
+  height: 50px;
+  width: 100px;
+  background-color: black;
+  border-radius: 30px;
+  margin-left: 15px;
+}
+.main__head__buttons__button p {
+  font-size: 15px;
+  color: white;
+  margin-top: 15px;
+  margin-left: 20px;
+}
+.main__head__buttons .whats {
+  width: 140px;
+}
+.main__head__buttons .faq {
+  width: 70px;
+}
+.main__text h2 {
+  font-size: 27px;
+  font-weight: 400;
+}
+.main__text p {
+  color: gray;
+  font-size: 15px;
+  line-height: 20px;
+}
+.main__text p span {
+  color: blue;
+}
+.main__facilities h2 {
+  font-size: 27px;
+  font-weight: 400;
+}
+.main__facilities__facil {
+  display: flex;
+}
+.main__facilities__facil__icon {
+  border-radius: 50px;
+  height: 45px;
+  width: 45px;
+  background-color: #dbdbdb;
+}
+.main__facilities__facil__icon img {
+  height: 22px;
+  width: 22px;
+  margin: 12px;
+}
+.main__facilities__facil p {
+  font-size: 18px;
+  margin-top: 12px;
+  margin-left: 10px;
+}
+.main__facilities h4 {
+  font-size: 17px;
+  margin-left: 5px;
+  color: blue;
+  font-weight: 200;
+}
