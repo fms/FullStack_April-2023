@@ -38,13 +38,15 @@ nav {
         display: none;
     }
 
-
-
     .left-nav {
         display: flex;
         justify-content: center;
         align-items: center;
 
+        a {
+            text-decoration: none;
+            color: gray;
+        }
         button {
             border: none;
             margin-inline: 2vw;
@@ -61,7 +63,7 @@ nav {
 
 
         .usd {
-            display: flex;
+            display: none;
             justify-content: center;
             align-items: center;
             border: 1px rgb(218, 218, 218) solid;
@@ -74,11 +76,6 @@ nav {
                 height: 30px;
                 border-radius: 50px;
                 margin-right: .3vw;
-            }
-
-            button {
-                border: none;
-                margin: none;
             }
         }
 
@@ -237,15 +234,12 @@ nav {
         background-color: rgb(34, 34, 34);
         color: white;
     }
-
-    button:nth-child(4) {
-        display: none;
-    }
 }
 
 .context {
     margin-inline: var(--margin-inline);
     margin-bottom: 3vh;
+
     p {
         line-height: 23px;
     }
@@ -253,6 +247,11 @@ nav {
     h2 {
         font-size: 2rem;
         margin-bottom: 2vh;
+    }
+
+    a {
+        text-decoration: none;
+        color: blue;
     }
 }
 
@@ -383,6 +382,38 @@ nav {
 @media screen and (width <=600px) {
 
 
+    nav {
+
+        .right-nav {
+
+            .profile {
+                padding: 5px;
+                width: 60px !important;
+                height: 35px;
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                    margin-left: .5vw;
+                }
+            }
+
+            .search {
+                width: 38px;
+                height: 35px;
+            }
+
+        }
+    }
+
+    .main-content {
+        img {
+            object-fit: cover;
+        }
+    }
+
+
+
     .main-header {
         h1 {
             width: 60vw;
@@ -396,6 +427,10 @@ nav {
 
         .main-buttons-size {
             flex-basis: 47%;
+        }
+
+        .hidden-button {
+            display: none;
         }
     }
 
@@ -426,17 +461,223 @@ nav {
 
 }
 
-@media screen and (600px <= width <= 1024 ) { 
+@media screen and (601px <=width <=1024px) {
 
     .main-buttons {
         flex-basis: 20%;
     }
 
+
+
     nav {
-        // .hidden-button {
-        //     display: block;
-        // }
+
+        .left-nav {
+            .hidden-nav {
+                display: block;
+            }
+        }
+
+        .right-nav {
+            margin-right: 4vw;
+
+            .hidden-nav {
+                display: flex;
+            }
+
+            .profile {
+                padding: 5px;
+                width: 75px;
+                height: 40px;
+                img {
+                    width: 30px;
+                    height: 30px;
+                    margin-left: .5vw;
+                }
+            }
+
+            .usd {
+                width: 50px;
+                height: 40px;
+
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+
+                p {
+                    font-size: 10px;
+                }
+            }
+
+            .search {
+                display: none;
+            }
+
+            button {
+                width: 50px;
+                height: 40px;
+            }
+
+        }
     }
 
-    
+    .main-buttons {
+        button {
+            flex-basis: 23%;
+        }
+    }
+
+    .facilities {
+        margin-bottom: 3vh;
+        a {
+            margin-left: .4vw;
+        }
+    }
+
+    .reviews-ratings {
+        width: 60vw;
+        height: 33vh;
+        margin-bottom: 20px;
+    }
+
+    .facilities {
+        margin-bottom: 2vh;
+        a {
+            margin-left: .4vw;
+        }
+    }
+
+}
+
+@media screen and (1024px <=width) {
+
+    .main-buttons {
+        flex-basis: 20%;
+    }
+
+
+
+    nav {
+
+        .left-nav {
+            .hidden-nav {
+                display: block;
+            }
+        }
+
+        .right-nav {
+
+            .hidden-nav {
+                display: flex;
+            }
+
+            .profile {
+                padding: 5px;
+                width: 70px;
+                height: 30px;
+
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
+            button {
+                width: 40px;
+                height: 30px;
+            }
+            
+
+            .usd {
+                width: 70px;
+                height: 28px;
+
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+
+                p {
+                    font-size: 10px;
+                }
+            }
+
+            .search {
+                display: flex;
+                width: 250px;
+                height: 28px;
+            }
+
+        }
+
+    }
+
+    .main-buttons {
+        justify-content: start;
+        gap: 1.5vw;
+        button {
+            flex-basis: 15%;
+            height: 37px;
+        }
+
+        button:nth-child(2) {
+            flex-basis: 23%;
+        }
+    }
+
+    .main-content{
+        display: grid;
+        justify-content: unset;
+        align-items: unset;
+        grid-template-columns: repeat(4 , 1fr);
+        grid-template-rows: repeat(2 , 15vw);
+        gap: 10px;
+        margin-inline: 2vw;
+
+        img {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            flex-basis: 0;
+        }
+
+        img:nth-child(1) {
+            width: 100% !important;
+            height: 100% !important;
+            margin: 0 !important;
+            flex-basis: 0 !important;
+            grid-row: span 2;
+            grid-column: span 2;
+        }
+        img:nth-child(2) {
+            grid-column: span 2;
+            object-fit: cover;
+        }
+    }
+
+    .facilities-reviews-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .reviews-wrapper {
+        width: 42vw;
+    }
+
+    .reviews-ratings {
+        height: 70vh;
+    }
+
+    .facilities {
+        margin-bottom: 0;
+        a {
+            margin-left: .4vw;
+        }
+    }
+
+    .big-screen-wrapper {
+        display: flex;
+    }
+
 }

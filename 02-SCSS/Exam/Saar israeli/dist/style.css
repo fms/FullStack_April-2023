@@ -40,6 +40,10 @@ nav .left-nav {
   justify-content: center;
   align-items: center;
 }
+nav .left-nav a {
+  text-decoration: none;
+  color: gray;
+}
 nav .left-nav button {
   border: none;
   margin-inline: 2vw;
@@ -53,7 +57,7 @@ nav .right-nav {
   margin-inline: var(--margin-inline);
 }
 nav .right-nav .usd {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   border: 1px #dadada solid;
@@ -66,10 +70,6 @@ nav .right-nav .usd img {
   height: 30px;
   border-radius: 50px;
   margin-right: 0.3vw;
-}
-nav .right-nav .usd button {
-  border: none;
-  margin: none;
 }
 nav .right-nav .search {
   display: flex;
@@ -198,9 +198,6 @@ nav .right-nav .profile-picture {
   background-color: #222222;
   color: white;
 }
-.main-buttons button:nth-child(4) {
-  display: none;
-}
 
 .context {
   margin-inline: var(--margin-inline);
@@ -212,6 +209,10 @@ nav .right-nav .profile-picture {
 .context h2 {
   font-size: 2rem;
   margin-bottom: 2vh;
+}
+.context a {
+  text-decoration: none;
+  color: blue;
 }
 
 .facilities {
@@ -315,6 +316,25 @@ nav .right-nav .profile-picture {
 }
 
 @media screen and (width <= 600px) {
+  nav .right-nav .profile {
+    padding: 5px;
+    width: 60px !important;
+    height: 35px;
+  }
+  nav .right-nav .profile img {
+    width: 30px;
+    height: 30px;
+    margin-left: 0.5vw;
+  }
+  nav .right-nav .search {
+    width: 38px;
+    height: 35px;
+  }
+
+  .main-content img {
+    object-fit: cover;
+  }
+
   .main-header h1 {
     width: 60vw;
   }
@@ -324,6 +344,9 @@ nav .right-nav .profile-picture {
   }
   .main-buttons .main-buttons-size {
     flex-basis: 47%;
+  }
+  .main-buttons .hidden-button {
+    display: none;
   }
 
   .context-header h2 {
@@ -344,8 +367,176 @@ nav .right-nav .profile-picture {
     height: 25px !important;
   }
 }
-@media screen and (600px <= width <= 1024) {
+@media screen and (601px <= width <= 1024px) {
   .main-buttons {
     flex-basis: 20%;
+  }
+
+  nav .left-nav .hidden-nav {
+    display: block;
+  }
+  nav .right-nav {
+    margin-right: 4vw;
+  }
+  nav .right-nav .hidden-nav {
+    display: flex;
+  }
+  nav .right-nav .profile {
+    padding: 5px;
+    width: 75px;
+    height: 40px;
+  }
+  nav .right-nav .profile img {
+    width: 30px;
+    height: 30px;
+    margin-left: 0.5vw;
+  }
+  nav .right-nav .usd {
+    width: 50px;
+    height: 40px;
+  }
+  nav .right-nav .usd img {
+    width: 20px;
+    height: 20px;
+  }
+  nav .right-nav .usd p {
+    font-size: 10px;
+  }
+  nav .right-nav .search {
+    display: none;
+  }
+  nav .right-nav button {
+    width: 50px;
+    height: 40px;
+  }
+
+  .main-buttons button {
+    flex-basis: 23%;
+  }
+
+  .facilities {
+    margin-bottom: 3vh;
+  }
+  .facilities a {
+    margin-left: 0.4vw;
+  }
+
+  .reviews-ratings {
+    width: 60vw;
+    height: 33vh;
+    margin-bottom: 20px;
+  }
+
+  .facilities {
+    margin-bottom: 2vh;
+  }
+  .facilities a {
+    margin-left: 0.4vw;
+  }
+}
+@media screen and (1024px <= width) {
+  .main-buttons {
+    flex-basis: 20%;
+  }
+
+  nav .left-nav .hidden-nav {
+    display: block;
+  }
+  nav .right-nav .hidden-nav {
+    display: flex;
+  }
+  nav .right-nav .profile {
+    padding: 5px;
+    width: 70px;
+    height: 30px;
+  }
+  nav .right-nav .profile img {
+    width: 20px;
+    height: 20px;
+  }
+  nav .right-nav button {
+    width: 40px;
+    height: 30px;
+  }
+  nav .right-nav .usd {
+    width: 70px;
+    height: 28px;
+  }
+  nav .right-nav .usd img {
+    width: 20px;
+    height: 20px;
+  }
+  nav .right-nav .usd p {
+    font-size: 10px;
+  }
+  nav .right-nav .search {
+    display: flex;
+    width: 250px;
+    height: 28px;
+  }
+
+  .main-buttons {
+    justify-content: start;
+    gap: 1.5vw;
+  }
+  .main-buttons button {
+    flex-basis: 15%;
+    height: 37px;
+  }
+  .main-buttons button:nth-child(2) {
+    flex-basis: 23%;
+  }
+
+  .main-content {
+    display: grid;
+    justify-content: unset;
+    align-items: unset;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 15vw);
+    gap: 10px;
+    margin-inline: 2vw;
+  }
+  .main-content img {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    flex-basis: 0;
+  }
+  .main-content img:nth-child(1) {
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    flex-basis: 0 !important;
+    grid-row: span 2;
+    grid-column: span 2;
+  }
+  .main-content img:nth-child(2) {
+    grid-column: span 2;
+    object-fit: cover;
+  }
+
+  .facilities-reviews-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .reviews-wrapper {
+    width: 42vw;
+  }
+
+  .reviews-ratings {
+    height: 70vh;
+  }
+
+  .facilities {
+    margin-bottom: 0;
+  }
+  .facilities a {
+    margin-left: 0.4vw;
+  }
+
+  .big-screen-wrapper {
+    display: flex;
   }
 }
