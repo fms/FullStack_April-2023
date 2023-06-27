@@ -1,0 +1,323 @@
+
+@media screen and (max-width: 600px) {
+    .topbar {
+        @include flexed();
+        min-width: 100%;
+        border-bottom: $border;
+        justify-content: space-between;
+
+        &__left {
+            @include flexed();
+            justify-content:start;
+
+            * {
+                display: none;
+            }
+            
+            img {
+                display: block;
+                width: 40px;
+                height: 40px;
+                align-self: center;
+            }
+        }
+        
+        &__right {
+            @include flexed();
+
+            * {
+                display: none;
+            }
+            
+            .search {
+                display: block;
+                width: 50px;
+                height: 43.667px;
+                align-self: center;
+                border: $border;
+                border-radius: $borderRad;
+                margin-bottom: $smallGap;
+                
+                i {
+                    align-self: center;
+                    margin-top: 15px;
+                    margin-left: 18px;
+                }
+                
+                h3 {
+                    display: none
+                }
+            }
+            
+            .profile {
+                @include flexed();
+                width: 50px;
+                gap: $smallGap;
+                border: $border;
+                border-radius: $borderRad;
+                margin-bottom: $smallGap;
+                
+                i, img{
+                    display: block;
+                    align-self: center; 
+                }    
+                
+                img {
+                    width: $imgSize;
+                    height: $imgSize; 
+                }  
+            }
+        }
+    }
+
+    .book {
+        display: none;
+    }
+
+    .results {
+        @include flexed();
+
+        p:nth-child(3) {
+            color: gray;
+        }    
+    }
+    
+    .container {
+        @include flexed();
+
+        .hotel {
+            @include flexed($direction: column);
+            width: 200px;
+            height: 100px;
+            
+            
+            &__stats, &__stats--item {
+                @include flexed();
+                flex-wrap: wrap;
+                gap: $smallGap;
+            }    
+            
+            &__stats--item {
+                i, p {
+                    align-self: center;
+                    color: gray;
+                    font-size: small;
+                }    
+            }    
+        }    
+
+        .actions {
+            @include flexed();
+            gap: $smallGap;
+            margin-top: 30px;
+            margin-left: 50%;
+            
+            .action {
+                @include flexed();
+                width: 30px;
+                height: 30px;
+                border: $border;
+                border-radius: $borderRad;
+                background-color: rgb(196, 196, 196);
+                
+                i {
+                    align-self: center;
+                    margin-left: 7px;
+                }    
+                
+                p {
+                    display: none;
+                }    
+            }    
+        }    
+    }
+    
+    .grid_images {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 300px;
+        gap: $smallGap;
+    }
+
+    .grid_item {
+        
+        img {
+            border-radius: 20px;
+            width: 100%;
+            height: 100%;
+        }    
+    }
+
+    .grid_item:first-child {
+        grid-column: 1 / 4;
+        box-sizing: border-box;
+    }
+
+    .buttons {
+        @include flexed();
+        gap: $smallGap;
+        margin-top: 50px;
+        justify-content: space-between;
+
+        .button {
+            height: 60px;
+            border: $border;
+            border-radius: $borderRad;
+            color: gray;
+        }    
+
+        .button:active {
+            background-color: black;
+            color: white;
+        }    
+
+        .overview {
+            width: 80px;
+        }    
+        
+        .whatsInc {
+            width: 120px;
+        }    
+        
+        .faqs {
+            width: 50px;
+        }    
+        
+        .room {
+            display: none;
+        }    
+    }
+
+    .bottom {
+
+        .description {
+
+            p::after {
+                content: " read more";
+                color: blue;
+            }
+        }
+
+        .facilities {
+            @include flexed($direction: column);
+
+            &--item {
+                @include flexed();
+                gap: $smallGap;
+
+                .icon {
+                    width: 25px;
+                    height: 25px;
+                    border: $border;
+                    border-radius: $borderRad;
+                    align-self: center;
+                    background-color: rgb(196, 196, 196);
+
+                    i {
+                        align-self: center;
+                        margin-left: 5px;
+                        margin-top: 5px;
+                    }
+                }
+            }
+        }
+
+        .facilities::after {
+            content: "See more facilities";
+            color: blue;
+        }
+
+        .reviews {
+            @include flexed($direction: column);
+            border: $border;
+
+            .rating {
+                @include flexed();
+    
+                .stars, .rate {
+                    align-self: center;
+                }
+    
+                .rate {
+                    width: 132px;
+                    height: 90px;
+                    background-image: url(images/4.8.png);
+                    animation: number 5s infinite 1.5s;
+                }    
+    
+                .stars {
+                    @include flexed($direction: column);
+    
+                    * {
+                        margin: $smallGap;
+                    }
+                }
+            }
+            
+            .bars {
+                @include flexed($direction: column);
+
+                .attributes {
+                    @include flexed();
+
+                    h5, p {
+                        align-self: center;
+                    }
+
+                    p {
+                        margin-left: 250px;
+                        color: gray;
+                    }
+
+                }
+
+                .bar1, .bar2, .bar3 {
+                    height: 10px;
+                    background-color: green;
+                    border-radius: 5px;
+                }
+
+                .bar1 {
+                    width: 94%;
+                }
+                
+                .bar2 {
+                    width: 96%;
+                }
+
+                .bar3 {
+                    width: 90%;
+                }
+            }
+        }
+
+        .price {
+            @include flexed();
+            position: static;
+            justify-content: space-between;
+    
+            &__text {
+
+                p {
+                    color: green;
+                    font-size: x-large;
+                }
+
+                p::after {
+                    content: "/Night/Room";
+                    color: gray;
+                    font-size: smaller;
+                }
+
+            }
+
+            button {
+                width: 60vw;
+                background-color: green;
+                color: white;
+                border-radius: $borderRad;
+                font-size: xx-large;
+            }
+        }
+    }
+}
