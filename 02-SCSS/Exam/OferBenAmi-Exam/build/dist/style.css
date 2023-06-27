@@ -150,7 +150,7 @@ nav .right-nav-items .menu-btn img:last-child {
   border-radius: 30px;
 }
 .mainConteiner__main-content {
-  padding: 30px clamp(30px, 10vw, 300px);
+  padding: 30px clamp(7px, 5vw, 300px);
 }
 .mainConteiner__main-content h4 {
   padding: 15px 0;
@@ -206,24 +206,78 @@ nav .right-nav-items .menu-btn img:last-child {
 .mainConteiner__main-content__img-grid div:nth-child(1) {
   grid-area: first;
   background-image: url(../../build/resources/picturs/hotel-imgs/francesca-saraco-_dS27XGgRyQ-unsplash.jpg);
-  background-size: 100%;
   border-radius: 30px;
+  background-size: cover;
+  background-position: center;
 }
 .mainConteiner__main-content__img-grid div:nth-child(2) {
   grid-area: second;
   background-image: url(../../build/resources/picturs/hotel-imgs/ultrawide.webp);
-  background-size: 100%;
+  background-size: cover;
+  background-position: center;
   border-radius: 30px;
 }
 .mainConteiner__main-content__img-grid div:nth-child(3) {
   grid-area: third;
   background-image: url(../../build/resources/picturs/hotel-imgs/vojtech-bruzek-Yrxr3bsPdS0-unsplash.jpg);
-  background-size: 100%;
   border-radius: 30px;
+  background-size: cover;
+  background-position: center;
 }
 .mainConteiner__main-content__img-grid div:nth-child(4) {
   grid-area: forth;
   background-image: url(../../build/resources/picturs/hotel-imgs/roberto-nickson-emqnSQwQQDo-unsplash.jpg);
   background-size: cover;
+  background-position: center;
   border-radius: 30px;
+}
+.mainConteiner__main-content__reviews {
+  display: grid;
+  grid-template-columns: 4fr 3fr;
+  gap: 20px;
+}
+.mainConteiner__main-content__reviews__left-section h2 {
+  margin: 20px 0;
+}
+.mainConteiner__main-content__reviews__left-section p {
+  color: #474747;
+}
+.mainConteiner__main-content__reviews__left-section p span {
+  color: #107ad1;
+}
+.mainConteiner__main-content__reviews__left-section__top-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.mainConteiner__main-content__reviews__left-section__top-btns button {
+  padding: 10px 15px;
+  background-color: white;
+  color: #303030;
+  border-radius: 30px;
+  border: 1px solid grey;
+  transition: color 0.3s, background-color 0.3s;
+}
+.mainConteiner__main-content__reviews__left-section__top-btns button:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.mainConteiner__main-content__reviews__left-section__top-btns button:focus {
+  background-color: black;
+  color: white;
+}
+.mainConteiner__main-content__reviews__right-section {
+  padding: 20px;
+  border: 1px solid #dcdbdb;
+  border-radius: 25px;
+}
+.mainConteiner__main-content__reviews__right-section__stars {
+  margin-top: 20px;
+  display: flex;
+  gap: 9px;
+}
+.mainConteiner__main-content__reviews__right-section__stars > h1 {
+  font-size: 42px;
+}
+.mainConteiner__main-content__reviews__right-section__stars__star p {
+  color: gray;
 }

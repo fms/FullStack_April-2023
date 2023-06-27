@@ -1,61 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lunora</title>
-    <link rel="icon" href="resources/icons/logo.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="dist/style.css" />
-  </head>
-  <body>
-    <nav>
-      <div class="left-nav-items">
-        <img src="resources/icons/logo.png" alt="logo" />
-        <a href="#Home">Hotel</a>
-        <a href="#Home">Apartment</a>
-        <a href="#Home">Holiday</a>
-        <a href="#Home">More</a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lunora</title>
+  <link rel="icon" href="resources/icons/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="dist/style.css" />
+</head>
+
+<body>
+  <nav>
+    <div class="left-nav-items">
+      <img src="resources/icons/logo.png" alt="logo" />
+      <a href="#Home">Hotel</a>
+      <a href="#Home">Apartment</a>
+      <a href="#Home">Holiday</a>
+      <a href="#Home">More</a>
+    </div>
+    <div class="right-nav-items">
+      <input type="text" placeholder="Where are you going?" />
+      <button class="currency-btn">
+        <img src="resources/picturs/amerFlagPic.png" alt="" />
+        <span>USD</span>
+      </button>
+      <button class="like-btn">
+        <img src="resources/icons/heart-regular.svg" alt="" />
+      </button>
+      <button class="menu-btn">
+        <img src="resources/icons/bars-solid.svg" alt="" />
+        <img src="resources/picturs/profilePic.png" alt="" />
+      </button>
+    </div>
+  </nav>
+  <div class="mainConteiner">
+    <div class="mainConteiner__booking">
+      <div class="mainConteiner__booking__choose-date">
+        <img src="resources/icons/chevron-left-solid.svg" alt="" />
+        <h2>Choose date</h2>
       </div>
-      <div class="right-nav-items">
-        <input type="text" placeholder="Where are you going?" />
-        <button class="currency-btn">
-          <img src="resources/picturs/amerFlagPic.png" alt="" />
-          <span>USD</span>
-        </button>
-        <button class="like-btn">
-          <img src="resources/icons/heart-regular.svg" alt="" />
-        </button>
-        <button class="menu-btn">
-          <img src="resources/icons/bars-solid.svg" alt="" />
-          <img src="resources/picturs/profilePic.png" alt="" />
-        </button>
+      <div class="mainConteiner__booking__middle-section">
+        <button><img src="resources/icons/location-dot-solid.svg" alt="">Sa Pa, Vietnam</button>
+        <button><img src="resources/icons/calendar-days-solid.svg" alt="">Thu, Apr 22-fri, Apr 23 <img
+            src="resources/icons/chevron-up-chevron-down-icon-445x512-89gfu82a.png" alt=""></button>
+        <button><img src="resources/icons/person-solid.svg" alt=""> 1 Room, 2 Adults <img
+            src="resources/icons/chevron-up-chevron-down-icon-445x512-89gfu82a.png" alt=""></button>
       </div>
-    </nav>
-    <div class="mainConteiner">
-      <div class="mainConteiner__booking">
-        <div class="mainConteiner__booking__choose-date">
-          <img src="resources/icons/chevron-left-solid.svg" alt="" />
-          <h2>Choose date</h2>
-        </div>
-        <div class="mainConteiner__booking__middle-section">
-          <button><img src="resources/icons/location-dot-solid.svg" alt="">Sa Pa, Vietnam</button>
-          <button><img src="resources/icons/calendar-days-solid.svg" alt="">Thu, Apr 22-fri, Apr 23 <img src="resources/icons/chevron-up-chevron-down-icon-445x512-89gfu82a.png" alt=""></button>
-          <button><img src="resources/icons/person-solid.svg" alt=""> 1 Room, 2 Adults <img src="resources/icons/chevron-up-chevron-down-icon-445x512-89gfu82a.png" alt=""></button>
-        </div>
-        <div class="mainConteiner__booking__right-section">
-          <span>$200/Night</span>
-          <button>Booking</button>
-        </div>
+      <div class="mainConteiner__booking__right-section">
+        <span>$200/Night</span>
+        <button>Booking</button>
       </div>
-      <div class="mainConteiner__main-content">
-        <h4>Hotel / Vietnam / <span>Sa Pa Terraces</span></h4>
-        <div class="mainConteiner__main-content__hotel-description">
+    </div>
+    <div class="mainConteiner__main-content">
+      <h4>Hotel / Vietnam / <span>Sa Pa Terraces</span></h4>
+      <div class="mainConteiner__main-content__hotel-description">
         <div class="mainConteiner__main-content__hotel-description__left-section">
           <h1>Sapa Jada Hill Resort</h1>
           <span><img src="resources/icons/star-regular.svg" alt=""> 5.0 &#903; 100 reviews </span>
@@ -66,17 +67,43 @@
           <button><img src="resources/icons/share-nodes-solid.svg" alt="">Share</button>
           <button><img src="resources/icons/heart-regular.svg" alt="">Save</button>
         </div>
-       
+
+      </div>
+      <div class="mainConteiner__main-content__img-grid">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="mainConteiner__main-content__reviews">
+        <div class="mainConteiner__main-content__reviews__left-section">
+          <div class="mainConteiner__main-content__reviews__left-section__top-btns">
+            <button>Overview</button>
+            <button>What's included</button>
+            <button>FAQs</button>
+            <button>Room</button>
+          </div>
+          <h2>Comfortable place for you</h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt unde architecto, ratione laboriosam
+            fuga, nisi eos distinctio suscipit repellat deleniti illum atque! Recusandae necessitatibus rerum molestiae
+            fugiat? Repellendus temporibus totam explicabo qui debitis provident sint. Cupiditate blanditiis velit
+            fugit, saepe neque, aliquid facilis rem animi ad omnis ipsam ducimus. Molestiae <span>read more</span></p>
+        </div>
+
+        <div class="mainConteiner__main-content__reviews__right-section">
+          <h3>Reviews and ratings</h3>
+          <div class="mainConteiner__main-content__reviews__right-section__stars">
+            <h1>4.8</h1>
+            <div class="mainConteiner__main-content__reviews__right-section__stars__star">
+              <h3>&#11088;&#11088;&#11088;&#11088;&#11088;</h3>
+              <p>Based on 100 reviewers</p>
+            </div>
+            
+          </div>
+        </div>
+
+      </div>
     </div>
-    <div class="mainConteiner__main-content__img-grid">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <div class="mainConteiner__main-content__reviews">
-      <div class="mainConteiner__main-content__reviews__"></div>
-    </div>
-  </div>
-  </body>
+</body>
+
 </html>

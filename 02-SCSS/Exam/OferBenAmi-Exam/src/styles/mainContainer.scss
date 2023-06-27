@@ -59,7 +59,7 @@
   }
 
   &__main-content {
-    padding: 30px clamp(30px, 10vw, 300px) ;
+    padding: 30px clamp(7px, 5vw, 300px);
 
     h4 {
       padding: 15px 0;
@@ -118,41 +118,103 @@
       height: 500px;
       display: grid;
       gap: 1rem;
-      grid-template-columns: repeat( 4, 1fr);
-     
-      grid-template-areas: 
-      "first first second second"
-      "first first third forth";
-      div:nth-child(1){
+      grid-template-columns: repeat(4, 1fr);
+
+      grid-template-areas:
+        "first first second second"
+        "first first third forth";
+
+      div:nth-child(1) {
         grid-area: first;
         background-image: url(../../build/resources/picturs/hotel-imgs/francesca-saraco-_dS27XGgRyQ-unsplash.jpg);
-        background-size: 100%;
         border-radius: 30px;
+        background-size: cover;
+        background-position: center;
+
       }
-      div:nth-child(2){
+
+      div:nth-child(2) {
         grid-area: second;
         background-image: url(../../build/resources/picturs/hotel-imgs/ultrawide.webp);
-        background-size: 100%;
+        background-size: cover;
+        background-position: center;
         border-radius: 30px;
       }
-      div:nth-child(3){
+
+      div:nth-child(3) {
         grid-area: third;
         background-image: url(../../build/resources/picturs/hotel-imgs/vojtech-bruzek-Yrxr3bsPdS0-unsplash.jpg);
-        background-size: 100%;
         border-radius: 30px;
+        background-size: cover;
+        background-position: center;
       }
-      div:nth-child(4){
+
+      div:nth-child(4) {
         grid-area: forth;
         background-image: url(../../build/resources/picturs/hotel-imgs/roberto-nickson-emqnSQwQQDo-unsplash.jpg);
-        background-size:cover;
+        background-size: cover;
+        background-position: center;
         border-radius: 30px;
       }
-      
-    }
-    &__reviews{
 
     }
 
+    &__reviews {
+      display: grid;
+      grid-template-columns: 4fr 3fr;
+      gap: 20px;
+      &__left-section {
+        h2{
+          margin: 20px 0 ;
+        }
+        p{
+          color: rgb(71, 71, 71);
+          span{
+            color:rgb(16, 122, 209);
+          }
+        }
+        &__top-btns {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 5px;
+          button {
+            padding: 10px 15px;
+            background-color: white;
+            color: rgb(48, 48, 48);
+            border-radius: 30px;
+            border: 1px solid grey;
+            transition: color 0.3s, background-color 0.3s;
+
+            &:hover {
+              box-shadow: 0 0 10px rgba(black, 0.3);
+            }
+
+            &:focus {
+              background-color: black;
+              color: white;
+            }
+          }
+        }
+      }
+      &__right-section{
+        padding: 20px;
+        border: 1px solid rgb(220, 219, 219);
+        border-radius: 25px;
+        &__stars{
+          margin-top: 20px;
+          display: flex;
+          gap: 9px;
+          &>h1{
+            font-size: 42px;
+          }
+          &__star{
+            p{
+              color: rgb(128, 128, 128)
+            };
+          }
+        }
+      }
+    }
   }
 
 }
