@@ -1,70 +1,29 @@
-$imgSize: 20px;
-$smallGap: 5px;
-$border: 1px solid gray;
-$borderRad: 30px;
-$margLeft: 20px;
+@import 'config';
 
 @mixin flexed($direction:row) {
     display: flex;
     flex-direction: $direction;
 }    
 
-@keyframes number {
-    0% {
-        content: "1.0";
-    }
-    10% {
-        content: "1.5";
-    }
-    20% {
-        content: "2.0";
-    }
-    30% {
-        content: "2.2";
-    }
-    40% {
-        content: "2.7";
-    }
-    50% {
-        content: "3.3";
-    }
-    60% {
-        content: "3.5";
-    }
-    70% {
-        content: "4.0";
-    }
-    80% {
-        content: "4.5";
-    }
-    90% {
-        content: "4.8";
-    }
-    100% {
-        content: "5.0";
-    }
-}
-
-
 @media screen and (min-width: 1025px) {
     .topbar {
         @include flexed();
         border-bottom: $border;
         gap: 70px;
-
+        
         &__left {
             @include flexed();
             width: 50%;
             height: 50px;
             justify-content: space-around;
-
+            
             img {
                 align-self: center;
                 width: $imgSize;
                 height: $imgSize;
             }    
         }    
-
+        
         &__right {
             @include flexed();
             width: 50%;
@@ -79,7 +38,7 @@ $margLeft: 20px;
             border: $border;
             border-radius: $borderRad;
             margin-bottom: $smallGap;
-
+            
             i, h3 {
                 align-self: center;
             }    
@@ -102,7 +61,7 @@ $margLeft: 20px;
                 align-self: center;
             }    
         }    
-
+        
         .heart {
             @include flexed();
             width: 50px;
@@ -117,7 +76,7 @@ $margLeft: 20px;
                 margin-left: 18px;
             }    
         }    
-
+        
         .profile {
             @include flexed();
             width: 50px;
@@ -129,25 +88,25 @@ $margLeft: 20px;
             i, img{
                 align-self: center; 
             }    
-
+            
             img {
                 width: $imgSize;
                 height: $imgSize; 
             }    
         }    
     }    
-
+    
     .book {
         @include flexed();
         justify-content: space-around;
         border-bottom: $border;
         gap: 30px;
-
+        
         .date {
             @include flexed();
             gap: $smallGap;
             height: 50px;
-
+            
             button {
                 width: 25px;
                 height: 25px;
@@ -182,7 +141,7 @@ $margLeft: 20px;
         .cost {
             @include flexed();
             gap: $smallGap;
-
+            
             p {
                 color: green;
             }    
@@ -195,7 +154,7 @@ $margLeft: 20px;
             }    
         }    
     }    
-
+    
     .results {
         @include flexed();
         margin-left: $margLeft;
@@ -204,7 +163,7 @@ $margLeft: 20px;
             color: gray;
         }    
     }    
-
+    
     .container {
         @include flexed();
         gap: 700px;
@@ -214,7 +173,7 @@ $margLeft: 20px;
             width: 400px;
             height: 70px;
             
-    
+            
             &__stats, &__stats--item {
                 @include flexed();
                 gap: $smallGap;
@@ -233,7 +192,7 @@ $margLeft: 20px;
             @include flexed();
             gap: $smallGap;
             margin-top: 30px;
-
+            
             .action {
                 @include flexed();
                 width: 80px;
@@ -241,7 +200,7 @@ $margLeft: 20px;
                 border: $border;
                 border-radius: $borderRad;
                 gap: $smallGap;
-
+                
                 i, p {
                     align-self: center;
                 }    
@@ -252,7 +211,7 @@ $margLeft: 20px;
             }    
         }    
     }    
-
+    
     .grid_images {
         margin-top: 100px;
         display: grid;
@@ -261,7 +220,7 @@ $margLeft: 20px;
         'main main . .';
         gap: $smallGap;
     }    
-
+    
     .grid_item {
         border-radius: 20px;
         
@@ -270,12 +229,12 @@ $margLeft: 20px;
             height: 100%;
         }    
     }    
-
+    
     .grid_item:first-child {
         grid-area: main;
         box-sizing: border-box
     }    
-
+    
     .grid_item:nth-child(2) {
         grid-area: secondary;
         box-sizing: border-box
@@ -301,43 +260,54 @@ $margLeft: 20px;
         .overview {
             width: 80px;
         }    
-
+        
         .whatsInc {
             width: 120px;
         }    
-
+        
         .faqs {
             width: 50px;
         }    
-
+        
         .room {
             width: 50px;
         }    
     }    
 
-    // .ratings {
-    //     @include flexed();
+    .reviews {
+        @include flexed($direction: column);
+        .rating {
+            @include flexed();
 
-    //     .stars {
-    //         // @include flexed($direction: column);
+            .stars, .rate {
+                align-self: center;
+            }
 
-    //         img {
-    //             width: $imgSize;
-    //             height: $imgSize;
-    //         }
-    //     }
-    // }    
+            .rate {
+                width: 132px;
+                height: 90px;
+                background-image: url(images/4.8.png);
+                background-size: 1vh;
+                // animation: number 2s infinite;
+            }    
+
+            .stars {
+                @include flexed($direction: column);
+
+                * {
+                    margin: $smallGap;
+                }
+            }
+        }    
+    }
     
-    .rate {
-        animation: number 2s infinite;
-    }    
 }  
 
 
 @media screen and (max-width: 600px) {
     .topbar {
         @include flexed();
-
+        
         &__left {
             * {
                 display: none;
@@ -354,7 +324,7 @@ $margLeft: 20px;
             * {
                 display: none;
             }
-    
+            
             .profile {
                 @include flexed();
                 width: 50px;
@@ -362,7 +332,7 @@ $margLeft: 20px;
                 border: $border;
                 border-radius: $borderRad;
                 margin-bottom: $smallGap;
-    
+                
                 i, img{
                     display: block;
                     align-self: center; 
@@ -380,3 +350,12 @@ $margLeft: 20px;
 
 
 
+
+// @keyframes number {
+//     0% {
+
+//     }
+//     20% {
+//         transform: url;
+//     }
+// }
