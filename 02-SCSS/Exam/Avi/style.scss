@@ -1,63 +1,80 @@
+@mixin phone {
+    width: clamp(375px, 100%, 600px);
+}
+
+@mixin border {
+    border: solid 1px rgb(228, 225, 225);
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     font-family: 'Roboto', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+
+
 }
 
 .main {
     &__top {
-        padding: 8px;
+        background-color: white;
         height: 60px;
-        border-top: 0.5px solid gray;
-        border-bottom: 0.5px solid gray;
-        width: max(360px);
-        ;
+        border-top: 0.5px solid rgb(224, 224, 224);
+        border-bottom: 0.5px solid rgb(224, 224, 224);
+        width: clamp(375px, 100%, 600px);
+        display: flex;
+        justify-content: space-between;
 
         &__logo {
             img {
                 height: 60px;
                 width: 60px;
-                margin: 0px;
             }
         }
 
-        &__search {
-            border: solid 1px rgb(189, 188, 188);
-            border-radius: 50px;
-            height: 50px;
-            width: 50px;
-            margin-left: 205px;
-            margin-top: -60px;
-            position: absolute;
+        &__right {
+            width: 160px;
+            display: inline-flex;
+            justify-content: space-between;
+            margin-top: 4px;
 
-            img {
-                height: 20px;
-                width: 20px;
-                margin: 15px;
+            &__search {
+                @include border();
+                border-radius: 50px;
+                height: 50px;
+                width: 50px;
+
+                img {
+                    height: 20px;
+                    width: 20px;
+                    margin: 15px;
+                }
+            }
+
+            &__menu {
+                display: inline-flex;
+                @include border();
+                border-radius: 50px;
+                height: 50px;
+                width: 90px;
+
+                img {
+                    height: 28px;
+                    width: 28px;
+                    margin: 15px;
+                    border-radius: 50%;
+                    margin-left: 8px;
+                    margin-top: 10px;
+                }
             }
         }
-
-        &__menu {
-            display: flex;
-            border: solid 1px rgb(189, 188, 188);
-            border-radius: 50px;
-            height: 50px;
-            width: 90px;
-            margin-left: 270px;
-            margin-top: -60px;
-
-            img {
-                height: 28px;
-                width: 28px;
-                margin: 15px;
-                border-radius: 50%;
-                margin-left: 8px;
-                margin-top: 10px;
-            }
-        }
-
     }
 
     &__head {
+        background-color: #faf7f7;
+        @include phone();
+        margin-left: 10px;
 
         p {
             font-size: 15px;
@@ -75,31 +92,43 @@ body {
 
         }
 
-        &__round {
-            border-radius: 50px;
-            height: 45px;
-            width: 45px;
-            margin-top: -60px;
-            background-color: rgb(219, 219, 219);
-            margin-top: -90px;
-            position: absolute;
+        &__circles {
+            background-color: #633597;
+            float: right;
+            width: 350px;
+            height: auto;
+            justify-content: space-between;
+            display: flex;
+
+            &__circle {
+                border-radius: 50px;
+                height: 45px;
+                width: 45px;
+                background-color: rgb(219, 219, 219);
+                margin-top: -90px;
+                position: absolute;
+                float: right;
 
 
-            img {
-                height: 20px;
-                width: 20px;
-                margin: 12px;
+                img {
+                    height: 20px;
+                    width: 20px;
+                    margin: 12px;
+                }
+
             }
 
-        }
 
-        .heart {
-            margin-left: 320px;
+            .heart {
+                margin-left: 280px;
+                display: block;
 
-        }
+            }
 
-        .share {
-            margin-left: 260px;
+            .share {
+                margin-left: 220px;
+                display: block;
+            }
         }
 
         &__location {
@@ -117,50 +146,62 @@ body {
         }
 
         &__pics {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+
             &__mainpic {
-                margin: 15px;
+                margin: 0px;
 
                 img {
-                    width: 350px;
-                    height: 250px;
+                    width: clamp(350px, 100%, 600px);
+                    height: clamp(250px, 100%, 600px);
                     border-radius: 20px;
                 }
 
             }
 
             &__otherpics {
-                display: flex;
-                justify-content: space-between;
-                width: 350px;
-                margin: 15px;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                margin-top: 15px;
 
                 img {
-                    height: 90px;
-                    width: 110px;
+                    margin: 10px;
+                    width: clamp(80px, 90%, 190px);
+                    height: clamp(110px, 90%, 190px);
                     border-radius: 10px;
-                    margin-top: -10px;
                 }
+
             }
         }
 
         &__buttons {
             display: flex;
+            width: clamp(370px, 100%, 580px);
             justify-content: space-between;
-            width: max(360px);
-
 
             &__button {
                 height: 50px;
                 width: 100px;
-                background-color: black;
+                @include border();
+                background-color: #ffffff;
                 border-radius: 30px;
                 margin-left: 15px;
 
                 p {
                     font-size: 15px;
-                    color: white;
+                    color: gray;
                     margin-top: 15px;
                     margin-left: 20px;
+                }
+
+                &:hover {
+                    background-color: black;
+
+                    p {
+                        color: rgb(255, 255, 255);
+                    }
                 }
 
             }
@@ -186,7 +227,7 @@ body {
             color: gray;
             font-size: 15px;
             line-height: 20px;
-            width: max(360px);
+            width: clamp(370px, 100%, 580px);
 
 
             span {
@@ -194,6 +235,56 @@ body {
             }
         }
 
+    }
+
+    &__booking {
+        background-color: white;
+        height: 80px;
+        width: 95%;
+        padding: 5px;
+        margin-left: -10px;
+        position: fixed;
+        bottom: 0;
+        z-index: 1;
+
+        p:nth-child(1) {
+            margin-top: 10px;
+            font-weight: 500;
+            color: rgb(5, 5, 5);
+
+        }
+
+        >p {
+            margin-top: -5px;
+            margin-left: 20px;
+            font-size: 13px;
+            color: gray;
+
+            span {
+                color: #35977D;
+                font-size: 22px;
+                font-weight: 500;
+            }
+
+        }
+
+        &__book {
+            height: 60px;
+            width: 200px;
+            background-color: #35977D;
+            margin-left: 160px;
+            margin-top: -65px;
+            border-radius: 30px;
+            float: right;
+
+
+            p:nth-child(1) {
+                color: white;
+                font-size: 18px;
+                transform: translate(65px, 8px);
+                width: 100px;
+            }
+        }
     }
 
     &__facilities {
@@ -206,30 +297,94 @@ body {
             display: flex;
 
             &__icon {
-            border-radius: 50px;
-            height: 40px;
-            width: 40px;
-            background-color: rgb(219, 219, 219);
-            // position: absolute;
+                border-radius: 50px;
+                height: 40px;
+                width: 40px;
+                background-color: rgb(219, 219, 219);
+                // position: absolute;
 
 
-            img {
-                height: 22px;
-                width: 22px;
-                margin: 10px;
+                img {
+                    height: 22px;
+                    width: 22px;
+                    margin: 9px;
+                }
             }
-            }
-            p{
+
+            p {
                 font-size: 17px;
                 margin-top: 11px;
                 margin-left: 10px;
             }
         }
-        h4{
+
+        h4 {
             font-size: 17px;
             margin-left: 5px;
             color: blue;
             font-weight: 200;
         }
+
+
+    }
+
+    &__reviews {
+        @include border();
+        border-radius: 30px;
+        width: clamp(370px, 90%, 580px);
+        height: 400px;
+        transform: translate(15px, 25px);
+        margin-bottom: 150px;
+
+
+        p {
+            font-size: 22px;
+            font-weight: 500;
+            margin: 30px;
+        }
+
+        &__numbers {
+            display: flex;
+
+            &__nums {
+                justify-content: space-between;
+                margin-top: 25px;
+                margin-left: 10px;
+                font-size: 50px;
+                font-weight: 500;
+
+                &__stars {
+                    p {
+                        font-size: 17px;
+                        line-height: 25px;
+                        color: gray;
+                        font-weight: 100;
+                        margin-left: 10px;
+                    }
+                }
+
+            }
+
+        }
+
+        &__text {
+            display: flex;
+            width: clamp(370px, 90%, 580px);
+            justify-content: space-between;
+
+            p {
+                font-size: 15px;
+                font-weight: 100;
+            }
+        }
+
+        &__line {
+            border-top: #35977D solid 5px;
+            border-radius: 30px;
+            width: clamp(250px, 70%, 580px);
+            margin-left: 30px;
+            margin-top: -25px;
+        }
+
     }
 }
