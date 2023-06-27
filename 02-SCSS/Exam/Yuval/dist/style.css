@@ -260,7 +260,7 @@
     width: 132px;
     height: 90px;
     background-image: url(images/4.8.png);
-    background-size: 1vh;
+    animation: number 5s infinite 1.5s;
   }
   .reviews .rating .stars {
     display: flex;
@@ -302,5 +302,19 @@
   .topbar__right .profile img {
     width: 20px;
     height: 20px;
+  }
+}
+@keyframes number {
+  25% {
+    background-image: url(images/5.0.png);
+  }
+  50% {
+    background-image: url(images/1.5.png);
+  }
+  75% {
+    background-image: url(images/2.9.png);
+  }
+  100% {
+    background-image: url(images/3.6.png);
   }
 }
