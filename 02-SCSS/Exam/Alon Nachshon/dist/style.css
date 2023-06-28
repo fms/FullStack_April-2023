@@ -1,8 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap");
-* {
-  border-color: #393f58;
-}
-
 body {
   margin: 0;
   display: grid;
@@ -12,8 +8,6 @@ body {
 }
 
 .nav {
-  border: 1px solid;
-  border-color: #8fff78;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,8 +68,6 @@ body {
 }
 
 .header {
-  border: 1px solid;
-  border-color: #2d2157;
   grid-area: header;
   display: flex;
   justify-content: center;
@@ -111,8 +103,6 @@ body {
   grid-area: ppl;
 }
 .header__price {
-  border: 1px solid;
-  border-color: #6bb0b1;
   grid-area: price;
   color: #4aa585;
 }
@@ -130,8 +120,6 @@ body {
 }
 
 .main {
-  border: 1px solid;
-  border-color: #203ff5;
   grid-area: main;
   gap: 1.2rem;
   display: grid;
@@ -140,18 +128,12 @@ body {
   grid-template-areas: "bc bc bc . . . . . " "h1 h1 h1 h1 . . share save " "review review review review . . . . " "gallery gallery gallery gallery gallery gallery gallery gallery " "more-nav more-nav more-nav more-nav more-nav data data data" "more-det more-det more-det more-det more-det data data data ";
 }
 .main__bradcrumbs {
-  border: 1px solid;
-  border-color: #c054ed;
   grid-area: bc;
 }
 .main h1 {
-  border: 1px solid;
-  border-color: #592c75;
   grid-area: h1;
 }
 .main__save {
-  border: 1px solid;
-  border-color: #7b5dc9;
   background-color: lightgrey;
   height: 30px;
   width: 80px;
@@ -163,8 +145,6 @@ body {
   grid-area: save;
 }
 .main__share {
-  border: 1px solid;
-  border-color: #4b7108;
   background-color: lightgrey;
   height: 30px;
   width: 80px;
@@ -176,13 +156,9 @@ body {
   grid-area: share;
 }
 .main__rating {
-  border: 1px solid;
-  border-color: #60b291;
   grid-area: review;
 }
 .main__gallery {
-  border: 1px solid;
-  border-color: #b62931;
   grid-area: gallery;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -191,8 +167,6 @@ body {
   grid-template-areas: "cover-pic cover-pic sec-pic sec-pic " "cover-pic cover-pic  small-pic1 small-pic2";
 }
 .main__gallery img {
-  border: 1px solid;
-  border-color: #787440;
   border-radius: 20px;
 }
 .main__gallery__cover {
@@ -228,8 +202,6 @@ body {
   max-height: 12vw;
 }
 .main__more-details-nav {
-  border: 1px solid;
-  border-color: #7a2d38;
   grid-area: more-nav;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -276,13 +248,9 @@ body {
   text-align: center;
 }
 .main__more-details-content {
-  border: 1px solid;
-  border-color: #96c572;
   grid-area: more-det;
 }
 .main__more-details-review {
-  border: 1px solid;
-  border-color: #15029c;
   grid-area: data;
 }
 .main__more-details-review__raiting {
