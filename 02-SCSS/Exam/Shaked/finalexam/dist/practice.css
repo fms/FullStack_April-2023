@@ -1,0 +1,57 @@
+nav {
+  margin-top: 15px;
+}
+
+ul {
+  margin: 0;
+  display: flex;
+}
+
+li {
+  display: inline;
+  font-size: 25px;
+  padding: 12px;
+}
+
+li:hover {
+  background-color: lightgray;
+}
+
+li a {
+  text-decoration: none;
+  color: black;
+}
+
+.logo {
+  margin-left: 10px;
+}
+
+.searchbox, .usdbox {
+  border-radius: 30px;
+  border: solid 1px #a4a2a2;
+  padding: 12px;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.heart, .man {
+  border-radius: 50px;
+  border: solid 1px darkgray;
+  padding: 12px;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.space {
+  margin-left: 250px;
+}
+
+.txt-gray {
+  color: gray;
+}
+
+.navigationbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}

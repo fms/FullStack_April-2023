@@ -1,37 +1,77 @@
-@import url("https://fonts.googleapis.com/css?family=Fira+Sans");
 nav {
-    overflow: hidden;
-    background-color: #ffffff;
-    top: 0;
-    width: 100%;
+    margin-top: 15px;
+}
 
-    ul {
-        margin: 0;
-        padding: 15px;
+ul {
+    margin: 0;
+    display: flex;
+}
 
-        li {
-            display: inline;
-            font-family: "Fira Sans", sans-serif;
-            font-size: 17px;
+li {
+    display: inline;
+    font-size: 25px;
+    padding: 12px;
+}
 
-            a {
-                color: #000000;
-                text-decoration: none;
-                padding: 14px;
+li:hover {
+    background-color: lightgray;
+}
 
-                &:hover {
-                    background-color: #c0c0c0;
-                }
-            }
-        }
+li a {
+    text-decoration: none;
+    color: black;
+}
+i{
+    margin-right: 5px;
+}
+
+.logo {
+    margin-left: 10px;
+}
+
+.searchbox,
+.usdbox {
+    border-radius: 30px;
+    border: solid 1px rgb(164, 162, 162);
+    padding: 12px;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.bigheader{
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+.heart,
+.man {
+    border-radius: 50px;
+    border: solid 1px rgb(169, 169, 169);
+    padding: 12px;
+    font-size: 20px;
+
+}
+
+.space {
+    margin-left: 250px;
+}
+
+.txt {
+    &-gray {
+        color: gray;
     }
+}
+
+.navigationbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
 }
 
 .container {
     display: flex;
     flex-wrap: wrap;
     float: right;
-
     gap: 10px;
     border-radius: 30px;
 
@@ -50,40 +90,45 @@ nav {
 
 @-webkit-keyframes tracking-in-expand-fwd {
     0% {
-      letter-spacing: -0.5em;
-      -webkit-transform: translateZ(-700px);
-              transform: translateZ(-700px);
-      opacity: 0;
+        letter-spacing: -0.5em;
+        -webkit-transform: translateZ(-700px);
+        transform: translateZ(-700px);
+        opacity: 0;
     }
-    40% {
-      opacity: 0.6;
-    }
-    100% {
-      -webkit-transform: translateZ(0);
-              transform: translateZ(0);
-      opacity: 1;
-    }
-  }
-  @keyframes tracking-in-expand-fwd {
-    0% {
-      letter-spacing: -0.5em;
-      -webkit-transform: translateZ(-700px);
-              transform: translateZ(-700px);
-      opacity: 0;
-    }
-    40% {
-      opacity: 0.6;
-    }
-    100% {
-      -webkit-transform: translateZ(0);
-              transform: translateZ(0);
-      opacity: 1;
-    }
-  }
 
-  .tracking-in-expand-fwd {
-	-webkit-animation: tracking-in-expand-fwd 4s cubic-bezier(0.215, 0.610, 0.355, 1.000) infinite both;
-	        animation: tracking-in-expand-fwd 4s cubic-bezier(0.215, 0.610, 0.355, 1.000) infinite both;
+    40% {
+        opacity: 0.6;
+    }
+
+    100% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+
+@keyframes tracking-in-expand-fwd {
+    0% {
+        letter-spacing: -0.5em;
+        -webkit-transform: translateZ(-700px);
+        transform: translateZ(-700px);
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0.6;
+    }
+
+    100% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+
+.tracking-in-expand-fwd {
+    -webkit-animation: tracking-in-expand-fwd 4s cubic-bezier(0.215, 0.610, 0.355, 1.000) infinite both;
+    animation: tracking-in-expand-fwd 4s cubic-bezier(0.215, 0.610, 0.355, 1.000) infinite both;
 }
 
 .txt {
@@ -129,6 +174,7 @@ nav {
 .datesection {
     display: flex;
     flex-wrap: wrap;
+    align-items: baseline;
     padding: 20px;
     gap: 10px;
 
@@ -143,7 +189,7 @@ nav {
         font-size: 1.2rem;
         padding: 5px 15px;
         border-radius: 20px;
-        background-color: rgb(241, 241, 241);
+        background-color: rgb(245, 245, 245);
     }
 
     &-greenbox {
@@ -165,7 +211,7 @@ nav {
     gap: 10px;
     border-radius: 30px;
     grid-template-rows: repeat(4, 100px);
-    grid-template-columns: repeat(4, 250px);
+    grid-template-columns: repeat(4, 290px);
     grid-template-areas:
         "a a b b "
         "a a b b "
@@ -267,7 +313,7 @@ p1::after {
             font-size: 20px;
         }
 
-        &-flex{
+        &-flex {
             display: flex;
         }
 
@@ -285,13 +331,15 @@ p1::after {
             border-radius: 10px;
 
             &-num {
-                
+
                 font-size: 20px;
-                &-1{
+
+                &-1 {
                     margin-left: 68%;
-                  margin-top: 20px;
+                    margin-top: 20px;
                 }
-                &-2{
+
+                &-2 {
                     margin-left: 70%;
                     margin-top: 20px;
                 }
@@ -324,14 +372,40 @@ p1::after {
 }
 
 
-@media(max-width: 620px) {
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+    .navigationbar {
+        display: flex;
+    }
+    .space, .heart, .man{
+        display: none;
+    }
+    
+hr{
+    margin-top: 20px;
+}
+li{
+padding: 5px;
+}
+
+.facilitiessec{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    &_circle{
+        border-radius: 30px;
+        border: solid 1px gray;
+        width: 30px;
+        height: 30px;
+        float:left;
+        margin-right: 10px;
+    }
+}
     .gridpic {
         margin-top: 20px;
         display: grid;
         gap: 10px;
         border-radius: 30px;
-        grid-template-rows: repeat(3, 80px);
-        grid-template-columns: repeat(3, 105px);
+        grid-template-rows: repeat(3, 130px);
+        grid-template-columns: repeat(3, 240px);
         grid-template-areas:
             "a a a "
             "a a a "
@@ -348,9 +422,9 @@ p1::after {
         grid-template-columns: repeat(4, 165px);
         grid-template-areas:
             "header header header"
-            "text text ."
-            "text text ."
-            "ratingbox ratingbox .";
+            "text text text"
+            "text text text"
+            "ratingbox ratingbox ratingbox";
     }
 
     .ratingbox {
@@ -358,7 +432,7 @@ p1::after {
         border-radius: 30px;
         grid-area: ratingbox;
         border: 1px gray solid;
-
+        margin-top: 30%;
         &-head {
             font-size: 25px;
         }
@@ -405,8 +479,50 @@ p1::after {
     }
 }
 
+@media(min-width: 920px) {
+    .facilitiessec{
+        display: none;
+    }
+}
+@media only screen and (min-width:0px) and (max-width: 600px) {
+    .bar{
+        display: none;
+        
+    }
+    
+.logo {
+    margin-left: 110px;
+}
+    .datesection{
+        &-header, &-box, &-greenbox, .txt-green{
+        display: none;
+    }
+    }
 
-@media(max-width: 920px) {
+    hr{
+        margin-top: 20px;
+    }
+    li{
+    padding: 5px;
+    }
+    
+    i{
+        margin-left: 5px;
+    }
+    .facilitiessec{
+        margin-top: 10px;
+        margin-bottom: 30px;
+        &_circle{
+            border-radius: 30px;
+            border: solid 1px gray;
+            width: 30px;
+            height: 30px;
+            float:left;
+            margin-right: 10px;
+        }
+    }
+
+    
     .datesection {
         display: flex;
         padding: 10px;
@@ -442,8 +558,8 @@ p1::after {
         display: grid;
         gap: 10px;
         border-radius: 30px;
-        grid-template-rows: repeat(3, 120px);
-        grid-template-columns: repeat(3, 220px);
+        grid-template-rows: repeat(3, 90px);
+        grid-template-columns: repeat(3, 110px);
         grid-template-areas:
             "a a a "
             "a a a "
@@ -459,10 +575,10 @@ p1::after {
         grid-template-rows: repeat(3, 135px);
         grid-template-columns: repeat(4, 185px);
         grid-template-areas:
-            "header header header"
-            "text text text"
-            "text text text"
-            "ratingbox ratingbox ratingbox";
+            "header . ."
+            "text text ."
+            "text text ."
+            "ratingbox ratingbox .";
     }
 
     .ratingbox {
@@ -470,7 +586,7 @@ p1::after {
         border-radius: 30px;
         grid-area: ratingbox;
         border: 1px gray solid;
-
+         margin-top: 47%;
         &-head {
             font-size: 25px;
         }

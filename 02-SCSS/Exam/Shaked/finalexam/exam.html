@@ -6,32 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="dist/exam.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-    <div class="navigation-bar">
-        <nav>
-            <ul>
-                <li><a class="logo"><img src="/finalexam/pictures/lunorapic.png"></a></li>
-                <li><a href=#>Hotel</a></li>
-                <li><a href=#>Apartment</a></li>
-                <li><a href=#>Holiday</a></li>
-                <li><a href=#>More</a></li>
-                <div class="container">
-                    <li><a class="container-radius txt-gray">🔍 Where are you going?</a></li>
-                    <li><a class="container-radius txt-gray">USD &#709;</a></li>
-                    <li><a class="container-radius txt-gray">🤍</a></li>
-                    <li><a class="container-radius container-manpic">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+    <nav>
+        <ul>
+            <div class="navigationbar">
+                <img style="height: 30px;" src="/02-SCSS/Exam/Shaked/finalexam/pictures/lunorapic.png "><a
+                    class="logo"></a>
+                <div class="bar">
+                    <li><a href="">Hotel</a></li>
+                    <li><a nthref="">Apartme</a></li>
+                    <li><a href="">Holiday</a></li>
+                    <li><a href="">More </a></li>
+                    <a class="space"></a>
+                    <a class="searchbox txt-gray"><i class="fa-solid fa-magnifying-glass"></i> Where are you going?</a>
+                    <a class="usdbox txt-gray"><i class="fa-solid fa-flag-usa"></i> USD <i
+                            class="fa-solid fa-angle-down"></i></a>
                 </div>
-            </ul>
-            <hr>
-        </nav>
-    </div>
+                <li><a class="heart" href=""><i class="fa-regular fa-heart"></i></a></li>
+                <li><a class="man" href=""><i class="fa-solid fa-bars"></i></a></li>
+            </div>
+        </ul>
+    </nav>
+    <hr>
     <div class="datesection">
         <div class="datesection-header">Choose date </div>
-        <div class="datesection-box flex txt-gray">📍 Sa Pa, Vietnam</div>
-        <div class="datesection-box flex txt-gray">📆 Thu, Apr 22 - Fri, Apr 23</div>
-        <div class="datesection-box flex txt-gray">👬 1 Room, 2 Adults</div>
+        <div class="datesection-box flex txt-gray"><i class="fa-solid fa-location-dot"></i> Sa Pa, Vietnam</div>
+        <div class="datesection-box flex txt-gray"><i class="fa-regular fa-calendar-days"></i> Thu, Apr 22 - Fri, Apr 23
+        </div>
+        <div class="datesection-box flex txt-gray"><i class="fa-solid fa-user-group"></i> 1 Room, 2 Adults</div>
         <div class="green flex-only">
             <div class="flex txt-green">$200/Night</div>
             <div class="datesection-greenbox txt-white flex">Booking</div>
@@ -39,12 +46,23 @@
     </div>
     <hr>
     <div class="center">
-        <p> Hotel / Vietnam / Sa Pa Terraces</p>
+        <p> Hotel / Vietnam / <r style="color: gray;"> Sa Pa Terraces</r>
+        </p>
         <b>
+
             <h1> Sapa Jade Hill Resort</h1>
+            <div class="bigheader">
+                <div class="share">
+                    <p>Share</p>
+                </div>
+                <div class="save">
+                    <p>Save</p>
+                </div>
+            </div>
         </b>
         <div class="txt-gray">
-            ⭐5.0 100 reviews 📍 Sa Pa, Vietnam 🤵 Grader Home
+            <i class="fa-regular fa-star fa-xs"></i>5.0 100 reviews &nbsp;<i class="fa-regular fa-star fa-2xs"></i>Sa
+            Pa, Vietnam &nbsp;<i class="fa-regular fa-user"></i>Grader Home
         </div>
         <div class="gridpic">
             <div class="a bg-img b-r"></div>
@@ -70,26 +88,45 @@
                         restaurant and bar. The accommodation operates a 24-hour front desk that can arrange express
                         check-in and check-out, room service and ticketing services for guests. </p1>
                 </div>
-            </div>
-            <div class="ratingbox">
-                <div class="ratingbox-head"> Reviews and ratings</div>
-                <div class="flex-only">
-                    <div class="ratingbox-number tracking-in-expand-fwd">4.8</div>
-                    <div class="flex-column">
-                        <div class="ratingbox-number-stars">⭐⭐⭐⭐⭐<br>
-                            <div>Based on 100 reviewers</div>
+                <div class="facilitiessec">
+                    <h2>Our best facilities</h2>
+                    <div class="flexonly">
+                        <div class="facilitiessec_circle flex">
+                            <i class="fa-solid fa-fan"></i>
                         </div>
+                        
+                        <p>Air conditioner</p>
+                        <div class="facilitiessec_circle flex">
+                            <i class="fa-regular fa-clock"></i>
+                        </div>
+                        <p>Receptionist 24h</p>
+                        <div class="facilitiessec_circle flex">
+                            <i class="fa-solid fa-person-swimming"></i>
+                        </div>
+                        <p>Swwimming pool</p>
+                    </div>
+                    <p style="color: blue;">See more facilities</p>
+                </div> 
+            </div>
+        <div class="ratingbox">
+            <div class="ratingbox-head"> Reviews and ratings</div>
+            <div class="flex-only">
+                <div class="ratingbox-number tracking-in-expand-fwd">4.8</div>
+                <div class="flex-column">
+                    <div class="ratingbox-number-stars">⭐⭐⭐⭐⭐<br>
+                        <div>Based on 100 reviewers</div>
                     </div>
                 </div>
-                <div class="ratingbox-rating">
-                        <div class="ratingbox-rating-head">
-                            <div class="ratingbox-rating-flex">
-                            <p>Comfortable</p>
+            </div>
+            <div class="ratingbox-rating">
+                <div class="ratingbox-rating-head">
+                    <div class="ratingbox-rating-flex">
+                        <p>Comfortable</p>
                         <div class="ratingbox-rating-greenline-num-1 txt-gray">4.7</div>
                     </div>
-                        <div class="ratingbox-rating-greenline"></div>
-                        <div class="ratingbox-rating-head ratingbox-rating-flex ">
-                            <p>Cleanliness</p>
+                    <div class="ratingbox-rating-greenline"></div>
+                    <div class="ratingbox-rating-head ratingbox-rating-flex ">
+                        <p>Cleanliness</p>
                         <div class="ratingbox-rating-greenline-num-2 txt-gray">4.8</div>
                     </div>
                     <div class="ratingbox-rating-greenline1"></div>

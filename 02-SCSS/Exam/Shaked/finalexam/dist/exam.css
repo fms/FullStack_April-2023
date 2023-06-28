@@ -1,26 +1,70 @@
-@import url("https://fonts.googleapis.com/css?family=Fira+Sans");
 nav {
-  overflow: hidden;
-  background-color: #ffffff;
-  top: 0;
-  width: 100%;
+  margin-top: 15px;
 }
-nav ul {
+
+ul {
   margin: 0;
-  padding: 15px;
+  display: flex;
 }
-nav ul li {
+
+li {
   display: inline;
-  font-family: "Fira Sans", sans-serif;
-  font-size: 17px;
+  font-size: 25px;
+  padding: 12px;
 }
-nav ul li a {
-  color: #000000;
+
+li:hover {
+  background-color: lightgray;
+}
+
+li a {
   text-decoration: none;
-  padding: 14px;
+  color: black;
 }
-nav ul li a:hover {
-  background-color: #c0c0c0;
+
+i {
+  margin-right: 5px;
+}
+
+.logo {
+  margin-left: 10px;
+}
+
+.searchbox,
+.usdbox {
+  border-radius: 30px;
+  border: solid 1px #a4a2a2;
+  padding: 12px;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.bigheader {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.heart,
+.man {
+  border-radius: 50px;
+  border: solid 1px darkgray;
+  padding: 12px;
+  font-size: 20px;
+}
+
+.space {
+  margin-left: 250px;
+}
+
+.txt-gray {
+  color: gray;
+}
+
+.navigationbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
 }
 
 .container {
@@ -114,6 +158,7 @@ nav ul li a:hover {
 .datesection {
   display: flex;
   flex-wrap: wrap;
+  align-items: baseline;
   padding: 20px;
   gap: 10px;
 }
@@ -127,7 +172,7 @@ nav ul li a:hover {
   font-size: 1.2rem;
   padding: 5px 15px;
   border-radius: 20px;
-  background-color: #f1f1f1;
+  background-color: whitesmoke;
 }
 .datesection-greenbox {
   background-color: green;
@@ -147,7 +192,7 @@ nav ul li a:hover {
   gap: 10px;
   border-radius: 30px;
   grid-template-rows: repeat(4, 100px);
-  grid-template-columns: repeat(4, 250px);
+  grid-template-columns: repeat(4, 290px);
   grid-template-areas: "a a b b " "a a b b " "a a c d " "a a c d ";
 }
 
@@ -284,14 +329,43 @@ p1::after {
   color: white;
 }
 
-@media (max-width: 620px) {
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+  .navigationbar {
+    display: flex;
+  }
+
+  .space, .heart, .man {
+    display: none;
+  }
+
+  hr {
+    margin-top: 20px;
+  }
+
+  li {
+    padding: 5px;
+  }
+
+  .facilitiessec {
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+  .facilitiessec_circle {
+    border-radius: 30px;
+    border: solid 1px gray;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-right: 10px;
+  }
+
   .gridpic {
     margin-top: 20px;
     display: grid;
     gap: 10px;
     border-radius: 30px;
-    grid-template-rows: repeat(3, 80px);
-    grid-template-columns: repeat(3, 105px);
+    grid-template-rows: repeat(3, 130px);
+    grid-template-columns: repeat(3, 240px);
     grid-template-areas: "a a a " "a a a " "b c d " "b c d ";
   }
 
@@ -302,7 +376,7 @@ p1::after {
     border-radius: 30px;
     grid-template-rows: repeat(3, 115px);
     grid-template-columns: repeat(4, 165px);
-    grid-template-areas: "header header header" "text text ." "text text ." "ratingbox ratingbox .";
+    grid-template-areas: "header header header" "text text text" "text text text" "ratingbox ratingbox ratingbox";
   }
 
   .ratingbox {
@@ -310,6 +384,7 @@ p1::after {
     border-radius: 30px;
     grid-area: ratingbox;
     border: 1px gray solid;
+    margin-top: 30%;
   }
   .ratingbox-head {
     font-size: 25px;
@@ -348,7 +423,49 @@ p1::after {
     font-size: 20px;
   }
 }
-@media (max-width: 920px) {
+@media (min-width: 920px) {
+  .facilitiessec {
+    display: none;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 600px) {
+  .bar {
+    display: none;
+  }
+
+  .logo {
+    margin-left: 110px;
+  }
+
+  .datesection-header, .datesection-box, .datesection-greenbox, .datesection .txt-green {
+    display: none;
+  }
+
+  hr {
+    margin-top: 20px;
+  }
+
+  li {
+    padding: 5px;
+  }
+
+  i {
+    margin-left: 5px;
+  }
+
+  .facilitiessec {
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+  .facilitiessec_circle {
+    border-radius: 30px;
+    border: solid 1px gray;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-right: 10px;
+  }
+
   .datesection {
     display: flex;
     padding: 10px;
@@ -380,8 +497,8 @@ p1::after {
     display: grid;
     gap: 10px;
     border-radius: 30px;
-    grid-template-rows: repeat(3, 120px);
-    grid-template-columns: repeat(3, 220px);
+    grid-template-rows: repeat(3, 90px);
+    grid-template-columns: repeat(3, 110px);
     grid-template-areas: "a a a " "a a a " "b c d " "b c d ";
   }
 
@@ -392,7 +509,7 @@ p1::after {
     border-radius: 30px;
     grid-template-rows: repeat(3, 135px);
     grid-template-columns: repeat(4, 185px);
-    grid-template-areas: "header header header" "text text text" "text text text" "ratingbox ratingbox ratingbox";
+    grid-template-areas: "header . ." "text text ." "text text ." "ratingbox ratingbox .";
   }
 
   .ratingbox {
@@ -400,6 +517,7 @@ p1::after {
     border-radius: 30px;
     grid-area: ratingbox;
     border: 1px gray solid;
+    margin-top: 47%;
   }
   .ratingbox-head {
     font-size: 25px;
