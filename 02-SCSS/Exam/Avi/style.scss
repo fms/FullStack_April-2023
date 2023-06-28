@@ -9,7 +9,7 @@
 body {
     font-family: 'Open Sans', sans-serif;
     font-family: 'Roboto', sans-serif;
-    background-color: #f7f7f7;
+    background-color: #ffffff;
     margin: 0;
     padding: 0;
 
@@ -26,6 +26,22 @@ body {
         display: flex;
         justify-content: space-between;
 
+        &__navbar{
+            position: absolute;
+            float: left;
+            display: none;
+            width: clamp(200px, 55%, 400px);
+            justify-content: space-between;
+            margin-left: 100px;
+            margin-top: 10px;
+            color: gray;
+            
+            p:nth-child(1){
+                color: black;
+                font-weight: 500;
+            }   
+        }
+
         &__logo {
             img {
                 height: 60px;
@@ -35,8 +51,8 @@ body {
 
         &__right {
             width: 160px;
-            display: inline-flex;
-            justify-content: space-between;
+            float: right;
+            display: flex;
             margin-top: 4px;
 
             &__search {
@@ -68,11 +84,15 @@ body {
                     margin-top: 10px;
                 }
             }
+            
         }
+    }
+    &__choosedate{
+        display: none;
     }
 
     &__head {
-        background-color: #faf7f7;
+        background-color: #ffffff;
         @include phone();
         margin-left: 10px;
 
@@ -387,4 +407,15 @@ body {
         }
 
     }
+}
+@media screen and (min-width: 600px) {
+    .main__top{
+        width: 100%;
+
+    }
+    .main__choosedate,
+    .main__top__navbar{
+        display: flex;
+    }
+
 }
