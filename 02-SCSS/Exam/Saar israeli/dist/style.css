@@ -111,6 +111,77 @@ nav .right-nav .profile-picture {
   border-radius: 50px;
 }
 
+.under-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px #dadada solid;
+  padding-bottom: 1vh;
+  width: 100%;
+}
+.under-nav .left-under-nav {
+  margin-left: 2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.under-nav .left-under-nav h2 {
+  font-weight: 300;
+}
+.under-nav .left-under-nav button {
+  border-radius: 50px;
+  background-color: #f6fffe;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  margin-right: 1vw;
+}
+.under-nav .mid-under-nav {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  flex-basis: 21%;
+}
+.under-nav .mid-under-nav button {
+  border-radius: 30px;
+  border: none;
+  background-color: #f6fffe;
+  color: #252525;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 170px;
+}
+.under-nav .mid-under-nav i {
+  margin-right: 0.4vw;
+}
+.under-nav .right-under-nav {
+  margin-right: 2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.under-nav .right-under-nav button {
+  border-radius: 20px;
+  background-color: #008d5e;
+  border: 0;
+  width: 120px;
+  height: 40px;
+  color: white;
+  margin-left: 0.5vw;
+}
+.under-nav .right-under-nav a {
+  color: #008d5e;
+  text-decoration: none;
+}
+.under-nav .right-under-nav .hidden-room {
+  display: none;
+}
+.under-nav .hidden-under-nav {
+  display: none;
+}
+
 .navigate-bar {
   margin: 3vh 2vw;
 }
@@ -316,6 +387,10 @@ nav .right-nav .profile-picture {
 }
 
 @media screen and (width <= 600px) {
+  body {
+    padding-bottom: 10vh;
+  }
+
   nav .right-nav .profile {
     padding: 5px;
     width: 60px !important;
@@ -329,6 +404,40 @@ nav .right-nav .profile-picture {
   nav .right-nav .search {
     width: 38px;
     height: 35px;
+  }
+
+  .under-nav {
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    height: 8vh;
+    align-items: center;
+    justify-content: center;
+  }
+  .under-nav .hidden-under-nav {
+    display: none;
+  }
+  .under-nav .right-under-nav .hidden-room {
+    display: inline;
+  }
+  .under-nav .right-under-nav .gray-media {
+    color: #cccccc;
+    font-weight: lighter;
+  }
+  .under-nav .right-under-nav a {
+    font-weight: bolder;
+  }
+  .under-nav .right-under-nav h2 {
+    font-size: 14px;
+  }
+  .under-nav .right-under-nav button {
+    height: 40px;
+    width: 160px;
+  }
+  .under-nav .right-under-nav .start-from {
+    display: flex;
+    flex-direction: column;
+    margin-right: 9vw;
   }
 
   .main-content img {
@@ -367,9 +476,56 @@ nav .right-nav .profile-picture {
     height: 25px !important;
   }
 }
-@media screen and (601px <= width <= 1024px) {
+@media screen and (601px <= width <= 1023px) {
+  body {
+    padding-bottom: 10vh;
+  }
+
   .main-buttons {
     flex-basis: 20%;
+  }
+
+  .under-nav {
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    height: 8vh;
+    align-items: center;
+    justify-content: center;
+  }
+  .under-nav .hidden-under-nav {
+    display: flex;
+    flex-basis: 10%;
+  }
+  .under-nav .hidden-under-nav button {
+    height: 40px;
+    width: 150px;
+  }
+  .under-nav .left-under-nav {
+    display: none;
+  }
+  .under-nav .right-under-nav .hidden-room {
+    display: inline;
+  }
+  .under-nav .right-under-nav .gray-media {
+    color: #cccccc;
+    font-weight: lighter;
+  }
+  .under-nav .right-under-nav a {
+    font-weight: bolder;
+  }
+  .under-nav .right-under-nav h2 {
+    font-size: 14px;
+  }
+  .under-nav .right-under-nav button {
+    height: 40px;
+    width: 130px;
+  }
+  .under-nav .right-under-nav .start-from {
+    display: flex;
+    flex-direction: column;
+    margin-right: 2.5vw;
+    margin-left: 1vw;
   }
 
   nav .left-nav .hidden-nav {
@@ -434,7 +590,7 @@ nav .right-nav .profile-picture {
     margin-left: 0.4vw;
   }
 }
-@media screen and (1024px <= width) {
+@media screen and (1023px <= width) {
   .main-buttons {
     flex-basis: 20%;
   }
@@ -473,6 +629,10 @@ nav .right-nav .profile-picture {
     display: flex;
     width: 250px;
     height: 28px;
+  }
+
+  .under-nav .hidden-under-nav {
+    display: flex;
   }
 
   .main-buttons {

@@ -38,6 +38,7 @@ nav {
         display: none;
     }
 
+
     .left-nav {
         display: flex;
         justify-content: center;
@@ -127,6 +128,84 @@ nav {
 
     }
 }
+
+.under-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px rgb(218, 218, 218) solid;
+    padding-bottom: 1vh;
+    width: 100%;
+  
+    .left-under-nav {
+        margin-left: 2vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h2 {
+            font-weight: 300;
+        }
+      button {
+        border-radius: 50px;
+        background-color:rgb(246, 255, 254) ;
+        width: 30px;
+        height: 30px;
+        border: 0;
+        margin-right: 1vw;
+      }
+    }
+
+    .mid-under-nav {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;            
+        flex-basis: 21%;
+        button {
+            border-radius: 30px;
+            border: none;
+            background-color:rgb(246, 255, 254) ;
+            color: rgb(37, 37, 37);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+            width: 170px;
+        }
+
+        i {
+            margin-right: .4vw;
+        }
+    }
+
+    .right-under-nav {
+        margin-right: 2vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button {
+            border-radius: 20px;
+            background-color:rgb(0, 141, 94) ;
+            border: 0;
+            width: 120px;
+            height: 40px;
+            color: white;
+            margin-left: .5vw;
+        }
+
+        a {
+            color:rgb(0, 141, 94) ;
+            text-decoration: none;
+        }
+
+        .hidden-room {
+            display: none;
+        }
+    }
+
+    .hidden-under-nav {
+        display: none;
+    }
+  }
 
 .navigate-bar {
 
@@ -381,6 +460,9 @@ nav {
 
 @media screen and (width <=600px) {
 
+    body {
+        padding-bottom: 10vh;
+    }
 
     nav {
 
@@ -403,6 +485,50 @@ nav {
                 height: 35px;
             }
 
+        }
+    }
+
+    .under-nav {
+        position: fixed;
+        bottom: 0;
+        background-color: white;
+        height: 8vh;
+        align-items: center;
+        justify-content: center;
+
+        .hidden-under-nav {
+            display:none;
+        }
+
+        .right-under-nav{ 
+
+            .hidden-room {
+                display: inline;
+            }
+    
+            .gray-media {
+                color: rgb(204, 204, 204);
+                font-weight: lighter;
+            }
+
+            a {
+                font-weight: bolder;
+            }
+
+            h2 {
+                font-size: 14px;
+            }
+
+            button {
+                height: 40px;
+                width: 160px;
+            }
+
+            .start-from {
+                display: flex;
+                flex-direction: column;
+                margin-right: 9vw;
+            }
         }
     }
 
@@ -461,13 +587,70 @@ nav {
 
 }
 
-@media screen and (601px <=width <=1024px) {
+@media screen and (601px <=width <=1023px) {
+
+    body {
+        padding-bottom: 10vh;
+    }
 
     .main-buttons {
         flex-basis: 20%;
     }
 
+    .under-nav {
+        position: fixed;
+        bottom: 0;
+        background-color: white;
+        height: 8vh;
+        align-items: center;
+        justify-content: center;
 
+        .hidden-under-nav {
+            display:flex;
+            flex-basis: 10%;
+            button {
+                height: 40px;
+                width: 150px;
+            }
+        }
+
+        .left-under-nav {
+            display: none;
+        }
+
+        .right-under-nav{ 
+
+            .hidden-room {
+                display: inline;
+            }
+    
+            .gray-media {
+                color: rgb(204, 204, 204);
+                font-weight: lighter;
+            }
+
+            a {
+                font-weight: bolder;
+            }
+
+            h2 {
+                font-size: 14px;
+            }
+
+            button {
+                height: 40px;
+                width: 130px;
+            }
+
+            .start-from {
+                display: flex;
+                flex-direction: column;
+                margin-right: 2.5vw;
+                margin-left: 1vw;
+            }
+        }
+    }
+    
 
     nav {
 
@@ -549,7 +732,7 @@ nav {
 
 }
 
-@media screen and (1024px <=width) {
+@media screen and (1023px <=width) {
 
     .main-buttons {
         flex-basis: 20%;
@@ -611,6 +794,15 @@ nav {
         }
 
     }
+
+    .under-nav {
+
+        .hidden-under-nav {
+            display:flex;
+        }
+
+    }
+
 
     .main-buttons {
         justify-content: start;
