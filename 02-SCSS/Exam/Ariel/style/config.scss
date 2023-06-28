@@ -14,7 +14,7 @@ a {
   text-decoration: none;
 }
 
-@mixin flexer($display:flex, $justify-content, $flex-diraction) {
+@mixin flexer($display, $justify-content, $flex-diraction) {
   display: flex;
   justify-content: $justify-content;
   flex-direction: $flex-diraction;

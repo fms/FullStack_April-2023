@@ -1,7 +1,7 @@
-@import '../config';
+@import '../dist/config';
 
 .nav { 
-  
+
   .navBar {
     @include flexer(flex, center, row);
     
