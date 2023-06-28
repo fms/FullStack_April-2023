@@ -16,15 +16,15 @@
   height:$height;
   width:$width;
   border-radius: $borderRadius;
+
 }
 
 
 @mixin btn(){
   width: 245px;
   box-sizing: border-box;
-  border: 2px solid #ccc;
   border-radius: 50px;
-  
+  border: 1px solid $col-prim-text;
   background-color: white;
   background-image: url('../imgs/search-icon-png-18.png') ;
   background-repeat: no-repeat;

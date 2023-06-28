@@ -4,7 +4,7 @@
 
 // * {border-color: rgb(random(255), random(255), random(255));}
 
-  
+
 body{
     margin:0;
     display:grid;
@@ -48,20 +48,15 @@ body{
         
     }
     
-    &__search-btn{
-        // @include createOval(40px ,185px, 40px, $col-btn);
-        // font-size: small;
+    &__search-btn{       
         grid-area: where;
-        // background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat left;
         @include btn;
         
     }
 
     &__select{
-        // background-image:url("./imgs/flag.png")
-        // @include createOval(40px ,80%, 40px, $col-btn);
+        // background-image:url("./imgs/flag.png");
         text-align: center;
-
         grid-area: currency;
     }
     &__like{
@@ -70,30 +65,41 @@ body{
     &__profile{
         grid-area: profile;
     }
+
 }
 .header{
     @include random-border;
     grid-area:header;
     @include self-flex;
     display: grid;
-    grid-template-columns: repeat( 14, 1fr);
-    grid-template-areas: "choose choose loc loc loc date date date date ppl ppl ppl  price book";
+    grid-template-columns: repeat( 17, 1fr);
+    grid-template-areas: "choose choose  choose choose choose loc loc loc date date date date ppl ppl ppl  price book";
     gap:$gap;
-    
+
     &__back{
         grid-area: choose;
     }
     &__button--loc{
-        @include createOval(30px ,100%, 40px, $col-btn);
+
+        @include createOval(30px ,100%, 40px, white);
+        border: 1px solid $col-prim-text;
         grid-area: loc;
+        overflow: hidden;
+        color: $col-prim-text;
     }
     &__button--date{
-        @include createOval(30px ,100%, 40px, $col-btn);
+        @include createOval(30px ,100%, 40px, white);
+        border: 1px solid $col-prim-text;
         grid-area: date;
+        overflow: hidden;
+        color: $col-prim-text;
     }
     &__button--ppl{
-        @include createOval(30px ,100%, 40px, $col-btn);
+        @include createOval(30px ,100%, 40px,white);
+        border: 1px solid $col-prim-text;
         grid-area: ppl;
+        overflow: hidden;
+        color: $col-prim-text;
     }
     &__price{
         @include random-border;
@@ -125,30 +131,44 @@ body{
                         "more-det more-det more-det more-det more-det data data data "
                         ;
 
+    align-items:baseline;
+    // justify-items: center;
+
     &__bradcrumbs{
         @include random-border;
         grid-area: bc;
+        &--active{
+            color:$col-prim-text;
+        }
     }
 
     h1{
         @include random-border;
         grid-area: h1;
+        margin:0;
+
+
+  
     }
     &__save{
         @include random-border;
-        @include createOval(30px ,80px, 40px, lightgrey);
+        @include createOval(30px ,80px, 40px, $col-light);
         @include self-flex;
+        color:#333;
         grid-area: save;
     }
     &__share{
         @include random-border;
-        @include createOval(30px ,80px, 40px, lightgrey);
+        @include createOval(30px ,80px, 40px,  $col-light);
         @include self-flex;
+        justify-self: right;
+        color:#333;
         grid-area: share;
     }
 
     &__rating{
         @include random-border;
+        color:grey;
         grid-area: review;
     }
     
@@ -219,24 +239,41 @@ body{
 
 
         &__overview{
-            @include createOval(40px ,100%, 40px, lightgrey);
+            @include createOval(40px ,100%, 40px, black);
+            color:white;
             @include self-flex;
+            border: 1px solid $col-prim-text;
+
 
         }
 
         &__included{
-            @include createOval(40px ,100%, 40px, lightgrey);
+            @include createOval(40px ,100%, 40px, white);
             @include self-flex;
+        border: 1px solid $col-prim-text;
+        color:$col-prim-text;
+
+
+
         }
 
         &__faqs{
-            @include createOval(40px ,100%, 40px, lightgrey);
+            @include createOval(40px ,100%, 40px, white);
             @include self-flex;
+        border: 1px solid $col-prim-text;
+        color:$col-prim-text;
+
+
         }
 
         &__room{
-            @include createOval(40px ,100%, 40px, lightgrey);
+            @include createOval(40px ,100%, 40px, white);
             @include self-flex;
+        border: 1px solid $col-prim-text;
+        color:$col-prim-text;
+
+
+
         }
     }
     &__more-details-content{

@@ -45,8 +45,8 @@ body {
   grid-area: where;
   width: 245px;
   box-sizing: border-box;
-  border: 2px solid #ccc;
   border-radius: 50px;
+  border: 1px solid #aeacac;
   background-color: white;
   background-image: url("../imgs/search-icon-png-18.png");
   background-repeat: no-repeat;
@@ -74,33 +74,42 @@ body {
   align-items: center;
   text-align: center;
   display: grid;
-  grid-template-columns: repeat(14, 1fr);
-  grid-template-areas: "choose choose loc loc loc date date date date ppl ppl ppl  price book";
-  gap: 1.2rem;
+  grid-template-columns: repeat(17, 1fr);
+  grid-template-areas: "choose choose  choose choose choose loc loc loc date date date date ppl ppl ppl  price book";
+  gap: 1rem;
 }
 .header__back {
   grid-area: choose;
 }
 .header__button--loc {
-  background-color: #e9e9e9;
+  background-color: white;
   height: 30px;
   width: 100%;
   border-radius: 40px;
+  border: 1px solid #aeacac;
   grid-area: loc;
+  overflow: hidden;
+  color: #aeacac;
 }
 .header__button--date {
-  background-color: #e9e9e9;
+  background-color: white;
   height: 30px;
   width: 100%;
   border-radius: 40px;
+  border: 1px solid #aeacac;
   grid-area: date;
+  overflow: hidden;
+  color: #aeacac;
 }
 .header__button--ppl {
-  background-color: #e9e9e9;
+  background-color: white;
   height: 30px;
   width: 100%;
   border-radius: 40px;
+  border: 1px solid #aeacac;
   grid-area: ppl;
+  overflow: hidden;
+  color: #aeacac;
 }
 .header__price {
   grid-area: price;
@@ -121,20 +130,25 @@ body {
 
 .main {
   grid-area: main;
-  gap: 1.2rem;
+  gap: 1rem;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: auto auto auto auto auto auto;
   grid-template-areas: "bc bc bc . . . . . " "h1 h1 h1 h1 . . share save " "review review review review . . . . " "gallery gallery gallery gallery gallery gallery gallery gallery " "more-nav more-nav more-nav more-nav more-nav data data data" "more-det more-det more-det more-det more-det data data data ";
+  align-items: baseline;
 }
 .main__bradcrumbs {
   grid-area: bc;
 }
+.main__bradcrumbs--active {
+  color: #aeacac;
+}
 .main h1 {
   grid-area: h1;
+  margin: 0;
 }
 .main__save {
-  background-color: lightgrey;
+  background-color: #edecec;
   height: 30px;
   width: 80px;
   border-radius: 40px;
@@ -142,10 +156,11 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  color: #333;
   grid-area: save;
 }
 .main__share {
-  background-color: lightgrey;
+  background-color: #edecec;
   height: 30px;
   width: 80px;
   border-radius: 40px;
@@ -153,9 +168,12 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  justify-self: right;
+  color: #333;
   grid-area: share;
 }
 .main__rating {
+  color: grey;
   grid-area: review;
 }
 .main__gallery {
@@ -163,7 +181,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 12vw 12vw;
-  gap: 1.2rem;
+  gap: 1rem;
   grid-template-areas: "cover-pic cover-pic sec-pic sec-pic " "cover-pic cover-pic  small-pic1 small-pic2";
 }
 .main__gallery img {
@@ -205,20 +223,22 @@ body {
   grid-area: more-nav;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 1.2rem;
+  gap: 1rem;
 }
 .main__more-details-nav__overview {
-  background-color: lightgrey;
+  background-color: black;
   height: 40px;
   width: 100%;
   border-radius: 40px;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  border: 1px solid #aeacac;
 }
 .main__more-details-nav__included {
-  background-color: lightgrey;
+  background-color: white;
   height: 40px;
   width: 100%;
   border-radius: 40px;
@@ -226,9 +246,11 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  border: 1px solid #aeacac;
+  color: #aeacac;
 }
 .main__more-details-nav__faqs {
-  background-color: lightgrey;
+  background-color: white;
   height: 40px;
   width: 100%;
   border-radius: 40px;
@@ -236,9 +258,11 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  border: 1px solid #aeacac;
+  color: #aeacac;
 }
 .main__more-details-nav__room {
-  background-color: lightgrey;
+  background-color: white;
   height: 40px;
   width: 100%;
   border-radius: 40px;
@@ -246,6 +270,8 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  border: 1px solid #aeacac;
+  color: #aeacac;
 }
 .main__more-details-content {
   grid-area: more-det;
