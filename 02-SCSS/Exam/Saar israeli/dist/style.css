@@ -37,8 +37,8 @@ nav .hidden-nav {
 }
 nav .left-nav {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 nav .left-nav a {
   text-decoration: none;
@@ -46,14 +46,14 @@ nav .left-nav a {
 }
 nav .left-nav button {
   border: none;
-  margin-inline: 2vw;
+  margin-inline: var(--margin-inline);
   background-color: white;
   color: darkgray;
 }
 nav .right-nav {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   margin-inline: var(--margin-inline);
 }
 nav .right-nav .usd {
@@ -94,8 +94,8 @@ nav .right-nav button {
 }
 nav .right-nav .profile {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   border: 1px #dadada solid;
   padding: 6px;
   width: 4vw;
@@ -113,8 +113,8 @@ nav .right-nav .profile-picture {
 
 .under-nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   border-bottom: 1px #dadada solid;
   padding-bottom: 1vh;
   width: 100%;
@@ -122,8 +122,8 @@ nav .right-nav .profile-picture {
 .under-nav .left-under-nav {
   margin-left: 2vw;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 .under-nav .left-under-nav h2 {
   font-weight: 300;
@@ -148,8 +148,8 @@ nav .right-nav .profile-picture {
   background-color: #f6fffe;
   color: #252525;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   height: 40px;
   width: 170px;
 }
@@ -159,8 +159,8 @@ nav .right-nav .profile-picture {
 .under-nav .right-under-nav {
   margin-right: 2vw;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 .under-nav .right-under-nav button {
   border-radius: 20px;
@@ -192,8 +192,8 @@ nav .right-nav .profile-picture {
 
 .main-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   margin: 2vh 2vw;
 }
 .main-header h1 {
@@ -232,8 +232,8 @@ nav .right-nav .profile-picture {
 
 .main-content {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   margin: 2vh 0;
 }
@@ -253,8 +253,8 @@ nav .right-nav .profile-picture {
 
 .main-buttons {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   margin: 4vh 2vw;
 }
 .main-buttons button {
@@ -677,8 +677,8 @@ nav .right-nav .profile-picture {
 
   .facilities-reviews-wrapper {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
   }
 
   .reviews-wrapper {

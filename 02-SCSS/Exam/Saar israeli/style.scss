@@ -14,11 +14,10 @@ body {
     font-size: 16px;
 }
 
+@import "mixin.scss";
 
 nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex(center, space-between);
     margin-bottom: 2vh;
     border-top: 1px solid rgb(218, 218, 218);
     border-bottom: 1px solid rgb(218, 218, 218);
@@ -40,9 +39,7 @@ nav {
 
 
     .left-nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex(center, center);
 
         a {
             text-decoration: none;
@@ -50,16 +47,14 @@ nav {
         }
         button {
             border: none;
-            margin-inline: 2vw;
+            margin-inline: var(--margin-inline);
             background-color: white;
             color: darkgray;
         }
     }
 
     .right-nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex(center, center);
         margin-inline: var(--margin-inline);
 
 
@@ -105,9 +100,7 @@ nav {
         }
 
         .profile {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include flex(center, center);
             border: 1px rgb(218, 218, 218) solid;
             padding: 6px;
             width: 4vw;
@@ -130,18 +123,14 @@ nav {
 }
 
 .under-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(center, space-between);
     border-bottom: 1px rgb(218, 218, 218) solid;
     padding-bottom: 1vh;
     width: 100%;
   
     .left-under-nav {
         margin-left: 2vw;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex(center, center);
         h2 {
             font-weight: 300;
         }
@@ -165,9 +154,7 @@ nav {
             border: none;
             background-color:rgb(246, 255, 254) ;
             color: rgb(37, 37, 37);
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include flex(center, center);
             height: 40px;
             width: 170px;
         }
@@ -179,9 +166,7 @@ nav {
 
     .right-under-nav {
         margin-right: 2vw;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex(center, center);
         button {
             border-radius: 20px;
             background-color:rgb(0, 141, 94) ;
@@ -219,9 +204,7 @@ nav {
 }
 
 .main-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(center, space-between);
     margin: 2vh 2vw;
 
     h1 {
@@ -271,9 +254,7 @@ nav {
 
 
 .main-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex(center, center);
     flex-wrap: wrap;
     margin: 2vh 0;
 
@@ -295,9 +276,7 @@ nav {
 }
 
 .main-buttons {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(center, space-between);
     margin: 4vh 2vw;
 
     button {
@@ -413,9 +392,7 @@ nav {
     .reviews-lines {
 
         div {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            @include flex(center, space-between);
             margin-bottom: 4vh;
         }
     }
@@ -848,9 +825,7 @@ nav {
     }
 
     .facilities-reviews-wrapper {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flex(center, space-between);
     }
 
     .reviews-wrapper {
