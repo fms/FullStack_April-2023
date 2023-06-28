@@ -1,6 +1,6 @@
 @mixin random-border(){
-    // border:1px solid;
-    // border-color: rgb(random(255), random(255), random(255));
+    border:1px solid;
+    border-color: rgb(random(255), random(255), random(255));
   }
 
 @mixin self-flex($jc:center, $ai:center, $ta:center){
@@ -19,8 +19,6 @@
 }
 
 
-$hightligh: #FCDE34;
-$default: #424143;
-$nav:#EFF1ED;
+
 
 $clip-it:("rtl": polygon(0 35%, 100% 0, 100% 100%, 0% 100%), "ltr": polygon(0 0, 100% 0%, 100% 100%, 0 91%));

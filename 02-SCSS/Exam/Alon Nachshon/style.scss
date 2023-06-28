@@ -1,10 +1,26 @@
 @import '_mixin';
-$col-primary:#4aa585;
-$radius:20px;
-$gap:1.2rem;
-$col-btn:rgb(233, 233, 233);
-$light:white;
+@import  '_constants.scss';
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap');
 
+* {border-color: rgb(random(255), random(255), random(255));}
+@mixin btn(){
+    width: 245px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 50px;
+    
+    background-color: white;
+    background-image: url('../imgs/search-icon-png-18.png') ;
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 10% 50%; 
+  
+    background-repeat: no-repeat;
+    padding: 6px 5px 6px 35px;
+    color: $col-prim-text;
+
+  }
+  
 body{
     margin:0;
     display:grid;
@@ -16,32 +32,52 @@ body{
 }
 .nav{
     @include random-border;
-    @include self-flex;
+        @include self-flex;
+        align-items:center;
+        justify-content:space;
+
     grid-area:nav;
     display: grid;
     grid-template-columns: 1fr 4fr 2fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: "logo nav-itemn . where currency like profile";
+    grid-template-areas: "logo nav-items . where currency like profile";
 
     &__logo{
         grid-area: logo;
         filter:  brightness(0) saturate(100%) invert(52%) sepia(67%) saturate(303%) hue-rotate(108deg) brightness(96%) contrast(87%);
-    }
 
+        &__active{
+            color: black !important;
+        }
+    }
+    ul{
+        @include self-flex;
+    }
     li{
-        @include random-border;
-        display: inline;
+        color:$col-prim-text;
+        list-style-type: none;
+        padding-right: 2.5vw;
         grid-area: nav-items;
+        a{
+            text-decoration: none;
+        }
+    
+        
     }
     
     &__search-btn{
+        // @include createOval(40px ,185px, 40px, $col-btn);
+        // font-size: small;
         grid-area: where;
-        background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat left;
-        cursor: pointer;
-        opacity: 0.7;
+        // background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat left;
+        @include btn;
+        
     }
 
     &__select{
         // background-image:url("./imgs/flag.png")
+        // @include createOval(40px ,80%, 40px, $col-btn);
+        text-align: center;
+
         grid-area: currency;
     }
     &__like{
@@ -96,6 +132,7 @@ body{
     gap:$gap;
     display: grid;
     grid-template-columns: repeat(8,1fr);
+    grid-template-rows: auto auto auto auto auto auto ;
     grid-template-areas: "bc bc bc . . . . . " 
                         "h1 h1 h1 h1 . . share save "
                         "review review review review . . . . "
@@ -135,13 +172,11 @@ body{
     &__gallery{
         @include random-border;
         grid-area: gallery;
-
+        
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows:10rem 10rem;
+        grid-template-rows: $max-gal-img $max-gal-img;
         gap:$gap;
-        
-
         grid-template-areas: "cover-pic cover-pic sec-pic sec-pic "
                                 "cover-pic cover-pic  small-pic1 small-pic2";
         
@@ -174,7 +209,7 @@ body{
             > img{
                 object-fit: cover;
                 width: 100%;
-                max-height: 100%;
+                max-height: $max-gal-img;
 
             }
         }
@@ -183,7 +218,7 @@ body{
             > img{
                 object-fit: cover;
                 width: 100%;
-                max-height: 100%;
+                max-height: $max-gal-img;;
 
             }
 
