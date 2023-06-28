@@ -1,0 +1,14 @@
+.breadcrumbs {
+    display: flex;
+    font-size: small;
+    // font-weight: bold;
+
+    p:last-child {
+        color: lightgray;
+    }
+
+    p:not(:last-child)::after {
+        content: '/';
+        padding-inline: 0.4rem;
+    }
+}

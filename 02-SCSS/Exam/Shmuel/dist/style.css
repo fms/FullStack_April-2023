@@ -1,0 +1,159 @@
+*, *:before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.main {
+  min-width: 450px;
+  max-width: 1300px;
+  margin-inline: auto;
+}
+
+.top-menu {
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  padding: 0.2rem;
+  column-gap: 10px;
+  border-bottom: lightgray 1px solid;
+}
+.top-menu__nav-menu {
+  display: flex;
+}
+.top-menu__search {
+  border: lightgray 1px solid;
+  border-radius: 25%;
+  padding: 0.4rem;
+  grid-column: 4;
+}
+@media screen and (min-width: 450px) {
+  .top-menu__search {
+    grid-column: 5;
+  }
+}
+.top-menu__avatar {
+  display: flex;
+  border: lightgray 1px solid;
+  border-radius: 25%;
+  padding: 0.4rem;
+  grid-column: 6;
+  align-items: center;
+}
+@media screen and (max-width: 450px) {
+  .top-menu__search p {
+    display: none;
+  }
+  .top-menu__nav-menu {
+    display: none;
+  }
+  .top-menu__currency {
+    display: none;
+  }
+  .top-menu__like {
+    display: none;
+  }
+}
+
+.booking {
+  display: flex;
+}
+.booking__details {
+  display: flex;
+}
+.booking__details p {
+  border: lightgray 1px solid;
+  border-radius: 25%;
+  padding: 0.4rem;
+}
+.booking__order {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.booking__price {
+  color: #34987d;
+  font-weight: bold;
+  font-size: smaller;
+}
+.booking__action {
+  border: lightgray 1px solid;
+  border-radius: 25%;
+  padding: 0.4rem;
+  background-color: #34987d;
+  color: white;
+}
+@media screen and (max-width: 450px) {
+  .booking__details {
+    display: none;
+  }
+  .booking__order {
+    position: fixed;
+    background-color: white;
+    bottom: 0;
+    width: 100%;
+  }
+  .booking__price::before {
+    content: "Start from";
+    color: black;
+  }
+  .booking__price::after {
+    content: "/Night/Room";
+    color: lightgray;
+  }
+}
+
+.breadcrumbs {
+  display: flex;
+  font-size: small;
+}
+.breadcrumbs p:last-child {
+  color: lightgray;
+}
+.breadcrumbs p:not(:last-child)::after {
+  content: "/";
+  padding-inline: 0.4rem;
+}
+
+.site-details__more {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.site-details__more p {
+  flex: 1 1 20ch;
+}
+.site-details__more p i {
+  padding-right: 1rem;
+}
+
+.site-images {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+}
+.site-images img {
+  width: 100%;
+}
+.site-images img:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.site-images img:nth-child(2) {
+  grid-column: span 2;
+}
+@media screen and (max-width: 450px) {
+  .site-images {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .site-images img:first-child {
+    grid-column: span 3;
+    grid-row: span 2;
+  }
+  .site-images img:not(:first-child) {
+    grid-column: span 1;
+    object-fit: cover;
+    height: 100%;
+  }
+}

@@ -1,0 +1,33 @@
+.site-images {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+
+    img {
+        width: 100%;
+    }
+
+    img:first-child {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    img:nth-child(2) {
+        grid-column: span 2;
+    }
+
+    @media screen and (max-width: $mobile-width) {
+        grid-template-columns: repeat(3, 1fr);
+
+        img:first-child {
+            grid-column: span 3;
+            grid-row: span 2;
+        }
+
+        img:not(:first-child) {
+            grid-column: span 1;
+            object-fit: cover;
+            height: 100%;
+        }
+    }
+}

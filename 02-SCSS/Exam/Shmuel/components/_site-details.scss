@@ -1,0 +1,15 @@
+.site-details {
+    &__more {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        p {
+            flex: 1 1 20ch;
+
+            i {
+                padding-right: 1rem;
+            }
+        }
+    }
+}

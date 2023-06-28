@@ -1,0 +1,53 @@
+.booking {
+    display: flex;
+
+    &__details {
+        display: flex;
+
+        p {
+            @include button;
+        }
+    }
+
+    &__order {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__price {
+        color: #34987d;
+        font-weight: bold;
+        font-size: smaller;
+    }
+
+    &__action {
+        @include button;
+        background-color: #34987d;
+        color: white;
+    }
+
+    @media screen and (max-width: $mobile-width) {
+        &__details {
+            display: none;
+        }
+
+        &__order {
+            position: fixed;
+            background-color: white;
+            bottom: 0;
+            width: 100%;
+        }
+
+        &__price {
+            &::before {
+                content: 'Start from';
+                color: black;
+            }
+            &::after {
+                content: '/Night/Room';
+                color: lightgray;
+           }
+        }
+    }
+}

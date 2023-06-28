@@ -1,0 +1,32 @@
+$mobile-width: 450px;
+$tablet-width: 1024px;
+$desktop-width: 1300px;
+
+*, *:before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.main {
+    min-width: $mobile-width;
+    max-width: $desktop-width;
+    // border: 1px solid red;
+    margin-inline: auto;
+}
+
+@mixin button {
+    border: lightgray 1px solid;
+    border-radius: 25%;
+    padding: 0.4rem;
+}
+
+
+@import 'components/_top-menu';
+@import 'components/booking';
+@import 'components/breadcrumbs';
+@import 'components/site-details';
+@import 'components/site-images';
+

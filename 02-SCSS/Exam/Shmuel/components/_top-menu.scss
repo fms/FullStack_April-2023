@@ -1,0 +1,48 @@
+.top-menu {
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    padding: 0.2rem;
+    column-gap: 10px;
+    border-bottom: lightgray 1px solid;
+
+    // &__logo {
+    // }
+
+    &__nav-menu {
+        display: flex;
+    }
+
+    &__search {
+        @include button;
+        grid-column: 4;
+        @media screen and (min-width: $mobile-width)
+        {
+            grid-column: 5;
+        }
+    }
+
+    &__avatar {
+        display: flex;
+        @include button;
+        grid-column: 6;
+        align-items: center;
+    }
+
+    @media screen and (max-width: $mobile-width) {
+        &__search p {
+            display: none;
+        }
+
+        &__nav-menu {
+            display: none;
+        }
+
+        &__currency {
+            display: none;
+        }
+
+        &__like {
+            display: none;
+        }
+    }
+}
