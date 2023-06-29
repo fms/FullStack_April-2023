@@ -1,0 +1,129 @@
+.gridpic {
+    margin-top: 20px;
+    display: grid;
+    gap: 10px;
+    border-radius: 30px;
+    grid-template-rows: repeat(4, 100px);
+    grid-template-columns: repeat(4, 290px);
+    grid-template-areas:
+        "a a b b "
+        "a a b b "
+        "a a c d "
+        "a a c d ";
+}
+
+.a {
+    grid-area: a;
+    background-image: url(/02-SCSS/Exam/Shaked/finalexam/pictures/apic.png);
+}
+
+.b-r {
+    border-radius: 20px;
+}
+
+.bg-img {
+    background-size: cover;
+    background-position: center;
+}
+
+.b {
+    grid-area: b;
+    background-image: url(/02-SCSS/Exam/Shaked/finalexam/pictures/bpic.png);
+}
+
+.c {
+    grid-area: c;
+    background-image: url(/02-SCSS/Exam/Shaked/finalexam/pictures/cpic.png);
+}
+
+.d {
+    grid-area: d;
+    background-image: url(/02-SCSS/Exam/Shaked/finalexam/pictures/dpic.png);
+}
+
+
+.bottompagee {
+    margin-top: 20px;
+    display: grid;
+    gap: 10px;
+    border-radius: 30px;
+    grid-template-rows: repeat(4, 100px);
+    grid-template-columns: repeat(4, 250px);
+    grid-template-areas:
+        "header header ratingbox ratingbox "
+        "text text ratingbox ratingbox "
+        "text text ratingbox ratingbox "
+        ". . ratingbox ratingbox ";
+}
+
+.header {
+    grid-area: header;
+}
+
+.ratingbox {
+    padding: 30px;
+    border-radius: 30px;
+    grid-area: ratingbox;
+    border: 1px gray solid;
+
+    &-head {
+        font-size: 25px;
+    }
+
+    &-number {
+        margin-top: 20px;
+        font-size: clamp(1.5rem, 5vw, 4rem);
+
+        &-stars {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 20px;
+        }
+    }
+
+    &-rating {
+        margin-top: 20px;
+
+        &-head {
+            margin-top: 15px;
+            font-size: 20px;
+        }
+
+        &-flex {
+            display: flex;
+        }
+
+        &-greenline1 {
+            background-color: green;
+            width: 90%;
+            height: 5px;
+            border-radius: 10px;
+        }
+
+        &-greenline {
+            background-color: green;
+            width: 70%;
+            height: 5px;
+            border-radius: 10px;
+
+            &-num {
+
+                font-size: 20px;
+
+                &-1 {
+                    margin-left: 68%;
+                    margin-top: 20px;
+                }
+
+                &-2 {
+                    margin-left: 70%;
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}
+
+.text {
+    grid-area: text;
+}

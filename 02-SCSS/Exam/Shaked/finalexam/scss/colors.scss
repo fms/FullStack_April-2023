@@ -1,0 +1,21 @@
+.txt {
+    &-gray {
+        color: gray;
+    }
+
+    &-white {
+        color: white;
+    }
+
+    &-green {
+        color: green;
+    }
+
+    &-blue {
+        color: rgb(0, 128, 255);
+    }
+}
+
+.green {
+    margin-left: 10%;
+}

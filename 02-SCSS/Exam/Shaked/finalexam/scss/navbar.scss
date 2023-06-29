@@ -1,0 +1,91 @@
+nav {
+    margin-top: 15px;
+}
+
+ul {
+    margin: 0;
+    display: flex;
+}
+
+li {
+    display: inline;
+    font-size: 25px;
+    padding: 12px;
+}
+
+li:hover {
+    background-color: lightgray;
+}
+
+li a {
+    text-decoration: none;
+    color: black;
+}
+
+i {
+    margin-right: 5px;
+}
+
+.logo {
+    margin-left: 10px;
+}
+
+.searchbox,
+.usdbox {
+    border-radius: 30px;
+    border: solid 1px rgb(164, 162, 162);
+    padding: 12px;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.bigheader {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.heart,
+.man {
+    border-radius: 50px;
+    border: solid 1px rgb(169, 169, 169);
+    padding: 12px;
+    font-size: 20px;
+
+}
+
+.space {
+    margin-left: 250px;
+}
+
+.txt {
+    &-gray {
+        color: gray;
+    }
+}
+
+.navigationbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    float: right;
+    gap: 10px;
+    border-radius: 30px;
+
+    &-radius {
+        border: solid 1px gray;
+        border-radius: 30px;
+    }
+
+    &-manpic {
+        background-image: url(/02-SCSS/Exam/Shaked/finalexam/pictures/manpic.png);
+        width: 30px;
+        height: 30px;
+        background-size: cover;
+    }
+}

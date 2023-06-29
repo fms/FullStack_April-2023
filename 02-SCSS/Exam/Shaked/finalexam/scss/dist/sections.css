@@ -1,0 +1,41 @@
+.datesection {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  padding: 20px;
+  gap: 10px;
+}
+.datesection-header {
+  margin-left: 3.5%;
+  font-size: 1.5rem;
+  margin-right: 10%;
+}
+.datesection-box {
+  height: 30px;
+  font-size: 1.2rem;
+  padding: 5px 15px;
+  border-radius: 20px;
+  background-color: whitesmoke;
+}
+.datesection-greenbox {
+  background-color: green;
+  border-radius: 30px;
+  padding: 10px;
+  margin-left: 20px;
+}
+
+.bottompage {
+  display: flex;
+  gap: 10px;
+  margin-top: 3%;
+  flex-wrap: wrap;
+}
+.bottompage-circles {
+  padding: 15px;
+  border-radius: 25px;
+  border: 1px solid #cecece;
+}
+.bottompage-circles:hover {
+  background-color: #000000;
+  color: white;
+}
