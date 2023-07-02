@@ -14,108 +14,108 @@ a {
   text-decoration: none;
 }
 
-.nav .navBar {
+nav .navBar {
   display: flex;
   justify-content: center;
   flex-direction: row;
 }
-.nav .navBar .item {
+nav .navBar .item {
   padding: 5px;
 }
-.nav .navBar .logoNavBar {
+nav .navBar .logoNavBar {
   margin: 0 50px 0 0;
   display: flex;
   justify-content: none;
   flex-direction: none;
   align-items: center;
 }
-.nav .navBar .logoNavBar img {
+nav .navBar .logoNavBar img {
   width: 55px;
   height: 34px;
 }
-.nav .navBar .ulNavBar {
+nav .navBar .ulNavBar {
   margin-right: 300px;
 }
-.nav .navBar .ulNavBar ul {
+nav .navBar .ulNavBar ul {
   display: flex;
   justify-content: none;
   flex-direction: none;
 }
-.nav .navBar .ulNavBar ul .first {
+nav .navBar .ulNavBar ul .first {
   color: black;
 }
-.nav .navBar .ulNavBar ul li {
+nav .navBar .ulNavBar ul li {
   padding: 10px 0 0 0;
   margin: 0 60px 0 0;
   list-style-type: none;
   font-weight: bold;
 }
-.nav .navBar .ulNavBar ul li a {
+nav .navBar .ulNavBar ul li a {
   text-decoration: none;
   color: #827e7e;
 }
-.nav .navBar .ulNavBar ul li .AD {
+nav .navBar .ulNavBar ul li .AD {
   width: 18px;
   height: 10px;
 }
-.nav .navBar .ulNavBar ul li:hover {
+nav .navBar .ulNavBar ul li:hover {
   border-bottom: 2px solid black;
 }
-.nav .navBar .searchNavBar img {
+nav .navBar .searchNavBar img {
   width: 25px;
   height: 25px;
   position: relative;
   top: 15%;
   left: 17%;
 }
-.nav .navBar .searchNavBar input {
+nav .navBar .searchNavBar input {
   border: 1px solid #bdb9b9;
   border-radius: 20px;
   padding: 10px;
   padding-left: 40px;
 }
-.nav .navBar .usaNavBar a .mainSpanUsaNavBar {
+nav .navBar .usaNavBar a .mainSpanUsaNavBar {
   border: 1px solid #bdb9b9;
   border-radius: 20px;
   padding: 8px;
 }
-.nav .navBar .usaNavBar a .mainSpanUsaNavBar .iconUsa {
+nav .navBar .usaNavBar a .mainSpanUsaNavBar .iconUsa {
   width: 25px;
   height: 25px;
   position: relative;
   top: 6px;
 }
-.nav .navBar .usaNavBar a .mainSpanUsaNavBar .AD2 {
+nav .navBar .usaNavBar a .mainSpanUsaNavBar .AD2 {
   width: 18px;
   height: 10px;
 }
-.nav .navBar .heartIconNavBar .spanHeartIconNavBar {
+nav .navBar .heartIconNavBar .spanHeartIconNavBar {
   border: 1px solid #bdb9b9;
   border-radius: 20px;
   padding: 8px;
 }
-.nav .navBar .heartIconNavBar .spanHeartIconNavBar img {
+nav .navBar .heartIconNavBar .spanHeartIconNavBar img {
   width: 25px;
   height: 25px;
   position: relative;
   top: 7px;
 }
-.nav .navBar .profileNavBar .spanProfileNavBar {
+nav .navBar .profileNavBar .spanProfileNavBar {
   border: 1px solid #bdb9b9;
   border-radius: 20px;
   padding: 8px;
   position: relative;
   top: 1.5px;
 }
-.nav .navBar .profileNavBar .spanProfileNavBar img {
+nav .navBar .profileNavBar .spanProfileNavBar img {
   position: relative;
   top: 3px;
 }
-.nav .navBar .profileNavBar .spanProfileNavBar .hamburgerIconProfileNavBar {
+nav .navBar .profileNavBar .spanProfileNavBar .hamburgerIconProfileNavBar {
   width: 18px;
   height: 20px;
 }
-.nav .navBar .profileNavBar .spanProfileNavBar .profileIconProfileNavBar {
+nav .navBar .profileNavBar .spanProfileNavBar .profileIconProfileNavBar {
   width: 23px;
   height: 24px;
 }
