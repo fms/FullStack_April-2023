@@ -27,22 +27,4 @@
         grid-column: 6;
         align-items: center;
     }
-
-    @media screen and (max-width: $mobile-width) {
-        &__search p {
-            display: none;
-        }
-
-        &__nav-menu {
-            display: none;
-        }
-
-        &__currency {
-            display: none;
-        }
-
-        &__like {
-            display: none;
-        }
-    }
 }

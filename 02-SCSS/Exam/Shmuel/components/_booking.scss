@@ -28,10 +28,6 @@
     }
 
     @media screen and (max-width: $mobile-width) {
-        &__details {
-            display: none;
-        }
-
         &__order {
             position: fixed;
             background-color: white;
