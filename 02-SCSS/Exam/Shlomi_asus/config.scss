@@ -1,0 +1,8 @@
+@mixin border {
+    border: 1px grey solid;
+    border-radius: 20px;
+}
+@mixin small_font {
+    font-size: 14px;
+    color: grey;
+}
