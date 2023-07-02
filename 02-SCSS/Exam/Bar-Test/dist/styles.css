@@ -4,7 +4,7 @@
 
 body {
   margin: 0;
-  padding: 0;
+  padding: 0 0 20vh 0;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -35,6 +35,7 @@ body {
 }
 .nav-imgs .nav-right {
   display: flex;
+  justify-content: center;
   align-items: center;
   border: 1px solid #cecbcb;
   border-radius: 2rem;
@@ -49,6 +50,7 @@ body {
 }
 .nav-imgs .nav-left {
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 .nav-imgs .nav-left img {
@@ -68,7 +70,8 @@ body {
 }
 .booking-desktop .booking-right {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: space-between;
 }
 .booking-desktop .booking-right p {
   margin-right: 1vw;
@@ -98,11 +101,13 @@ body {
 .title {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: -2vw;
 }
 .title .title-buttons {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .title .title-buttons i {
   font-size: 2vw;
@@ -201,6 +206,11 @@ body {
 .booking-stickey {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 90vw;
+  background-color: white;
 }
 .booking-stickey .price p {
   font-weight: 600;
@@ -226,10 +236,21 @@ body {
 
 .reviews-raitings {
   display: flex;
+  justify-content: none;
   align-items: center;
 }
 .reviews-raitings h2 {
   font-size: 11vw;
+  animation: flip 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) alternate both;
+  animation-iteration-count: infinite;
+}
+@keyframes flip {
+  0% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(-360deg);
+  }
 }
 .reviews-raitings img {
   width: 30vw;
@@ -252,19 +273,6 @@ body {
   font-weight: 600;
 }
 
-.slide-bck-center {
-  animation: slide-bck-center 0.45s cubic-bezier(0.47, 0, 0.745, 0.715) both;
-  animation-iteration-count: infinite;
-}
-
-@keyframes slide-bck-center {
-  0% {
-    transform: translateZ(0);
-  }
-  100% {
-    transform: translateZ(-400px);
-  }
-}
 @media (min-width: 1025px) {
   .nav-imgs img {
     max-width: 6rem;
