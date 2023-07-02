@@ -1,0 +1,12 @@
+@mixin article_bg{
+    border: 10px rgb(0, 0, 0) solid;   
+        background-color: whitesmoke;
+
+}
+
+@mixin borders{
+border: 3px rgb(20, 20, 20) solid;
+color: black;
+background-color: whitesmoke;
+
+}

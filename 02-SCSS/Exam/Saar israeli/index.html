@@ -19,17 +19,17 @@
         <nav>
             <div class="left-nav">
                 <img src="./dist/images/Leonora-designstyle-love-heart-m.png" alt="leonora logo" class="site-logo">
-                <a href="" class="hidden-nav left-nav-links"><button><span class="black">Hotel</button></span></a>
-                <a href="" class="hidden-nav left-nav-links"><button>Apartemnt</button></a>
-                <a href="" class="hidden-nav left-nav-links"><button>Holiday</button></a>
-                <a href="" class="hidden-nav left-nav-links"><button>More</button></a>
+                <button><a href="" class="hidden-nav left-nav-links"><span class="black">Hotel</span></a></button>
+                <button><a href="" class="hidden-nav left-nav-links">Apartemnt</a></button>
+                <button><a href="" class="hidden-nav left-nav-links">Holiday</a></button>
+                <button><a href="" class="hidden-nav left-nav-links">More</a></button>
             </div>
             <div class="right-nav">
                 <div class="search">
                     <i class="fa-solid fa-magnifying-glass" style="color: #cccccc;"></i>
                     <p class="dark-gray hidden-nav">Where are you going?</p>
                 </div>
-                <div class="usd hidden">
+                <div class="usd hidden-nav">
                     <img src="./dist/images/1200px-Flag_of_the_United_States.svg.png" alt="" class="hidden-nav">
                     <p class="dark-gray hidden-nav">USD</p>
                 </div>
@@ -43,6 +43,31 @@
             </div>
         </nav>
 
+        <div class="under-nav">
+            <div class="left-under-nav hidden-under-nav">
+                <button><i class="fa-thin fa-arrow-left" style="color: #a6a6a6;"></i></button>
+                <h2>Choose date</h1>
+            </div>
+            <div class="mid-under-nav hidden-under-nav mid-hidden-nav">
+                <button><i class="fa-solid fa-user-group" style="color: #9e9e9e;"></i>
+                    <p>1 Room, 2 Adults</p>
+                </button>
+                <button><i class="fa-solid fa-calendar" style="color: #a6a6a6;"></i>
+                    <p>Thu, Apr 22-Fri, Apr 23</p>
+                </button>
+                <button><i class="fa-solid fa-location-dot" style="color: #929292;"></i>
+                    <p>Sa Pa, Vietnam</p>
+                </button>
+            </div>
+            <div class="right-under-nav">
+                <div class="start-from">
+                    <h2 class="hidden-room">Start from</h2>
+                    <a href="">$200<span class="gray-media">/Night<span class="hidden-room">/Room</span></span></a>
+                </div>
+                <button>Booking</button>
+            </div>
+        </div>
+
         <main>
             <div class="navigate-bar">
                 <a href="">Hotel</a> / <a href="">Vietnam</a> / <a href=""><span class="gray">Sa Pa Terraces</span></a>
@@ -53,7 +78,7 @@
                     <div class="main-header-logos">
                         <a href="" class="hidden-nav"><button><i class="fa-solid fa-link"
                                     style="color: #000000;"></i></button></a>
-                        <a href="" class="hidden-nav"><button><i class="fa-solid fa-heart"
+                        <a href="" class="hidden-nav heart"><button><i class="fa-solid fa-heart"
                                     style="color: #000000;"></i></button></a>
                     </div>
                 </div>
@@ -79,86 +104,99 @@
                 <img src="./dist/images/pexels-pixabay-159252.jpg" alt="" class="small-pictures">
             </div>
 
-            <div class="main-buttons">
-                <button>Overview</button>
-                <button class=main-buttons-size>What's included</button>
-                <button>FAQs</button>
-                <button class="hidden-button">Room</button>
-            </div>
+            <div class="big-screen-wrapper">
+                <div class="left-screen-wrapper">
+                    <div class="main-buttons">
+                        <button>Overview</button>
+                        <button class=main-buttons-size>What's included</button>
+                        <button>FAQs</button>
+                        <button class="hidden-button">Room</button>
+                    </div>
 
-            <div class="context">
-                <div class="context-header">
-                    <h2>Comfortable place for you</h1>
-                </div>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint aliquid saepe, neque officia provident
-                    veritatis accusamus dolores sapiente eaque ipsa, sed magnam cum reiciendis vero doloribus eius sit
-                    quidem fuga blanditiis a commodi. Maxime facilis accusantium amet eligendi mollitia nam eos dolore
-                    vitae quibusdam, doloremque tenetur aperiam fuga veritatis qui.</p>
-            </div>
+                    <div class="context">
+                        <div class="context-header">
+                            <h2>Comfortable place for you</h1>
+                        </div>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint aliquid saepe, neque officia
+                            provident
+                            veritatis accusamus dolores sapiente eaque ipsa, sed magnam cum reiciendis vero doloribus
+                            eius
+                            sit
+                            quidem fuga blanditiis a commodi. Maxime facilis accusantium amet eligendi mollitia nam eos
+                            dolore
+                            vitae quibusdam, doloremque tenetur aperiam fuga veritatis qui.<a href="">Read More</a></p>
+                    </div>
 
-            <div class="facilities">
-                <h2>Our best facilities</h2>
-                <div class="air-conditioner">
-                    <button><i class="fa-solid fa-music" style="color: #cfcfcf;"></i></button>
-                    <h3>Air conditioner</h3>
+                    <div class="facilities-reviews-wrapper">
+                        <div class="facilities">
+                            <h2>Our best facilities</h2>
+                            <div class="air-conditioner">
+                                <button><i class="fa-solid fa-music" style="color: #cfcfcf;"></i></button>
+                                <h3>Air conditioner</h3>
+                            </div>
+                            <div class="clock">
+                                <button><i class="fa-solid fa-clock" style="color: #707070;"></i></button>
+                                <h3>Receptionist 24h</h3>
+                            </div>
+                            <div class="watter-ladder">
+                                <button><i class="fa-solid fa-water-ladder" style="color: #8f8f8f;"></i></button>
+                                <h3>Swimming pool</h3>
+                            </div>
+                            <div class="wine-glass">
+                                <button><i class="fa-solid fa-wine-glass" style="color: #858585;"></i></button>
+                                <h3>Lounge bar & cafe</h3>
+                            </div>
+                            <a href="">See more Facilities</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="clock">
-                    <button><i class="fa-solid fa-clock" style="color: #707070;"></i></button>
-                    <h3>Receptionist 24h</h3>
+                <div class="right-screen-wrapper">
+                    <div class="reviews-ratings">
+                        <div class="reviews-wrapper">
+                            <div class="reviews-header">
+                                <h2>Reviews and ratings</h2>
+                            </div>
+                            <div class="rating">
+                                <div class="rating-numbers">
+                                    <p>4.8</p>
+                                </div>
+                                <div class="stars-p">
+                                    <div class="stars">
+                                        <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                        <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                        <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                        <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                        <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    </div>
+                                    <p class="dark-gray">
+                                        Based on 100 reviewers
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="reviews-lines">
+                                <div class="comfortable">
+                                    <h3>Comfortable</h3>
+                                    <p class="auto-size">4.7</p>
+                                </div>
+                                <div class="Cleanliness">
+                                    <h3>Cleanliness</h3>
+                                    <p>4.8</p>
+                                </div>
+                                <div class="Facilities">
+                                    <h3>Facilities</h3>
+                                    <p>4.5</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="watter-ladder">
-                    <button><i class="fa-solid fa-water-ladder" style="color: #8f8f8f;"></i></button>
-                    <h3>Swimming pool</h3>
-                </div>
-                <div class="wine-glass">
-                    <button><i class="fa-solid fa-wine-glass" style="color: #858585;"></i></button>
-                    <h3>Lounge bar & cafe</h3>
-                </div>
-                <a href="">See more Facilities</a>
+
             </div>
         </main>
-        <div class="reviews-ratings">
-            <div class="reviews-wrapper">
-                <div class="reviews-header">
-                    <h2>Reviews and ratings</h2>
-                </div>
-                <div class="rating">
-                    <div class="rating-numbers">
-                        <p>4.8</p>
-                    </div>
-                    <div class="stars-p">
-                        <div class="stars">
-                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                        </div>
-                        <p class="dark-gray">
-                            Based on 100 reviewers
-                        </p>
-                    </div>
-                </div>
-                <div class="reviews-lines">
-                    <div class="comfortable">
-                        <h3>Comfortable</h3>
-                        <p class="auto-size">4.7</p>
-                    </div>
-                    <div class="Cleanliness">
-                        <h3>Cleanliness</h3>
-                        <p>4.8</p>
-                    </div>
-                    <div class="Facilities">
-                        <h3>Facilities</h3>
-                        <p>4.5</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <footer>
-
-        </footer>
     </div>
+    <footer>
+
+    </footer>
 </body>
 
 </html>
