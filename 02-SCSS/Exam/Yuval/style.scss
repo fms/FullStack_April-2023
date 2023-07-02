@@ -1,0 +1,28 @@
+@import 'config';
+
+@mixin flexed($direction:row) {
+    display: flex;
+    flex-direction: $direction;
+}
+
+@keyframes number {
+    0% {
+        
+    }
+    25% {
+        background-image: url(images/5.0.png);
+    }
+    50% {
+        background-image: url(images/1.5.png);
+    }
+    75% {
+        background-image: url(images/2.9.png);
+    }
+    100% {
+        background-image: url(images/3.6.png);
+    }
+}
+
+@import 'components/desktop.scss';
+@import 'components/tablet.scss';
+@import 'components/phone.scss';
