@@ -50,21 +50,58 @@ body {
         }
 
         &__right {
-            width: 160px;
+            width: 500px;
             float: right;
             display: flex;
             margin-top: 4px;
+            justify-content: space-between;
+
+            p {
+                color: gray;
+                margin-left: 50px;
+                // display: none;
+                margin-top: -40px;
+            }
 
             &__search {
                 @include border();
                 border-radius: 50px;
                 height: 50px;
-                width: 50px;
+                width: 220px;
+
+
 
                 img {
                     height: 20px;
                     width: 20px;
                     margin: 15px;
+                }
+            }
+
+            &__currency {
+                @include border();
+                border-radius: 50px;
+                height: 50px;
+                width: 100px;
+
+                img {
+                    height: 30px;
+                    width: 30px;
+                    margin: 10px;
+                }
+            }
+
+            &__heart {
+                @include border();
+                border-radius: 50px;
+                height: 50px;
+                width: 70px;
+
+                img {
+                    height: 20px;
+                    width: 20px;
+                    margin: 15px;
+                    margin-left: 25px;
                 }
             }
 
@@ -85,11 +122,59 @@ body {
                 }
             }
 
+
         }
     }
 
     &__choosedate {
         display: none;
+
+        &__back {
+
+
+            h2 {
+                font-weight: 400;
+                position: absolute;
+                margin-left: 100px;
+                display: flex;
+
+                img {
+                    height: 20px;
+                    padding: 10px;
+                    margin-top: -5px;
+                }
+            }
+
+        }
+
+        &__center {
+            margin-right: 800px;
+            &__address {
+                display: flex;
+                background-color: rgb(248, 247, 247);
+                border-radius: 30px;
+                height: 45px;
+                width: auto;
+                padding-left: 10px;
+                padding-right: 10px;
+                margin-top: 8px;
+
+
+                p {
+                    color: rgb(160, 160, 160);
+                    font-size: 15px;
+                    margin-left: 5px;
+                }
+
+                img {
+                    height: 25px;
+                    margin-top: 10px;
+                }
+            }
+        }
+
+
+
     }
 
     &__head {
@@ -386,6 +471,8 @@ body {
 
             }
 
+
+
         }
 
         &__text {
@@ -424,5 +511,25 @@ body {
     .main__booking {
         display: none;
     }
+
+
+}
+
+@media screen and (max-width: 1024px) {
+
+    .main__top__right__search {
+        width: 50px;
+    }
+
+    .main__top__right__search>p,
+    .main__top__right__currency,
+    .main__top__right__heart {
+        display: none;
+    }
+
+    .main__top__right {
+        width: 150px;
+    }
+
 
 }

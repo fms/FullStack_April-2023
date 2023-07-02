@@ -34,21 +34,50 @@ body {
   width: 60px;
 }
 .main__top__right {
-  width: 160px;
+  width: 500px;
   float: right;
   display: flex;
   margin-top: 4px;
+  justify-content: space-between;
+}
+.main__top__right p {
+  color: gray;
+  margin-left: 50px;
+  margin-top: -40px;
 }
 .main__top__right__search {
   border: solid 1px #e4e1e1;
   border-radius: 50px;
   height: 50px;
-  width: 50px;
+  width: 220px;
 }
 .main__top__right__search img {
   height: 20px;
   width: 20px;
   margin: 15px;
+}
+.main__top__right__currency {
+  border: solid 1px #e4e1e1;
+  border-radius: 50px;
+  height: 50px;
+  width: 100px;
+}
+.main__top__right__currency img {
+  height: 30px;
+  width: 30px;
+  margin: 10px;
+}
+.main__top__right__heart {
+  border: solid 1px #e4e1e1;
+  border-radius: 50px;
+  height: 50px;
+  width: 70px;
+}
+.main__top__right__heart img {
+  height: 20px;
+  width: 20px;
+  margin: 15px;
+  margin-left: 25px;
 }
 .main__top__right__menu {
   display: inline-flex;
@@ -67,6 +96,39 @@ body {
 }
 .main__choosedate {
   display: none;
+}
+.main__choosedate__back h2 {
+  font-weight: 400;
+  position: absolute;
+  margin-left: 100px;
+  display: flex;
+}
+.main__choosedate__back h2 img {
+  height: 20px;
+  padding: 10px;
+  margin-top: -5px;
+}
+.main__choosedate__center {
+  margin-right: 800px;
+}
+.main__choosedate__center__address {
+  display: flex;
+  background-color: #f8f7f7;
+  border-radius: 30px;
+  height: 45px;
+  width: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 8px;
+}
+.main__choosedate__center__address p {
+  color: #a0a0a0;
+  font-size: 15px;
+  margin-left: 5px;
+}
+.main__choosedate__center__address img {
+  height: 25px;
+  margin-top: 10px;
 }
 .main__head {
   background-color: #ffffff;
@@ -322,5 +384,20 @@ body {
 
   .main__booking {
     display: none;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .main__top__right__search {
+    width: 50px;
+  }
+
+  .main__top__right__search > p,
+.main__top__right__currency,
+.main__top__right__heart {
+    display: none;
+  }
+
+  .main__top__right {
+    width: 150px;
   }
 }
