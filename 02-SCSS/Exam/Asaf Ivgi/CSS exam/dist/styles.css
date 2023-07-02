@@ -4,6 +4,10 @@
   grid-row-start: span 2;
 }
 
+img {
+  width: 100%;
+}
+
 .top-navbar {
   display: grid;
   height: 50px;
