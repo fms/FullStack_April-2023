@@ -3,7 +3,9 @@
 	animation: scale-up-center 2s linear infinite alternate both;
     grid-row-start: span 2;
 }
-
+img{
+    width: 100%;
+}
 .top-navbar {
     display: grid;
     height: 50px;
