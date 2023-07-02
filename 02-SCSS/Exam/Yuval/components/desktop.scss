@@ -1,0 +1,365 @@
+
+@media screen and (min-width: 1025px) {
+    .topbar {
+        @include flexed();
+        width: 100%;
+        border-bottom: $border;
+        gap: 50%;
+        
+        &__left {
+            @include flexed();
+            width: 50%;
+            height: 50px;
+            justify-content: space-around;
+            
+            img {
+                align-self: center;
+                width: $imgSize;
+                height: $imgSize;
+            }    
+        }    
+        
+        &__right {
+            @include flexed();
+            width: 50%;
+            height: 50px;
+            justify-content: space-around;
+        }    
+
+        .search {
+            @include flexed();
+            width: 200px;
+            gap: $smallGap;
+            border: $border;
+            border-radius: $borderRad;
+            margin-bottom: $smallGap;
+            
+            i, h3 {
+                align-self: center;
+            }    
+        }    
+
+        .country {
+            @include flexed();
+            width: 70px;
+            gap: $smallGap;
+            border: $border;
+            border-radius: $borderRad;
+            margin-bottom: $smallGap;
+
+            img {
+                width: $imgSize;
+                height: $imgSize; 
+            }    
+
+            img, h3 {
+                align-self: center;
+            }    
+        }    
+        
+        .heart {
+            @include flexed();
+            width: 50px;
+            height: 43.667px;
+            align-self: center;
+            border: $border;
+            border-radius: $borderRad;
+            margin-bottom: $smallGap;
+            
+            i {
+                align-self: center;
+                margin-left: 18px;
+            }    
+        }    
+        
+        .profile {
+            @include flexed();
+            width: 50px;
+            gap: $smallGap;
+            border: $border;
+            border-radius: $borderRad;
+            margin-bottom: $smallGap;
+
+            i, img{
+                align-self: center; 
+            }    
+            
+            img {
+                width: $imgSize;
+                height: $imgSize; 
+            }    
+        }    
+    }    
+    
+    .book {
+        @include flexed();
+        width: 100%;
+        justify-content: space-around;
+        border-bottom: $border;
+        gap: 20%;
+        
+        .date {
+            @include flexed();
+            gap: $smallGap;
+            height: 50px;
+            
+            button {
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                align-self: center;
+                font-size: 40px;
+                font-stretch: 200%;
+                font-optical-sizing: none;
+            }    
+            
+            h2 {
+                align-self: center; 
+            }    
+        }    
+
+        .tripDetails {
+            @include flexed();
+            gap: $smallGap;
+
+            &__item {
+                @include flexed();
+                border: $border;
+                border-radius: $borderRad;
+                background-color: rgb(196, 196, 196);
+
+                i, p {
+                    align-self: center;
+                }    
+            }    
+        }    
+
+        .cost {
+            @include flexed();
+            gap: $smallGap;
+            
+            p {
+                color: green;
+            }    
+
+            button {
+                width: 90px;
+                background-color: green;
+                color: white;
+                border-radius: $borderRad;
+            }    
+        }    
+    }    
+    
+    .results {
+        @include flexed();
+        margin-left: $margLeft;
+
+        p:nth-child(3) {
+            color: gray;
+        }    
+    }    
+    
+    .container {
+        @include flexed();
+        gap: 75%;
+
+        .hotel {
+            @include flexed($direction: column);
+            width: 400px;
+            height: 70px;
+            
+            
+            &__stats, &__stats--item {
+                @include flexed();
+                gap: $smallGap;
+            }    
+            
+            &__stats--item {
+                i, p {
+                    align-self: center;
+                    color: gray;
+                    font-size: small;
+                }    
+            }    
+        }    
+
+        .actions {
+            @include flexed();
+            gap: $smallGap;
+            margin-top: 30px;
+            
+            .action {
+                @include flexed();
+                width: 80px;
+                height: 20px;
+                border: $border;
+                border-radius: $borderRad;
+                gap: $smallGap;
+                background-color: rgb(196, 196, 196);
+                
+                i, p {
+                    align-self: center;
+                }    
+                
+                i {
+                    margin-left: 15px;
+                }    
+            }    
+        }    
+    }    
+    
+    .grid_images {
+        margin-top: 100px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 'main main secondary secondary'
+        'main main . .';
+        gap: $smallGap;
+    }    
+    
+    .grid_item {
+        
+        img {
+            border-radius: 20px;
+            width: 100%;
+            height: 100%;
+        }    
+    }    
+    
+    .grid_item:first-child {
+        grid-area: main;
+        box-sizing: border-box;
+    }    
+    
+    .grid_item:nth-child(2) {
+        grid-area: secondary;
+        box-sizing: border-box;
+    }    
+
+    .buttons {
+        @include flexed();
+        gap: $smallGap;
+        margin-top: 50px;
+
+        .button {
+            height: 60px;
+            border: $border;
+            border-radius: $borderRad;
+            color: gray;
+        }    
+
+        .button:active {
+            background-color: black;
+            color: white;
+        }    
+
+        .overview {
+            width: 80px;
+        }    
+        
+        .whatsInc {
+            width: 120px;
+        }    
+        
+        .faqs {
+            width: 50px;
+        }    
+        
+        .room {
+            width: 50px;
+        }    
+    }
+    
+    .bottom {
+        @include flexed();
+
+        .description {
+            @include flexed($direction: column);
+            width: 75%;
+
+            p::after {
+                content: " read more";
+                color: blue;
+            }
+        }
+
+        .facilities {
+            display: none;
+        }
+
+        .reviews {
+            @include flexed($direction: column);
+            border: $border;
+
+            .rating {
+                @include flexed();
+    
+                .stars, .rate {
+                    align-self: center;
+                }
+    
+                .rate {
+                    width: 132px;
+                    height: 90px;
+                    background-image: url(images/4.8.png);
+                    animation: number 5s infinite 1.5s;
+                }    
+    
+                .stars {
+                    @include flexed($direction: column);
+    
+                    * {
+                        margin: $smallGap;
+                    }
+                }
+            }
+            
+            .bars {
+                @include flexed($direction: column);
+
+                .attributes {
+                    @include flexed();
+
+                    h5, p {
+                        align-self: center;
+                    }
+
+                    p {
+                        margin-left: 250px;
+                        color: gray;
+                    }
+
+                }
+
+                .bar1, .bar2 {
+                    height: 10px;
+                    background-color: green;
+                    border-radius: 5px;
+                }
+
+                .bar1 {
+                    width: 94%;
+                }
+                
+                .bar2 {
+                    width: 96%;
+                }
+
+                .attributes:nth-child(3) {
+                    display: none;
+                }
+
+                .bar3 {
+                    display: none;
+                }
+            }
+        }
+
+        .price {
+            display: none;
+        }
+    }
+
+    
+} 
