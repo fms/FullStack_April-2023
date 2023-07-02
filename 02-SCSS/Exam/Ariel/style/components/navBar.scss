@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 @import '../config';
+=======
+@import '../config.scss';
+>>>>>>> Stashed changes
 
 nav { 
 
@@ -14,7 +18,7 @@ nav {
       @include flexer(flex, none, none);
       align-items: center;
       img {
-        @include imgSizer(55px, 34px);
+        @include imgSizer(55px, 45px);
       }
     }
 
