@@ -20,9 +20,6 @@ if (object) {
 } else if (boolTrue) {
     console.log("nope");
 
-} else if (boolFalse) {
-    console.log("oh");
-
 } else {
     console.log(":(");
 
