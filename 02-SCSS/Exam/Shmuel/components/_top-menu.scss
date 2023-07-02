@@ -1,5 +1,5 @@
 .top-menu {
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(6, auto);
     padding: 0.2rem;
     column-gap: 10px;
@@ -10,21 +10,14 @@
 
     &__nav-menu {
         display: flex;
+        flex-grow: 1;
     }
 
     &__search {
         @include button;
-        grid-column: 4;
-        @media screen and (min-width: $mobile-width)
-        {
-            grid-column: 5;
-        }
     }
 
     &__avatar {
-        display: flex;
         @include button;
-        grid-column: 6;
-        align-items: center;
     }
 }
