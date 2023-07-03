@@ -18,6 +18,25 @@
 
         & .__left {
             display: flex;
+            gap: 30px;
+
+            & img {
+                height: 20px;
+                padding: 12px 0;
+            }
+
+            & .__main-nav {
+                padding: 12px 0;
+
+                & a {
+                    color:rgb(230, 227, 227);
+                    font-weight: bold;
+                    margin-right: 30px;
+                }
+                & .__active {
+                    color:rgb(77, 74, 74);
+                }
+            }
         }
 
         & .__right {
