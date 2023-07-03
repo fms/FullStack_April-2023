@@ -8,6 +8,46 @@
   max-width: 1024px;
   margin: 0 auto;
 }
+.__container .__nav-container {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #e6e3e3;
+  border-bottom: 1px solid #e6e3e3;
+  padding: 5px 0;
+  margin: 5px 0;
+}
+.__container .__nav-container .__left {
+  display: flex;
+}
+.__container .__nav-container .__right {
+  display: flex;
+}
+.__container .__nav-container .__right .__search {
+  border: 1px solid #e6e3e3;
+  border-radius: 30px;
+  padding: 12px;
+  margin-right: 10px;
+}
+.__container .__nav-container .__right .__search input {
+  border: 0;
+}
+.__container .__nav-container .__right .__currency {
+  border: 1px solid #e6e3e3;
+  border-radius: 30px;
+  padding: 12px;
+  margin-right: 10px;
+}
+.__container .__nav-container .__right .__like {
+  border: 1px solid #e6e3e3;
+  border-radius: 30px;
+  padding: 12px;
+  margin-right: 10px;
+}
+.__container .__nav-container .__right .__profile {
+  border: 1px solid #e6e3e3;
+  border-radius: 30px;
+  padding: 12px;
+}
 .__container .__content-container .__breadcrumbs-container .__breadcrumbs {
   padding: 20px 0px;
 }
