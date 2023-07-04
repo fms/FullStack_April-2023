@@ -1,0 +1,350 @@
+$font-family: Arial;
+
+body {
+    margin-left: 50px;
+    margin-right: 50px;
+    font-family: $font-family;
+}
+
+.menu-bar {
+    display: flex;
+    gap: 50px;
+    width: 100%;
+    background-color: white;
+    align-items: center;
+    font-family: Arial;
+    font-size: 20px;
+    color: gray;
+    padding-top: 10px;
+    cursor: pointer;
+
+    div:hover {
+        color: black;
+    }
+
+    .end {
+        display: flex;
+        gap: 30px;
+        position: absolute;
+        right: 110px;
+        // align-items: center;
+
+        & > div {
+            display: flex;
+            align-items: center;
+            background-color: rgb(255, 255, 255);
+            border: rgb(231, 223, 223) solid 2px;
+            color: gray;
+            padding: 0 10px 0 10px;
+            border-radius: 40px;
+
+            & > i {
+                padding: 10px;
+            }
+
+            &:hover {
+                background-color: rgb(231, 223, 223);
+                color: rgb(85, 85, 85);
+            }
+        }
+    }
+}
+
+
+.booking {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .date1 {
+        font-size: 30px;
+    }
+
+    .date2, .date3, .date4, .date6 {
+        background-color: rgb(231, 223, 223);
+        color: rgb(85, 85, 85);
+        padding: 20px;
+        border-radius: 40px;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.8;;
+        }
+    }
+
+    .date6 {
+        background-color: rgb(63, 138, 63);
+        color: white;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+.hotel {
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    
+    span {
+        color: gray;
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 30px;
+    padding-top: 10px;
+    cursor: pointer;
+    align-items: center;
+
+    .buttons {
+        display: flex;
+        gap: 20px;
+        font-size: 16px;
+
+         & > div {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: rgb(231, 223, 223);
+            color: rgb(85, 85, 85);
+            padding: 15px;
+            border-radius: 40px;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.8;;
+            }
+         }
+    }
+}
+
+.info {
+    display: flex;
+    gap: 20px;
+    margin-left: 50px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.pics {
+    display: grid;
+    justify-content: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 250px;
+    gap: 10px;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.pics > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.main-img {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+}
+
+.main-img-2 {
+    grid-column: 3 / 5;
+}
+
+.buttons2 {
+    display: flex;
+    gap: 30px;
+    color: gray;
+    cursor: pointer;
+    align-items: center;
+    
+    .overview {
+        background-color: black;
+        color: white;
+    }
+    
+    & > div {
+        background-color: white(231, 223, 223);
+        color: rgb(85, 85, 85);
+        border: solid 1px rgb(175, 175, 175);
+        padding: 15px;
+        border-radius: 40px;
+
+        &:hover {
+            opacity: 0.8;
+        }
+        
+    }
+}
+
+.review {
+    justify-content: space-between;
+    margin: 20px 50px 0 50px;
+    display: flex;
+}
+
+.details {
+    
+    span {
+        color: blue;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.relative {
+    background-color: white;
+    margin-left: 50px;
+    border: solid 1px rgb(175, 175, 175);
+    border-radius: 30px;
+    padding: 40px;    
+}
+
+.star {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+
+    div {
+        font-size: 60px;
+        font-weight: bold;
+    }
+
+    .rating {
+        line-height: 20px;
+        
+        img {
+            width: 150px;
+        }
+        
+        div {
+            font-size: 16px;
+            font-weight: normal;
+            color: gray;
+
+        }   
+    }
+}
+
+.lines {
+    display: flex;
+    justify-content: space-between;
+} 
+
+.green {
+    font-size: 5px;
+    background-color: green;
+    color: green;
+    border-radius: 30px;
+    margin-right: 20px;
+}
+
+.green2 {
+    font-size: 5px;
+    background-color: green;
+    color: green;
+    border-radius: 30px;
+    margin-right: 10px;
+}
+
+.green3 {
+    font-size: 5px;
+    background-color: green;
+    color: green;
+    border-radius: 30px;
+    margin-right: 40px;
+}
+
+@media (max-width: 1420px) {
+    .menu-bar > div {
+        display: none;
+    }
+
+    .menu-bar {
+        position: fixed;
+        padding: none;
+        width: 100%;
+        top: 0;
+    }
+
+    .end {
+        margin-right: 40px;
+        
+    }
+
+    .menu-bar p {
+        display: none;
+    }
+
+    .date1, .date2, .date3, .date4 {
+        display: none;
+    }
+
+    .booking {
+        background-color: white;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        // justify-content: space-evenly;
+    }
+
+    .hotel {
+        margin-top: 100px;        
+    }
+
+    .review {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-items: center;
+        // align-items: center;
+    }
+
+    .buttons2 {
+        display: flex;
+        justify-content: center;
+    }
+
+    .details {
+        display: flex;
+        flex-direction: column;
+        // justify-items: center;
+    text-align: center;
+    }
+
+    .pics {
+        display: grid;
+        justify-content: center;
+        margin-left: 50px;
+        margin-right: 50px;
+        // grid-template-rows: repeat(2, 1fr);
+        grid-auto-rows: 250px;
+        gap: 10px;
+        box-sizing: border-box;
+        align-items: center;
+        flex-wrap: wrap;
+}
+
+    .main-img {
+        grid-column: 1 / 5;
+        grid-row: 1;
+}
+
+.main-img-2 {
+        grid-row: 2;
+    }
+}
