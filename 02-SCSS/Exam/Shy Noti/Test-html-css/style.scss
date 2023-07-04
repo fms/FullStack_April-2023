@@ -8,6 +8,73 @@
     max-width: 1024px;
     margin: 0 auto;
 
+    & .__nav-container {
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid rgb(230, 227, 227);
+        border-bottom: 1px solid rgb(230, 227, 227);
+        padding : 5px 0;
+        margin: 5px 0;
+
+        & .__left {
+            display: flex;
+            gap: 30px;
+
+            & img {
+                height: 20px;
+                padding: 12px 0;
+            }
+
+            & .__main-nav {
+                padding: 12px 0;
+
+                & a {
+                    color:rgb(230, 227, 227);
+                    font-weight: bold;
+                    margin-right: 30px;
+                }
+                & .__active {
+                    color:rgb(77, 74, 74);
+                }
+            }
+        }
+
+        & .__right {
+            display: flex;
+
+            & .__search {
+                border: 1px solid rgb(230, 227, 227);
+                border-radius: 30px;
+                padding: 12px;
+                margin-right: 10px;
+
+                & input {
+                    border: 0;
+                }
+            }
+
+            & .__currency {
+                border: 1px solid rgb(230, 227, 227);
+                border-radius: 30px;
+                padding: 12px;
+                margin-right: 10px;
+            }
+
+            & .__like {
+                border: 1px solid rgb(230, 227, 227);
+                border-radius: 30px;
+                padding: 12px;
+                margin-right: 10px;
+            }
+
+            & .__profile {
+                border: 1px solid rgb(230, 227, 227);
+                border-radius: 30px;
+                padding: 12px;
+            }
+        }
+    }
+
     & .__content-container {
 
         & .__breadcrumbs-container {
@@ -265,32 +332,32 @@
                 & .__content-header {
                     display: flex;
                     justify-content: space-between;
-    
+
                     & .__left {
                         & h2 {
                             font-size: 38px;
                             margin-bottom: 20px;
                         }
-    
+
                         & ul {
-    
+
                             & li {
                                 display: inline;
                                 padding: 10px;
-    
+
                                 & i {
                                     padding-right: 10px;
                                 }
                             }
                         }
                     }
-    
+
                     & .__right {
-    
+
                         & .__actions {
-    
+
                             & div {
-    
+
                                 & span {
                                     display: none;
                                 }

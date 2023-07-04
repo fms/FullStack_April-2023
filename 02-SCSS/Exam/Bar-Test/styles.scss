@@ -1,10 +1,16 @@
+@mixin flexbox($justify-content, $align-items) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  padding: 0;
+  padding: 0 0 20vh 0;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -14,9 +20,7 @@ body {
 }
 
 .nav-imgs {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flexbox(space-between, center);
   padding: 0.5vw;
 
   .nav-desktop {
@@ -35,8 +39,7 @@ body {
   }
 
   .nav-right {
-    display: flex;
-    align-items: center;
+    @include flexbox(center, center);
     border: 1px solid rgb(206, 203, 203);
     border-radius: 2rem;
     padding: 0.5rem;
@@ -51,8 +54,7 @@ body {
     }
   }
   .nav-left {
-    display: flex;
-    align-items: center;
+    @include flexbox(center, center);
     img {
       max-width: 12vw;
     }
@@ -74,8 +76,7 @@ body {
   }
 
   .booking-right {
-    display: flex;
-    justify-content: space-between;
+    @include flexbox(center, space-between);
 
     p {
       margin-right: 1vw;
@@ -108,13 +109,11 @@ body {
 }
 
 .title {
-  display: flex;
-  justify-content: space-between;
+  @include flexbox(space-between, center);
   margin-bottom: -2vw;
 
   .title-buttons {
-    display: flex;
-    justify-content: space-between;
+    @include flexbox(space-between, center);
 
     i {
       font-size: 2vw;
@@ -223,8 +222,11 @@ body {
 }
 
 .booking-stickey {
-  display: flex;
-  justify-content: space-between;
+  @include flexbox(space-between, center);
+  position: fixed;
+  bottom: 0;
+  width: 90vw;
+  background-color: white;
   .price {
     p {
       font-weight: 600;
@@ -253,11 +255,21 @@ body {
 }
 
 .reviews-raitings {
-  display: flex;
-  align-items: center;
+  @include flexbox(none, center);
 
   h2 {
     font-size: 11vw;
+    animation: flip 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) alternate both;
+    animation-iteration-count: infinite;
+
+    @keyframes flip {
+      0% {
+        transform: rotateX(0);
+      }
+      100% {
+        transform: rotateX(-360deg);
+      }
+    }
   }
 
   img {
@@ -284,20 +296,6 @@ body {
   span {
     font-size: 3vw;
     font-weight: 600;
-  }
-}
-
-.slide-bck-center {
-  animation: slide-bck-center 0.45s cubic-bezier(0.47, 0, 0.745, 0.715) both;
-  animation-iteration-count: infinite;
-}
-
-@keyframes slide-bck-center {
-  0% {
-    transform: translateZ(0);
-  }
-  100% {
-    transform: translateZ(-400px);
   }
 }
 
