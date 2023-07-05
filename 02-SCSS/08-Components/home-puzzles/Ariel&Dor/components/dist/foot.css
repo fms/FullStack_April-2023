@@ -46,9 +46,6 @@
   padding-left: 50px;
   max-width: 462px;
 }
-.foot .flexContainer .leftSideFooter .newsletterFooter {
-  letter-spacing: 2px;
-}
 .foot .flexContainer .leftSideFooter .newsletterFooter input {
   width: 356px;
   height: 40px;
@@ -57,16 +54,23 @@
   font-size: 20px;
   margin-top: 13px;
 }
-.foot .flexContainer .leftSideFooter .newsletterFooter img {
+.foot .flexContainer .leftSideFooter .newsletterFooter .envalope {
   position: relative;
   left: 405px;
   top: 7px;
   width: 30px;
   height: 30px;
 }
+.foot .flexContainer .leftSideFooter .newsletterFooter .btnLeftSide {
+  position: relative;
+  bottom: 45px;
+  right: 410px;
+  height: 45.2px;
+}
 .foot .flexContainer .leftSideFooter .contentNewsletterFooter {
   margin: 15px 5px 15px 30px;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
+  transform: translate(2px, -40px);
 }
 .foot .flexContainer .leftSideFooter .contentNewsletterFooter p {
   margin-bottom: 15px;

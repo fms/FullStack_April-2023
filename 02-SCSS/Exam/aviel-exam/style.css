@@ -1,0 +1,272 @@
+
+body {
+    background-color:white;
+    font-family: sans-serif;
+}
+
+h1{
+
+    
+    font-size: 25px;
+}
+
+
+
+.container {
+
+    margin: 0 auto;
+   
+    width: 900px;
+    height: auto;
+
+    /* border: 10px aliceblue solid;
+    border-radius: 50px; */
+
+}
+
+.deatls {
+
+    display: flex;
+    gap: 10px;
+}
+
+
+.buttons {
+
+    position: relative;
+    top: -95px;
+    left: 650px;
+    margin: 10px;
+}
+
+.buttons button {
+
+    border-radius: 20px;
+   
+}
+
+.all_img {
+
+    display: grid;
+  width: 100%;
+  height: auto;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 10px;
+margin-top: 25px;
+
+}
+
+.all_img .three_img {
+    position: relative;
+    top: 150px;
+    right: 408px;
+}
+
+.all_img .Four_img {
+    position: relative;
+    top: 150px;
+    right: 390px;
+}
+
+.action_buttons button  {
+   
+    border-radius: 20px;
+   font-size: 15px;
+   margin-right: 20px;
+   background-color: white;
+   margin-top: 20px;
+   margin-bottom: 20px;
+   
+}
+
+.rating {
+
+    position: relative;
+    left: 650px;
+    bottom: 200px;
+    border: 2px gray solid;
+    border-radius: 20px;
+    width: 280px;
+    height: 250px;
+}
+
+.rating .rating_no { 
+
+    font-size: 60px;
+    position: relative;
+    bottom: 50px;
+    margin-left: 10px;
+
+ }
+
+.rating .my_rating {
+
+    position: relative;
+    left: 100px;
+    bottom: 150px;
+}
+
+.rating .my_rating h4 {
+
+ 
+  margin-top: -5px;
+  color: gray;
+}
+
+.rating .comfortable {
+    display: flex;
+    position: relative;
+    bottom: 150px;
+    
+}
+
+
+
+.rating .clean {
+
+    display: flex;
+    position: relative;
+    bottom: 140px;
+}
+
+
+
+
+
+
+
+
+/* animation */
+
+.action .action_buttons .Overview:active  , .Whats_included:active , .FAQs:active , .Room:active {
+ 
+   
+
+        background-color: black;
+        color: white;
+        
+}
+
+
+.rating .rating_no {
+
+    -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
+	        animation: heartbeat 1.5s ease-in-out infinite both;
+}
+
+
+@-webkit-keyframes heartbeat {
+    from {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-transform-origin: center center;
+              transform-origin: center center;
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    10% {
+      -webkit-transform: scale(0.91);
+              transform: scale(0.91);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    17% {
+      -webkit-transform: scale(0.98);
+              transform: scale(0.98);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    33% {
+      -webkit-transform: scale(0.87);
+              transform: scale(0.87);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    45% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+  }
+  @keyframes heartbeat {
+    from {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-transform-origin: center center;
+              transform-origin: center center;
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    10% {
+      -webkit-transform: scale(0.91);
+              transform: scale(0.91);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    17% {
+      -webkit-transform: scale(0.98);
+              transform: scale(0.98);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    33% {
+      -webkit-transform: scale(0.87);
+              transform: scale(0.87);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    45% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+  }
+
+  
+
+  /* responsiv */
+
+  @media screen and ( max-width: 900px ) {
+
+    .all_img {
+
+        /* background-color:red; */
+
+          width: 600px;
+  
+display: flex;
+flex-wrap: wrap;
+margin-bottom: 50px;
+
+
+    }
+
+
+    
+    .rating {
+
+        /* background-color:red;  */
+        position: relative;
+        top: 50px;
+        left: 110px;
+
+          width: 600px;
+  
+
+
+
+
+    }
+
+
+}
+
+/* .container .action {
+
+    display: grid;
+    grid-template-columns: minmax(300px, 900px) 1fr 1fr;
+    width: 100%;
+
+} */

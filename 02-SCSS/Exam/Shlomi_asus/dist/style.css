@@ -1,0 +1,150 @@
+.icon_borders {
+  font-size: clamp(1rem, 1vw, 2rem);
+  border: 3px #b4a993 solid;
+  border-radius: 20px;
+  color: #eae5da;
+  background-color: #c4b7a7;
+}
+
+.head {
+  padding-left: 50%;
+}
+
+.body {
+  width: 320px;
+  border: 2px black solid;
+}
+
+.grey {
+  color: #c0b099;
+}
+
+.Two_flex {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.Two_flex_cellone {
+  width: 65%;
+  font-size: clamp(1rem, 3vw, 2rem);
+}
+.Two_flex_cell {
+  padding-left: 10%;
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  text-align: right;
+}
+
+.Img_Flex {
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: 500 px;
+  gap: 5px;
+}
+.Img_Flex_pic {
+  width: clamp(20%, 30%, 50%);
+  height: clamp(25%, 30%, 50%);
+  border: 1px grey solid;
+  border-radius: 20px;
+}
+.Img_Flex_main_pic {
+  height: clamp(40%, 50%, 60%);
+  width: 90%;
+  border: 1px grey solid;
+  border-radius: 20px;
+}
+
+.Button_container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+.Button_container_Button {
+  height: 40px;
+  width: 25%;
+  border: 1px grey solid;
+  border-radius: 20px;
+  background-color: white;
+}
+.Button_container_Button:active {
+  background-color: black;
+  color: white;
+}
+
+.p {
+  font-size: 14px;
+  color: grey;
+}
+
+.p::after {
+  color: blue;
+  content: "read more...";
+}
+
+.icon_section {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 5px;
+  padding-top: 10px;
+}
+.icon_section * {
+  font-size: clamp(1rem, 0.5vw, 2rem);
+  text-align: left;
+}
+.icon_section_bullet {
+  width: 50%;
+}
+
+.icon_section::after {
+  color: blue;
+  content: "See more facilities";
+  padding-bottom: 15px;
+}
+
+.head_section {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding-top: 10px;
+}
+.head_section * {
+  color: grey;
+  font-size: clamp(0.5rem, 0.7rem, 2rem);
+  text-align: left;
+}
+.head_section_bullet {
+  width: 20%;
+}
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: rows;
+  padding-top: 20px;
+  border: 3px black solid;
+  height: 300px;
+  border: 1px grey solid;
+  border-radius: 20px;
+}
+.box_heading {
+  font-size: large;
+  width: 100%;
+}
+
+.jumping_number {
+  color: black;
+  animation: jump_number 0.9s cubic-bezier(0.2, 0.2, 0.2, 0) infinite backwards;
+}
+
+@keyframes jump_number {
+  0% {
+    transform: scale(0.5);
+    transform-origin: 10% 0%;
+  }
+  100% {
+    transform: scale(1);
+    transform-origin: 0% 10%;
+  }
+}

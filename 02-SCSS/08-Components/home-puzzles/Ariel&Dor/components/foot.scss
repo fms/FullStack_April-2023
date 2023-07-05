@@ -10,11 +10,11 @@
     color: white;
   
     .rightSideFooter {
-      @include flexer(grid, none, row);
+      @include flexer(flex, none, row);
 
       .childSideFooter {
-        width: 220px;
-        height: 350px;
+        @include imgSizer(220px, 350px);
+
 
         ul {
           li{
@@ -46,28 +46,37 @@
       
 
       .newsletterFooter {
-        letter-spacing: 2px;
-          input {
-            width: 356px;
-            height: 40px;
-            outline: none;
-            padding-right: 50px;
-            font-size: 20px;
-            margin-top: 13px;
-          }
-          
-          img {
-            position: relative;
-            left: 405px;
-            top: 7px;
-            width: 30px;
-            height: 30px;
-          }
+        // letter-spacing: 2px;
+        input {
+          width: 356px;
+          height: 40px;
+          outline: none;
+          padding-right: 50px;
+          font-size: 20px;
+          margin-top: 13px;
+        }
+        
+        .envalope {
+          position: relative;
+          left: 405px;
+          top: 7px;
+          width: 30px;
+          height: 30px;
+        }
+
+        .btnLeftSide {
+          position: relative;
+          bottom: 45px;
+          right: 410px;
+          height: 45.2px;
+        }
       }
 
       .contentNewsletterFooter {
         margin: 15px 5px 15px 30px;
-        letter-spacing: 1px;
+        letter-spacing: 1.5px;
+        transform: translate(2px, -40px);
+
         p {
           margin-bottom: 15px;
         }

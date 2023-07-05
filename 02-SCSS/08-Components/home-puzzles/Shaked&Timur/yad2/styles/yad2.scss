@@ -4,18 +4,18 @@
 @import "mixin/mix";
 @import "footer/footer";
 @import "grid/grid";
-@import "responsive/responsive";
-
+@import "responsive/responsive"; 
+  
 
 .flex {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 40px;  
     flex-direction: row-reverse;
 
     &__circles {
-        margin-top: 40px;
+        margin-top: 40px; 
         @include wi-he(150px, 150px);
         border-radius: 100px;
         background-color: rgb(235, 233, 233);

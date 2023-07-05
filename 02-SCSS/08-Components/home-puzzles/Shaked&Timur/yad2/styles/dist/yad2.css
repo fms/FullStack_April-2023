@@ -207,39 +207,6 @@
     border-radius: 5px;
     margin-right: 70px;
   }
-  .appbox__text {
-    position: relative;
-    top: 1;
-    bottom: 150px;
-    left: 0;
-    right: 0;
-    color: white;
-    font-size: 30px;
-    bottom: 90px;
-    margin-left: 16%;
-  }
-  .appbox__buttons {
-    position: relative;
-    top: 1;
-    bottom: 190px;
-    left: 0;
-    right: 0;
-    display: flex;
-    margin-right: 58%;
-  }
-  .appbox__buttons__que {
-    border: solid 4px white;
-    border-radius: 20px;
-    bottom: 150px;
-  }
-  .appbox__buttons__appstore {
-    bottom: 190px;
-    margin-left: 19%;
-  }
-  .appbox__buttons__googleplay {
-    bottom: 255px;
-    margin-left: 19%;
-  }
 }
 .container {
   display: grid;
@@ -257,7 +224,7 @@
 
 .righttext {
   grid-area: rtext;
-  font-size: 28px;
+  font-size: clamp(1rem, 5vw, 2rem);
 }
 
 .middletext {

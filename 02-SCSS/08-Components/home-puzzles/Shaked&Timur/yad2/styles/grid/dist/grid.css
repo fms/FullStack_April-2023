@@ -1,0 +1,157 @@
+@media screen and (min-width: 881px) {
+  .appbox {
+    margin-top: 10%;
+    margin-bottom: 5%;
+    background-color: orange;
+    border-radius: 20px;
+    opacity: 70%;
+    display: grid;
+    grid-template-rows: repeat(6, 20px);
+    grid-template-columns: repeat(13, 70px);
+    margin-left: 20%;
+    align-content: space-evenly;
+    justify-content: start;
+    grid-template-areas: ". . . . . . . . . . . . . " "d d e e e . . . . . . . . " "d d e e e c c c c c c c c " "d d r r r c c c c c c c c " "d d r r r . . . . . . . . " ". . . . . . . . . . . . . ";
+  }
+  .appbox--text {
+    grid-area: c;
+    color: white;
+    font-size: 35px;
+  }
+  .appbox--appbutton--w {
+    grid-area: d;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAAAklEQVR4AewaftIAAAVgSURBVO3BQY6kWhIAQXeU97+yT8cC6QlBkdX0nxVm9gevv7bxemTj9cjG65GN1yMbr0c+XFD5rYozKqPiSGVVsVK5UjFURsVQ2VWcUfmtiqON1yMfblTcUTmjslKpOFMxVEbFqLhTcUVlVbGquKNyZeP1yIcvqRxVnFEZFUNlpzIqRsVQGRUrlSsVQ2VVsVP5hspRxZ2N1yMf/kMqo2KoXKlYqYwKlVXFqmKlsqv4L228Hvnwf6Cyqxgqo2KlMiqGypHKqBgqRxUrlVHxL334UsVvVXxL5UzFTuVMxVAZFSq/UfE3Nl6PfLih8pTKqFAZFUNlVAyVlUrFqmKojIorFUPljMoTG69HPlyoeEplVAyVilXFUDlTcaRypuJbFf/CxusR+4MTKqNiqNyp+InKrmKo/KTiisqoGCqjQmVVsVK5U3Fn4/XIh3+gYqisKo4qVhVDZVQMlZ3KqmJUDJVRMVR2FUPlJxUqo2KojIorG69HPnyp4orKquJbKiuVUbGrGCorlVGxqlAZKquKoXJUcUZlVBxtvB6xP/iByqrijsqoGCqjQmVVMVRGxRWVVcVQGRVHKt+qOKMyKo4+/CWVKxVDZaVSsVK5o7KqGCorld+qGCoqo2Ko3Nl4PWJ/cEJlVAyVKxVDZVSsVI4qzqiMip3KqmKlMiquqKwqhsqouKIyKo42Xo98uFAxVFYVQ6ViqJxRGRU7lZXKGZVRUTFUhsqq4orKN1R2FUPlzsbrkQ8XVFYVq4pdxU9UrlTcUfmGyqhQGRVD5U7Fb228HvnwJZVVhcqZilFxR2VVcadiqKwqvqUyKobKTmVU3Nl4PfLhQsVQGRVHFSuVn6hU/ERlVbGrGCo/UblSsVIZFbuKoTIqrmy8HvnwSyp3VEbFkcqq4ozKrmJV8S2VMyqjYqcyKlYqo+LowwWVUbGqGCq7ijMqRxVD5YzKqNip/KRiVaGyqjijMiqOKobKlY3XI/YHX1A5qhgqZyr+lsqoUFlVDJU7FSuVVcVQqRgqo+LOxuuRD1+qGCqjYlcxVM6ojIqdyqpiqFypGCqjYqiMiisqq4pVhcqoGCqriqON1yMfLqicqThSGRUrlVExVCpGxUplVAyVXcVPKlYqFUNlVAyVlcoTG69HPtyoGCpHKqNiqKwqVhVXKlYVRyo/URkVRyorlaOK39p4PfLhSxVXVEbFUFmpHFUMlVXFUBkVKqNipXJGpWJVMVTuqKwqrmy8HrE/OKEyKobKqBgqu4pvqNypWKkcVaxURsUVlVGxUhkVKqPiWx++VHFF5VsVK5UzKruKobJSGRVDZVTsVEbFSuWKypmKo43XIx9+SWVUXFFZVQyVncqoGCqrip3KSuVMxU5lpTIq7lR8a+P1iP3BCZVRMVSOKobKqmKlMiqOVH5S8Vsq/0LFUBkVRxuvRz5cqFhVXKlYqYyKb1UMlVExVK5UDJVRMSp2KquKMyq7iqEyKq5svB75cEHltypGxVAZFUcqo2KoXKkYKmcqhspRxVBZqYyKXcVQGRVDZVQcbbwe+XCj4o7KSmWlclQxVH5SsasYKkNlVfGtiiOVUTFU7my8HvnwJZWjip9UDJVRsVP5icqoUBkVo2KonFG5onKlYqh868N/SGVU7FRGxVAZFUPlisqoGBVDZVWhMirOqIyKobKrGCp3Nl6PfPgPVQyVUbFTWamMiqGyqxgqK5VRcUdlVIyKVYXKb228HrE/OKEyKu6ojIrfUllV3FEZFXdUflIxVCrOqIyKo43XIx9uqPyWyqpiqOwqzqisKlRGxagYKqNiqOwqRsVK5Y7KtzZej9gfvP7axuuRjdcjG69HNl6P/A8ewrTaoyWYvAAAAABJRU5ErkJggg==);
+    background-size: cover;
+    border-radius: 15px;
+    margin-left: 10px;
+    margin-right: 50px;
+    border: solid 3px white;
+  }
+  .appbox--appbutton--e {
+    grid-area: e;
+    background-image: url(https://assets.yad2.co.il/homepage/app-download/app-download-apple.svg);
+    background-size: cover;
+    border-radius: 5px;
+    margin-right: 70px;
+  }
+  .appbox--appbutton--r {
+    grid-area: r;
+    background-image: url(https://assets.yad2.co.il/homepage/app-download/app-download-google.svg);
+    background-size: cover;
+    margin-top: 3px;
+    border-radius: 5px;
+    margin-right: 70px;
+  }
+}
+.container {
+  display: grid;
+  width: 90%;
+  float: right;
+  height: 100px;
+  border-radius: 10px;
+  margin-top: 50px;
+  border: solid 1px #d9d9d9;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  grid-template-areas: "ltext mtext rtext";
+}
+
+.righttext {
+  grid-area: rtext;
+  font-size: clamp(1rem, 5vw, 2rem);
+}
+
+.middletext {
+  grid-area: mtext;
+  font-size: 16px;
+  color: #646464;
+  line-height: 1.5em;
+}
+
+.lefttext {
+  display: flex;
+  grid-area: ltext;
+  font-size: 20px;
+  color: #ff6f00;
+  border: solid 1px #ff8800;
+  width: 250px;
+  height: 50px;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 35px;
+}
+
+.container:hover {
+  box-shadow: #d1d1d1 0px 0px 15px 0px;
+  opacity: 80%;
+}
+
+.buscontainer {
+  display: grid;
+  gap: 10px;
+  background-color: #f6f6f6;
+  width: 90%;
+  height: 120px;
+  border-radius: 10px;
+  margin-top: 50px;
+  border: solid 1px #f1f1f1;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  align-items: center;
+  grid-template-areas: "lbox m1box m2box rtxt";
+}
+
+.bus-box {
+  gap: 6px;
+  flex-direction: row-reverse;
+  display: flex;
+  float: right;
+  align-items: center;
+  width: 300px;
+  height: 50px;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: white;
+  border: solid 1px gainsboro;
+}
+.bus-box--arrow {
+  width: 10px;
+  height: 17px;
+  position: relative;
+  right: 50%;
+  background-image: url(/02-SCSS/08-Components/home-puzzles/Shaked&Timur/yad2/styles/images/yad2arrow.png);
+  background-position: cover;
+}
+
+.bus-box:hover {
+  box-shadow: 0px 0px 7px #dedede;
+}
+
+.rtxt {
+  grid-area: rtxt;
+  font-size: 28px;
+}
+
+.m1box {
+  grid-area: m1box;
+  font-size: 16px;
+  color: #646464;
+  line-height: 1.5em;
+}
+
+.m2box {
+  grid-area: m2box;
+  font-size: 16px;
+  color: #646464;
+  line-height: 1.5em;
+}
+
+.lbox {
+  grid-area: lbox;
+  font-size: 16px;
+  color: #646464;
+  line-height: 1.5em;
+  margin-left: 15px;
+}

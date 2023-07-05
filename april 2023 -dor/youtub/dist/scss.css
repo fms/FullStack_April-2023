@@ -1,0 +1,20 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-color: black;
+}
+
+.login {
+  display: flex;
+}
+.login .login_img {
+  width: 15px;
+  height: 15px;
+}
+.login h6 {
+  color: blue;
+}

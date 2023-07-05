@@ -54,7 +54,8 @@
     font-size: 16px;
     color: #61696d;
     font-family: 'Open Sans', sans-serif;
-    width: 314.54px;
+    min-width: 311px;
+    max-width: 311.1px;
     margin-right: 47px;
   }
   .selectHeaderMainContent:hover {
@@ -72,6 +73,10 @@
   .resultsProductsCards {
     @include flexer (flex, center, none);
     width: 70%;
+
+    .w1 {
+      font-size: 14px;
+    }
   }
 }
 
@@ -89,11 +94,14 @@
 
       .btn__rest__button {
         font-size: 16px;
-        padding: 10px 128px;
-        // border-radius: 5px;
+        padding: 6px 12px;
         background-color: white;
         border: 1px black solid;
         color: #61696d;
+        min-width: 311px;
+        max-width: 311.1px;
+        min-height: 38px;
+        max-height: 38.1px;
         cursor: pointer;
       }
       .btn__rest__button:hover {
@@ -148,32 +156,36 @@
 
   // Products
   .cards {
-    .rowFlexerCards{
-      @include flexer (flex, center, none);
-      width: 100%;
-    }
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+
     .productsCard1 {
       @include flexer (flex, center, column);
-      padding: 10px;
+      padding: 8px;
 
-      img {
+      .imgCard {
         position: relative;
-        width: 322.49px;
-        height: 322.49px;
-      }
+        padding-bottom: 327px;
 
-      .h1-1 {
-        img:hover {
-          background-image: url(../imgaes/products/1-1p.jpg);
+        img {
+          position: absolute;
+        }
+        .front:hover {
+          opacity: 0;
         }
       }
-      // @import './hoverCardsProductImages';
+      img {
+        max-width: 322.49px;
+        max-height: 322.49px;
+      }
     } 
 
     .infoCards {
       @include flexer (flex, none, column);
       text-align: center;
-      padding: 0.6875rem 0 3rem;
+      padding: 0.6875rem 0 64px;
+      font-size: 14px;
 
       .palateColorFlexer {
           @include flexer (flex, center, none);
@@ -275,7 +287,31 @@
       }
     }
   }
+
+  
 }
 
+.showMore {
 
-
+  .centerShowMore {
+    text-align: center;
+    margin: 0 0 100px;
+    padding: 10px;
+    
+    button {
+      border: 1px solid black;
+      padding: 6px 12px;
+      font-size: 16px;
+      width: 332.5px;
+      cursor: pointer;
+      border-radius: 0;
+      background-color: white;
+    }
+    button:active {
+      background-color: black;
+      color: white;
+      border: 2.5px solid #7f7f7f;
+      
+    }
+  }
+}
