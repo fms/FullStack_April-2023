@@ -14,5 +14,6 @@ jinx.myLastName = "new last name"
 console.log("printing jinx");
 console.log(jinx.myFirstName);
 console.log(jinx.myLastName);
- 
+
+
 
