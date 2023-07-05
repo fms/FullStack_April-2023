@@ -1,4 +1,4 @@
-let hight:string | number | null = prompt("Whats your hight in Meter? ")
+let hight:string | number | null = prompt("Whats your hight in Meter(Example: 1.82) ? ")
 let weight:string | number | null = prompt("whats your weight in kg? ")
 
 if (weight && hight){
@@ -13,9 +13,10 @@ if (weight && hight){
         bmi = bmi.toFixed(2)
     
         console.log("Your BMI is: "+bmi)
+        document.body.innerHTML = JSON.stringify("Your BMI is: "+bmi);
+
     }else{
         console.log("data inValid")
-        
     }
 
 
