@@ -1,0 +1,5 @@
+- Get weight and height from the user (prompt for each)
+- Calculate BMI (BMI = weight (kg) / [height (m)]^2
+- if BMI is greater then 25 write "Overweight"
+- if BMI is lower then 18.5 write "Underweight"
+- otherwise write "Normal"
