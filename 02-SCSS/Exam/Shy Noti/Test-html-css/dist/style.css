@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
+  list-style-type: none;
 }
 
 .__container {
@@ -66,6 +67,49 @@
   border: 1px solid #e6e3e3;
   border-radius: 30px;
   padding: 12px;
+}
+.__container .__booking-container {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e6e3e3;
+  padding: 5px 0;
+  margin: 5px 0;
+  background-color: white;
+}
+.__container .__booking-container .__title {
+  padding: 10px;
+}
+.__container .__booking-container .__title h2 {
+  font-size: 24px;
+}
+.__container .__booking-container .__info ul {
+  display: flex;
+}
+.__container .__booking-container .__info ul li {
+  margin-right: 10px;
+  background-color: #ebf1f8;
+  padding: 10px;
+  border-radius: 20px;
+  color: #7b7d7f;
+}
+.__container .__booking-container .__info ul li i {
+  margin-right: 10px;
+}
+.__container .__booking-container .__booking {
+  display: flex;
+}
+.__container .__booking-container .__booking p {
+  margin-right: 10px;
+  padding: 10px;
+  color: #34987d;
+  font-weight: bold;
+}
+.__container .__booking-container .__booking input {
+  background-color: #34987d;
+  padding: 10px 30px;
+  border-radius: 20px;
+  border: 0;
+  color: white;
 }
 .__container .__content-container .__breadcrumbs-container .__breadcrumbs {
   padding: 20px 0px;

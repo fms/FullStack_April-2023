@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
+    list-style-type: none;
 }
 
 .__container {
@@ -15,7 +16,7 @@
         justify-content: space-between;
         border-top: 1px solid rgb(230, 227, 227);
         border-bottom: 1px solid rgb(230, 227, 227);
-        padding : 5px 0;
+        padding: 5px 0;
         margin: 5px 0;
         background-color: white;
 
@@ -32,12 +33,13 @@
                 padding: 12px 0;
 
                 & a {
-                    color:rgb(230, 227, 227);
+                    color: rgb(230, 227, 227);
                     font-weight: bold;
                     margin-right: 30px;
                 }
+
                 & .__active {
-                    color:rgb(77, 74, 74);
+                    color: rgb(77, 74, 74);
                 }
             }
         }
@@ -74,6 +76,61 @@
                 border: 1px solid rgb(230, 227, 227);
                 border-radius: 30px;
                 padding: 12px;
+            }
+        }
+    }
+
+    & .__booking-container {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid rgb(230, 227, 227);
+        padding: 5px 0;
+        margin: 5px 0;
+        background-color: white;
+
+        & .__title {
+            padding: 10px;
+
+            & h2 {
+                font-size: 24px;
+            }
+        }
+
+        & .__info {
+
+            & ul {
+                display: flex;
+
+                & li {
+                    margin-right: 10px;
+                    background-color: #ebf1f8;
+                    padding: 10px;
+                    border-radius: 20px;
+                    color: #7b7d7f;
+
+                    & i {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+
+        & .__booking {
+            display: flex;
+
+            & p {
+                margin-right: 10px;
+                padding: 10px;
+                color: #34987d;
+                font-weight: bold;
+            }
+
+            & input {
+                background-color: #34987d;
+                padding: 10px 30px;
+                border-radius: 20px;
+                border: 0;
+                color: white;
             }
         }
     }
@@ -329,19 +386,19 @@
         margin: 20px;
 
         & .__nav-container {
-    
+
             & .__left {
-    
+
                 & .__main-nav {
                     display: none;
                 }
             }
-    
+
             & .__right {
 
                 & .__search {
-                    
-    
+
+
                     & :focus {
                         width: 200px;
                     }
@@ -350,11 +407,11 @@
                         width: 10px;
                     }
                 }
-    
+
                 & .__currency {
                     display: none;
                 }
-    
+
                 & .__like {
                     display: none;
                 }
@@ -443,119 +500,119 @@
 
                 & .__content-section {
                     flex-direction: column;
-    
+
                     & .__info {
                         width: 100%;
-    
+
                         & .__info-options-container {
                             justify-content: space-between;
-    
+
                             & .__option {
                                 border: 1px solid grey;
                                 border-radius: 30px;
                                 padding: 8px;
                                 margin-right: 10px;
-    
+
                             }
-    
+
                             & .__option:hover {
                                 border: 1px solid grey;
                                 background-color: black;
                                 color: white;
                             }
-    
+
                             & .__active {
                                 border: 1px solid grey;
                                 background-color: black;
                                 color: white;
                             }
                         }
-    
+
                         & h3 {
                             font-size: 28px;
                             margin: 20px 0;
                         }
-    
+
                         & p {
                             color: #aaacaf;
                         }
-    
+
                     }
-    
+
                     & .__reviews {
                         width: 30%;
                         border: 1px solid rgb(235, 227, 227);
                         border-radius: 20px;
                         padding: 20px;
-    
+
                         & h3 {
                             font-size: 16px;
                             margin-bottom: 20px;
                         }
-    
+
                         & .__reviews-score {
                             display: flex;
-    
+
                             & .__review-counter {
                                 font-size: 48px;
                                 margin-right: 20px;
                             }
-    
+
                             & .__review-counter::after {
                                 content: counter(count);
                                 animation: counter 5s linear infinite alternate;
                                 counter-reset: count 0;
                             }
-    
+
                             @keyframes counter {
                                 0% {
                                     counter-increment: count 0;
                                 }
-    
+
                                 10% {
                                     counter-increment: count 1;
                                 }
-    
+
                                 20% {
                                     counter-increment: count 2;
                                 }
-    
+
                                 30% {
                                     counter-increment: count 3;
                                 }
-    
+
                                 40% {
                                     counter-increment: count 4;
                                 }
-    
+
                                 50% {
                                     counter-increment: count 5;
                                 }
-    
+
                                 60% {
                                     counter-increment: count 6;
                                 }
-    
+
                                 70% {
                                     counter-increment: count 7;
                                 }
-    
+
                                 80% {
                                     counter-increment: count 8;
                                 }
-    
+
                                 90% {
                                     counter-increment: count 9;
                                 }
-    
+
                                 100% {
                                     counter-increment: count 10;
                                 }
                             }
-    
+
                             & .__review-stars {
                                 padding-top: 10px;
-    
+
                                 & i {
                                     color: rgb(250, 247, 95);
                                 }
