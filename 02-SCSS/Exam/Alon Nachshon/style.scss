@@ -2,7 +2,7 @@
 @import  '_constants.scss';
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap');
 
-// * {border-color: rgb(random(255), random(255), random(255));}
+* {border-color: rgb(random(255), random(255), random(255));}
 
 
 body{
@@ -281,25 +281,86 @@ body{
         grid-area: more-det;
     }
     &__more-details-review{
+        padding:10px;
         @include random-border;
         grid-area: data;
 
         &__raiting{
+
+            @include random-border;
+            
             display: grid;
             grid-template-columns: 1fr 2fr 1fr;  
-            grid-template-areas: "score star ." "score star . ";
+            grid-template-areas: "score star ." 
+                                "pro pro pro"
+                                "pro1 pro1 pro1"
+                                "pro2 pro2 pro2"
+                                "pro3  pro3 pro3 ";
+            gap:$gap;
+            
+            &__btn{
+                @include createOval(45px ,80%, 40px, $col-primary-light);
+                @include self-flex;
+                justify-self: center;
+                color:$col-primary;
+                grid-area: pro3;
+            }
             &__star{
                 grid-area: star;
+                @include random-border;
+                align-self: center;
+                
+
+                &__tag-line{
+                    color:$col-prim-text;
+                    font-size:10px;;
+                }
             }
-            &score{
+            &__score{
+                @include random-border;
+                @include self-flex;
                 grid-area: score;
+                font-size:34px;
+                font-weight: 500;
+            
     
+            }
+            .pro{
+                grid-area: pro;
+            }
+            .pro1{
+                grid-area: pro1;
+            }
+            .pro2{
+                grid-area: pro2;
+            }
+
+            &__progress-section{
+                
+                span{
+                   display: block;
+                   margin-bottom: 10px;;
+                }
+
+                &__progress-bar{
+                    width: 100%;
+                    height: 10px;
+                    background-color: $col-btn;
+                    border-radius: 5px;
+  
+                    &__progress{
+                        width: 80%;
+                        height: 100%;
+                        background-color:$col-primary;
+                        border-radius: 5px;                 
+                    }
+                }   
             }
         }
-
     }
-
-
-    
+}
+.fa-star{
+    color:rgb(255, 204, 0);
+    width:15px;
 
 }
