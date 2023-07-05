@@ -34,7 +34,7 @@ if (age) { // age != null && age != ""
     }
 }
 else // if (age == null)
- {
+{
     console.log("You didn't specify an age!");
 }
 // oprators:
