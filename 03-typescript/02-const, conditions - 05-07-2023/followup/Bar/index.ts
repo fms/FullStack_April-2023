@@ -21,8 +21,8 @@
 //     }
 // }
 
-var weight = prompt("Enter Weight")
-var height = prompt("Enter Height")
+var weight = prompt("Enter Weight in KG")
+var height = prompt("Enter Height in CM")
 
 if (weight && height) {
     var parsedWeight = parseInt(weight);
@@ -36,3 +36,4 @@ if (weight && height) {
 } else {
     console.log("Invalid Text");
 }
+
