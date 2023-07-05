@@ -1,22 +1,16 @@
-var age = prompt("What is your favorite number?");
-if (age) {
-    var ageAsNum = parseInt(age);
-    console.log(ageAsNum);
-    if (!Number.isNaN(ageAsNum)) {
-        if (ageAsNum == 0) {
-            console.log("You have a value!");
-        }
-        else if (ageAsNum < 0) {
-            console.log("You are a very negative person!");
-        }
-        else {
-            console.log("You are a very positive person!");
-        }
-    }
-    else {
-        console.log("I don't know words");
-    }
+var height = prompt("What is your height in meters?") || "1";
+var weight = prompt("What is your weight in kilos?") || "1";
+var overweight = 25;
+var underweight = 18.5;
+var heightAsNum = parseFloat(height);
+var weightAsNum = parseFloat(weight);
+var bmi = (weightAsNum / heightAsNum / heightAsNum);
+if (bmi >= overweight) {
+    console.log("You are overweight");
+}
+else if (bmi >= underweight) {
+    console.log("You are A-Okay!");
 }
 else {
-    console.log("Alright then, keep your secrets!");
+    console.log("You are underweight");
 }
