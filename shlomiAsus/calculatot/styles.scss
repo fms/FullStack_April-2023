@@ -1,0 +1,47 @@
+$font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+.body {
+    background-color: wheat;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: content;
+    justify-content: center;
+
+    &_box {
+        padding-top: 30px;
+        height: 190px;
+        width: 150px;
+        background-color: rgb(0, 0, 0);
+        color: rgb(251, 255, 0);
+        border: 3px rgb(247, 247, 247) double;
+        border-radius: 25px;
+        box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+        text-shadow: 1px 1px 2px rgb(69, 45, 126), 0 0 1em blue, 0 0 0.2em blue;
+        font-weight: bolder;
+
+        &_div {
+            width: 120px;
+            font-family: $font-family;
+            margin: auto;
+            padding-left: 10px;
+        }
+
+        &_input {
+            width: 80px;
+            font-family: $font-family;
+            margin: auto;
+            padding-left: 10px;
+            border-radius: 10px;
+        }
+
+    }
+
+    &_result {
+        background-color: rgb(12, 11, 11);
+        font-family: $font-family;
+        text-shadow: 1px 1px 2px rgb(69, 45, 126), 0 0 1em blue, 0 0 0.2em blue;
+    }
+}
