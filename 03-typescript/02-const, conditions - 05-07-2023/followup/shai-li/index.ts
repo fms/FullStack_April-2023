@@ -17,15 +17,15 @@ if (weight && height) {
     const BMI = calBMI * 10000;
     console.log(BMI);
     if (BMI >= 25) {
-      alert("Overweight");
+      alert("You are overweight");
     } else if (BMI <= 18.5) {
-      alert("Underweight");
+      alert("You are underweight");
     } else {
-      alert("Normal");
+      alert("Your BMI is Normal");
     }
   } else {
     alert("You did not gave me numbers");
   }
 } else {
-  alert("you canceled!");
+  alert("You canceled!");
 }
