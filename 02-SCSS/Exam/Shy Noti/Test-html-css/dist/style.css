@@ -297,7 +297,7 @@
   .__container {
     margin: 20px;
   }
-  .__container .__nav-container .__left .__main-nav {
+  .__container .__nav-container .__left .__main-nav a {
     display: none;
   }
   .__container .__nav-container .__right .__search :focus {
@@ -311,6 +311,24 @@
   }
   .__container .__nav-container .__right .__like {
     display: none;
+  }
+  .__container .__booking-container {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    justify-content: center;
+    padding: 15px 0;
+    margin: 0;
+  }
+  .__container .__booking-container .__title {
+    display: none;
+    padding: 0;
+  }
+  .__container .__booking-container .__info {
+    display: none;
+  }
+  .__container .__booking-container .__booking input {
+    margin-left: 80px;
   }
   .__container .__content-container .__main-container .__content-header {
     display: flex;

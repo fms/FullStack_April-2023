@@ -389,7 +389,7 @@
 
             & .__left {
 
-                & .__main-nav {
+                & .__main-nav a {
                     display: none;
                 }
             }
@@ -414,6 +414,31 @@
 
                 & .__like {
                     display: none;
+                }
+            }
+        }
+
+        & .__booking-container {
+            position: fixed;
+            bottom: 0px;
+            width: 100%;
+            justify-content: center;
+            padding: 15px 0;
+            margin: 0;
+
+            & .__title {
+                display: none;
+                padding: 0;
+            }
+    
+            & .__info {
+                display: none;
+            }
+
+            & .__booking {
+
+                & input {
+                    margin-left: 80px;
                 }
             }
         }
