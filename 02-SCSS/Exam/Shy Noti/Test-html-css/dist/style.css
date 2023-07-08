@@ -8,65 +8,76 @@
 .__container {
   max-width: 1024px;
   margin: 0 auto;
-}
-.__container .__nav-container {
-  display: flex;
-  position: sticky;
-  top: 0;
-  justify-content: space-between;
-  border-top: 1px solid #e6e3e3;
-  border-bottom: 1px solid #e6e3e3;
-  padding: 5px 0;
-  margin: 5px 0;
-  background-color: white;
-}
-.__container .__nav-container .__left {
-  display: flex;
-  gap: 30px;
-}
-.__container .__nav-container .__left img {
-  height: 20px;
-  padding: 12px 0;
-}
-.__container .__nav-container .__left .__main-nav {
-  padding: 12px 0;
-}
-.__container .__nav-container .__left .__main-nav a {
-  color: #e6e3e3;
-  font-weight: bold;
-  margin-right: 30px;
-}
-.__container .__nav-container .__left .__main-nav .__active {
-  color: #4d4a4a;
-}
-.__container .__nav-container .__right {
-  display: flex;
-}
-.__container .__nav-container .__right .__search {
-  border: 1px solid #e6e3e3;
-  border-radius: 30px;
-  padding: 12px;
-  margin-right: 10px;
-}
-.__container .__nav-container .__right .__search input {
-  border: 0;
-}
-.__container .__nav-container .__right .__currency {
-  border: 1px solid #e6e3e3;
-  border-radius: 30px;
-  padding: 12px;
-  margin-right: 10px;
-}
-.__container .__nav-container .__right .__like {
-  border: 1px solid #e6e3e3;
-  border-radius: 30px;
-  padding: 12px;
-  margin-right: 10px;
-}
-.__container .__nav-container .__right .__profile {
-  border: 1px solid #e6e3e3;
-  border-radius: 30px;
-  padding: 12px;
+  /*& .__nav-container {
+      display: flex;
+      position: sticky;
+      top: 0;
+      justify-content: space-between;
+      border-top: 1px solid rgb(230, 227, 227);
+      border-bottom: 1px solid rgb(230, 227, 227);
+      padding: 5px 0;
+      margin: 5px 0;
+      background-color: white;
+
+      & .__left {
+          display: flex;
+          gap: 30px;
+
+          & img {
+              height: 20px;
+              padding: 12px 0;
+          }
+
+          & .__main-nav {
+              padding: 12px 0;
+
+              & a {
+                  color: rgb(230, 227, 227);
+                  font-weight: bold;
+                  margin-right: 30px;
+              }
+
+              & .__active {
+                  color: rgb(77, 74, 74);
+              }
+          }
+      }
+
+      & .__right {
+          display: flex;
+
+          & .__search {
+              border: 1px solid rgb(230, 227, 227);
+              border-radius: 30px;
+              padding: 12px;
+              margin-right: 10px;
+
+              & input {
+                  border: 0;
+              }
+          }
+
+          & .__currency {
+              border: 1px solid rgb(230, 227, 227);
+              border-radius: 30px;
+              padding: 12px;
+              margin-right: 10px;
+          }
+
+          & .__like {
+              border: 1px solid rgb(230, 227, 227);
+              border-radius: 30px;
+              padding: 12px;
+              margin-right: 10px;
+          }
+
+          & .__profile {
+              border: 1px solid rgb(230, 227, 227);
+              border-radius: 30px;
+              padding: 12px;
+          }
+      }
+  }*/
 }
 .__container .__booking-container {
   display: flex;
@@ -296,21 +307,38 @@
 @media screen and (max-width: 600px) {
   .__container {
     margin: 20px;
-  }
-  .__container .__nav-container .__left .__main-nav a {
-    display: none;
-  }
-  .__container .__nav-container .__right .__search :focus {
-    width: 200px;
-  }
-  .__container .__nav-container .__right .__search input {
-    width: 10px;
-  }
-  .__container .__nav-container .__right .__currency {
-    display: none;
-  }
-  .__container .__nav-container .__right .__like {
-    display: none;
+    /*& .__nav-container {
+
+        & .__left {
+
+            & .__main-nav a {
+                display: none;
+            }
+        }
+
+        & .__right {
+
+            & .__search {
+
+
+                & :focus {
+                    width: 200px;
+                }
+
+                & input {
+                    width: 10px;
+                }
+            }
+
+            & .__currency {
+                display: none;
+            }
+
+            & .__like {
+                display: none;
+            }
+        }
+    }*/
   }
   .__container .__booking-container {
     position: fixed;
@@ -471,5 +499,85 @@
   }
   .__container .__content-container .__main-container .__content-section .__reviews .__reviews-score .__review-stars i {
     color: #faf75f;
+  }
+}
+.__container .__nav-container {
+  display: flex;
+  position: sticky;
+  top: 0;
+  justify-content: space-between;
+  border-top: 1px solid #e6e3e3;
+  border-bottom: 1px solid #e6e3e3;
+  padding: 5px 0;
+  margin: 5px 0;
+  background-color: white;
+}
+.__container .__nav-container .__left {
+  display: flex;
+  gap: 30px;
+}
+.__container .__nav-container .__left img {
+  height: 20px;
+  padding: 12px 0;
+}
+.__container .__nav-container .__left .__main-nav {
+  padding: 12px 0;
+}
+.__container .__nav-container .__left .__main-nav a {
+  color: #e6e3e3;
+  font-weight: bold;
+  margin-right: 30px;
+}
+.__container .__nav-container .__left .__main-nav .__active {
+  color: #4d4a4a;
+}
+.__container .__nav-container .__right {
+  display: flex;
+}
+.__container .__nav-container .__right .__search {
+  border: 1px solid #e6e3e3;
+  border-radius: 30px;
+  padding: 12px;
+  margin-right: 10px;
+}
+.__container .__nav-container .__right .__search input {
+  border: 0;
+}
+.__container .__nav-container .__right .__currency {
+  border: 1px solid #e6e3e3;
+  border-radius: 30px;
+  padding: 12px;
+  margin-right: 10px;
+}
+.__container .__nav-container .__right .__like {
+  border: 1px solid #e6e3e3;
+  border-radius: 30px;
+  padding: 12px;
+  margin-right: 10px;
+}
+.__container .__nav-container .__right .__profile {
+  border: 1px solid #e6e3e3;
+  border-radius: 30px;
+  padding: 12px;
+}
+
+@media screen and (max-width: 600px) {
+  .__container {
+    margin: 20px;
+  }
+  .__container .__nav-container .__left .__main-nav a {
+    display: none;
+  }
+  .__container .__nav-container .__right .__search :focus {
+    width: 200px;
+  }
+  .__container .__nav-container .__right .__search input {
+    width: 10px;
+  }
+  .__container .__nav-container .__right .__currency {
+    display: none;
+  }
+  .__container .__nav-container .__right .__like {
+    display: none;
   }
 }

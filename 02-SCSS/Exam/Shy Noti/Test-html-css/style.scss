@@ -9,7 +9,7 @@
     max-width: 1024px;
     margin: 0 auto;
 
-    & .__nav-container {
+    /*& .__nav-container {
         display: flex;
         position: sticky;
         top: 0;
@@ -78,7 +78,7 @@
                 padding: 12px;
             }
         }
-    }
+    }*/
 
     & .__booking-container {
         display: flex;
@@ -385,7 +385,7 @@
     .__container {
         margin: 20px;
 
-        & .__nav-container {
+        /*& .__nav-container {
 
             & .__left {
 
@@ -416,7 +416,7 @@
                     display: none;
                 }
             }
-        }
+        }*/
 
         & .__booking-container {
             position: fixed;
@@ -648,5 +648,8 @@
             }
         }
     }
-
 }
+
+
+@import 'components/_top-navigation';
+@import 'components/_booking-navigation';
