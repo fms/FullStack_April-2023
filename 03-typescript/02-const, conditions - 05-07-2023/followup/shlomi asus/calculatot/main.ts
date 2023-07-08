@@ -1,3 +1,5 @@
+
+
 function submit() {
 
 
@@ -7,6 +9,7 @@ function submit() {
     var weightInputValue = weightinput.value;
     var numberHeightInputValue = parseFloat(heightInputValue);
     var numberWeightInputValue = parseFloat(weightInputValue);
+
 
 
     //בדיקה אם זה לא ריק
@@ -20,12 +23,37 @@ function submit() {
         return;
     }
     else {
-        numberHeightInputValue = numberHeightInputValue /100 ;   
+        numberHeightInputValue = numberHeightInputValue / 100;
         let bmi = ((numberWeightInputValue / (numberHeightInputValue * numberHeightInputValue)));
         bmi = Math.floor(bmi);
         let outputElement = document.getElementById("output");
-        if (outputElement)
-        outputElement.innerText = bmi.toString();
-
+        if (outputElement) {
+            outputElement.innerText = bmi.toString();
+            heightinput.value = "  ";
+            weightinput.value = "  ";
+        }
     }
+}
+
+function recurtion() {
+    let result = 1;
+
+
+    let numberInput = document.getElementById("numberUser") as HTMLInputElement;
+    var numberInputValue = numberInput.value;
+    var NumberInputValue = parseFloat(numberInputValue);
+    divideCheck();
+
+    function divideCheck() {
+        if (NumberInputValue % 2 == 0) {
+            NumberInputValue = NumberInputValue / 2;
+            result++;
+            divideCheck();
+        }
+        else {  
+            alert("result:" + result);
+        }
+    }
+
+
 }
