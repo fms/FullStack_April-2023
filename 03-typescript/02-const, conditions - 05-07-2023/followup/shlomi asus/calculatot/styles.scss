@@ -1,0 +1,68 @@
+$font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+.body {
+    background-color: wheat;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 33% 33% 33%;
+    grid-template-columns: 33% 33% 33%;
+    border: 1px black solid;
+
+    &_box1 {
+        padding-top: 15px;
+        //   height: 190px;
+        //   width: 150px;
+        background-color: rgb(0, 0, 0);
+        color: rgb(251, 255, 0);
+        border: 3px rgb(247, 247, 247) double;
+        border-radius: 25px;
+        box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+        text-shadow: 1px 1px 2px rgb(69, 45, 126), 0 0 1em blue, 0 0 0.2em blue;
+        font-weight: bolder;
+        grid-row-start: 1;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    &_box {
+        padding-top: 30px;
+        height: 190px;
+        width: 150px;
+        background-color: rgb(0, 0, 0);
+        color: rgb(251, 255, 0);
+        border: 3px rgb(247, 247, 247) double;
+        border-radius: 25px;
+        box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+        text-shadow: 1px 1px 2px rgb(69, 45, 126), 0 0 1em blue, 0 0 0.2em blue;
+        font-weight: bolder;
+
+        &_div {
+            width: 120px;
+            font-family: $font-family;
+            margin: auto;
+            padding-left: 10px;
+        }
+
+        &_input {
+            width: 80px;
+            font-family: $font-family;
+            margin: auto;
+            padding-left: 10px;
+            border-radius: 10px;
+        }
+    }
+
+    &_result {
+        background-color: rgb(35, 33, 186);
+        font-family: $font-family;
+        text-shadow: 5px 2px 2px rgb(0, 0, 0);
+        padding-left: 25px;
+        width: 63px;
+        margin: auto;
+        margin-left: 150px;
+        border-radius: 10px;
+        border: 3px rgb(247, 247, 247) solid;
+    }
+}

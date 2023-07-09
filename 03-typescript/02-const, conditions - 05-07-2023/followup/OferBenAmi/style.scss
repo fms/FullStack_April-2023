@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+body {
+  background-color: rgb(46, 46, 46);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Anton', sans-serif;
+
+}
+
+.wrapper {
+  // color: white;
+  text-align: center;
+  background-color: rgb(40, 135, 190);
+  padding: 50px;
+  border-radius: 50px;
+  box-shadow: 0 0 20px 10px rgba(white, 0.8);
+
+  h1 {
+    font-size: 50px;
+  }
+
+  .inputs {
+    width: 200px;
+    height: 40px;
+    font-size: 30px;
+    border-radius: 20px;
+    border: 0;
+    outline: none;
+    padding: 10px 5px;
+  }
+
+  #submit {
+    width: 200px;
+    height: 40px;
+    border-radius: 30px;
+    border: 0;
+
+    &:hover {
+      background-color: rgb(46, 46, 46);
+      color: white;
+    }
+  }
+}
