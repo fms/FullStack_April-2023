@@ -1,0 +1,136 @@
+.navigation_style {
+  background-color: rgb(11, 1, 28);
+  border: 3px white solid;
+  width: 2180px;
+  height: 25px;
+  text-align: center;
+  padding-top: 10px;
+}
+.navigation_style * {
+  display: inline;
+  color: white;
+  padding-inline: 20px;
+}
+
+.menu_Div:link {
+  text-decoration: none;
+}
+
+.radius_Border {
+  border: 1px white solid;
+  border-radius: 5px;
+}
+
+.secondary_Navigation_Style {
+  width: 1800px;
+  height: 25px;
+  text-align: center;
+  padding-top: 50px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.secondary_Navigation_Style.text_inline {
+  display: inline;
+  color: rgb(0, 0, 0);
+  padding-inline: 2%;
+}
+.secondary_Navigation_Style.text_inline::after {
+  content: "|";
+}
+
+.body_Style {
+  text-align: center;
+  width: 2200px;
+  margin: auto;
+  padding-top: 30px;
+}
+@media screen and (max-width: 1300px) {
+  .body_Style {
+    border: 3px rgb(20, 20, 20) solid;
+    color: black;
+    background-color: whitesmoke;
+  }
+}
+@media screen and (min-width: 1301px) {
+  .body_Style {
+    background-color: #5D8AA8;
+  }
+}
+
+.main_container {
+  margin-top: 50px;
+  display: grid;
+  grid-template-rows: repeat(2, 450px);
+  grid-template-columns: repeat(5, 380px);
+  gap: 40px;
+  justify-content: space-around;
+}
+
+.grid_slot {
+  border: 3px rgb(20, 20, 20) solid;
+  color: black;
+  background-color: whitesmoke;
+  text-align: center;
+}
+.grid_slot_image {
+  background-image: url("https://hips.hearstapps.com/hmg-prod/images/gettyimages-1309699231.jpg?crop=0.669xw:1.00xh;0.331xw,0&resize=1200:*");
+  background-size: 100% 100%;
+  height: 50%;
+  width: 100%;
+}
+.grid_slot_article {
+  padding-top: 15px;
+  color: rgb(0, 0, 0);
+  font-size: 22px;
+  font-weight: bold;
+}
+.grid_slot_end {
+  padding-top: 20px;
+  font-size: 18px;
+  color: rgb(61, 61, 59);
+  margin-left: 50%;
+}
+.grid_slot_main_article {
+  grid-column-start: 2;
+  grid-column-end: 5;
+  border: 3px rgb(20, 20, 20) solid;
+  color: black;
+  background-color: whitesmoke;
+}
+.grid_slot_main_article_img {
+  background-image: url("https://hips.hearstapps.com/hmg-prod/images/gettyimages-1309699231.jpg?crop=0.669xw:1.00xh;0.331xw,0&resize=1200:*");
+  background-size: 100% 100%;
+  height: 80%;
+  width: 100%;
+}
+.grid_slot_main_article_content {
+  font: bold;
+  font-size: 140%;
+  font-weight: bold;
+}
+.grid_slot_sidelist {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 5;
+  grid-column-start: 5;
+  color: black;
+}
+.grid_slot_sidelist_articles {
+  height: 20%;
+  margin: auto;
+}
+
+.my_List {
+  list-style: square;
+  text-align: left;
+}
+
+.h1 {
+  font-size: 100px;
+  color: rgb(0, 0, 0);
+  text-shadow: 15px 6px 6px rgba(46, 91, 173, 0.6);
+}
+
+.img_Style {
+  height: 100%;
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */
