@@ -21,7 +21,7 @@ if (weight && height) {
     } else if (BMI <= 18.5) {
       alert("You are underweight");
     } else {
-      alert("Your BMI is Normal");
+      alert("Your BMI is normal");
     }
   } else {
     alert("You did not gave me numbers");
