@@ -1,19 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap");
-* {
-  border-color: #6e16ba;
+i::after {
+  font-family: Verdana, sans-serif !important;
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 body {
   margin: 0;
   display: grid;
   grid-template-columns: 1fr 10fr 1fr;
-  grid-template-rows: 3rem 4rem auto;
+  grid-template-rows: 3rem 5rem auto;
   grid-template-areas: ". nav ." " . header ." ". main .";
+}
+@media only screen and (max-width: 600px) {
+  body {
+    grid-template-columns: 12fr;
+    grid-template-rows: 3rem auto;
+    grid-template-areas: "nav" "main";
+    gap: 1.3rem;
+  }
 }
 
 .nav {
-  border: 1px solid;
-  border-color: #08e908;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,8 +30,32 @@ body {
   justify-content: space;
   grid-area: nav;
   display: grid;
-  grid-template-columns: 1fr 4fr 2fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 4fr 1fr 4fr 2fr 1fr 1fr;
   grid-template-areas: "logo nav-items . where currency like profile";
+}
+@media only screen and (max-width: 600px) {
+  .nav {
+    background-color: black;
+    grid-template-columns: 1fr 3fr 1fr 1fr;
+    grid-template-areas: "logo  . where profile";
+    gap: 1.3rem;
+  }
+  .nav ul {
+    visibility: hidden;
+  }
+  .nav__select {
+    visibility: hidden;
+  }
+  .nav__search-btn {
+    width: 45px !important;
+    background-position: 50% 50% !important;
+  }
+  .nav__search-btn::placeholder {
+    padding-left: 0px;
+  }
+  .nav__like {
+    visibility: hidden;
+  }
 }
 .nav__logo {
   grid-area: logo;
@@ -52,7 +84,7 @@ body {
   width: 245px;
   box-sizing: border-box;
   border-radius: 50px;
-  border: 1px solid #aeacac;
+  border: 1px solid #edecec;
   background-color: white;
   background-image: url("../imgs/search-icon-png-18.png");
   background-repeat: no-repeat;
@@ -62,20 +94,64 @@ body {
   padding: 6px 5px 6px 35px;
   color: #aeacac;
 }
+.nav__search-btn::placeholder {
+  color: #999;
+  padding-left: 10px;
+}
 .nav__select {
+  background-color: white;
+  height: 35px;
+  width: 120px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  color: #999;
+  box-sizing: border-box;
+  border: 1px solid #edecec;
   grid-area: currency;
 }
+.nav__select > img {
+  object-fit: cover;
+  max-height: 1.6rem;
+  border-radius: 50px;
+}
 .nav__like {
+  background-color: white;
+  height: 35px;
+  width: 45px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #999;
+  box-sizing: border-box;
+  border: 1px solid #edecec;
   grid-area: like;
 }
 .nav__profile {
+  background-color: white;
+  height: 35px;
+  width: 75px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #999;
+  box-sizing: border-box;
+  border: 1px solid #edecec;
   grid-area: profile;
+}
+.nav__profile > img {
+  object-fit: cover;
+  max-height: 1.8rem;
+  clip-path: circle(50% at 50% 50%);
 }
 
 .header {
-  border: 1px solid;
-  border-color: #098b79;
   grid-area: header;
   display: flex;
   justify-content: center;
@@ -83,18 +159,32 @@ body {
   text-align: center;
   display: grid;
   grid-template-columns: repeat(17, 1fr);
-  grid-template-areas: "choose choose  choose choose choose loc loc loc date date date date ppl ppl ppl  price book";
+  grid-template-areas: "choose choose  choose choose . loc loc loc date date date date ppl ppl ppl  price book";
   gap: 1.3rem;
+}
+@media only screen and (max-width: 600px) {
+  .header {
+    visibility: hidden;
+  }
 }
 .header__back {
   grid-area: choose;
+}
+.header__back i {
+  height: fit-content;
+  max-width: fit-content;
+  background-color: #edecec;
+  padding: 5px 7px;
+  border-radius: 50%;
+  margin-right: 15px;
+  color: #999;
 }
 .header__button--loc {
   background-color: white;
   height: 30px;
   width: 100%;
   border-radius: 40px;
-  border: 1px solid #aeacac;
+  border: 1px solid #edecec;
   grid-area: loc;
   overflow: hidden;
   color: #aeacac;
@@ -104,7 +194,7 @@ body {
   height: 30px;
   width: 100%;
   border-radius: 40px;
-  border: 1px solid #aeacac;
+  border: 1px solid #edecec;
   grid-area: date;
   overflow: hidden;
   color: #aeacac;
@@ -114,14 +204,12 @@ body {
   height: 30px;
   width: 100%;
   border-radius: 40px;
-  border: 1px solid #aeacac;
+  border: 1px solid #edecec;
   grid-area: ppl;
   overflow: hidden;
   color: #aeacac;
 }
 .header__price {
-  border: 1px solid;
-  border-color: #849d16;
   grid-area: price;
   color: #4aa585;
 }
@@ -139,8 +227,6 @@ body {
 }
 
 .main {
-  border: 1px solid;
-  border-color: #752fb8;
   grid-area: main;
   gap: 1.3rem;
   display: grid;
@@ -150,22 +236,16 @@ body {
   align-items: baseline;
 }
 .main__bradcrumbs {
-  border: 1px solid;
-  border-color: #aee6ce;
   grid-area: bc;
 }
 .main__bradcrumbs--active {
   color: #aeacac;
 }
 .main h1 {
-  border: 1px solid;
-  border-color: #f45437;
   grid-area: h1;
   margin: 0;
 }
 .main__save {
-  border: 1px solid;
-  border-color: #63b3a7;
   background-color: #edecec;
   height: 30px;
   width: 80px;
@@ -178,8 +258,6 @@ body {
   grid-area: save;
 }
 .main__share {
-  border: 1px solid;
-  border-color: #f263d6;
   background-color: #edecec;
   height: 30px;
   width: 80px;
@@ -193,14 +271,10 @@ body {
   grid-area: share;
 }
 .main__rating {
-  border: 1px solid;
-  border-color: #2dc5c5;
   color: grey;
   grid-area: review;
 }
 .main__gallery {
-  border: 1px solid;
-  border-color: #9da792;
   grid-area: gallery;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -209,8 +283,6 @@ body {
   grid-template-areas: "cover-pic cover-pic sec-pic sec-pic " "cover-pic cover-pic  small-pic1 small-pic2";
 }
 .main__gallery img {
-  border: 1px solid;
-  border-color: #9928be;
   border-radius: 20px;
 }
 .main__gallery__cover {
@@ -246,8 +318,6 @@ body {
   max-height: 12vw;
 }
 .main__more-details-nav {
-  border: 1px solid;
-  border-color: #fb6e4a;
   grid-area: more-nav;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -263,7 +333,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  border: 1px solid #aeacac;
+  border: 1px solid #edecec;
 }
 .main__more-details-nav__included {
   background-color: white;
@@ -274,7 +344,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  border: 1px solid #aeacac;
+  border: 1px solid #edecec;
   color: #aeacac;
 }
 .main__more-details-nav__faqs {
@@ -286,7 +356,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  border: 1px solid #aeacac;
+  border: 1px solid #edecec;
   color: #aeacac;
 }
 .main__more-details-nav__room {
@@ -298,23 +368,19 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  border: 1px solid #aeacac;
+  border: 1px solid #edecec;
   color: #aeacac;
 }
 .main__more-details-content {
-  border: 1px solid;
-  border-color: #d46488;
   grid-area: more-det;
 }
 .main__more-details-review {
   padding: 10px;
-  border: 1px solid;
-  border-color: #ab47e2;
   grid-area: data;
+  border: 1px solid #edecec;
+  border-radius: 20px;
 }
 .main__more-details-review__raiting {
-  border: 1px solid;
-  border-color: #dd95c1;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-areas: "score star ." "pro pro pro" "pro1 pro1 pro1" "pro2 pro2 pro2" "pro3  pro3 pro3 ";
@@ -335,8 +401,6 @@ body {
 }
 .main__more-details-review__raiting__star {
   grid-area: star;
-  border: 1px solid;
-  border-color: #22eca8;
   align-self: center;
 }
 .main__more-details-review__raiting__star__tag-line {
@@ -344,8 +408,6 @@ body {
   font-size: 10px;
 }
 .main__more-details-review__raiting__score {
-  border: 1px solid;
-  border-color: #792d4e;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -357,11 +419,17 @@ body {
 .main__more-details-review__raiting .pro {
   grid-area: pro;
 }
+.main__more-details-review__raiting .pro div:nth-child(1) {
+  width: 95%;
+}
 .main__more-details-review__raiting .pro1 {
   grid-area: pro1;
 }
 .main__more-details-review__raiting .pro2 {
   grid-area: pro2;
+}
+.main__more-details-review__raiting .pro2 div:nth-child(1) {
+  width: 50%;
 }
 .main__more-details-review__raiting__progress-section span {
   display: block;
