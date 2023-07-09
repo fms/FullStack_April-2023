@@ -1,8 +1,9 @@
 let firstNumber = 1;
 let initial = firstNumber;
-for (let i = 1; i < 100; i++) {
-    if (i % 7 ==0 || i.toString().includes('7'))
-    {
-        console.log('number is:', +  i, "BOOM!");
-    }
+
+for (let index = 1; index < 100; index++) {
+    if (index % 7 == 0 || index.toString().includes('7'))
+        console.log(`number is: ${index}  BOOM!`);
 }
+
+
