@@ -1,5 +1,13 @@
-let weight = prompt("enter your weight(in kg)") || "0";
-let height = prompt("enter your height(in meters)")|| "0";
+const weight = document.getElementById("weight") as HTMLInputElement;
+const height = document.getElementById("height") as HTMLInputElement;
+const submit = document.getElementById("submit") as HTMLInputElement;
 
-const bmi = parseInt(weight) / Math.pow(parseFloat(height),2);
-console.log(`your bmi is ${bmi}`);
+submit?.addEventListener("click", function (event) {
+  const weightInt = parseInt(weight?.value || "0");
+  const heightInt = parseFloat(height?.value || "0");
+  console.log(weightInt);
+  console.log(heightInt);
+  if (weightInt === 0 || heightInt === 0) {
+    alert(`Your values are not correct`);
+  } else alert(`Your BMI is ${weightInt / heightInt ** 2}`);
+});
