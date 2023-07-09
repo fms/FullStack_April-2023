@@ -26,6 +26,9 @@ body > .grid,
 .box {
   height: 100px;
   border-radius: 1rem;
+}
+
+.aqua {
   background-color: aqua;
 }
 
