@@ -21,14 +21,14 @@
 //     }
 // }
 
-var weight = prompt("Enter Weight in KG")
+let weight = prompt("Enter Weight in KG")
 var height = prompt("Enter Height in CM")
 
 if (weight && height) {
-    var parsedWeight = parseInt(weight);
-    var parsedHeight = parseInt(height) / 100;
+    let parsedWeight = parseInt(weight);
+    let parsedHeight = parseInt(height) / 100;
     if (!Number.isNaN(parsedHeight) && !Number.isNaN(parsedWeight)) {
-        var bmi = Math.round(parsedWeight / (parsedHeight * parsedHeight));
+        let bmi = Math.round(parsedWeight / (parsedHeight * parsedHeight));
         console.log(bmi);
     } else {
         console.log("Invalid Text");
