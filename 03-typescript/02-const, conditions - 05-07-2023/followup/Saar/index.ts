@@ -34,11 +34,11 @@ var yourWeight = prompt("What is your weight?(Kilograms)");
 var yourHeight = prompt("What is your height?(Meters)");
 
 if (yourWeight && yourHeight) {
-    var parseWeight = parseInt(yourWeight);
-    var parseHeight = parseInt(yourHeight)/100;
+    let parseWeight = parseInt(yourWeight);
+    let parseHeight = parseInt(yourHeight)/100;
     if (!Number.isNaN(parseWeight) && !Number.isNaN(parseHeight)) {
-        var BMI = (parseWeight / (parseHeight * parseHeight));
-        console.log(Math.round(BMI));
+        let BMI = (parseWeight / (parseHeight * parseHeight));
+        console.log(`Your BMI is: ${Math.round(BMI)}`);
     }
     else {
         console.log("Invalid Number");
