@@ -1,24 +1,17 @@
-let hight:string | number | null = prompt("Whats your hight in Meter(Example: 1.82) ? ")
-let weight:string | number | null = prompt("whats your weight in kg? ")
+let hight:number = Number(prompt("Whats your hight in Meter(Example: 1.82) ? "))
+let weight:number = Number(prompt("whats your weight in kg? "))
+
+/*
+    If the user input a string than the values of hight & weight will be NaN and the if will be false.
+    If the user will press the cancel than the values that number will recieve will be null, and if will be false.
+    If the user wouldn't input and just press ok , this will evaluate to "" empyu string , and if will be false. 
+*/
 
 if (weight && hight){
 
-    hight = parseFloat(hight)
-    weight = parseInt(weight)
-
-    if ( !Number.isNaN(hight) && !Number.isNaN(weight) ){
-    
         let bmi:number | string = weight/Math.pow(hight, 2)
-    
         bmi = bmi.toFixed(2)
-    
-        console.log("Your BMI is: "+bmi)
-        document.body.innerHTML = JSON.stringify("Your BMI is: "+bmi);
-
-    }else{
-        console.log("data inValid")
-    }
-
+        console.log("Your BMI is: " +  bmi)
 
 }else{
     console.log("No Data")
