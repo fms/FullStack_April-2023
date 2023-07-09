@@ -1,11 +1,11 @@
 "use strict";
-let i = 1;
-while (i <= 100) {
-    if (i % 7 == 0) {
-        console.log("BOOM");
+let num = 1;
+while (num <= 100) {
+    if (num % 7 == 0) {
+        console.log(num + ' BOOM');
     }
     else {
-        console.log(i);
+        console.log(num);
     }
-    i++;
+    num++;
 }
