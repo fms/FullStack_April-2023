@@ -24,20 +24,3 @@ for(let outerLoop = 1 ; outerLoop <= userInput ; outerLoop++)
 }
 console.log(total2);
 console.log(total);
-
-
-
-
-
-
-
-
-
-// for(let innerLoop = 0 ; innerLoop <= outerLoop ; innerLoop++)
-// {
-//     console.log(outerLoop);
-//     total2 += outerLoop;
-//     total += total2-innerLoop;
-// }
-// console.log(total)
-// console.log(total2)
