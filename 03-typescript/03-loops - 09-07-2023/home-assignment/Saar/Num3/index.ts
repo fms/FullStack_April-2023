@@ -22,5 +22,5 @@ for(let outerLoop = 1 ; outerLoop <= userInput ; outerLoop++)
     total += outerLoop
 
 }
-console.log(total2);
-console.log(total);
+console.log(`Your total is ${total}`);
+console.log(`Your Second total is ${total2}`);
