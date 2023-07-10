@@ -9,3 +9,13 @@
 //    > Take one down and pass it around, there's no more bottles of beer on the wall!<br>
 //    > <br>
 //    - exit when there are no more bottles.
+for (let i = 99; i >= 1; i--) {
+    if (i == 1) {
+        console.log(`1 bottles of beer on the wall, 1 bottles of beer.
+    Take one down and pass it around, now there's no more bottles of beer on the wall!`);
+    }
+    else {
+        console.log(`${i} bottles of beer on the wall, ${i} bottles of beer.
+    Take one down and pass it around, now there's ${i - 1} more bottles of beer on the wall!`);
+    }
+}
