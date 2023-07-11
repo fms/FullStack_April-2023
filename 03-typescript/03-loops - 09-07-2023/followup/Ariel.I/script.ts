@@ -16,3 +16,10 @@ for (let num = 0; num <= 100; num++) {
 // console.log(x);
 // console.log(++x);
 // console.log(x++);
+
+for (let num = 1; num <= 100; num++) {
+  console.log(num);
+
+  if (num / 7) {
+  }
+}
