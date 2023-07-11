@@ -6,13 +6,19 @@
 let getNumber = prompt("Give me a number please");
 if (getNumber) {
     let num = parseInt(getNumber);
-    console.log(num);
     let sum = 0;
+    let total = 0;
     for (let i = 0; i <= num; i++) {
         sum += i;
         console.log(sum);
+        for (let j = 0; j <= i; j++) {
+            total += j;
+            console.log(total);
+        }
     }
     if (Number.isNaN(num)) {
         console.log("You didn't gave me number!");
     }
+    console.log(`The sum is: ${sum}`);
+    console.log(`The total is: ${total}`);
 }
