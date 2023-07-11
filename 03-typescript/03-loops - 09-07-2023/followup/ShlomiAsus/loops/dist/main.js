@@ -23,8 +23,8 @@ function question2() {
     final_Result.innerText = "result is: " + `${result}= ${result}+ ${loopIndex + 1}`;
 }
 function question3() {
-    var userInput = prompt("please enter number:") || 0;
-    let outerLoopIndex = 0, result = 0, innerLoopIndex = 0;
+    var userInput = prompt("please enter number:") || "0";
+    let outerLoopIndex = 0, result = "0", innerLoopIndex = 0;
     var userNumber = parseFloat(userInput);
     while (outerLoopIndex < userNumber) {
         for (; innerLoopIndex < userNumber; innerLoopIndex++) {
