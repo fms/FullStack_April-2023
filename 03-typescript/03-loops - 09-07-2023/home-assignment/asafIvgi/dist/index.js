@@ -9,13 +9,20 @@ while (counter > 0) {
         console.log("Take one down and pass it around, now there's " + --counter + " more bottles of beer on the wall!");
     }
 }
-var innerTotal = 0;
-var innerN = prompt("Pick a Number:");
-var innerNCount = 1;
-while (innerNCount <= innerN) {
-    // console.log("before: " + total);
-    innerTotal += innerNCount;
-    // console.log("after: " + total);
-    innerNCount++;
+var total = 0;
+var n = prompt("Pick a Number:");
+var nCount = 1;
+while (nCount <= n) {
+    total += nCount;
+    nCount++;
 }
-console.log(innerTotal);
+console.log(total);
+// let outTotal = 0;
+// let innerTotal = 0;
+// let secN = prompt("Pick a Number:");
+// let innerNCount = 1;
+// while (innerNCount <= secN) {
+//     innerTotal += innerNCount;
+//     innerNCount++
+// }
+// console.log(innerTotal)
