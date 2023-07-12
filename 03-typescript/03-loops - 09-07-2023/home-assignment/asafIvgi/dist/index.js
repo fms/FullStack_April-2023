@@ -10,10 +10,10 @@ while (counter > 0) {
     }
 }
 var total = 0;
-var userInput = prompt("Pick a Number:");
-console.log(userInput);
+var userInput = prompt("Pick a Number (n):");
+// console.log(userInput)
 var n = parseInt(userInput);
-console.log(n);
+// console.log(n)
 if (Number.isNaN(n)) {
     console.log("Not a number, try again.");
 }
@@ -23,12 +23,19 @@ else {
     }
 }
 console.log(total);
-// let outTotal = 0;
-// let innerTotal = 0;
-// let secN = prompt("Pick a Number:");
-// let innerNCount = 1;
-// while (innerNCount <= secN) {
-//     innerTotal += innerNCount;
-//     innerNCount++
-// }
-// console.log(innerTotal)
+var outTotal = 0;
+var innerTotal = 0;
+var secUserInput = prompt("Pick a Number (secN):");
+var secN = parseInt(secUserInput);
+if (Number.isNaN(secN)) {
+    console.log("Not a number, try again.");
+}
+else {
+    for (var outNCount = 1; outNCount <= secN; outNCount++) {
+        for (var innerNCount = outNCount; innerNCount <= secN; innerNCount++) {
+            innerTotal += innerNCount;
+        }
+        outTotal += innerTotal;
+    }
+}
+console.log(outTotal);
