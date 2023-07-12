@@ -9,13 +9,22 @@ while (counter > 0) {
     }
 }
 
-let innerTotal = 0;
-let innerN = prompt("Pick a Number:");
-let innerNCount = 1;
-while (innerNCount <= innerN) {
-    // console.log("before: " + total);
-    innerTotal += innerNCount;
-    // console.log("after: " + total);
-    innerNCount++
+let total = 0;
+let n = prompt("Pick a Number:");
+let nCount = 1;
+while (nCount <= n) {
+    total += nCount;
+    nCount++
 }
-console.log(innerTotal)
+console.log(total)
+
+// let outTotal = 0;
+// let innerTotal = 0;
+// let secN = prompt("Pick a Number:");
+// let innerNCount = 1;
+// while (innerNCount <= secN) {
+//     innerTotal += innerNCount;
+//     innerNCount++
+// }
+// console.log(innerTotal)
+
