@@ -1,0 +1,36 @@
+.outside {
+  width: 70vw;
+  background-color: aquamarine;
+  padding: 2rem;
+  margin-inline: auto;
+  margin-bottom: 1rem;
+}
+
+.col {
+  padding: 2rem;
+  background-color: burlywood;
+  border: 1px solid black;
+}
+
+.even-columns {
+  display: flex;
+  gap: 1rem;
+}
+.even-columns > .col {
+  flex-basis: 100%;
+}
+
+.grid-like {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+}
+.grid-like > .col {
+  flex: 1 1 10rem;
+}
+
+h2 {
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 1.5rem;
+}/*# sourceMappingURL=style.css.map */

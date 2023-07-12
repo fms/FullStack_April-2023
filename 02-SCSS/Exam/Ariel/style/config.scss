@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  direction: ltr;
+}
+
+img {
+  width: 15px;
+  height: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+@mixin flexer($display, $justify-content, $flex-diraction) {
+  display: flex;
+  justify-content: $justify-content;
+  flex-direction: $flex-diraction;
+}
+@mixin imgSizer($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin navBorder($border, $border-radius, $padding) {
+  border: $border;
+  border-radius: $border-radius;
+  padding: $padding;
+}
