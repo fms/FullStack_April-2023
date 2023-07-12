@@ -10,11 +10,17 @@ while (counter > 0) {
     }
 }
 var total = 0;
-var n = prompt("Pick a Number:");
-var nCount = 1;
-while (nCount <= n) {
-    total += nCount;
-    nCount++;
+var userInput = prompt("Pick a Number:");
+console.log(userInput);
+var n = parseInt(userInput);
+console.log(n);
+if (Number.isNaN(n)) {
+    console.log("Not a number, try again.");
+}
+else {
+    for (var nCount = 1; nCount <= n; nCount++) {
+        total += nCount;
+    }
 }
 console.log(total);
 // let outTotal = 0;
