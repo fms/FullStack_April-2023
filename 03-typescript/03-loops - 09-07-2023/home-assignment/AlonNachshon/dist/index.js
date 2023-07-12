@@ -5,25 +5,27 @@
  * @returns an int if possible or zero if failed
  */
 function getUserInputInt(msg) {
-    let user_int = prompt(msg);
-    user_int = user_int == null ? 0 : parseInt(user_int);
-    return user_int;
+    if (msg) {
+        let user_int = prompt(msg);
+        user_int = user_int == null ? 0 : parseInt(user_int);
+        return user_int;
+    }
+    return 0;
 }
 /**
  * print a msg to console.log() and add n lines after
  * @param n = number of lines - default 1 line
  * @param msg = msg to print to console
  */
-function print(msg, n = 1) {
-    if (msg) {
-        console.log(msg);
-    }
-    for (let j = 0; j < n; j++) {
-        console.log("");
+function print(msg = "", n = 1) {
+    console.log(msg);
+    if (n) {
+        for (let j = 0; j < n; j++) {
+            console.log("");
+        }
     }
 }
 let user_input;
-print();
 print("1. Do you know the '99 Bottles of Beer on the wall' song?");
 let i = 99;
 while (i > 0) {
@@ -72,7 +74,7 @@ user_input = getUserInputInt("Give me a Number to play 7 BOOM with: ");
 if (user_input) {
     let msg = "BOOM";
     if (user_input < 7) {
-        console.log("No " + msg + " :( found");
+        console.log("No 7 " + msg + " :( found");
     }
     else {
         let i = 1;

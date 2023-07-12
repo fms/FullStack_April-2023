@@ -3,11 +3,13 @@
  * @param msg msg to prompt user
  * @returns an int if possible or zero if failed
  */
-function getUserInputInt(msg:string) {
-    let user_int:string | number | null = prompt(msg)
-    user_int = user_int == null? 0:parseInt(user_int);
-
-    return user_int
+function getUserInputInt(msg:string):number {
+    if(msg){
+        let user_int:string | number | null = prompt(msg)
+        user_int = user_int == null? 0:parseInt(user_int);
+        return user_int
+    }
+    return 0
 }
 
 
@@ -16,18 +18,18 @@ function getUserInputInt(msg:string) {
  * @param n = number of lines - default 1 line
  * @param msg = msg to print to console
  */
-function print(msg:string, n:number = 1){
-    if (msg){
-        console.log(msg)
-    }
-    for(let j = 0; j < n; j++){
-        console.log("")
+function print(msg:string = "", n:number = 1):void{
+    console.log(msg);
+
+    if (n){
+        for(let j = 0; j < n; j++){
+            console.log("")
+        }
     }
 }
 
-
 let user_input:number
-print()
+
 print("1. Do you know the '99 Bottles of Beer on the wall' song?")
 
 let i:number = 99;
@@ -87,7 +89,7 @@ if(user_input){
 
     let msg:string = "BOOM"
     if (user_input < 7){
-        console.log("No "+msg+" :( found")
+        console.log("No 7 "+msg+" :( found")
     }else{
         let i =1;
         while(i <= user_input){
