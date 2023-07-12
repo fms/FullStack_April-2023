@@ -1,77 +1,113 @@
-"use strict";
-/*
-let vs var => Variables declared by let are only available inside the block where they're defined.
-Variables declared by var are available throughout the function in which they're declared.
-*/
+"use strict"; // let i:number = 99;
+// console.log("1. Do you know the '99 Bottles of Beer on the wall' song?")
+// while(i>0){
+//     if(! (i == 1)){
+//         console.log( i + ' bottles of beer on the wall, '+i+' bottles of beer.')
+//         console.log("Take one down and pass it around, now there's "+(i-1)+" more bottles of beer on the wall!")   
+//     }else{
+//         console.log("1 bottle of beer on the wall, 1 bottle of beer.")
+//         console.log(" Take one down and pass it around, there's no more bottles of beer on the wall!")
+//     }
+//     i--
+// }
+// console.log("2. Get a number (n) from the user, Calculate and print the total: 1+2+3+...+n. ")
+// let user_input:string | number | null = prompt("Give me a number to Calculate and print the total: 1+2+3+...+n. : ")
+// user_input = user_input == null? 0:parseInt(user_input);
+// if(user_input){
+//     let total = 0;
+//     for(let i = 1; i <= user_input ;i++){
+//         total += i;
+//     }
+//     console.log("You gave the number: "+user_input+", The total of 1+2+3+...+n. : "+total)
+// }else{
+//     console.log(user_input+ "- NOT a valid input")
+// }
+// console.log("3. Get a number (n) from the user. calculate the total of 1+2+...+n for the series of length 1 to n. (1 + 1+2 + 1+2+3 + ... + 1+2+...+n)")
+// user_input = prompt("Give me a number to calculate the total of 1+2+...+n for the series of length 1 to n. (1 + 1+2 + 1+2+3 + ... + 1+2+...+n: ")
+// user_input = user_input == null? 0:parseInt(user_input);
+// if(user_input){
+//     let total = 0;
+//     for(let i = 1; i <= user_input ;i++){
+//         for(let j=1; j<i ; j++){
+//             total += j;
+//         }
+//         total += i
+//     }
+//     console.log("You gave the number: "+user_input+", The total of (1 + 1+2 + 1+2+3 + ... + 1+2+...+n): "+total)
+// }else{
+//     console.log(user_input+ "- NOT a valid input")
+// }
+// console.log("4. Bonus -  7 Boom for any given number")
+// user_input = prompt("Give me a Number to play with: ")
+// user_input = user_input == null? 0:parseInt(user_input);
 
-console.log("Header - This will be printed after the page was loaded althogh in <Header> because i used defer");
-var x = 15;
-console.log(x);
-var y = 20;
-console.log(y);
-var n = 5; // number
+var user_input = 71;
 
-var d = 5.5; //number
+if (user_input) {
+  var msg = "BOOM";
 
-var str = "str"; //string
-
-var emptyStr = ""; // "" => false
-
-var thisIsUndefined; // undifined => false
-
-var bool = true; // boolean => false = 0 , true = 1
-
-var nullValue = null; //object => false
-// Tis is an object
-
-var userDetails = {
-  firstName: "A",
-  lastName: "n",
-  age: 13
-};
-var field = "email";
-var firstName = "B";
-console.log(userDetails['firstName']);
-console.log(userDetails.firstName);
-console.log(userDetails.lastName);
-userDetails.firstName = "Ploni";
-console.log(userDetails.firstName);
-var size = 10;
-var i = 0;
-
-function logName(name) {
-  console.log("Hi " + name.firstName + " " + name.lastName);
-}
-
-function birthday(age) {
-  if (age.age == 13) {
-    console.log("Mazal tov for your Bar mitsva!");
-  } else if (age.age > 13) {
-    console.log("You are too old!");
+  if (user_input < 7) {
+    console.log("No " + msg + " :( found");
   } else {
-    console.log("You are a baby!");
+    // let digit_num = 0;
+    // let levels = user_input;
+    // while(!(levels < 1)){
+    //     levels /= 10
+    //     digit_num++
+    // }
+    // console.log("Num of Digits: "+digit_num)
+    var i = 1;
+
+    while (i <= user_input) {
+      if (i % 7 == 0) {
+        console.log(i + " " + msg);
+      } else {
+        var tmp = i;
+
+        while (tmp >= 1) {
+          console.log("tmp " + tmp);
+          tmp = Math.round(tmp % 10);
+
+          if (tmp == 7) {
+            console.log(i + " " + msg);
+            tmp = -1;
+            break;
+          }
+
+          Math.round(tmp / 10);
+        }
+
+        if (tmp == -1) {
+          console.log(i);
+        } // let tmp_num
+        // let flag = true
+        // levels = 1
+        // //Fix here so it wouldnt go over the whole numbers.. 
+        // // Do it different !!! first you %10 than you /10 .. repeat until its 1 (or less then 1 , depands. 
+        // //I dont even need the forst while to check.. just do what iwrote on the above line thats sufficiant. 
+        // while(levels < digit_num && flag){  
+        //     tmp_num = i % Math.pow(10,levels)
+        //     if (tmp_num == 7){
+        //         console.log(i+" "+msg)
+        //         flag = false
+        //     }
+        //     tmp_num = i / Math.pow(10,levels)
+        //     // console.log("tmp!!!:  "+tmp_num )
+        //     if (tmp_num < 1){
+        //         flag = false
+        //         console.log("tmp < 0 "+tmp_num )
+        //     }else{
+        //         tmp_num = Math.round(tmp_num)
+        //         console.log("tmp > 0 "+tmp_num )
+        //         levels++
+        //     }
+        // }
+
+      }
+
+      i++;
+    }
   }
-
-  ;
+} else {
+  console.log(user_input + "- NOT a valid input");
 }
-
-logName(userDetails);
-birthday(userDetails);
-userDetails.age = 90;
-birthday(userDetails);
-userDetails.age = 3;
-birthday(userDetails); // document.body.innerHTML = JSON.stringify(userDetails);
-
-console.log(userDetails);
-var app = document.getElementById("app");
-var p = document.createElement("p");
-p.textContent = "Hello World!";
-var p1 = document.createElement("p");
-p1.textContent = "Alon's World";
-var p2 = document.createElement("p");
-app === null || app === void 0 ? void 0 : app.appendChild(p);
-app === null || app === void 0 ? void 0 : app.appendChild(p1);
-var j = 2;
-var k = j == 2 ? 3 : 5;
-p2.textContent = k.toString();
-app === null || app === void 0 ? void 0 : app.appendChild(p2);
