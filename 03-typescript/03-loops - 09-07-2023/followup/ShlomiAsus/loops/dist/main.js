@@ -1,6 +1,8 @@
 "use strict";
-let final_Result = document.getElementById("result1");
-const finalResultValue = final_Result.innerHTML;
+let user_input = document.getElementById("user_Input");
+const user_InputValue = user_input.innerHTML;
+function test() {
+}
 function question1() {
     var index = 20;
     for (; index <= 99 && index > 0; index--) {
