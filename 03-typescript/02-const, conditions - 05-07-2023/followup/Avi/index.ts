@@ -23,6 +23,6 @@ else if (bmi < underweight) {
 
     console.log("Underweight");
 }
-else{
+else {
     console.log("normal")
 }
