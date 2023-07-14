@@ -1,7 +1,7 @@
 function negative (num: number) : number
 {
     let negativeNum: number;
-    return (negativeNum = num - num - num);
+    return (negativeNum = num * -1);
 }
 
 console.log(`Original number: 5, negated number: ${negative(5)}`);
