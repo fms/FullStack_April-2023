@@ -1,3 +1,14 @@
 @import "./config.scss";
 
 @import "./components/navBar.scss";
+
+@import "./components/1stHeader.scss";
+
+@import "./components/2stHeader.scss";
+
+@import "./components/main.scss";
+
+.lineSepearter {
+  @include imgSizer(100%, 1.5px);
+  background-color: #ebebeb;
+}
