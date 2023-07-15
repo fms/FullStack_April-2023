@@ -1,0 +1,113 @@
+@import "../config.scss";
+
+main {
+  .main {
+    margin: 40px 105px;
+
+    .gridDvider {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr) 1fr;
+      grid-template-rows: 1fr 2fr;
+      grid-template-areas:
+        "miniNavFlexerMain miniNavFlexerMain reviewParagraph"
+        "ArticleMain ArticleMain reviewParagraph";
+
+      .miniNavFlexerMain {
+        grid-area: miniNavFlexerMain;
+        @include flexer(flex, flex-start, row);
+
+        button {
+          @include navBorder(1px solid #ededed, 25px, 0);
+          background-color: #ffffff;
+          color: #949696;
+          font-size: 16px;
+          font-weight: bold;
+          padding: 0 13px;
+          margin-right: 17px;
+          max-height: 2.8rem;
+        }
+        button:focus {
+          background-color: black;
+          color: #bababa;
+        }
+      }
+      .ArticleMain {
+        grid-area: ArticleMain;
+
+        .titleArticleMain {
+          letter-spacing: 0.03rem;
+          margin: 10px 0 15px 0;
+        }
+        .contentArticleMain {
+          color: #8e8e8e;
+          line-height: 25px;
+          span {
+            color: #4e7dbc;
+            font-weight: bold;
+          }
+        }
+      }
+      .reviewParagraph {
+        grid-area: reviewParagraph;
+        @include navBorder(2px solid #ededed, 10px, 0);
+        padding: 0 20px;
+
+        span {
+          color: #949494;
+        }
+
+        .titleReviewParagraph {
+          margin: 20px;
+          margin-left: 0;
+        }
+
+        .ratingReviewParagraph {
+          @include flexer(flex, flex-start, row);
+
+          .numberOfRating {
+            padding-right: 20px;
+          }
+
+          .starsOfRating {
+            span {
+              color: #fece00;
+            }
+            p {
+              padding-top: 0.2rem;
+            }
+          }
+        }
+
+        .barsOfRating {
+          .comfortable {
+            margin-top: 25px;
+
+            .miniTitle {
+              @include flexer(flex, space-between, row);
+            }
+          }
+          .cleanliness {
+            margin: 20px 0;
+
+            .miniTitle {
+              @include flexer(flex, space-between, row);
+            }
+          }
+
+          .skill-bar {
+            height: 7px;
+            margin-top: 8px;
+            background-color: #c6c8c9;
+            border-radius: 15px;
+
+            .skill-per {
+              height: 7px;
+              background-color: #34987d;
+              border-radius: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

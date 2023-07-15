@@ -2,108 +2,128 @@
 
 nav {
   .navBar {
-    @include flexer(flex, center, row);
+    @include flexer(flex, space-between, row);
+    align-items: center;
 
     .item {
-      padding: 5px;
-    }
-
-    .logoNavBar {
-      margin: 0 50px 0 0;
-      @include flexer(flex, none, none);
+      // padding: 5px 5px;
+      @include navBorder(none, none, 5px);
       align-items: center;
-      img {
-        @include imgSizer(55px, 34px);
-      }
     }
 
-    .ulNavBar {
-      margin-right: 300px;
+    .leftSideNanBar {
+      @include flexer(flex, flex-start, row);
+      margin: 0 0 0 75px;
 
-      ul {
-        @include flexer(flex, none, none);
-
-        .first {
-          color: black;
+      .logoNavBar {
+        padding-top: 2%;
+        margin: 0 40px 0 0;
+        img {
+          @include imgSizer(55px, 34px);
         }
-        li {
-          padding: 10px 0 0 0;
-          margin: 0 60px 0 0;
-          list-style-type: none;
-          font-weight: bold;
+      }
 
-          a {
-            text-decoration: none;
-            color: #827e7e;
+      .ulNavBar {
+        // margin-right: 300px;
+        ul {
+          @include flexer(flex, center, row);
+          .first {
+            color: black;
           }
+          li {
+            padding: 10px 0 0 0;
+            margin: 0 60px 0 0;
+            list-style-type: none;
+            font-weight: bold;
 
-          .AD {
-            @include imgSizer(18px, 10px);
+            a {
+              text-decoration: none;
+              color: #827e7e;
+            }
+
+            i {
+              font-size: 10px;
+            }
+          }
+          li:hover {
+            border-bottom: 2px solid black;
           }
         }
-        li:hover {
-          border-bottom: 2px solid black;
+      }
+    }
+
+    .rightSideNanBar {
+      @include flexer(flex, flex-end, row);
+      margin: 0 40px 0 0;
+
+      button {
+        @include navBorder(1px solid #bdb9b9, 20px, 4px 8px);
+        background-color: white;
+        cursor: pointer;
+      }
+      .searchNavBar {
+        i {
+          position: relative;
+          left: 16%;
+        }
+        input {
+          @include navBorder(1px solid #bdb9b9, 20px, 4px);
+          outline: none;
+          padding-left: 40px;
+          height: 35.5px;
         }
       }
-    }
 
-    .searchNavBar {
-      img {
-        @include imgSizer(25px, 25px);
-        position: relative;
-        top: 15%;
-        left: 17%;
+      .usaNavBar {
+        height: 35.5px;
+        button {
+          @include navBorder(1px solid #bdb9b9, 20px, 4px);
+          background-color: white;
+          cursor: pointer;
+
+          .mainSpanUsaNavBar {
+            .iconUsa {
+              @include imgSizer(30px, 30px);
+              position: relative;
+              bottom: 2px;
+            }
+            span {
+              position: relative;
+              bottom: 11px;
+            }
+            .AD2 {
+              @include imgSizer(18px, 10px);
+              position: relative;
+              bottom: 11px;
+              right: 2px;
+            }
+          }
+        }
       }
-      input {
-        @include navBorder(1px solid #bdb9b9, 20px, 10px);
-        padding-left: 40px;
-      }
-    }
 
-    .usaNavBar {
-      a {
-        .mainSpanUsaNavBar {
-          @include navBorder(1px solid #bdb9b9, 20px, 8px);
+      .heartIconNavBar {
+        height: 34.5px;
 
-          .iconUsa {
+        .spanHeartIconNavBar {
+          img {
             @include imgSizer(25px, 25px);
-            position: relative;
-            top: 6px;
-          }
-          .AD2 {
-            @include imgSizer(18px, 10px);
           }
         }
       }
-    }
 
-    .heartIconNavBar {
-      .spanHeartIconNavBar {
-        @include navBorder(1px solid #bdb9b9, 20px, 8px);
-        img {
-          @include imgSizer(25px, 25px);
-          position: relative;
-          top: 7px;
-        }
-      }
-    }
+      .profileNavBar {
+        .spanProfileNavBar {
+          // img {
+          //   position: relative;
+          //   top: 3px;
+          // }
+          .hamburgerIconProfileNavBar {
+            @include imgSizer(18px, 20px);
+          }
 
-    .profileNavBar {
-      .spanProfileNavBar {
-        @include navBorder(1px solid #bdb9b9, 20px, 8px);
-        position: relative;
-        top: 1.5px;
-
-        img {
-          position: relative;
-          top: 3px;
-        }
-        .hamburgerIconProfileNavBar {
-          @include imgSizer(18px, 20px);
-        }
-
-        .profileIconProfileNavBar {
-          @include imgSizer(23px, 24px);
+          .profileIconProfileNavBar {
+            @include imgSizer(23px, 24px);
+          }
         }
       }
     }

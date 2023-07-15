@@ -17,81 +17,94 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap" rel="stylesheet">
 
-</head>
+  <!-- FONT AWESOME -->
+  <script src="https://kit.fontawesome.com/9f3f3c8cb8.js" defer crossorigin="anonymous"></script>
+  </head>
 
 <body>
 
   <nav>
     <div class="navBar">
-      <div class="item logoNavBar">
-        <img src="./images/icon.png" alt="">
+      <div class="leftSideNanBar">
+        <div class="item logoNavBar">
+          <img src="./images/icon1.png" alt="">
+        </div>
+        <div class="item ulNavBar">
+          <ul>
+            <li><a class="first" href="#">Hotel</a></li>
+            <li><a href="#">Apartment</a></li>
+            <li><a href="#">Holiday</a></li>
+            <li><a href="#">More <i class="fa-solid fa-chevron-down"></i></a></li>
+          </ul>
+        </div>
       </div>
-      <div class="item ulNavBar">
-        <ul>
-          <li><a class="first" href="#">Hotel</a></li>
-          <li><a href="#">Apartment</a></li>
-          <li><a href="#">Holiday</a></li>
-          <li><a href="#">More <img class="AD" src="./images/Arrow-down.png" alt="Arrow-down"></a></li>
-        </ul>
-      </div>
-      <div class="item searchNavBar">
-        <img src="./images/search.png" alt="Magnifying Glass">
-        <input type="text" action="/search" placeholder="Where are you going?">
-        </input>
-      </div>
-      <div class="item usaNavBar">
-        <button type="">
-          <span class="mainSpanUsaNavBar">
-            <img class="iconUsa" src="./images/usaIcon.png" alt="">
-              <span>
-                USD
-              </span>
-            <img class="AD2" src="./images/Arrow-down.png" alt="Arrow-down">
-          </span>
-        </button>
-      </div>
-      <div class="item heartIconNavBar">
-        <button type="">
-          <span class="spanHeartIconNavBar">
-            <img src="./images/heart.png" alt="empty heart - unlike">
-          </span>
-        </button>
-      </div>
-      <div class="item profileNavBar">
-        <button type="">
-          <span class="spanProfileNavBar">
-              <img class="hamburgerIconProfileNavBar" src="./images/hamburgerIcon.png" alt="more icon">
-              <img class="profileIconProfileNavBar" src="./images/profilePerson.png" alt="profile icon">
-          </span>
-        </button>
+      <div class="rightSideNanBar">
+        <div class="item searchNavBar">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" action="/search" placeholder="Where are you going?">
+          </input>
+        </div>
+        <div class="item usaNavBar">
+          <button type="">
+            <p class="mainSpanUsaNavBar">
+              <img class="iconUsa" src="./images/usaIcon.png" alt="">
+                <span>
+                  USD
+                </span>
+              <img class="AD2" src="./images/Arrow-down.png" alt="Arrow-down">
+            </p>
+          </button>
+        </div>
+        <div class="item heartIconNavBar">
+          <button type="">
+            <span class="spanHeartIconNavBar">
+              <img src="./images/heart.png" alt="empty heart - unlike">
+            </span>
+          </button> 
+        </div>
+        <div class="item profileNavBar">
+          <button type="">
+            <span class="spanProfileNavBar">
+                <img class="hamburgerIconProfileNavBar" src="./images/hamburgerIcon.png" alt="more icon">
+                <img class="profileIconProfileNavBar" src="./images/profilePerson.png" alt="profile icon">
+            </span>
+          </button>
+        </div>
       </div>
     </div>
+    <div class="lineSepearter"></div>
   </nav>
 
   <header>
-    <div class="header">
+    <div class="header"> 
       <div class="leftHeader">
-        <div>
-          <img src="./images/Arrow-left.png" alt="arrow left">
+        <div class="arrowLeftImg">
+          <i class="fa-solid fa-chevron-left" style="color: #878a8a;"></i>
         </div>
         <div class="chooseLeftHeader">
-          <span>Choose date</span>
+          <h3>Choose date</h3>
         </div>
       </div>
       <div class="centerHeader">
         <div class="whereToCenterHeader">
-          <img src="./images/gps.png" alt="gps">
-          <span>Sa Pa, Vietnam</span>
+          <button>
+            <i class="fa-solid fa-location-dot" style="color: #878a8a;"></i>
+            <span>Sa Pa, Vietnam</span>
+          </button>
         </div>
-        <div class="wehenCenterHeader">
-          <img src="./images/calender.png" alt="calender">
-          <span>Thu, Apr 22-Fri, Apr 23</span>
-          <img src="./images/up&down.png" alt="arrow down and up">
+        <div class="whenCenterHeader">
+          <button>
+            <i class="fa-solid fa-calendar-days" style="color: #878a8a;"></i>
+            <span>Thu, Apr 22-Fri, Apr 23</span>
+            <i class="fa-solid fa-arrows-up-down" style="color: #878a8a;"></i>
+          </button>
         </div>
         <div class="peoplesManyCenterHeader">
-          <img src="./images/guys.png" alt="guys">
-          <span>1 Room, 2 Adults</span>
-          <img src="./images/up&down.png" alt="arrow down and up">
+          <button>
+            <i class="fa-regular fa-user" style="color: #878a8a;"></i>
+            <span>1 Room, 1 Adults</span>
+            <i class="fa-solid fa-arrows-up-down" style="color: #878a8a;"></i>
+          </button>
         </div>
       </div>
       <div class="rightHeader">
@@ -99,58 +112,133 @@
           <span>$200/Night</span>
         </div>
         <div class="bookingRightHeader">
-          <span>Booking</span>
+          <button>
+            Booking
+          </button>
         </div>
       </div>
     </div>
+    <div class="lineSepearter"></div>
   </header>
 
   <header>
     <div class="mainHeader">
       <div class="smallCapsMainHeader">
-        <span>Hotel / Vietnam /</span>
-        <span>Sa Pa Terraces</span>
+        <span>Hotel / Vietnam / </span>
+        <span> Sa Pa Terraces</span>
       </div>
-      <div class="titleMainHeader">
-        <div>
-          <h1>Sapa Jade Hill Resort</h1>
+      <div class="gridTitleMain">
+        <div class="titleMainHeader">
+            <h1>Sapa Jade Hill Resort</h1>
         </div>
         <div class="rightTitleMainHeader">
-          <div class="shareRightTitleMainHeader">
-            <img src="./images/share.png" alt="share icon">
-            <span>Share</span>
+            <div class="shareRightTitleMainHeader">
+              <button>
+                <i class="fa-solid fa-share-nodes"></i>
+                <span>Share</span>
+              </button>
+            </div>
+            <div class="saveTitleMainHeader">
+              <button>
+                <i class="fa-regular fa-heart"></i>
+                <span>Save</span>
+              </button>
+            </div>
+        </div>
+        <div class="underTitleMainHeader">
+          <div class="reviewMainHeader">
+            <i class="fa-regular fa-star"></i>
+            <span>5.0 100 review</span>
           </div>
-          <div class="saveTitleMainHeader">
-            <img src="./images/empty-heart-main.png" alt="empty heart">
-            <span>Save</span>
+          <div class="whereMainHeader">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Sa Pa, vietnam</span>
           </div>
-        </div>
-      </div>
-      <div class="underTitleMainHeader">
-        <div class="reviewMainHeader">
-          <img src="./images/main-star.png" alt="empty star">
-          <span>5.0 100 review</span>
-        </div>
-        <div class="whereMainHeader">
-          <img src="./images/gps.png" alt="gps icon">
-          <span>Sa Pa, vietnam</span>
-        </div>
-        <div class="prfileMainHeader">
-          <img src="./images/empty-person.png" alt="profile icon">
-          <span>Grader Home</span>
+          <div class="profileMainHeader">
+            <i class="fa-regular fa-user"></i>
+            <span>Grader Home</span>
+          </div>
         </div>
       </div>
     </div>
+
+
     <div class="imgMainHeader">
-      <img src="./images/img1.png" alt="background image">
-      <img src="./images/img2.png" alt="background image">
-      <img src="./images/img3.png" alt="background image">
-      <img src="./images/img4.png" alt="background image">
+      <div class="img100">
+        <img src="./images/img1.png" alt="background image">
+      </div>
+      <div class="img200">
+        <img src="./images/img2.png" alt="background image">
+      </div>
+      <div class="img300">
+        <img src="./images/img3.png" alt="background image">
+      </div>
+      <div class="img400">
+        <img src="./images/img4.png" alt="background image">
+      </div>
     </div>
   </header>
 
   <main>
-    <!-- פה עצרתי -->
+    <div class="main">
+      <div class="gridDvider">
+        <div class="miniNavFlexerMain">
+            <button type="">Overview</button>
+            <button type="">What's included</button>
+            <button type="">FAQs</button>
+            <button type="">Room</button>
+        </div>
+        <div class="ArticleMain">
+            <div class="titleArticleMain">
+              <h2>Comfortable place for you</h2>
+            </div>
+            <div class="contentArticleMain">
+              Overlooking the greenery of the surrounding mountains, Sapa Jade Hill Resort is located in Sa Pa, <br/>
+              about 5 km from Fansipan Legend Cable Car Station. This 4-star resort offers an outdoor pool, <br/>
+              restaurant and bar. The accommodation operates a 24-hour front desk that can arrange express <br/>
+              check-in and check-out, room service and ticketing services for guests. <span>Read More</span>
+            </div>
+        </div>
+        <div class="reviewParagraph">
+            <div class="titleReviewParagraph">
+              <h4>Reviews and ratings</h4>
+            </div>
+            <div class="ratingReviewParagraph">
+              <div class="numberOfRating">
+                <h1>4.8</h1>
+              </div>
+              <div class="starsOfRating">
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <p>Based on 100 reviewers</p>
+              </div>
+            </div>
+            <div class="barsOfRating">
+              <div class="comfortable">
+                <div class="miniTitle">
+                  <h5>Comfortable</h5>
+                  <span>4.7</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-per" style="max-width:80%"></div>
+                </div>
+              </div>
+              <div class="cleanliness">
+                <div class="miniTitle">
+                  <h5>Cleanliness</h5>
+                  <span>4.8</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-per" style="max-width:90%"></div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
   </main>
 </body>
 

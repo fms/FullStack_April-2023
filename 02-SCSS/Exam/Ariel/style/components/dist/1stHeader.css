@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  direction: ltr;
+}
+
+img {
+  width: 15px;
+  height: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  max-height: 35.5px;
+  cursor: pointer;
+}
+
+hr {
+  color: #878a8a;
+}
+
+header .header {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  height: 70px;
+}
+header .header .leftHeader {
+  display: flex;
+  justify-content: none;
+  flex-direction: row;
+  align-items: center;
+}
+header .header .leftHeader .arrowLeftImg i {
+  width: 10px;
+  height: 10px;
+  padding: 0 25px 5px 45px;
+}
+header .header .leftHeader .chooseLeftHeader h3 {
+  letter-spacing: 1px;
+}
+header .header .centerHeader {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin: 0 15px 0 15px;
+  align-items: center;
+}
+header .header .centerHeader button {
+  border: none;
+  border-radius: 20px;
+  padding: 4px;
+  margin: 0 15px 0 15px;
+  padding: 0 10px;
+  background-color: #f9fbfc;
+  min-height: 40px;
+}
+header .header .centerHeader i {
+  padding: 0 5px;
+}
+header .header .centerHeader span {
+  color: #878a8a;
+}
+header .header .rightHeader {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+}
+header .header .rightHeader .priceNightRightHeader {
+  text-align: center;
+  padding-right: 20px;
+}
+header .header .rightHeader .priceNightRightHeader span {
+  color: #34987d;
+  font-weight: bold;
+}
+header .header .rightHeader .bookingRightHeader button {
+  border: none;
+  border-radius: 35px;
+  padding: 4px;
+  background-color: #34987d;
+  color: white;
+  max-height: 50px;
+  padding: 13px 45px;
+}

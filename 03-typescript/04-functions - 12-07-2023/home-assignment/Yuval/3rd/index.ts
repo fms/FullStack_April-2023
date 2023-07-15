@@ -1,7 +1,8 @@
 function temperatureConvert (f: number) : number
 {
-    let c = (f - 32) * 5 / 9;
-    return c;
+    // let c = (f - 32) * 5 / 9;
+    // return c;
+    return (f - 32) * 5 / 9;
 }
 
 console.log(`32F = ${temperatureConvert(32)}C`);

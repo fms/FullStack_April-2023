@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  direction: ltr;
+}
+
+img {
+  width: 15px;
+  height: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  max-height: 35.5px;
+  cursor: pointer;
+}
+
+hr {
+  color: #878a8a;
+}
+
+header .mainHeader {
+  margin: 40px 105px;
+}
+header .mainHeader .smallCapsMainHeader {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin: 0 0 20px;
+}
+header .mainHeader .smallCapsMainHeader span:nth-child(1) {
+  color: #787878;
+}
+header .mainHeader .smallCapsMainHeader span:nth-child(2) {
+  color: #d4d4d4;
+  padding-left: 5px;
+}
+header .mainHeader .gridTitleMain {
+  display: grid;
+  height: 10vh;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: "titleMainHeader rightTitleMainHeader" "underTitleMainHeader rightTitleMainHeader";
+}
+header .mainHeader .gridTitleMain .titleMainHeader {
+  grid-area: titleMainHeader;
+}
+header .mainHeader .gridTitleMain .titleMainHeader h1 {
+  font-size: 45px;
+}
+header .mainHeader .gridTitleMain .rightTitleMainHeader {
+  grid-area: rightTitleMainHeader;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+}
+header .mainHeader .gridTitleMain .rightTitleMainHeader .shareRightTitleMainHeader,
+header .mainHeader .gridTitleMain .rightTitleMainHeader .saveTitleMainHeader {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  border: none;
+  border-radius: 50px;
+  padding: 9px 17px;
+  background-color: #f1f3f4;
+  margin-left: 17px;
+}
+header .mainHeader .gridTitleMain .rightTitleMainHeader .shareRightTitleMainHeader button,
+header .mainHeader .gridTitleMain .rightTitleMainHeader .saveTitleMainHeader button {
+  border: none;
+}
+header .mainHeader .gridTitleMain .rightTitleMainHeader .shareRightTitleMainHeader i,
+header .mainHeader .gridTitleMain .rightTitleMainHeader .saveTitleMainHeader i {
+  font-size: 20px;
+}
+header .mainHeader .gridTitleMain .rightTitleMainHeader .shareRightTitleMainHeader span,
+header .mainHeader .gridTitleMain .rightTitleMainHeader .saveTitleMainHeader span {
+  font-size: 15px;
+  padding-left: 5px;
+}
+header .mainHeader .gridTitleMain .underTitleMainHeader {
+  grid-area: underTitleMainHeader;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin: 15px 0;
+}
+header .mainHeader .gridTitleMain .underTitleMainHeader i {
+  color: #999b9b;
+}
+header .mainHeader .gridTitleMain .underTitleMainHeader span {
+  color: #999b9b;
+}
+header .mainHeader .gridTitleMain .underTitleMainHeader .reviewMainHeader {
+  padding: 0 15px 0 0;
+}
+header .mainHeader .gridTitleMain .underTitleMainHeader .whereMainHeader {
+  padding: 0 15px 0 15px;
+}
+header .mainHeader .gridTitleMain .underTitleMainHeader .profileMainHeader {
+  padding: 0 0 0 15px;
+}
+header .imgMainHeader {
+  margin: 60px 105px;
+  display: grid;
+  height: 96vh;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0.8rem;
+  grid-template-areas: "img100 img100 img200 img200" "img100 img100 img300 img400";
+}
+header .imgMainHeader .img100 {
+  grid-area: img100;
+}
+header .imgMainHeader .img200 {
+  grid-area: img200;
+}
+header .imgMainHeader .img300 {
+  grid-area: img300;
+}
+header .imgMainHeader .img400 {
+  grid-area: img400;
+}
+header .imgMainHeader img {
+  width: 100%;
+  height: 100%;
+}
