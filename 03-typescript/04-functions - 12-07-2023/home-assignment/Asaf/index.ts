@@ -8,7 +8,6 @@ console.log(negate(-(-50)))
 console.log(negate(50))
 console.log(negate(-40332))
 function whosLarger (num1: number, num2: number): number {
-
     let largerNum = ""
     if (num1 == num2) {
         console.log("Numbers are even.");
