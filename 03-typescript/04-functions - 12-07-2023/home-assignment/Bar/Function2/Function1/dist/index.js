@@ -1,5 +1,5 @@
 "use strict";
-function whatIsBiggerNumber(num, num2) {
+function biggerNumber(num, num2) {
     if (num > num2) {
         console.log(num);
     }
@@ -7,4 +7,4 @@ function whatIsBiggerNumber(num, num2) {
         console.log(num2);
     }
 }
-whatIsBiggerNumber(6, 12);
+biggerNumber(6, 12);
