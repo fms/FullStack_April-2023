@@ -117,20 +117,20 @@ function quotient(a:number, b:number):number{
     return a / b
 }
 
-function calc():number | void{
+function calc():number {
     alert("Calculator Function stared, it will accepts three arguments: two numbers and an operation (1-4)")
     let a = getUserInputInt("Provide the 1st number for the calculation")
-    if(!a){p("Error with user input."); return}
+    if(!a){p("Error with user input."); return NaN}
     let b = getUserInputInt("Provide the 2nd number for the calculation")
-    if(!b){p("Error with user input."); return}
+    if(!b){p("Error with user input."); return NaN}
     let op = getUserInputInt("Provide an operator (1-4)")
-    if(!op){p("Error with user input."); return}
+    if(!op){p("Error with user input."); return NaN}
     switch(op){
         case 1: p(`${indent()}${a} + ${b} =`);return sum(a,b);break;
         case 2: p(`${indent()}${a} - ${b} =`);return difference(a,b); break;
         case 3: p(`${indent()}${a} * ${b} =`);return product(a,b); break;
         case 4: p(`${indent()}${a} / ${b} =`);return quotient(a,b); break;
-        default:return
+        default:return NaN
     }
 }
 
