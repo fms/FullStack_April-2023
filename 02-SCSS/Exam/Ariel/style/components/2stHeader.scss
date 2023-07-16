@@ -1,0 +1,111 @@
+@import "../config.scss";
+
+header {
+  .mainHeader {
+    margin: 40px 105px;
+
+    .smallCapsMainHeader {
+      @include flexer(flex, flex-start, row);
+      margin: 0 0 20px;
+
+      span:nth-child(1) {
+        color: #787878;
+      }
+      span:nth-child(2) {
+        color: #d4d4d4;
+        padding-left: 5px;
+      }
+    }
+    .gridTitleMain {
+      display: grid;
+      height: 10vh;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-areas:
+        "titleMainHeader rightTitleMainHeader"
+        "underTitleMainHeader rightTitleMainHeader";
+
+      .titleMainHeader {
+        grid-area: titleMainHeader;
+        h1 {
+          font-size: 45px;
+        }
+      }
+      .rightTitleMainHeader {
+        grid-area: rightTitleMainHeader;
+        @include flexer(flex, flex-end, row);
+        align-items: center;
+
+        .shareRightTitleMainHeader,
+        .saveTitleMainHeader {
+          @include flexer(flex, flex-end, row);
+          @include navBorder(none, 50px, 9px 17px);
+          background-color: #f1f3f4;
+
+          margin-left: 17px;
+
+          button {
+            border: none;
+          }
+          i {
+            font-size: 20px;
+          }
+          span {
+            font-size: 15px;
+            padding-left: 5px;
+          }
+        }
+      }
+      .underTitleMainHeader {
+        grid-area: underTitleMainHeader;
+        @include flexer(flex, flex-start, row);
+        margin: 15px 0;
+
+        i {
+          color: #999b9b;
+        }
+        span {
+          color: #999b9b;
+        }
+        .reviewMainHeader {
+          padding: 0 15px 0 0;
+        }
+        .whereMainHeader {
+          padding: 0 15px 0 15px;
+        }
+        .profileMainHeader {
+          padding: 0 0 0 15px;
+        }
+      }
+    }
+  }
+
+  .imgMainHeader {
+    margin: 60px 105px;
+    display: grid;
+    height: 96vh;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0.8rem;
+    grid-template-areas:
+      "img100 img100 img200 img200"
+      "img100 img100 img300 img400";
+
+    .img100 {
+      grid-area: img100;
+    }
+    .img200 {
+      grid-area: img200;
+    }
+    .img300 {
+      grid-area: img300;
+    }
+    .img400 {
+      grid-area: img400;
+    }
+
+    img {
+      @include imgSizer(100%, 100%);
+    }
+  }
+}
