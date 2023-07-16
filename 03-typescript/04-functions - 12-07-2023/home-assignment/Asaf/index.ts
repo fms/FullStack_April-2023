@@ -1,4 +1,4 @@
-function negate (num: number) {
+function negate (num: number): number {
     return -num
 }
 
@@ -7,8 +7,8 @@ console.log(negate(5))
 console.log(negate(-(-50)))
 console.log(negate(50))
 console.log(negate(-40332))
+function whosLarger (num1: number, num2: number): number {
 
-function whosLarger (num1: number, num2: number) {
     let largerNum = ""
     if (num1 == num2) {
         console.log("Numbers are even.");
@@ -26,7 +26,7 @@ console.log("The larger number is " + whosLarger(15, 20))
 console.log("The larger number is " + whosLarger(2443241, 2443241))
 console.log("The larger number is " + whosLarger(0, 1))
 
-function farToCel (num: number) {
+function farToCel (num: number): number {
     return (num - 32) * 5 / 9
 }
 
@@ -37,7 +37,7 @@ console.log("20 Fahrenheit in celcius is around: " + Math.round(farToCel(20)))
 console.log("50 Fahrenheit in celcius is around: " + Math.round(farToCel(50)))
 
 
-function calculator(a: number, b: number, op: number) {
+function calculator(a: number, b: number, op: number): number | string {
     if (op == 1) {
         return a + b
     } else if (op == 2) {
