@@ -111,17 +111,17 @@ function calc() {
     let a = getUserInputInt("Provide the 1st number for the calculation");
     if (!a) {
         p("Error with user input.");
-        return;
+        return NaN;
     }
     let b = getUserInputInt("Provide the 2nd number for the calculation");
     if (!b) {
         p("Error with user input.");
-        return;
+        return NaN;
     }
     let op = getUserInputInt("Provide an operator (1-4)");
     if (!op) {
         p("Error with user input.");
-        return;
+        return NaN;
     }
     switch (op) {
         case 1:
@@ -140,7 +140,7 @@ function calc() {
             p(`${indent()}${a} / ${b} =`);
             return quotient(a, b);
             break;
-        default: return;
+        default: return NaN;
     }
 }
 p("function signChang(n:number)");
