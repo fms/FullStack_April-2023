@@ -4,22 +4,11 @@
 
 let firstNumFromUser = parseInt(prompt("Write a number") || "0");
 let secondNumFromUser = parseInt(prompt("Write a number") || "0");
-function largerNumber(num1 :number , num2 :number) : void 
-{
-    if (Number.isNaN(num1 || num2)) 
-    {
-        console.log("Invalid number")
-    }
 
-    else if (num1 >= num2) 
-    {
-        console.log(num1)
-    }
-    else 
-    {
-        console.log(num2)
-    }
+function largerNumber(num1 :number , num2 :number) :number
+{
+    return num1 >= num2 ? num1 : num2;
 }
 
-largerNumber(firstNumFromUser,secondNumFromUser);
+console.log(largerNumber(firstNumFromUser,secondNumFromUser));
 

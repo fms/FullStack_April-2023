@@ -5,21 +5,13 @@
 
 let numFromUser = parseInt(prompt("Write a number") || "0")
 
-function  negate(num :number): void
+function  negate(num :number) :number
 {
-    if (Number.isNaN(numFromUser))
+    if (Number.isNaN(num))
      {
         console.log("invalid number");
     }
-    else if (num == 0)
-     {
-        console.log(0);
-    }
-    else 
-    {
-        num *= -1;
-        console.log(num)
-    }
+    return (-num === -0 ? 0 : -num );
 }
 
-negate(numFromUser)
+console.log(negate(numFromUser));
