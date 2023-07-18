@@ -4,12 +4,6 @@
 // <hr>
 let numFromUser = parseInt(prompt("Write a number") || "0");
 function Fahrenheit(num) {
-    if (Number.isNaN(num)) {
-        console.log("Invalid Number");
-    }
-    else {
-        let celsius = (num - 32) * 5 / 9;
-        console.log(celsius);
-    }
+    return (num - 32) * 5 / 9;
 }
-Fahrenheit(numFromUser);
+console.log(Fahrenheit(numFromUser));

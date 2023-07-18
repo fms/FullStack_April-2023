@@ -1,5 +1,5 @@
 
-function whatIsBiggerNumber(num: number, num2: number) {
+function biggerNumber(num: number, num2: number) {
         if (num > num2) {
                 console.log(num);
         }
@@ -8,4 +8,4 @@ function whatIsBiggerNumber(num: number, num2: number) {
         }
 }
 
-whatIsBiggerNumber(6, 12)
+biggerNumber(6, 12)

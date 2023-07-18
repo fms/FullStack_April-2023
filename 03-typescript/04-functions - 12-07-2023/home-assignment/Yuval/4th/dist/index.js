@@ -1,22 +1,18 @@
 "use strict";
 function operation(a, b, op) {
-    if (op > 0 && op < 5) {
-        if (op == 1) {
-            return a + b;
-        }
-        else if (op == 2) {
-            return a - b;
-        }
-        else if (op == 3) {
-            return a * b;
-        }
-        else {
-            return a / b;
-        }
+    if (op < 1 || op > 4) {
+        return NaN;
     }
-    else {
-        return "error";
+    if (op === 1) {
+        return a + b;
     }
+    else if (op === 2) {
+        return a - b;
+    }
+    else if (op === 3) {
+        return a * b;
+    }
+    return a / b;
 }
 console.log(`Operation 1 on 5 and 6: ${operation(5, 6, 1)}`);
 console.log(`Operation 2 on 23 and 15: ${operation(23, 15, 2)}`);

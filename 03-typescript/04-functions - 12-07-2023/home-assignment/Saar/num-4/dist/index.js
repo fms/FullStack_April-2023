@@ -9,25 +9,24 @@ let firstNumberFromUser = parseInt(prompt("Write first number") || "0");
 let secondNumberFromUser = parseInt(prompt("Write second number") || "0");
 let operationNumberFromUser = parseInt(prompt("Write a number from 1 to 4") || "0");
 function userMath(num1, num2, op) {
-    let result = 0;
-    if (Number.isNaN(num1 || num2 || op)) {
-        console.log("Invalid number");
+    let result;
+    switch (op) {
+        case 1:
+            result = num1 + num2;
+            break;
+        case 2:
+            result = num1 - num2;
+            break;
+        case 3:
+            result = num1 * num2;
+            break;
+        case 4:
+            result = num1 / num2;
+            break;
+        default:
+            result = NaN;
+            break;
     }
-    else if (op <= 0 || op > 4) {
-        console.log("Give me number from 1 to 4");
-    }
-    else if (op == 1) {
-        result = num1 + num2;
-    }
-    else if (op == 2) {
-        result = num1 - num2;
-    }
-    else if (op == 3) {
-        result = num1 * num2;
-    }
-    else if (op == 4) {
-        result = num1 / num2;
-    }
-    console.log(result);
+    return result;
 }
-userMath(firstNumberFromUser, secondNumberFromUser, operationNumberFromUser);
+console.log(userMath(firstNumberFromUser, secondNumberFromUser, operationNumberFromUser));

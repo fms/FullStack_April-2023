@@ -1,28 +1,24 @@
-function operation (a: number, b: number, op: number): any
+function operation (a: number, b: number, op: number): number
 {
-    if (op > 0 && op < 5)
+    if (op < 1 || op > 4)
     {
-        if (op == 1)
-        {
-            return a + b;
-        }
-        else if (op == 2)
-        {
-            return a - b;
-        }
-        else if (op == 3)
-        {
-            return a * b;
-        }
-        else
-        {
-            return a / b;
-        }
+        return NaN;
     }
-    else
+
+    if (op === 1)
     {
-        return "error";
+        return a + b;
     }
+    else if (op === 2)
+    {
+        return a - b;
+    }
+    else if (op === 3)
+    {
+        return a * b;
+    }
+
+        return a / b;
 }
 
 console.log(`Operation 1 on 5 and 6: ${operation(5, 6, 1)}`);
