@@ -26,28 +26,36 @@ function MathSelect(num1, num2, op) {
         }
     }
 }
+/* write a function that receives a number (n), the function receives from the user series of numbers (n)
+ and returns the length of the biggest upwards going mini series.
+ example:
+    for series:
+    20 3 4 5 5 5 5 5 -1 8 9 50 7
+    the function will return 4 because the biggest upwards mini series is -1 8 9 50
+*/
 function biggestUpCount(n) {
     var privNum = parseInt(prompt("Please enter the first number") || "0");
-    var biggetCount = 0;
+    var biggestCount = 1;
     var currentCount = 1;
     for (var i = 1; i < n; i++) {
         var currNum = parseInt(prompt("Please enter the " + (i + 1) + "th number") || "0");
         if (currNum > privNum) {
             currentCount++;
             console.log("the current count is" + currentCount);
-            if (currentCount > biggetCount) {
-                biggetCount = currentCount;
-                console.log("the biggest count is" + biggetCount);
-            }
-            else {
-                currentCount = 0;
+            if (currentCount > biggestCount) {
+                biggestCount = currentCount;
+                console.log("the biggest count is" + biggestCount);
             }
         }
+        else {
+            currentCount = 1;
+        }
+        privNum = currNum;
     }
-    return biggetCount;
+    return biggestCount;
 }
 // console.log(negateNum(-50));
 // console.log(largerNum(10, 20));
 // console.log(fahrenheitToCelsius(100));
 // console.log(MathSelect(3, 5, 6));
-console.log(biggestUpCount(9));
+console.log(biggestUpCount(12));
