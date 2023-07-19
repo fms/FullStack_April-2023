@@ -42,7 +42,7 @@ function MathSelect(num1: number, num2: number, op: number): number | string {
 
 function biggestUpCount(n: number): number {
   let privNum = parseInt(prompt(`Please enter the first number`) || "0");
-  let biggestCount: number = 0;
+  let biggestCount: number = 1;
   let currentCount = 1;
   for (let i = 1; i < n; i++) {
     let currNum = parseInt(prompt(`Please enter the ${i + 1}th number`) || "0");
@@ -52,10 +52,12 @@ function biggestUpCount(n: number): number {
       if (currentCount > biggestCount) {
         biggestCount = currentCount;
         console.log(`the biggest count is${biggestCount}`);
-      } else {
-        currentCount = 0;
       }
     }
+    else {
+      currentCount = 1;
+    }
+    privNum = currNum;
   }
   return biggestCount;
 }
@@ -63,4 +65,4 @@ function biggestUpCount(n: number): number {
 // console.log(largerNum(10, 20));
 // console.log(fahrenheitToCelsius(100));
 // console.log(MathSelect(3, 5, 6));
-console.log(biggestUpCount(9));
+console.log(biggestUpCount(12));
