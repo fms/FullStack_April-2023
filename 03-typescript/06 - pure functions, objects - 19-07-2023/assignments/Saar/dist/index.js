@@ -8,5 +8,5 @@ function carObjects(maker, model, year, milage, fuel) {
     let carProperties = `Car maker: ${maker}, Car model: ${model}, Car year: ${year}, Car milage ${milage}, Car fuel ${fuel}.`;
     return `${carProperties}, your total Fuel Consumtion is ${totalFuelConsumtion}`;
 }
-console.log(carObjects('Mazda', 'Mazda 3', 2023, 100000, 60.008388)); // log car propreties, get back "total fuel consumtion".
+console.log(carObjects('Mazda', 'Mazda 3', 2023, 100000, 60.008388));
 console.log(bugatti);
