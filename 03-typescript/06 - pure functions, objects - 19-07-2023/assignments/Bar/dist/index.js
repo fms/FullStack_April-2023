@@ -1,4 +1,4 @@
-var car1 = {
+var carExample = {
     maker: "Honda",
     model: "Civic",
     year: 2019,
@@ -9,4 +9,4 @@ var car1 = {
 function totalFuelConsumption(fuelConsumption, mileage) {
     console.log(mileage / fuelConsumption);
 }
-car1.totalFuelConsumption(car1.fuelConsumption, car1.mileage);
+carExample.totalFuelConsumption(carExample.fuelConsumption, carExample.mileage);

@@ -7,7 +7,7 @@ interface Car {
     totalFuelConsumption: Function;
 }
 
-let car1: Car = {
+let carExample: Car = {
     maker: "Honda",
     model: "Civic",
     year: 2019,
@@ -20,4 +20,4 @@ function totalFuelConsumption(fuelConsumption: number, mileage: number) {
     console.log(mileage / fuelConsumption);
 }
 
-car1.totalFuelConsumption(car1.fuelConsumption, car1.mileage);
+carExample.totalFuelConsumption(carExample.fuelConsumption, carExample.mileage);
