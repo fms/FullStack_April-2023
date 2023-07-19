@@ -20,3 +20,10 @@ let carExample: Car = {
 
 console.log(carExample.totalFuelConsumption());
 
+function functionCarExample(maker: string, model: string, year: number, mileage: number, fuelConsumption: number) {
+    const totalFuelConsumption = mileage / fuelConsumption;
+    return `Maker: ${maker}, Model: ${model}, Year: ${year}, Mileage: ${mileage}, Fuel Consumption: ${fuelConsumption}, Total Fuel Consumption: ${totalFuelConsumption}`;
+
+}
+
+console.log(functionCarExample("kia", "picanto", 2019, 30000, 15 / 1));
