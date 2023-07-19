@@ -5,8 +5,8 @@ let myCar = {
     year: 2017,
     milage: 10000,
     fuel: 100,
-    fuelConsumption: function () {
+    fuelConsumption() {
         return this.milage / this.fuel;
     }
 };
-console.log(myCar);
+console.log(myCar.fuelConsumption());
