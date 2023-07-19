@@ -4,7 +4,7 @@ interface Car {
     year: number;
     mileage: number;
     fuelConsumption: number;
-    totalFuelConsumption: () => number;
+    totalFuelConsumption: Function;
 }
 
 let carExample: Car = {
