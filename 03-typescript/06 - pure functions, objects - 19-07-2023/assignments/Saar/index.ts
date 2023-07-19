@@ -8,16 +8,16 @@ interface car
     model :string,
     year :number,
     milage :number,
-    fuel : number,
+    fuelConsunmption : number,
 }
 
 let bugatti = carObjects(`Bugatti` ,`Divo` ,2018 ,75000 ,50.0007232)
 
 
-function carObjects(maker :string , model :string, year :number, milage :number , fuel :number)
+function carObjects(maker :string , model :string, year :number, milage :number , fuelConsunmption :number)
 {
-    let totalFuelConsumtion :number = (milage / fuel)
-    let carProperties :any = `Car maker: ${maker}, Car model: ${model}, Car year: ${year}, Car milage ${milage}, Car fuel ${fuel}.`;
+    let totalFuelConsumtion :number = (milage / fuelConsunmption)
+    let carProperties :any = `Car maker: ${maker}, Car model: ${model}, Car year: ${year}, Car milage ${milage}, Car fuelConsunmption ${fuelConsunmption}.`;
     return `${carProperties}, your total Fuel Consumtion is ${totalFuelConsumtion}`
 }
 
