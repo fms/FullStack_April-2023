@@ -20,7 +20,7 @@ let workCar:car = {
 }
 
 function printCarDet(car:car):string{
-  return car.maker + " " +car.model + ", year:" + car.year + ", millage: " + car.miilage + ", fuel consumtion: "+ car.fuelConsumption+".";
+  return car.maker + " " + car.model + ", year:" + car.year + ", millage: " + car.miilage + ", fuel consumtion: "+ car.fuelConsumption+".";
 }
 
 console.log(printCarDet(workCar))
