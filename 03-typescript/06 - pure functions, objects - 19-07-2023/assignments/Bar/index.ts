@@ -4,7 +4,7 @@ interface Car {
     year: number;
     mileage: number;
     fuelConsumption: number;
-    totalFuelConsumption: Function;
+    totalFuelConsumption: () => number;
 }
 
 let carExample: Car = {
@@ -13,11 +13,10 @@ let carExample: Car = {
     year: 2019,
     mileage: 30500,
     fuelConsumption: 15 / 1,
-    totalFuelConsumption: totalFuelConsumption,
+    totalFuelConsumption: function () {
+        return this.mileage / this.fuelConsumption;
+    },
 };
 
-function totalFuelConsumption(fuelConsumption: number, mileage: number) {
-    console.log(mileage / fuelConsumption);
-}
+console.log(carExample.totalFuelConsumption());
 
-carExample.totalFuelConsumption(carExample.fuelConsumption, carExample.mileage);

@@ -4,9 +4,8 @@ var carExample = {
     year: 2019,
     mileage: 30500,
     fuelConsumption: 15 / 1,
-    totalFuelConsumption: totalFuelConsumption
+    totalFuelConsumption: function () {
+        return this.mileage / this.fuelConsumption;
+    }
 };
-function totalFuelConsumption(fuelConsumption, mileage) {
-    console.log(mileage / fuelConsumption);
-}
-carExample.totalFuelConsumption(carExample.fuelConsumption, carExample.mileage);
+console.log(carExample.totalFuelConsumption());
