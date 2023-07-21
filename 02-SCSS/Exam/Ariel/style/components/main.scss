@@ -68,6 +68,45 @@ main {
 
           &--numRating {
             padding-right: 20px;
+
+            .counterAnimation::after {
+              font: 800 40px system-ui;
+              content: counter(count);
+              animation: counter 2s linear infinite alternate;
+              counter-reset: count 0;
+            }
+            @keyframes counter {
+              0% {
+                counter-increment: count 0;
+              }
+              10% {
+                counter-increment: count 1;
+              }
+              20% {
+                counter-increment: count 2;
+              }
+              30% {
+                counter-increment: count 3;
+              }
+              40% {
+                counter-increment: count 4;
+              }
+              50% {
+                counter-increment: count 5;
+              }
+              60% {
+                counter-increment: count 4;
+              }
+              70% {
+                counter-increment: count 3;
+              }
+              80% {
+                counter-increment: count 2;
+              }
+              90% {
+                counter-increment: count 1;
+              }
+            }
           }
 
           &--stars {

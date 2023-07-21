@@ -58,6 +58,7 @@ nav {
 
       button {
         @include navBorder(1px solid #bdb9b9, 20px, 4px 8px);
+        max-height: 35px;
         background-color: white;
         cursor: pointer;
       }
@@ -76,27 +77,23 @@ nav {
       }
 
       &--usa {
-        height: 35.5px;
         button {
           @include navBorder(1px solid #bdb9b9, 20px, 2px);
           background-color: white;
           cursor: pointer;
+          height: 35.5px;
 
           p {
+            @include flexer(flex, center, row);
+            align-items: center;
             .iconUsa {
-              @include imgSizer(30px, 30px);
-              position: relative;
-              top: 2px;
+              @include imgSizer(25px, 25px);
             }
             span {
-              position: relative;
-              bottom: 11px;
+              padding: 0 5px;
             }
             .arrowImg {
               @include imgSizer(18px, 10px);
-              position: relative;
-              bottom: 11px;
-              right: 2px;
             }
           }
         }

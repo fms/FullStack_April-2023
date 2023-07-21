@@ -14,6 +14,10 @@ a {
   text-decoration: none;
 }
 
+button {
+  cursor: pointer;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -28,6 +32,10 @@ img {
 
 a {
   text-decoration: none;
+}
+
+button {
+  cursor: pointer;
 }
 
 nav .navBar {
@@ -90,6 +98,7 @@ nav .navBar__right button {
   border: 1px solid #bdb9b9;
   border-radius: 20px;
   padding: 4px 8px;
+  max-height: 35px;
   background-color: white;
   cursor: pointer;
 }
@@ -105,32 +114,30 @@ nav .navBar__right--search input {
   padding-left: 40px;
   height: 35.5px;
 }
-nav .navBar__right--usa {
-  height: 35.5px;
-}
 nav .navBar__right--usa button {
   border: 1px solid #bdb9b9;
   border-radius: 20px;
   padding: 2px;
   background-color: white;
   cursor: pointer;
+  height: 35.5px;
+}
+nav .navBar__right--usa button p {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
 }
 nav .navBar__right--usa button p .iconUsa {
-  width: 30px;
-  height: 30px;
-  position: relative;
-  top: 2px;
+  width: 25px;
+  height: 25px;
 }
 nav .navBar__right--usa button p span {
-  position: relative;
-  bottom: 11px;
+  padding: 0 5px;
 }
 nav .navBar__right--usa button p .arrowImg {
   width: 18px;
   height: 10px;
-  position: relative;
-  bottom: 11px;
-  right: 2px;
 }
 nav .navBar__right--heart {
   height: 34.5px;
@@ -162,6 +169,10 @@ img {
 
 a {
   text-decoration: none;
+}
+
+button {
+  cursor: pointer;
 }
 
 header .header {
@@ -244,6 +255,10 @@ img {
 
 a {
   text-decoration: none;
+}
+
+button {
+  cursor: pointer;
 }
 
 header .mainHeader {
@@ -371,6 +386,10 @@ a {
   text-decoration: none;
 }
 
+button {
+  cursor: pointer;
+}
+
 main .main {
   margin: 40px 105px;
 }
@@ -438,6 +457,44 @@ main .main__gridDevisor--review .ratingReview {
 }
 main .main__gridDevisor--review .ratingReview--numRating {
   padding-right: 20px;
+}
+main .main__gridDevisor--review .ratingReview--numRating .counterAnimation::after {
+  font: 800 40px system-ui;
+  content: counter(count);
+  animation: counter 2s linear infinite alternate;
+  counter-reset: count 0;
+}
+@keyframes counter {
+  0% {
+    counter-increment: count 0;
+  }
+  10% {
+    counter-increment: count 1;
+  }
+  20% {
+    counter-increment: count 2;
+  }
+  30% {
+    counter-increment: count 3;
+  }
+  40% {
+    counter-increment: count 4;
+  }
+  50% {
+    counter-increment: count 5;
+  }
+  60% {
+    counter-increment: count 4;
+  }
+  70% {
+    counter-increment: count 3;
+  }
+  80% {
+    counter-increment: count 2;
+  }
+  90% {
+    counter-increment: count 1;
+  }
 }
 main .main__gridDevisor--review .ratingReview--stars span {
   color: #fece00;
