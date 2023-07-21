@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,10 +6,10 @@
   <!-- LOGO -->
   <link rel="icon" href="./images/icon.png" type="image/x-icon"/>
 
-  <!-- TITLE --> 
+  <!-- TITLE -->
   <title>Lunor</title>
 
-  <!-- SCSS(css) LINK -->
+  <!-- SCSS LINK -->
   <link rel="stylesheet" href="./style/dist/style.css">
 
   <!-- FONTS -->
@@ -18,72 +17,227 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap" rel="stylesheet">
 
-</head>
+  <!-- FONT AWESOME -->
+  <script src="https://kit.fontawesome.com/9f3f3c8cb8.js" defer crossorigin="anonymous"></script>
+  </head>
 
 <body>
-  <!-- Nav Bar -->
+
   <nav>
     <div class="navBar">
-      <!-- Logo --><div class="item logoNavBar">
-        <img src="./images/icon.png" alt="">
+      <div class="navBar__left">
+        <div class="navBar__item navBar__left--logo">
+          <img src="./images/icon.png" alt="">
+        </div>
+        <div class="navBar__item navBar__left--ul">
+          <ul>
+            <li><a class="first" href="#">Hotel</a></li>
+            <li><a href="#">Apartment</a></li>
+            <li><a href="#">Holiday</a></li>
+            <li><a href="#">More <i class="fa-solid fa-chevron-down"></i></a></li>
+          </ul>
+        </div>
       </div>
-      <!-- Navigation --><div class="item ulNavBar">
-        <ul>
-          <li><a class="first" href="#">Hotel</a></li>
-          <li><a href="#">Apartment</a></li>
-          <li><a href="#">Holiday</a></li>
-          <li><a href="#">More <img class="AD" src="./images/Arrow-down.png" alt="Arrow-down"></a></li>
-        </ul>
-      </div>
-      <!-- Search bar --><div class="item searchNavBar">
-        <img src="./images/search.png" alt="Magnifying Glass">
-        <input type="text" action="/search" placeholder="Where are you going?">
-        </input>
-      </div>
-      <!-- Country --><div class="item usaNavBar">
-        <a href="">
-          <span class="mainSpanUsaNavBar">
-            <img class="iconUsa" src="./images/usaIcon.png" alt="">
-              <span>
-                USD
-              </span>
-            <img class="AD2" src="./images/Arrow-down.png" alt="Arrow-down">
-          </span>
-        </a>
-      </div>
-      <!-- Like icon --><div class="item heartIconNavBar">
-        <a href="">
-        <span class="spanHeartIconNavBar">
-          <img src="./images/heart.png" alt="empty heart - unlike">
-        </span></a>
-      </div>
-      <!-- Profile --><div class="item profileNavBar">
-        <a href="#">
-          <span class="spanProfileNavBar">
-              <img class="hamburgerIconProfileNavBar" src="./images/hamburgerIcon.png" alt="more icon">
-              <img class="profileIconProfileNavBar" src="./images/profilePerson.png" alt="profile icon">
-          </span>
-        </a>
+      <div class="navBar__right">
+        <div class="navBar__item navBar__right--search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" action="/search" placeholder="Where are you going?">
+          </input>
+        </div>
+        <div class="navBar__item navBar__right--usa">
+          <button type="">
+            <p>
+              <img class="iconUsa" src="./images/usaIcon.png" alt="">
+                <span>
+                  USD
+                </span>
+              <i class="arrowImg fa-solid fa-chevron-down"></i>
+            </p>
+          </button>
+        </div>
+        <div class="navBar__item navBar__right--heart">
+          <button type="">
+            <span class="spanHeartIconNavBar">
+              <img src="./images/heart.png" alt="empty heart - unlike">
+            </span>
+          </button> 
+        </div>
+        <div class="navBar__item navBar__right--profile">
+          <button type="">
+            <span>
+                <img class="hamburgerIconProfileNavBar" src="./images/hamburgerIcon.png" alt="more icon">
+                <img class="profileIconProfileNavBar" src="./images/profilePerson.png" alt="profile icon">
+            </span>
+          </button>
+        </div>
       </div>
     </div>
-    <hr>
+    <div class="lineSepearter"></div>
   </nav>
 
   <header>
-    <div class="infoPerson">
-      <div class="h1Contianer">
-        <img src="./images/Arrow-left.png" alt="Arrow left">
-        <h2>Choose date</h2>
+    <div class="header"> 
+      <div class="header__left">
+        <div class="header__left--arrow">
+          <i class="fa-solid fa-chevron-left" style="color: #878a8a;"></i>
+        </div>
+        <div class="header__left--title">
+          <h3>Choose date</h3>
+        </div>
+      </div>
+      <div class="header__center">
+        <div class="whereToCenterHeader">
+          <button>
+            <i class="fa-solid fa-location-dot" style="color: #878a8a;"></i>
+            <span>Sa Pa, Vietnam</span>
+          </button>
+        </div>
+        <div class="whenCenterHeader">
+          <button>
+            <i class="fa-solid fa-calendar-days" style="color: #878a8a;"></i>
+            <span>Thu, Apr 22-Fri, Apr 23</span>
+            <i class="fa-solid fa-arrows-up-down" style="color: #878a8a;"></i>
+          </button>
+        </div>
+        <div class="peoplesManyCenterHeader">
+          <button>
+            <i class="fa-regular fa-user" style="color: #878a8a;"></i>
+            <span>1 Room, 1 Adults</span>
+            <i class="fa-solid fa-arrows-up-down" style="color: #878a8a;"></i>
+          </button>
+        </div>
+      </div>
+      <div class="header__right">
+        <div class="header__right--price">
+          <span>$200/Night</span>
+        </div>
+        <div class="header__right--booking">
+          <button>
+            Booking
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="lineSepearter"></div>
+  </header>
+
+  <header>
+    <div class="mainHeader">
+      <div class="mainHeader__rootTitle">
+        <span>Hotel / Vietnam / </span>
+        <span> Sa Pa Terraces</span>
+      </div>
+      <div class="mainHeader__gridTitle">
+        <div class="mainHeader__gridTitle--title">
+            <h1>Sapa Jade Hill Resort</h1>
+        </div>
+        <div class="mainHeader__gridTitle--rightTitle">
+            <div class="shareBtn">
+              <button>
+                <i class="fa-solid fa-share-nodes"></i>
+                <span>Share</span>
+              </button>
+            </div>
+            <div class="saveBtn">
+              <button>
+                <i class="fa-regular fa-heart"></i>
+                <span>Save</span>
+              </button>
+            </div>
+        </div>
+        <div class="mainHeader__gridTitle--underTtile">
+          <div class="review">
+            <i class="fa-regular fa-star"></i>
+            <span>5.0 100 review</span>
+          </div>
+          <div class="where">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Sa Pa, vietnam</span>
+          </div>
+          <div class="profile">
+            <i class="fa-regular fa-user"></i>
+            <span>Grader Home</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="imgMainHeader">
+      <div class="img100">
+        <img src="./images/" alt="background image">
+      </div>
+      <div class="img200">
+        <img src="./images/img2.png" alt="background image">
+      </div>
+      <div class="img300">
+        <img src="./images/img3.png" alt="background image">
+      </div>
+      <div class="img400">
+        <img src="./images/img4.png" alt="background image">
       </div>
     </div>
   </header>
 
-
-
-
-
-
-
+  <main>
+    <div class="main">
+      <div class="main__gridDevisor">
+        <div class="main__gridDevisor--miniNav">
+            <button type="">Overview</button>
+            <button type="">What's included</button>
+            <button type="">FAQs</button>
+            <button type="">Room</button>
+        </div>
+        <div class="main__gridDevisor--article">
+            <div class="title">
+              <h2>Comfortable place for you</h2>
+            </div>
+            <div class="content">
+              Overlooking the greenery of the surrounding mountains, Sapa Jade Hill Resort is located in Sa Pa, <br/>
+              about 5 km from Fansipan Legend Cable Car Station. This 4-star resort offers an outdoor pool, <br/>
+              restaurant and bar. The accommodation operates a 24-hour front desk that can arrange express <br/>
+              check-in and check-out, room service and ticketing services for guests. <span>Read More</span>
+            </div>
+        </div>
+        <div class="main__gridDevisor--review">
+            <div class="title">
+              <h4>Reviews and ratings</h4>
+            </div>
+            <div class="ratingReview">
+              <div class="ratingReview--numRating">
+                <h1>4.8</h1>
+              </div>
+              <div class="ratingReview--stars">
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <p>Based on 100 reviewers</p>
+              </div>
+            </div>
+            <div class="bars">
+              <div class="bars__comfortable">
+                <div class="miniTitle">
+                  <h5>Comfortable</h5>
+                  <span>4.7</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="per" style="max-width:80%"></div>
+                </div>
+              </div>
+              <div class="bars__cleanliness">
+                <div class="miniTitle">
+                  <h5>Cleanliness</h5>
+                  <span>4.8</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="per" style="max-width:90%"></div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </main>
 </body>
 
 </html>

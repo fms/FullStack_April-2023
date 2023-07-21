@@ -1,0 +1,66 @@
+@import "../config.scss";
+
+header {
+  .header {
+    @include flexer(flex, space-around, row);
+    height: 70px;
+
+    &__left {
+      @include flexer(flex, none, row);
+      align-items: center;
+
+      &--arrow {
+        i {
+          @include imgSizer(10px, 10px);
+          padding: 0 25px 5px 45px;
+        }
+      }
+      &--title {
+        h3 {
+          letter-spacing: 1px;
+        }
+      }
+    }
+    &__center {
+      @include flexer(flex, space-around, row);
+      margin: 0 15px 0 15px;
+      align-items: center;
+
+      button {
+        @include navBorder(none, 20px, 4px);
+        margin: 0 15px 0 15px;
+        padding: 0 10px;
+        background-color: #f9fbfc;
+        min-height: 40px;
+      }
+      i {
+        padding: 0 5px;
+      }
+      span {
+        color: #878a8a;
+      }
+    }
+    &__right {
+      @include flexer(flex, space-around, row);
+      align-items: center;
+
+      &--price {
+        text-align: center;
+        padding-right: 20px;
+        span {
+          color: #34987d;
+          font-weight: bold;
+        }
+      }
+      &--booking {
+        button {
+          @include navBorder(none, 35px, 4px);
+          background-color: #34987d;
+          color: white;
+          max-height: 50px;
+          padding: 13px 45px;
+        }
+      }
+    }
+  }
+}

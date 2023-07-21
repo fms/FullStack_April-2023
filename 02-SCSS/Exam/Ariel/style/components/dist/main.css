@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  direction: ltr;
+}
+
+img {
+  width: 15px;
+  height: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+main .main {
+  margin: 40px 105px;
+}
+main .main__gridDevisor {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) 1fr;
+  grid-template-rows: 1fr 2fr;
+  grid-template-areas: "miniNavFlexerMain miniNavFlexerMain reviewParagraph" "ArticleMain ArticleMain reviewParagraph";
+}
+main .main__gridDevisor--miniNav {
+  grid-area: miniNavFlexerMain;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+main .main__gridDevisor--miniNav button {
+  border: 1px solid #ededed;
+  border-radius: 25px;
+  padding: 0;
+  background-color: #ffffff;
+  color: #949696;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0 13px;
+  margin-right: 17px;
+  max-height: 2.8rem;
+}
+main .main__gridDevisor--miniNav button:focus {
+  background-color: black;
+  color: #fefefe;
+}
+main .main__gridDevisor--article {
+  grid-area: ArticleMain;
+}
+main .main__gridDevisor--article .title {
+  letter-spacing: 0.03rem;
+  margin: 10px 0 15px 0;
+}
+main .main__gridDevisor--article .content {
+  color: #8e8e8e;
+  line-height: 25px;
+}
+main .main__gridDevisor--article .content span {
+  color: #4e7dbc;
+  font-weight: bold;
+}
+main .main__gridDevisor--review {
+  grid-area: reviewParagraph;
+  border: 2px solid #ededed;
+  border-radius: 10px;
+  padding: 0;
+  padding: 0 20px;
+}
+main .main__gridDevisor--review span {
+  color: #949494;
+}
+main .main__gridDevisor--review .title {
+  margin: 20px;
+  margin-left: 0;
+}
+main .main__gridDevisor--review .ratingReview {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+main .main__gridDevisor--review .ratingReview--numRating {
+  padding-right: 20px;
+}
+main .main__gridDevisor--review .ratingReview--stars span {
+  color: #fece00;
+}
+main .main__gridDevisor--review .ratingReview--stars p {
+  padding-top: 0.2rem;
+}
+main .main__gridDevisor--review .bars .miniTitle {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+main .main__gridDevisor--review .bars__comfortable {
+  margin-top: 25px;
+}
+main .main__gridDevisor--review .bars__cleanliness {
+  margin: 20px 0;
+}
+main .main__gridDevisor--review .bars .skill-bar {
+  height: 7px;
+  margin-top: 8px;
+  background-color: #f9fbfc;
+  border-radius: 15px;
+}
+main .main__gridDevisor--review .bars .skill-bar .per {
+  height: 7px;
+  background-color: #34987d;
+  border-radius: 15px;
+}

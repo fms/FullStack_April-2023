@@ -16,106 +16,118 @@ a {
 
 nav .navBar {
   display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+nav .navBar__item {
+  border: none;
+  border-radius: none;
+  padding: 5px;
+  align-items: center;
+}
+nav .navBar__left {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin: 0 0 0 75px;
+}
+nav .navBar__left--logo {
+  padding-top: 2%;
+  margin: 0 40px 0 0;
+}
+nav .navBar__left--logo img {
+  width: 55px;
+  height: 34px;
+}
+nav .navBar__left--ul ul {
+  display: flex;
   justify-content: center;
   flex-direction: row;
 }
-nav .navBar .item {
-  padding: 5px;
-}
-nav .navBar .logoNavBar {
-  margin: 0 50px 0 0;
-  display: flex;
-  justify-content: none;
-  flex-direction: none;
-  align-items: center;
-}
-nav .navBar .logoNavBar img {
-  width: 55px;
-  height: 45px;
-}
-nav .navBar .ulNavBar {
-  margin-right: 300px;
-}
-nav .navBar .ulNavBar ul {
-  display: flex;
-  justify-content: none;
-  flex-direction: none;
-}
-nav .navBar .ulNavBar ul .first {
+nav .navBar__left--ul ul .first {
   color: black;
 }
-nav .navBar .ulNavBar ul li {
+nav .navBar__left--ul ul li {
   padding: 10px 0 0 0;
   margin: 0 60px 0 0;
   list-style-type: none;
   font-weight: bold;
 }
-nav .navBar .ulNavBar ul li a {
+nav .navBar__left--ul ul li a {
   text-decoration: none;
   color: #827e7e;
 }
-nav .navBar .ulNavBar ul li .AD {
-  width: 18px;
-  height: 10px;
+nav .navBar__left--ul ul li i {
+  font-size: 10px;
 }
-nav .navBar .ulNavBar ul li:hover {
+nav .navBar__left--ul ul li:hover {
   border-bottom: 2px solid black;
 }
-nav .navBar .searchNavBar img {
-  width: 25px;
-  height: 25px;
-  position: relative;
-  top: 15%;
-  left: 17%;
+nav .navBar__right {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  margin: 0 40px 0 0;
 }
-nav .navBar .searchNavBar input {
+nav .navBar__right button {
   border: 1px solid #bdb9b9;
   border-radius: 20px;
-  padding: 10px;
+  padding: 4px 8px;
+  background-color: white;
+  cursor: pointer;
+}
+nav .navBar__right--search i {
+  position: relative;
+  left: 16%;
+}
+nav .navBar__right--search input {
+  border: 1px solid #bdb9b9;
+  border-radius: 20px;
+  padding: 4px;
+  outline: none;
   padding-left: 40px;
+  height: 35.5px;
 }
-nav .navBar .usaNavBar a .mainSpanUsaNavBar {
+nav .navBar__right--usa {
+  height: 35.5px;
+}
+nav .navBar__right--usa button {
   border: 1px solid #bdb9b9;
   border-radius: 20px;
-  padding: 8px;
+  padding: 2px;
+  background-color: white;
+  cursor: pointer;
 }
-nav .navBar .usaNavBar a .mainSpanUsaNavBar .iconUsa {
-  width: 25px;
-  height: 25px;
+nav .navBar__right--usa button p .iconUsa {
+  width: 30px;
+  height: 30px;
   position: relative;
-  top: 6px;
+  top: 2px;
 }
-nav .navBar .usaNavBar a .mainSpanUsaNavBar .AD2 {
+nav .navBar__right--usa button p span {
+  position: relative;
+  bottom: 11px;
+}
+nav .navBar__right--usa button p .arrowImg {
   width: 18px;
   height: 10px;
+  position: relative;
+  bottom: 11px;
+  right: 2px;
 }
-nav .navBar .heartIconNavBar .spanHeartIconNavBar {
-  border: 1px solid #bdb9b9;
-  border-radius: 20px;
-  padding: 8px;
+nav .navBar__right--heart {
+  height: 34.5px;
 }
-nav .navBar .heartIconNavBar .spanHeartIconNavBar img {
+nav .navBar__right--heart span img {
   width: 25px;
   height: 25px;
-  position: relative;
-  top: 7px;
 }
-nav .navBar .profileNavBar .spanProfileNavBar {
-  border: 1px solid #bdb9b9;
-  border-radius: 20px;
-  padding: 8px;
-  position: relative;
-  top: 1.5px;
-}
-nav .navBar .profileNavBar .spanProfileNavBar img {
-  position: relative;
-  top: 3px;
-}
-nav .navBar .profileNavBar .spanProfileNavBar .hamburgerIconProfileNavBar {
+nav .navBar__right--profile span .hamburgerIconProfileNavBar {
   width: 18px;
   height: 20px;
 }
-nav .navBar .profileNavBar .spanProfileNavBar .profileIconProfileNavBar {
+nav .navBar__right--profile span .profileIconProfileNavBar {
   width: 23px;
   height: 24px;
 }

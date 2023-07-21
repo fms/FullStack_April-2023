@@ -1,117 +1,126 @@
-<<<<<<< Updated upstream
-@import '../config';
-=======
-@import '../config.scss';
->>>>>>> Stashed changes
+@import "../config.scss";
 
-nav { 
-
+nav {
   .navBar {
-    @include flexer(flex, center, row);
-    
-    .item {
-      padding: 5px;
-    }
+    @include flexer(flex, space-between, row);
+    align-items: center;
 
-    .logoNavBar {
-      margin: 0 50px 0 0;
-      @include flexer(flex, none, none);
+    &__item {
+      // padding: 5px 5px;
+      @include navBorder(none, none, 5px);
       align-items: center;
-      img {
-        @include imgSizer(55px, 45px);
-      }
     }
 
-    .ulNavBar {
-      margin-right: 300px;
-      
-      ul {
-        @include flexer(flex, none, none);
-        
-        .first {
-          color: black;
-        }
-        li {
-          padding: 10px 0 0 0;
-          margin: 0 60px 0 0;
-          list-style-type: none;
-          font-weight: bold;
+    &__left {
+      @include flexer(flex, flex-start, row);
+      margin: 0 0 0 75px;
 
-          a {
-            text-decoration: none;
-            color: #827e7e;
-          }
-
-          .AD {
-            @include imgSizer(18px, 10px);
-          }
-        }
-        li:hover {
-          border-bottom: 2px solid black;
-        } 
-      }
-    }
-
-    .searchNavBar {
-      img {
-        @include imgSizer(25px, 25px);
-        position: relative;
-        top: 15%;
-        left: 17%;
-      }
-      input {
-        @include navBorder(1px solid #bdb9b9, 20px, 10px);
-        padding-left: 40px;
-      }
-    }
-
-    .usaNavBar {
-      a {
-        .mainSpanUsaNavBar {
-        @include navBorder(1px solid #bdb9b9, 20px, 8px);
-
-          .iconUsa {
-            @include imgSizer(25px, 25px); 
-            position: relative;
-            top: 6px;
-          }
-          .AD2 {
-            @include imgSizer(18px, 10px);
-          }
-        }
-      }
-
-    }
-
-    .heartIconNavBar {
-      .spanHeartIconNavBar {
-        @include navBorder(1px solid #bdb9b9, 20px, 8px);
+      &--logo {
+        padding-top: 2%;
+        margin: 0 40px 0 0;
         img {
-          @include imgSizer(25px, 25px); 
-          position: relative;
-          top: 7px;
+          @include imgSizer(55px, 34px);
+        }
+      }
+
+      &--ul {
+        // margin-right: 300px;
+        ul {
+          @include flexer(flex, center, row);
+          .first {
+            color: black;
+          }
+          li {
+            padding: 10px 0 0 0;
+            margin: 0 60px 0 0;
+            list-style-type: none;
+            font-weight: bold;
+
+            a {
+              text-decoration: none;
+              color: #827e7e;
+            }
+
+            i {
+              font-size: 10px;
+            }
+          }
+          li:hover {
+            border-bottom: 2px solid black;
+          }
         }
       }
     }
 
-    .profileNavBar {
-      
+    &__right {
+      @include flexer(flex, flex-end, row);
+      margin: 0 40px 0 0;
 
-      .spanProfileNavBar {
-        @include navBorder(1px solid #bdb9b9, 20px, 8px);
-        position: relative;
-        top: 1.5px;
+      button {
+        @include navBorder(1px solid #bdb9b9, 20px, 4px 8px);
+        background-color: white;
+        cursor: pointer;
+      }
 
-        img {
+      &--search {
+        i {
           position: relative;
-          top: 3px;
+          left: 16%;
         }
-        .hamburgerIconProfileNavBar {
-          @include imgSizer(18px, 20px); 
+        input {
+          @include navBorder(1px solid #bdb9b9, 20px, 4px);
+          outline: none;
+          padding-left: 40px;
+          height: 35.5px;
         }
+      }
 
-        .profileIconProfileNavBar {
-          @include imgSizer(23px, 24px); 
+      &--usa {
+        height: 35.5px;
+        button {
+          @include navBorder(1px solid #bdb9b9, 20px, 2px);
+          background-color: white;
+          cursor: pointer;
+
+          p {
+            .iconUsa {
+              @include imgSizer(30px, 30px);
+              position: relative;
+              top: 2px;
+            }
+            span {
+              position: relative;
+              bottom: 11px;
+            }
+            .arrowImg {
+              @include imgSizer(18px, 10px);
+              position: relative;
+              bottom: 11px;
+              right: 2px;
+            }
+          }
+        }
+      }
+
+      &--heart {
+        height: 34.5px;
+
+        span {
+          img {
+            @include imgSizer(25px, 25px);
+          }
+        }
+      }
+
+      &--profile {
+        span {
+          .hamburgerIconProfileNavBar {
+            @include imgSizer(18px, 20px);
+          }
+
+          .profileIconProfileNavBar {
+            @include imgSizer(23px, 24px);
+          }
         }
       }
     }

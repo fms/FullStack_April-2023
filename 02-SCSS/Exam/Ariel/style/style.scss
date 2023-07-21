@@ -1,43 +1,14 @@
-@import './config';
+@import "./config.scss";
 
-@import './components/navBar';
+@import "./components/navBar.scss";
 
-// @media only screen and (max-width:1024px) {
-//   nav {
-//     .navBar {
-//       .item {
-//         padding: 15px 0px;
-//         padding-left: 5px;
-//     }
-//     .logoNavBar {
-//       margin-left: 0px;
-      
-//       img {
-//         @include imgSizer(30px, 32px);
-//       }
-//     }
+@import "./components/1stHeader.scss";
 
-//     .ulNavBar {
-//       ul {
-//         position: absolute;
-//         left: 45px;
-//         top: 3px;
-//       }
-//       li {
-//         margin-top: 10px;
-//         // margin-bottom: 10px;
-//         padding: 10px 0 10px;
-//       }
-//     }
-//   }
-//     }
-    
-  
-<<<<<<< Updated upstream
-// }        
-=======
-// }    
-@import './components/dist/test';       
+@import "./components/2stHeader.scss";
 
- 
->>>>>>> Stashed changes
+@import "./components/main.scss";
+
+.lineSepearter {
+  @include imgSizer(100%, 1.5px);
+  background-color: #ebebeb;
+}

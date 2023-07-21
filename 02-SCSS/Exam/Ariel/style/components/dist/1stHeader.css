@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  direction: ltr;
+}
+
+img {
+  width: 15px;
+  height: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+header .header {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  height: 70px;
+}
+header .header__left {
+  display: flex;
+  justify-content: none;
+  flex-direction: row;
+  align-items: center;
+}
+header .header__left--arrow i {
+  width: 10px;
+  height: 10px;
+  padding: 0 25px 5px 45px;
+}
+header .header__left--title h3 {
+  letter-spacing: 1px;
+}
+header .header__center {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin: 0 15px 0 15px;
+  align-items: center;
+}
+header .header__center button {
+  border: none;
+  border-radius: 20px;
+  padding: 4px;
+  margin: 0 15px 0 15px;
+  padding: 0 10px;
+  background-color: #f9fbfc;
+  min-height: 40px;
+}
+header .header__center i {
+  padding: 0 5px;
+}
+header .header__center span {
+  color: #878a8a;
+}
+header .header__right {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+}
+header .header__right--price {
+  text-align: center;
+  padding-right: 20px;
+}
+header .header__right--price span {
+  color: #34987d;
+  font-weight: bold;
+}
+header .header__right--booking button {
+  border: none;
+  border-radius: 35px;
+  padding: 4px;
+  background-color: #34987d;
+  color: white;
+  max-height: 50px;
+  padding: 13px 45px;
+}
