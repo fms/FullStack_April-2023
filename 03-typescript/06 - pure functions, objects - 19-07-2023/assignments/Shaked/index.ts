@@ -4,26 +4,31 @@ interface ShakedCar {
     year: number;
     mileage: number;
     fuel: number;
-    FuelCon: Function;
-    AddToString: Function;
+    FuelCon: () => number;
+    AddToString: () => string;
 }
 
 function createCar(maker: string, model: string,
-    year: number, mileage: number, fuel: number) {
+    year: number, mileage: number, fuel: number): ShakedCar {
     const createNew: ShakedCar = {
         maker, model, year, mileage, fuel,
-        FuelCon: function () {
-            return this.mileage / this.fuel;
+        FuelCon: () => {
+            return createNew.mileage / createNew.fuel;
         },
-        AddToString: function () {
-            return (
-                'Maker: ' + this.maker + '\nModel: ' + this.model +
-                '\nYear: ' + this.year + '\nMileage: ' + this.mileage +
-                '\nFuel: ' + this.fuel + '\nFuel Consumption: ' + this.FuelCon());
+        AddToString: () => {
+            const formattedDetails = `
+            Shaked's car details :
+Maker: ${createNew.maker}
+Model: ${createNew.model}
+Year: ${createNew.year}
+Mileage: ${createNew.mileage}
+Fuel: ${createNew.fuel}
+Fuel Consumption: ${createNew.FuelCon()} `;
+            return formattedDetails;
         },
     };
     return createNew;
 }
 
-let createNewCar = createCar("BMW", "X6", 2023, 2450, 12);
-console.log(createNewCar.AddToString());
+let createNewCar: ShakedCar = createCar("BMW", "X6", 2023, 2450, 12);
+alert(createNewCar.AddToString());
