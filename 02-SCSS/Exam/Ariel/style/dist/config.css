@@ -13,3 +13,12 @@ img {
 a {
   text-decoration: none;
 }
+
+button {
+  max-height: 35.5px;
+  cursor: pointer;
+}
+
+hr {
+  color: #878a8a;
+}

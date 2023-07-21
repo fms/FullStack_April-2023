@@ -1,0 +1,29 @@
+.body {
+  background-color: wheat;
+  margin-top: 280px;
+  text-align: center;
+}
+
+.div {
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 20px;
+  padding: 30px 50px;
+  text-align: center;
+  text-transform: uppercase;
+  color: teal;
+  text-shadow: -1px 1px 0 #1802da;
+}
+
+.button {
+  font-size: large;
+  margin-top: 10px;
+}
+
+.container {
+  margin: auto;
+  margin-top: 150px;
+  background-color: beige;
+  height: 250px;
+  width: 300px;
+  border: 2px black solid;
+}

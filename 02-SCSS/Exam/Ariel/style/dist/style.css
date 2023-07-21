@@ -14,6 +14,15 @@ a {
   text-decoration: none;
 }
 
+button {
+  max-height: 35.5px;
+  cursor: pointer;
+}
+
+hr {
+  color: #878a8a;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -30,108 +39,486 @@ a {
   text-decoration: none;
 }
 
+button {
+  max-height: 35.5px;
+  cursor: pointer;
+}
+
+hr {
+  color: #878a8a;
+}
+
 nav .navBar {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+nav .navBar .item {
+  border: none;
+  border-radius: none;
+  padding: 5px;
+  align-items: center;
+}
+nav .navBar .leftSideNanBar {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin: 0 0 0 75px;
+}
+nav .navBar .leftSideNanBar .logoNavBar {
+  padding-top: 2%;
+  margin: 0 40px 0 0;
+}
+nav .navBar .leftSideNanBar .logoNavBar img {
+  width: 55px;
+  height: 34px;
+}
+nav .navBar .leftSideNanBar .ulNavBar ul {
   display: flex;
   justify-content: center;
   flex-direction: row;
 }
-nav .navBar .item {
-  padding: 5px;
-}
-nav .navBar .logoNavBar {
-  margin: 0 50px 0 0;
-  display: flex;
-  justify-content: none;
-  flex-direction: none;
-  align-items: center;
-}
-nav .navBar .logoNavBar img {
-  width: 55px;
-  height: 34px;
-}
-nav .navBar .ulNavBar {
-  margin-right: 300px;
-}
-nav .navBar .ulNavBar ul {
-  display: flex;
-  justify-content: none;
-  flex-direction: none;
-}
-nav .navBar .ulNavBar ul .first {
+nav .navBar .leftSideNanBar .ulNavBar ul .first {
   color: black;
 }
-nav .navBar .ulNavBar ul li {
+nav .navBar .leftSideNanBar .ulNavBar ul li {
   padding: 10px 0 0 0;
   margin: 0 60px 0 0;
   list-style-type: none;
   font-weight: bold;
 }
-nav .navBar .ulNavBar ul li a {
+nav .navBar .leftSideNanBar .ulNavBar ul li a {
   text-decoration: none;
   color: #827e7e;
 }
-nav .navBar .ulNavBar ul li .AD {
-  width: 18px;
-  height: 10px;
+nav .navBar .leftSideNanBar .ulNavBar ul li i {
+  font-size: 10px;
 }
-nav .navBar .ulNavBar ul li:hover {
+nav .navBar .leftSideNanBar .ulNavBar ul li:hover {
   border-bottom: 2px solid black;
 }
-nav .navBar .searchNavBar img {
-  width: 25px;
-  height: 25px;
-  position: relative;
-  top: 15%;
-  left: 17%;
+nav .navBar .rightSideNanBar {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  margin: 0 40px 0 0;
 }
-nav .navBar .searchNavBar input {
+nav .navBar .rightSideNanBar button {
   border: 1px solid #bdb9b9;
   border-radius: 20px;
-  padding: 10px;
+  padding: 4px 8px;
+  background-color: white;
+  cursor: pointer;
+}
+nav .navBar .rightSideNanBar .searchNavBar i {
+  position: relative;
+  left: 16%;
+}
+nav .navBar .rightSideNanBar .searchNavBar input {
+  border: 1px solid #bdb9b9;
+  border-radius: 20px;
+  padding: 4px;
+  outline: none;
   padding-left: 40px;
+  height: 35.5px;
 }
-nav .navBar .usaNavBar a .mainSpanUsaNavBar {
+nav .navBar .rightSideNanBar .usaNavBar {
+  height: 35.5px;
+}
+nav .navBar .rightSideNanBar .usaNavBar button {
   border: 1px solid #bdb9b9;
   border-radius: 20px;
-  padding: 8px;
+  padding: 4px;
+  background-color: white;
+  cursor: pointer;
 }
-nav .navBar .usaNavBar a .mainSpanUsaNavBar .iconUsa {
-  width: 25px;
-  height: 25px;
+nav .navBar .rightSideNanBar .usaNavBar button .mainSpanUsaNavBar .iconUsa {
+  width: 30px;
+  height: 30px;
   position: relative;
-  top: 6px;
+  bottom: 2px;
 }
-nav .navBar .usaNavBar a .mainSpanUsaNavBar .AD2 {
+nav .navBar .rightSideNanBar .usaNavBar button .mainSpanUsaNavBar span {
+  position: relative;
+  bottom: 11px;
+}
+nav .navBar .rightSideNanBar .usaNavBar button .mainSpanUsaNavBar .AD2 {
   width: 18px;
   height: 10px;
+  position: relative;
+  bottom: 11px;
+  right: 2px;
 }
-nav .navBar .heartIconNavBar .spanHeartIconNavBar {
-  border: 1px solid #bdb9b9;
-  border-radius: 20px;
-  padding: 8px;
+nav .navBar .rightSideNanBar .heartIconNavBar {
+  height: 34.5px;
 }
-nav .navBar .heartIconNavBar .spanHeartIconNavBar img {
+nav .navBar .rightSideNanBar .heartIconNavBar .spanHeartIconNavBar img {
   width: 25px;
   height: 25px;
-  position: relative;
-  top: 7px;
 }
-nav .navBar .profileNavBar .spanProfileNavBar {
-  border: 1px solid #bdb9b9;
-  border-radius: 20px;
-  padding: 8px;
-  position: relative;
-  top: 1.5px;
-}
-nav .navBar .profileNavBar .spanProfileNavBar img {
-  position: relative;
-  top: 3px;
-}
-nav .navBar .profileNavBar .spanProfileNavBar .hamburgerIconProfileNavBar {
+nav .navBar .rightSideNanBar .profileNavBar .spanProfileNavBar .hamburgerIconProfileNavBar {
   width: 18px;
   height: 20px;
 }
-nav .navBar .profileNavBar .spanProfileNavBar .profileIconProfileNavBar {
+nav .navBar .rightSideNanBar .profileNavBar .spanProfileNavBar .profileIconProfileNavBar {
   width: 23px;
   height: 24px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  direction: ltr;
+}
+
+img {
+  width: 15px;
+  height: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  max-height: 35.5px;
+  cursor: pointer;
+}
+
+hr {
+  color: #878a8a;
+}
+
+header .header {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  height: 70px;
+}
+header .header .leftHeader {
+  display: flex;
+  justify-content: none;
+  flex-direction: row;
+  align-items: center;
+}
+header .header .leftHeader .arrowLeftImg i {
+  width: 10px;
+  height: 10px;
+  padding: 0 25px 5px 45px;
+}
+header .header .leftHeader .chooseLeftHeader h3 {
+  letter-spacing: 1px;
+}
+header .header .centerHeader {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin: 0 15px 0 15px;
+  align-items: center;
+}
+header .header .centerHeader button {
+  border: none;
+  border-radius: 20px;
+  padding: 4px;
+  margin: 0 15px 0 15px;
+  padding: 0 10px;
+  background-color: #f9fbfc;
+  min-height: 40px;
+}
+header .header .centerHeader i {
+  padding: 0 5px;
+}
+header .header .centerHeader span {
+  color: #878a8a;
+}
+header .header .rightHeader {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+}
+header .header .rightHeader .priceNightRightHeader {
+  text-align: center;
+  padding-right: 20px;
+}
+header .header .rightHeader .priceNightRightHeader span {
+  color: #34987d;
+  font-weight: bold;
+}
+header .header .rightHeader .bookingRightHeader button {
+  border: none;
+  border-radius: 35px;
+  padding: 4px;
+  background-color: #34987d;
+  color: white;
+  max-height: 50px;
+  padding: 13px 45px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  direction: ltr;
+}
+
+img {
+  width: 15px;
+  height: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  max-height: 35.5px;
+  cursor: pointer;
+}
+
+hr {
+  color: #878a8a;
+}
+
+header .mainHeader {
+  margin: 40px 105px;
+}
+header .mainHeader .smallCapsMainHeader {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin: 0 0 20px;
+}
+header .mainHeader .smallCapsMainHeader span:nth-child(1) {
+  color: #787878;
+}
+header .mainHeader .smallCapsMainHeader span:nth-child(2) {
+  color: #d4d4d4;
+  padding-left: 5px;
+}
+header .mainHeader .gridTitleMain {
+  display: grid;
+  height: 10vh;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: "titleMainHeader rightTitleMainHeader" "underTitleMainHeader rightTitleMainHeader";
+}
+header .mainHeader .gridTitleMain .titleMainHeader {
+  grid-area: titleMainHeader;
+}
+header .mainHeader .gridTitleMain .titleMainHeader h1 {
+  font-size: 45px;
+}
+header .mainHeader .gridTitleMain .rightTitleMainHeader {
+  grid-area: rightTitleMainHeader;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+}
+header .mainHeader .gridTitleMain .rightTitleMainHeader .shareRightTitleMainHeader,
+header .mainHeader .gridTitleMain .rightTitleMainHeader .saveTitleMainHeader {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  border: none;
+  border-radius: 50px;
+  padding: 9px 17px;
+  background-color: #f1f3f4;
+  margin-left: 17px;
+}
+header .mainHeader .gridTitleMain .rightTitleMainHeader .shareRightTitleMainHeader button,
+header .mainHeader .gridTitleMain .rightTitleMainHeader .saveTitleMainHeader button {
+  border: none;
+}
+header .mainHeader .gridTitleMain .rightTitleMainHeader .shareRightTitleMainHeader i,
+header .mainHeader .gridTitleMain .rightTitleMainHeader .saveTitleMainHeader i {
+  font-size: 20px;
+}
+header .mainHeader .gridTitleMain .rightTitleMainHeader .shareRightTitleMainHeader span,
+header .mainHeader .gridTitleMain .rightTitleMainHeader .saveTitleMainHeader span {
+  font-size: 15px;
+  padding-left: 5px;
+}
+header .mainHeader .gridTitleMain .underTitleMainHeader {
+  grid-area: underTitleMainHeader;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin: 15px 0;
+}
+header .mainHeader .gridTitleMain .underTitleMainHeader i {
+  color: #999b9b;
+}
+header .mainHeader .gridTitleMain .underTitleMainHeader span {
+  color: #999b9b;
+}
+header .mainHeader .gridTitleMain .underTitleMainHeader .reviewMainHeader {
+  padding: 0 15px 0 0;
+}
+header .mainHeader .gridTitleMain .underTitleMainHeader .whereMainHeader {
+  padding: 0 15px 0 15px;
+}
+header .mainHeader .gridTitleMain .underTitleMainHeader .profileMainHeader {
+  padding: 0 0 0 15px;
+}
+header .imgMainHeader {
+  margin: 60px 105px;
+  display: grid;
+  height: 96vh;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0.8rem;
+  grid-template-areas: "img100 img100 img200 img200" "img100 img100 img300 img400";
+}
+header .imgMainHeader .img100 {
+  grid-area: img100;
+}
+header .imgMainHeader .img200 {
+  grid-area: img200;
+}
+header .imgMainHeader .img300 {
+  grid-area: img300;
+}
+header .imgMainHeader .img400 {
+  grid-area: img400;
+}
+header .imgMainHeader img {
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  direction: ltr;
+}
+
+img {
+  width: 15px;
+  height: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  max-height: 35.5px;
+  cursor: pointer;
+}
+
+hr {
+  color: #878a8a;
+}
+
+main .main {
+  margin: 40px 105px;
+}
+main .main .gridDvider {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) 1fr;
+  grid-template-rows: 1fr 2fr;
+  grid-template-areas: "miniNavFlexerMain miniNavFlexerMain reviewParagraph" "ArticleMain ArticleMain reviewParagraph";
+}
+main .main .gridDvider .miniNavFlexerMain {
+  grid-area: miniNavFlexerMain;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+main .main .gridDvider .miniNavFlexerMain button {
+  border: 1px solid #ededed;
+  border-radius: 25px;
+  padding: 0;
+  background-color: #ffffff;
+  color: #949696;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0 13px;
+  margin-right: 17px;
+  max-height: 2.8rem;
+}
+main .main .gridDvider .miniNavFlexerMain button:focus {
+  background-color: black;
+  color: #bababa;
+}
+main .main .gridDvider .ArticleMain {
+  grid-area: ArticleMain;
+}
+main .main .gridDvider .ArticleMain .titleArticleMain {
+  letter-spacing: 0.03rem;
+  margin: 10px 0 15px 0;
+}
+main .main .gridDvider .ArticleMain .contentArticleMain {
+  color: #8e8e8e;
+  line-height: 25px;
+}
+main .main .gridDvider .ArticleMain .contentArticleMain span {
+  color: #4e7dbc;
+  font-weight: bold;
+}
+main .main .gridDvider .reviewParagraph {
+  grid-area: reviewParagraph;
+  border: 2px solid #ededed;
+  border-radius: 10px;
+  padding: 0;
+  padding: 0 20px;
+}
+main .main .gridDvider .reviewParagraph span {
+  color: #949494;
+}
+main .main .gridDvider .reviewParagraph .titleReviewParagraph {
+  margin: 20px;
+  margin-left: 0;
+}
+main .main .gridDvider .reviewParagraph .ratingReviewParagraph {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+main .main .gridDvider .reviewParagraph .ratingReviewParagraph .numberOfRating {
+  padding-right: 20px;
+}
+main .main .gridDvider .reviewParagraph .ratingReviewParagraph .starsOfRating span {
+  color: #fece00;
+}
+main .main .gridDvider .reviewParagraph .ratingReviewParagraph .starsOfRating p {
+  padding-top: 0.2rem;
+}
+main .main .gridDvider .reviewParagraph .barsOfRating .comfortable {
+  margin-top: 25px;
+}
+main .main .gridDvider .reviewParagraph .barsOfRating .comfortable .miniTitle {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+main .main .gridDvider .reviewParagraph .barsOfRating .cleanliness {
+  margin: 20px 0;
+}
+main .main .gridDvider .reviewParagraph .barsOfRating .cleanliness .miniTitle {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+main .main .gridDvider .reviewParagraph .barsOfRating .skill-bar {
+  height: 7px;
+  margin-top: 8px;
+  background-color: #c6c8c9;
+  border-radius: 15px;
+}
+main .main .gridDvider .reviewParagraph .barsOfRating .skill-bar .skill-per {
+  height: 7px;
+  background-color: #34987d;
+  border-radius: 15px;
+}
+
+.lineSepearter {
+  width: 100%;
+  height: 1.5px;
+  background-color: #ebebeb;
 }

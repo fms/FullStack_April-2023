@@ -1,6 +1,12 @@
-let final_Result = document.getElementById("result1") as HTMLInputElement;
-const finalResultValue = final_Result.innerHTML;
+let user_input = document.getElementById("user_Input") as HTMLInputElement;
+const user_InputValue = user_input.innerHTML;
 
+function test(){
+
+
+
+
+}
 
 function question1() {
     var index = 20;
