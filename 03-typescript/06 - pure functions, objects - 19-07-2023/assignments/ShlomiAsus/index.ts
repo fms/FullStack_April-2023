@@ -19,13 +19,12 @@ interface newCar {
 
 function createCar(modelNew: string, yearNew: number, milageNew: number, fuelConsumptionNew: number) {
     let car: newCar = {
-
         maker: carMaker.kia,
         model: modelNew,
         year: yearNew,
         milage: milageNew,
         fuelConsumption: fuelConsumptionNew,
-        totalFuelConsumption: function () { let a = this.milage / this.fuelConsumption },
+        totalFuelConsumption () { return this.milage / this.fuelConsumption; },
         calc: milageNew / fuelConsumptionNew
     }
     printCar(car);
@@ -49,8 +48,7 @@ function printCar(car: newCar) {
     console.log(`year:  ${car.year}`);
     console.log(`milagr:  ${car.milage}`);
     console.log(`fuel Consumption:  ${car.fuelConsumption}`);
-    //   console.log(`total fuel consumption----> ` +`  ${car.totalFuelConsumption}`);
-    console.log(`fuel Consumption2222:  ${car.calc}`);
+    console.log(`fuel Consumption:  ${car.totalFuelConsumption()}`);
 
 }
 
@@ -63,6 +61,7 @@ printCar(car1);
 seperator();
 createCar("cx5", 1998, 500000, 12);
 seperator();
+
 
 
 ////how to put a function automatic in object?

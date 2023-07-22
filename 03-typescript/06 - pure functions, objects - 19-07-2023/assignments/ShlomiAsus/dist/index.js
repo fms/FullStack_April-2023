@@ -13,7 +13,7 @@ function createCar(modelNew, yearNew, milageNew, fuelConsumptionNew) {
         year: yearNew,
         milage: milageNew,
         fuelConsumption: fuelConsumptionNew,
-        totalFuelConsumption: function () { let a = this.milage / this.fuelConsumption; },
+        totalFuelConsumption() { return this.milage / this.fuelConsumption; },
         calc: milageNew / fuelConsumptionNew
     };
     printCar(car);
@@ -33,8 +33,7 @@ function printCar(car) {
     console.log(`year:  ${car.year}`);
     console.log(`milagr:  ${car.milage}`);
     console.log(`fuel Consumption:  ${car.fuelConsumption}`);
-    //   console.log(`total fuel consumption----> ` +`  ${car.totalFuelConsumption}`);
-    console.log(`fuel Consumption2222:  ${car.calc}`);
+    console.log(`fuel Consumption:  ${car.totalFuelConsumption()}`);
 }
 function seperator() {
     console.log("____________________________________________________________________________");
