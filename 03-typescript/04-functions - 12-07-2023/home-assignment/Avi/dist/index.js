@@ -19,7 +19,7 @@ LargeNumber(50, 2);
 // Convert a Fahrenheit temperature to a Celsius one.
 function ConvertFahrenheit(fahrenheit) {
     var celsius = (fahrenheit - 32) * 5 / 9;
-    console.log("You entered " + fahrenheit + " degrees which is " + celsius + " degrees Celsius");
+    console.log(fahrenheit + " degrees is " + celsius + " degrees Celsius");
 }
 ConvertFahrenheit(86);
 // accepts three arguments: two numbers and an operation

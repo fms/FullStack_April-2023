@@ -31,7 +31,7 @@ LargeNumber(50,2);
 
 function ConvertFahrenheit(fahrenheit:number) {
   let celsius = (fahrenheit - 32) * 5 / 9;
-  console.log(`You entered ${fahrenheit} degrees which is ${celsius} degrees Celsius`);
+  console.log(`${fahrenheit} degrees is ${celsius} degrees Celsius`);
 }
 ConvertFahrenheit(86);
 
