@@ -53,6 +53,8 @@ function operation(a:number, b:number, op:number) {
     case 4:
       console.log(a / b);
       break;
+      default:
+        console.log(`Error`);
   }
 }
 

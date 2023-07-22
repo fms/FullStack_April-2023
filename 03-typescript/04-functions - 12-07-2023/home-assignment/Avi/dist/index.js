@@ -37,6 +37,8 @@ function operation(a, b, op) {
         case 4:
             console.log(a / b);
             break;
+        default:
+            console.log("Error");
     }
 }
 operation(5, 5, 1);
