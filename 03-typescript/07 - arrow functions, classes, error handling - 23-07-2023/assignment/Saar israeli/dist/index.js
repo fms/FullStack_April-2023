@@ -27,14 +27,3 @@ let bugatti = new RaceCar("Bugatti", "Divo", 2018, 75000, 50.0007232);
 bugatti.describe();
 bugatti.totalFuelConsumtionlog();
 bugatti.maxKmPerHour();
-// let bugatti :car = {
-//     maker: `Bugatti`,
-//     model:`Divo`,
-//     year: 2018,
-//     milage: 75000,
-//     fuelConsunmption: 50.0007232,
-//     totalFuelConsumtion () {
-//         return (this.milage / this.fuelConsunmption)
-//     }
-// }
-// console.log(carObjects('Mazda', 'Mazda 3', 2023 , 100000 , 60.008388));
