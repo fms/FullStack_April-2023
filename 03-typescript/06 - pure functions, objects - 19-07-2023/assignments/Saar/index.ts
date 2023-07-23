@@ -35,3 +35,5 @@ function carObjects(maker :string , model :string, year :number, milage :number 
 };
 
 console.log(carObjects('Mazda', 'Mazda 3', 2023 , 100000 , 60.008388));
+
+
