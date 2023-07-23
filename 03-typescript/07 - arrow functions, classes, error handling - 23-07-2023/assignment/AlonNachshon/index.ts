@@ -1,42 +1,43 @@
-
 class Car {
-  maker:string;
-  model:string;
-  year:number;
-  millage:number;
+  #maker:string; //# is private
+  #model:string;
+  #year:number;
+  #millage:number;
 
-  constructor(_maker?:string, _model?:string, _year?:number, _millage?:number){
-    this.maker = _maker ?? "NO MAKER WAS SET"; 
-    this.model = _model ?? "No MODEL WAS SET"; 
-    this.year = _year ?? 1900;
-    this.millage = _millage ?? 0;
+  constructor(maker?:string, model?:string, year?:number, millage?:number){
+
+    this.#maker = maker ?? "NO MAKER WAS SET"; 
+    this.#model = model ?? "No MODEL WAS SET"; 
+    this.#year = year ?? 1900;
+    this.#millage = millage ?? 0;
+
   }
 
   describe(){
-    return `${this.maker} ${this.model} Car was built is ${this.year} has ${this.millage} on it and has fuel consumption of ${this.getFuelConsumption()}.`
+    return `${this.#maker} ${this.#model} Car was built is ${this.#year} has ${this.#millage} on it and has fuel consumption of ${this.getFuelConsumption()}.`
   }
   
   getFuelConsumption (){
-    let consumption:number = (this.millage) / 12;
+    let consumption:number = (this.#millage) / 12;
     return `${consumption}`
   }
 
-  setMaker(_maker:string){
-    this.maker = _maker;
+  setMaker(maker:string){
+    this.#maker = maker;
   }
 
-  setModel(_model:string){
-    this.model = _model;
+  setModel(model:string){
+    this.#model = model;
   }
 
-  setYear(_year:number){
-    this.year;
+  setYear(year:number){
+    this.#year = year;
   }
   
-  setMillage(_millage:number){
-    this.millage = _millage;
+  setMillage(millage:number){
+    this.#millage = millage;
   }
-  
+
 }
 
 let mazda = new Car()
@@ -44,3 +45,11 @@ console.log(mazda.describe())
 
 let beatle = new Car("Beatle", "B1", 1998, 100)
 console.log(beatle.describe())
+
+
+
+// Access Modifiers
+// private: available only inside the same class -> are also # before variables
+// public: avilable to everyone inside the class and from outside -> are also _ before variables
+// protected: avilable inside a class and his childrens only
+
