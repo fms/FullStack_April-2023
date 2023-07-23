@@ -13,8 +13,20 @@ class Car {
         let consumption = (this.millage) / 12;
         return `${consumption}`;
     }
+    setMaker(_maker) {
+        this.maker = _maker;
+    }
+    setModel(_model) {
+        this.model = _model;
+    }
+    setYear(_year) {
+        this.year;
+    }
+    setMillage(_millage) {
+        this.millage = _millage;
+    }
 }
 let mazda = new Car();
 console.log(mazda.describe());
-let beatle = new Car("Beatle", "B1", 1998, 18000);
+let beatle = new Car("Beatle", "B1", 1998, 100);
 console.log(beatle.describe());
