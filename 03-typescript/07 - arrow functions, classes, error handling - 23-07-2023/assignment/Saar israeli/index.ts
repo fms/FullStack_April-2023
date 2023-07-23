@@ -11,7 +11,7 @@ class Car {
     milage: number;
     fuelConsunmption: number;
 
-    constructor(maker: string , model :string, year :number, milage:number, fuelConsunmption: number ,) {
+    constructor(maker: string , model :string, year :number, milage:number, fuelConsunmption: number,) {
         this.maker = maker;
         this.model = model;
         this.year = year;
@@ -29,26 +29,16 @@ mazda.describe();
 mazda.totalFuelConsumtionlog();
 
 class RaceCar extends Car {
-    maxKmPerHour = () => console.log("max speed is 440 km/h");
+    kmPH: number;
+    constructor(maker: string , model :string, year :number, milage:number, fuelConsunmption: number,kmPH: number) {
+        super(maker, model, year, milage, fuelConsunmption)
+        this.kmPH = kmPH;
+    }
+    maxKmPerHour = () => console.log(`max speed is ${this.kmPH} km/h`);
 }
 
-let bugatti = new RaceCar("Bugatti", "Divo" , 2018 , 75000 , 50.0007232 ,);
+let bugatti = new RaceCar("Bugatti", "Divo" , 2018 , 75000 , 50.0007232 , 440);
 bugatti.describe();
 bugatti.totalFuelConsumtionlog();
 bugatti.maxKmPerHour();
 
-
-
-
-// let bugatti :car = {
-//     maker: `Bugatti`,
-//     model:`Divo`,
-//     year: 2018,
-//     milage: 75000,
-//     fuelConsunmption: 50.0007232,
-//     totalFuelConsumtion () {
-//         return (this.milage / this.fuelConsunmption)
-//     }
-// }
-
-// console.log(carObjects('Mazda', 'Mazda 3', 2023 , 100000 , 60.008388));
