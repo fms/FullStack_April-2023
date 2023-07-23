@@ -8,7 +8,7 @@ interface car{
 };
 
 function printCarDet(car:car):string{
-  return car.maker + " " + car.model + ", year:" + car.year + ", millage: " + car.miilage + ", fuel consumtion: "+ car.fuelConsumption()+".";
+  return car.maker + " " + car.model + ", year:" + car.year + ", millage: " + car.miilage + ",  "+ car.fuelConsumption()+".";
 }
 
 function createCar(_maker:string,  _model:string,  _year:number,  _miilage:number){
@@ -19,14 +19,14 @@ function createCar(_maker:string,  _model:string,  _year:number,  _miilage:numbe
     year:_year,
     miilage:_miilage,
     fuelConsumption:function (){
-      return "Fuel consuption for "+ this.maker +" " + this.model + " : " + this.miilage / 50 + " l\\km."
+      return "fuel consuption for "+ this.maker +" " + this.model + " : " + this.miilage / 50 + " l\\km."
       }
     }
     
   return newCar
 }
 
-let workCar:car = createCar("Mazda", "6 LAZ", 2023, 17520, )
+let workCar:car = createCar("Mazda", "6 LAZ", 2023, 17520)
 
 console.log(printCarDet(workCar))
 console.log(workCar["fuelConsumption"]())
