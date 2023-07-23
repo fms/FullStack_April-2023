@@ -24,7 +24,6 @@ enum food {
 // Inheritence - the ability to add/alter functionailty of the class by creating a child class
 // Polymorphism - a child can used instead of the parent
 class Animal {
-    
     color: string;
     legs: number ;
     vegi: food = food.vegi;
@@ -114,3 +113,49 @@ showAnimal(spider1);
 //     console.log(`Out color is ${color} and we have ${legs} legs`);
 // }
 
+// Access modifiers
+// public: available to everyone, inside the class and from outside.
+// private: available only inside the same class.
+// protected: available inside the class and its children
+
+class Age{
+    readonly _age: number;
+    // protected readonly age: number = _age;
+    constructor(age: number){
+        this._age = age;
+    }
+
+    yearOfBirth() {
+        return new Date().getFullYear() - this._age;
+    }
+
+    firstName: string = 'aaa';
+}
+
+class Age1{
+    constructor(protected age: number,
+                private firstName: string)
+    {}
+
+    yearOfBirth() {
+        return new Date().getFullYear() - this.age;
+    }
+}
+
+class newAge extends Age{
+    anotherYear() {
+        return new Date().getFullYear() - this.age;
+    }
+}
+
+let age1 = new Age(50);
+// age1._age = 20;
+console.log(age1.yearOfBirth());
+
+let age2 = new Age1(10, "Sam");
+
+console.log(Object.keys(age2));
+
+for (let property of Object.keys(age2)) {
+    console.log(`Property: ${property}`);
+}
