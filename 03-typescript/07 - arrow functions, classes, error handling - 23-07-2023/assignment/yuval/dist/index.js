@@ -1,5 +1,5 @@
 var Car = /** @class */ (function () {
-    function Car(maker, model, year, milage, fuel) {
+    function Car(maker, year, milage, fuel, model) {
         this.maker = maker;
         this.model = model !== null && model !== void 0 ? model : "";
         this.year = year;
@@ -11,7 +11,7 @@ var Car = /** @class */ (function () {
     };
     return Car;
 }());
-var car1 = new Car("Corvette", "Z06", 2017, 10000, 100);
+var car1 = new Car("Corvette", 2017, 10000, 100, "Z06");
 car1.fuelConsumption();
-var car2 = new Car("Tesla", undefined, 2023, 19008, 57);
+var car2 = new Car("Tesla", 2023, 19008, 57);
 car2.fuelConsumption();
