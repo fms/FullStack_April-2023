@@ -18,12 +18,13 @@ let mazda = new Car("Mazda", "Mazda 3", 2023, 100000, 60.008388);
 mazda.describe();
 mazda.totalFuelConsumtionlog();
 class RaceCar extends Car {
-    constructor() {
-        super(...arguments);
-        this.maxKmPerHour = () => console.log("max speed is 440 km/h");
+    constructor(maker, model, year, milage, fuelConsunmption, kmPH) {
+        super(maker, model, year, milage, fuelConsunmption);
+        this.maxKmPerHour = () => console.log(`max speed is ${this.kmPH} km/h`);
+        this.kmPH = kmPH;
     }
 }
-let bugatti = new RaceCar("Bugatti", "Divo", 2018, 75000, 50.0007232);
+let bugatti = new RaceCar("Bugatti", "Divo", 2018, 75000, 50.0007232, 440);
 bugatti.describe();
 bugatti.totalFuelConsumtionlog();
 bugatti.maxKmPerHour();
