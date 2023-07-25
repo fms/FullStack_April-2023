@@ -28,3 +28,23 @@ let bugatti = new RaceCar("Bugatti", "Divo", 2018, 75000, 50.0007232, 440);
 bugatti.describe();
 bugatti.totalFuelConsumtionlog();
 bugatti.maxKmPerHour();
+class Animel {
+    constructor(legs, tail, color) {
+        this.describe = () => console.log(`This animal have ${this.legs} legs , ${this.tail} tail , and he is ${this.color}.`);
+        this.climb = () => console.log(`cant walk on the wall`);
+        this.legs = legs;
+        this.tail = tail;
+        this.color = color;
+    }
+}
+class Spider extends Animel {
+    constructor(tail, color) {
+        super(8, tail, color);
+        this.climb = () => console.log(`can walk on the wall`);
+    }
+}
+let firstSpider = new Spider(0, "black");
+firstSpider.describe();
+firstSpider.climb();
+let cow = new Animel(4, 1, "brown");
+cow.describe();

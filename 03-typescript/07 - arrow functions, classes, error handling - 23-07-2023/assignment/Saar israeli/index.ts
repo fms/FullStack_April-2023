@@ -42,3 +42,39 @@ bugatti.describe();
 bugatti.totalFuelConsumtionlog();
 bugatti.maxKmPerHour();
 
+
+class Animel {
+    legs :number;
+    tail :number;
+    color :string;
+
+    constructor(legs :number, tail :number, color :string,) {
+        this.legs = legs;
+        this.tail = tail;
+        this.color = color;
+    }
+
+    
+    describe = () => console.log(`This animal have ${this.legs} legs , ${this.tail} tail , and he is ${this.color}.`);
+
+    climb = () => console.log(`cant walk on the wall`)
+}
+
+class Spider extends Animel {
+    constructor(tail :number, color :string,) {
+    super(8,tail,color);
+
+}
+    climb = () => console.log(`can walk on the wall`)
+}
+    
+
+
+
+let firstSpider = new Spider(0,"black");
+firstSpider.describe();
+firstSpider.climb();
+
+let cow = new Animel(4,1,"brown");
+cow.describe();
+
