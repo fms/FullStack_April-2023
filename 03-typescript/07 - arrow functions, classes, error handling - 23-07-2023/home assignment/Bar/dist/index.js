@@ -280,22 +280,22 @@ let rook = new Rook(board, 10, 10);
 let bishop = new Bishop(board, 1, 1);
 let queen = new Queen(board, 5, 5);
 let king = new King(board, 1, 1);
-rook.goUp(10);
-rook.getLocation();
-bishop.goLeftUp(90);
-bishop.goRightUp(5);
-bishop.goRightDown(12);
-bishop.goLeftDown(4);
-bishop.getLocation();
-queen.goRight(4);
-queen.goRightUp(4);
-queen.getLocation();
-king.getLocation();
-king.goLeft();
-king.getLocation();
-king.goDown();
-king.getLocation();
-king.goLeftDown();
-king.getLocation();
-king.goRight();
-king.getLocation();
+// rook.goUp(10)
+// rook.getLocation()
+// bishop.goLeftUp(90)
+// bishop.goRightUp(5)
+// bishop.goRightDown(12)
+// bishop.goLeftDown(4)
+// bishop.getLocation()
+// queen.goRight(4)
+// queen.goRightUp(4)
+// queen.getLocation()
+// king.getLocation()
+// king.goLeft()
+// king.getLocation()
+// king.goDown()
+// king.getLocation()
+// king.goLeftDown()
+// king.getLocation()
+// king.goRight()
+// king.getLocation()
