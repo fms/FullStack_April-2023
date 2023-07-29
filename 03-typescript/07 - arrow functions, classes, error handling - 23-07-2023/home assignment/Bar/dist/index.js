@@ -1,30 +1,15 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var Board = /** @class */ (function () {
-    function Board(width, height) {
+"use strict";
+class Board {
+    constructor(width, height) {
         this.width = width !== null && width !== void 0 ? width : 1;
         this.height = height !== null && height !== void 0 ? height : 1;
     }
-    return Board;
-}());
-var Rook = /** @class */ (function (_super) {
-    __extends(Rook, _super);
-    function Rook(board, rookWidth, rookHeight) {
-        var _this = _super.call(this, board.width, board.height) || this;
-        _this.rookWidth = rookWidth;
-        _this.rookHeight = rookHeight;
-        return _this;
+}
+class Rook extends Board {
+    constructor(board, rookWidth, rookHeight) {
+        super(board.width, board.height);
+        this.rookWidth = rookWidth;
+        this.rookHeight = rookHeight;
     }
     // canMove(newWidth: number, newHeight: number) {
     //     return newWidth >= 1 && newWidth <= this.width && newHeight >= 1 && newHeight <= this.height
@@ -38,10 +23,10 @@ var Rook = /** @class */ (function (_super) {
     //         console.log("You can't move there");
     //     }
     // }
-    Rook.prototype.getLocation = function () {
-        console.log("(Rook location: " + this.rookWidth + "," + this.rookHeight + ")");
-    };
-    Rook.prototype.goRight = function (steps) {
+    getLocation() {
+        console.log(`(Rook's location: ${this.rookWidth},${this.rookHeight})`);
+    }
+    goRight(steps) {
         if ((this.rookWidth += steps) <= board.width) {
             return this.rookWidth;
         }
@@ -51,8 +36,8 @@ var Rook = /** @class */ (function (_super) {
         }
         // let newWidth = this.rookWidth + steps;
         // this.move(newWidth, this.rookHeight)
-    };
-    Rook.prototype.goLeft = function (steps) {
+    }
+    goLeft(steps) {
         if ((this.rookWidth -= steps) > 0) {
             return this.rookWidth;
         }
@@ -60,8 +45,8 @@ var Rook = /** @class */ (function (_super) {
             this.rookWidth += steps;
             console.log("You can't move there");
         }
-    };
-    Rook.prototype.goUp = function (steps) {
+    }
+    goUp(steps) {
         if ((this.rookHeight += steps) <= board.height) {
             return this.rookHeight;
         }
@@ -69,8 +54,8 @@ var Rook = /** @class */ (function (_super) {
             this.rookHeight -= steps;
             console.log("You can't move there");
         }
-    };
-    Rook.prototype.goDown = function (steps) {
+    }
+    goDown(steps) {
         if ((this.rookHeight -= steps) > 0) {
             return this.rookHeight;
         }
@@ -78,21 +63,18 @@ var Rook = /** @class */ (function (_super) {
             this.rookHeight += steps;
             console.log("You can't move there");
         }
-    };
-    return Rook;
-}(Board));
-var Bishop = /** @class */ (function (_super) {
-    __extends(Bishop, _super);
-    function Bishop(board, bishopWidth, bishopHeight) {
-        var _this = _super.call(this, board.height, board.width) || this;
-        _this.bishopHeight = bishopHeight;
-        _this.bishopWidth = bishopWidth;
-        return _this;
     }
-    Bishop.prototype.getLocation = function () {
-        console.log("(Bishop location: (" + this.bishopHeight + "," + this.bishopWidth + ")");
-    };
-    Bishop.prototype.goRightUp = function (steps) {
+}
+class Bishop extends Board {
+    constructor(board, bishopWidth, bishopHeight) {
+        super(board.height, board.width);
+        this.bishopHeight = bishopHeight;
+        this.bishopWidth = bishopWidth;
+    }
+    getLocation() {
+        console.log(`(Bishop's location: (${this.bishopHeight},${this.bishopWidth})`);
+    }
+    goRightUp(steps) {
         if (((this.bishopHeight += steps) <= board.height) && (this.bishopWidth += steps) <= board.width) {
             return this.bishopHeight && this.bishopWidth;
         }
@@ -100,8 +82,8 @@ var Bishop = /** @class */ (function (_super) {
             this.bishopHeight -= steps;
             console.log("You can't move there");
         }
-    };
-    Bishop.prototype.goLeftUp = function (steps) {
+    }
+    goLeftUp(steps) {
         if (((this.bishopHeight += steps) <= board.height) && (this.bishopWidth -= steps) > 0) {
             return this.bishopHeight && this.bishopWidth;
         }
@@ -109,8 +91,8 @@ var Bishop = /** @class */ (function (_super) {
             this.bishopHeight -= steps;
             console.log("You can't move there");
         }
-    };
-    Bishop.prototype.goRightDown = function (steps) {
+    }
+    goRightDown(steps) {
         if ((this.bishopHeight -= steps) > 0 && (this.bishopWidth += steps) <= board.width) {
             return this.bishopHeight && this.bishopWidth;
         }
@@ -118,8 +100,8 @@ var Bishop = /** @class */ (function (_super) {
             this.bishopHeight += steps;
             console.log("You can't move there");
         }
-    };
-    Bishop.prototype.goLeftDown = function (steps) {
+    }
+    goLeftDown(steps) {
         if (((this.bishopHeight -= steps) > 0) && (this.bishopWidth -= steps) > 0) {
             return this.bishopHeight && this.bishopWidth;
         }
@@ -127,21 +109,18 @@ var Bishop = /** @class */ (function (_super) {
             this.bishopHeight += steps;
             console.log("You can't move there");
         }
-    };
-    return Bishop;
-}(Board));
-var Queen = /** @class */ (function (_super) {
-    __extends(Queen, _super);
-    function Queen(board, bishopWidth, bishopHeight) {
-        var _this = _super.call(this, board.height, board.width) || this;
-        _this.queenHeight = bishopHeight;
-        _this.queenWidth = bishopWidth;
-        return _this;
     }
-    Queen.prototype.getLocation = function () {
-        console.log("(Queen location: (" + this.queenHeight + "," + this.queenWidth + ")");
-    };
-    Queen.prototype.goRightUp = function (steps) {
+}
+class Queen extends Board {
+    constructor(board, bishopWidth, bishopHeight) {
+        super(board.height, board.width);
+        this.queenHeight = bishopHeight;
+        this.queenWidth = bishopWidth;
+    }
+    getLocation() {
+        console.log(`(Queen's location: (${this.queenHeight},${this.queenWidth})`);
+    }
+    goRightUp(steps) {
         if (((this.queenHeight += steps) <= board.height) && (this.queenWidth += steps) <= board.width) {
             return this.queenHeight && this.queenWidth;
         }
@@ -149,8 +128,8 @@ var Queen = /** @class */ (function (_super) {
             this.queenHeight -= steps;
             console.log("You can't move there");
         }
-    };
-    Queen.prototype.goLeftUp = function (steps) {
+    }
+    goLeftUp(steps) {
         if (((this.queenHeight += steps) <= board.height) && (this.queenWidth -= steps) > 0) {
             return this.queenHeight && this.queenWidth;
         }
@@ -158,8 +137,8 @@ var Queen = /** @class */ (function (_super) {
             this.queenHeight -= steps;
             console.log("You can't move there");
         }
-    };
-    Queen.prototype.goRightDown = function (steps) {
+    }
+    goRightDown(steps) {
         if ((this.queenHeight -= steps) > 0 && (this.queenWidth += steps) <= board.width) {
             return this.queenHeight && this.queenWidth;
         }
@@ -167,8 +146,8 @@ var Queen = /** @class */ (function (_super) {
             this.queenHeight += steps;
             console.log("You can't move there");
         }
-    };
-    Queen.prototype.goLeftDown = function (steps) {
+    }
+    goLeftDown(steps) {
         if (((this.queenHeight -= steps) > 0) && (this.queenWidth -= steps) > 0) {
             return this.queenHeight && this.queenWidth;
         }
@@ -176,8 +155,8 @@ var Queen = /** @class */ (function (_super) {
             this.queenHeight += steps;
             console.log("You can't move there");
         }
-    };
-    Queen.prototype.goRight = function (steps) {
+    }
+    goRight(steps) {
         if ((this.queenWidth += steps) <= board.width) {
             return this.queenWidth;
         }
@@ -185,8 +164,8 @@ var Queen = /** @class */ (function (_super) {
             this.queenWidth -= steps;
             console.log("You can't move there");
         }
-    };
-    Queen.prototype.goLeft = function (steps) {
+    }
+    goLeft(steps) {
         if ((this.queenWidth -= steps) > 0) {
             return this.queenWidth;
         }
@@ -194,8 +173,8 @@ var Queen = /** @class */ (function (_super) {
             this.queenWidth += steps;
             console.log("You can't move there");
         }
-    };
-    Queen.prototype.goUp = function (steps) {
+    }
+    goUp(steps) {
         if ((this.queenHeight += steps) <= board.height) {
             return this.queenHeight;
         }
@@ -203,8 +182,8 @@ var Queen = /** @class */ (function (_super) {
             this.queenHeight -= steps;
             console.log("You can't move there");
         }
-    };
-    Queen.prototype.goDown = function (steps) {
+    }
+    goDown(steps) {
         if ((this.queenHeight -= steps) > 0) {
             return this.queenHeight;
         }
@@ -212,20 +191,111 @@ var Queen = /** @class */ (function (_super) {
             this.queenHeight += steps;
             console.log("You can't move there");
         }
-    };
-    return Queen;
-}(Board));
-var board = new Board(90, 90);
-var rook = new Rook(board, 10, 10);
-var bishop = new Bishop(board, 1, 1);
-var queen = new Queen(board, 5, 5);
-// rook.goUp(10)
-// rook.getLocation()
-// bishop.goLeftUp(90)
-// bishop.goRightUp(90)
-// bishop.goRightDown(90)
-// bishop.goLeftDown(90)
-// bishop.getLocation()
+    }
+}
+class King extends Board {
+    constructor(board, kingWidth, kingHeight) {
+        super(board.height, board.width);
+        this.kingHeight = kingHeight;
+        this.kingWidth = kingWidth;
+    }
+    getLocation() {
+        console.log(`(King's location: (${this.kingHeight},${this.kingWidth})`);
+    }
+    goRightUp() {
+        if (((this.kingHeight += 1) <= board.height) && (this.kingWidth += 1) <= board.width) {
+            return this.kingHeight && this.kingWidth;
+        }
+        else {
+            this.kingHeight -= 1;
+            console.log("You can't move there");
+        }
+    }
+    goLeftUp() {
+        if (((this.kingHeight += 1) <= board.height) && (this.kingWidth -= 1) > 0) {
+            return this.kingHeight && this.kingWidth;
+        }
+        else {
+            this.kingHeight -= 1;
+            console.log("You can't move there");
+        }
+    }
+    goRightDown() {
+        if ((this.kingHeight -= 1) > 0 && (this.kingWidth += 1) <= board.width) {
+            return this.kingHeight && this.kingWidth;
+        }
+        else {
+            this.kingHeight += 1;
+            console.log("You can't move there");
+        }
+    }
+    goLeftDown() {
+        if (((this.kingHeight -= 1) > 0) && (this.kingWidth -= 1) > 0) {
+            return this.kingHeight && this.kingWidth;
+        }
+        else {
+            this.kingHeight += 1;
+            console.log("You can't move there");
+        }
+    }
+    goRight() {
+        if ((this.kingWidth += 1) <= board.width) {
+            return this.kingWidth;
+        }
+        else {
+            this.kingWidth -= 1;
+            console.log("You can't move there");
+        }
+    }
+    goLeft() {
+        if ((this.kingWidth -= 1) > 0) {
+            return this.kingWidth;
+        }
+        else {
+            this.kingWidth += 1;
+            console.log("You can't move there");
+        }
+    }
+    goUp() {
+        if ((this.kingHeight += 1) <= board.height) {
+            return this.kingHeight;
+        }
+        else {
+            this.kingHeight -= 1;
+            console.log("You can't move there");
+        }
+    }
+    goDown() {
+        if ((this.kingHeight -= 1) > 0) {
+            return this.kingHeight;
+        }
+        else {
+            this.kingHeight += 1;
+            console.log("You can't move there");
+        }
+    }
+}
+let board = new Board(90, 90);
+let rook = new Rook(board, 10, 10);
+let bishop = new Bishop(board, 1, 1);
+let queen = new Queen(board, 5, 5);
+let king = new King(board, 1, 1);
+rook.goUp(10);
+rook.getLocation();
+bishop.goLeftUp(90);
+bishop.goRightUp(5);
+bishop.goRightDown(12);
+bishop.goLeftDown(4);
+bishop.getLocation();
 queen.goRight(4);
 queen.goRightUp(4);
 queen.getLocation();
+king.getLocation();
+king.goLeft();
+king.getLocation();
+king.goDown();
+king.getLocation();
+king.goLeftDown();
+king.getLocation();
+king.goRight();
+king.getLocation();
