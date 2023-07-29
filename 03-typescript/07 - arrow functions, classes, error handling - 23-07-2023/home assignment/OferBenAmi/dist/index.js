@@ -174,6 +174,7 @@ class King {
     goRight(steps) {
         if (steps != 1) {
             console.log(`illegal move, the king can move only one step, current locatoion (${this.coordinateX} , ${this.coordinateY})`);
+            return;
         }
         if (this.coordinateX + steps > this.board.width) {
             console.log(`the position of the ${this.constructor.name} did not change, out of bound, it's still (${this.coordinateX} , ${this.coordinateY})`);
@@ -184,6 +185,7 @@ class King {
     goLeft(steps) {
         if (steps != 1) {
             console.log(`illegal move, the king can move only one step, current locatoion (${this.coordinateX} , ${this.coordinateY})`);
+            return;
         }
         if (this.coordinateX - steps < 1) {
             console.log(`the position of the ${this.constructor.name} did not change, out of bound, it's still (${this.coordinateX} , ${this.coordinateY})`);
