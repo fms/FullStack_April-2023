@@ -4,495 +4,142 @@ class Board {
         this.width = width !== null && width !== void 0 ? width : 1;
         this.height = height !== null && height !== void 0 ? height : 1;
     }
+    inBoard(x, y) {
+        if (x < 1 || this.width < x) {
+            return false;
+        }
+        return 1 <= y && y <= this.height;
+    }
 }
 let board = new Board(10, 10);
 class ChessPiece {
-    constructor(board, width, height, name) {
+    constructor(board, width, height) {
+        this.supportsAxis = false;
+        this.supportsDiagonal = false;
         this.board = board;
         this.width = width;
         this.height = height;
-        this.name = name;
     }
     getLocation() {
         console.log(`This piece's coordinates are (${this.width},${this.height})`);
     }
+    isValidStepSize(x, y) {
+        return true;
+    }
+    move(stepsX, stepsY) {
+        if (this.isValidStepSize(stepsX, stepsY)) {
+            try {
+                if (this.board.inBoard(this.width + stepsX, this.height + stepsY)) {
+                    this.height += stepsY;
+                    this.width += stepsX;
+                    this.getLocation();
+                }
+                else {
+                    throw new Error("Out of bounds!");
+                }
+            }
+            catch (out) {
+                console.log(`Can't move to ${out.message}`);
+            }
+        }
+    }
     space() {
         console.log("");
     }
-    goRight(steps) {
-        switch (this.name) {
-            case "rook":
-            case "queen":
-                try {
-                    switch (this.width + steps <= this.board.width) {
-                        case true:
-                            this.width += steps;
-                            this.getLocation();
-                            break;
-                        default:
-                            throw new Error("Out of bounds!");
-                    }
-                }
-                catch (out) {
-                    if (out instanceof Error) {
-                        console.log(`Tried goRight on ${this.name}: ${out.message}`);
-                    }
-                    else {
-                        console.log(`caught error: ${out}`);
-                    }
-                }
-                break;
-            case "king":
-                if (steps == 1) {
-                    try {
-                        switch (this.width + 1 <= this.board.width) {
-                            case true:
-                                this.width++;
-                                this.getLocation();
-                                break;
-                            default:
-                                throw new Error("Out of bounds!");
-                        }
-                    }
-                    catch (out) {
-                        if (out instanceof Error) {
-                            console.log(`Tried goRight on ${this.name}: ${out.message}`);
-                        }
-                        else {
-                            console.log(`caught error: ${out}`);
-                        }
-                    }
-                }
-                else {
-                    console.log("The king can only move one space at a time!");
-                }
-                break;
-            default:
-                console.log(`The ${this.name} can't move like that!`);
-                break;
+    moveAxis(x, y) {
+        if (this.supportsAxis) {
+            this.move(x, y);
         }
+        else {
+            console.log(`Can't move like that!`);
+        }
+    }
+    moveDiagonal(x, y) {
+        if (this.supportsDiagonal) {
+            this.move(x, y);
+        }
+        else {
+            console.log(`Can't move like that!`);
+        }
+    }
+    goRight(steps) {
+        this.moveAxis(steps, 0);
     }
     goLeft(steps) {
-        switch (this.name) {
-            case "rook":
-            case "queen":
-                try {
-                    switch (this.width - steps >= 1) {
-                        case true:
-                            this.width -= steps;
-                            this.getLocation();
-                            break;
-                        default:
-                            throw new Error("Out of bounds!");
-                    }
-                }
-                catch (out) {
-                    if (out instanceof Error) {
-                        console.log(`Tried goLeft on ${this.name}: ${out.message}`);
-                    }
-                    else {
-                        console.log(`caught error: ${out}`);
-                    }
-                }
-                break;
-            case "king":
-                if (steps == 1) {
-                    try {
-                        switch (this.width - 1 >= 1) {
-                            case true:
-                                this.width--;
-                                this.getLocation();
-                                break;
-                            default:
-                                throw new Error("Out of bounds!");
-                        }
-                    }
-                    catch (out) {
-                        if (out instanceof Error) {
-                            console.log(`Tried goLeft on ${this.name}: ${out.message}`);
-                        }
-                        else {
-                            console.log(`caught error: ${out}`);
-                        }
-                    }
-                }
-                else {
-                    console.log("The king can only move one space at a time!");
-                }
-                break;
-            default:
-                console.log(`The ${this.name} can't move like that!`);
-                break;
-        }
+        this.moveAxis(-steps, 0);
     }
     goUp(steps) {
-        switch (this.name) {
-            case "rook":
-            case "queen":
-                try {
-                    switch (this.height + steps <= this.board.height) {
-                        case true:
-                            this.height += steps;
-                            this.getLocation();
-                            break;
-                        default:
-                            throw new Error("Out of bounds!");
-                    }
-                }
-                catch (out) {
-                    if (out instanceof Error) {
-                        console.log(`Tried goUp on ${this.name}: ${out.message}`);
-                    }
-                    else {
-                        console.log(`caught error: ${out}`);
-                    }
-                }
-                break;
-            case "king":
-                if (steps == 1) {
-                    try {
-                        switch (this.height + 1 <= this.board.height) {
-                            case true:
-                                this.height++;
-                                this.getLocation();
-                                break;
-                            default:
-                                throw new Error("Out of bounds!");
-                        }
-                    }
-                    catch (out) {
-                        if (out instanceof Error) {
-                            console.log(`Tried goUp on king: ${out.message}`);
-                        }
-                        else {
-                            console.log(`caught error: ${out}`);
-                        }
-                    }
-                }
-                else {
-                    console.log("The king can only move one space at a time!");
-                }
-                break;
-            default:
-                console.log(`The ${this.name} can't move like that!`);
-                break;
-        }
+        this.moveAxis(0, steps);
     }
     goDown(steps) {
-        switch (this.name) {
-            case "rook":
-            case "queen":
-                try {
-                    switch (this.height - steps >= 1) {
-                        case true:
-                            this.height -= steps;
-                            this.getLocation();
-                            break;
-                        default:
-                            throw new Error("Out of bounds!");
-                    }
-                }
-                catch (out) {
-                    if (out instanceof Error) {
-                        console.log(`Tried goDown on ${this.name}: ${out.message}`);
-                    }
-                    else {
-                        console.log(`caught error: ${out}`);
-                    }
-                }
-                break;
-            case "king":
-                if (steps == 1) {
-                    try {
-                        switch (this.height - 1 >= 1) {
-                            case true:
-                                this.height--;
-                                this.getLocation();
-                                break;
-                            default:
-                                throw new Error("Out of bounds!");
-                        }
-                    }
-                    catch (out) {
-                        if (out instanceof Error) {
-                            console.log(`Tried goDown on ${this.name}: ${out.message}`);
-                        }
-                        else {
-                            console.log(`caught error: ${out}`);
-                        }
-                    }
-                }
-                else {
-                    console.log("The king can only move one space at a time!");
-                }
-                break;
-            default:
-                console.log(`The ${this.name} can't move like that!`);
-                break;
-        }
+        this.moveAxis(0, -steps);
     }
     goRightUp(steps) {
-        switch (this.name) {
-            case "bishop":
-            case "queen":
-                try {
-                    switch (this.width + steps <= this.board.width && this.height + steps <= this.board.height) {
-                        case true:
-                            this.width += steps;
-                            this.height += steps;
-                            this.getLocation();
-                            break;
-                        default:
-                            throw new Error("Out of bounds!");
-                    }
-                }
-                catch (out) {
-                    if (out instanceof Error) {
-                        console.log(`Tried goRightUp on ${this.name}: ${out.message}`);
-                    }
-                    else {
-                        console.log(`caught error: ${out}`);
-                    }
-                }
-                break;
-            case "king":
-                if (steps == 1) {
-                    try {
-                        switch (this.width + 1 <= this.board.width && this.height + 1 <= this.board.height) {
-                            case true:
-                                this.width++;
-                                this.height++;
-                                this.getLocation();
-                                break;
-                            default:
-                                throw new Error("Out of bounds!");
-                        }
-                    }
-                    catch (out) {
-                        if (out instanceof Error) {
-                            console.log(`Tried goRightUp on ${this.name}: ${out.message}`);
-                        }
-                        else {
-                            console.log(`caught error: ${out}`);
-                        }
-                    }
-                }
-                else {
-                    console.log("The king can only move one space at a time!");
-                }
-                break;
-            default:
-                console.log(`The ${this.name} can't move like that!`);
-                break;
-        }
+        this.moveDiagonal(steps, steps);
     }
     goLeftUp(steps) {
-        switch (this.name) {
-            case "bishop":
-            case "queen":
-                try {
-                    switch (this.width - steps >= 1 && this.height + steps <= this.board.height) {
-                        case true:
-                            this.width -= steps;
-                            this.height += steps;
-                            this.getLocation();
-                            break;
-                        default:
-                            throw new Error("Out of bounds!");
-                    }
-                }
-                catch (out) {
-                    if (out instanceof Error) {
-                        console.log(`Tried goLeftUp on ${this.name}: ${out.message}`);
-                    }
-                    else {
-                        console.log(`caught error: ${out}`);
-                    }
-                }
-                break;
-            case "king":
-                if (steps == 1) {
-                    try {
-                        switch (this.width - 1 >= 1 && this.height + 1 <= this.board.height) {
-                            case true:
-                                this.width--;
-                                this.height++;
-                                this.getLocation();
-                                break;
-                            default:
-                                throw new Error("Out of bounds!");
-                        }
-                    }
-                    catch (out) {
-                        if (out instanceof Error) {
-                            console.log(`Tried goLeftUp on ${this.name}: ${out.message}`);
-                        }
-                        else {
-                            console.log(`caught error: ${out}`);
-                        }
-                    }
-                }
-                else {
-                    console.log("The king can only move one space at a time!");
-                }
-                break;
-            default:
-                console.log(`The ${this.name} can't move like that!`);
-                break;
-        }
+        this.moveDiagonal(-steps, steps);
     }
     goRightDown(steps) {
-        switch (this.name) {
-            case "bishop":
-            case "queen":
-                try {
-                    switch (this.width + steps <= this.board.width && this.height - steps >= 1) {
-                        case true:
-                            this.width += steps;
-                            this.height -= steps;
-                            this.getLocation();
-                            break;
-                        default:
-                            throw new Error("Out of bounds!");
-                    }
-                }
-                catch (out) {
-                    if (out instanceof Error) {
-                        console.log(`Tried goRightDown on ${this.name}: ${out.message}`);
-                    }
-                    else {
-                        console.log(`caught error: ${out}`);
-                    }
-                }
-                break;
-            case "king":
-                if (steps == 1) {
-                    try {
-                        switch (this.width + 1 <= this.board.width && this.height - 1 >= 1) {
-                            case true:
-                                this.width++;
-                                this.height--;
-                                this.getLocation();
-                                break;
-                            default:
-                                throw new Error("Out of bounds!");
-                        }
-                    }
-                    catch (out) {
-                        if (out instanceof Error) {
-                            console.log(`Tried goRightDown on ${this.name}: ${out.message}`);
-                        }
-                        else {
-                            console.log(`caught error: ${out}`);
-                        }
-                    }
-                }
-                else {
-                    console.log("The king can only move one space at a time!");
-                }
-                break;
-            default:
-                console.log(`The ${this.name} can't move like that!`);
-                break;
-        }
+        this.moveDiagonal(steps, -steps);
     }
     goLeftDown(steps) {
-        switch (this.name) {
-            case "bishop":
-            case "queen":
-                try {
-                    switch (this.width - steps >= 1 && this.height - steps >= 1) {
-                        case true:
-                            this.width -= steps;
-                            this.height -= steps;
-                            this.getLocation();
-                            break;
-                        default:
-                            throw new Error("Out of bounds!");
-                    }
-                }
-                catch (out) {
-                    if (out instanceof Error) {
-                        console.log(`Tried goLeftDown on ${this.name}: ${out.message}`);
-                    }
-                    else {
-                        console.log(`caught error: ${out}`);
-                    }
-                }
-                break;
-            case "king":
-                if (steps == 1) {
-                    try {
-                        switch (this.width - 1 >= 1 && this.height - 1 >= 1) {
-                            case true:
-                                this.width--;
-                                this.height--;
-                                ;
-                                this.getLocation();
-                                break;
-                            default:
-                                throw new Error("Out of bounds!");
-                        }
-                    }
-                    catch (out) {
-                        if (out instanceof Error) {
-                            console.log(`Tried goLeftDown on king: ${out.message}`);
-                        }
-                        else {
-                            console.log(`caught error: ${out}`);
-                        }
-                    }
-                }
-                else {
-                    console.log("The king can only move one space at a time!");
-                }
-                break;
-            default:
-                console.log(`The ${this.name} can't move like that!`);
-                break;
-        }
+        this.moveDiagonal(-steps, -steps);
     }
 }
 class Rook extends ChessPiece {
-    constructor(board, width, height, name) {
-        super(board, width, height, name);
+    constructor(board, width, height) {
+        super(board, width, height);
+        this.supportsAxis = true;
     }
 }
 class Bishop extends ChessPiece {
-    constructor(board, width, height, name) {
-        super(board, width, height, name);
+    constructor(board, width, height) {
+        super(board, width, height);
+        this.supportsDiagonal = true;
     }
 }
 class Queen extends ChessPiece {
-    constructor(board, width, height, name) {
-        super(board, width, height, name);
+    constructor(board, width, height) {
+        super(board, width, height);
+        this.supportsAxis = true;
+        this.supportsDiagonal = true;
     }
 }
 class King extends ChessPiece {
-    constructor(board, width, height, name) {
-        super(board, width, height, name);
+    constructor(board, width, height) {
+        super(board, width, height);
+        this.supportsAxis = true;
+        this.supportsDiagonal = true;
+    }
+    isValidStepSize(x, y) {
+        if (Math.abs(x) > 1 || Math.abs(y) > 1) {
+            console.log("The king can only move one space at a time!");
+            return false;
+        }
+        return true;
     }
 }
-let rook = new Rook(board, 3, 3, "rook");
+let rook = new Rook(board, 3, 3);
 rook.getLocation();
 rook.goRight(1);
 rook.goLeftDown(2);
 rook.goUp(7);
 rook.goUp(2);
 rook.space();
-let bishop = new Bishop(board, 9, 5, "bishop");
+let bishop = new Bishop(board, 9, 5);
 bishop.getLocation();
 bishop.goLeftDown(3);
 bishop.goDown(5);
 bishop.goLeftUp(7);
 bishop.space();
-let queen = new Queen(board, 3, 7, "queen");
+let queen = new Queen(board, 3, 7);
 queen.getLocation();
 queen.goLeft(2);
 queen.goRightDown(5);
 queen.goUp(10);
 queen.space();
-let king = new King(board, 5, 5, "king");
+let king = new King(board, 5, 5);
 king.getLocation();
 king.goDown(1);
 king.goLeftUp(1);
