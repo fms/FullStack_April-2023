@@ -20,104 +20,114 @@ goLeftUp()
 goRightDown()
 goLeftDown()*/
 
-class Board {
+class Board 
+{
     constructor(public width: number = 8, public height: number = 8)
     {
-        this.width = width;
-        this.height = height;
+      this.width = width;
+      this.height = height;
     } 
-    }
+  }
     const fullBoard= new Board(8,8);
     
-class Rook {
-    constructor(public square: Board, public cordinateX: number, public cordinateY: number)
+class Rook 
+{
+  constructor(public square: Board, public cordinateX: number, public cordinateY: number)
+  {
+    this.square = square;
+    this.cordinateX = cordinateX;
+    this.cordinateY = cordinateY;  
+  }
+  getLocation()
+  {
+      console.log(`the currnet location is (${this.cordinateX} , ${this.cordinateY})`)
+  }
+  goRight(movement:number)
+  {
+    if(this.cordinateX + movement > this.square.width)
     {
-        this.square = square;
-        this.cordinateX = cordinateX;
-        this.cordinateY = cordinateY;  
+      console.log(`the movment has not changed, its the same`);
+      return this.cordinateX;
     }
-    getLocation()
-    {
-        console.log(`the currnet location of the ${this.constructor.name} is (${this.cordinateX} , ${this.cordinateY})`)
-    }
-    goRight(movement:number)
-    {
-        if(this.cordinateX + movement > this.square.width)
-        {
-          console.log(`the movment has not changed, its the same`);
-          return this.cordinateX;
-        }
         console.log(`the new position is (${this.cordinateX += movement} , ${this.cordinateY})`);
-    }
+  }
 
-    goLeft(movement:number)
+  goLeft(movement:number)
+  {
+    if(this.cordinateX - movement < 1)
     {
-        if(this.cordinateX - movement < 1){
-          console.log(`the position of the ${this.constructor.name} did not change, out of bound, it's still (${this.cordinateX} , ${this.cordinateY})`);
-          return this.cordinateX;
-        }
+      console.log(`the position did not change,  its the same as it was (${this.cordinateX} , ${this.cordinateY})`);
+      return this.cordinateX;
+    }
         console.log(`the new position is (${this.cordinateX -= movement} , ${this.cordinateY})`);
-    }
-    goUp(movement:number)
+  }
+  goUp(movement:number)
+  {
+    if(this.cordinateY + movement > this.square.height)
     {
-        if(this.cordinateY + movement > this.square.height)
-        {
-          console.log(`the position did not change, out of bound, it's still (${this.cordinateX} , ${this.cordinateY})`);
-          return this.cordinateY;
-        }
-        console.log(`the new position is (${this.cordinateX} , ${this.cordinateY += movement})`);
+      console.log(`the position did not change,  its the same as it was (${this.cordinateX} , ${this.cordinateY})`);
+      return this.cordinateY;
     }
-    goDown(movement:number){
-        if(this.cordinateY - movement < 1)
-        {
-          console.log(`the position of the ${this.constructor.name} did not change, out of bound, it's still (${this.cordinateX} , ${this.cordinateY})`);
-          return this.cordinateY;
-        }
-        console.log(`the new position of the ${this.constructor.name} is (${this.cordinateX} , ${this.cordinateY -= movement})`);
+      console.log(`the new position is (${this.cordinateX} , ${this.cordinateY += movement})`);
+  }
+  goDown(movement:number)
+  {
+    if(this.cordinateY - movement < 1)
+    {
+      console.log(`the position did not change,  its the same as it was (${this.cordinateX} , ${this.cordinateY})`);
+      return this.cordinateY;
+    }
+    console.log(`the position is now (${this.cordinateX} , ${this.cordinateY -= movement})`);
+  }
+}
+class Bishop
+{
+  constructor(public square: Board, public cordinateX: number, public cordinateY: number)
+  {
+    this.square = square;
+    this.cordinateX = (cordinateX > this.square.width || cordinateX < 1 )? 1 : cordinateX;
+    this.cordinateY = cordinateY;  
+    {
+      this.cordinateY = (cordinateY > this.square.height || cordinateY < 1)? 1 : cordinateY; 
+    }
+  }
+  goRightUp(movement:number)
+  {
+    if(this.cordinateX + movement > this.square.width || this.cordinateY +movement > this.square.height)
+    {
+      console.log(`the position did not change,  its the same as it was (${this.cordinateX} , ${this.cordinateY})`);
+      return this.cordinateX;
+    }
+    console.log(`the position is now (${this.cordinateX += movement} , ${this.cordinateY += movement})`);
+  }
+  goLeftUp(movement:number)
+  {
+      if(this.cordinateX -  movement < 1 || this.cordinateY + movement > this.square.height)
+      {
+        console.log(`the position did not change,  its the same as it was (${this.cordinateX} , ${this.cordinateY})`);
+        return this.cordinateX;
       }
-    }
-class Bishop{
-    constructor(public square: Board, public cordinateX: number, public cordinateY: number)
+      console.log(`the position is now (${this.cordinateX -= movement} , ${this.cordinateY += movement})`);
+  }
+  goRightDown(movement:number)
+  {
+    if(this.cordinateY - movement < 1 || this.cordinateX + movement > this.square.width)
     {
-        this.square = square;
-        this.cordinateX = (cordinateX > this.square.width || cordinateX < 1 )? 1 : cordinateX;
-        this.cordinateY = cordinateY;  
-        {
-            
-            this.cordinateY = (cordinateY > this.square.height || cordinateY < 1)? 1 : cordinateY; 
-        }
+      console.log(`the position did not change,  its the same as it was (${this.cordinateX} , ${this.cordinateY})`);
+      return this.cordinateY;
     }
-    goRightUp(movement:number)
+    console.log(`the position is now (${this.cordinateX += movement} , ${this.cordinateY -= movement})`);
+  }
+  goLeftDown(movement:number)
+  {
+    if(this.cordinateY - movement < 1 || this.cordinateX - movement < 1)
     {
-        if(this.cordinateX + movement > this.square.width || this.cordinateY +movement > this.square.height)
-        {
-            console.log(`the position did not change, it's still (${this.cordinateX} , ${this.cordinateY})`);
-            return this.cordinateX;
-        }
-            console.log(`the new position is (${this.cordinateX += movement} , ${this.cordinateY += movement})`);
+      console.log(`the position did not change,  its the same as it was (${this.cordinateX} , ${this.cordinateY})`);
+      return this.cordinateY;
     }
-          goLeftUp(movement:number){
-            if(this.cordinateX -  movement < 1 || this.cordinateY + movement > this.square.height){
-              console.log(`the position did not change, it's still (${this.cordinateX} , ${this.cordinateY})`);
-              return this.cordinateX;
-            }
-            console.log(`the new position is (${this.cordinateX -= movement} , ${this.cordinateY += movement})`);
-          }
-          goRightDown(movement:number){
-            if(this.cordinateY - movement < 1 || this.cordinateX + movement > this.square.width){
-              console.log(`the position did not change, it's still (${this.cordinateX} , ${this.cordinateY})`);
-              return this.cordinateY;
-            }
-            console.log(`the new position is (${this.cordinateX += movement} , ${this.cordinateY -= movement})`);
-          }
-          goLeftDown(movement:number){
-            if(this.cordinateY - movement < 1 || this.cordinateX - movement < 1){
-              console.log(`the position did not change, it's still (${this.cordinateX} , ${this.cordinateY})`);
-              return this.cordinateY;
-            }
-            console.log(`the new position is (${this.cordinateX -= movement} , ${this.cordinateY -= movement})`);
-          }
-        }
+    console.log(`the position is now (${this.cordinateX -= movement} , ${this.cordinateY -= movement})`);
+  }
+}
     
     
 

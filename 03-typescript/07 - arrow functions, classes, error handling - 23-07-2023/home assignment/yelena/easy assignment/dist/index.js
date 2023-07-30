@@ -39,7 +39,7 @@ class Rook {
         this.cordinateY = cordinateY;
     }
     getLocation() {
-        console.log(`the currnet location of the ${this.constructor.name} is (${this.cordinateX} , ${this.cordinateY})`);
+        console.log(`the currnet location is (${this.cordinateX} , ${this.cordinateY})`);
     }
     goRight(movement) {
         if (this.cordinateX + movement > this.square.width) {
@@ -50,24 +50,24 @@ class Rook {
     }
     goLeft(movement) {
         if (this.cordinateX - movement < 1) {
-            console.log(`the position of the ${this.constructor.name} did not change, out of bound, it's still (${this.cordinateX} , ${this.cordinateY})`);
+            console.log(`the position did not change,  its the same as it was (${this.cordinateX} , ${this.cordinateY})`);
             return this.cordinateX;
         }
         console.log(`the new position is (${this.cordinateX -= movement} , ${this.cordinateY})`);
     }
     goUp(movement) {
         if (this.cordinateY + movement > this.square.height) {
-            console.log(`the position did not change, out of bound, it's still (${this.cordinateX} , ${this.cordinateY})`);
+            console.log(`the position did not change,  its the same as it was (${this.cordinateX} , ${this.cordinateY})`);
             return this.cordinateY;
         }
         console.log(`the new position is (${this.cordinateX} , ${this.cordinateY += movement})`);
     }
     goDown(movement) {
         if (this.cordinateY - movement < 1) {
-            console.log(`the position of the ${this.constructor.name} did not change, out of bound, it's still (${this.cordinateX} , ${this.cordinateY})`);
+            console.log(`the position did not change,  its the same as it was (${this.cordinateX} , ${this.cordinateY})`);
             return this.cordinateY;
         }
-        console.log(`the new position of the ${this.constructor.name} is (${this.cordinateX} , ${this.cordinateY -= movement})`);
+        console.log(`the position is now (${this.cordinateX} , ${this.cordinateY -= movement})`);
     }
 }
 class Bishop {
@@ -84,30 +84,30 @@ class Bishop {
     }
     goRightUp(movement) {
         if (this.cordinateX + movement > this.square.width || this.cordinateY + movement > this.square.height) {
-            console.log(`the position did not change, it's still (${this.cordinateX} , ${this.cordinateY})`);
+            console.log(`the position did not change,  its the same as it was (${this.cordinateX} , ${this.cordinateY})`);
             return this.cordinateX;
         }
-        console.log(`the new position is (${this.cordinateX += movement} , ${this.cordinateY += movement})`);
+        console.log(`the position is now (${this.cordinateX += movement} , ${this.cordinateY += movement})`);
     }
     goLeftUp(movement) {
         if (this.cordinateX - movement < 1 || this.cordinateY + movement > this.square.height) {
-            console.log(`the position did not change, it's still (${this.cordinateX} , ${this.cordinateY})`);
+            console.log(`the position did not change,  its the same as it was (${this.cordinateX} , ${this.cordinateY})`);
             return this.cordinateX;
         }
-        console.log(`the new position is (${this.cordinateX -= movement} , ${this.cordinateY += movement})`);
+        console.log(`the position is now (${this.cordinateX -= movement} , ${this.cordinateY += movement})`);
     }
     goRightDown(movement) {
         if (this.cordinateY - movement < 1 || this.cordinateX + movement > this.square.width) {
-            console.log(`the position did not change, it's still (${this.cordinateX} , ${this.cordinateY})`);
+            console.log(`the position did not change,  its the same as it was (${this.cordinateX} , ${this.cordinateY})`);
             return this.cordinateY;
         }
-        console.log(`the new position is (${this.cordinateX += movement} , ${this.cordinateY -= movement})`);
+        console.log(`the position is now (${this.cordinateX += movement} , ${this.cordinateY -= movement})`);
     }
     goLeftDown(movement) {
         if (this.cordinateY - movement < 1 || this.cordinateX - movement < 1) {
-            console.log(`the position did not change, it's still (${this.cordinateX} , ${this.cordinateY})`);
+            console.log(`the position did not change,  its the same as it was (${this.cordinateX} , ${this.cordinateY})`);
             return this.cordinateY;
         }
-        console.log(`the new position is (${this.cordinateX -= movement} , ${this.cordinateY -= movement})`);
+        console.log(`the position is now (${this.cordinateX -= movement} , ${this.cordinateY -= movement})`);
     }
 }
