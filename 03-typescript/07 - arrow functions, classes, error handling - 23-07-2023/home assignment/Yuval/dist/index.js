@@ -6,7 +6,7 @@ class Board {
     }
 }
 let board = new Board(10, 10);
-class ChesePiece {
+class ChessPiece {
     constructor(board, width, height, name) {
         this.board = board;
         this.width = width;
@@ -453,22 +453,22 @@ class ChesePiece {
         }
     }
 }
-class Rook extends ChesePiece {
+class Rook extends ChessPiece {
     constructor(board, width, height, name) {
         super(board, width, height, name);
     }
 }
-class Bishop extends ChesePiece {
+class Bishop extends ChessPiece {
     constructor(board, width, height, name) {
         super(board, width, height, name);
     }
 }
-class Queen extends ChesePiece {
+class Queen extends ChessPiece {
     constructor(board, width, height, name) {
         super(board, width, height, name);
     }
 }
-class King extends ChesePiece {
+class King extends ChessPiece {
     constructor(board, width, height, name) {
         super(board, width, height, name);
     }

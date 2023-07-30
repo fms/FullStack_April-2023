@@ -2,7 +2,7 @@ class Board {
     width: number;
     height: number;
 
-    constructor(width: number, height: number) {
+    constructor(width?: number, height?: number) {
         this.width = width ?? 1;
         this.height = height ?? 1;
     }
@@ -10,7 +10,7 @@ class Board {
 
 let board = new Board(10, 10);
 
-abstract class ChesePiece {
+abstract class ChessPiece {
     board: Board;
     width: number;
     height: number;
@@ -472,26 +472,26 @@ abstract class ChesePiece {
     }
 }
 
-class Rook extends ChesePiece {
+class Rook extends ChessPiece {
     constructor(board: Board, width: number, height: number, name: string) {
         super(board, width, height, name);
     }
 }
 
 
-class Bishop extends ChesePiece {
+class Bishop extends ChessPiece {
     constructor(board: Board, width: number, height: number, name: string) {
         super(board, width, height, name);
     }
 }
 
-class Queen extends ChesePiece {
+class Queen extends ChessPiece {
     constructor(board: Board, width: number, height: number, name: string) {
         super(board, width, height, name);
     }
 }
 
-class King extends ChesePiece {
+class King extends ChessPiece {
     constructor(board: Board, width: number, height: number, name: string) {
         super(board, width, height, name);
     }
