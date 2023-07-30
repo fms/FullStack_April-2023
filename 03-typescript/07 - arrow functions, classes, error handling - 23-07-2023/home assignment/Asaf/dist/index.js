@@ -13,8 +13,8 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var Board = /** @class */ (function () {
     function Board(width, height) {
-        this.xValue = width;
-        this.yValue = height;
+        this.width = width;
+        this.height = height;
     }
     return Board;
 }());
