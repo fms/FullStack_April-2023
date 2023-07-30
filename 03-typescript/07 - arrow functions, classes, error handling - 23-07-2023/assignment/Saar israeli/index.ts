@@ -43,10 +43,20 @@ bugatti.totalFuelConsumtionlog();
 bugatti.maxKmPerHour();
 
 
-class Animel {
+enum food {
+    vegan,
+    vegetarian,
+    carnivorous,
+}
+
+
+// Abstract class //
+
+abstract class Animal {
     legs :number;
     tail :number;
     color :string;
+    food :food = food.vegan;
 
     constructor(legs :number, tail :number, color :string,) {
         this.legs = legs;
@@ -54,27 +64,73 @@ class Animel {
         this.color = color;
     }
 
-    
-    describe = () => console.log(`This animal have ${this.legs} legs , ${this.tail} tail , and he is ${this.color}.`);
+    eat() {
+        switch(this.food) {
+            case food.vegan :
+                console.log(`We are vegan!`);
+                break;
+            case food.vegetarian :
+                console.log(`We are vegetarian!`);
+                break;
+            case food.carnivorous :
+                console.log(`We are carnivorous!`);
+                break;
+        }
+    }
 
-    climb = () => console.log(`cant walk on the wall`)
+    describe = () => console.log(`This animal have ${this.legs} legs , ${this.tail} tail , and he is ${this.color}.`);
 }
 
-class Spider extends Animel {
+class Bugs extends Animal {
+    food :food = food.vegetarian;
     constructor(tail :number, color :string,) {
     super(8,tail,color);
 
 }
     climb = () => console.log(`can walk on the wall`)
+
+    describe = () => console.log(`This bug have ${this.legs} legs , ${this.tail} tail , and he is ${this.color}.`);
 }
     
 
 
 
-let firstSpider = new Spider(0,"black");
+let firstSpider = new Bugs(0,"black");
 firstSpider.describe();
 firstSpider.climb();
+firstSpider.eat();
 
-let cow = new Animel(4,1,"brown");
-cow.describe();
+class Cows extends Animal {
+    constructor(color :string,) {
+        super(4,1,color);
+    }
+    
+    sound() {
+        console.log('Mooooo')
+    }
+}
 
+let firstCow = new Cows(`brown`);
+firstCow.describe();
+firstCow.eat();
+firstCow.sound();
+
+class Lions extends Animal {
+    kmph :number;
+    food :food = food.carnivorous;
+    constructor(color :string, kmph :number){
+        super(4,1,color)
+        this.kmph = kmph;
+    }
+
+    speed() {
+        console.log(`Running ${this.kmph} km/h`);
+    }
+
+    describe = () => console.log(`He is the king of the jungle!`);
+}
+
+let firstLion = new Lions (`bright orange`,80);
+firstLion.speed();
+firstLion.describe();
+firstLion.eat();
