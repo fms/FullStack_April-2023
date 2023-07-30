@@ -1,10 +1,10 @@
 class Board{
-    xValue: number;
-    yValue: number;
+    width: number;
+    height: number;
 
     constructor (width: number, height: number) {
-        this.xValue = width;
-        this.yValue = height;
+        this.width = width;
+        this.height = height;
     }
 }
 
