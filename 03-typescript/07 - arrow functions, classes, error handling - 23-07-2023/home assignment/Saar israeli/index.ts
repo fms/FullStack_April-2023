@@ -367,11 +367,11 @@ class King extends ChessPiece {
 
 
 
-let firstRook = new Rook(1,5,this.width,this.height)
-let firstBishop = new Bishop(1,2,this.width,this.height)
-let firstQueen = new Queen(4,4,this.width,this.height)
-let firstKing = new King(5,5,this.width,this.height)
-
+let firstRook = new Rook(1,5,new Board,new Board)
+let firstBishop = new Bishop(1,2,new Board,new Board)
+let firstQueen = new Queen(4,4,new Board,new Board)
+let firstKing = new King(5,5,new Board,new Board)
 firstRook.getLocation();
 firstBishop.getLocation();
 firstQueen.getLocation();
+firstKing.getLocation();
