@@ -53,6 +53,7 @@ interface carProps {
   year: number;
   milage: number;
   fuelConsumption: number;
+  totalFuelConsumptionCalc: Function;
 }
 
 function carMethoda(
@@ -61,10 +62,9 @@ function carMethoda(
   hatcback: boolean,
   year: number,
   milage: number,
-  fuelConsumption: number,
-  totalFuelConsumptionCalc: Function
+  fuelConsumption: number
 ) {
-  let carDetailsIn: any = {
+  let carDetailsIn: carProps = {
     maker,
     model,
     hatcback,
