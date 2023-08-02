@@ -1,29 +1,38 @@
+const followers: string[] = [];
 class Person {
     firstName: string;
     lastName: string;
-    // genre: string;
+    genre: string;
     
-    constructor(firstName: string, lastName: string) {
+    constructor(firstName: string, lastName: string, genre?: string) {
         this.firstName = firstName;
         this.lastName = lastName;
-        // this.genre = genre;
+        this.genre = genre ?? "";
     }
     
-    fullName(): string {
-        return `${this.lastName} ${this.firstName}`;
+    get fullName() :string {
+        return (`${this.lastName} ${this.firstName}`);
+    }
+
+    set fullName(newName: string) {
+        // [this.lastName, this.firstName] = newName.split(" ");
+        let splitName = newName.split(" ");
+        this.firstName = splitName[1];
+        this.lastName = splitName[0];
     }
 }
 
 class SocialNetwork {
     socialNetworkName: string;
-    accountIdentifier: string[] = [];
+    accountIdentifier: string;
 
-    constructor(socialNetworkName: string) {
-        this.socialNetworkName = socialNetworkName
+    constructor(socialNetworkName: string, accountIdentifier: string) {
+        this.socialNetworkName = socialNetworkName;
+        this.accountIdentifier = accountIdentifier;
     }
 
-    findFollower(person: Person): boolean {
-        if(this.accountIdentifier.findIndex(person.fullName) == -1) {
+    findFollower(fullName: string): boolean {
+        if(this.accountIdentifier.indexOf(fullName) == -1) {
             return false;
         }
         return true;
@@ -31,29 +40,34 @@ class SocialNetwork {
 
     addFollower(person: Person) {
         let fullName: string;
-        if(this.findFollower(person)) {
+        if(this.findFollower(person.fullName)) {
             console.log(`Already a follower.`);
         }
         else {
-            fullName = person.fullName();
-            this.accountIdentifier.push(fullName);
+            followers.push(person.fullName);
         }
     }
 
     removeFollower(fullName: string): Person | null {
-        let person = new Person(fullName.slice(fullName.indexOf(" "), fullName.lastIndexOf(fullName, 0)), fullName.slice(0, fullName.indexOf(" ")));
-        if(this.findFollower(person)) {
-            this.accountIdentifier.splice(this.accountIdentifier.findIndex(person.fullName));
+        let splitName = fullName.split(" ");
+        let firstName = splitName[1];
+        let lastName = splitName[0];
+        let person = new Person(firstName, lastName);
+        if(this.findFollower(fullName)) {
+            followers.splice(this.accountIdentifier.indexOf(fullName), 1);
+            console.log(person);
             return person;
         }
         return null;
     }
 }
 
-let yuval = new Person("Yuval", "Lavi");
-let avi = new Person("Avi", "Lavi");
-let twitter = new SocialNetwork("Twitter");
+let yuval = new Person("Yuval", "Lavi", "Actor");
+let twitter = new SocialNetwork("Twitter", "@yuval__lavi");
 
+yuval.fullName;
 twitter.addFollower(yuval);
-twitter.addFollower(avi);
-twitter.removeFollower("Lavi Avi");
+console.log(twitter);
+twitter.removeFollower(`Lavi Yuval`);
+console.log(twitter);
+
