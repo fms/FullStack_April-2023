@@ -1,3 +1,4 @@
+const pieces: ChessPiece[] = [];
 class Board {
     private width: number;
     private height: number;
@@ -13,6 +14,20 @@ class Board {
         }
 
         return 1 <= y && y <= this.height;
+    }
+    
+
+    placePiece(piece: ChessPiece) {
+        if(this.inBoard(piece.width, piece.height) && !piece.checkAll(pieces)) {
+            pieces.push(piece);
+            piece.getLocation();
+            console.log(pieces);
+        }
+        else {
+            piece.width = -1;
+            piece.height = -1;
+            console.log(`Can't place a piece there, please try again.`);
+        }
     }
 }
 
@@ -31,6 +46,22 @@ abstract class ChessPiece {
 
     getLocation() {
         console.log(`This piece's coordinates are (${this.width},${this.height})`);
+    }
+
+    doesExist(piece: ChessPiece): boolean {
+        if(this.width == piece.width && this.height == piece.height) {
+            return true;
+        }
+        return false;
+    }
+
+    checkAll(pieces: ChessPiece[]): boolean {
+        for(let index = 0; index < pieces.length; index++) {
+            if(this.doesExist(pieces[index])) {
+                return true;
+            }
+        }
+        return false;
     }
 
     isValidStepSize(x: number, y:number): boolean {
@@ -155,34 +186,14 @@ class King extends ChessPiece {
 }
 
 let rook = new Rook(board, 3, 3);
-rook.getLocation();
-rook.goRight(1);
-rook.goLeftDown(2);
-rook.goUp(7);
-rook.goUp(2);
-rook.space();
-
 let bishop = new Bishop(board, 9, 5);
-bishop.getLocation();
-bishop.goLeftDown(3);
-bishop.goDown(5);
-bishop.goLeftUp(7);
-bishop.space();
-
 let queen = new Queen(board, 3, 7);
-queen.getLocation();
-queen.goLeft(2);
-queen.goRightDown(5);
-queen.goUp(10);
-queen.space();
-
 let king = new King(board, 5, 5);
-king.getLocation();
-king.goDown(1);
-king.goLeftUp(1);
-king.goRight(3);
-king.goDown(1);
-king.goDown(1);
-king.goDown(1);
-king.goDown(1);
-king.goDown(1);
+let rook2 = new Rook(board, 9, 5);
+
+board.placePiece(rook);
+board.placePiece(bishop);
+board.placePiece(queen);
+board.placePiece(king);
+board.placePiece(rook2);
+
