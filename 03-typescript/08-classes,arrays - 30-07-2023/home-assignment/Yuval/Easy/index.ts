@@ -29,6 +29,16 @@ class Board {
             console.log(`Can't place a piece there, please try again.`);
         }
     }
+
+    layout() {
+        // let boardLayout: string[] = [];
+        // for(let index = 0; index < pieces.length; index++) {
+        //     if(pieces[index] instanceof Rook) {
+        //         boardLayout.push(`R - ${pieces[index].getLocation()}`);
+        //     }
+        // }
+        pieces.forEach(x => console.log(x));
+    }
 }
 
 let board = new Board(10, 10);
@@ -44,8 +54,8 @@ abstract class ChessPiece {
         this.height = height;
     }
 
-    getLocation() {
-        console.log(`This piece's coordinates are (${this.width},${this.height})`);
+    getLocation() : string {
+        return `${this.width},${this.height}`;
     }
 
     doesExist(piece: ChessPiece): boolean {
@@ -196,4 +206,5 @@ board.placePiece(bishop);
 board.placePiece(queen);
 board.placePiece(king);
 board.placePiece(rook2);
+board.layout();
 
