@@ -15,68 +15,158 @@ var Board = /** @class */ (function () {
     function Board(width, height) {
         this.width = width;
         this.height = height;
+        this.chessPieces = [];
+        this.width = width;
+        this.height = height;
     }
-    return Board;
-}());
-var Rook = /** @class */ (function () {
-    function Rook(board, startX, startY) {
-        if (board.xValue >= startX >= 1 && board.yValue >= startY >= 1) {
-            this.currentX = startX;
-            this.currentY = startY;
+    Board.prototype.isInBoard = function (x, y) {
+        if (x < 1 || this.width < x) {
+            return false;
+        }
+        return 1 <= y && y <= this.height;
+    };
+    Board.prototype.checkOverlap = function (x, y) {
+        if (this.chessPieces.length > 0) {
+            for (var _ = 0; _ < this.chessPieces.length; _++) {
+                if (x == this.chessPieces[_].currentX && y == this.chessPieces[_].currentY) {
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
         }
         else {
-            console.log("Out of board borders.");
-            this.currentX = NaN;
-            this.currentY = NaN;
+            return true;
+        }
+    };
+    Board.prototype.placePiece = function (piece, x, y) {
+        piece.currentX = x;
+        piece.currentY = y;
+        this.chessPieces.push(piece);
+    };
+    Board.prototype.boardLayout = function () {
+        var _this = this;
+        this.chessPieces.forEach(function (piece) { return console.log(_this.chessPieces[_this.chessPieces.indexOf(piece)].constructor.name.slice(0, 1) + " (" + piece.currentX + ", " + piece.currentY + ")"); });
+    };
+    return Board;
+}());
+var ChessPiece = /** @class */ (function () {
+    function ChessPiece(board, startX, startY) {
+        this.board = board;
+        this.supportsAxis = false;
+        this.supportsDiag = false;
+        this.isKing = false;
+        if (board.isInBoard(startX, startY)) {
+            if (board.checkOverlap(startX, startY)) {
+                board.placePiece(this, startX, startY);
+            }
+            else {
+                console.log("There is allready a piece in that spot.");
+                board.chessPieces.pop();
+            }
+        }
+        else {
+            console.log("Piece was placed out of board borders.");
         }
     }
-    Rook.prototype.getLocation = function () {
-        console.log("The rook's location is " + this.currentX + " on the X axis and " + this.currentY + " on the Y axis.");
+    ChessPiece.prototype.getLocation = function () {
+        console.log("This piece coordinates are (" + this.currentX + ", " + this.currentY + ")");
     };
-    // borderCheck(){
-    //     if 
-    // }
-    Rook.prototype.goRight = function (steps) {
-        this.currentX += steps;
-        this.getLocation();
+    ChessPiece.prototype.move = function (stepsX, stepsY) {
+        if (this.isKing && (Math.abs(stepsX) > 1 || Math.abs(stepsY) > 1)) {
+            console.log("The King can't move more than 1 step.");
+        }
+        else {
+            if (this.board.isInBoard(this.currentX + stepsX, this.currentY + stepsY)) {
+                this.currentX += stepsX;
+                this.currentY += stepsY;
+                this.getLocation();
+            }
+            else {
+                return console.log("Move not valid.");
+            }
+        }
     };
-    Rook.prototype.goLeft = function (steps) {
-        this.currentX -= steps;
-        this.getLocation();
+    ChessPiece.prototype.moveOnAxis = function (stepsX, stepsY) {
+        if (this.supportsAxis) {
+            this.move(stepsX, stepsY);
+        }
+        else {
+            console.log("Can't move like that!");
+        }
     };
-    Rook.prototype.goUp = function (steps) {
-        this.currentY += steps;
-        this.getLocation();
+    ChessPiece.prototype.moveOnDiag = function (stepsX, stepsY) {
+        if (this.supportsAxis) {
+            this.move(stepsX, stepsY);
+        }
+        else {
+            console.log("Can't move like that!");
+        }
     };
-    Rook.prototype.goDown = function (steps) {
-        this.currentY -= steps;
-        this.getLocation();
+    ChessPiece.prototype.goRight = function (steps) {
+        this.moveOnAxis(steps, 0);
     };
-    return Rook;
+    ChessPiece.prototype.goLeft = function (steps) {
+        this.moveOnAxis(-steps, 0);
+    };
+    ChessPiece.prototype.goUp = function (steps) {
+        this.moveOnAxis(0, steps);
+    };
+    ChessPiece.prototype.goDown = function (steps) {
+        this.moveOnAxis(0, -steps);
+    };
+    ChessPiece.prototype.goRightUp = function (stepsX, stepsY) {
+        this.moveOnDiag(stepsX, stepsY);
+    };
+    ChessPiece.prototype.goLeftUp = function (stepsX, stepsY) {
+        this.moveOnDiag(-stepsX, stepsY);
+    };
+    ChessPiece.prototype.goRightDown = function (stepsX, stepsY) {
+        this.moveOnDiag(stepsX, -stepsY);
+    };
+    ChessPiece.prototype.goLeftDown = function (stepsX, stepsY) {
+        this.moveOnDiag(-stepsX, -stepsY);
+    };
+    return ChessPiece;
 }());
+var Rook = /** @class */ (function (_super) {
+    __extends(Rook, _super);
+    function Rook(board, x, y) {
+        var _this = _super.call(this, board, x, y) || this;
+        _this.supportsAxis = true;
+        return _this;
+    }
+    return Rook;
+}(ChessPiece));
 var Bishop = /** @class */ (function (_super) {
     __extends(Bishop, _super);
-    function Bishop(board, startX, startY) {
-        return _super.call(this, board, startX, startY) || this;
+    function Bishop(board, x, y) {
+        var _this = _super.call(this, board, x, y) || this;
+        _this.supportsDiag = true;
+        return _this;
     }
-    Bishop.prototype.goRightUp = function (steps) {
-        this.currentX += steps;
-        this.goUp(steps);
-    };
-    Bishop.prototype.goLeftUp = function (steps) {
-        this.currentX -= steps;
-        this.goUp(steps);
-    };
-    Bishop.prototype.goRightDown = function (steps) {
-        this.currentX += steps;
-        this.goDown(steps);
-    };
-    Bishop.prototype.goLeftDown = function (steps) {
-        this.currentX -= steps;
-        this.goDown(steps);
-    };
+    ;
     return Bishop;
-}(Rook));
-// let board1 = new Board(500, 500);
-// let rook1 = new Rook(board1, 250, 250);
-// let bishop1 = new Bishop(board1, 200, 200);
+}(ChessPiece));
+var Queen = /** @class */ (function (_super) {
+    __extends(Queen, _super);
+    function Queen(board, x, y) {
+        var _this = _super.call(this, board, x, y) || this;
+        _this.supportsDiag = true;
+        _this.supportsAxis = true;
+        return _this;
+    }
+    return Queen;
+}(ChessPiece));
+var King = /** @class */ (function (_super) {
+    __extends(King, _super);
+    function King(board, x, y) {
+        var _this = _super.call(this, board, x, y) || this;
+        _this.supportsDiag = true;
+        _this.supportsAxis = true;
+        _this.isKing = true;
+        return _this;
+    }
+    return King;
+}(ChessPiece));
