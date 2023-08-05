@@ -10,6 +10,14 @@ var direction;
     direction[direction["left"] = 9] = "left";
     direction[direction["leftUp"] = 10] = "leftUp";
 })(direction || (direction = {}));
+class ChessPiece {
+    constructor(board, x, y, cordinates) {
+        this.board = board;
+        this.x = x;
+        this.y = y;
+        this.cordinates = [this.x, this.y];
+    }
+}
 function CheckValidate(board, cordinates, steps, check) {
     switch (check) {
         case 12: {
@@ -61,12 +69,11 @@ class Board {
         this.height = height;
     }
 }
-class Rook {
-    constructor(board, x, y) {
-        this.board = board;
+class Rook extends ChessPiece {
+    constructor(board, x, y, cordinates) {
+        super(board, x, y, cordinates || [1, 1]);
         this.x = 1;
         this.y = 1;
-        this.cordinates = [this.x, this.y];
     }
     getLocation() {
         console.log(`This is the location width:` + `${this.cordinates[0]}` + ` and height:` + `${this.cordinates[1]}`);
@@ -85,44 +92,9 @@ class Rook {
         this.cordinates = CheckValidate(this.board, this.cordinates, steps, direction.down);
     }
 }
-class Queen {
-    constructor(board, x, y) {
-        this.board = board;
-        this.x = 1;
-        this.y = 1;
-        this.cordinates = [this.x, this.y];
-    }
-    getLocation() {
-        console.log(`This is the location width:` + `${this.cordinates[0]}` + ` and height:` + `${this.cordinates[1]}`);
-    }
-    goRight(steps) {
-        this.cordinates = CheckValidate(this.board, this.cordinates, steps, direction.right);
-        console.log(this.cordinates);
-    }
-    goLeft(steps) {
-        this.cordinates = CheckValidate(this.board, this.cordinates, steps, direction.left);
-    }
-    goUp(steps) {
-        this.cordinates = CheckValidate(this.board, this.cordinates, steps, direction.up);
-    }
-    goDown(steps) {
-        this.cordinates = CheckValidate(this.board, this.cordinates, steps, direction.down);
-    }
-    goRightup(steps) {
-        this.cordinates = CheckValidate(this.board, this.cordinates, steps, direction.rightUp);
-    }
-    goLeftup(steps) {
-        this.cordinates = CheckValidate(this.board, this.cordinates, steps, direction.leftUp);
-    }
-    goRightDown(steps) {
-        this.cordinates = CheckValidate(this.board, this.cordinates, steps, direction.rightDown);
-    }
-    goLeftDown(steps) {
-        this.cordinates = CheckValidate(this.board, this.cordinates, steps, direction.downLeft);
-    }
-}
-class Bishop {
-    constructor(board, x, y) {
+class Bishop extends ChessPiece {
+    constructor(board, x, y, cordinates) {
+        super(board, x, y, cordinates);
         this.board = board;
         this.x = 1;
         this.y = 1;
@@ -144,19 +116,30 @@ class Bishop {
         this.cordinates = CheckValidate(this.board, this.cordinates, steps, direction.downLeft);
     }
 }
-class King {
-    constructor(board, x, y, steps) {
-        this.board = board;
-        this.x = 1;
-        this.y = 1;
-        this.cordinates = [this.x, this.y];
+class Queen extends Bishop {
+    constructor(board, x, y, cordinates) {
+        super(board, x, y, cordinates || [1, 1]);
     }
-    getLocation() {
-        console.log(`This is the location width:` + `${this.cordinates[0]}` + ` and height:` + `${this.cordinates[1]}`);
+    goRight(steps) {
+        this.cordinates = CheckValidate(this.board, this.cordinates, steps, direction.right);
+        console.log(this.cordinates);
+    }
+    goLeft(steps) {
+        this.cordinates = CheckValidate(this.board, this.cordinates, steps, direction.left);
+    }
+    goUp(steps) {
+        this.cordinates = CheckValidate(this.board, this.cordinates, steps, direction.up);
+    }
+    goDown(steps) {
+        this.cordinates = CheckValidate(this.board, this.cordinates, steps, direction.down);
+    }
+}
+class King extends Queen {
+    constructor(board, x, y, cordinates) {
+        super(board, x, y, cordinates || [1, 1]);
     }
     goRight(steps) {
         this.cordinates = CheckValidate(this.board, this.cordinates, 1, direction.right);
-        console.log(this.cordinates);
     }
     goLeft(steps) {
         this.cordinates = CheckValidate(this.board, this.cordinates, 1, direction.left);
@@ -182,8 +165,22 @@ class King {
 }
 let gameBoard = new Board(10, 10);
 let rook1 = new Rook(gameBoard, 1, 1);
+let queen = new Queen(gameBoard, 2, 2);
+let king = new King(gameBoard, 2, 3);
 rook1.getLocation();
-rook1.goLeft(50);
-console.log("--------------------------------");
+rook1.goLeft(5);
+console.log("--------Rook---------------------");
 console.log("rook data after moving :");
 rook1.getLocation();
+console.log("--------Queen-----------------");
+queen.goRightDown(3);
+queen.getLocation();
+console.log("Queen data after moving :");
+queen.getLocation();
+console.log("--------------------------------");
+console.log("--------King-----------------");
+king.getLocation();
+king.goRight(5);
+king.goUp(15);
+king.getLocation();
+console.log("--------------------------------");
