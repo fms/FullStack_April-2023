@@ -31,12 +31,6 @@ class Board {
     }
 
     layout() {
-        // let boardLayout: string[] = [];
-        // for(let index = 0; index < pieces.length; index++) {
-        //     if(pieces[index] instanceof Rook) {
-        //         boardLayout.push(`R - ${pieces[index].getLocation()}`);
-        //     }
-        // }
         pieces.forEach(x => console.log(x));
     }
 }

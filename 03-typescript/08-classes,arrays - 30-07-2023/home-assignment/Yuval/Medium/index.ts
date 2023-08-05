@@ -1,4 +1,4 @@
-const followers: string[] = [];
+// Medium
 class Person {
     firstName: string;
     lastName: string;
@@ -15,7 +15,6 @@ class Person {
     }
 
     set fullName(newName: string) {
-        // [this.lastName, this.firstName] = newName.split(" ");
         let splitName = newName.split(" ");
         this.firstName = splitName[1];
         this.lastName = splitName[0];
@@ -25,6 +24,7 @@ class Person {
 class SocialNetwork {
     socialNetworkName: string;
     accountIdentifier: string;
+    followers: string[] = [];
 
     constructor(socialNetworkName: string, accountIdentifier: string) {
         this.socialNetworkName = socialNetworkName;
@@ -32,19 +32,19 @@ class SocialNetwork {
     }
 
     findFollower(fullName: string): boolean {
-        if(this.accountIdentifier.indexOf(fullName) == -1) {
+        if(this.followers.indexOf(fullName) == -1) {
             return false;
         }
         return true;
     }
 
     addFollower(person: Person) {
-        let fullName: string;
         if(this.findFollower(person.fullName)) {
             console.log(`Already a follower.`);
         }
         else {
-            followers.push(person.fullName);
+            this.followers.push(person.fullName);
+            console.log(person.fullName);
         }
     }
 
@@ -52,22 +52,95 @@ class SocialNetwork {
         let splitName = fullName.split(" ");
         let firstName = splitName[1];
         let lastName = splitName[0];
-        let person = new Person(firstName, lastName);
+        let person = new Person(firstName, lastName, "");
         if(this.findFollower(fullName)) {
-            followers.splice(this.accountIdentifier.indexOf(fullName), 1);
+            this.followers.splice(this.followers.indexOf(fullName), 1);
             console.log(person);
             return person;
         }
         return null;
     }
+
+    get followersList(): string[] {
+        return this.followers;
+    }
+
+    alphabetic(): string[] {
+        let alphabeticFollowers: string[] = this.followers.sort();
+        return alphabeticFollowers;
+    }
+
+    print() {
+        console.log(`${this.accountIdentifier} followers on ${this.socialNetworkName}: ${this.alphabetic()}`);
+    }
 }
 
-let yuval = new Person("Yuval", "Lavi", "Actor");
-let twitter = new SocialNetwork("Twitter", "@yuval__lavi");
+//Advanced
+class Celeb extends Person {
+    constructor(firstName: string, lastName: string, genre?: string){
+        super(firstName, lastName, genre ?? "Celeb");
+    }
 
-yuval.fullName;
-twitter.addFollower(yuval);
-console.log(twitter);
-twitter.removeFollower(`Lavi Yuval`);
-console.log(twitter);
+    addFollower(socialNetwork: SocialNetwork, person: Person) {
+        socialNetwork.addFollower(person);
+    }
+
+    removeFollower(socialNetwork: SocialNetwork, fullName: string) {
+        socialNetwork.removeFollower(fullName);
+    }
+
+    details() {
+        console.log(`First name: ${this.firstName}
+        Last name: ${this.lastName}
+        socialNetworks:
+        `)
+    }
+
+    
+}
+
+let yuval = new Celeb("Yuval", "Lavi", "Actor");
+let yuvalTwitter = new SocialNetwork("Twitter", "@yuval__lavi");
+let yuvalInstagram = new SocialNetwork("Instagram", "@yuval__lavi");
+let yuvalTikTok = new SocialNetwork("TikTok", "@yuval__lavi");
+
+let theRock = new Celeb("Dwayne", "Johnson", "Actor");
+let rockTwitter = new SocialNetwork("Twitter", "@therock");
+let rockInstagram = new SocialNetwork("Instagram", "@therock");
+let rockFacebook = new SocialNetwork("Facebook", "Dwayne Johnson");
+
+let mjf = new Celeb("Max", "Friedman", "Wrestler");
+let mjfTwitter = new SocialNetwork("Twitter", "@the_mjf");
+let mjfInstagram = new SocialNetwork("Instagram", "@the_mjf");
+
+let jamesGunn = new Celeb("James", "Gunn", "Director");
+let jgTwitter = new SocialNetwork("Twitter", "@jamesgunn");
+let jgInstagram = new SocialNetwork("Instagram", "@jamesgunn");
+let jgThreads = new SocialNetwork("Threads", "@jamesgunn");
+
+let ld77 = new Celeb("Luka", "Doncic", "Basketball player");
+let ldTwitter = new SocialNetwork("Twitter", "@lukadoncic");
+let ldInstagram = new SocialNetwork("Instagram", "@lukadoncic");
+
+
+yuval.addFollower(yuvalTwitter, theRock);
+yuvalTwitter.print();
+
+yuval.addFollower(yuvalTwitter, mjf);
+yuvalTwitter.print();
+
+yuval.addFollower(yuvalTwitter, ld77);
+yuvalTwitter.print();
+
+yuval.addFollower(yuvalTwitter, jamesGunn);
+yuvalTwitter.print();
+
+yuval.removeFollower(yuvalTwitter, "Doncic Luka");
+console.log(ld77.fullName);
+yuvalTwitter.print();
+
+theRock.addFollower(rockTwitter, mjf);
+rockTwitter.print();
+
+yuval.details();
 
