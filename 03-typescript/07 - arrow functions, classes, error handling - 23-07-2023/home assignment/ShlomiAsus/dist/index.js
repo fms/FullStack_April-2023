@@ -1,35 +1,189 @@
 "use strict";
-// Write a class named Bishop that behaves in the same manner as the Rook.
-// Include these methods for moving on the board:
-// <strong>goRightUp()</strong>
-// <strong>goLeftUp()</strong>
-// <strong>goRightDown()</strong>
-// <strong>goLeftDown()</strong>
-// <hr>
-//  48:26 שיעור אחרון
-// Medium
-// Write a class named Queen that behaves in the same manner as the Rook and Bishop combined.
-// <hr>
-// Write a class named King that behaves in the same manner as the Queen, but is limited to a single step.
-// <hr>
-// Advanced
-// Read up on Abstract classes.
-// Convert Rook, Bishop, Queen and King to use a new abstract class ChessPiece.
-// The board starts at coordinates 1,1. ??????????????????????????
+var direction;
+(function (direction) {
+    direction[direction["up"] = 12] = "up";
+    direction[direction["rightUp"] = 1] = "rightUp";
+    direction[direction["right"] = 3] = "right";
+    direction[direction["rightDown"] = 4] = "rightDown";
+    direction[direction["down"] = 6] = "down";
+    direction[direction["downLeft"] = 7] = "downLeft";
+    direction[direction["left"] = 9] = "left";
+    direction[direction["leftUp"] = 10] = "leftUp";
+})(direction || (direction = {}));
+function CheckValidate(board, cordinates, steps, check) {
+    switch (check) {
+        case 12: {
+            console.log("up check");
+            cordinates[1] + steps < board.width ? cordinates[1] += steps : console.log("cant move up");
+            return cordinates;
+        }
+        case 1: {
+            console.log("rightUp check");
+            (cordinates[0] + steps < board.width && cordinates[1] + steps < board.width) ? (cordinates[0] += steps, cordinates[1] += steps) : console.log("cant move rightUp");
+            return cordinates;
+        }
+        case 3: {
+            console.log("right check");
+            cordinates[0] + steps < board.width ? cordinates[0] += steps : console.log("cant move right");
+            console.log(`cordinates[0] = ${cordinates[0]} inside the switch`);
+            return cordinates;
+        }
+        case 4: {
+            console.log("rightDown check");
+            (cordinates[0] + steps < board.width && cordinates[1] - steps < 0) ? (cordinates[0] += steps, cordinates[1] -= steps) : console.log("cant move rightDown");
+            return cordinates;
+        }
+        case 6: {
+            console.log("down check");
+            cordinates[1] - steps > 0 ? cordinates[1] -= steps : console.log("cant move down");
+            return cordinates;
+        }
+        case 7: {
+            console.log("downLeft check");
+            (cordinates[0] - steps < 0 && cordinates[1] - steps < 0) ? (cordinates[0] -= steps, cordinates[1] -= steps) : console.log("cant move downLeft");
+            return cordinates;
+        }
+        case 9: {
+            console.log("left check");
+            (cordinates[0] - steps > 0) ? cordinates[0] -= steps : console.log("cant move left");
+            return cordinates;
+        }
+        case 10: {
+            console.log("leftUp check");
+            (cordinates[0] - steps < board.width && cordinates[1] + steps < board.width) ? (cordinates[0] -= steps, cordinates[1] += steps) : console.log("cant move leftUp");
+            return cordinates;
+        }
+    }
+}
 class Board {
     constructor(width, height) {
-        this.width = width !== null && width !== void 0 ? width : 1;
-        this.height = height !== null && height !== void 0 ? height : 1;
+        this.width = width;
+        this.height = height;
+    }
+}
+class Rook {
+    constructor(board, x, y) {
+        this.board = board;
+        this.x = 1;
+        this.y = 1;
+        this.cordinates = [this.x, this.y];
+    }
+    getLocation() {
+        console.log(`This is the location width:` + `${this.cordinates[0]}` + ` and height:` + `${this.cordinates[1]}`);
+    }
+    goRight(steps) {
+        this.cordinates = CheckValidate(this.board, this.cordinates, steps, direction.right);
+        console.log(this.cordinates);
+    }
+    goLeft(steps) {
+        this.cordinates = CheckValidate(this.board, this.cordinates, steps, direction.left);
+    }
+    goUp(steps) {
+        this.cordinates = CheckValidate(this.board, this.cordinates, steps, direction.up);
+    }
+    goDown(steps) {
+        this.cordinates = CheckValidate(this.board, this.cordinates, steps, direction.down);
+    }
+}
+class Queen {
+    constructor(board, x, y) {
+        this.board = board;
+        this.x = 1;
+        this.y = 1;
+        this.cordinates = [this.x, this.y];
+    }
+    getLocation() {
+        console.log(`This is the location width:` + `${this.cordinates[0]}` + ` and height:` + `${this.cordinates[1]}`);
+    }
+    goRight(steps) {
+        this.cordinates = CheckValidate(this.board, this.cordinates, steps, direction.right);
+        console.log(this.cordinates);
+    }
+    goLeft(steps) {
+        this.cordinates = CheckValidate(this.board, this.cordinates, steps, direction.left);
+    }
+    goUp(steps) {
+        this.cordinates = CheckValidate(this.board, this.cordinates, steps, direction.up);
+    }
+    goDown(steps) {
+        this.cordinates = CheckValidate(this.board, this.cordinates, steps, direction.down);
+    }
+    goRightup(steps) {
+        this.cordinates = CheckValidate(this.board, this.cordinates, steps, direction.rightUp);
+    }
+    goLeftup(steps) {
+        this.cordinates = CheckValidate(this.board, this.cordinates, steps, direction.leftUp);
+    }
+    goRightDown(steps) {
+        this.cordinates = CheckValidate(this.board, this.cordinates, steps, direction.rightDown);
+    }
+    goLeftDown(steps) {
+        this.cordinates = CheckValidate(this.board, this.cordinates, steps, direction.downLeft);
+    }
+}
+class Bishop {
+    constructor(board, x, y) {
+        this.board = board;
+        this.x = 1;
+        this.y = 1;
+        this.cordinates = [this.x, this.y];
+    }
+    getLocation() {
+        console.log(`This is the location width:` + `${this.cordinates[0]}` + ` and height:` + `${this.cordinates[1]}`);
+    }
+    goRightup(steps) {
+        this.cordinates = CheckValidate(this.board, this.cordinates, steps, direction.rightUp);
+    }
+    goLeftup(steps) {
+        this.cordinates = CheckValidate(this.board, this.cordinates, steps, direction.leftUp);
+    }
+    goRightDown(steps) {
+        this.cordinates = CheckValidate(this.board, this.cordinates, steps, direction.rightDown);
+    }
+    goLeftDown(steps) {
+        this.cordinates = CheckValidate(this.board, this.cordinates, steps, direction.downLeft);
+    }
+}
+class King {
+    constructor(board, x, y, steps) {
+        this.board = board;
+        this.x = 1;
+        this.y = 1;
+        this.cordinates = [this.x, this.y];
+    }
+    getLocation() {
+        console.log(`This is the location width:` + `${this.cordinates[0]}` + ` and height:` + `${this.cordinates[1]}`);
+    }
+    goRight(steps) {
+        this.cordinates = CheckValidate(this.board, this.cordinates, 1, direction.right);
+        console.log(this.cordinates);
+    }
+    goLeft(steps) {
+        this.cordinates = CheckValidate(this.board, this.cordinates, 1, direction.left);
+    }
+    goUp(steps) {
+        this.cordinates = CheckValidate(this.board, this.cordinates, 1, direction.up);
+    }
+    goDown(steps) {
+        this.cordinates = CheckValidate(this.board, this.cordinates, 1, direction.down);
+    }
+    goRightup(steps) {
+        this.cordinates = CheckValidate(this.board, this.cordinates, 1, direction.rightUp);
+    }
+    goLeftup(steps) {
+        this.cordinates = CheckValidate(this.board, this.cordinates, 1, direction.leftUp);
+    }
+    goRightDown(steps) {
+        this.cordinates = CheckValidate(this.board, this.cordinates, 1, direction.rightDown);
+    }
+    goLeftDown(steps) {
+        this.cordinates = CheckValidate(this.board, this.cordinates, 1, direction.downLeft);
     }
 }
 let gameBoard = new Board(10, 10);
-class Rook {
-    constructor(new1, x, y) {
-        this.new1 = new1;
-        this.x = x;
-        this.y = y;
-    }
-    getLocation() {
-        console.log(`This is the location width:` + `${this.x}` + `and height:` + `${this.y}`);
-    }
-}
+let rook1 = new Rook(gameBoard, 1, 1);
+rook1.getLocation();
+rook1.goLeft(50);
+console.log("--------------------------------");
+console.log("rook data after moving :");
+rook1.getLocation();
