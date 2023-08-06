@@ -25,8 +25,14 @@ class SamePerson {
 
     set fullName(newName: string) {
         let splitName = newName.split(" ");
-        this.firstName = splitName[0];
-        this.lastName = splitName[1];
+
+        // This will only handle two words, the third onwards will be ignored
+        // this.firstName = splitName[0];
+        // this.lastName = splitName[1];
+
+        // This handles more than three words correctly
+        this.firstName = splitName.shift()!;
+        this.lastName = splitName.join(" ");
     }
 }
 
@@ -38,8 +44,8 @@ let samePerson = new SamePerson("Shmuel", "Fishman");
 console.log(samePerson);
 console.log(samePerson.fullName);
 
-samePerson.fullName = "Avi Vertsman";
-console.log(samePerson);
+samePerson.fullName = "Avi Vertsman Squire";
+console.log(samePerson.fullName);
 
 
 
