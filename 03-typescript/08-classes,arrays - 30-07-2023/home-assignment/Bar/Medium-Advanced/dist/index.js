@@ -95,18 +95,18 @@ var ASocialNetwork = /** @class */ (function () {
     };
     return ASocialNetwork;
 }());
-var person1 = new APerson("Amit", "Gazub", "A");
-var person2 = new APerson("Hofni", "Klark", "B");
-var person3 = new APerson("Yoni", "Asark", "C");
+var personA = new APerson("Amit", "Gazub", "A");
+var personB = new APerson("Hofni", "Klark", "B");
+var personC = new APerson("Yoni", "Asark", "C");
 var socialNetwork = new ASocialNetwork("Twitter", 10);
 // socialNetwork.addFollower(person1)
 // socialNetwork.addFollower(person2)
 // socialNetwork.addFollower(person3)
 // console.log(socialNetwork.print());
 var celeb = new ACeleb("Amir", "Shlazag", "D");
-celeb.addFollower("Twitter", person3);
-celeb.addFollower("Facebook", person2);
-celeb.addFollower("Facebook", person3);
+celeb.addFollower("Twitter", personC);
+celeb.addFollower("Facebook", personB);
+celeb.addFollower("Facebook", personC);
 // celeb.addFollower("Instagram", person2);
 // celeb.addFollower("Twitter", person3);
 // celeb.addFollower("Twitter", person1);

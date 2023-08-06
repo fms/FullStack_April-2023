@@ -87,9 +87,9 @@ class ASocialNetwork {
     }
 }
 
-let person1 = new APerson("Amit", "Gazub", "A")
-let person2 = new APerson("Hofni", "Klark", "B")
-let person3 = new APerson("Yoni", "Asark", "C")
+let personA = new APerson("Amit", "Gazub", "A")
+let personB = new APerson("Hofni", "Klark", "B")
+let personC = new APerson("Yoni", "Asark", "C")
 
 let socialNetwork = new ASocialNetwork("Twitter", 10)
 
@@ -101,9 +101,9 @@ let socialNetwork = new ASocialNetwork("Twitter", 10)
 let celeb = new ACeleb("Amir", "Shlazag", "D")
 
 
-celeb.addFollower("Twitter", person3);
-celeb.addFollower("Facebook", person2)
-celeb.addFollower("Facebook", person3)
+celeb.addFollower("Twitter", personC);
+celeb.addFollower("Facebook", personB)
+celeb.addFollower("Facebook", personC)
 
 
 // celeb.addFollower("Instagram", person2);
