@@ -95,19 +95,23 @@ class Celeb extends Person {
         return socialNetwork.removeFollower(fullName);
     }
     print(minFollowers) {
-        let tmp = new Array;
         let count;
-        tmp = this.socialNetworks.filter((network) => network.countfollowers() >= (minFollowers || 0));
-        tmp.sort((network1, network2) => network2.countfollowers() - network1.countfollowers());
+        let tmp = this.socialNetworks.map((network) => ({
+            socialNetworkName: network.name,
+            followeCount: network.countfollowers(),
+        }));
+        tmp.sort((count1, count2) => count2.followeCount - count1.followeCount);
+        tmp = tmp.filter((count) => count.followeCount >= (minFollowers || 0));
         if (tmp.length > 0) {
             let str = `${this.getFullName()}: `;
             for (let i = 0; i < tmp.length; i++) {
-                str += `${tmp[i].name}: (${tmp[i].countfollowers()}) `;
+                str += `${tmp[i].socialNetworkName}: (${tmp[i].followeCount}) `;
             }
             console.log(str);
-            return;
         }
-        console.log(`No network with minimum ${minFollowers} follower found.`);
+        else {
+            console.log(`No network with minimum ${minFollowers} follower found.`);
+        }
     }
     static mostPopular(celeb, networkName) {
         let leadCeleb = "";
@@ -175,7 +179,7 @@ c1.addFollower(c1Instagram, p4);
 c1.addFollower(c1Instagram, p3);
 c1.addFollower(c1Instagram, p2);
 c1.details();
-c1.print(2);
+c1.print(3);
 const c2 = new Celeb("Rolling", "Stones", "j");
 const c2Twitter = new SocialNetwork("twitter", "@rolling");
 const c2Facebook = new SocialNetwork("facebook", "rolling.stones1");

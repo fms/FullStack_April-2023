@@ -131,21 +131,25 @@ class Celeb extends Person{
   }
 
   print(minFollowers?: number){
-    let tmp = new Array<SocialNetwork>;
     let count:number;
 
-    tmp = this.socialNetworks.filter((network:SocialNetwork)=> network.countfollowers() >= (minFollowers || 0));
-    tmp.sort((network1:SocialNetwork,network2:SocialNetwork) => network2.countfollowers() - network1.countfollowers());
+    let tmp = this.socialNetworks.map((network) => ({
+      socialNetworkName: network.name,
+      followeCount: network.countfollowers(),
+    }));
+
+    tmp.sort((count1,count2)=> count2.followeCount - count1.followeCount);
+    tmp = tmp.filter((count) => count.followeCount >= (minFollowers || 0));
 
     if(tmp.length > 0){
       let str:string = `${this.getFullName()}: `;
       for(let i = 0; i< tmp.length; i++){
-        str+= `${tmp[i].name}: (${tmp[i].countfollowers()}) `;
+        str+= `${tmp[i].socialNetworkName}: (${tmp[i].followeCount}) `;
       }
       console.log(str);
-      return;
+    }else{
+      console.log(`No network with minimum ${minFollowers} follower found.`);
     }
-    console.log(`No network with minimum ${minFollowers} follower found.`);
   }
 
   static mostPopular(celeb:Array<Celeb>, networkName:string){
@@ -242,7 +246,7 @@ c1.addFollower(c1Instagram,p3);
 c1.addFollower(c1Instagram,p2);
 c1.details();
 
-c1.print(2)
+c1.print(3)
 
 
 const c2 = new Celeb("Rolling","Stones", "j");
