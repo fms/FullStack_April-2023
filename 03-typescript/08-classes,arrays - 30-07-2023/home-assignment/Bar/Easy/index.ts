@@ -20,7 +20,7 @@ class Board {
             }
         })
         return true;
-
+            
     }
 
     placePiece(piece: ChessPiece) {
