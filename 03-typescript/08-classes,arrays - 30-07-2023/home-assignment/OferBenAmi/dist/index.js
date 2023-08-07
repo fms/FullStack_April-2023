@@ -16,8 +16,20 @@ class SocialNetwork {
     constructor(SocialNetworkName, accountIdentifier) {
         this.SocialNetworkName = SocialNetworkName;
         this.accountIdentifier = accountIdentifier;
+        this.followers = [];
+    }
+    addFollower(person) {
+        if (this.followers.includes(person.fullName)) {
+            return;
+        }
+        this.followers.push(person.fullName);
+    }
+    removeFollower(fullName) {
+        if (this.followers.includes(fullName)) {
+            this.followers.splice(this.followers.indexOf(fullName), 1); // removes the first accurance of fullName
+        }
     }
 }
 const Ofer = new Person(`Ofer`, `Ben-Ami`, `programmer`);
-// Ofer.fullName = `Ofer1 BenAmi2`
-console.log(Ofer.fullName);
+const oferSocialNetwork = new SocialNetwork(`instagram`, `ofer134`);
+console.log(Ofer.firstName);
