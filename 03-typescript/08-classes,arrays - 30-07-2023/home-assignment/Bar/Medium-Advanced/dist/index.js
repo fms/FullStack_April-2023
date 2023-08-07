@@ -130,17 +130,17 @@ var socialNetworkA = new ASocialNetwork("Twitter", 10);
 // socialNetwork.addFollower(person2)
 // socialNetwork.addFollower(person3)
 // console.log(socialNetwork.print());
-var celeb = new ACeleb("Ofir", "Eldar", "D");
-var celeb2 = new ACeleb("Avatiah", "Sameah", "F");
-var celeb3 = new ACeleb("Simcha", "Biton", "H");
-celeb.addFollower("Twitter", personC);
-celeb.addFollower("Facebook", personB);
-celeb.addFollower("Facebook", personC);
-celeb2.addFollower("Twitter", personC);
-celeb2.addFollower("Facebook", personC);
-celeb3.addFollower("Twitter", personC);
-celeb3.addFollower("Facebook", personB);
-celeb3.addFollower("Instagram", personC);
+var celebA = new ACeleb("Ofir", "Eldar", "D");
+var celebB = new ACeleb("Avatiah", "Sameah", "F");
+var celebC = new ACeleb("Simcha", "Biton", "H");
+celebA.addFollower("Twitter", personC);
+celebA.addFollower("Facebook", personB);
+celebA.addFollower("Facebook", personC);
+celebB.addFollower("Twitter", personC);
+celebB.addFollower("Facebook", personC);
+celebC.addFollower("Twitter", personC);
+celebC.addFollower("Facebook", personB);
+celebC.addFollower("Instagram", personC);
 // celeb.print(2)
 // celeb.details()
-console.log(celeb.mostPopular([celeb, celeb2, celeb3], "Facebook"));
+console.log(celebA.mostPopular([celebA, celebB, celebC], "Facebook"));
