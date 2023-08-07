@@ -58,6 +58,33 @@ var ACeleb = /** @class */ (function (_super) {
     ACeleb.prototype.details = function () {
         console.log(this);
     };
+    ACeleb.prototype.print = function (minFollowers) {
+        if (minFollowers) {
+            for (var socialNetwork in this.networkObject) {
+                if (this.networkObject[socialNetwork].length >= minFollowers) {
+                    console.log(this.getFullName() + ": " + socialNetwork + ", Followers:" + this.networkObject[socialNetwork].length + " ");
+                }
+                else {
+                    console.log("Not enough followers in " + socialNetwork);
+                }
+            }
+        }
+        else {
+            console.log("Error");
+        }
+    };
+    ACeleb.prototype.mostPopular = function (celebsArray, socialNetwork) {
+        var mostFollowed = null;
+        var maxFollowers = -1;
+        celebsArray.forEach(function (celeb) {
+            var followersCount = celeb.networkObject[socialNetwork].length;
+            if (followersCount > maxFollowers) {
+                maxFollowers = followersCount;
+                mostFollowed = celeb;
+            }
+        });
+        return mostFollowed.getFullName() + " is very popular with followers count of " + maxFollowers;
+    };
     return ACeleb;
 }(APerson));
 var ASocialNetwork = /** @class */ (function () {
@@ -98,17 +125,22 @@ var ASocialNetwork = /** @class */ (function () {
 var personA = new APerson("Amit", "Gazub", "A");
 var personB = new APerson("Hofni", "Klark", "B");
 var personC = new APerson("Yoni", "Asark", "C");
-var socialNetwork = new ASocialNetwork("Twitter", 10);
+var socialNetworkA = new ASocialNetwork("Twitter", 10);
 // socialNetwork.addFollower(person1)
 // socialNetwork.addFollower(person2)
 // socialNetwork.addFollower(person3)
 // console.log(socialNetwork.print());
-var celeb = new ACeleb("Amir", "Shlazag", "D");
+var celeb = new ACeleb("Ofir", "Eldar", "D");
+var celeb2 = new ACeleb("Avatiah", "Sameah", "F");
+var celeb3 = new ACeleb("Simcha", "Biton", "H");
 celeb.addFollower("Twitter", personC);
 celeb.addFollower("Facebook", personB);
 celeb.addFollower("Facebook", personC);
-// celeb.addFollower("Instagram", person2);
-// celeb.addFollower("Twitter", person3);
-// celeb.addFollower("Twitter", person1);
-// celeb.addFollower("Twitter", person1);
-celeb.details();
+celeb2.addFollower("Twitter", personC);
+celeb2.addFollower("Facebook", personC);
+celeb3.addFollower("Twitter", personC);
+celeb3.addFollower("Facebook", personB);
+celeb3.addFollower("Instagram", personC);
+// celeb.print(2)
+// celeb.details()
+console.log(celeb.mostPopular([celeb, celeb2, celeb3], "Facebook"));
