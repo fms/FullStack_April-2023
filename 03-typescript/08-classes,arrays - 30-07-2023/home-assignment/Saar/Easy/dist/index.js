@@ -8,7 +8,7 @@
 // 1. Add a method for printing the current layout of the board. Use the first letter of the class name to indicate a piece (i.e., R for **R**ook, Q for **Q**ueen, etc.)
 // ♕♔♖♗
 // let taken: any[] = []
-debugger;
+let chessPieceArray = {};
 class Board {
     constructor(width, height, listOfPieces = []) {
         this.width = width;
@@ -19,7 +19,10 @@ class Board {
         if (x < 1 || this.width < x) {
             return false;
         }
-        return 1 <= y && y <= this.height;
+        else if (1 <= y && y <= this.height) {
+            return true;
+        }
+        return false;
     }
     showBoard() {
         let skeleBoard = "";
@@ -51,34 +54,40 @@ class Board {
         return false;
     }
     onBoardArray(piece) {
-        for (let i = 0; i <= this.listOfPieces.length; i++) {
-            if (this.listOfPieces[i].x === piece.x && this.listOfPieces[i].y === piece.y) {
-                return this.listOfPieces[i].x === piece.x && this.listOfPieces[i].y === piece.y;
+        this.listOfPieces.forEach(x => {
+            if (x.x === piece.x && x.y === piece.y) {
+                let pieceNum = this.listOfPieces.indexOf(piece);
+                this.listOfPieces.splice(pieceNum, 1);
+                return true;
             }
-            else {
-                return false;
-            }
-        }
+        });
+        return false;
     }
     placePiece(piece, x, y) {
-        if (this.inBoard(piece.x + x, piece.y + y)) {
-            try {
-                if (this.onBoardArray(piece)) {
-                    console.log(`cant replace chesspiece if allready placed.`);
+        if (this.notOverLap(piece)) {
+            if (this.inBoard(piece.x + x, piece.y + y)) {
+                try {
+                    if (this.onBoardArray(piece)) {
+                        console.log(`cant overlap`);
+                    }
+                    else {
+                        piece.x += x;
+                        piece.y += y;
+                        this.listOfPieces.push(piece);
+                        console.log(`placed ChessPiece`);
+                        console.log(this.listOfPieces);
+                    }
                 }
-                else {
-                    piece.x += x;
-                    piece.y += y;
-                    this.listOfPieces.push(piece);
-                    console.log(`placed ChessPiece`);
+                catch (out) {
+                    throw new Error(`out of bonds ${out}`);
                 }
             }
-            catch (out) {
-                throw new Error(`out of bonds ${out}`);
+            else {
+                console.log(`cant place outside of the board`);
             }
         }
         else {
-            console.log(`cant place outside of the board`);
+            console.log(`cant replace chesspiece if allready placed.`);
         }
     }
 }
@@ -168,37 +177,41 @@ class ChessPiece {
     }
 }
 class Rook extends ChessPiece {
-    constructor(x, y) {
+    constructor(x, y, chessLogo = `♖`) {
         super(board, x, y);
         this.supportAxis = true;
         this.x = x !== null && x !== void 0 ? x : 0;
         this.y = y !== null && y !== void 0 ? y : 0;
+        this.chessLogo = chessLogo;
     }
 }
 class Bishop extends ChessPiece {
-    constructor(x, y) {
+    constructor(x, y, chessLogo = `♗`) {
         super(board, x, y);
         this.supportDiagonal = true;
         this.x = x !== null && x !== void 0 ? x : 0;
         this.y = y !== null && y !== void 0 ? y : 0;
+        this.chessLogo = chessLogo;
     }
 }
 class Queen extends ChessPiece {
-    constructor(x, y) {
+    constructor(x, y, chessLogo = `♕`) {
         super(board, x, y);
         this.supportAxis = true;
         this.supportDiagonal = true;
         this.x = x !== null && x !== void 0 ? x : 0;
         this.y = y !== null && y !== void 0 ? y : 0;
+        this.chessLogo = chessLogo;
     }
 }
 class King extends ChessPiece {
-    constructor(x, y) {
+    constructor(x, y, chessLogo = `♔`) {
         super(board, x, y);
         this.supportAxis = true;
         this.supportDiagonal = true;
         this.x = x !== null && x !== void 0 ? x : 0;
         this.y = y !== null && y !== void 0 ? y : 0;
+        this.chessLogo = chessLogo;
     }
     isValidStepsSize(x, y) {
         if (Math.abs(x) > 1 || Math.abs(x) > y) {

@@ -8,8 +8,8 @@
 // ♕♔♖♗
 // let taken: any[] = []
 
+let chessPieceArray: { [chess :string] :string[]} = {}
 
-debugger;
 
 class Board {
     constructor(
@@ -21,9 +21,10 @@ class Board {
     inBoard(x:number , y:number) {
         if (x < 1 || this.width < x){
             return false
+        } else if(1 <= y && y <= this.height) {
+            return true
         }
-
-        return  1 <= y && y <= this.height;
+        return false
     }
 
     
@@ -62,26 +63,29 @@ class Board {
     }
 
     onBoardArray(piece :ChessPiece) {
-        for(let i = 0; i <= this.listOfPieces.length ; i++) {
-            if(this.listOfPieces[i].x === piece.x && this.listOfPieces[i].y === piece.y) {
-                return this.listOfPieces[i].x === piece.x && this.listOfPieces[i].y === piece.y;
-            } else {
-                return false
-            }
-        }
-
+        this.listOfPieces.forEach(x => {
+            if(x.x === piece.x && x.y === piece.y){
+                let pieceNum = this.listOfPieces.indexOf(piece)
+                this.listOfPieces.splice(pieceNum,1)
+                return true
+            } 
+        }) 
+        return false
     }
 
+
     placePiece(piece :ChessPiece ,x:number,y:number) {
+        if(this.notOverLap(piece)) {
         if(this.inBoard(piece.x + x ,piece.y + y)) {
             try {
                 if(this.onBoardArray(piece)) {
-                    console.log(`cant replace chesspiece if allready placed.`);
+                    console.log(`cant overlap`);
                 } else {
-                    piece.x += x;
-                    piece.y += y;
+                    piece.x += x
+                    piece.y += y
                     this.listOfPieces.push(piece)
                     console.log(`placed ChessPiece`);
+                    console.log(this.listOfPieces);
                 }             
             } catch(out)  {
             throw new Error(`out of bonds ${out as Error}`)
@@ -89,6 +93,9 @@ class Board {
         } else {
             console.log(`cant place outside of the board`);
         }
+    } else {
+        console.log(`cant replace chesspiece if allready placed.`);
+    }
     }
 
     // placePiece(piece :ChessPiece , x:number , y:number) {
@@ -219,40 +226,48 @@ abstract class ChessPiece{
 }
 
 class Rook extends ChessPiece {
-    constructor(x ?:number , y ?:number ) {
+    chessLogo: string;
+    constructor(x ?:number , y ?:number , chessLogo:string = `♖` ) {
         super(board,x,y);
         this.supportAxis = true
         this.x = x ?? 0;
         this.y = y ?? 0;
+        this.chessLogo = chessLogo
     }
 }
 
 class Bishop extends ChessPiece {
-    constructor( x ?:number , y? :number){
+    chessLogo: string;
+    constructor( x ?:number , y? :number, chessLogo:string = `♗`){
         super(board,x,y);
         this.supportDiagonal = true
         this.x = x ?? 0;
         this.y = y ?? 0;
+        this.chessLogo = chessLogo
     }
 }
 
 class Queen extends ChessPiece {
-    constructor( x? :number , y? :number){
+    chessLogo: string;
+    constructor( x? :number , y? :number, chessLogo:string = `♕`){
         super(board,x,y);
         this.supportAxis = true
         this.supportDiagonal = true
         this.x = x ?? 0;
         this.y = y ?? 0;
+        this.chessLogo = chessLogo
     }
 }
 
 class King extends ChessPiece {
-    constructor(x? :number , y? :number){
+    chessLogo: string;
+    constructor(x? :number , y? :number, chessLogo:string = `♔`){
         super(board,x,y);
         this.supportAxis = true
         this.supportDiagonal = true
         this.x = x ?? 0;
         this.y = y ?? 0;
+        this.chessLogo = chessLogo
     }
 
     override isValidStepsSize(x :number, y :number) :boolean {
