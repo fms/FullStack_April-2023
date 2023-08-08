@@ -10,18 +10,30 @@ class Board {
         if (x < 1 || x > this.width || y < 1 || y > this.height) {
             return false;
         }
-        this.listOfPieces.forEach((piece) => {
-            if (x === piece.width && y === piece.height) {
-                return false;
-            }
-        });
-        return true;
+        return !this.listOfPieces.some((piece) => x === piece.width && y === piece.height);
     }
     placePiece(piece) {
         return piece;
     }
-    getArrayOfPieces() {
-        console.log(this.listOfPieces);
+    getLayout() {
+        this.listOfPieces.forEach((piece) => {
+            switch (piece.constructor) {
+                case Rook:
+                    console.log(`R: ${piece.width},${piece.height}`);
+                    break;
+                case Bishop:
+                    console.log(`B: ${piece.width},${piece.height}`);
+                    break;
+                case Queen:
+                    console.log(`Q: ${piece.width},${piece.height}`);
+                    break;
+                case King:
+                    console.log(`K: ${piece.width},${piece.height}`);
+                    break;
+                default:
+                    console.log("Error");
+            }
+        });
     }
 }
 class ChessPiece {
@@ -33,6 +45,9 @@ class ChessPiece {
         this.height = height;
         if (board.isPositionAvailable(this.width, this.height)) {
             board.listOfPieces.push(this);
+        }
+        else {
+            console.log("You can't place the piece here");
         }
     }
     getLocation() {
@@ -146,7 +161,6 @@ let king = new King(board, 5, 5);
 // king.goDown(2)
 // king.goLeftDown(1)
 // king.goRight(2)
-board.placePiece(new Rook(board, 4, 4));
-board.placePiece(new Rook(board, 4, 4));
-board.placePiece(new Rook(board, 4, 4));
-board.getArrayOfPieces();
+// board.placePiece(new Rook(board, 4, 4))
+// board.placePiece(new Rook(board, 4, 4))
+board.getLayout();

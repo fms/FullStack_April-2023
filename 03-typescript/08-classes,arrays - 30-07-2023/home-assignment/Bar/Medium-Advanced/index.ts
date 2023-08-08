@@ -33,7 +33,7 @@ class ACeleb extends APerson {
 
     removeFollower(socialNetwork: string, person: APerson) {
         if (!this.networkObject[socialNetwork]) {
-            console.log("Social network does not exist");
+            console.log("Celeb does not exist in this social newtwork");
         } else {
             const index = this.networkObject[socialNetwork].findIndex(user => person.getFullName() === user);
             if (index !== -1) {
@@ -44,11 +44,7 @@ class ACeleb extends APerson {
         }
     }
 
-    details() {
-        console.log(this);
-    }
-
-    print(minFollowers: number) {
+    printMinFollowers(minFollowers: number) {
         if (minFollowers) {
             for (const socialNetwork in this.networkObject) {
                 if (this.networkObject[socialNetwork].length >= minFollowers) {
@@ -75,8 +71,13 @@ class ACeleb extends APerson {
                 mostFollowed = celeb
             }
         })
-        return `${mostFollowed!.getFullName()} is very popular with followers count of ${maxFollowers}`;
+        return `${mostFollowed!.getFullName()} is very popular, with followers count of ${maxFollowers}`;
     }
+
+    details() {
+        console.log(this);
+    }
+
 }
 
 class ASocialNetwork {
@@ -92,7 +93,7 @@ class ASocialNetwork {
 
     addFollower(person: APerson) {
         if (this.usersArray.some(user => (person.getFullName() === user.getFullName()))) {
-            console.log("User is already in the social network");
+            console.log("User is already in that social network");
         } else {
             this.usersArray.push(person);
         }
@@ -103,7 +104,7 @@ class ASocialNetwork {
             this.usersArray.splice(this.usersArray.indexOf(person), 1);
             return person
         } else {
-            console.log("User is not in the social network");
+            console.log("User is not in that social network");
             return null
         }
     }
@@ -118,8 +119,8 @@ class ASocialNetwork {
 }
 
 let personA = new APerson("Amit", "Gazub", "A")
-let personB = new APerson("Hofni", "Klark", "B")
-let personC = new APerson("Yoni", "Asark", "C")
+let personB = new APerson("Hofni", "Clark", "B")
+let personC = new APerson("Yoni", "Asaf", "C")
 
 let socialNetworkA = new ASocialNetwork("Twitter", 10)
 
@@ -129,7 +130,7 @@ let socialNetworkA = new ASocialNetwork("Twitter", 10)
 // console.log(socialNetwork.print());
 
 let celebA = new ACeleb("Ofir", "Eldar", "D")
-let celebB = new ACeleb("Avatiah", "Sameah", "F")
+let celebB = new ACeleb("Mr", "Sameah", "F")
 let celebC = new ACeleb("Simcha", "Biton", "H")
 
 
@@ -145,3 +146,4 @@ celebC.addFollower("Instagram", personC)
 // celeb.print(2)
 // celeb.details()
 console.log(celebA.mostPopular([celebA, celebB, celebC], "Facebook"));
+celebB.printMinFollowers(1)
