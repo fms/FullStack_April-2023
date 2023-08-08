@@ -192,6 +192,7 @@ abstract class ChessPiece{
                     this.x += stepsX;
                     this.y += stepsY;
                     this.getLocation();
+                    this.board.printBoard()
                 } else {
                     throw new Error("Out of bonds")
                 }
@@ -314,5 +315,4 @@ firstKing.getLocation()
 firstBishop.getLocation()
 console.log(board.listOfPieces);
 
-debugger;
 board.printBoard();
