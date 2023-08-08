@@ -16,26 +16,50 @@ class Board {
         this.listOfPieces = listOfPieces;
     }
     inBoard(x, y) {
-        if (x < 1 || this.width < x) {
+        if (x < 1 || this.width < x || y < 1 || this.height < y) {
             return false;
         }
-        else if (1 <= y && y <= this.height) {
-            return true;
-        }
-        return false;
+        return !this.listOfPieces.some(piece => x === piece.x && y === piece.y);
     }
-    showBoard() {
-        let skeleBoard = "";
-        for (let height = 1; height <= this.height; height++) {
-            skeleBoard += " | |";
-            for (let width = 2; width <= this.width; width++) {
-                skeleBoard += " | |";
-                if (width / this.width === 1) {
-                    skeleBoard += "\n";
+    // showBoard() {
+    //     let skeleBoard :string = ""
+    //     for(let height = 1 ; height <= this.height ; height++) {
+    //         if(this.listOfPieces.map(piece => {
+    //             if(piece.y === height) {
+    //                 skeleBoard += `|${chessPieceArray.chessLogo}|`
+    //             }else {
+    //                 skeleBoard += " | |" 
+    //             }
+    //         }))
+    //             for(let width = 2 ; width <= this.width ; width++) {
+    //                 if(this.listOfPieces.map(piece => {
+    //                     if(piece.x === width){
+    //                         skeleBoard += chessPieceArray.chessLogo
+    //                     } else {
+    //                         skeleBoard += " | |"
+    //                     }
+    //                 }))
+    //                 if(width / this.width === 1) {
+    //                     skeleBoard += "\n"
+    //             }
+    //         }
+    //     }
+    //         console.log(skeleBoard);
+    // }
+    printBoard() {
+        for (let row = this.height; row >= 1; row--) {
+            let rowStr = `${row}`;
+            for (let col = 1; col <= this.width; col++) {
+                const piece = this.listOfPieces.find(p => p.x === col && p.y === row);
+                if (piece) {
+                    rowStr += `|${piece.chessLogo}`;
+                }
+                else {
+                    rowStr += '| |';
                 }
             }
+            console.log(rowStr + ` ${row}`);
         }
-        console.log(skeleBoard);
     }
     // onBoardArray(piece :ChessPiece){
     //     if(this.SameObject(this.listOfPieces,ChessObjPiece)) {
@@ -86,15 +110,13 @@ class Board {
                 console.log(`cant place outside of the board`);
             }
         }
-        else {
-            console.log(`cant replace chesspiece if allready placed.`);
-        }
     }
 }
 let board = new Board(8, 8);
 class ChessPiece {
-    constructor(board, x, y, listOfPieces = []) {
+    constructor(board, x, y, listOfPieces = [], chessLogo = ``) {
         this.listOfPieces = listOfPieces;
+        this.chessLogo = chessLogo;
         this.supportAxis = false;
         this.supportDiagonal = false;
         this.board = board;
@@ -225,7 +247,6 @@ let firstRook = new Rook();
 let firstQueen = new Queen();
 let firstKing = new King();
 let firstBishop = new Bishop();
-board.showBoard();
 board.placePiece(firstRook, 2, 2);
 board.placePiece(firstRook, 2, 2);
 board.placePiece(firstQueen, 2, 2);
@@ -236,3 +257,5 @@ firstQueen.getLocation();
 firstKing.getLocation();
 firstBishop.getLocation();
 console.log(board.listOfPieces);
+debugger;
+board.printBoard();
