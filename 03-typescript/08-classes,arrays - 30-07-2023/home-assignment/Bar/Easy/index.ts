@@ -14,21 +14,32 @@ class Board {
             return false;
         }
 
-        this.listOfPieces.forEach((piece) => {
-            if (x === piece.width && y === piece.height) {
-                return false;
-            }
-        })
-        return true;
-            
+        return !this.listOfPieces.some((piece) => x === piece.width && y === piece.height);
     }
 
     placePiece(piece: ChessPiece) {
         return piece
     }
 
-    getArrayOfPieces() {
-        console.log(this.listOfPieces);
+    getLayout() {
+        this.listOfPieces.forEach((piece) => {
+            switch (piece.constructor) {
+                case Rook:
+                    console.log(`R: ${piece.width},${piece.height}`);
+                    break
+                case Bishop:
+                    console.log(`B: ${piece.width},${piece.height}`);
+                    break
+                case Queen:
+                    console.log(`Q: ${piece.width},${piece.height}`);
+                    break
+                case King:
+                    console.log(`K: ${piece.width},${piece.height}`);
+                    break
+                default:
+                    console.log("Error");
+            }
+        })
     }
 }
 
@@ -43,6 +54,9 @@ abstract class ChessPiece {
         this.height = height
         if (board.isPositionAvailable(this.width, this.height)) {
             board.listOfPieces.push(this);
+        }
+        else {
+            console.log("You can't place the piece here");
         }
     }
 
@@ -121,7 +135,6 @@ abstract class ChessPiece {
     goLeftDown(steps: number) {
         this.moveOnDiagonal(-steps, -steps)
     }
-
 }
 
 class Rook extends ChessPiece {
@@ -170,8 +183,6 @@ let bishop = new Bishop(board, 2, 2)
 let queen = new Queen(board, 6, 6)
 let king = new King(board, 5, 5)
 
-
-
 // bishop.goLeftUp(90)
 // bishop.goRightUp(5)
 // bishop.goRightDown(12)
@@ -187,10 +198,9 @@ let king = new King(board, 5, 5)
 
 
 
-board.placePiece(new Rook(board, 4, 4))
-board.placePiece(new Rook(board, 4, 4))
-board.placePiece(new Rook(board, 4, 4))
-board.getArrayOfPieces()
+// board.placePiece(new Rook(board, 4, 4))
+// board.placePiece(new Rook(board, 4, 4))
+board.getLayout()
 
 
 
