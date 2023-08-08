@@ -1,0 +1,10 @@
+.person-fullName {
+  font-size: 20px;
+  color: red;
+}
+
+.person-image {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
