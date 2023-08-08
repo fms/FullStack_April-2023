@@ -12,7 +12,7 @@ for (let bottles = 99; bottles >= 1; bottles--) {
     );
   }
 }
-
+.
 // Mission #2
 let numberFromUser = parseInt(
   prompt(`Hey dude give me a number! ╰(*°▽°*)╯`) || "0"
