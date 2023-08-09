@@ -61,6 +61,10 @@ class Person {
         return `${this.firstName} ${this.lastName}`
     }
 
+    set fullName(newName :string){
+        [this.firstName,this.lastName] = newName.split(" ")
+    }
+
     follow(socialNetwork :string, person :Person) {
         if(person.networkObject[socialNetwork]) {
             if(person.networkObject[socialNetwork].some((user) => this.fullName === user)){
@@ -150,7 +154,7 @@ class Celeb extends Person {
         lastName :string,
         genre? :string,
     ) {
-        super(firstName,lastName,genre)
+        super(firstName,lastName,genre);
     }
 
     follow(socialNetwork :string, person :Person) {
@@ -191,16 +195,6 @@ class Celeb extends Person {
     }
 
 
-    printMin(minNumber?:number) {
-        for(const socialFollower in this.networkObject) {
-            if(this.networkObject[socialFollower].length >= (minNumber ?? 0)){
-                return true
-            }
-            return false
-        }
-
-    }
-
     printMi(minNumber? :number) {
         let socialArray: {[key :(string)] :(number | string)[]} = {}
         for(const social in this.networkObject) {
@@ -213,16 +207,21 @@ class Celeb extends Person {
         console.log(`${this.fullName}: ${JSON.stringify(socialArray)}`)
     }
 
-    // mostPopular(celeb[],socialNetwork): celeb[] {
+    mostPopular(celebsArray: Celeb[], socialNetwork: socialNetwork) {
+        let mostFollowed: Celeb | null = null
+        let maxFollowers = -1;
 
-    // }
+        celebsArray.forEach((celeb) => {
+            const followersCount = celeb.networkObject[socialNetwork.socialNetworkName].length
+            if (followersCount > maxFollowers) {
+                maxFollowers = followersCount
+                mostFollowed = celeb
+            }
+        })
+        console.log(`${mostFollowed!.fullName} is very popular on ${socialNetwork.socialNetworkName} with followers count of ${maxFollowers}`);
+    }
 
 }
-
-// ***
-// 2. Write a function `mostPopular(celeb[], socialNetwork): Celeb[]` to return the celebs with the most followers on that specific social media.
-
-
 
 
 
@@ -235,7 +234,7 @@ let asaf = new Celeb(`asaf`,`kfir`)
 let sagi = new Celeb(`sagi`,`franko`)
 
 let twitter = new socialNetwork(`Twitter`)
-let facebook = new socialNetwork(`facebook`)
+let facebook = new socialNetwork(`Facebook`)
 
 
 twitter.addFollower(saar);
@@ -262,4 +261,17 @@ omer.addFollower(facebook,sagi);
 
 sagi.detail();
 
+
+
+sagi.addFollower(twitter,asaf);
+omer.addFollower(twitter,asaf);
+amit.addFollower(facebook,asaf);
+sagi.addFollower(facebook,asaf);
+omer.addFollower(facebook,asaf);
+
+
 sagi.printMi(2)
+asaf.printMi(2)
+
+sagi.mostPopular([sagi,asaf],twitter)
+sagi.mostPopular([sagi,asaf],facebook)

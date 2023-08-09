@@ -1,8 +1,8 @@
 class Person {
-    constructor(public firstName: string, public lastName: string, public gender: string) {
+    constructor(public firstName: string, public lastName: string, public genre: string) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.gender = gender;
+        this.genre = genre;
     }
 
     get fullName() {
@@ -41,7 +41,7 @@ class SocialNetwork {
         }
     }
 
-    removeFollower(person: Person) {
+    removeFollower(person: Person): Person | null {
         let startIn = this.followers.indexOf(person);
         this.followers.splice(startIn, 1);
         return console.log(`${person.fullName} was removed from your followers.`);
@@ -57,8 +57,8 @@ class SocialNetwork {
 
 class Celeb extends Person {
     socialNetworks: SocialNetwork[] = []
-    constructor(public firstName: string, public lastName: string, public gender: string) {
-        super(firstName, lastName, gender)
+    constructor(public firstName: string, public lastName: string, public genre: string) {
+        super(firstName, lastName, genre)
     }
 
     addSocNet(network: SocialNetwork) {
@@ -94,10 +94,9 @@ class Celeb extends Person {
     //     let celebDetails = {
     //         firstName: this.firstName,
     //         lasrName: this.lastName,
-    //         socialNetworks: [
-    //             {network: }
-    //         ]
+    //         socialNetworks: 
     //     }
+    //     return celebDetails
     // }
 }
 
@@ -109,6 +108,7 @@ let person5 = new Person("grkosaf", "Ivgi", "Male")
 let person6 = new Person("pqwsaf", "Ivgi", "Male")
 let facebook = new SocialNetwork("Facebook", "Asaf Ivgi")
 let twitter = new SocialNetwork("Twitter", "Asaf Ivgi")
+let instagrem = new SocialNetwork("Instagrem", "Asaf Ivgi")
 // facebook.followers.push(person1, person2, person3, person4, person5, person6);
 // twitter.followers.push(person1, person2, person3, person4, person5, person6);
 
