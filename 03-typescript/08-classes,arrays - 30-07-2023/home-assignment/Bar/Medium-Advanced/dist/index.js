@@ -43,7 +43,7 @@ var ACeleb = /** @class */ (function (_super) {
     };
     ACeleb.prototype.removeFollower = function (socialNetwork, person) {
         if (!this.networkObject[socialNetwork]) {
-            console.log("Social network does not exist");
+            console.log("Celeb does not exist in this social newtwork");
         }
         else {
             var index = this.networkObject[socialNetwork].findIndex(function (user) { return person.getFullName() === user; });
@@ -55,10 +55,7 @@ var ACeleb = /** @class */ (function (_super) {
             }
         }
     };
-    ACeleb.prototype.details = function () {
-        console.log(this);
-    };
-    ACeleb.prototype.print = function (minFollowers) {
+    ACeleb.prototype.printMinFollowers = function (minFollowers) {
         if (minFollowers) {
             for (var socialNetwork in this.networkObject) {
                 if (this.networkObject[socialNetwork].length >= minFollowers) {
@@ -83,7 +80,10 @@ var ACeleb = /** @class */ (function (_super) {
                 mostFollowed = celeb;
             }
         });
-        return mostFollowed.getFullName() + " is very popular with followers count of " + maxFollowers;
+        return mostFollowed.getFullName() + " is very popular, with followers count of " + maxFollowers;
+    };
+    ACeleb.prototype.details = function () {
+        console.log(this);
     };
     return ACeleb;
 }(APerson));
@@ -97,7 +97,7 @@ var ASocialNetwork = /** @class */ (function () {
     }
     ASocialNetwork.prototype.addFollower = function (person) {
         if (this.usersArray.some(function (user) { return (person.getFullName() === user.getFullName()); })) {
-            console.log("User is already in the social network");
+            console.log("User is already in that social network");
         }
         else {
             this.usersArray.push(person);
@@ -109,7 +109,7 @@ var ASocialNetwork = /** @class */ (function () {
             return person;
         }
         else {
-            console.log("User is not in the social network");
+            console.log("User is not in that social network");
             return null;
         }
     };
@@ -123,15 +123,15 @@ var ASocialNetwork = /** @class */ (function () {
     return ASocialNetwork;
 }());
 var personA = new APerson("Amit", "Gazub", "A");
-var personB = new APerson("Hofni", "Klark", "B");
-var personC = new APerson("Yoni", "Asark", "C");
+var personB = new APerson("Hofni", "Clark", "B");
+var personC = new APerson("Yoni", "Asaf", "C");
 var socialNetworkA = new ASocialNetwork("Twitter", 10);
 // socialNetwork.addFollower(person1)
 // socialNetwork.addFollower(person2)
 // socialNetwork.addFollower(person3)
 // console.log(socialNetwork.print());
 var celebA = new ACeleb("Ofir", "Eldar", "D");
-var celebB = new ACeleb("Avatiah", "Sameah", "F");
+var celebB = new ACeleb("Mr", "Sameah", "F");
 var celebC = new ACeleb("Simcha", "Biton", "H");
 celebA.addFollower("Twitter", personC);
 celebA.addFollower("Facebook", personB);
@@ -144,3 +144,4 @@ celebC.addFollower("Instagram", personC);
 // celeb.print(2)
 // celeb.details()
 console.log(celebA.mostPopular([celebA, celebB, celebC], "Facebook"));
+celebB.printMinFollowers(1);
