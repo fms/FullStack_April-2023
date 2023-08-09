@@ -26,32 +26,6 @@ class Board {
     }
 
     
-    // showBoard() {
-    //     let skeleBoard :string = ""
-    //     for(let height = 1 ; height <= this.height ; height++) {
-    //         if(this.listOfPieces.map(piece => {
-    //             if(piece.y === height) {
-    //                 skeleBoard += `|${chessPieceArray.chessLogo}|`
-    //             }else {
-    //                 skeleBoard += " | |" 
-    //             }
-    //         }))
-    //             for(let width = 2 ; width <= this.width ; width++) {
-    //                 if(this.listOfPieces.map(piece => {
-    //                     if(piece.x === width){
-    //                         skeleBoard += chessPieceArray.chessLogo
-    //                     } else {
-    //                         skeleBoard += " | |"
-    //                     }
-    //                 }))
-    //                 if(width / this.width === 1) {
-    //                     skeleBoard += "\n"
-    //             }
-    //         }
-    //     }
-    //         console.log(skeleBoard);
-    // }
-
 
     printBoard(): void {
         for (let row = this.height; row >= 1; row--) {
@@ -69,16 +43,6 @@ class Board {
     }
     
 
-    // onBoardArray(piece :ChessPiece){
-    //     if(this.SameObject(this.listOfPieces,ChessObjPiece)) {
-    //         console.log(`cant move, there is a chess piece over there.`);
-    //     } else {
-    //     ChessObjPiece.x = piece.x
-    //     ChessObjPiece.y = piece.y
-    //     this.listOfPieces.push(piece)
-    //     console.log(this.listOfPieces)
-    // }
-    // }
 
     notOverLap(piece :ChessPiece) :boolean {
         if(piece.x === 0 ||  piece.y === 0) {
@@ -120,29 +84,6 @@ class Board {
         }
     }
     }
-
-    // placePiece(piece :ChessPiece , x:number , y:number) {
-    //     if(this.placePiece2(piece,x,y)) {
-    //         console.log(`cant go there.`);
-    //     } else {
-    //         piece.x += x;
-    //         piece.y += y;
-    //         this.listOfPieces.push(piece)
-    //     }
-    // }
-
-//     placePiece2(piece :ChessPiece,x :number, y :number) {
-//         if(this.inBoard(piece.x + x, piece.y + y)){
-//             return true
-//         }
-
-//         for (const piecee of this.listOfPieces) {
-//             if(x === piece.x && y === piece.y) {
-//                 return true
-//             }
-//         }
-//     }
-
 }
 
 
