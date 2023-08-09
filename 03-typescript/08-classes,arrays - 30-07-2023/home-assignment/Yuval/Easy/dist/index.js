@@ -24,12 +24,25 @@ class Board {
         }
     }
     layout() {
-        pieces.forEach(x => console.log(x));
+        for (let row = this.height; row > 0; row--) {
+            let boardLayout = `${row}`;
+            for (let col = 1; col <= this.width; col++) {
+                const isPlaced = pieces.find(x => x.width === col && x.height === row);
+                if (isPlaced) {
+                    boardLayout += `|${isPlaced.getFirstLetter}`;
+                }
+                else {
+                    boardLayout += `| |`;
+                }
+            }
+            console.log(boardLayout + ` ${row}`);
+        }
     }
 }
 let board = new Board(10, 10);
 class ChessPiece {
     constructor(board, width, height) {
+        this.getFirstLetter = "";
         this.supportsAxis = false;
         this.supportsDiagonal = false;
         this.board = board;
@@ -121,12 +134,14 @@ class Rook extends ChessPiece {
     constructor(board, width, height) {
         super(board, width, height);
         this.supportsAxis = true;
+        this.getFirstLetter = "R";
     }
 }
 class Bishop extends ChessPiece {
     constructor(board, width, height) {
         super(board, width, height);
         this.supportsDiagonal = true;
+        this.getFirstLetter = "B";
     }
 }
 class Queen extends ChessPiece {
@@ -134,6 +149,7 @@ class Queen extends ChessPiece {
         super(board, width, height);
         this.supportsAxis = true;
         this.supportsDiagonal = true;
+        this.getFirstLetter = "Q";
     }
 }
 class King extends ChessPiece {
@@ -141,6 +157,7 @@ class King extends ChessPiece {
         super(board, width, height);
         this.supportsAxis = true;
         this.supportsDiagonal = true;
+        this.getFirstLetter = "K";
     }
     isValidStepSize(x, y) {
         if (Math.abs(x) > 1 || Math.abs(y) > 1) {
@@ -154,7 +171,7 @@ let rook = new Rook(board, 3, 3);
 let bishop = new Bishop(board, 9, 5);
 let queen = new Queen(board, 3, 7);
 let king = new King(board, 5, 5);
-let rook2 = new Rook(board, 9, 5);
+let rook2 = new Rook(board, 7, 2);
 board.placePiece(rook);
 board.placePiece(bishop);
 board.placePiece(queen);

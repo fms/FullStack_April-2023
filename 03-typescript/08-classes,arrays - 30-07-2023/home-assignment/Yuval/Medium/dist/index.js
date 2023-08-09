@@ -99,9 +99,7 @@ class Celeb extends Person {
     print(minFollowers) {
         let endString = `${this.fullName}: `;
         let tempArray = this.socialNetworks.filter(x => x.followers.length >= (minFollowers || 0));
-        for (let index = 0; index <= tempArray.length - 1; index++) {
-            endString = endString + `${tempArray[index].socialNetworkName} (${tempArray[index].followers.length}) `;
-        }
+        tempArray.forEach((x, index) => endString = endString + `${tempArray[index].socialNetworkName} (${tempArray[index].followers.length}) `);
         console.log(endString);
     }
 }
