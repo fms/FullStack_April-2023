@@ -12,13 +12,13 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 var Person = /** @class */ (function () {
-    function Person(firstName, lastName, gender) {
+    function Person(firstName, lastName, genre) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.gender = gender;
+        this.genre = genre;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.gender = gender;
+        this.genre = genre;
     }
     Object.defineProperty(Person.prototype, "fullName", {
         get: function () {
@@ -77,11 +77,11 @@ var SocialNetwork = /** @class */ (function () {
 }());
 var Celeb = /** @class */ (function (_super) {
     __extends(Celeb, _super);
-    function Celeb(firstName, lastName, gender) {
-        var _this = _super.call(this, firstName, lastName, gender) || this;
+    function Celeb(firstName, lastName, genre) {
+        var _this = _super.call(this, firstName, lastName, genre) || this;
         _this.firstName = firstName;
         _this.lastName = lastName;
-        _this.gender = gender;
+        _this.genre = genre;
         _this.socialNetworks = [];
         return _this;
     }
@@ -124,6 +124,7 @@ var person5 = new Person("grkosaf", "Ivgi", "Male");
 var person6 = new Person("pqwsaf", "Ivgi", "Male");
 var facebook = new SocialNetwork("Facebook", "Asaf Ivgi");
 var twitter = new SocialNetwork("Twitter", "Asaf Ivgi");
+var instagrem = new SocialNetwork("Instagrem", "Asaf Ivgi");
 // facebook.followers.push(person1, person2, person3, person4, person5, person6);
 // twitter.followers.push(person1, person2, person3, person4, person5, person6);
 var celeb1 = new Celeb("Asaf", "ivgi", "Male");
