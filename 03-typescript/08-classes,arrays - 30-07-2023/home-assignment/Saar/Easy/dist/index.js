@@ -21,31 +21,6 @@ class Board {
         }
         return !this.listOfPieces.some(piece => x === piece.x && y === piece.y);
     }
-    // showBoard() {
-    //     let skeleBoard :string = ""
-    //     for(let height = 1 ; height <= this.height ; height++) {
-    //         if(this.listOfPieces.map(piece => {
-    //             if(piece.y === height) {
-    //                 skeleBoard += `|${chessPieceArray.chessLogo}|`
-    //             }else {
-    //                 skeleBoard += " | |" 
-    //             }
-    //         }))
-    //             for(let width = 2 ; width <= this.width ; width++) {
-    //                 if(this.listOfPieces.map(piece => {
-    //                     if(piece.x === width){
-    //                         skeleBoard += chessPieceArray.chessLogo
-    //                     } else {
-    //                         skeleBoard += " | |"
-    //                     }
-    //                 }))
-    //                 if(width / this.width === 1) {
-    //                     skeleBoard += "\n"
-    //             }
-    //         }
-    //     }
-    //         console.log(skeleBoard);
-    // }
     printBoard() {
         for (let row = this.height; row >= 1; row--) {
             let rowStr = `${row}`;
@@ -61,16 +36,6 @@ class Board {
             console.log(rowStr + ` ${row}`);
         }
     }
-    // onBoardArray(piece :ChessPiece){
-    //     if(this.SameObject(this.listOfPieces,ChessObjPiece)) {
-    //         console.log(`cant move, there is a chess piece over there.`);
-    //     } else {
-    //     ChessObjPiece.x = piece.x
-    //     ChessObjPiece.y = piece.y
-    //     this.listOfPieces.push(piece)
-    //     console.log(this.listOfPieces)
-    // }
-    // }
     notOverLap(piece) {
         if (piece.x === 0 || piece.y === 0) {
             return true;
