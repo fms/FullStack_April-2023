@@ -1,14 +1,14 @@
 abstract class Movie {
     name: string;
     length: string;
-    releaseDate: Date;
+    releaseDate: string;
     genre: string;
     mainCharacter: string;
     director: string;
     budget: number;
     boxOffice: number;
 
-    constructor(name: string, length: string, releaseDate: Date, genre: string, mainCharacter: string, director: string, budget: number, boxOffice: number) {
+    constructor(name: string, length: string, releaseDate: string, genre: string, mainCharacter: string, director: string, budget: number, boxOffice: number) {
         this.name = name;
         this.length = length;
         this.releaseDate = releaseDate;
@@ -44,7 +44,7 @@ class MarvelMovie extends Movie {
     order: number;
     phase: number;
     
-    constructor(name: string, length: string, releaseDate: Date, mainCharacter: string, director: string, budget: number, boxOffice: number, order: number, phase: number) {
+    constructor(name: string, length: string, releaseDate: string, mainCharacter: string, director: string, budget: number, boxOffice: number, order: number, phase: number) {
         super(name, length, releaseDate, "Superhero", mainCharacter, director, budget, boxOffice);
         this.order = order;
         this.phase = phase;
@@ -94,7 +94,7 @@ class FantasyMovie extends Movie {
     author: string;
     franchise: String;
 
-    constructor(name: string, length: string, releaseDate: Date, mainCharacter: string, director: string, budget: number, boxOffice: number, author: string, franchise: string){
+    constructor(name: string, length: string, releaseDate: string, mainCharacter: string, director: string, budget: number, boxOffice: number, author: string, franchise: string){
         super(name, length, releaseDate, "fantasy", mainCharacter, director, budget, boxOffice);
         this.author = author;
         this.franchise = franchise;
@@ -117,7 +117,7 @@ class ForeignFilm extends Movie {
     countryOfOrigin: string;
     language: string;
 
-    constructor(name: string, length: string, releaseDate: Date, genre: string, mainCharacter: string, director: string, budget: number, boxOffice: number, countryOfOrigin: string, language: string) {
+    constructor(name: string, length: string, releaseDate: string, genre: string, mainCharacter: string, director: string, budget: number, boxOffice: number, countryOfOrigin: string, language: string) {
         super(name, length,releaseDate, genre, mainCharacter, director, budget, boxOffice);
         this.countryOfOrigin = countryOfOrigin;
         this.language =language;
