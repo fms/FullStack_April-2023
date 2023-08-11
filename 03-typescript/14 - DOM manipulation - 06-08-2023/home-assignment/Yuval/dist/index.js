@@ -13,11 +13,11 @@ class Person {
         return `${this.firstName} ${this.lastName}`;
     }
 }
-let shayne = new Person(`Shayne`, `Topp`, `images/shayne.jpg`);
-let court = new Person(`Courtney`, `Miller`, `images/courtney.jpg`);
-let ian = new Person(`Ian`, `Hecox`, `images/ian.jpg`);
-let angela = new Person(`Angela`, `Giarratana`, `images/angela.jpg`);
-let noah = new Person(`Noah`, `Grossman`, `images/noah.jpg`);
+let shayne = new Person(`Shayne`, `Topp`, `shayne.jpg`);
+let court = new Person(`Courtney`, `Miller`, `courtney.jpg`);
+let ian = new Person(`Ian`, `Hecox`, `ian.jpg`);
+let angela = new Person(`Angela`, `Giarratana`, `angela.jpg`);
+let noah = new Person(`Noah`, `Grossman`, `noah.jpg`);
 let people = [shayne, court, ian, angela, noah];
 people.forEach(x => {
     const div = document.createElement(`div`);
