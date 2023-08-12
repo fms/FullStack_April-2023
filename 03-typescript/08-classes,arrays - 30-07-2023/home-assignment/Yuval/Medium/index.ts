@@ -123,23 +123,13 @@ class Celeb extends Person {
     }
 
     print(minFollowers?: number) {
-        let tempArray = this.socialNetworks.map(x => ({
-            name: x.socialNetworkName,
-            followers: x.followers.length -1,
-        }));
-        tempArray.sort((a, b) => a.followers - b.followers);
-        tempArray = tempArray.filter((y) => y.followers >= (minFollowers || 0));
-
         let endString = `${this.fullName}: `;
-        if (!minFollowers) {
-            minFollowers = 0;
-        }
-        for (let index = 0; index <= tempArray.length - 1; index++) {
-            endString = endString + `${tempArray[index].name} (${tempArray[index].followers}) `;
-        }
+        let tempArray = this.socialNetworks.filter(x => x.followers.length >= (minFollowers || 0));
+        tempArray.forEach((x: SocialNetwork, index: number) => endString = endString + `${tempArray[index].socialNetworkName} (${tempArray[index].followers.length}) `);
         console.log(endString);
     }
 }
+
 
 function space() {
     console.log("");

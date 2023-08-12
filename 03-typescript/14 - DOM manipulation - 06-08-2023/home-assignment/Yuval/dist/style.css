@@ -1,0 +1,15 @@
+.people {
+  display: flex;
+  flex-direction: row;
+}
+
+.person-fullName {
+  font-size: 100px;
+  color: pink;
+}
+
+.person-image {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
