@@ -32,13 +32,15 @@ class SocialNetwork {
         }
     }
     print() {
-        console.log(`${this.SocialNetworkname}: `);
+        let followerList = this.followers.map(follower => ` ` + follower.fullName);
+        console.log(`${this.accountIdentifier} ${this.SocialNetworkname}: ${followerList}`);
     }
 }
 let ShlomoArtzi = new Person(`Shlomo`, `Artzi`, `Singer`);
 let LionelMessi = new Person(`Lionel`, `Messi`, `football`);
 let TwitterShlomo = new SocialNetwork(`Twitter`, `@Shlomo`);
 let instagramMessi = new SocialNetwork(`instagram`, `@Messi`);
+let FacebookRonaldo = new SocialNetwork(`Facebook`, `@Ronaldo`);
 let NewPerson3 = new Person(`Eli`, `David`);
 let NewPerson4 = new Person(`Eli`, `Cohen`);
 let NewPerson5 = new Person(`Dani`, `Dani`);
