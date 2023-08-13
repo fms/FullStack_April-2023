@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM traversal</title>
+    <link rel="stylesheet" href="dist/index.css">
+    <script src="dist/index.js" defer></script>
+</head>
+<body>
+    <div class="grandparent" id="grandparent-id">
+        <div class="parent">
+            <!-- comment 1 -->
+            <div class="child" id="first-child"></div>
+            <div class="child" id="second-child"></div>
+            <div class="child"></div>
+        </div>
+        <div class="parent">
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="child"></div>
+        </div>
+    </div>
+</body>
+</html>
