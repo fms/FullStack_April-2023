@@ -48,7 +48,7 @@ persons.forEach(person => {
     const imageElement = document.createElement(`img`);
     imageElement.src = `images/${person.image}`;
     imageElement.className = `person-image`;
-    container.appendChild(personDiv);
+    container.append(personDiv);
     personDiv.appendChild(imageElement);
     personDiv.appendChild(fullNamePara);
 });
