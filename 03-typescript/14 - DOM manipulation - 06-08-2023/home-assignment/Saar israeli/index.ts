@@ -72,10 +72,12 @@ persons.forEach(person => {
 
 
     
-    container.appendChild(personDiv);
+    container.append(personDiv);
     personDiv.appendChild(imageElement);
     personDiv.appendChild(fullNamePara)
 })
+
+
 
 
 

@@ -161,6 +161,7 @@ class Celeb extends Person {
             let personNum = person.networkObject[socialNetwork.socialNetworkName].indexOf(this.fullName);
             person.networkObject[socialNetwork.socialNetworkName].splice(personNum, 1);
             --socialNetwork.accountIdentifier;
+            person.networkObject;
             console.log(`${this.fullName} removed follower from ${person.fullName} on ${JSON.stringify(socialNetwork.socialNetworkName)}`);
         }
         else {
