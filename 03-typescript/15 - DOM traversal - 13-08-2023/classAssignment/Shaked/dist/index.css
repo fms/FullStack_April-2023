@@ -1,0 +1,34 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+div {
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.grandparent {
+  border: 1px black solid;
+  width: 40%;
+  padding: 10px;
+}
+
+.parent {
+  border: 1px black solid;
+  width: 95%;
+  height: 4vw;
+  margin-left: 2%;
+  margin-top: 5px;
+  display: flex;
+}
+
+.child {
+  border: 1px black solid;
+  width: 30%;
+  height: 2.5vw;
+  margin-top: 10px;
+  margin-left: 10px;
+}
