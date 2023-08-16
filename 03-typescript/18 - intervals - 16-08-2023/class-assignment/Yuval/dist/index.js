@@ -1,10 +1,14 @@
 "use strict";
-function move(element, scale) {
-    for (let newLeft = element.offsetLeft; newLeft <= 1000; newLeft++) {
-        console.log("move left");
-        element.style.position = "relative";
-        element.style.left = `${newLeft}px`;
+let step = 100;
+function move(element) {
+    let left = element.offsetLeft;
+    let right = element.offsetWidth + left;
+    console.log("move");
+    if ((left > 0 && right + step > window.innerWidth) || (right > 0 && left + step < 0)) {
+        step = -step;
     }
+    element.style.position = "relative";
+    element.style.left = `${left + step}px`;
 }
 let div = document.querySelector("div");
-let left = setInterval(() => move(div, 1000));
+setInterval(() => move(div), 200);
