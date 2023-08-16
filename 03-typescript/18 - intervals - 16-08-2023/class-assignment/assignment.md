@@ -1,0 +1,1 @@
+Use intervals to move a div left and right on the screen. When the div reaches the end of the screen it should reverse direction.
