@@ -1,4 +1,7 @@
 "use strict";
+let grandparent = document.querySelector("#grandparent-id");
+grandparent.style.width = "1000px";
+grandparent.style.margin = "30vh 25vw";
 function changeBrColor(element, color) {
     element.style.backgroundColor = color;
 }

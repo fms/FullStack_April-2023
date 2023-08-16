@@ -1,3 +1,9 @@
+let grandparent = document.querySelector("#grandparent-id") as HTMLElement;
+grandparent.style.width = "1000px"
+grandparent.style.margin = "30vh 25vw"
+
+
+
 function changeBrColor(element:Element, color:string) {
     (element as HTMLElement).style.backgroundColor = color;
 }
