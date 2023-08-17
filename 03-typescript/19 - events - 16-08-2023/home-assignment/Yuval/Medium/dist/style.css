@@ -1,0 +1,24 @@
+.all {
+  margin-top: 200px;
+}
+
+img {
+  height: 900px;
+  width: 700px;
+  position: relative;
+  margin-left: 1500px;
+}
+
+#MJF, #YB, #Mox, #CJ, #Hangman {
+  display: none;
+}
+
+.buttons {
+  display: flex;
+  margin-left: 1500px;
+}
+.buttons button {
+  height: 100px;
+  width: 350px;
+  font-size: larger;
+}
