@@ -1,8 +1,11 @@
-.all {
-    margin-top: 200px;
+#logo {
+    height: 400px;
+    width: 600px;
+    position: relative;
+    margin-left: 1550px;
 }
 
-img {
+#displayed {
     height: 900px;
     width: 700px;
     position: relative;
@@ -16,7 +19,7 @@ img {
     button {
         height: 100px;
         width: 350px;
-        font-size: larger;
+        font-size: 40px;
     }
 }
 
