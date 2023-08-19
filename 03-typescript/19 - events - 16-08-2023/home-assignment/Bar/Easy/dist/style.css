@@ -1,0 +1,14 @@
+.mainRoot {
+  display: flex;
+  justify-content: center;
+  margin-top: 30vh;
+}
+
+.redBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  background-color: red;
+}
