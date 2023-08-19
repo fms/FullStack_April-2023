@@ -22,4 +22,5 @@ const htmlBody = document.body;
 
 let myArray = [shlomii,shani];
 
-myArray.forEach(htmlBody.appendChild(div));
+
+myArray.forEach(htmlBody.append());

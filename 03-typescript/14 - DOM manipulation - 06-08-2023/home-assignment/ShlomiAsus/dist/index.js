@@ -19,4 +19,4 @@ var shani = new personClasss(2, 'shani', 'Asus');
 var halely = new personClasss(3, 'halely', 'Asus');
 var htmlBody = document.body;
 var myArray = [shlomii, shani];
-myArray.forEach(htmlBody.appendChild(div));
+myArray.forEach(htmlBody.append());
