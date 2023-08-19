@@ -1,5 +1,5 @@
 var personClasss = /** @class */ (function () {
-    function personClasss(idNumber, firstName, lastName, fullname) {
+    function personClasss(idNumber, firstName, lastName) {
         this.idNumber = idNumber;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -14,9 +14,16 @@ var personClasss = /** @class */ (function () {
     });
     return personClasss;
 }());
+var container1 = document.getElementById('container');
 var shlomii = new personClasss(1, 'shlomi', 'Asus');
 var shani = new personClasss(2, 'shani', 'Asus');
 var halely = new personClasss(3, 'halely', 'Asus');
-var htmlBody = document.body;
-var myArray = [shlomii, shani];
-myArray.forEach(htmlBody.append());
+var myArray = [shlomii, shani, halely];
+myArray.forEach(function (arrayName1) { createDiv(arrayName1.firstName); });
+function createDiv(arrayName1) {
+    var div = document.createElement('div');
+    div.textContent = ("" + arrayName1);
+    div.className = 'div';
+    if (container1)
+        container1.appendChild(div);
+}
