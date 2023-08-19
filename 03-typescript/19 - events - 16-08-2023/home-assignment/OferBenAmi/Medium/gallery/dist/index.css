@@ -1,0 +1,28 @@
+body {
+  background-color: #2a2d33;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  height: 100vh;
+}
+
+img {
+  width: 80vw;
+  border-radius: 20px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 40px;
+  color: white;
+  transition: background-color 0.5s, box-shadow 0.5s;
+}
+button:hover {
+  background-color: black;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}

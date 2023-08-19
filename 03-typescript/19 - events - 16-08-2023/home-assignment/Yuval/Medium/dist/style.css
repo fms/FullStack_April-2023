@@ -1,16 +1,15 @@
-.all {
-  margin-top: 200px;
+#logo {
+  height: 400px;
+  width: 600px;
+  position: relative;
+  margin-left: 1550px;
 }
 
-img {
+#displayed {
   height: 900px;
   width: 700px;
   position: relative;
   margin-left: 1500px;
-}
-
-#MJF, #YB, #Mox, #CJ, #Hangman {
-  display: none;
 }
 
 .buttons {
@@ -20,5 +19,18 @@ img {
 .buttons button {
   height: 100px;
   width: 350px;
-  font-size: larger;
+  font-size: 40px;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1500px;
+  gap: 10px;
+  font-size: xx-large;
+}
+.inputs input {
+  width: 300px;
+  height: 50px;
+  font-size: xx-large;
 }
