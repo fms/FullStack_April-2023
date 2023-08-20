@@ -1,0 +1,27 @@
+table {
+    border-spacing: 10px;
+    margin-bottom: 1rem;
+}
+
+td {
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+    font-size: 2rem;
+    justify-content: center;
+    text-align: center;
+    background-color: teal;
+}
+
+.highlight {
+    background-color: black !important;
+    color: white;
+}
+
+.burlywood td {
+  background-color: burlywood;
+}
+
+.lightgray td {
+  background-color: lightgray;
+}
