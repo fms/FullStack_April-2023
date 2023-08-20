@@ -7,3 +7,7 @@
 img {
   width: 400px;
 }
+
+.error {
+  display: none;
+}
