@@ -1,12 +1,13 @@
-const boxes = document.querySelectorAll('td');
-let currentHighlightedBox: HTMLElement | null = null;
+const table = document.querySelector('table')!;
+let currentHighlightedBox: HTMLElement;
 
-boxes.forEach(box => {
-    box.addEventListener('click', () => {
-    if (currentHighlightedBox) {
-        currentHighlightedBox.classList.remove('highlighted');
+table.addEventListener('click', (event) => {
+    let targetBox = event.target as HTMLElement
+    if(targetBox.tagName === "TD") {
+        if (currentHighlightedBox) {
+            currentHighlightedBox.classList.remove('highlighted');
+        }
+        targetBox.classList.add('highlighted');
+        currentHighlightedBox = targetBox;
     }
-    box.classList.add('highlighted');
-    currentHighlightedBox = box;
-    });
 });
