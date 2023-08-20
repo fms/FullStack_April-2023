@@ -1,4 +1,4 @@
-document.querySelector("*")?.addEventListener("click",(event)=> {print(event.clientX, event.clientY);}); 
+document.querySelector("*")?.addEventListener("click",(Event)=> {print(Event.clientX, Event.clientY);}); 
 let DIV  = document.querySelector("div") as HTMLElement;
 function print (x: number,y: number){
     console.log(`the x is:${x}`);
