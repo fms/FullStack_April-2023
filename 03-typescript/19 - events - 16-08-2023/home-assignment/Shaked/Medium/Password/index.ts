@@ -5,10 +5,10 @@
 
 const firstpass = document.querySelector('#firstpass') as HTMLInputElement;
 const secondpass = document.querySelector('#secondpass') as HTMLInputElement;
-const sumbit = document.querySelector('#sumbit') as HTMLOutputElement;
+const submit = document.querySelector('#submit') as HTMLOutputElement;
 const outputtext = document.querySelector('#output') as HTMLTextAreaElement;
 outputtext.style.marginLeft = '25%';
-sumbit.addEventListener('click', () => {
+submit.addEventListener('click', () => {
     const valueof1 = firstpass.value;
     const valueof2 = secondpass.value;
 

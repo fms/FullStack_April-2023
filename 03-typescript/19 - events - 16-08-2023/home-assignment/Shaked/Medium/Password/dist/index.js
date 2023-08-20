@@ -4,10 +4,10 @@
 // Display an error (on the page, don't use alert()) if the passwords don't match.
 var firstpass = document.querySelector('#firstpass');
 var secondpass = document.querySelector('#secondpass');
-var sumbit = document.querySelector('#sumbit');
+var submit = document.querySelector('#submit');
 var outputtext = document.querySelector('#output');
 outputtext.style.marginLeft = '25%';
-sumbit.addEventListener('click', function () {
+submit.addEventListener('click', function () {
     var valueof1 = firstpass.value;
     var valueof2 = secondpass.value;
     if (valueof1 === valueof2) {
