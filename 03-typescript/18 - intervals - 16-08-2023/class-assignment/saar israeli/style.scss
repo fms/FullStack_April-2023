@@ -2,11 +2,25 @@ body {
     margin: 0;
 }
 
-div {
+.first-box {
     border: 1px solid black;
     background-color: blue;
     width: 100px;
     height: 100px;
     min-height: 1rem;
     transition: all 1s;
+}
+
+.second-box {
+    border: 1px solid black;
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+    min-height: 1rem;
+    transition: all 1s;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
 }

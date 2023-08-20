@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+.wrapper {
+  margin: 25vh auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 300px;
+  height: 300px;
+}
+
+.container {
+  display: flex;
+  gap: 5vw;
+  margin: 2vh 0 0 0;
+}
+
+button {
+  width: 4vw;
+}
+
+.second-pass {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.second-pass input {
+  width: 170px;
+}
+.second-pass button {
+  margin: 1.5vw 2.5vw;
+  width: 70px;
+}
+
+.error #error {
+  color: red;
+  font-size: 30px;
+}
