@@ -1,0 +1,17 @@
+.hoverDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border: 1px dashed grey;
+}
+
+.favKey {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed grey;
+}
+.favKey input {
+  width: 1ch;
+}

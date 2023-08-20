@@ -1,0 +1,20 @@
+@mixin selfFlex() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hoverDiv {
+    @include selfFlex();
+    padding: 20px;
+    border: 1px dashed grey;
+}
+
+.favKey {
+    @include selfFlex();
+    border: 1px dashed grey;
+
+    input {
+        width: 1ch;
+    }
+}
