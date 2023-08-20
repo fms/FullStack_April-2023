@@ -26,7 +26,7 @@ function nextImage() {
 function prevImage() {
     currentIndex -= 1;
     if (currentIndex < 0) {
-        currentIndex = 2;
+        currentIndex = arrayImg.length - 1;
     }
     displayImage(currentIndex);
 }
