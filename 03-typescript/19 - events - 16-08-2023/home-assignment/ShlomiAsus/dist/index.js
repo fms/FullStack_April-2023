@@ -1,5 +1,5 @@
 var _a;
-(_a = document.querySelector("*")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", function (event) { print(event.clientX, event.clientY); });
+(_a = document.querySelector("*")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", function (Event) { print(Event.clientX, Event.clientY); });
 var DIV = document.querySelector("div");
 function print(x, y) {
     console.log("the x is:" + x);
