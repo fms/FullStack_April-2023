@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password validation</title>
+    <script src="dist/index.js" defer></script>
+</head>
+
+<body>
+    <style>
+        body {
+            margin-left: 35%;
+            margin-top: 20%;
+        }
+        p{
+            font-size: 23px;
+            margin-left: 5%;
+        }
+        button{
+            padding: 13px;
+            border-radius: 20px;
+            border: 1px gray solid;
+        }
+        button:hover{
+            opacity: 0.7;
+        }
+        input{
+            padding: 6px;
+            border-radius: 10px;
+            border: 1px gray solid;
+            font-size: 18px;
+        }
+    </style>
+    <p>Put two passwords and i'll tell you if they're equals</p>
+    <input type="text" id="firstpass" placeholder="First password">
+    <input type="text" id="secondpass" placeholder="Second password">
+    <button id="submit">Submit</button>
+    <p id="output"></p>
+</body>
+
+</html>

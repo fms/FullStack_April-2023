@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medium part</title>
+    <script src="dist/index.js" defer></script>
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: rgb(233, 233, 233);
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .images img {
+            margin-top: 40px;
+            width: 700px;
+            height: auto;
+            border-radius: 50px;
+        }
+        img:hover{
+            opacity: 0.7;
+            transform: scale(0.90); 
+        }
+
+        button {
+            background-color: rgb(255, 255, 255);
+            border-radius: 40px;
+            font-size: 50px;
+            color: rgb(80, 80, 80);
+            border: 1px solid rgb(194, 194, 194);
+        }
+        button:hover{
+            box-shadow: 1px 1px 4px rgb(0, 0, 0);
+            opacity: 0.5;
+        }
+    </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="images">
+                <button class="prev-button">&#8678;</button>
+                <img src="" alt="Image">
+                <button class="next-button">&#8680;</button>
+            </div>
+    </body>
+
+</html>
