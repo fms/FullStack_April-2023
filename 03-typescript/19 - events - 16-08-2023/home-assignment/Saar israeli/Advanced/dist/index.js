@@ -13,12 +13,12 @@ function making(event) {
         buttons.forEach(button => {
             button.classList.remove("active");
             target.classList.add("active");
-            contents.forEach(content => {
-                content.classList.remove("active");
-                if (content.id === target.dataset.id) {
-                    content.classList.add("active");
-                }
-            });
+        });
+        contents.forEach(content => {
+            content.classList.remove("active");
+            if (content.id === target.dataset.id) {
+                content.classList.add("active");
+            }
         });
     }
 }
