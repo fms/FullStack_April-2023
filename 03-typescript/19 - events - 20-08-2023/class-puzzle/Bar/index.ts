@@ -1,11 +1,14 @@
 let tds = document.querySelectorAll("td");
+let highlighted: HTMLElement;
 
 tds.forEach(td => {
     td.addEventListener("click", () => highlight(td));
 });
 
 function highlight(td: any) {
-    td.style.backgroundColor = "yellow";
+    if (highlighted) {
+        highlighted.style.background = "initial"
+    }
+    td.style.background = "yellow"
+    highlighted = td
 }
-
-console.log(tds);

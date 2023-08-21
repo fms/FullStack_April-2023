@@ -1,8 +1,12 @@
 var tds = document.querySelectorAll("td");
+var highlighted;
 tds.forEach(function (td) {
     td.addEventListener("click", function () { return highlight(td); });
 });
 function highlight(td) {
-    td.style.backgroundColor = "yellow";
+    if (highlighted) {
+        highlighted.style.background = "initial";
+    }
+    td.style.background = "yellow";
+    highlighted = td;
 }
-console.log(tds);
