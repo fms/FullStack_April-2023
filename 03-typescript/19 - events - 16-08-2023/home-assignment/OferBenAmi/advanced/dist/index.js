@@ -12,24 +12,18 @@ buttons.forEach(button => {
     button.addEventListener('click', buttonClicked);
 });
 function buttonClicked(event) {
+    console.dir(event);
+    let target = event.target;
     buttons.forEach(button => {
         button.classList.remove('active');
     });
     contents.forEach(content => {
         content.classList.remove('active');
     });
-    switch (event.target) {
-        case buttons[buttonsAndContents.home]:
-            buttons[buttonsAndContents.home].classList.add('active');
-            contents[buttonsAndContents.home].classList.add('active');
-            break;
-        case buttons[buttonsAndContents.about]:
-            buttons[buttonsAndContents.about].classList.add('active');
-            contents[buttonsAndContents.about].classList.add('active');
-            break;
-        case buttons[buttonsAndContents.contact]:
-            buttons[buttonsAndContents.contact].classList.add('active');
-            contents[buttonsAndContents.contact].classList.add('active');
-            break;
-    }
+    buttons.forEach((button, index) => {
+        if (target.id == button.id) {
+            buttons[index].classList.add('active');
+            contents[index].classList.add('active');
+        }
+    });
 }
