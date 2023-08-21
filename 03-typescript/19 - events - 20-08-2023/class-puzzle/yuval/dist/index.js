@@ -1,12 +1,13 @@
 "use strict";
-const boxes = document.querySelectorAll('td');
-let currentHighlightedBox = null;
-boxes.forEach(box => {
-    box.addEventListener('click', () => {
+const table = document.querySelector('table');
+let currentHighlightedBox;
+table.addEventListener('click', (event) => {
+    let targetBox = event.target;
+    if (targetBox.tagName === "TD") {
         if (currentHighlightedBox) {
             currentHighlightedBox.classList.remove('highlighted');
         }
-        box.classList.add('highlighted');
-        currentHighlightedBox = box;
-    });
+        targetBox.classList.add('highlighted');
+        currentHighlightedBox = targetBox;
+    }
 });

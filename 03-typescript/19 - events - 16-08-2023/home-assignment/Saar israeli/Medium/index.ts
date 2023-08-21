@@ -51,8 +51,8 @@ secondPassword.addEventListener("input",() => {
 
     if (firstPass === secondPass) {
         passwordError.textContent = "password confirm!"
-        passwordError.style.color = "green"
-    } else {
+        passwordError.style.color = "green" 
+    }else {
         passwordError.style.color = "red"
         passwordError.textContent = "error, not the same password"
     }
