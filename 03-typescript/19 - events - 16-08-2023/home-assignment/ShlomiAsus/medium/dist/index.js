@@ -7,14 +7,14 @@ leftButton === null || leftButton === void 0 ? void 0 : leftButton.addEventListe
 var someImages = ["1.jpg", "2.jpg", "3.jpeg"];
 function movePic(imageBox, direction) {
     if (direction == "right") {
-        if (flag < 2)
+        if (flag < someImages.length)
             flag++;
         else
             flag = 0;
     }
     else {
         if (flag == 0)
-            flag = 2;
+            flag = someImages.length;
         else
             flag--;
     }
