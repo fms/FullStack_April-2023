@@ -8,14 +8,14 @@ let someImages = [`1.jpg`, "2.jpg", "3.jpeg"];
 
 function movePic(imageBox: HTMLElement, direction: string) {
     if (direction == "right") {
-        if (flag < someImages.length) 
+        if (flag < someImages.length-1) 
             flag++;
         else
             flag = 0;
     }
     else {
         if (flag == 0)
-            flag=someImages.length;
+            flag=someImages.length-1;
         else
             flag --;
     }
