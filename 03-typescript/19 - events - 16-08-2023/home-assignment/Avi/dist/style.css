@@ -1,0 +1,30 @@
+.main {
+  height: 850px;
+  width: 350px;
+  margin: auto;
+}
+.main__box {
+  height: 120px;
+  width: 300px;
+  border: 3px solid #3cd33c;
+}
+.main__gallery {
+  margin-top: 50px;
+  height: 350px;
+  width: 300px;
+  border: 3px solid #b490d6;
+}
+.main h4 {
+  margin-left: 120px;
+}
+.main__pass {
+  height: 150px;
+  width: 300px;
+  margin-top: 25px;
+  text-align: center;
+}
+.main button {
+  width: 150px;
+  height: 25px;
+  background-color: darkturquoise;
+}
