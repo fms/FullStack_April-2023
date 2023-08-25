@@ -1,0 +1,18 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  margin-top: 20vh;
+  border: solid 1px;
+  width: 700px;
+  height: 500px;
+  td{
+    background-color: black;
+  }
+}
+
+.highlited {
+  background-color: rgb(255, 0, 0);
+}

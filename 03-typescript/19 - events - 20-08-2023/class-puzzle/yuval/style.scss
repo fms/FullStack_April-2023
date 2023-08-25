@@ -1,0 +1,23 @@
+table, td {
+    border: 1px solid;
+}
+
+table {
+    width: 100%;
+    width: 375px;
+    height: 315px;
+    margin: 0 auto;
+    display: block;
+    overflow-x: auto;
+    border-spacing: 0;
+}
+
+td {
+    padding: 5px 10px;
+    border-top-width: 0;
+    border-left-width: 0;
+}
+
+.highlighted {
+    background-color: yellow;
+}
