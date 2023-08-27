@@ -1,19 +1,9 @@
 class MemoryGame {
-    images = [
-        "images/image-1.png",
-        "images/image-2.png",
-        "images/image-3.png",
-        "images/image-4.png",
-        "images/image-5.png",
-        "images/image-6.png",
-        "images/image-7.png",
-        "images/image-8.png",
-    ];
     firstCard: HTMLElement | null = null;
     counter = 0;
     busy = false;
 
-    constructor(private container: Element) {
+    constructor(private container: Element, private images: string[]) {
         this.initCards();
     }
 
@@ -24,7 +14,7 @@ class MemoryGame {
         while (this.container.firstChild) {
             this.container.firstChild.remove();
         }
-        if (this.counter == 1) {
+        if (this.counter == this.images.length) {
             this.container.textContent = "You win!";
         }
 
@@ -32,16 +22,17 @@ class MemoryGame {
         this.counter = 0;
         setTimeout(() => {
             this.container.textContent = "";
-            cards.forEach((card) => this.createCard(this.container, card));
+            const gameDiv = document.createElement("div");
+            gameDiv.className = "memory-game";
+            this.container.appendChild(gameDiv);
+            cards.forEach((card) => this.createCard(gameDiv, card));
         }, 1000);
     }
-
-    // this.initCards();
 
     createCard(container: Element, imageSrc: string) {
         const card = document.createElement("div");
         card.classList.add("card");
-        card.dataset.cardName = imageSrc;
+        card.dataset.cardName = imageSrc.substring(imageSrc.lastIndexOf("/") + 1);
         container.appendChild(card);
 
         const front = document.createElement("img");
@@ -75,7 +66,7 @@ class MemoryGame {
         if (this.firstCard.dataset.cardName === secondCard.dataset.cardName) {
             this.firstCard = null;
             this.counter++;
-            if (this.counter == 1) {
+            if (this.counter == this.images.length) {
                 this.initCards();
             }
         } else {
@@ -100,4 +91,24 @@ class MemoryGame {
 }
 
 const wrapper = document.querySelector(".game-container")!;
-const memoryGame = new MemoryGame(wrapper);
+const memoryGame = new MemoryGame(wrapper, [
+    "images/image-1.png",
+    "images/image-2.png",
+    "images/image-3.png",
+    "images/image-4.png",
+    "images/image-5.png",
+    "images/image-6.png",
+    "images/image-7.png",
+    "images/image-8.png",
+]);
+
+// Example of adding another, independent game on the same page
+// const wrapper2 = document.querySelector(".another-game-container")!;
+// const memoryGame2 = new MemoryGame(wrapper2, [
+//     "https://wallup.net/wp-content/uploads/2015/07/Little-children-on-the-field.jpg",
+//     "https://c.pxhere.com/photos/1e/f8/happy_kid_girl_happy_fun_people_child_cute_childhood-1198853.jpg!d",
+//     "images/image-3.png",
+//     "images/image-4.png",
+//     "images/image-5.png",
+//     "images/image-6.png",
+// ]);
