@@ -1,0 +1,13 @@
+.box {
+  background-color: aquamarine;
+  border: solid, 5px, black;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userChar {
+  font-size: 10rem;
+}
