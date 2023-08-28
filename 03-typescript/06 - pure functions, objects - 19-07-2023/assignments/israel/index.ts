@@ -1,4 +1,4 @@
-interface car {
+    interface car {
     maker: string
     model: string
     year: number

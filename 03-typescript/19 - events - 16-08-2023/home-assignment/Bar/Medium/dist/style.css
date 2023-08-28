@@ -1,0 +1,13 @@
+.mainRoot {
+  display: flex;
+  justify-content: center;
+  margin-top: 30vh;
+}
+
+img {
+  width: 400px;
+}
+
+.error {
+  display: none;
+}

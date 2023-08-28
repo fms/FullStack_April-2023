@@ -1,0 +1,14 @@
+// ## Easy
+// ### Simulate the :hover pseudo class.
+// - Use events, not `:hover` to solve this.
+// - Draw a box on the screen.
+// - When the mouse enters the box the color changes.
+// - When the mouse leaves the box the color changes back to the original value (use the special value `initial` for this).
+
+
+.first-box {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    position: relative;
+}

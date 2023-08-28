@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/style.css">
+    <script src="dist/index.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+
+
+
+
+    <div class="wrapper">
+        <div class="image-container">
+            <img src="" alt="" id="img-slider">
+        </div>
+        <div class="container">
+
+
+            <button onclick="next_image()" type="button" id="aviel-next-button">Next img</button>
+
+            <button onclick="prev_image()" type="button" id="aviel-prev-button">prev img</button>
+
+        </div>
+
+
+
+
+
+        <div class="password-validation">
+            <div class="first-pass">
+                <p>Password</p>
+                <input type="text" id="id_pass1" name="password 1" placeholder="password 1" >
+
+            </div>
+
+            <div class="second-pass">
+                <p>Confirm password</p>
+                <input type="text" id="id_pass2" name="password 2" placeholder="password 2" > 
+            </div>
+
+
+            <div class="check-pass">
+              <p>check password</p>
+              <button  onclick="check()">click me to check your password</button>
+          </div>
+
+
+        </div>
+
+        <div class="error">
+            <p id="error"></p>
+        </div>
+    </div>
+</body>
+</html>

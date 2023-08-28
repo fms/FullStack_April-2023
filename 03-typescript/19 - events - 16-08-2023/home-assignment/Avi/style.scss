@@ -1,0 +1,34 @@
+.main {
+    height: 850px;
+    width: 350px;
+    margin: auto;
+
+    &__box {
+        height: 120px;
+        width: 300px;
+        border: 3px solid rgb(60, 211, 60);
+    }
+
+    &__gallery {
+        margin-top: 50px;
+        height: 350px;
+        width: 300px;
+        border: 3px solid rgb(180, 144, 214);
+    }
+    
+    h4 {
+        margin-left: 120px;
+        
+    }
+    &__pass{
+        height: 150px;
+        width: 300px;
+        margin-top: 25px;
+        text-align: center;
+    }
+    button{
+        width: 150px;
+        height: 25px;
+        background-color:darkturquoise;
+    }
+}

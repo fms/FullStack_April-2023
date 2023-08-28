@@ -19,7 +19,7 @@ var this-name;  // invalid - actual minus sign
 var if = 5;     // Invalid: if is a reserved word
 ```
 
-- Naming convension: camelCase  
+- Naming convention: camelCase  
   * First word starts with lowercase  
   * Each following word is capitalized
 ```javascript

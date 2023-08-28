@@ -1,0 +1,19 @@
+body {
+  background-color: #2a2d33;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  height: 100vh;
+}
+
+input {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.error {
+  color: white;
+  opacity: 0;
+}
