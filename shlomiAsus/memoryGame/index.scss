@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 600px;
+    height: 600px;
+    border: 2px black solid;
+    gap: 5px;
+}
+
+.my_Image {
+    height: 30%;
+    width: 30%;
+    background-color: rgb(162, 213, 213);
+    align-items: center;
+    text-align: center;
+    border: 1px navy solid;
+}
+
+.my_Image1 {
+    height: 30%;
+    width: 30%;
+    background-color: rgb(162, 213, 213);
+    align-items: center;
+    text-align: center;
+    border: 3px rgb(98, 165, 27) solid;
+      animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateX(30%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(50%);
+        opacity: 1;
+    }
+}
+
