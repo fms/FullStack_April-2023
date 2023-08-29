@@ -1,0 +1,12 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.box {
+  height: 200px;
+  width: 200px;
+  border: 1px solid black;
+  background-color: #5252c7;
+  margin: 50px;
+}
