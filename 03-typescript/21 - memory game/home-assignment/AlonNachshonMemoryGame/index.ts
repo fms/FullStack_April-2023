@@ -8,11 +8,15 @@ class CardSet{
     this.path = path;
     this.name = name;
     this.quantity = quantity;  
-    this.maxBoardSize = Math.floor(Math.sqrt(quantity));
-
+    this.maxBoardSize = (Math.floor(Math.sqrt(quantity))% 2 === 0) ? Math.floor(Math.sqrt(quantity)) : Math.floor(Math.sqrt(quantity)) - 1;
   }
 
+  public getMaxBoardSize(){
+    return this.maxBoardSize;
+  }
 }
+
+
 class BoardGame {
   countCoupels;
   cards : Array<number>;
@@ -26,6 +30,7 @@ class BoardGame {
     this.countCoupels = 0;
   }
   
+
   private boardInit(n:number):Array<number>{
     const boardSize = Math.pow(n,2);
     let arrayOfCards = new Array(boardSize).fill(0).map((_, i) => {
@@ -37,6 +42,7 @@ class BoardGame {
     this.randomizeCard(arrayOfCards);
     return arrayOfCards;
   }
+
 
   private randomizeCard(arrayOfCards: Array<number>) :void{
     const len = arrayOfCards.length;
@@ -52,9 +58,7 @@ class BoardGame {
 
     let openCards = new Map();
     const card_fronts = document.querySelectorAll(`.${this.set.name}-card_front`);
-    console.log(card_fronts.length)
     const card_front_img = document.querySelectorAll(`.${this.set.name}-card_front img`);
-    console.log(card_front_img.length)
     
     card_front_img.forEach((card_front_img, i) => {
       setTimeout(() => {
@@ -110,7 +114,7 @@ class BoardGame {
   
     for (let i = 0; i < len; i++) {
       const card_front = document.createElement('div');
-      // const card_back = document.createElement('div');
+
   
       const card_front_img = document.createElement('img');
   
@@ -170,8 +174,9 @@ private addBorderStyle(elem:HTMLElement) {
   }
 }
 
-class Sets{
+class CardSets{
   sets: Array<CardSet>;
+
   constructor(){
     this.sets = [];
   }
@@ -179,7 +184,11 @@ class Sets{
     this.sets.push(set);
   }
 }
-function generateForm(sets:Sets) {
+
+
+
+
+function generateForm(setOfCards:CardSets) {
   const form = document.createElement('form');
   form.id = 'gameInfo';
   
@@ -191,13 +200,14 @@ function generateForm(sets:Sets) {
   selectCat.id = 'category';
   selectCat.name = 'category';
   
-  const categories = ['vegetables', 'flowers', 'people', 'animals'];
+  const categories = ['vegetables', 'flowers', 'people', 'animal'];
   categories.forEach(category => {
     const option = document.createElement('option');
     option.value = category;
     option.textContent = category;
     selectCat.appendChild(option);
   });
+
 
   const selectSizeLabel = document.createElement('label');
   selectSizeLabel.htmlFor = 'size';
@@ -206,6 +216,23 @@ function generateForm(sets:Sets) {
   const selectSize = document.createElement('select');
   selectSize.id = 'size';
   selectSize.name = 'size';
+
+  selectCat.addEventListener('change',(ev) => {
+    
+    const setName = setOfCards.sets.find(set => set.name === selectCat.value);
+    if(setName === undefined) return;
+    let size = setName.getMaxBoardSize();
+    if(selectSize.hasChildNodes()){
+      selectSize.innerText = '';
+    }
+    for (size; size>0; size -= 2) {
+      const option = document.createElement('option');
+      option.value = size.toString();
+      option.textContent = `${size}X${size}`;
+      selectSize.appendChild(option);
+    }
+
+  });
 
   const submitButton = document.createElement('button');
   submitButton.type = 'submit';
@@ -216,11 +243,15 @@ function generateForm(sets:Sets) {
   form.appendChild(selectSizeLabel);
   form.appendChild(selectSize);
 
-
   form.appendChild(submitButton);
   const infoDiv = document.querySelector('.info');
   infoDiv?.appendChild(form);
-  
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const board = new BoardGame(parseInt(selectSize.value), setOfCards.sets.find(set => set.name === selectCat.value));
+    board.gameStart();
+  });
 }
 
 const body = document.querySelector('body');
@@ -233,20 +264,25 @@ main.classList.add('main');
 body?.appendChild(main);
 body?.appendChild(info);
 
-generateForm(sets1);
-const animal = new CardSet('./dist/animal/','animal' ,48 );
-const veg = new CardSet('./dist/veg/','veg' ,48 );
-const  people = new CardSet('./dist/people/','people' ,48 );
-const flowers = new CardSet('./dist/flowers/','flowers' ,48 ); 
+const animal = new CardSet('./dist/animal/','animal' ,50 );
 
-const board1 = new BoardGame(4, animal);
-board1.gameStart();
+const vegetables = new CardSet('./dist/veg/','vegetables' ,28 );
+const people = new CardSet('./dist/people/','people' ,25 );
+const flowers = new CardSet('./dist/flowers/','flowers' ,50 ); 
 
-const sets1 = new Sets();
-sets1.addSet(animal);
-sets1.addSet(veg);
-sets1.addSet(people);
-sets1.addSet(flowers);
+// const board1 = new BoardGame(4, animal);
+// board1.gameStart();
+
+const setOfCards1 = new CardSets();
+
+setOfCards1.addSet(vegetables);
+setOfCards1.addSet(people);
+setOfCards1.addSet(flowers);
+setOfCards1.addSet(animal);
+
+generateForm(setOfCards1);
+
+
 
 
 // const veg = new CardSet('./dist/veg/','veg' ,48 );
