@@ -93,6 +93,7 @@ class MemoryGame {
         const next = document.querySelector(".next") as HTMLButtonElement;
         const reset = document.querySelector(".reset") as HTMLButtonElement;
         const buttons = document.querySelectorAll("button") as NodeListOf<HTMLButtonElement>;
+        let lose = document.querySelector(".lose") as HTMLParagraphElement;
 
         buttons.forEach((button) => {
             button.style.display = "inline-block"
@@ -105,6 +106,7 @@ class MemoryGame {
                 main.style.display = "none";
                 next.style.display = "none";
                 reset.style.display = "none";
+                lose.style.display = "none";
             }
         })
     }
@@ -112,10 +114,10 @@ class MemoryGame {
 
     timer() {
         let timer = document.querySelector(".timer") as HTMLParagraphElement;
-        let seconds = 0;
+        let seconds = 120;
         let timerStart = setInterval(() => {
-            timer.textContent = `time left ${--seconds + 120}`
-            if(timer.textContent == `120`) {
+            timer.textContent = `time left ${--seconds}`
+            if(seconds === 0) {
                 clearInterval(timerStart);
                 this.loseTime();
                 this.endGame();

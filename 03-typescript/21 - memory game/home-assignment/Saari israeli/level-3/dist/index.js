@@ -8,7 +8,7 @@ class MemoryGame {
         this.busy = false;
         this.selectedClicks = 0;
         this.gameEnd = false;
-        this.seconds = 0;
+        this.seconds = 90;
         this.clicks = document.querySelector(".clicks");
         this.initCards();
     }
@@ -118,7 +118,7 @@ class MemoryGame {
                 main.style.display = "none";
                 reset.style.display = "none";
                 lose.style.display = "none";
-                this.seconds = 0;
+                this.seconds = 90;
             }
         });
     }
@@ -134,8 +134,8 @@ class MemoryGame {
         let timer = document.querySelector(".timer");
         timer.style.display = "block";
         let timerStart = setInterval(() => {
-            timer.textContent = `time left ${--this.seconds + 90}`;
-            if (timer.textContent == `90`) {
+            timer.textContent = `time left ${--this.seconds}`;
+            if (this.seconds === 0) {
                 clearInterval(timerStart);
                 this.lose();
                 this.endGame();
