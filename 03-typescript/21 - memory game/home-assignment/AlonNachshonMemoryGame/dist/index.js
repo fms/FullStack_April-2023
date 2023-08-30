@@ -3,8 +3,11 @@ var CardSet = /** @class */ (function () {
         this.path = path;
         this.name = name;
         this.quantity = quantity;
-        this.maxBoardSize = Math.floor(Math.sqrt(quantity));
+        this.maxBoardSize = (Math.floor(Math.sqrt(quantity)) % 2 === 0) ? Math.floor(Math.sqrt(quantity)) : Math.floor(Math.sqrt(quantity)) - 1;
     }
+    CardSet.prototype.getMaxBoardSize = function () {
+        return this.maxBoardSize;
+    };
     return CardSet;
 }());
 var BoardGame = /** @class */ (function () {
@@ -40,9 +43,7 @@ var BoardGame = /** @class */ (function () {
         this.creatBoard(this.cards);
         var openCards = new Map();
         var card_fronts = document.querySelectorAll("." + this.set.name + "-card_front");
-        console.log(card_fronts.length);
         var card_front_img = document.querySelectorAll("." + this.set.name + "-card_front img");
-        console.log(card_front_img.length);
         card_front_img.forEach(function (card_front_img, i) {
             setTimeout(function () {
                 card_front_img.classList.add('hide');
@@ -89,7 +90,6 @@ var BoardGame = /** @class */ (function () {
         this.addFlexContainer(board, len);
         for (var i = 0; i < len; i++) {
             var card_front = document.createElement('div');
-            // const card_back = document.createElement('div');
             var card_front_img = document.createElement('img');
             card_front.classList.add(this.set.name + "-card_front");
             card_front.setAttribute('id', "" + arrayOfCards[i]);
@@ -137,16 +137,16 @@ var BoardGame = /** @class */ (function () {
     };
     return BoardGame;
 }());
-var Sets = /** @class */ (function () {
-    function Sets() {
+var CardSets = /** @class */ (function () {
+    function CardSets() {
         this.sets = [];
     }
-    Sets.prototype.addSet = function (set) {
+    CardSets.prototype.addSet = function (set) {
         this.sets.push(set);
     };
-    return Sets;
+    return CardSets;
 }());
-function generateForm(sets) {
+function generateForm(setOfCards) {
     var form = document.createElement('form');
     form.id = 'gameInfo';
     var selectCatLabel = document.createElement('label');
@@ -155,7 +155,7 @@ function generateForm(sets) {
     var selectCat = document.createElement('select');
     selectCat.id = 'category';
     selectCat.name = 'category';
-    var categories = ['vegetables', 'flowers', 'people', 'animals'];
+    var categories = ['vegetables', 'flowers', 'people', 'animal'];
     categories.forEach(function (category) {
         var option = document.createElement('option');
         option.value = category;
@@ -168,6 +168,21 @@ function generateForm(sets) {
     var selectSize = document.createElement('select');
     selectSize.id = 'size';
     selectSize.name = 'size';
+    selectCat.addEventListener('change', function (ev) {
+        var setName = setOfCards.sets.find(function (set) { return set.name === selectCat.value; });
+        if (setName === undefined)
+            return;
+        var size = setName.getMaxBoardSize();
+        if (selectSize.hasChildNodes()) {
+            selectSize.innerText = '';
+        }
+        for (size; size > 0; size -= 2) {
+            var option = document.createElement('option');
+            option.value = size.toString();
+            option.textContent = size + "X" + size;
+            selectSize.appendChild(option);
+        }
+    });
     var submitButton = document.createElement('button');
     submitButton.type = 'submit';
     submitButton.textContent = 'Submit';
@@ -178,6 +193,11 @@ function generateForm(sets) {
     form.appendChild(submitButton);
     var infoDiv = document.querySelector('.info');
     infoDiv === null || infoDiv === void 0 ? void 0 : infoDiv.appendChild(form);
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        var board = new BoardGame(parseInt(selectSize.value), setOfCards.sets.find(function (set) { return set.name === selectCat.value; }));
+        board.gameStart();
+    });
 }
 var body = document.querySelector('body');
 var main = document.createElement('div');
@@ -187,18 +207,18 @@ info.classList.add('info');
 main.classList.add('main');
 body === null || body === void 0 ? void 0 : body.appendChild(main);
 body === null || body === void 0 ? void 0 : body.appendChild(info);
-generateForm(sets1);
-var animal = new CardSet('./dist/animal/', 'animal', 48);
-var veg = new CardSet('./dist/veg/', 'veg', 48);
-var people = new CardSet('./dist/people/', 'people', 48);
-var flowers = new CardSet('./dist/flowers/', 'flowers', 48);
-var board1 = new BoardGame(4, animal);
-board1.gameStart();
-var sets1 = new Sets();
-sets1.addSet(animal);
-sets1.addSet(veg);
-sets1.addSet(people);
-sets1.addSet(flowers);
+var animal = new CardSet('./dist/animal/', 'animal', 50);
+var vegetables = new CardSet('./dist/veg/', 'vegetables', 28);
+var people = new CardSet('./dist/people/', 'people', 25);
+var flowers = new CardSet('./dist/flowers/', 'flowers', 50);
+// const board1 = new BoardGame(4, animal);
+// board1.gameStart();
+var setOfCards1 = new CardSets();
+setOfCards1.addSet(vegetables);
+setOfCards1.addSet(people);
+setOfCards1.addSet(flowers);
+setOfCards1.addSet(animal);
+generateForm(setOfCards1);
 // const veg = new CardSet('./dist/veg/','veg' ,48 );
 // const board2 = new BoardGame(4, veg);
 // board2.gameStart();
