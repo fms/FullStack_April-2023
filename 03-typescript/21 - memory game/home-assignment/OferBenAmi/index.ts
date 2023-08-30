@@ -19,10 +19,10 @@ class MemoryGame {
       this.container.textContent = "";
       const gameDiv = document.createElement("div");
       gameDiv.className = "memory-game";
-      this.createCunter();
+      // this.createCunter();
       this.container.appendChild(gameDiv);
       cards.forEach((card) => this.createCard(gameDiv, card));
-	//   this.container.addEventListener("click",this.createCunter)
+	    this.container.addEventListener("click",() => this.createCunter(this.container))
     }, 1300);
 	
 	console.dir(this.container);
@@ -36,7 +36,7 @@ class MemoryGame {
     this.counter = 0;
   }
 
-  createCunter() {
+  createCunter(container: Element) {
 	
 	const counterDiv = document.createElement("div");
     counterDiv.className = "counter";
@@ -58,7 +58,7 @@ class MemoryGame {
     counterDiv.appendChild(secondsP);
     counterDiv.appendChild(colon2);
     counterDiv.appendChild(miliSecondsP);
-    this.container.appendChild(counterDiv);
+    container.appendChild(counterDiv);
     const counterInterval = setInterval(() => {
       miliSecondsP.textContent = String(
         parseInt(miliSecondsP.textContent || `0`) + 1
