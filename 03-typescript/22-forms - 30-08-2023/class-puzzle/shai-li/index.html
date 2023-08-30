@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RADIO</title>
+    <script src="./dist/index.js"></script>
+    <link rel="stylesheet" href="./dist/style.css">
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <legend>Please choose your way to submit</legend>
+        <input type="radio" id="choice1" name="contact" value="email" />
+        <label for="choice1">E-mail</label>
+        <input type="radio" id="choice2" name="contact" value="phone" />
+        <label for="choice2">phone</label>
+        <input type="radio" id="choice3" name="contact" value="mail" />
+        <label for="choice3">Mail</label>
+        <div>
+          <button>submit</button>
+        </div>
+      </fieldset>
+    </form>
+    <pre id="log"></pre>
+  </body>
+</html>
