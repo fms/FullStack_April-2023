@@ -1,4 +1,4 @@
-function inputPhone(event: KeyboardEvent) {
+function inputPhone(event: Event) {
     const input: HTMLInputElement = document.getElementById('input') as HTMLInputElement;
     const message =
         input.value.length < 10 ? "Phone number is too short" :
