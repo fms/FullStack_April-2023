@@ -2,9 +2,9 @@ var checkBoxes = document.querySelectorAll(".checkBox");
 var myDiv = document.querySelector(".myDiv");
 var submit = "";
 checkBoxes.forEach(function (checkBox) {
-    checkBox.addEventListener("click", function (event) { return print(event, checkBox); });
+    checkBox.addEventListener("click", function () { return print(checkBox); });
 });
-function print(event, checkBox) {
+function print(checkBox) {
     myDiv.innerHTML += " " + checkBox.value;
     submit += " " + checkBox.value;
     console.log(submit);

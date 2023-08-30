@@ -2,13 +2,11 @@ let checkBoxes = document.querySelectorAll(".checkBox") as NodeListOf<HTMLElemen
 let myDiv = document.querySelector(".myDiv") as HTMLElement;
 let submit: string = "";
 
-
 checkBoxes.forEach(checkBox => {
-    checkBox.addEventListener("click", (event: Event) => print(event, checkBox));
+    checkBox.addEventListener("click", () => print(checkBox));
 });
 
-
-function print(event: Event, checkBox: HTMLElement) {
+function print( checkBox: HTMLElement) {
     myDiv.innerHTML += " " + checkBox.value;
     submit += " " + checkBox.value;
     console.log(submit);
