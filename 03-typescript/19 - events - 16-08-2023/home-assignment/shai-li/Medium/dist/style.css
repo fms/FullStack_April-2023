@@ -1,4 +1,37 @@
 * {
   padding: 0;
   margin: 0;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+body {
+  margin: 5rem;
+  background-color: #f8efe5;
+}
+
+#logo {
+  width: 70%;
+  height: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.allTogether {
+  display: flex;
+}
+.allTogether #gallery {
+  margin: 2rem 0;
+  height: 400px;
+}
+.allTogether button {
+  cursor: pointer;
+  height: 3rem;
+  padding: 1rem;
+  background-color: #efdbc1;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #f9a0a0;
+  margin: 2rem auto;
+  align-self: center;
 }
