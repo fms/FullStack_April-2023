@@ -1,0 +1,15 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: #0010f0;
+}
+
+input {
+  width: 200px;
+  height: 200px;
+}

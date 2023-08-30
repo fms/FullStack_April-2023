@@ -15,8 +15,10 @@ let theTable = document.querySelector("table");
 let tds = document.querySelectorAll("td");
 theTable === null || theTable === void 0 ? void 0 : theTable.addEventListener("click", (event) => {
     let target = event.target;
-    tds.forEach((td) => {
-        td.classList.remove("highlited");
-    });
-    target.classList.add("highlited");
+    if (target.tagName === "TD") {
+        tds.forEach((td) => {
+            td.classList.remove("highlited");
+        });
+        target.classList.add("highlited");
+    }
 });
