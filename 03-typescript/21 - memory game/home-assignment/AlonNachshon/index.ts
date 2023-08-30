@@ -170,7 +170,16 @@ private addBorderStyle(elem:HTMLElement) {
   }
 }
 
-function generateForm(cards:CardSet) {
+class Sets{
+  sets: Array<CardSet>;
+  constructor(){
+    this.sets = [];
+  }
+  addSet(set:CardSet){
+    this.sets.push(set);
+  }
+}
+function generateForm(sets:Sets) {
   const form = document.createElement('form');
   form.id = 'gameInfo';
   
@@ -183,6 +192,12 @@ function generateForm(cards:CardSet) {
   selectCat.name = 'category';
   
   const categories = ['vegetables', 'flowers', 'people', 'animals'];
+  categories.forEach(category => {
+    const option = document.createElement('option');
+    option.value = category;
+    option.textContent = category;
+    selectCat.appendChild(option);
+  });
 
   const selectSizeLabel = document.createElement('label');
   selectSizeLabel.htmlFor = 'size';
@@ -218,10 +233,21 @@ main.classList.add('main');
 body?.appendChild(main);
 body?.appendChild(info);
 
-generateForm();
+generateForm(sets1);
 const animal = new CardSet('./dist/animal/','animal' ,48 );
+const veg = new CardSet('./dist/veg/','veg' ,48 );
+const  people = new CardSet('./dist/people/','people' ,48 );
+const flowers = new CardSet('./dist/flowers/','flowers' ,48 ); 
+
 const board1 = new BoardGame(4, animal);
 board1.gameStart();
+
+const sets1 = new Sets();
+sets1.addSet(animal);
+sets1.addSet(veg);
+sets1.addSet(people);
+sets1.addSet(flowers);
+
 
 // const veg = new CardSet('./dist/veg/','veg' ,48 );
 // const board2 = new BoardGame(4, veg);

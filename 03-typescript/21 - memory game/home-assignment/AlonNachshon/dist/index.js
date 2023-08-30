@@ -137,7 +137,16 @@ var BoardGame = /** @class */ (function () {
     };
     return BoardGame;
 }());
-function generateForm(cards) {
+var Sets = /** @class */ (function () {
+    function Sets() {
+        this.sets = [];
+    }
+    Sets.prototype.addSet = function (set) {
+        this.sets.push(set);
+    };
+    return Sets;
+}());
+function generateForm(sets) {
     var form = document.createElement('form');
     form.id = 'gameInfo';
     var selectCatLabel = document.createElement('label');
@@ -147,6 +156,12 @@ function generateForm(cards) {
     selectCat.id = 'category';
     selectCat.name = 'category';
     var categories = ['vegetables', 'flowers', 'people', 'animals'];
+    categories.forEach(function (category) {
+        var option = document.createElement('option');
+        option.value = category;
+        option.textContent = category;
+        selectCat.appendChild(option);
+    });
     var selectSizeLabel = document.createElement('label');
     selectSizeLabel.htmlFor = 'size';
     selectSizeLabel.textContent = 'Select a puzzle size:';
@@ -172,10 +187,18 @@ info.classList.add('info');
 main.classList.add('main');
 body === null || body === void 0 ? void 0 : body.appendChild(main);
 body === null || body === void 0 ? void 0 : body.appendChild(info);
-generateForm();
+generateForm(sets1);
 var animal = new CardSet('./dist/animal/', 'animal', 48);
+var veg = new CardSet('./dist/veg/', 'veg', 48);
+var people = new CardSet('./dist/people/', 'people', 48);
+var flowers = new CardSet('./dist/flowers/', 'flowers', 48);
 var board1 = new BoardGame(4, animal);
 board1.gameStart();
+var sets1 = new Sets();
+sets1.addSet(animal);
+sets1.addSet(veg);
+sets1.addSet(people);
+sets1.addSet(flowers);
 // const veg = new CardSet('./dist/veg/','veg' ,48 );
 // const board2 = new BoardGame(4, veg);
 // board2.gameStart();
