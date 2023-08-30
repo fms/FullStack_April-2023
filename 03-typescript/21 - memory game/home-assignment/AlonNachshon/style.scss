@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 8fr 2fr;
+    grid-template-areas: "game info";
+}
