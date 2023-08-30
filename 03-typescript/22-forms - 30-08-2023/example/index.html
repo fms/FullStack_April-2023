@@ -6,9 +6,17 @@
     <title>Forms</title>
     <script src="dist/index.js" defer></script>
 </head>
-<body onclick="handleClick(event, 1)">
-    <input type="text" onkeyup="handleKeyup(event)">
+<!-- <body onclick="handleClick(event, 1)"> -->
+<body onkeyup="handleKeyup(event)">
+    <form onsubmit="return submitForm(event);">
+    <input name="f1" type="text" onkeyup="handleKeyup(event)">
+    <input type="date" onkeyup="printValue(event)">
+    <input type="tel" onkeyup="printValue(event)">
+    <input name="numeric" type="number" onkeyup="printValue(event)">
     <input type="button" value="Click me!" onclick="handleClick(event)">
+    <input type="submit">
+    <input type="reset">
     <p id="error-text"></p>
+    </form>
 </body>
 </html>
