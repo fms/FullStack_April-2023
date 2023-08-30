@@ -4,7 +4,7 @@ class MemoryGame {
     busy = false;
     selectedClicks = 0;
     gameEnd = false;
-    seconds = 0;
+    seconds = 90;
     clicks = document.querySelector(".clicks") as HTMLParagraphElement;
     constructor(private container: Element, private images: string[]) {
         this.initCards();
@@ -131,7 +131,7 @@ class MemoryGame {
                 main.style.display = "none";
                 reset.style.display = "none";
                 lose.style.display = "none";
-                this.seconds = 0;
+                this.seconds = 90;
             }
         })
     }
@@ -150,8 +150,8 @@ class MemoryGame {
         let timer = document.querySelector(".timer") as HTMLParagraphElement;
         timer.style.display = "block"
         let timerStart = setInterval(() => {
-            timer.textContent = `time left ${--this.seconds + 90}`
-            if (timer.textContent == `90`) {
+            timer.textContent = `time left ${--this.seconds}`
+            if (this.seconds === 0) {
                 clearInterval(timerStart);
                 this.lose();
                 this.endGame();
