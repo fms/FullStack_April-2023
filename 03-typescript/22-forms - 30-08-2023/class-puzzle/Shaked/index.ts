@@ -4,7 +4,7 @@ function inputPhone(event: KeyboardEvent) {
         input.value.length < 10 ? "Phone number is too short" :
         input.value.length > 10 ? "Phone number is too long" :
         input.value;
-    console.log(message);
+    alert(message);
 }
 
 const submitButton = document.getElementById('submitButton');
