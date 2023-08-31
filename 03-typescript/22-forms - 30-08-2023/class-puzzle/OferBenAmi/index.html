@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="dist/index.js"></script>
+    </head>
+    <body>
+        <form onsubmit=" sendEmail(event); return false">
+            <input
+                type="email"
+                placeholder="Enter your Email"
+                id="emailInput"
+                required
+                size="30"
+                minlength="5"
+                maxlength="20"
+                list="emailInputList"
+            />
+            <datalist id="emailInputList">
+                <option value="OferBenAmi@gmail.com"></option>
+                <option value="asd@gmail.com"></option>
+                <option value="asdddadad@gmail.com"></option>
+                <option value="1231@gmail.com"></option>
+                <option value="asdaddgfsdf@gmail.com"></option>
+            </datalist>
+
+            <input type="submit" value="Submit"/>
+        </form>
+
+    </body>
+</html>
