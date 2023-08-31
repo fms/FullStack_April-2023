@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+body{
+    background-color: rgb(22, 27, 34);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Rubik', sans-serif;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: antiquewhite;
+    width: clamp(500px, 50vw, 1300px);
+    height: clamp(500px, 90vh, 1000px);
+    border-radius: 30px;
+    box-shadow: 0 0 50px rgba(white, 0.9);
+
+    .usersTable{
+        width: 90%;
+        text-align: center;
+    }
+}

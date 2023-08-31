@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="dist/index.js" defer></script>
+        <link rel="stylesheet" href="dist/index.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <form onsubmit="submitted(event); event.preventDefault()">
+                <h3>To Register, please enter the following details</h3>
+                <div>
+                    <label for="userName">User Name </label>
+                    <input
+                        type="text"
+                        name="userName"
+                        id="userName"
+                        size="15"
+                        minlength="5"
+                        maxlength="15"
+                        required
+                    />
+                </div>
+                <div>
+                    <label for="email">Email </label>
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        size="15"
+                        minlength="5"
+                        maxlength="20"
+                        required
+                    />
+                </div>
+                <div>
+                    <label for="password">Password </label>
+                    <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        size="15"
+                        minlength="8"
+                        maxlength="25"
+                        required
+                    />
+                </div>
+                <div>
+                    <label for="confirmPassword">Confirm Password </label>
+                    <input
+                        type="password"
+                        name="confirmPassword"
+                        id="confirmPassword"
+                        size="15"
+                        minlength="8"
+                        maxlength="25"
+                        required
+                    />
+                </div>
+                <div>
+                    <label for="gender">Gender</label>
+                    <select name="gender" name="gender" id="gender" required>
+                        <option value=""></option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <input type="submit" value="Submit" />
+            </form>
+            <table class="usersTable">
+                <tr>
+                    <th>UserName</th>
+                    <th>Email Address</th>
+                    <th>Password</th>
+                    <th>Gender</th>
+                    <th>Delete?</th>
+                </tr>
+            </table>
+            <input onclick="deleteRows(event)" type="button" id="deleteBtn" value="Delete selected">
+        </div>
+    </body>
+</html>
