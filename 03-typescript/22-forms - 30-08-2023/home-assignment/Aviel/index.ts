@@ -1,22 +1,11 @@
 
 
 
-
-
-
-
-
-
 let input_name = document.querySelector("#name") as HTMLInputElement;
 let input_age = document.querySelector("#age1") as HTMLInputElement;
 let input_state = document.querySelector("#state") as HTMLInputElement;
 let error = document.querySelector("#error") as HTMLParagraphElement;
 
-
-function deleteRow(r) {
-  var i = r.parentNode.parentNode.rowIndex;
-  document.getElementById("myTable").deleteRow(i);
-}
 
 function add_row(){
 
@@ -66,3 +55,4 @@ function dlt_row(x) {
   }
 
 }
+
