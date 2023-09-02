@@ -1,0 +1,43 @@
+body{
+    background-image: url('https://thumbs.dreamstime.com/b/landscape-nature-view-background-view-window-landscape-nature-view-background-view-window-wonderful-landscape-121459679.jpg');
+    background-position: center;
+    background-size: 100%;
+}
+input {
+    padding: 6px;
+    border-radius: 10px;
+    border: 1px gray solid;
+    text-align: center;
+}
+input:hover, button:hover{
+    opacity: 0.6;
+}
+
+button{
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    background-color: black;
+    color: white;
+}
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+.box {
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    border: solid 1px black;
+    width: 50vw;
+    height: 43.5vw;
+    font-size: 30px;
+}
+#title{
+    font-size: 40px;
+}
+#result {
+    font-size: 20px;
+}
