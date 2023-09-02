@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-size: 16px;
+}
+
+.passbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30vh;
+
+    input {
+        margin-top: 5vh;
+    }
+    .error-pass {
+        color: black;
+        font-size: 30px;
+    }
+}
