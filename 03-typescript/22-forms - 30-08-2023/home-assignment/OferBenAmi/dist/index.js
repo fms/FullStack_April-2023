@@ -1,13 +1,20 @@
+var userDetailsClass = /** @class */ (function () {
+    function userDetailsClass(userName, email, password, gender, deleteRow) {
+        if (deleteRow === void 0) { deleteRow = false; }
+        this.userName = userName;
+        this.email = email;
+        this.password = password;
+        this.gender = gender;
+        this.deleteRow = deleteRow;
+    }
+    return userDetailsClass;
+}());
 var allUserDetails = [];
 function submitted(event) {
-    var submittedUserDetails = {
-        userName: event.target.elements.userName.value,
-        email: event.target.elements.email.value,
-        password: event.target.elements.password.value,
-        gender: event.target.elements.gender.value
-    };
-    pushRow(submittedUserDetails);
+    var submittedUserDetails = new userDetailsClass(event.target.elements.userName.value, event.target.elements.email.value, event.target.elements.password.value, event.target.elements.gender.value);
     allUserDetails.push(submittedUserDetails);
+    // console.log(allUserDetails);
+    pushRow(submittedUserDetails);
 }
 function pushRow(submittedUserDetails) {
     var userTable = document.querySelector(".usersTable");
@@ -31,6 +38,15 @@ function pushRow(submittedUserDetails) {
     newRow.appendChild(deletetd);
     userTable === null || userTable === void 0 ? void 0 : userTable.appendChild(newRow);
 }
-function deleteRows(event) {
-    console.log(event);
+function deleteRows(allUserDetails) {
+    var userTable = document.querySelector(".usersTable");
+    userTable === null || userTable === void 0 ? void 0 : userTable.childNodes.forEach(function (Element, index) {
+        var _a;
+        if (index < 2)
+            return;
+        if ((_a = Element.lastChild) === null || _a === void 0 ? void 0 : _a.firstChild.checked) {
+            console.log("index is " + index + ", element " + Element + " is removed");
+            Element.remove();
+        }
+    });
 }

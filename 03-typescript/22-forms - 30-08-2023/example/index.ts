@@ -27,7 +27,7 @@ function submitForm(event: SubmitEvent) {
 function handleKeyup(event: KeyboardEvent) {
     const target = event.target as HTMLInputElement;
     if (target.tagName === "INPUT")
-     {
+    {
         console.log(`key up ${event.key} ${target.value.length}`);
         const p = document.querySelector("#error-text");
         if (p) {

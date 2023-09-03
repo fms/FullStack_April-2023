@@ -16,7 +16,6 @@ class CardSet{
   }
 }
 
-
 class BoardGame {
   countCoupels;
   cards : Array<number>;

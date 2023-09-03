@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4vh;
+    background-color: #ccc;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    input {
+        margin-inline: 15px;
+    }
+}
+
+table {
+    width: 100%; 
+    border-collapse: collapse; 
+    thead {
+        width: 100%; 
+        display: flex;
+        // grid-template-columns:repeat(4,20vw);
+        background-color: #333;
+        color: #fff;
+        th {
+            padding: 8px;
+            border: 1px solid black;
+            width: 50vw;
+        }
+
+        #edit-section {
+            width: 10vw;
+        }
+
+        #done-section {
+            width: 4vw;
+        }
+
+        #deadline-section {
+            width: 19vw;
+        }
+
+        #details-section {
+            width: 48vw;
+        }
+
+        #task-section {
+            width: 19vw;
+        }
+
+        // tr {
+        //     margin-inline: 5vw;
+        // }
+    }
+    
+    tbody {
+        background-color: #f0f0f0;
+        color: #333;
+        border: 1px solid #ccc;
+        display: grid;
+        gap: 1vh;
+        justify-content: center;
+        align-items: center;
+        width: 100%; 
+        border-collapse: collapse; 
+
+        td {
+            border: 1px solid #ccc;
+            width: 100vw;
+        }
+
+    }
+}
+
+.edit-button {
+    padding: 9px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.edit-button:hover {
+    background-color: rgb(170, 170, 170);
+}
