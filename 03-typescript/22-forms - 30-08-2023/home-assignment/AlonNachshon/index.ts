@@ -141,13 +141,13 @@ class Task{
 
         isDone.addEventListener("change", (ev) => {
             const parent = isDone.parentElement?.parentElement;
-
                 parent?.querySelector(".tasktslist__task__title")?.classList.toggle("--done");
                 parent?.querySelector(".tasktslist__task__description")?.classList.toggle("--done");
                 parent?.querySelector(".tasktslist__task__date")?.classList.toggle("--done");
                 parent?.querySelector(".tasktslist__task__id")?.classList.toggle("--done");
                 parent?.querySelector(".tasktslist__task__created")?.classList.toggle("--done");
                 this.status? false:true;
+                parent?.parentElement?.appendChild(parent);
         });
         
     }

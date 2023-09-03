@@ -98,7 +98,7 @@ let Task = /** @class */ (() => {
                 });
             });
             isDone.addEventListener("change", (ev) => {
-                var _a, _b, _c, _d, _e, _f;
+                var _a, _b, _c, _d, _e, _f, _g;
                 const parent = (_a = isDone.parentElement) === null || _a === void 0 ? void 0 : _a.parentElement;
                 (_b = parent === null || parent === void 0 ? void 0 : parent.querySelector(".tasktslist__task__title")) === null || _b === void 0 ? void 0 : _b.classList.toggle("--done");
                 (_c = parent === null || parent === void 0 ? void 0 : parent.querySelector(".tasktslist__task__description")) === null || _c === void 0 ? void 0 : _c.classList.toggle("--done");
@@ -106,6 +106,7 @@ let Task = /** @class */ (() => {
                 (_e = parent === null || parent === void 0 ? void 0 : parent.querySelector(".tasktslist__task__id")) === null || _e === void 0 ? void 0 : _e.classList.toggle("--done");
                 (_f = parent === null || parent === void 0 ? void 0 : parent.querySelector(".tasktslist__task__created")) === null || _f === void 0 ? void 0 : _f.classList.toggle("--done");
                 this.status ? false : true;
+                (_g = parent === null || parent === void 0 ? void 0 : parent.parentElement) === null || _g === void 0 ? void 0 : _g.appendChild(parent);
             });
         }
     }
