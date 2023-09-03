@@ -1,5 +1,5 @@
 "use strict";
-class taksList {
+class TaksList {
     constructor(name) {
         this.name = name;
         this.tasks = new Map();
@@ -15,6 +15,7 @@ class taksList {
 }
 let Task = /** @class */ (() => {
     class Task {
+        // (Task.idCounter++, title, description, dateAndTime, new Date().toLocaleString(), privateList);
         constructor(id, title, description, taskDayTime, dateStemp, taskList) {
             this.id = id;
             this.title = title;
@@ -160,7 +161,7 @@ function editMode(status) {
         btn.disabled = (status);
     });
 }
-const privateList = new taksList("Private");
+const privateList = new TaksList("Private");
 const t1 = new Task(Task.idCounter++, "title1", "description1", "dateAndTime1", new Date().toLocaleString(), privateList);
 const t2 = new Task(Task.idCounter++, "title2", "description2", "dateAndTime2", new Date().toLocaleString(), privateList);
 const t3 = new Task(Task.idCounter++, "title3", "description3", "dateAndTime3", new Date().toLocaleString(), privateList);

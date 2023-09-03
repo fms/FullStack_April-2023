@@ -1,4 +1,4 @@
-class taksList{
+class TaksList{
     name:string;
     tasks: Map<number, Task>;
 
@@ -24,8 +24,9 @@ class Task{
     taskDayTime: string;
     dateStemp: string;
     status: boolean;
+    taskList: TaksList;
 
-
+    // (Task.idCounter++, title, description, dateAndTime, new Date().toLocaleString(), privateList);
 
     constructor(
         id: number,
@@ -33,8 +34,7 @@ class Task{
         description: string,
         taskDayTime: string,
         dateStemp: string,
-        taskList: taksList
-
+        taskList: TaksList
     ){
         this.id = id;
         this.title = title;
@@ -208,7 +208,7 @@ function editMode(status:boolean){
         btn.disabled = (status);
     });
 }
-const privateList = new taksList("Private");
+const privateList = new TaksList("Private");
 
 const t1 = new Task(Task.idCounter++, "title1", "description1", "dateAndTime1", new Date().toLocaleString(),privateList);
 const t2 = new Task(Task.idCounter++, "title2", "description2", "dateAndTime2", new Date().toLocaleString(),privateList);
