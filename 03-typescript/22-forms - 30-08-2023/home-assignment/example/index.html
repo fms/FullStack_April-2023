@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <script src="dist/index.js" defer></script>
+    <link rel="stylesheet" href="dist/index.css">
+</head>
+<!-- <body onclick="handleClick(event, 1)"> -->
+<body">
+    <form id="inputForm" onsubmit="return submitForm(event);">
+        <label>First Name:
+            <input name="firstName" type="text" required size="20" minlength="2" maxlength="20">
+        </label>
+        <label>Last Name:
+            <input name="lastName" type="text" required size="20" minlength="2" maxlength="20">
+        </label>
+        <label>E-mail:
+            <input name="eMail" type="email" required>
+        </label>
+        <input id="add" type="submit" value="Add">
+        <input id="update" class="hidden" type="submit" value="Update">
+        <input id="cancel" class="hidden" type="reset" value="Cancel" onclick="exitEditMode()">
+    </form>
+    <hr>
+    <div class="entries"></div>
+    </body>
+
+</html>
