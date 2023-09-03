@@ -1,3 +1,17 @@
+class taksList{
+    name:string;
+    tasks: Map<number, Task>;
+    constructor(name: string){
+        this.name = name;
+        this.tasks = new Map();
+    }
+    addTask(task: Task){
+        this.tasks.set(task.id, task);
+    }
+    deleteTask(taskId: number){
+        this.tasks.delete(taskId);
+    }
+}
 class Task{
     static idCounter: number = 0;
     id: number;
@@ -7,12 +21,14 @@ class Task{
     dateStemp: string;
     status: boolean;
 
+
     constructor(
         id: number,
         title: string,
         description: string,
         taskDayTime: string,
         dateStemp: string,
+
     ){
         this.id = id;
         this.title = title;
@@ -22,6 +38,8 @@ class Task{
         this.status = false;
         this.setTask();
     }
+
+
     private setTask(){
         
         const taskContainer = document.createElement("div");
@@ -65,7 +83,10 @@ class Task{
         editBtn.value = "Edit";
         editTask.className = "tasktslist__task__edit";
         editTask.appendChild(editBtn);
-        const btm
+        editBtn.addEventListener("submit", (ev) => {
+            ev.preventDefault();
+
+        });
 
         taskContainer.appendChild(timeCreated);
         taskContainer.appendChild(taskId);
@@ -81,9 +102,7 @@ class Task{
          */
         const lastTask = document.querySelector(".tasktslist");
         lastTask?.appendChild(taskContainer);
-
     }
-
 }
 
 /*
@@ -121,7 +140,11 @@ deleteTask?.addEventListener("click", (ev) => {
 
 
 });
+const privateList = new taksList("Private");
 
 const t1 = new Task(Task.idCounter++, "title", "description", "dateAndTime", new Date().toLocaleString());
 const t2 = new Task(Task.idCounter++, "title", "description", "dateAndTime", new Date().toLocaleString());
+
+
+
 

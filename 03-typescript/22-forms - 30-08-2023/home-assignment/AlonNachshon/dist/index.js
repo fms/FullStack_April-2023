@@ -1,4 +1,16 @@
 "use strict";
+class taksList {
+    constructor(name) {
+        this.name = name;
+        this.tasks = new Map();
+    }
+    addTask(task) {
+        this.tasks.set(task.id, task);
+    }
+    deleteTask(taskId) {
+        this.tasks.delete(taskId);
+    }
+}
 let Task = /** @class */ (() => {
     class Task {
         constructor(id, title, description, taskDayTime, dateStemp) {
@@ -44,7 +56,9 @@ let Task = /** @class */ (() => {
             editBtn.value = "Edit";
             editTask.className = "tasktslist__task__edit";
             editTask.appendChild(editBtn);
-            const btm;
+            editBtn.addEventListener("submit", (ev) => {
+                ev.preventDefault();
+            });
             taskContainer.appendChild(timeCreated);
             taskContainer.appendChild(taskId);
             taskContainer.appendChild(taskTitle);
@@ -94,5 +108,6 @@ deleteTask === null || deleteTask === void 0 ? void 0 : deleteTask.addEventListe
         }
     });
 });
+const privateList = new taksList("Private");
 const t1 = new Task(Task.idCounter++, "title", "description", "dateAndTime", new Date().toLocaleString());
 const t2 = new Task(Task.idCounter++, "title", "description", "dateAndTime", new Date().toLocaleString());
