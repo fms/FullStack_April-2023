@@ -1,0 +1,31 @@
+.form {
+  text-align: right;
+  align-content: space-between;
+  border: 10px #70104e solid;
+  background-color: #d630cb;
+  color: #0b0b07;
+  height: 300px;
+  width: 50%;
+}
+
+.fieldList {
+  margin-top: 25px;
+  padding-top: 10px;
+  border: 3px black solid;
+  color: #ffffdf;
+  height: 50%;
+}
+
+.sentItems {
+  margin-top: 25px;
+  border: 3px black solid;
+  color: #171715;
+  text-align: left;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  width: 50%;
+}
+
+.treatment {
+  margin-top: 10px;
+}
