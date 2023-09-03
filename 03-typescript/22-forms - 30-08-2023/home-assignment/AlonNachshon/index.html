@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="dist/index.js" defer></script>
+    <link rel="stylesheet" href="dist/style.css">
+    <title>Tasks</title>
+</head>
+
+<body>
+    <h1>Task Manager</h1>
+    <form id="addNewTask">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required><br><br>
+
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+
+        <label for="dateAndTime">Date:</label>
+        <input type="datetime-local" id="dateAndTime" name="dateAndTime" required><br><br>
+
+        <input type="submit" value="Add New Task">
+    </form>
+
+    <h2>Tasks List</h2>
+    <hr>
+
+
+    <div class="tasktslist">
+        <div class="tasktslist__task">
+            <div class="tasktslist__task__created">Time Created</div>
+            <div class="tasktslist__task__id">Task Id</div>
+            <div class="tasktslist__task__title">Task Title</div>
+            <div class="tasktslist__task__description">Task Description</div>
+            <div class="tasktslist__task__date">Task Date</div>
+            <div class="tasktslist__task__actions">Action </div>
+            <div class="tasktslist__task__done">Mark as done</div>
+        </div>
+    </div>
+
+</body>
+
+</html>

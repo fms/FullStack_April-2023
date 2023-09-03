@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <script src="dist/index.js" defer></script>
+</head>
+<body onclick="handleClick(event, 1)">
+    <input type="text" onkeyup="handleKeyup(event)">
+    <input type="button" value="Click me!" onclick="handleClick(event)">
+    <p id="error-text"></p>
+    <label for="start">Input type Date:</label>
+    <input type="date" id="date" name="trip-start" />
+
+    <br /><br />
+
+    <label for="appt">Input type Time:</label>
+    <input type="time" id="time" name="appt" />
+
+    <br /><br />
+
+    <label for="meeting-time">Input type Datetime-local:</label>
+    <input type="datetime-local" id="datetime-local" name="meeting-time" />
+
+    
+
+        
+      
+      
+</body>
+</html>

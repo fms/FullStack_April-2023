@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/style.css">
+    <script src="dist/index.js"></script>
+    <title>22-forms-homeAssignment</title>
+</head>
+
+<body>
+    <form id="teb-form" onsubmit="return submitInfo(event);">
+
+        <input type="text" name="f1" id="task" placeholder="Task">
+
+        <input type="text" name="f2" id="Details" placeholder="Details">
+
+        <input type="date" name="f3" id="dead-line" placeholder="Dead line">
+
+        <input type="button" name="" id="mainCheck" value="delete all selected" onclick="deleteSelected()">
+
+        <input type="submit" value="Submit information" id="submitInformation">
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th id="task-section">Task</th>
+            </tr>
+            <tr>
+                <th id="details-section">Details</th>
+            </tr>
+            <tr>
+                <th id="deadline-section">Dead line</th>
+            </tr>
+            <tr>
+                <th id="done-section">Done?</th>
+            </tr>
+            <tr>
+                <th id="edit-section">Edit</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+        </tbody>
+    </table>
+</body>
+
+</html>

@@ -2,6 +2,7 @@ body {
   background-image: url("https://thumbs.dreamstime.com/b/landscape-nature-view-background-view-window-landscape-nature-view-background-view-window-wonderful-landscape-121459679.jpg");
   background-position: center;
   background-size: 100%;
+  font-family: "Roboto", sans-serif;
 }
 
 input {
@@ -23,6 +24,16 @@ button {
   color: white;
 }
 
+#male, #female {
+  background-color: white;
+  color: black;
+  padding: 7px;
+}
+
+#male:focus, #female:focus {
+  background-color: #ff7878;
+}
+
 .wrapper {
   display: flex;
   align-items: center;
@@ -37,13 +48,13 @@ button {
   border: solid 1px black;
   width: 50vw;
   height: 43.5vw;
-  font-size: 30px;
+  font-size: 22px;
 }
 
 #title {
-  font-size: 40px;
+  font-size: 30px;
 }
 
 #result {
-  font-size: 20px;
+  font-size: 15px;
 }
