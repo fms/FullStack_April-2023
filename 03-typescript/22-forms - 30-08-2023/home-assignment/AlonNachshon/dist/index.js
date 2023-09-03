@@ -44,6 +44,7 @@ let Task = /** @class */ (() => {
             editBtn.value = "Edit";
             editTask.className = "tasktslist__task__edit";
             editTask.appendChild(editBtn);
+            const btm;
             taskContainer.appendChild(timeCreated);
             taskContainer.appendChild(taskId);
             taskContainer.appendChild(taskTitle);
@@ -52,7 +53,9 @@ let Task = /** @class */ (() => {
             taskContainer.appendChild(taskActions);
             taskContainer.appendChild(editTask);
             taskContainer.appendChild(markAsDone);
-            /*Need to check if null if any problems while uploading page,,,,... */
+            /*
+            ...Need to check if null if any problems while uploading page
+             */
             const lastTask = document.querySelector(".tasktslist");
             lastTask === null || lastTask === void 0 ? void 0 : lastTask.appendChild(taskContainer);
         }
@@ -60,6 +63,9 @@ let Task = /** @class */ (() => {
     Task.idCounter = 0;
     return Task;
 })();
+/*
+...Also Delete the class instance by pointing to null....
+*/
 const addNewTask = document.getElementById("addNewTask");
 addNewTask === null || addNewTask === void 0 ? void 0 : addNewTask.addEventListener("submit", (ev) => {
     ev.preventDefault();

@@ -65,6 +65,7 @@ class Task{
         editBtn.value = "Edit";
         editTask.className = "tasktslist__task__edit";
         editTask.appendChild(editBtn);
+        const btm
 
         taskContainer.appendChild(timeCreated);
         taskContainer.appendChild(taskId);
@@ -75,7 +76,9 @@ class Task{
         taskContainer.appendChild(editTask);
         taskContainer.appendChild(markAsDone);
 
-        /*Need to check if null if any problems while uploading page,,,,... */
+        /*
+        ...Need to check if null if any problems while uploading page
+         */
         const lastTask = document.querySelector(".tasktslist");
         lastTask?.appendChild(taskContainer);
 
@@ -83,6 +86,9 @@ class Task{
 
 }
 
+/*
+...Also Delete the class instance by pointing to null....
+*/
 const addNewTask = document.getElementById("addNewTask") as HTMLFormElement;
 addNewTask?.addEventListener("submit", (ev) => {
     ev.preventDefault(); 
