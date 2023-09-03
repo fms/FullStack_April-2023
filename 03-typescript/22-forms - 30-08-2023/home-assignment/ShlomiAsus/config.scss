@@ -1,0 +1,32 @@
+.form {
+    text-align: right;
+    align-content: space-between;
+    border: 10px rgb(112, 16, 78) solid;
+    background-color: rgb(214, 48, 203);
+    color: rgb(11, 11, 7);
+    height: 300px;
+    width: 50%;
+}
+
+.fieldList {
+    margin-top: 25px;
+    padding-top: 10px;
+    border: 3px rgb(0, 0, 0) solid;
+    color: rgb(255, 255, 223);
+    height: 50%;
+
+}
+
+.sentItems {
+    margin-top: 25px;
+    border: 3px rgb(0, 0, 0) solid;
+    color: rgb(23, 23, 21);
+    text-align: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    width: 50%;
+}
+
+.treatment {
+    margin-top: 10px;
+}
