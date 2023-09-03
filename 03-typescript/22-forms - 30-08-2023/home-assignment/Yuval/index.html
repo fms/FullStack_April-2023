@@ -1,16 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Assignment</title>
+    <link rel="stylesheet" href="dist/style.css">
     <script src="dist/index.js" defer></script>
 </head>
+
 <body>
-    <form action="">
-        <label for="name">Full Name</label>
-        <input type="text" id="name">
-        <!-- read MDN about different input types before continuing -->
+    <form onsubmit="">
+        <div class="form">
+            <div>
+                <label for="name">Full Name</label>
+                <input type="text" id="name">
+            </div>
+            <div>
+                <label for="week">Best week in your life?</label>
+                <input type="week" id="week">
+            </div>
+            <div>
+                <label for="color">What is the worst color?</label>
+                <input type="color" id="color">
+            </div>
+            <fieldset>
+                <legend>Pick a card. Any card</legend>
+                <div class="radio">
+                    <div>
+                        <input type="radio" id="heart" name="contact" value="9&#9825;" />
+                        <label for="heart">9&#9825;</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="spade" name="contact" value="J&#9828;" />
+                        <label for="spade">J&#9828;</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="diamond" name="contact" value="3&#9826;" />
+                        <label for="diamond">3&#9826;</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="club" name="contact" value="10&#9831;" />
+                        <label for="club">10&#9831;</label>
+                    </div>
+                </div>
+            </fieldset>
+            <input type="submit" value="Submit">
+        </div>
     </form>
+
+    <div class="details"></div>
 </body>
+
 </html>

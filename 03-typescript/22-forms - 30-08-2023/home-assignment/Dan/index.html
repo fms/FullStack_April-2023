@@ -7,17 +7,17 @@
     <link rel="stylesheet" href="dist/index.css">
     <title>Dan's Form</title>
 </head>
-<body onkeyup="handleKey(event)">
+<body>
 
     <h1>
-        Fill Out Your Personal Info
+        Your Personal Info
     </h1>
 
-    <form onsubmit="return submitForm(event)">
-            <input type="text" placeholder="Full Name" onkeyup="fullName()">
-            <input type="date" onkeyup="printKey(event)">
-            <input type="email" placeholder="example@example.com" onkeyup="printKey(event)">
-            <input type="submit" value="Send" style="color: black;" onclick="click()">
+    <form onsubmit="submitForm(event); event.preventDefault()">
+            <input type="text" placeholder="Name">
+            <input type="date">
+            <input type="email" placeholder="example@example.com">
+            <input type="submit" value="Send" style="color: black;">
     </form>
 
 </body>
