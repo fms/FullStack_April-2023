@@ -49,7 +49,9 @@ class Task{
 
         const taskActions = document.createElement("div");
         taskActions.className = "tasktslist__task__actions";
-        taskActions.textContent = "Future action come here";
+        const shouldDelete = document.createElement("input");
+        shouldDelete.type = "checkbox";
+        taskActions.appendChild(shouldDelete);
 
         const markAsDone = document.createElement("div");
         const isDone = document.createElement("input");
@@ -76,7 +78,7 @@ class Task{
 const addNewTask = document.getElementById("addNewTask") as HTMLFormElement;
 addNewTask?.addEventListener("submit", (ev) => {
     ev.preventDefault(); 
-    const title = document.getElementById("title").value;
+    const title = document?.getElementById("title").value;
     const description = document.getElementById("description").value;
     const dateAndTime = document.getElementById("dateAndTime").value;
 
@@ -84,6 +86,17 @@ addNewTask?.addEventListener("submit", (ev) => {
     addNewTask.reset();
 });
 
+const deleteTask = document.getElementById("delSelected") as HTMLFormElement;
+deleteTask?.addEventListener("click", (ev) => {
+    ev.preventDefault();
+    const tasksToDelete = document.querySelectorAll("tasktslist__task__actions input");
+    tasksToDelete.forEach((task) => {
+        if(task.checked){
+            task.parentElement?.parentElement?.remove();
+        }
+    });
+});
 
-
+const t1 = new Task(Task.idCounter++, "title", "description", "dateAndTime", new Date().toLocaleString());
+const t2 = new Task(Task.idCounter++, "title", "description", "dateAndTime", new Date().toLocaleString());
 

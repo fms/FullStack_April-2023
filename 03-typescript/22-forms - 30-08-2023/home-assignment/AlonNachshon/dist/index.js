@@ -30,7 +30,9 @@ let Task = /** @class */ (() => {
             taskDate.textContent = this.taskDayTime;
             const taskActions = document.createElement("div");
             taskActions.className = "tasktslist__task__actions";
-            taskActions.textContent = "Future action come here";
+            const shouldDelete = document.createElement("input");
+            shouldDelete.type = "checkbox";
+            taskActions.appendChild(shouldDelete);
             const markAsDone = document.createElement("div");
             const isDone = document.createElement("input");
             isDone.type = "checkbox";
@@ -54,9 +56,22 @@ let Task = /** @class */ (() => {
 const addNewTask = document.getElementById("addNewTask");
 addNewTask === null || addNewTask === void 0 ? void 0 : addNewTask.addEventListener("submit", (ev) => {
     ev.preventDefault();
-    const title = document.getElementById("title").value;
+    const title = document === null || document === void 0 ? void 0 : document.getElementById("title").value;
     const description = document.getElementById("description").value;
     const dateAndTime = document.getElementById("dateAndTime").value;
     const t1 = new Task(Task.idCounter++, title, description, dateAndTime, new Date().toLocaleString());
     addNewTask.reset();
 });
+const deleteTask = document.getElementById("delSelected");
+deleteTask === null || deleteTask === void 0 ? void 0 : deleteTask.addEventListener("click", (ev) => {
+    ev.preventDefault();
+    const tasksToDelete = document.querySelectorAll("tasktslist__task__actions input");
+    tasksToDelete.forEach((task) => {
+        var _a, _b;
+        if (task.checked) {
+            (_b = (_a = task.parentElement) === null || _a === void 0 ? void 0 : _a.parentElement) === null || _b === void 0 ? void 0 : _b.remove();
+        }
+    });
+});
+const t1 = new Task(Task.idCounter++, "title", "description", "dateAndTime", new Date().toLocaleString());
+const t2 = new Task(Task.idCounter++, "title", "description", "dateAndTime", new Date().toLocaleString());
