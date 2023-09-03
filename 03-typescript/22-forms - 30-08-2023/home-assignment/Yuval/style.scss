@@ -1,0 +1,20 @@
+.form, .radio {
+    display: flex;
+    flex-direction: column;
+}
+
+.form {
+    width: 300px;
+    gap: 25px;
+}
+
+.details {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.active {
+    border: 1px solid black;
+}
