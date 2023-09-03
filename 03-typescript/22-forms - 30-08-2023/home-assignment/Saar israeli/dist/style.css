@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4vh;
+  background-color: #ccc;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form input {
+  margin-inline: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table thead {
+  width: 100%;
+  display: flex;
+  background-color: #333;
+  color: #fff;
+}
+table thead th {
+  padding: 8px;
+  border: 1px solid black;
+  width: 50vw;
+}
+table thead #edit-section {
+  width: 10vw;
+}
+table thead #done-section {
+  width: 4vw;
+}
+table thead #deadline-section {
+  width: 19vw;
+}
+table thead #details-section {
+  width: 48vw;
+}
+table thead #task-section {
+  width: 19vw;
+}
+table tbody {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+  display: grid;
+  gap: 1vh;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-collapse: collapse;
+}
+table tbody td {
+  border: 1px solid #ccc;
+  width: 100vw;
+}
+
+.edit-button {
+  padding: 9px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.edit-button:hover {
+  background-color: #aaaaaa;
+}

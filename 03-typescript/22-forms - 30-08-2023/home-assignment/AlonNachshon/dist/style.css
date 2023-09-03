@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+.tasktslist {
+  display: grid;
+  margin-bottom: 15px;
+}
+.tasktslist__task {
+  display: grid;
+  grid-template-columns: 2fr 2fr 3fr 4fr 2fr 1fr 1fr 1fr;
+  grid-template-areas: "task__created task__id task__title task__description task__date task__actions task__edit task__done";
+  gap: 5px;
+}
+.tasktslist__task__edit {
+  grid-area: task__edit;
+}
+.tasktslist__task__created {
+  grid-area: task__created;
+}
+.tasktslist__task__id {
+  grid-area: task__id;
+}
+.tasktslist__task__title {
+  grid-area: task__title;
+}
+.tasktslist__task__description {
+  grid-area: task__description;
+}
+.tasktslist__task__date {
+  grid-area: task__date;
+}
+.tasktslist__task__actions {
+  grid-area: task__actions;
+}
+.tasktslist__task__done {
+  grid-area: task__done;
+}
+.tasktslist__task__done--done {
+  text-decoration: line-through;
+}

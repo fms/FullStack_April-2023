@@ -83,6 +83,7 @@ class MemoryGame {
         const next = document.querySelector(".next");
         const reset = document.querySelector(".reset");
         const buttons = document.querySelectorAll("button");
+        let lose = document.querySelector(".lose");
         buttons.forEach((button) => {
             button.style.display = "inline-block";
         });
@@ -94,15 +95,16 @@ class MemoryGame {
                 main.style.display = "none";
                 next.style.display = "none";
                 reset.style.display = "none";
+                lose.style.display = "none";
             }
         });
     }
     timer() {
         let timer = document.querySelector(".timer");
-        let seconds = 0;
+        let seconds = 120;
         let timerStart = setInterval(() => {
-            timer.textContent = `time left ${--seconds + 120}`;
-            if (timer.textContent == `120`) {
+            timer.textContent = `time left ${--seconds}`;
+            if (seconds === 0) {
                 clearInterval(timerStart);
                 this.loseTime();
                 this.endGame();

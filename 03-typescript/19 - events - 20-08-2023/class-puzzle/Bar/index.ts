@@ -18,8 +18,10 @@ let tds = document.querySelectorAll("td")
 
 theTable?.addEventListener("click", (event) => {
     let target = event.target as HTMLElement
-    tds.forEach((td) => {
-        td.classList.remove("highlited")
-    })
-    target.classList.add("highlited")
+    if (target.tagName === "TD") {
+        tds.forEach((td) => {
+            td.classList.remove("highlited")
+        })
+        target.classList.add("highlited")
+    }
 })

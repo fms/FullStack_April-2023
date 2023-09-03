@@ -15,6 +15,7 @@
   align-items: center;
   text-align: center;
   border: 1px navy solid;
+  background-size: cover;
 }
 
 .my_Image1 {

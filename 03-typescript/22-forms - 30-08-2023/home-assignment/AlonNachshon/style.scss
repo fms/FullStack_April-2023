@@ -1,0 +1,62 @@
+* {
+    // margin: 0;
+    // padding: 0;
+    // text-align: center;
+
+    box-sizing: border-box;
+}
+
+hr {
+    border: 1px solid lightgrey
+}
+
+.tasktslist {
+    display: grid;
+    margin-bottom: 15px;
+
+
+    &__task {
+        display: grid;
+        grid-template-columns: 2fr 2fr 3fr 4fr 2fr 1fr 1fr 1fr;
+        grid-template-areas: "task__created task__id task__title task__description task__date task__actions task__edit task__done";
+        gap: 5px;
+
+        &__edit {
+            grid-area: task__edit;
+        }
+
+        &__created {
+            grid-area: task__created;
+        }
+
+        &__id {
+            grid-area: task__id;
+        }
+
+        &__title {
+            grid-area: task__title;
+        }
+
+        &__description {
+            grid-area: task__description;
+        }
+
+        &__date {
+            grid-area: task__date;
+        }
+
+        &__actions {
+            grid-area: task__actions;
+        }
+
+        &__done {
+            grid-area: task__done;
+
+            &--done {
+                text-decoration: line-through;
+            }
+        }
+
+
+    }
+}
