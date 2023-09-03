@@ -12,3 +12,4 @@ form.addEventListener('submit', function(event) {
     confirmationMessage.innerText = `Thank you, ${name}, we accept your details! We will send you a confirmation letter to your email address: ${email}.`;
     confirmationMessage.classList.remove('hide');
 });
+
