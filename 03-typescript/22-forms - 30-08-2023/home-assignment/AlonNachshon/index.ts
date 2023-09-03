@@ -46,19 +46,7 @@ class Task{
         this.setTask();
     }
 
-    private updateTask(){
-        const taskTitle = document.createElement("div");
-        taskTitle.className = "tasktslist__task__title";
-        taskTitle.textContent = this.title;
 
-        const taskDescription = document.createElement("div");
-        taskDescription.className = "tasktslist__task__description";
-        taskDescription.textContent = this.description;
-
-        const taskDate = document.createElement("div");
-        taskDate.className = "tasktslist__task__date";
-        taskDate.textContent = this.taskDayTime;
-    }
     private setTask(){
         
         const taskContainer = document.createElement("div");
@@ -100,6 +88,7 @@ class Task{
         const editBtn = document.createElement("input");
         editBtn.type = "submit";
         editBtn.value = "Edit";
+        editBtn.className = "editBtn";
         editTask.className = "tasktslist__task__edit";
         editTask.appendChild(editBtn);
 
@@ -123,7 +112,7 @@ class Task{
             ev.preventDefault();
             console.log("edit");
             const parent = editBtn.parentElement?.parentElement;
-            let getId = parent?.querySelector(".tasktslist__task__id")?.textContent;
+            // let getId = parent?.querySelector(".tasktslist__task__id")?.textContent;
             const title = document.getElementById("title");
 
             const description = document.getElementById("description")  ;
@@ -132,23 +121,28 @@ class Task{
             title.value = this.title;
             description.value = this.description;
             dateAndTime.value = this.taskDayTime;
-            const submit = document.getElementById("submitTask")?.classList.toggle('hide');
+
+            editMode(true);
+
             const update = document.getElementById("updateTask");
-            update?.classList.toggle('hide');
-            const cancel = document.getElementById("cancelEdit")?.classList.toggle('hide');
-            editBtn.disabled = true;
 
             update?.addEventListener("click", (ev) => {
                 console.log("in update");
                 ev.preventDefault();
                 console.log(this.taskDayTime)
+
                 this.title = title?.value;
                 this.description = description?.value;
                 this.taskDayTime = dateAndTime?.value;
-                // parent?.querySelector(".tasktslist__task__title")?.textContent = this.title;
-                // parent?.querySelector(".tasktslist__task__description")?.textContent = this.description;
-                // parent?.querySelector(".tasktslist__task__date")?.textContent = this.taskDayTime;
-                editBtn.disabled = false;
+
+                parent?.querySelector(".tasktslist__task__title")?.textContent = this.title;
+                parent?.querySelector(".tasktslist__task__description")?.textContent = this.description;
+                parent?.querySelector(".tasktslist__task__date")?.textContent = this.taskDayTime;
+
+
+                editMode(false);
+                
+                const addNewTask = document.getElementById("addNewTask")?.reset();
             });
 
             
@@ -175,8 +169,7 @@ const deleteTask = document.getElementById("delSelected") as HTMLFormElement;
 deleteTask?.addEventListener("click", (ev) => {
     ev.preventDefault();
     const tasksToDelete = document.querySelectorAll(".tasktslist__task__actions input");
-    console.log(tasksToDelete);
-    console.log(tasksToDelete.length);
+
     let first = true;
 
     tasksToDelete.forEach((task) => {
@@ -192,9 +185,28 @@ deleteTask?.addEventListener("click", (ev) => {
             parent?.remove();
         }
     });
-
-
 });
+
+const cancel = document.getElementById("cancelEdit") as HTMLFormElement;
+cancel.addEventListener("click", (ev) => {
+    ev.preventDefault();
+    const addNewTask = document.getElementById("addNewTask") as HTMLFormElement;
+    addNewTask.reset();
+    editMode(false);
+});
+
+function editMode(status:boolean){
+
+    const submit = document.getElementById("submitTask");
+    submit?.classList.toggle('hide');
+    const update = document.getElementById("updateTask");
+    update?.classList.toggle('hide');
+    const cancel = document.getElementById("cancelEdit");
+    cancel?.classList.toggle('hide');
+    document.querySelectorAll('.editBtn').forEach((btn) => {
+        btn.disabled = (status);
+    });
+}
 const privateList = new taksList("Private");
 
 const t1 = new Task(Task.idCounter++, "title1", "description1", "dateAndTime1", new Date().toLocaleString(),privateList);
