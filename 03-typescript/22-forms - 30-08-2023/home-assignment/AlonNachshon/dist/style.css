@@ -12,9 +12,12 @@ hr {
 }
 .tasktslist__task {
   display: grid;
-  grid-template-columns: 2fr 2fr 3fr 4fr 2fr 1fr 1fr;
-  grid-template-areas: "task__created task__id task__title task__description task__date task__actions task__done";
+  grid-template-columns: 2fr 2fr 3fr 4fr 2fr 1fr 1fr 1fr;
+  grid-template-areas: "task__created task__id task__title task__description task__date task__actions task__edit task__done";
   gap: 5px;
+}
+.tasktslist__task__edit {
+  grid-area: task__edit;
 }
 .tasktslist__task__created {
   grid-area: task__created;

@@ -17,10 +17,13 @@ hr {
 
     &__task {
         display: grid;
-        grid-template-columns: 2fr 2fr 3fr 4fr 2fr 1fr 1fr;
-        grid-template-areas: "task__created task__id task__title task__description task__date task__actions task__done";
+        grid-template-columns: 2fr 2fr 3fr 4fr 2fr 1fr 1fr 1fr;
+        grid-template-areas: "task__created task__id task__title task__description task__date task__actions task__edit task__done";
         gap: 5px;
 
+        &__edit {
+            grid-area: task__edit;
+        }
 
         &__created {
             grid-area: task__created;

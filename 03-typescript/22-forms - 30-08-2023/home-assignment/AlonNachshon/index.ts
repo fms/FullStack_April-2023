@@ -59,12 +59,20 @@ class Task{
         markAsDone.className = "tasktslist__task__done";
         markAsDone.appendChild(isDone);
 
+        const editTask = document.createElement("div");
+        const editBtn = document.createElement("input");
+        editBtn.type = "submit";
+        editBtn.value = "Edit";
+        editTask.className = "tasktslist__task__edit";
+        editTask.appendChild(editBtn);
+
         taskContainer.appendChild(timeCreated);
         taskContainer.appendChild(taskId);
         taskContainer.appendChild(taskTitle);
         taskContainer.appendChild(taskDescription);
         taskContainer.appendChild(taskDate);
         taskContainer.appendChild(taskActions);
+        taskContainer.appendChild(editTask);
         taskContainer.appendChild(markAsDone);
 
         /*Need to check if null if any problems while uploading page,,,,... */
@@ -90,14 +98,21 @@ const deleteTask = document.getElementById("delSelected") as HTMLFormElement;
 deleteTask?.addEventListener("click", (ev) => {
     ev.preventDefault();
     const tasksToDelete = document.querySelectorAll(".tasktslist__task__actions input");
-    if(tasksToDelete.length > 0){
-        if(prompt("You are going to delete tasks please type 'DELETE TASKS' to confirm")==="DELETE")
-        tasksToDelete.forEach((task) => {
-            if(task.checked){
-                task.parentElement?.parentElement?.remove();
+    console.log(tasksToDelete);
+    console.log(tasksToDelete.length);
+    let first = true;
+
+    tasksToDelete.forEach((task) => {
+        if(task.checked){
+            if(first){
+                first = false;
+                if(prompt("You are going to delete tasks please type 'DELETE TASKS' to confirm")!="DELETE")
+                    return;
             }
-        });
-    }
+            task.parentElement?.parentElement?.remove();
+        }
+    });
+
 
 });
 
