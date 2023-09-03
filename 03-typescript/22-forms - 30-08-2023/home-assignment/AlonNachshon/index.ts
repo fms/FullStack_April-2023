@@ -110,9 +110,7 @@ class Task{
 
         editBtn.addEventListener("click", (ev) => {
             ev.preventDefault();
-            console.log("edit");
             const parent = editBtn.parentElement?.parentElement;
-            // let getId = parent?.querySelector(".tasktslist__task__id")?.textContent;
             const title = document.getElementById("title");
 
             const description = document.getElementById("description")  ;
@@ -127,9 +125,6 @@ class Task{
             const update = document.getElementById("updateTask");
 
             update?.addEventListener("click", (ev) => {
-                console.log("in update");
-                ev.preventDefault();
-                console.log(this.taskDayTime)
 
                 this.title = title?.value;
                 this.description = description?.value;
@@ -139,21 +134,28 @@ class Task{
                 parent?.querySelector(".tasktslist__task__description")?.textContent = this.description;
                 parent?.querySelector(".tasktslist__task__date")?.textContent = this.taskDayTime;
 
-
-                editMode(false);
-                
+                editMode(false); 
                 const addNewTask = document.getElementById("addNewTask")?.reset();
             });
-
-            
-
         });
+
+        isDone.addEventListener("change", (ev) => {
+            const parent = isDone.parentElement?.parentElement;
+
+                parent?.querySelector(".tasktslist__task__title")?.classList.toggle("--done");
+                parent?.querySelector(".tasktslist__task__description")?.classList.toggle("--done");
+                parent?.querySelector(".tasktslist__task__date")?.classList.toggle("--done");
+                parent?.querySelector(".tasktslist__task__id")?.classList.toggle("--done");
+                parent?.querySelector(".tasktslist__task__created")?.classList.toggle("--done");
+                this.status? false:true;
+        });
+        
     }
 }
 
-/*
-...Also Delete the class instance by pointing to null....
-*/
+
+
+
 const addNewTask = document.getElementById("addNewTask") as HTMLFormElement;
 addNewTask?.addEventListener("submit", (ev) => {
     ev.preventDefault(); 
@@ -196,7 +198,6 @@ cancel.addEventListener("click", (ev) => {
 });
 
 function editMode(status:boolean){
-
     const submit = document.getElementById("submitTask");
     submit?.classList.toggle('hide');
     const update = document.getElementById("updateTask");

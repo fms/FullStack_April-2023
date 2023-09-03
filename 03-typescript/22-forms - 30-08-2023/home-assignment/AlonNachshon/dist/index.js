@@ -76,9 +76,7 @@ let Task = /** @class */ (() => {
             editBtn.addEventListener("click", (ev) => {
                 var _a;
                 ev.preventDefault();
-                console.log("edit");
                 const parent = (_a = editBtn.parentElement) === null || _a === void 0 ? void 0 : _a.parentElement;
-                // let getId = parent?.querySelector(".tasktslist__task__id")?.textContent;
                 const title = document.getElementById("title");
                 const description = document.getElementById("description");
                 const dateAndTime = document.getElementById("dateAndTime");
@@ -89,9 +87,6 @@ let Task = /** @class */ (() => {
                 const update = document.getElementById("updateTask");
                 update === null || update === void 0 ? void 0 : update.addEventListener("click", (ev) => {
                     var _a, _b, _c, _d;
-                    console.log("in update");
-                    ev.preventDefault();
-                    console.log(this.taskDayTime);
                     this.title = title === null || title === void 0 ? void 0 : title.value;
                     this.description = description === null || description === void 0 ? void 0 : description.value;
                     this.taskDayTime = dateAndTime === null || dateAndTime === void 0 ? void 0 : dateAndTime.value;
@@ -102,14 +97,21 @@ let Task = /** @class */ (() => {
                     const addNewTask = (_d = document.getElementById("addNewTask")) === null || _d === void 0 ? void 0 : _d.reset();
                 });
             });
+            isDone.addEventListener("change", (ev) => {
+                var _a, _b, _c, _d, _e, _f;
+                const parent = (_a = isDone.parentElement) === null || _a === void 0 ? void 0 : _a.parentElement;
+                (_b = parent === null || parent === void 0 ? void 0 : parent.querySelector(".tasktslist__task__title")) === null || _b === void 0 ? void 0 : _b.classList.toggle("--done");
+                (_c = parent === null || parent === void 0 ? void 0 : parent.querySelector(".tasktslist__task__description")) === null || _c === void 0 ? void 0 : _c.classList.toggle("--done");
+                (_d = parent === null || parent === void 0 ? void 0 : parent.querySelector(".tasktslist__task__date")) === null || _d === void 0 ? void 0 : _d.classList.toggle("--done");
+                (_e = parent === null || parent === void 0 ? void 0 : parent.querySelector(".tasktslist__task__id")) === null || _e === void 0 ? void 0 : _e.classList.toggle("--done");
+                (_f = parent === null || parent === void 0 ? void 0 : parent.querySelector(".tasktslist__task__created")) === null || _f === void 0 ? void 0 : _f.classList.toggle("--done");
+                this.status ? false : true;
+            });
         }
     }
     Task.idCounter = 1000;
     return Task;
 })();
-/*
-...Also Delete the class instance by pointing to null....
-*/
 const addNewTask = document.getElementById("addNewTask");
 addNewTask === null || addNewTask === void 0 ? void 0 : addNewTask.addEventListener("submit", (ev) => {
     ev.preventDefault();

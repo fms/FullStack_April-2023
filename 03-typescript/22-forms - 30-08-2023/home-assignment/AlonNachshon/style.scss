@@ -5,9 +5,14 @@
 
     box-sizing: border-box;
 }
-.disabled{
-    
+
+.--done {
+    text-decoration: line-through;
+    color: grey;
 }
+
+.disabled {}
+
 .hide {
     display: none;
 }
@@ -58,10 +63,9 @@ hr {
         &__done {
             grid-area: task__done;
 
-            &--done {
-                text-decoration: line-through;
-            }
+
         }
+
 
 
     }
