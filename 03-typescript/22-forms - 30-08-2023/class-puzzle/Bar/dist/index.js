@@ -8,6 +8,3 @@ function handleClick(event) {
         document.body.appendChild(divElement);
     }
 }
-if (input) {
-    input.addEventListener("click", handleClick);
-}
