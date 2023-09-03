@@ -65,13 +65,16 @@ addNewTask === null || addNewTask === void 0 ? void 0 : addNewTask.addEventListe
 const deleteTask = document.getElementById("delSelected");
 deleteTask === null || deleteTask === void 0 ? void 0 : deleteTask.addEventListener("click", (ev) => {
     ev.preventDefault();
-    const tasksToDelete = document.querySelectorAll("tasktslist__task__actions input");
-    tasksToDelete.forEach((task) => {
-        var _a, _b;
-        if (task.checked) {
-            (_b = (_a = task.parentElement) === null || _a === void 0 ? void 0 : _a.parentElement) === null || _b === void 0 ? void 0 : _b.remove();
-        }
-    });
+    const tasksToDelete = document.querySelectorAll(".tasktslist__task__actions input");
+    if (tasksToDelete.length > 0) {
+        if (prompt("You are going to delete tasks please type 'DELETE TASKS' to confirm") === "DELETE")
+            tasksToDelete.forEach((task) => {
+                var _a, _b;
+                if (task.checked) {
+                    (_b = (_a = task.parentElement) === null || _a === void 0 ? void 0 : _a.parentElement) === null || _b === void 0 ? void 0 : _b.remove();
+                }
+            });
+    }
 });
 const t1 = new Task(Task.idCounter++, "title", "description", "dateAndTime", new Date().toLocaleString());
 const t2 = new Task(Task.idCounter++, "title", "description", "dateAndTime", new Date().toLocaleString());

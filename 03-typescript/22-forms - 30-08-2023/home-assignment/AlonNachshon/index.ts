@@ -89,12 +89,16 @@ addNewTask?.addEventListener("submit", (ev) => {
 const deleteTask = document.getElementById("delSelected") as HTMLFormElement;
 deleteTask?.addEventListener("click", (ev) => {
     ev.preventDefault();
-    const tasksToDelete = document.querySelectorAll("tasktslist__task__actions input");
-    tasksToDelete.forEach((task) => {
-        if(task.checked){
-            task.parentElement?.parentElement?.remove();
-        }
-    });
+    const tasksToDelete = document.querySelectorAll(".tasktslist__task__actions input");
+    if(tasksToDelete.length > 0){
+        if(prompt("You are going to delete tasks please type 'DELETE TASKS' to confirm")==="DELETE")
+        tasksToDelete.forEach((task) => {
+            if(task.checked){
+                task.parentElement?.parentElement?.remove();
+            }
+        });
+    }
+
 });
 
 const t1 = new Task(Task.idCounter++, "title", "description", "dateAndTime", new Date().toLocaleString());
