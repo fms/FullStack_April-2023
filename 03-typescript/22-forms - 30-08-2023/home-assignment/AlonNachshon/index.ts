@@ -1,19 +1,23 @@
 class taksList{
     name:string;
     tasks: Map<number, Task>;
+
     constructor(name: string){
         this.name = name;
         this.tasks = new Map();
     }
     addTask(task: Task){
         this.tasks.set(task.id, task);
+        console.log(this.tasks); 
+
     }
     deleteTask(taskId: number){
         this.tasks.delete(taskId);
+        console.log(this.tasks); 
     }
 }
 class Task{
-    static idCounter: number = 0;
+    static idCounter: number = 1000;
     id: number;
     title: string;
     description: string;
@@ -22,12 +26,14 @@ class Task{
     status: boolean;
 
 
+
     constructor(
         id: number,
         title: string,
         description: string,
         taskDayTime: string,
         dateStemp: string,
+        taskList: taksList
 
     ){
         this.id = id;
@@ -36,10 +42,23 @@ class Task{
         this.taskDayTime = taskDayTime;
         this.dateStemp = dateStemp;
         this.status = false;
+        taskList.addTask(this);
         this.setTask();
     }
 
+    private updateTask(){
+        const taskTitle = document.createElement("div");
+        taskTitle.className = "tasktslist__task__title";
+        taskTitle.textContent = this.title;
 
+        const taskDescription = document.createElement("div");
+        taskDescription.className = "tasktslist__task__description";
+        taskDescription.textContent = this.description;
+
+        const taskDate = document.createElement("div");
+        taskDate.className = "tasktslist__task__date";
+        taskDate.textContent = this.taskDayTime;
+    }
     private setTask(){
         
         const taskContainer = document.createElement("div");
@@ -83,10 +102,7 @@ class Task{
         editBtn.value = "Edit";
         editTask.className = "tasktslist__task__edit";
         editTask.appendChild(editBtn);
-        editBtn.addEventListener("submit", (ev) => {
-            ev.preventDefault();
 
-        });
 
         taskContainer.appendChild(timeCreated);
         taskContainer.appendChild(taskId);
@@ -102,6 +118,42 @@ class Task{
          */
         const lastTask = document.querySelector(".tasktslist");
         lastTask?.appendChild(taskContainer);
+
+        editBtn.addEventListener("click", (ev) => {
+            ev.preventDefault();
+            console.log("edit");
+            const parent = editBtn.parentElement?.parentElement;
+            let getId = parent?.querySelector(".tasktslist__task__id")?.textContent;
+            const title = document.getElementById("title");
+
+            const description = document.getElementById("description")  ;
+            const dateAndTime = document.getElementById("dateAndTime")  ;
+
+            title.value = this.title;
+            description.value = this.description;
+            dateAndTime.value = this.taskDayTime;
+            const submit = document.getElementById("submitTask")?.classList.toggle('hide');
+            const update = document.getElementById("updateTask");
+            update?.classList.toggle('hide');
+            const cancel = document.getElementById("cancelEdit")?.classList.toggle('hide');
+            editBtn.disabled = true;
+
+            update?.addEventListener("click", (ev) => {
+                console.log("in update");
+                ev.preventDefault();
+                console.log(this.taskDayTime)
+                this.title = title?.value;
+                this.description = description?.value;
+                this.taskDayTime = dateAndTime?.value;
+                // parent?.querySelector(".tasktslist__task__title")?.textContent = this.title;
+                // parent?.querySelector(".tasktslist__task__description")?.textContent = this.description;
+                // parent?.querySelector(".tasktslist__task__date")?.textContent = this.taskDayTime;
+                editBtn.disabled = false;
+            });
+
+            
+
+        });
     }
 }
 
@@ -115,7 +167,7 @@ addNewTask?.addEventListener("submit", (ev) => {
     const description = document.getElementById("description").value;
     const dateAndTime = document.getElementById("dateAndTime").value;
 
-    const t1 = new Task(Task.idCounter++, title, description, dateAndTime, new Date().toLocaleString());
+    const t1 = new Task(Task.idCounter++, title, description, dateAndTime, new Date().toLocaleString(), privateList);
     addNewTask.reset();
 });
 
@@ -134,7 +186,10 @@ deleteTask?.addEventListener("click", (ev) => {
                 if(prompt("You are going to delete tasks please type 'DELETE TASKS' to confirm")!="DELETE")
                     return;
             }
-            task.parentElement?.parentElement?.remove();
+            const parent = task.parentElement?.parentElement;
+            let getId = parent?.querySelector(".tasktslist__task__id")?.textContent;
+            privateList.deleteTask(parseInt(getId));
+            parent?.remove();
         }
     });
 
@@ -142,8 +197,11 @@ deleteTask?.addEventListener("click", (ev) => {
 });
 const privateList = new taksList("Private");
 
-const t1 = new Task(Task.idCounter++, "title", "description", "dateAndTime", new Date().toLocaleString());
-const t2 = new Task(Task.idCounter++, "title", "description", "dateAndTime", new Date().toLocaleString());
+const t1 = new Task(Task.idCounter++, "title1", "description1", "dateAndTime1", new Date().toLocaleString(),privateList);
+const t2 = new Task(Task.idCounter++, "title2", "description2", "dateAndTime2", new Date().toLocaleString(),privateList);
+const t3 = new Task(Task.idCounter++, "title3", "description3", "dateAndTime3", new Date().toLocaleString(),privateList);
+
+
 
 
 
