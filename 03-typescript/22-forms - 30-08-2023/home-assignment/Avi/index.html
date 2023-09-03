@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>הספרייה שלי</title>
+        <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3145/3145765.png">
+        <link rel="stylesheet" href="dist/style.css">
+        <script src="dist/index.js" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&family=Secular+One&display=swap"
+            rel="stylesheet">
+    </head>
+    <body>
+        <div class="main">
+            <div class="main__title">
+                <img
+                    src="images/books.png"
+                    alt>
+                <h2>הספרייה שלי</h2>
+            </div>
+            <div class="main__addBook">
+                
+                    <!-- <a>כותרת:</a> -->
+                    <input type="text" class="title" placeholder="שם הספר">
+                    <!-- <a>מחבר:</a> -->
+                    <input type="text" class="author" placeholder="מחבר">
+                    <!-- <a>ז'אנר:</a> -->
+                    <input type="text" class="genre" placeholder="ז'אנר">
+                    <!-- <a>תאריך פרסום:</a> -->
+                    <input type="month" class="date">
+                    <!-- <a>תמונה:</a> -->
+                    <!-- <input type="file" class="imgFile"> -->
+                    <!-- <a>קישור לתמונה:</a> -->
+                    <input type="text" class="imgUrl" placeholder="קישור לתמונה"><br>
+                    <button class="save">שמור</button>
+            </div>
+            <div class="main__table">
+                <table id="MyLibrary">
+                    <tr>
+                        <th>כותרת</th>
+                        <th>מחבר</th>
+                        <th>ז'אנר</th>
+                        <th>תאריך פרסום</th>
+                        <th>תמונה</th>
+                        <th><img id="delete" src="https://static-00.iconduck.com/assets.00/delete-icon-932x1024-nylj0i2z.png" alt="delete" style="height: 20px; margin-top: 5px;" ></th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </body>
+</html>
