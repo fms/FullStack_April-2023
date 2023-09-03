@@ -3,18 +3,29 @@ var lastname = document.querySelector('#lastname');
 var email = document.querySelector('#email');
 var password = document.querySelector('#password');
 var confirmpass = document.querySelector('#confirmpass');
+var bdate = document.querySelector('#bdate');
 var submitt = document.querySelector('#submit');
+var male = document.querySelector('#male');
+var female = document.querySelector('#female');
 var deletee = document.querySelector('#delete');
 var resultt = document.querySelector('#result');
+var genderSelected = null;
+male.addEventListener('click', function () {
+    genderSelected = 'Male';
+});
+female.addEventListener('click', function () {
+    genderSelected = 'Female';
+});
 submitt.addEventListener('click', function () {
     var nameLength = namee.value.length;
     var lastNameLength = lastname.value.length;
     var emailValue = email.value;
     var passwordValue = password.value;
     var confirmPasswordValue = confirmpass.value;
+    var birthday = bdate.value;
     resultt.style.color = 'red';
     var message = "";
-    var currect = "\n    Your registration has been successfully received!\n\n    Name: " + namee.value + "\n\n    Last Name: " + lastname.value + "\n\n    Email: " + emailValue + "\n\n    Password: " + password.value;
+    var currect = "\n    Your registration has been successfully received!\n\n    Name: " + namee.value + "\n\n    Last Name: " + lastname.value + "\n\n    Email: " + emailValue + "\n\n    Password: " + password.value + "\n\n    Birthday: " + birthday + "\n\n    Gender: " + genderSelected;
     if (nameLength < 2) {
         message += "Your name is too short.\n";
     }
@@ -46,6 +57,12 @@ submitt.addEventListener('click', function () {
     }
     else if (passwordValue.length > 13) {
         message += "Passwords is too long";
+    }
+    if (!birthday) {
+        message += 'Please fill the birthday\n';
+    }
+    if (!genderSelected) {
+        message += 'Please choose one of genders\n';
     }
     if (message === "") {
         message = currect;
