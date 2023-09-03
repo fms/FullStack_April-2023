@@ -1,0 +1,65 @@
+body {
+  background-color: #FFF3DA;
+}
+
+.main {
+  font-family: "Secular One", sans-serif;
+}
+.main__title {
+  margin-top: -60px;
+  margin-right: 40%;
+}
+.main__title img {
+  width: 500px;
+}
+.main__title h2 {
+  font-size: 45px;
+  margin-right: 11%;
+  margin-top: -40px;
+  font-family: "Rubik Dirt", cursive;
+  color: #4885dc;
+}
+.main__addBook {
+  font-size: 20px;
+  margin-right: 420px;
+}
+.main__addBook input {
+  height: 40px;
+  width: 160px;
+  border-radius: 20px;
+  margin-right: 50px;
+  text-align: center;
+  border: 3px solid #D0BFFF;
+  font-size: 20px;
+}
+.main__addBook button {
+  background-color: #D0BFFF;
+  border: white;
+  font-size: 25px;
+  height: 40px;
+  width: 150px;
+  border-radius: 15px;
+  margin-right: 508px;
+  margin-top: 30px;
+}
+.main__table {
+  margin-right: 440px;
+  margin-top: 50px;
+}
+.main__table table {
+  width: 1100px;
+  height: auto;
+  font-size: 22px;
+  background-image: linear-gradient(to right, #BEADFA, #e8def7);
+}
+.main__table th {
+  background-color: #8969fb;
+}
+.main__table tr {
+  border: 1px black solid;
+}
+.main__table td {
+  font-size: 15px;
+  text-align: center;
+  border: 1px black solid;
+}
