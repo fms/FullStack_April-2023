@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Form</h2>
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" required><br><br>
+        
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" required><br><br>
+        
+        <label for="address">Address:</label>
+        <input type="text" id="address" required><br><br>
+        
+        <label for="country">Country:</label>
+        <select id="country" required>
+            <option value="">Select a country</option>
+            <option value="Andora">Andora</option>
+            <option value="Brasil">Brasil</option>
+            <option value="China">China</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Israel">Israel</option>
+            <option value="Other">Other</option>
+
+        </select><br><br>
+        
+        <label for="town">Town:</label>
+        <input type="text" id="town" required><br><br>
+        
+        <label for="postalCode">Postal Code:</label>
+        <input type="text" id="postalCode" required><br><br>
+        
+        <label for="phone">Phone Number:</label>
+        <select id="countryCode" required>
+            <option value="">Select a country code</option>
+            <option value="+972">+972 (Israel)</option>
+            <option value="+1">+1 (USA)</option>
+            <option value="+44">+44 (UK)</option>
+            <!-- Add more country codes here -->
+        </select>
+        <input type="tel" id="phone" required><br><br>
+        
+        <button type="submit">Save</button>
+    </form>
+    <p id="confirmation" style="display: none;"></p>
+
+    <script>
+        const form = document.querySelector('#myForm');
+        const confirmation = document.querySelector('#confirmation');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const countryCode = document.getElementById('countryCode').value;
+            const phone = document.getElementById('phone').value;
+
+            confirmation.innerHTML = `Thank you ${name}, we accept your details! We will send you a confirmation letter to your email: ${email}.`;
+            confirmation.style.display = "block";
+        });
+
+        // Add validation code for incorrect inputs if needed
+    </script>
+</body>
+</html>
