@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+div {
+    padding-bottom: 10px;
+}
+
 .--done {
     text-decoration: line-through;
     color: grey;

@@ -1,15 +1,16 @@
 class TaksList{
+    static listsNames: Map<string, TaksList> = new Map();
+    tasks: Map<number, Task> = new Map();
     name:string;
-    tasks: Map<number, Task>;
 
     constructor(name: string){
         this.name = name;
         this.tasks = new Map();
+        TaksList.listsNames.set(name, this);
     }
     addTask(task: Task){
         this.tasks.set(task.id, task);
         console.log(this.tasks); 
-
     }
     deleteTask(taskId: number){
         this.tasks.delete(taskId);
@@ -26,15 +27,13 @@ class Task{
     status: boolean;
     taskList: TaksList;
 
-    // (Task.idCounter++, title, description, dateAndTime, new Date().toLocaleString(), privateList);
-
     constructor(
         id: number,
         title: string,
         description: string,
         taskDayTime: string,
         dateStemp: string,
-        taskList: TaksList
+        taskList:TaksList
     ){
         this.id = id;
         this.title = title;
@@ -105,6 +104,8 @@ class Task{
         /*
         ...Need to check if null if any problems while uploading page
          */
+
+
         const lastTask = document.querySelector(".tasktslist");
         lastTask?.appendChild(taskContainer);
 
@@ -149,24 +150,37 @@ class Task{
                 this.status? false:true;
                 parent?.parentElement?.appendChild(parent);
         });
+        const addNewTask = document.getElementById("addNewTask");
+        addNewTask.classList.toggle('hide');
         
     }
 }
 
 
 
-
+/**
+ * Adding new task using evebt listener
+ */
 const addNewTask = document.getElementById("addNewTask") as HTMLFormElement;
 addNewTask?.addEventListener("submit", (ev) => {
     ev.preventDefault(); 
     const title = document?.getElementById("title").value;
     const description = document.getElementById("description").value;
     const dateAndTime = document.getElementById("dateAndTime").value;
+    const selectTask = document.getElementById("chooseTaskList");
+    const selectedList = selectTask?.value;
+    const list = TaksList.listsNames.get(selectedList)
+    console.log(selectedList);
 
-    const t1 = new Task(Task.idCounter++, title, description, dateAndTime, new Date().toLocaleString(), privateList);
+    const t1 = new Task(Task.idCounter++, title, description, dateAndTime, new Date().toLocaleString(),list );
     addNewTask.reset();
+    addNewTask.classList.toggle('hide');
+
 });
 
+/**
+ * Del a task
+ */
 const deleteTask = document.getElementById("delSelected") as HTMLFormElement;
 deleteTask?.addEventListener("click", (ev) => {
     ev.preventDefault();
@@ -189,6 +203,9 @@ deleteTask?.addEventListener("click", (ev) => {
     });
 });
 
+/**
+ * Cancel edit
+ */
 const cancel = document.getElementById("cancelEdit") as HTMLFormElement;
 cancel.addEventListener("click", (ev) => {
     ev.preventDefault();
@@ -208,13 +225,49 @@ function editMode(status:boolean){
         btn.disabled = (status);
     });
 }
-const privateList = new TaksList("Private");
 
-const t1 = new Task(Task.idCounter++, "title1", "description1", "dateAndTime1", new Date().toLocaleString(),privateList);
-const t2 = new Task(Task.idCounter++, "title2", "description2", "dateAndTime2", new Date().toLocaleString(),privateList);
-const t3 = new Task(Task.idCounter++, "title3", "description3", "dateAndTime3", new Date().toLocaleString(),privateList);
+/**
+ * Add new task list
+ */
+const newTaskList = document.getElementById("newTaskList") as HTMLFormElement;
+newTaskList?.addEventListener("submit", (ev) => {
+    ev.preventDefault();
+    const listName = document.getElementById("taskListName") as HTMLInputElement;
+    const newList = new TaksList(listName.value);
+    newTaskList.reset();
 
+    const addNewTask = document.getElementById("addNewTask");
+    addNewTask?.classList.toggle('hide');
 
+    newTaskList.classList.toggle('hide');
+
+    const selectTask = document.getElementById("chooseTaskList");
+       TaksList.listsNames.forEach((list) => {
+        const option = document.createElement("option");
+        option.value = list.name;
+        option.textContent = list.name;
+        selectTask?.appendChild(option);
+       });
+});
+
+// const test = new TaksList("Private");
+// console.log(TaksList.listsNames);
+// const t1 = new Task(Task.idCounter++, "title1", "description1", "dateAndTime1", new Date().toLocaleString(),test);
+// const t2 = new Task(Task.idCounter++, "title2", "description2", "dateAndTime2", new Date().toLocaleString(),test);
+// const t3 = new Task(Task.idCounter++, "title3", "description3", "dateAndTime3", new Date().toLocaleString(),test);
+
+/**
+ * TODO:
+ * 
+ * hide task list until first tak is created
+ * 
+ * add that a list is oppened with h2 heading
+ * 
+ * change the task date format to be like the date format in a task
+ * 
+ * add all information of a task in storage like thought in the class
+ * 
+ */
 
 
 

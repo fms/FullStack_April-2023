@@ -11,20 +11,36 @@
 
 <body>
     <h1>Task Manager</h1>
-    <form id="addNewTask">
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title" required><br><br>
+    <div id="taskList">
+        <form id="newTaskList">
+            <label for="taskListName">Task List Name:</label>
+            <input type="text" id="taskListName" name="taskListName" required>
+            <input id="submitTaskList" type="submit" value="Add New Task List">
+        </form>
+    </div>
 
-        <label for="description">Description:</label><br>
-        <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+    <div id="tasts">
+        <form id="addNewTask" class="hide">
 
-        <label for="dateAndTime">Date:</label>
-        <input type="datetime-local" id="dateAndTime" name="dateAndTime" required><br><br>
+            <label for="Task List">Task List:</label>
+            <select id="chooseTaskList" name="taskList" required>
+                <option value="" disabled selected>Select Task List</option>
+            </select><br><br>
 
-        <input id="submitTask" type="submit" class="" value="Add New Task">
-        <input id="updateTask" type="submit" class="hide" value="Update">
-        <input id="cancelEdit" type="submit" class="hide" value="Cancel">
-    </form>
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required><br><br>
+
+            <label for="description">Description:</label><br>
+            <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+
+            <label for="dateAndTime">Date:</label>
+            <input type="datetime-local" id="dateAndTime" name="dateAndTime" required><br><br>
+
+            <input id="submitTask" type="submit" class="" value="Add New Task">
+            <input id="updateTask" type="submit" class="hide" value="Update">
+            <input id="cancelEdit" type="submit" class="hide" value="Cancel">
+        </form>
+    </div>
 
     <h2>Tasks List</h2>
     <hr>
