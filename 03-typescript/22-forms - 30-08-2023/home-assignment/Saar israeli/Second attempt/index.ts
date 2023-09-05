@@ -2,17 +2,19 @@ const form = document.querySelector("#new-task-form") as HTMLFormElement;
 const textInput = document.querySelector("#new-task-text") as HTMLInputElement;
 const taskList = document.querySelector("#tasks") as HTMLDivElement;
 const submitButton = document.querySelector("#new-task-submit") as HTMLInputElement;
-const tasks = document.querySelectorAll(".task") as NodeListOf<HTMLDivElement>;
+let editMode = false;
 
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     const task = textInput.value;
-    createDom(task)
     if (!task) {
         alert("write a task");
         return;
     }
+    createDom(task)
+
+
 })
 
 function createDom(task: string) {
@@ -63,12 +65,15 @@ function createDom(task: string) {
 
     editButton.addEventListener("click", () => {
         if (editButton.textContent == "Edit") {
+            if(!editMode){
             textInput.value = taskText.value;
             textInput.focus();
             deleteButton.classList.toggle("hidden");
             cancelButton.classList.toggle("hidden");
             submitButton.classList.toggle("hidden");
             editButton.textContent = "Save";
+            editMode = true;
+        }
         } else {
             taskText.value = textInput.value;
             taskText.setAttribute("readonly", "readonly");
@@ -77,7 +82,9 @@ function createDom(task: string) {
             cancelButton.classList.toggle("hidden");
             submitButton.classList.toggle("hidden");
             form.reset();
+            editMode = false;
         }
+
     })
 
 
@@ -91,6 +98,6 @@ function createDom(task: string) {
         cancelButton.classList.toggle("hidden");
         submitButton.classList.toggle("hidden");
         editButton.textContent = "Edit";
+        editMode = false;
     })
-
 }

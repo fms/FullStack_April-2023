@@ -3,15 +3,15 @@ const form = document.querySelector("#new-task-form");
 const textInput = document.querySelector("#new-task-text");
 const taskList = document.querySelector("#tasks");
 const submitButton = document.querySelector("#new-task-submit");
-const tasks = document.querySelectorAll(".task");
+let editMode = false;
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     const task = textInput.value;
-    createDom(task);
     if (!task) {
         alert("write a task");
         return;
     }
+    createDom(task);
 });
 function createDom(task) {
     const divTask = document.createElement("div");
@@ -46,12 +46,15 @@ function createDom(task) {
     textInput.value = "";
     editButton.addEventListener("click", () => {
         if (editButton.textContent == "Edit") {
-            textInput.value = taskText.value;
-            textInput.focus();
-            deleteButton.classList.toggle("hidden");
-            cancelButton.classList.toggle("hidden");
-            submitButton.classList.toggle("hidden");
-            editButton.textContent = "Save";
+            if (!editMode) {
+                textInput.value = taskText.value;
+                textInput.focus();
+                deleteButton.classList.toggle("hidden");
+                cancelButton.classList.toggle("hidden");
+                submitButton.classList.toggle("hidden");
+                editButton.textContent = "Save";
+                editMode = true;
+            }
         }
         else {
             taskText.value = textInput.value;
@@ -61,6 +64,7 @@ function createDom(task) {
             cancelButton.classList.toggle("hidden");
             submitButton.classList.toggle("hidden");
             form.reset();
+            editMode = false;
         }
     });
     deleteButton.addEventListener("click", () => {
@@ -72,5 +76,6 @@ function createDom(task) {
         cancelButton.classList.toggle("hidden");
         submitButton.classList.toggle("hidden");
         editButton.textContent = "Edit";
+        editMode = false;
     });
 }
