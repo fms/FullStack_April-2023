@@ -2,6 +2,15 @@
   box-sizing: border-box;
 }
 
+.--done {
+  text-decoration: line-through;
+  color: grey;
+}
+
+.hide {
+  display: none;
+}
+
 hr {
   border: 1px solid lightgrey;
 }
@@ -39,7 +48,4 @@ hr {
 }
 .tasktslist__task__done {
   grid-area: task__done;
-}
-.tasktslist__task__done--done {
-  text-decoration: line-through;
 }
