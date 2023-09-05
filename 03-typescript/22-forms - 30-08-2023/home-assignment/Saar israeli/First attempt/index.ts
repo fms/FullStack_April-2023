@@ -28,13 +28,37 @@
 //     deadLine :string | number,
 // }
 
+
+interface Data {
+    task: string,
+    details: string,
+    deadLine: string,
+}
+
+interface FormElements extends HTMLFormControlsCollection {
+    task : HTMLInputElement;
+    details: HTMLInputElement;
+    deadline: HTMLInputElement;
+    add: HTMLInputElement;
+    update: HTMLInputElement;
+    cancel: HTMLInputElement;
+}
+
+
 function submitInfo(event: SubmitEvent) {
+    let target = event.target as HTMLFormElement;
     let elements = (event.target as HTMLFormElement).elements;
 
     let task = (elements.namedItem("f1") as HTMLInputElement).value;
     let details = (elements.namedItem("f2") as HTMLInputElement).value;
     let deadLine = (elements.namedItem("f3") as HTMLInputElement).value;
     let tabulated: any[] = [task, details, deadLine];
+
+    let newData: Data = {
+        task: task,
+        details: details,
+        deadLine: deadLine,
+    }
 
 
     const tRow = document.createElement("tr");
@@ -92,6 +116,7 @@ function submitInfo(event: SubmitEvent) {
 
     tableBody.appendChild(tRow);
 
+    target.reset();
     return false;
 }
 
@@ -112,17 +137,3 @@ function deleteSelected() {
 }
 
 
-class Data {
-    constructor(
-        public task: HTMLInputElement,
-        public details: HTMLInputElement,
-        public deadLine: HTMLInputElement,
-    ) { }
-
-    editButtonn(event: Event) {
-        let target = event.target as HTMLInputElement;
-        if(target) {
-            
-        }
-}
-}
