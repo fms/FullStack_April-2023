@@ -1,3 +1,5 @@
+var deleteButton = document.getElementById("delete");
+var myTable = document.getElementById("mytable");
 function submitForm() {
     var firstNameInput = document.getElementById("firstName");
     var firstName = firstNameInput.value;
@@ -25,6 +27,7 @@ function submitForm() {
     var cell6 = newRow.insertCell(5);
     var cell7 = newRow.insertCell(6);
     var cell8 = newRow.insertCell(7);
+    var cell9 = newRow.insertCell(8);
     cell1.innerHTML = firstName;
     cell2.innerHTML = lastName;
     cell3.innerHTML = Street;
@@ -33,6 +36,16 @@ function submitForm() {
     cell6.innerHTML = additionalTelephone;
     cell7.innerHTML = ID;
     cell8.innerHTML = age;
+    cell9.innerHTML = "<button onclick=\"ndelete(" + (myTable.rows.length - 1) + ")\">DELETE</button>";
     firstNameInput.value = "";
     lastNameInput.value = "";
 }
+// deleteButton.addEventListener("click",function(){
+//   console.log("dfdf");
+//   myTable.deleteRow(1);
+// } ) ;
+function ndelete(rowNumber) {
+    console.log("dfdf");
+    myTable.deleteRow(rowNumber);
+}
+;
