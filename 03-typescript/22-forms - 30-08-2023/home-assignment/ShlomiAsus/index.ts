@@ -1,6 +1,8 @@
+
 let chechkBoxes = document.querySelectorAll(".treatment") as NodeListOf<HTMLInputElement>;
 let sentItems = document.querySelector(".sentItems") as HTMLElement;
 let userName = document.querySelector(".name") as HTMLInputElement;
+
 
 let temp = document.querySelector("form"); //prevet from the form to refresh automaticly
 if (temp)
@@ -19,6 +21,8 @@ function Submit() {
         }
     }));
     print(sentArray);
+    temp?.reset;
+    
 }
 
 function print(sentArray: Array<HTMLInputElement>) {
