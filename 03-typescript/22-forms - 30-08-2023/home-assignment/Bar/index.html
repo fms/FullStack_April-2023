@@ -19,8 +19,10 @@
             <input class="userName" type="text" placeholder="Username">
             <input class="password" type="password" placeholder="Password">
             <input type="submit" id="submit-btn" value="Submit">
-            <input type="button" value="Delete selected" onclick="deleteCheckboxes(event)">
+            <input id="update" class="hidden" type="button" value="Update">
+            <input id="cancel" class="hidden" type="reset" value="Cancel" onclick="toggleButtons(event)">
             <div class="details"></div>
+            <input type="button" value="Delete selected" onclick="deleteCheckboxes(event)">
     </div>
     </form>
 </body>

@@ -1,0 +1,30 @@
+* {
+  font-family: teko;
+  font-size: x-large;
+}
+
+body {
+  padding: 0;
+  margin: 3rem;
+  background-color: #5b687a;
+}
+
+.section {
+  margin: 20px;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  margin-left: 7rem;
+  color: white;
+  border-radius: 5px;
+}
+
+button:hover {
+  transition: 0.3s;
+  background-color: white;
+  color: #5b687a;
+  border: none;
+}

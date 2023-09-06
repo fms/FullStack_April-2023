@@ -17,6 +17,7 @@ function Submit() {
         }
     }));
     print(sentArray);
+    temp === null || temp === void 0 ? void 0 : temp.reset;
 }
 function print(sentArray) {
     sentItems.innerText = " ";

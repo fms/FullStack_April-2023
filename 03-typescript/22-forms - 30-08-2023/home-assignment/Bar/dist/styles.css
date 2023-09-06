@@ -33,3 +33,7 @@ body {
   content: "Delete =>";
   margin-top: 10px;
 }
+
+.hidden {
+  display: none;
+}
