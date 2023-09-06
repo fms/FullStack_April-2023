@@ -1,0 +1,51 @@
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-size: 0.8rem;
+}
+
+.entries {
+  display: table;
+  gap: 0.2rem 1rem;
+}
+
+.header {
+  background-color: lightgray;
+  padding: 0.2rem 0.2rem;
+  display: table-cell;
+  text-align: left;
+  border: 1px solid black;
+  background-color: darkseagreen;
+  color: black;
+}
+
+.hidden {
+  display: none;
+}
+
+.entry__header {
+  display: table-row;
+  padding-left: 0.2rem;
+}
+.entry__header:nth-child(2n) {
+  background-color: lightgray;
+}
+
+.entry {
+  padding: 0.1rem 0.2rem;
+  height: 1.25rem;
+  display: table-cell;
+  border: 1px solid black;
+}
+
+.checkbox {
+  display: table-cell;
+  text-align: center;
+  border: 1px solid black;
+  padding: 0.1rem 0.2rem;
+}
+
+.button {
+  display: table-cell;
+  padding-inline: 0.2rem;
+  background-color: initial;
+}
