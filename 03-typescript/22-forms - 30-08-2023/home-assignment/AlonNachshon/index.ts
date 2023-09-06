@@ -8,7 +8,7 @@ class TaskList{
         this.tasks = new Array<Task>();
         TaskList.listsNames.set(name, this);
         this.createTaskList();
-        console.log(this)
+        // console.log(this)
 
     }
     // public copyConstructor(taskList:TaskList){
@@ -471,12 +471,13 @@ function initPage(){
 
         // console.log(obj);
         objects.forEach((list:TaskList) => {
-            console.log("in new task from localStorage");
 
             // const newList = new TaskList(list.name);
             // tasklist.push(newList);
             // console.log(list);
             list.tasks.forEach((task:Task) => {
+            console.log("in new task from localStorage");
+
                 const newTask = new Task(task.id, task.title, task.description, task.taskDayTime, task.dateStemp, task.list, task.status);
                 newTask.setTask(list.name);
                 // console.log(newTask);
@@ -487,13 +488,6 @@ function initPage(){
         
     }
 
-        // tasklist.push(object);
-        // else tasks.push(object);
-    
-    // console.log("tasks: ");
-    // console.log({tasks});
-    // console.log("taskslist: ");
-    // console.log({tasklist});
 
     /**
      * Maybe keep the tasks not in local storage? since i have all the object information in task list?  
