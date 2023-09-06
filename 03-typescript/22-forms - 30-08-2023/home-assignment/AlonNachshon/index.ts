@@ -1,6 +1,6 @@
 class TaskList{
     static listsNames: Map<string, TaskList> = new Map(); /* Map of Task lists*/
-    tasks: Array<Task> = [];
+    tasks: Array<Task>;
     name:string;
 
     constructor(name: string){
@@ -8,6 +8,7 @@ class TaskList{
         this.tasks = new Array<Task>();
         TaskList.listsNames.set(name, this);
         this.createTaskList();
+        console.log(this)
 
     }
     // public copyConstructor(taskList:TaskList){
@@ -21,12 +22,12 @@ class TaskList{
     public addTaskToList(task: Task){
         this.tasks.push(task);
         Task.tasksMap.get(task.id)?.list = this.name;
-        console.log("added task to list: " +Task.tasksMap.get(task.id)?.list);
+        // console.log("added task to list: " +Task.tasksMap.get(task.id)?.list);
         localStorage.setItem(this.name, JSON.stringify(this));
     }
     public deleteTaskFromList(task: Task){
         this.tasks = this.tasks.filter((t) => t != task);
-        console.log("delete task from list: "+ this.tasks)
+        // console.log("delete task from list: "+ this.tasks)
         localStorage.setItem(this.name, JSON.stringify(this));
 
     }
@@ -35,12 +36,12 @@ class TaskList{
          * Del a task event listener
          */
         const deleteTask = document.querySelector(`#delSelected-${this.name}`) as HTMLFormElement;
-        console.log(`#delSelected-${this.name}`);
-        console.log(deleteTask);
+        // console.log(`#delSelected-${this.name}`);
+        // console.log(deleteTask);
         
         deleteTask?.addEventListener("click", (ev) => {
             ev.preventDefault();
-            console.log("del");
+            // console.log("del");
         
             const tasksToDelete = document.querySelectorAll(`.tasktslist__task__actions-${this.name} input`);
         
@@ -55,7 +56,7 @@ class TaskList{
                     }
                     
                     const parent = task.parentElement?.parentElement;
-                    console.log(parent);
+                    // console.log(parent);
                     const taskIdDiv = parent?.querySelector(".tasktslist__task__id");
                     const taskId = taskIdDiv?.textContent;
                     TaskList.listsNames.get(this.name)?.deleteTaskFromList(Task.tasksMap.get(parseInt(taskId)));
@@ -145,6 +146,8 @@ class Task{
         description: string,
         taskDayTime: string,
         dateStemp: string,
+        list?:string,
+        status?:boolean
         
     ){
         this.id = id;
@@ -155,18 +158,19 @@ class Task{
         this.status = false;
         this.addTask(id);
         this.list="";
+        // console.log(this)
 
     }
 
     public addTask(id:number){
         Task.tasksMap.set(this.id, this);
         console.log(Task.tasksMap.get(this.id)); 
-        localStorage.setItem(this.id.toString(),JSON.stringify(this));
+        // localStorage.setItem(this.id.toString(),JSON.stringify(this));
     }
     public deleteTask(id:number){
         Task.tasksMap.delete(this.id);
         console.log(Task.tasksMap.get(this.id)); 
-        localStorage.removeItem(this.id.toString());
+        // localStorage.removeItem(this.id.toString());
 
 
     }
@@ -278,6 +282,7 @@ class Task{
                 this.status? false:true;
                 parent?.insertAdjacentElement("afterend" ,parent);
         });
+
        document.getElementById("adsdNewTask")?.classList.toggle('hide');
         
     }
@@ -302,7 +307,7 @@ addNewTask?.addEventListener("submit", (ev) => {
     
     const formatedDate = new Date(dateAndTime);
     let dateString = formatedDate.getDate() + "/" + (formatedDate.getMonth() + 1) + "/" + formatedDate.getFullYear();
-    console.log(dateString);
+    // console.log(dateString);
     // dateString.
 
     
@@ -366,7 +371,7 @@ newTaskList?.addEventListener("submit", (ev) => {
     addNewTask?.classList.toggle('hide');
     newTaskList.classList.toggle('hide');
 
-    console.log(TaskList.listsNames);
+    // console.log(TaskList.listsNames);
 
     const selectTask = document.getElementById("chooseTaskList") as HTMLSelectElement;
 
@@ -411,10 +416,10 @@ update?.addEventListener("click", (ev) => {
     const descriptionDiv = task?.querySelector(".tasktslist__task__description");
     const dateAndTimeDiv = task?.querySelector(".tasktslist__task__date");
 
+    const list = TaskList.listsNames.get(selectedList)
 
     if(selectedList!=""){/* Selected list is not an empty string, so need to change between lists (assuming) in the future take care of same list choosen*/ 
         
-    const list = TaskList.listsNames.get(selectedList)
         TaskList.listsNames.get(Task.updateTask.list)?.deleteTaskFromList(Task.updateTask);
         Task.updateTask.list = selectedList;
         list?.addTaskToList(Task.updateTask);
@@ -423,7 +428,6 @@ update?.addEventListener("click", (ev) => {
         const lastTask = taskList?.querySelector('.tasktslist__task')
         lastTask?.insertAdjacentElement("afterend", task);
     }
-    
     
     // const formatedDate = new Date(dateAndTime);
     // let dateString = formatedDate.getDate() + "/" + (formatedDate.getMonth() + 1) + "/" + formatedDate.getFullYear();
@@ -439,27 +443,58 @@ update?.addEventListener("click", (ev) => {
     Task.updateTask.title = title.value;
     Task.updateTask.description = description.value;
     Task.updateTask.taskDayTime = dateAndTime.toLocaleString();
-    
-    
 
     addNewTask.reset();
     editMode(false);
     // addNewTask.classList.toggle('hide');
-
     /*If it's the first List and first task=>  show titles */
-    // if(list?.tasks.length == 1 && TaksList.listsNames.size == 1){
-    //     /**/
-    //     const listContainer = document.querySelector(".listContainer");
-    //     listContainer?.classList.remove('hide');
-    // }
+    if(list?.tasks.length == 1 && TaskList.listsNames.size == 1){
+        /**/
+        const listContainer = document.querySelector(".listContainer");
+        listContainer?.classList.remove('hide');
+    }
 });
 
 function initPage(){
-    const getLocalStorageData = Object.keys(localStorage).map(key => {
-        return JSON.parse(localStorage.getItem(key));
-    });
-    console.log(getLocalStorageData);
 
+    let tasklist = new Array<TaskList>();
+    let tasks = new Array<Task>();
+    
+    for (let i=0; i< localStorage.length; i++){
+        /**
+         * https://developer.mozilla.org/en-US/docs/Web/API/Storage/key
+         */
+        // console.log(localStorage.getItem(localStorage.key(i)));
+        const objects = Array<Object>();
+         objects.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
+
+        // console.log(obj);
+        objects.forEach((list:TaskList) => {
+            // const newList = new TaskList(list.name);
+            // tasklist.push(newList);
+            console.log(list);
+            list.tasks.forEach((task:Task) => {
+                const newTask = new Task(task.id, task.title, task.description, task.taskDayTime, task.dateStemp, task.list, task.status);
+                // newTask.setTask("fasfa");
+                // list?.addTaskToList(t1);
+            });
+        });
+
+        
+    }
+
+        // tasklist.push(object);
+        // else tasks.push(object);
+    
+    // console.log("tasks: ");
+    // console.log({tasks});
+    // console.log("taskslist: ");
+    // console.log({tasklist});
+
+    /**
+     * Maybe keep the tasks not in local storage? since i have all the object information in task list?  
+     *
+    */
 
     
     if(localStorage.length > 0){
