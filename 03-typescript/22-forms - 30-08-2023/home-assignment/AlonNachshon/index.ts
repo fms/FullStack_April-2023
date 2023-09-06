@@ -1,32 +1,18 @@
-class TaskSystem {
-    idCounter: number = 1000;
-    listsNames: Map<string, TaskList> = new Map();
-    tasksMap: Map<number, Task> = new Map(); /* Map of Task lists*/
-    updateTask: Task;
-
-    constructor() {
-        this.idCounter = 1000;
-        this.listsNames = new Map();
-        this.tasksMap = new Map();
-        this.updateTask = new Task(0, "", "", "", "");
-    }
-
-}
 class TaskList {
-    // static listsNames: Map<string, TaskList> = new Map(); /* Map of Task lists*/
+    static listsNames: Map<string, TaskList> = new Map(); /* Map of Task lists*/
     tasks: Array<Task>;
     name: string;
 
     constructor(name: string) {
         this.name = name;
         this.tasks = new Array<Task>();
-        taskHomePage.listsNames.set(name, this);
+        TaskList.listsNames.set(name, this);
         this.createTaskList();
-        // console.log(this)
+        console.log(this)
 
     }
-
     // public copyConstructor(taskList:TaskList){
+
     //     this.name = TaskList.name;
     //     this.tasks = TaskList.tasks;
     //     TaksList.listsNames.set(this.name, this);
@@ -35,7 +21,7 @@ class TaskList {
 
     public addTaskToList(task: Task) {
         this.tasks.push(task);
-        taskHomePage.tasksMap.get(task.id)?.list = this.name;
+        Task.tasksMap.get(task.id)?.list = this.name;
         // console.log("added task to list: " +Task.tasksMap.get(task.id)?.list);
         localStorage.setItem(this.name, JSON.stringify(this));
     }
@@ -73,8 +59,8 @@ class TaskList {
                     // console.log(parent);
                     const taskIdDiv = parent?.querySelector(".tasktslist__task__id");
                     const taskId = taskIdDiv?.textContent;
-                    taskHomePage.listsNames.get(this.name)?.deleteTaskFromList(taskHomePage.tasksMap.get(parseInt(taskId)));
-                    taskHomePage.tasksMap.get(parseInt(taskId))?.deleteTask(parseInt(taskId));
+                    TaskList.listsNames.get(this.name)?.deleteTaskFromList(Task.tasksMap.get(parseInt(taskId)));
+                    Task.tasksMap.get(parseInt(taskId))?.deleteTask(parseInt(taskId));
                     parent?.remove();
                 }
             });
@@ -142,9 +128,9 @@ class TaskList {
     }
 }
 class Task {
-    // static idCounter: number = 1000;
-    // static tasksMap: Map<number, Task> = new Map(); /* Map of Task lists*/
-    // static updateTask: Task;
+    static idCounter: number = 1000;
+    static tasksMap: Map<number, Task> = new Map(); /* Map of Task lists*/
+    static updateTask: Task;
 
     id: number;
     title: string;
@@ -178,13 +164,13 @@ class Task {
     }
 
     public addTask(id: number) {
-        taskHomePage.tasksMap.set(this.id, this);
-        console.log(taskHomePage.tasksMap.get(this.id));
+        Task.tasksMap.set(this.id, this);
+        console.log(Task.tasksMap.get(this.id));
         // localStorage.setItem(this.id.toString(),JSON.stringify(this));
     }
     public deleteTask(id: number) {
-        taskHomePage.tasksMap.delete(this.id);
-        console.log(taskHomePage.tasksMap.get(this.id));
+        Task.tasksMap.delete(this.id);
+        console.log(Task.tasksMap.get(this.id));
         // localStorage.removeItem(this.id.toString());
 
 
@@ -274,12 +260,12 @@ class Task {
             const taskIdDiv = taskLine?.querySelector(".tasktslist__task__id");
             const taskId = taskIdDiv?.textContent;
 
-            taskHomePage.updateTask = taskHomePage.tasksMap.get(parseInt(taskId)) as Task;
+            Task.updateTask = Task.tasksMap.get(parseInt(taskId)) as Task;
 
-            title.value = taskHomePage.updateTask.title;
+            title.value = Task.updateTask.title;
             console.log(title.value);
-            description.value = taskHomePage.updateTask.description;
-            dateAndTime.value = taskHomePage.updateTask.taskDayTime;
+            description.value = Task.updateTask.description;
+            dateAndTime.value = Task.updateTask.taskDayTime;
             // selectTask.value = "*";
 
         });
@@ -304,6 +290,7 @@ class Task {
 }
 
 
+
 /**
  * Adding  event listener for new task  
  */
@@ -317,7 +304,7 @@ addNewTask?.addEventListener("submit", (ev) => {
     const dateAndTime = document.getElementById("dateAndTime").value;
     const selectTask = document.getElementById("chooseTaskList");
     const selectedList = selectTask?.value;
-    const list = taskHomePage.listsNames.get(selectedList)
+    const list = TaskList.listsNames.get(selectedList)
 
     const formatedDate = new Date(dateAndTime);
     let dateString = formatedDate.getDate() + "/" + (formatedDate.getMonth() + 1) + "/" + formatedDate.getFullYear();
@@ -325,7 +312,7 @@ addNewTask?.addEventListener("submit", (ev) => {
     // dateString.
 
 
-    const t1 = new Task(taskHomePage.idCounter++, title, description, dateAndTime.toLocaleString(), new Date().toLocaleString());
+    const t1 = new Task(Task.idCounter++, title, description, dateAndTime.toLocaleString(), new Date().toLocaleString());
 
     t1.setTask(selectedList);
     list?.addTaskToList(t1);
@@ -334,7 +321,7 @@ addNewTask?.addEventListener("submit", (ev) => {
     // addNewTask.classList.toggle('hide');
 
     /*If it's the first List and first task=>  show titles */
-    if (list?.tasks.length == 1 && taskHomePage.listsNames.size == 1) {
+    if (list?.tasks.length == 1 && TaskList.listsNames.size == 1) {
         /**/
         const listContainer = document.querySelector(".listContainer");
         listContainer?.classList.remove('hide');
@@ -413,7 +400,7 @@ const editbtns = document.querySelectorAll('.editBtn');
 const update = document.getElementById("updateTask");
 update?.addEventListener("click", (ev) => {
     ev.preventDefault();
-    if (taskHomePage.updateTask == null) return;
+    if (Task.updateTask == null) return;
     /**
      * Getting elements value from form
      */
@@ -424,21 +411,21 @@ update?.addEventListener("click", (ev) => {
     const selectedList = selectTask?.value;
 
 
-    const taskId = document.getElementById(taskHomePage.updateTask.id.toString()) as HTMLInputElement;
+    const taskId = document.getElementById(Task.updateTask.id.toString()) as HTMLInputElement;
     const task = taskId.closest(".tasktslist__task");
     const titleDiv = task?.querySelector(".tasktslist__task__title");
     const descriptionDiv = task?.querySelector(".tasktslist__task__description");
     const dateAndTimeDiv = task?.querySelector(".tasktslist__task__date");
 
-    const list = taskHomePage.listsNames.get(selectedList)
+    const list = TaskList.listsNames.get(selectedList)
 
     if (selectedList != "") {/* Selected list is not an empty string, so need to change between lists (assuming) in the future take care of same list choosen*/
 
-        taskHomePage.listsNames.get(taskHomePage.updateTask.list)?.deleteTaskFromList(taskHomePage.updateTask);
-        taskHomePage.updateTask.list = selectedList;
-        list?.addTaskToList(taskHomePage.updateTask);
+        TaskList.listsNames.get(Task.updateTask.list)?.deleteTaskFromList(Task.updateTask);
+        Task.updateTask.list = selectedList;
+        list?.addTaskToList(Task.updateTask);
 
-        const taskList = document?.querySelector(`.tasktslist-${taskHomePage.updateTask.list}`);
+        const taskList = document?.querySelector(`.tasktslist-${Task.updateTask.list}`);
         const lastTask = taskList?.querySelector('.tasktslist__task')
         lastTask?.insertAdjacentElement("afterend", task);
     }
@@ -454,15 +441,15 @@ update?.addEventListener("click", (ev) => {
     // const taskId = taskIdDiv.textContent;
 
 
-    taskHomePage.updateTask.title = title.value;
-    taskHomePage.updateTask.description = description.value;
-    taskHomePage.updateTask.taskDayTime = dateAndTime.toLocaleString();
+    Task.updateTask.title = title.value;
+    Task.updateTask.description = description.value;
+    Task.updateTask.taskDayTime = dateAndTime.toLocaleString();
 
     addNewTask.reset();
     editMode(false);
     // addNewTask.classList.toggle('hide');
     /*If it's the first List and first task=>  show titles */
-    if (list?.tasks.length == 1 && taskHomePage.listsNames.size == 1) {
+    if (list?.tasks.length == 1 && TaskList.listsNames.size == 1) {
         /**/
         const listContainer = document.querySelector(".listContainer");
         listContainer?.classList.remove('hide');
@@ -484,20 +471,29 @@ function initPage() {
 
         // console.log(obj);
         objects.forEach((list: TaskList) => {
+            console.log("in new task from localStorage");
+
             // const newList = new TaskList(list.name);
             // tasklist.push(newList);
             // console.log(list);
             list.tasks.forEach((task: Task) => {
-                console.log("in new task from localStorage");
-
                 const newTask = new Task(task.id, task.title, task.description, task.taskDayTime, task.dateStemp, task.list, task.status);
                 newTask.setTask(list.name);
                 // console.log(newTask);
                 // list?.addTaskToList(t1);
             });
         });
+
+
     }
 
+    // tasklist.push(object);
+    // else tasks.push(object);
+
+    // console.log("tasks: ");
+    // console.log({tasks});
+    // console.log("taskslist: ");
+    // console.log({tasklist});
 
     /**
      * Maybe keep the tasks not in local storage? since i have all the object information in task list?  
@@ -510,15 +506,12 @@ function initPage() {
         newTaskList.classList.toggle('hide');
     }
 }
-/**?????? */
 document.addEventListener('DOMContentLoaded', function () {
     initPage();
 });
 
-const taskHomePage = new TaskSystem();
-
 /**
- * #TODO:
+ * TODO:
  * First system use should show the lists... 
  * 
  * Fix Add new List after first use. 
@@ -530,14 +523,13 @@ const taskHomePage = new TaskSystem();
  * add all information of a task in storage like thought in the class
  * 
  * use find where evere i can with objects. 
- *  
+ *  * 
  * Deleted items will be removed from list, but will stay in task object as archives
  * 
  * Check if list name already exsist before creating it. 
  * 
- * Fix Date Format.
  * 
- * Class that holds the logic of the app -> hold the static Map() and array in it.
+ * 
  * 
  */
 
