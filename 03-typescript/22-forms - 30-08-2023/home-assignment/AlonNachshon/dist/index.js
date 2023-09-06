@@ -120,8 +120,8 @@ let Task = /** @class */ (() => {
             this.taskDayTime = taskDayTime;
             this.dateStemp = dateStemp;
             this.status = false;
-            this.addTask(id);
             this.list = "";
+            this.addTask(id);
             // console.log(this)
         }
         addTask(id) {
@@ -374,12 +374,14 @@ function initPage() {
         objects.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
         // console.log(obj);
         objects.forEach((list) => {
+            console.log("in new task from localStorage");
             // const newList = new TaskList(list.name);
             // tasklist.push(newList);
-            console.log(list);
+            // console.log(list);
             list.tasks.forEach((task) => {
                 const newTask = new Task(task.id, task.title, task.description, task.taskDayTime, task.dateStemp, task.list, task.status);
-                // newTask.setTask("fasfa");
+                newTask.setTask(list.name);
+                // console.log(newTask);
                 // list?.addTaskToList(t1);
             });
         });
@@ -399,7 +401,9 @@ function initPage() {
         newTaskList.classList.toggle('hide');
     }
 }
-initPage();
+document.addEventListener('DOMContentLoaded', function () {
+    initPage();
+});
 /**
  * TODO:
  * First system use should show the lists...
