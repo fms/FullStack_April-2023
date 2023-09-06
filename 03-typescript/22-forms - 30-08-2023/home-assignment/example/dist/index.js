@@ -1,5 +1,13 @@
 "use strict";
-let editMode = false;
+class Entry {
+    constructor(firstName, lastName, eMail, markedForDeletion) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.eMail = eMail;
+        this.markedForDeletion = markedForDeletion;
+    }
+}
+let activeItemIndex = null;
 let entries = new Array();
 function submitForm(event) {
     event.preventDefault();
@@ -15,75 +23,73 @@ function submitForm(event) {
         eMail: elements.eMail.value,
         markedForDeletion: false,
     };
-    if (editMode) {
-        const elements = form.elements;
-        let index = getId(elements.update);
-        entries[index] = newEntry;
-        toggleEditControls(elements);
-        editMode = false;
+    if (activeItemIndex) {
+        entries[activeItemIndex] = newEntry;
+        exitEditMode();
     }
     else {
         entries.push(newEntry);
     }
     form.reset();
-    showEntries();
+    updateEntriesList();
 }
-function showEntries() {
-    const location = document.querySelector(".entries");
-    if (location) {
+function updateEntriesList() {
+    const entriesDiv = document.querySelector(".entries");
+    if (entriesDiv) {
+        entriesDiv.replaceChildren();
         if (entries.length !== 0) {
-            location.replaceChildren(...createHeader());
-            entries.forEach((entry, index) => createEntryDom(location, entry, index));
-            location.appendChild(createInputElement("button", "button", deleteSelected, "Delete selected"));
-        }
-        else {
-            location.replaceChildren();
+            createHeader(entriesDiv);
+            entries.forEach((entry, index) => createEntryRow(entriesDiv, entry, index));
+            entriesDiv.appendChild(createInputElement("button", "button", deleteSelected, "Delete selected"));
         }
     }
 }
-function createEntryDom(body, entry, index) {
-    body.appendChild(createElement("div", "entry", entry.firstName));
-    body.appendChild(createElement("div", "entry", entry.lastName));
-    body.appendChild(createElement("div", "entry", entry.eMail));
-    const checkbox = createInputElement("checkbox", "checkbox", markSelected);
-    checkbox.dataset["id"] = index.toString();
-    body.appendChild(checkbox);
-    const editButton = createInputElement("button", "button", editItem, "Edit");
-    editButton.dataset["id"] = index.toString();
-    body.appendChild(editButton);
+function createEntryRow(container, entry, index) {
+    const entryDiv = document.createElement("div");
+    entryDiv.className = "entry__header";
+    entryDiv.dataset['id'] = `${index}`;
+    entryDiv.appendChild(createElement("div", "entry", entry.firstName));
+    entryDiv.appendChild(createElement("div", "entry", entry.lastName));
+    entryDiv.appendChild(createElement("div", "entry", entry.eMail));
+    entryDiv.appendChild(createInputElement("checkbox", "checkbox", markSelected));
+    entryDiv.appendChild(createInputElement("button", "button", editItem, "Edit"));
+    container.appendChild(entryDiv);
 }
-function createHeader() {
-    return [
-        createElement("div", "header", "First Name"),
-        createElement("div", "header", "Last Name"),
-        createElement("div", "header", "E-Mail address"),
-        createElement("div", "header", "Delete?"),
-        createElement("div", "header", ""),
-    ];
+function createHeader(container) {
+    const entryDiv = document.createElement("div");
+    entryDiv.className = "entry__header";
+    entryDiv.appendChild(createElement("div", "header", "First Name"));
+    entryDiv.appendChild(createElement("div", "header", "Last Name"));
+    entryDiv.appendChild(createElement("div", "header", "E-Mail address"));
+    entryDiv.appendChild(createElement("div", "header", "Delete?"));
+    container.appendChild(entryDiv);
 }
-function createElement(tagName, className, content) {
+function createElement(tagName, className, content = "") {
     const element = document.createElement(tagName);
     element.className = className;
-    element.textContent = content;
+    if (content) {
+        element.textContent = content;
+    }
     return element;
 }
 function createInputElement(inputType, className, handler, content = "") {
-    const element = document.createElement("input");
-    element.type = inputType;
-    element.className = className;
-    element.addEventListener("click", handler);
+    const element = createElement("div", className);
+    const input = document.createElement("input");
+    input.type = inputType;
+    input.addEventListener("click", handler);
     if (content) {
-        element.value = content;
+        input.value = content;
     }
+    element.appendChild(input);
     return element;
 }
 function deleteSelected(event) {
     if (entries.some((entry) => entry.markedForDeletion)) {
-        if (editMode) {
+        if (activeItemIndex) {
             exitEditMode();
         }
         entries = entries.filter((entry) => !entry.markedForDeletion);
-        showEntries();
+        updateEntriesList();
     }
     else {
         alert("Nothing marked for deletion!");
@@ -92,22 +98,25 @@ function deleteSelected(event) {
 function markSelected(event) {
     const checkbox = event.target;
     let index = getId(checkbox);
-    entries[index].markedForDeletion = !entries[index].markedForDeletion;
+    if (index !== -1) {
+        entries[index].markedForDeletion = checkbox.checked;
+    }
 }
 function editItem(event) {
     const button = event.target;
     let index = getId(button);
     const form = document.querySelector("#inputForm");
-    if (form) {
+    if (form && index !== -1) {
         const elements = form.elements;
-        elements.firstName.value = entries[index].firstName;
-        elements.lastName.value = entries[index].lastName;
-        elements.eMail.value = entries[index].eMail;
-        elements.update.dataset.id = index.toString();
-        if (!editMode) {
+        const entry = entries[index];
+        elements.firstName.value = entry.firstName;
+        elements.lastName.value = entry.lastName;
+        elements.eMail.value = entry.eMail;
+        if (!activeItemIndex) {
+            // Don't toggle the buttons if we're already editing
             toggleEditControls(elements);
         }
-        editMode = true;
+        activeItemIndex = index;
     }
 }
 function exitEditMode() {
@@ -116,7 +125,7 @@ function exitEditMode() {
         const elements = form.elements;
         toggleEditControls(elements);
         form.reset();
-        editMode = false;
+        activeItemIndex = null;
     }
 }
 function toggleEditControls(elements) {
@@ -126,5 +135,6 @@ function toggleEditControls(elements) {
 }
 function getId(element) {
     var _a;
-    return parseInt((_a = element.dataset['id']) !== null && _a !== void 0 ? _a : "0", 10);
+    const target = element.closest("[data-id]");
+    return parseInt((_a = target === null || target === void 0 ? void 0 : target.dataset['id']) !== null && _a !== void 0 ? _a : "-1");
 }
