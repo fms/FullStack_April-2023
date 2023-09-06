@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="dist/index.js" defer></script>
     <link rel="stylesheet" href="dist/style.css">
+
     <title>Tasks</title>
 </head>
 
@@ -16,16 +17,22 @@
             <label for="taskListName">Task List Name:</label>
             <input type="text" id="taskListName" name="taskListName" required>
             <input id="submitTaskList" type="submit" value="Add New Task List">
+
+
         </form>
     </div>
 
-    <div id="tasts">
+    <div id="Tasks-form">
         <form id="addNewTask" class="hide">
 
             <label for="Task List">Task List:</label>
             <select id="chooseTaskList" name="taskList" required>
                 <option value="" disabled selected>Select Task List</option>
-            </select><br><br>
+            </select>
+            <input id="addNewTaskList" type="submit" value="+">
+            <label for="addNewTaskList">Add new list</label>
+
+            <br><br>
 
             <label for="title">Title:</label>
             <input type="text" id="title" name="title" required><br><br>
@@ -42,25 +49,10 @@
         </form>
     </div>
 
-    <h2>Tasks List</h2>
-    <hr>
 
+    <div class="listContainer hide">
 
-    <div class="tasktslist">
-        <div class="tasktslist__task">
-            <div class="tasktslist__task__created">Time Created</div>
-            <div class="tasktslist__task__id">Task Id</div>
-            <div class="tasktslist__task__title">Task Title</div>
-            <div class="tasktslist__task__description">Task Description</div>
-            <div class="tasktslist__task__date">Task Date</div>
-            <div class="tasktslist__task__actions">Delete </div>
-            <div class="tasktslist__task__edit">Edit </div>
-            <div class="tasktslist__task__done">done?</div>
-        </div>
     </div>
-    <hr>
-    <input type="submit" value="Delete Selcted" id="delSelected">
-
 </body>
 
 </html>

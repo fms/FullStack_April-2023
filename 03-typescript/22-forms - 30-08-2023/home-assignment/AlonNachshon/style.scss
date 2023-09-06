@@ -1,21 +1,34 @@
 * {
-    // margin: 0;
-    // padding: 0;
-    // text-align: center;
 
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: grid;
+    place-items: center;
+
+}
+
+#addNewTask {
+    text-align: center;
+
+    textarea {
+        width: 100%;
+        height: 100px;
+        resize: none;
+
+    }
 }
 
 div {
-    padding-bottom: 10px;
+    padding: 5px;
 }
 
 .--done {
     text-decoration: line-through;
     color: grey;
 }
-
-.disabled {}
 
 .hide {
     display: none;
@@ -25,48 +38,111 @@ hr {
     border: 1px solid lightgrey
 }
 
+h1 {
+    color: darkblue;
+
+}
+
+h2 {
+    color: darkblue;
+    text-decoration: underline;
+}
+
+.titles {
+    background-color: #333;
+    color: white;
+    display: flex;
+    text-align: center;
+    // justify-content: space-between;
+    // align-items: center;
+    // align-self: center;
+    // justify-self: center;
+
+}
+
+// #Tasks-form {
+
+//     width: 500px;
+//     text-align: center;
+//     padding: 20px;
+
+
+//     textarea {
+//         width: 100%;
+//         height: 100px;
+//         resize: none;
+
+//     }
+// }
+
 .tasktslist {
     display: grid;
     margin-bottom: 15px;
 
+
+
+    // &__task:nth-child(odd) {
+    //     background-color: lightgrey;
+    // }
+
+    // &__task:nth-child(even) {
+    //     background-color: white;
+    // }
+
+    &__task * {}
 
     &__task {
         display: grid;
         grid-template-columns: 2fr 2fr 3fr 4fr 2fr 1fr 1fr 1fr;
         grid-template-areas: "task__created task__id task__title task__description task__date task__actions task__edit task__done";
         gap: 5px;
+        padding: 5px;
+
+
 
         &__edit {
             grid-area: task__edit;
+            border-right: 1px solid lightgrey;
+            display: flex;
+            justify-content: space-evenly;
         }
 
         &__created {
             grid-area: task__created;
+            border-right: 1px solid lightgrey;
         }
 
         &__id {
             grid-area: task__id;
+            border-right: 1px solid lightgrey;
         }
 
         &__title {
             grid-area: task__title;
+            border-right: 1px solid lightgrey;
         }
 
         &__description {
             grid-area: task__description;
+            border-right: 1px solid lightgrey;
         }
 
         &__date {
             grid-area: task__date;
+            border-right: 1px solid lightgrey;
         }
 
         &__actions {
             grid-area: task__actions;
+            border-right: 1px solid lightgrey;
+            display: flex;
+            justify-content: space-evenly;
         }
 
         &__done {
             grid-area: task__done;
-
+            display: flex;
+            justify-content: space-evenly;
 
         }
 
