@@ -34,7 +34,8 @@ function submitForm(event: SubmitEvent) {
         markedForDeletion: false,
     };
 
-    if (activeItemIndex) {
+    if (inEditMode()) {
+       // @ts-expect-error: inEditMode makes sure activeItemIndex is not null
         entries[activeItemIndex] = newEntry;
         exitEditMode();
     } else {
@@ -104,7 +105,7 @@ function createInputElement(inputType: string, className: string, handler: (even
 
 function deleteSelected(event: Event): void {
     if (entries.some((entry) => entry.markedForDeletion)) {
-        if (activeItemIndex) {
+        if (inEditMode()) {
             exitEditMode();
         }
 
@@ -137,8 +138,7 @@ function editItem(event: Event): void {
         elements.lastName.value = entry.lastName;
         elements.eMail.value = entry.eMail;
 
-        if (!activeItemIndex) {
-            // Don't toggle the buttons if we're already editing
+        if (!inEditMode()) {
             toggleEditControls(elements);
         }
 
@@ -166,4 +166,9 @@ function toggleEditControls(elements: FormElements) {
 function getId(element: HTMLInputElement): number {
     const target = element.closest<HTMLElement>("[data-id]");
     return parseInt(target?.dataset['id'] ?? "-1");
+}
+
+
+function inEditMode() {
+    return activeItemIndex !== null;
 }

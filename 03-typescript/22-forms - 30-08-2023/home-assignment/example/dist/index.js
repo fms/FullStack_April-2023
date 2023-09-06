@@ -23,7 +23,8 @@ function submitForm(event) {
         eMail: elements.eMail.value,
         markedForDeletion: false,
     };
-    if (activeItemIndex) {
+    if (inEditMode()) {
+        // @ts-expect-error: inEditMode makes sure activeItemIndex is not null
         entries[activeItemIndex] = newEntry;
         exitEditMode();
     }
@@ -85,7 +86,7 @@ function createInputElement(inputType, className, handler, content = "") {
 }
 function deleteSelected(event) {
     if (entries.some((entry) => entry.markedForDeletion)) {
-        if (activeItemIndex) {
+        if (inEditMode()) {
             exitEditMode();
         }
         entries = entries.filter((entry) => !entry.markedForDeletion);
@@ -112,8 +113,7 @@ function editItem(event) {
         elements.firstName.value = entry.firstName;
         elements.lastName.value = entry.lastName;
         elements.eMail.value = entry.eMail;
-        if (!activeItemIndex) {
-            // Don't toggle the buttons if we're already editing
+        if (!inEditMode()) {
             toggleEditControls(elements);
         }
         activeItemIndex = index;
@@ -137,4 +137,7 @@ function getId(element) {
     var _a;
     const target = element.closest("[data-id]");
     return parseInt((_a = target === null || target === void 0 ? void 0 : target.dataset['id']) !== null && _a !== void 0 ? _a : "-1");
+}
+function inEditMode() {
+    return activeItemIndex !== null;
 }
