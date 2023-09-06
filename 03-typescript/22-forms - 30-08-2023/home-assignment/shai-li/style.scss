@@ -7,6 +7,12 @@ body {
   padding: 0;
   margin: 3rem;
   background-color: rgb(91, 104, 122);
+  display: flex;
+  justify-content: center;
+}
+h1 {
+  margin-left: 4rem;
+  font-size: larger;
 }
 
 .section {
@@ -20,7 +26,6 @@ button {
   margin-left: 7rem;
   color: white;
   border-radius: 5px;
-  
 }
 button:hover {
   transition: 0.3s;
