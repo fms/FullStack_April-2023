@@ -54,6 +54,9 @@ h2 {
   display: grid;
   margin-bottom: 15px;
 }
+.tasktslist__task:nth-child(odd) {
+  background-color: #edecec;
+}
 .tasktslist__task {
   display: grid;
   grid-template-columns: 2fr 2fr 3fr 4fr 2fr 1fr 1fr 1fr;
@@ -74,6 +77,8 @@ h2 {
 .tasktslist__task__id {
   grid-area: task__id;
   border-right: 1px solid lightgrey;
+  display: flex;
+  justify-content: space-evenly;
 }
 .tasktslist__task__title {
   grid-area: task__title;
