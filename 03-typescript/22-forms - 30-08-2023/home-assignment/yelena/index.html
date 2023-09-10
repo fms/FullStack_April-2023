@@ -16,13 +16,20 @@
     </div>
     <form id="dairyCheck" onsubmit="return onsubmit (event);">
         <label> שם הילד:
-            <input name="taskName" type="text" maxlength="12">
+            <input name="childName" type="text" required size="10" minlength="2" maxlength="10"">
+        </label>
+        <label>שם משפחה:
+            <input name="familyName" type="text" required size="10" minlength="2" maxlength="10"">
+        </label>
+        <label>
+            האם נרשמת בעבר?
+            <input type="checkbox" name="checked" />
         </label>
         <label>גיל:
-            <input name="age" type="number" maxlength="2">
+            <input name="age" type="number" required size="10" minlength="3" maxlength="10">
         </label>
         <label>שם החוג:
-            <input name="parentName" type="text" maxlength="10">
+            <input name="kidClass" type="text" required size="10" minlength="4" maxlength="10">
         </label>
         <label>תאריך התחלה:
             <input name="dateStart" type="date"/>
@@ -32,8 +39,6 @@
         <input id="cancel" class="hidden" type="reset" value="Cancel" onclick="exitEditMode()">
         <p><button>submit</button></p>
     </form>
-    
-
-
-
+    <hr>
+    <div class="entries"></div>    
 </body>
