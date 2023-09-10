@@ -68,6 +68,9 @@ table tbody td {
   border: 1px solid #ccc;
   width: 100vw;
 }
+table tbody tr {
+  display: flex;
+}
 
 .edit-button {
   padding: 9px;
