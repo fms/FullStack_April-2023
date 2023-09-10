@@ -1,6 +1,6 @@
 "use strict";
 let checkboxElements = [];
-let detailsDiv = document.querySelector(".details");
+let containerDetails = document.querySelector(".container-details");
 let update = document.getElementById("update");
 let cancel = document.getElementById("cancel");
 let submit = document.getElementById("submit-btn");
@@ -10,8 +10,10 @@ let email = "";
 let isEditing = false;
 loadFromLocalStorage();
 function handleSubmit(event) {
-    event.preventDefault();
-    let userDetailsDiv = document.createElement("div");
+    if (event) {
+        event.preventDefault();
+    }
+    let detailsDiv = document.createElement("div");
     let userDetails = document.createElement("li");
     let checkBox = document.createElement("input");
     let editButton = document.createElement("input");
@@ -25,12 +27,14 @@ function handleSubmit(event) {
     });
     editButton.type = "button";
     editButton.value = "Edit";
-    editButton.addEventListener("click", () => editDetails(event, userDetailsDiv, userDetails, editButton));
-    userDetailsDiv.appendChild(userDetails);
-    userDetailsDiv.appendChild(checkBox);
-    userDetailsDiv.appendChild(editButton);
-    detailsDiv.appendChild(userDetailsDiv);
-    saveToLocalStorage();
+    editButton.addEventListener("click", () => editDetails(event, detailsDiv, userDetails, editButton));
+    detailsDiv.appendChild(userDetails);
+    detailsDiv.appendChild(checkBox);
+    detailsDiv.appendChild(editButton);
+    containerDetails.appendChild(detailsDiv);
+    if (event) {
+        saveToLocalStorage();
+    }
 }
 function handleKeyup(event) {
     let target = event.target;
@@ -54,6 +58,7 @@ function deleteCheckboxes() {
                 (_a = checkbox.parentElement) === null || _a === void 0 ? void 0 : _a.remove();
                 checkboxElements = [];
             }
+            saveToLocalStorage();
         });
     }
     else {
@@ -74,6 +79,7 @@ function editDetails(event, userDetailsDiv, userDetails, editButton) {
         editButton.disabled = false;
         update.removeEventListener("click", updateClickHandler);
         cancel.removeEventListener("click", cancelClickHandler);
+        saveToLocalStorage();
     }
     function cancelClickHandler() {
         isEditing = false;
@@ -93,8 +99,26 @@ function toggleButtons(event) {
         submit === null || submit === void 0 ? void 0 : submit.classList.toggle("hidden");
     }
 }
+function attachEventListeners() {
+    let checkboxes = document.querySelectorAll(".checkbox");
+    checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener("change", () => {
+            if (checkbox.checked) {
+                checkboxElements.push(checkbox);
+            }
+        });
+    });
+    let editButtons = document.querySelectorAll("[value='Edit']");
+    editButtons.forEach((editButton) => {
+        editButton.addEventListener("click", (event) => {
+            let userDetailsDiv = editButton.parentElement;
+            let userDetails = userDetailsDiv.querySelector("li");
+            editDetails(event, userDetailsDiv, userDetails, editButton);
+        });
+    });
+}
 function saveToLocalStorage() {
-    let detailsDivHtml = detailsDiv.innerHTML;
+    let detailsDivHtml = containerDetails.innerHTML;
     if (detailsDivHtml) {
         localStorage.setItem("detailsDivHtml", detailsDivHtml);
     }
@@ -102,6 +126,33 @@ function saveToLocalStorage() {
 function loadFromLocalStorage() {
     let savedDetailsDiv = localStorage.getItem("detailsDivHtml");
     if (savedDetailsDiv) {
-        detailsDiv.innerHTML = savedDetailsDiv;
+        containerDetails.innerHTML = savedDetailsDiv;
+        attachEventListeners();
     }
 }
+// function saveToLocalStorage() {
+//     let userDetails = {
+//         email,
+//         username,
+//         password
+//     }
+//     let users = localStorage.getItem("users");
+//     let parsedUsers = users ? JSON.parse(users) : [];
+//     if (users) {
+//         parsedUsers.push(userDetails)
+//     }
+//     else {
+//         parsedUsers = [userDetails]
+//     }
+//     localStorage.setItem("users", JSON.stringify(parsedUsers))
+// }
+// function loadFromLocalStorage() {
+//     let users = localStorage.getItem("users")
+//     let parsedUsers = JSON.parse(users!)
+//     parsedUsers.forEach((user) => {
+//         email = user.email
+//         username = user.username
+//         password = user.password
+//         handleSubmit()
+//     })
+// }
