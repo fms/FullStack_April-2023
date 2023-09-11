@@ -1,4 +1,8 @@
 "use strict";
+function resetColors() {
+    const elements = document.querySelectorAll("*");
+    elements.forEach(element => element.style.backgroundColor = '');
+}
 function grandparentUsingId(color = "grey") {
     let grandparent = document.getElementById("grandparent-id");
     if (grandparent) {
