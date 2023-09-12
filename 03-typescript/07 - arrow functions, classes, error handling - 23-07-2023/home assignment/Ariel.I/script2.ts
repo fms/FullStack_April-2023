@@ -2,17 +2,17 @@ class Board {
   width: number;
   height: number;
 
-  constructor(width: number, height: number) {
+  constructor(width?: number, height?: number) {
     this.width = width ?? 1;
     this.height = height ?? 1;
   }
 
   // i need back to this explantion of the video (8)
   checkIfInBoard(x: number, y: number) {
-    if (0 > x || x < 9) {
+    if (x < 1 || this.width < x) {
       return false;
     }
-    return 1 <= y && y >= 8;
+    return 1 <= y && y >= this.height;
   }
 }
 
