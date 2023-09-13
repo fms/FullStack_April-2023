@@ -6,10 +6,10 @@ class Board {
     }
     // i need back to this explantion of the video (8)
     checkIfInBoard(x, y) {
-        if (0 > x || x < 9) {
+        if (x < 1 || this.width < x) {
             return false;
         }
-        return 1 <= y && y >= 8;
+        return 1 <= y && y >= this.height;
     }
 }
 class Rook {

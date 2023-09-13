@@ -23,3 +23,13 @@ div {
 .child {
   background-color: greenyellow;
 }
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.2rem;
+}
+.buttons button {
+  padding: 0.3rem;
+  flex-grow: 1;
+}
