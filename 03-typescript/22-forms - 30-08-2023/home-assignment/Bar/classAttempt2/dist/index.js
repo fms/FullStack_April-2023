@@ -1,5 +1,6 @@
 "use strict";
 let editMode = false;
+let selectedForDelete = [];
 class UserDetails {
     constructor(email, username, password) {
         this.email = email;
@@ -28,11 +29,12 @@ function createTable(user) {
     const buttonsCell = document.createElement("td");
     const editButton = createButton("Edit", () => editUser(buttonsCell));
     const deleteButton = createButton("Delete", (event) => deleteHandler(event));
+    const checkboxForDelete = document.createElement("input");
+    checkboxForDelete.type = "checkbox";
+    checkboxForDelete.addEventListener("change", () => addToCheckedList(checkboxForDelete));
     buttonsCell.appendChild(editButton);
     buttonsCell.appendChild(deleteButton);
-    let selectDelete = document.createElement("input");
-    selectDelete.type = "checkbox";
-    buttonsCell.appendChild(selectDelete);
+    buttonsCell.appendChild(checkboxForDelete);
     let emailCell = document.createElement("td");
     emailCell.textContent = user.email;
     userId.appendChild(emailCell);
@@ -49,12 +51,16 @@ function editUser(buttonsCell) {
     if (!editMode) {
         const update = createButton("Update", (event) => updateButtonHandler(event));
         const cancel = createButton("Cancel", () => removeEditButtons(cancel, update, buttonsCell));
+        const add = document.querySelector(".add");
+        add.classList.add("hidden");
         buttonsCell.appendChild(update);
         buttonsCell.appendChild(cancel);
         editMode = true;
     }
 }
 function removeEditButtons(cancel, update, buttonsCell) {
+    const add = document.querySelector(".add");
+    add.classList.toggle("hidden");
     buttonsCell.removeChild(cancel);
     buttonsCell.removeChild(update);
     editMode = false;
@@ -82,4 +88,30 @@ function deleteHandler(event) {
     var _a;
     let target = event.target;
     (_a = target.parentElement) === null || _a === void 0 ? void 0 : _a.parentElement.remove();
+}
+function addToCheckedList(checkBox) {
+    let deleteSelectedButton = document.querySelector(".deleteSelected");
+    if (checkBox.checked) {
+        selectedForDelete.push(checkBox);
+        deleteSelectedButton === null || deleteSelectedButton === void 0 ? void 0 : deleteSelectedButton.classList.remove("hidden");
+    }
+    else {
+        deleteSelectedButton === null || deleteSelectedButton === void 0 ? void 0 : deleteSelectedButton.classList.add("hidden");
+    }
+}
+function deleteSelected(event) {
+    let deleteSelectedButton = document.querySelector(".deleteSelected");
+    let target = event.target;
+    if (target && selectedForDelete.length > 0) {
+        selectedForDelete.forEach((checkbox) => {
+            var _a, _b;
+            if (checkbox.checked) {
+                (_b = (_a = checkbox.parentElement) === null || _a === void 0 ? void 0 : _a.parentElement) === null || _b === void 0 ? void 0 : _b.remove();
+                deleteSelectedButton === null || deleteSelectedButton === void 0 ? void 0 : deleteSelectedButton.classList.add("hidden");
+            }
+            else {
+                alert("Nothing to delete");
+            }
+        });
+    }
 }

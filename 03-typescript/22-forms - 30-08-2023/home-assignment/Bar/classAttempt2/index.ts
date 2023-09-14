@@ -1,4 +1,5 @@
 let editMode = false;
+let selectedForDelete: HTMLInputElement[] = []
 
 class UserDetails {
     constructor(public email: string, public username: string, public password: string) { }
@@ -30,13 +31,14 @@ function createTable(user: UserDetails) {
 
     const editButton = createButton("Edit", () => editUser(buttonsCell));
     const deleteButton = createButton("Delete", (event: MouseEvent) => deleteHandler(event));
+    const checkboxForDelete = document.createElement("input") as HTMLInputElement;
+    checkboxForDelete.type = "checkbox";
+    checkboxForDelete.addEventListener("change", () => addToCheckedList(checkboxForDelete))
+
 
     buttonsCell.appendChild(editButton);
     buttonsCell.appendChild(deleteButton);
-
-    let selectDelete = document.createElement("input");
-    selectDelete.type = "checkbox";
-    buttonsCell.appendChild(selectDelete);
+    buttonsCell.appendChild(checkboxForDelete)
 
     let emailCell = document.createElement("td");
     emailCell.textContent = user.email;
@@ -58,7 +60,9 @@ function editUser(buttonsCell: HTMLTableCellElement) {
     if (!editMode) {
         const update = createButton("Update", (event: MouseEvent) => updateButtonHandler(event));
         const cancel = createButton("Cancel", () => removeEditButtons(cancel, update, buttonsCell));
+        const add = document.querySelector(".add") as HTMLInputElement;
 
+        add.classList.add("hidden")
         buttonsCell.appendChild(update);
         buttonsCell.appendChild(cancel);
 
@@ -67,6 +71,8 @@ function editUser(buttonsCell: HTMLTableCellElement) {
 }
 
 function removeEditButtons(cancel: HTMLInputElement, update: HTMLInputElement, buttonsCell: HTMLTableCellElement) {
+    const add = document.querySelector(".add") as HTMLInputElement;
+    add.classList.toggle("hidden")
     buttonsCell.removeChild(cancel);
     buttonsCell.removeChild(update);
     editMode = false
@@ -98,4 +104,35 @@ function updateButtonHandler(event: MouseEvent) {
 function deleteHandler(event: MouseEvent) {
     let target = event.target as HTMLInputElement;
     target.parentElement?.parentElement!.remove()
+}
+
+function addToCheckedList(checkBox: HTMLInputElement) {
+    let deleteSelectedButton = document.querySelector(".deleteSelected")
+    if (checkBox.checked) {
+        selectedForDelete.push(checkBox);
+        deleteSelectedButton?.classList.remove("hidden")
+    }
+    else {
+        deleteSelectedButton?.classList.add("hidden")
+
+    }
+}
+
+function deleteSelected(event: MouseEvent) {
+    let deleteSelectedButton = document.querySelector(".deleteSelected")
+    let target = event.target as HTMLInputElement;
+
+    if (target && selectedForDelete.length > 0) {
+
+        selectedForDelete.forEach((checkbox) => {
+            if (checkbox.checked) {
+                checkbox.parentElement?.parentElement?.remove();
+                deleteSelectedButton?.classList.add("hidden")
+
+            }
+            else {
+                alert("Nothing to delete")
+            }
+        })
+    }
 }
