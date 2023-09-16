@@ -32,9 +32,9 @@ function createTable(user: UserDetails) {
     const editButton = createButton("Edit", () => editUser(buttonsCell));
     const deleteButton = createButton("Delete", (event: MouseEvent) => deleteHandler(event));
     const checkboxForDelete = document.createElement("input") as HTMLInputElement;
+
     checkboxForDelete.type = "checkbox";
     checkboxForDelete.addEventListener("change", () => addToCheckedList(checkboxForDelete))
-
 
     buttonsCell.appendChild(editButton);
     buttonsCell.appendChild(deleteButton);
@@ -62,9 +62,17 @@ function editUser(buttonsCell: HTMLTableCellElement) {
         const cancel = createButton("Cancel", () => removeEditButtons(cancel, update, buttonsCell));
         const add = document.querySelector(".add") as HTMLInputElement;
 
+        const editButton = buttonsCell.querySelector("input:nth-child(1)")
+        const deleteButton = buttonsCell.querySelector("input:nth-child(2)")
+        const checkboxButton = buttonsCell.querySelector("input:nth-child(3)")
+
         add.classList.add("hidden")
         buttonsCell.appendChild(update);
         buttonsCell.appendChild(cancel);
+
+        editButton?.classList.add("hidden")
+        deleteButton?.classList.add("hidden")
+        checkboxButton?.classList.add("hidden")
 
         editMode = true;
     }
@@ -72,21 +80,31 @@ function editUser(buttonsCell: HTMLTableCellElement) {
 
 function removeEditButtons(cancel: HTMLInputElement, update: HTMLInputElement, buttonsCell: HTMLTableCellElement) {
     const add = document.querySelector(".add") as HTMLInputElement;
+    const editButton = buttonsCell.querySelector("input:nth-child(1)")
+    const deleteButton = buttonsCell.querySelector("input:nth-child(2)")
+    const checkboxButton = buttonsCell.querySelector("input:nth-child(3)")
+
     add.classList.toggle("hidden")
+
     buttonsCell.removeChild(cancel);
     buttonsCell.removeChild(update);
+
+    editButton?.classList.remove("hidden")
+    deleteButton?.classList.remove("hidden")
+    checkboxButton?.classList.remove("hidden")
+
     editMode = false
 }
 
 function updateButtonHandler(event: MouseEvent) {
     let target = event.target as HTMLInputElement;
-    let userId = target.parentElement?.parentElement as HTMLTableRowElement;
+    const userId = target.parentElement?.parentElement as HTMLTableRowElement;
 
-    let emailCell = userId.querySelector("td:nth-child(1)");
-    let usernameCell = userId.querySelector("td:nth-child(2)");
-    let passwordCell = userId.querySelector("td:nth-child(3)");
-    let buttonsCell = userId.querySelector("td:nth-child(4)") as HTMLTableCellElement;
-    let cancel = buttonsCell?.lastChild as HTMLInputElement;
+    const emailCell = userId.querySelector("td:nth-child(1)") as HTMLTableCellElement;
+    const usernameCell = userId.querySelector("td:nth-child(2)") as HTMLTableCellElement;
+    const passwordCell = userId.querySelector("td:nth-child(3)") as HTMLTableCellElement;
+    const buttonsCell = userId.querySelector("td:nth-child(4)") as HTMLTableCellElement;
+    const cancel = buttonsCell?.lastChild as HTMLInputElement;
 
     let email = (document.querySelector(".email") as HTMLInputElement).value;
     let username = (document.querySelector(".username") as HTMLInputElement).value;
@@ -107,32 +125,37 @@ function deleteHandler(event: MouseEvent) {
 }
 
 function addToCheckedList(checkBox: HTMLInputElement) {
-    let deleteSelectedButton = document.querySelector(".deleteSelected")
+    const deleteSelectedButton = document.querySelector(".deleteSelected") as HTMLInputElement;
     if (checkBox.checked) {
         selectedForDelete.push(checkBox);
-        deleteSelectedButton?.classList.remove("hidden")
+    } else {
+        selectedForDelete = selectedForDelete.filter(item => item !== checkBox);
     }
-    else {
-        deleteSelectedButton?.classList.add("hidden")
 
-    }
+    toggleDeleteButton(deleteSelectedButton)
 }
 
 function deleteSelected(event: MouseEvent) {
-    let deleteSelectedButton = document.querySelector(".deleteSelected")
+    const deleteSelectedButton = document.querySelector(".deleteSelected")
     let target = event.target as HTMLInputElement;
 
     if (target && selectedForDelete.length > 0) {
-
         selectedForDelete.forEach((checkbox) => {
             if (checkbox.checked) {
                 checkbox.parentElement?.parentElement?.remove();
                 deleteSelectedButton?.classList.add("hidden")
-
-            }
-            else {
-                alert("Nothing to delete")
             }
         })
     }
 }
+
+function toggleDeleteButton(deleteSelectedButton: HTMLInputElement) {
+    if (selectedForDelete.length > 0) {
+        deleteSelectedButton?.classList.remove("hidden");
+    } else {
+        deleteSelectedButton?.classList.add("hidden");
+    }
+}
+
+// Use user id to delete and update
+// Relocate the overused vairables
