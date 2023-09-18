@@ -13,12 +13,12 @@
     <header>
         <h1>To Do List</h1>
         <form id="new-task-form" onsubmit="return submitTask(event)">
-
-            <input id="task" type="text" placeholder="Task">
-            <input id="details" type="text" placeholder="Details">
-            <input id="deadline" type="datetime-local">
+            <input id="task" type="text" placeholder="Task" required>
+            <input id="details" type="text" placeholder="Details" required>
+            <input id="deadline" type="datetime-local" required>
 
             <input id="submit" type="submit" value="Submit" class="button">
+            <input id="add" type="button" value="Add" class="hidden button">
             <input id="update" type="button" value="Update" class="button hidden" onclick="updateSubmit(event)">
             <input id="delete" type="button" value="Delete Selected" class="button" onclick="deleteTasks()">
             <input id="cancel" type="reset" value="Cancel" class="hidden button" onclick="cancelEdit(event)">

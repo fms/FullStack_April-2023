@@ -5,6 +5,7 @@ const submitButton = document.getElementById("submit");
 const cancelButton = document.getElementById("cancel");
 const deleteButton = document.getElementById("delete");
 const updateButton = document.getElementById("update");
+const addButton = document.getElementById("add");
 const form = document.querySelector("#new-task-form");
 const taskNameDiv = document.querySelector(".task-name");
 const taskDetailsDiv = document.querySelector(".task-details");
@@ -41,6 +42,10 @@ function updateRow() {
             taskNameDiv.classList.remove("hidden");
             taskDetailsDiv.classList.remove("hidden");
             taskList.forEach((task, index) => createTaskRow(taskNameDiv, taskDetailsDiv, task, index));
+        }
+        else {
+            taskNameDiv.classList.add("hidden");
+            taskDetailsDiv.classList.add("hidden");
         }
     }
 }
@@ -104,32 +109,28 @@ function selectRow(event) {
     var _a;
     let target = event.target;
     let id = (_a = target.parentElement) === null || _a === void 0 ? void 0 : _a.id;
-    if (target) {
-        let sameTaskDetailsId = document.querySelectorAll(".task-details-new");
-        sameTaskDetailsId.forEach((task) => {
-            if (task.classList.contains("show")) {
-                task.classList.remove("show");
-                task.classList.add("hidden");
-            }
-            if (task.id === id) {
-                task.classList.remove("hidden");
-                task.classList.add("show");
-            }
-        });
+    let taskData = taskList[parseInt(id)];
+    let element = form.elements;
+    if (target && !editMode) {
+        SelectedTask(id);
+        element.task.value = taskData.task;
+        element.deadline.value = taskData.deadline;
+        // toggleHiddenEdit();
     }
 }
 function editRow(event) {
-    let target = event.target;
-    let parent = target.parentElement;
-    let parentId = parent === null || parent === void 0 ? void 0 : parent.id;
-    currentIndex = parseInt(parentId);
-    const taskData = taskList[currentIndex];
-    const element = form.elements;
     if (!editMode) {
+        let target = event.target;
+        let parent = target.parentElement;
+        let parentId = parent === null || parent === void 0 ? void 0 : parent.id;
+        currentIndex = parseInt(parentId);
+        const taskData = taskList[currentIndex];
+        const element = form.elements;
+        SelectedTask(parentId);
         element.task.value = taskData.task;
         element.details.value = taskData.details;
         element.deadline.value = taskData.deadline;
-        toggleHidden();
+        toggleHiddenEdit();
         editMode = true;
     }
 }
@@ -137,12 +138,13 @@ function cancelEdit(event) {
     let target = event.target;
     if (target) {
         form.reset();
-        toggleHidden();
+        toggleHiddenEdit();
         editMode = false;
         currentIndex = null;
     }
 }
 function updateSubmit(event) {
+    let target = event.target;
     const element = form.elements;
     if (event) {
         let taskData = taskList[currentIndex];
@@ -150,10 +152,14 @@ function updateSubmit(event) {
         taskData.details = element.details.value;
         taskData.deadline = element.deadline.value;
         editMode = false;
-        toggleHidden();
+        toggleHiddenEdit();
         updateRow();
         form.reset();
+        SelectedTask(currentIndex === null || currentIndex === void 0 ? void 0 : currentIndex.toString());
         currentIndex = null;
+    }
+    if (target.value === "Add") {
+        console.log('1');
     }
 }
 function deleteTasks() {
@@ -161,11 +167,24 @@ function deleteTasks() {
     saveTasks();
     updateRow();
 }
-function toggleHidden() {
+function toggleHiddenEdit() {
     cancelButton.classList.toggle("hidden");
     updateButton.classList.toggle("hidden");
     deleteButton.classList.toggle("hidden");
     submitButton.classList.toggle("hidden");
+}
+function SelectedTask(id) {
+    let tasks = document.querySelectorAll(".task-details-new");
+    tasks.forEach((task) => {
+        if (task.classList.contains("show")) {
+            task.classList.remove("show");
+            task.classList.add("hidden");
+        }
+        if (task.id === id) {
+            task.classList.remove("hidden");
+            task.classList.add("show");
+        }
+    });
 }
 function markedCheckbox(event) {
     var _a;
@@ -186,3 +205,8 @@ function loadTasks() {
     }
     return new Array();
 }
+// function addDetails(event :MouseEvent) {
+//     let target = event.target as HTMLInputElement;
+//     if(target) {
+//     }
+// }
