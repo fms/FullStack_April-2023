@@ -22,7 +22,8 @@ class TaskList {
     public addTaskToList(task: Task) {
         this.tasks.push(task);
         Task.tasksMap.get(task.id)?.list = this.name;
-        // console.log("added task to list: " +Task.tasksMap.get(task.id)?.list);
+        console.log("added task to list: " + Task.tasksMap.get(task.id)?.list);
+        console.log(this.name);
         localStorage.setItem(this.name, JSON.stringify(this));
     }
     public deleteTaskFromList(task: Task) {
@@ -158,8 +159,8 @@ class Task {
         this.status = false;
         this.list = "";
         this.addTask(id);
-
-        // console.log(this)
+        console.log("Added new task");
+        console.log(this);
 
     }
 
@@ -306,8 +307,8 @@ addNewTask?.addEventListener("submit", (ev) => {
     const selectedList = selectTask?.value;
     const list = TaskList.listsNames.get(selectedList)
 
-    const formatedDate = new Date(dateAndTime);
-    let dateString = formatedDate.getDate() + "/" + (formatedDate.getMonth() + 1) + "/" + formatedDate.getFullYear();
+    // const formatedDate = new Date(dateAndTime);
+    // let dateString = formatedDate.getDate() + "/" + (formatedDate.getMonth() + 1) + "/" + formatedDate.getFullYear();
     // console.log(dateString);
     // dateString.
 
@@ -467,19 +468,29 @@ function initPage() {
          */
         // console.log(localStorage.getItem(localStorage.key(i)));
         const objects = Array<Object>();
-        objects.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
 
+        objects.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
+        console.log(objects);
         // console.log(obj);
         objects.forEach((list: TaskList) => {
-            console.log("in new task from localStorage");
+            // console.log(list.name);
 
-            // const newList = new TaskList(list.name);
-            // tasklist.push(newList);
+            // console.log("in new task from localStorage");
             // console.log(list);
+            const newList = new TaskList(list.name);
+            tasklist.push(newList);
+            // console.log(list);
+            // const newTask = new Task(111, "newList", "newList", "newList", "newList", list.name, false);
             list.tasks.forEach((task: Task) => {
                 const newTask = new Task(task.id, task.title, task.description, task.taskDayTime, task.dateStemp, task.list, task.status);
+
                 newTask.setTask(list.name);
-                // console.log(newTask);
+                console.log(list.name);
+                // TaskList.listsNames.get(list.name).addTaskToList(newTask);
+
+                addNewTask.reset();
+                // newTask.setTask(list.name);
+                // console.log(task);
                 // list?.addTaskToList(t1);
             });
         });
@@ -528,7 +539,9 @@ document.addEventListener('DOMContentLoaded', function () {
  * 
  * Check if list name already exsist before creating it. 
  * 
- * 
+ * Do MVC Model , so the view will be only the view and the model will be the model.
+ * Also seperate controler from view.
+ * The localStorage should be updated only from the Controler(specific on this app).
  * 
  * 
  */
