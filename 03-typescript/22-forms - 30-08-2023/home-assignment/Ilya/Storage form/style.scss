@@ -1,0 +1,71 @@
+#form-container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    margin-top: 10px;
+  }
+  
+  input, select {
+    margin-top: 5px;
+    padding: 5px;
+  }
+  
+  button {
+    margin-top: 10px;
+  }
+  
+  ul {
+    padding: 0;
+    list-style-type: none;
+  }
+
+  .customer-list {
+    
+    display: grid;
+    grid-template-columns: repeat(5, max-content);
+    gap: 0.2rem 1rem;
+}
+
+.header {
+    background-color: lightgray;
+    padding: 0.2rem 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.entry {
+    padding: 0.1rem 0;
+    height: 1.25rem;
+}
+  
+  li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #f0f0f0;
+  }
+  
+  li.underline {
+    text-decoration: underline;
+  }
+  
+  button.edit {
+    margin-left: 10px;
+  }
+  
+  button.delete {
+    margin-left: 5px;
+    background-color: #ff0000;
+    color: #fff;
+  }
