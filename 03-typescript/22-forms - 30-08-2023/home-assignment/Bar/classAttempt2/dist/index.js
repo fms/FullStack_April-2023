@@ -1,4 +1,8 @@
 "use strict";
+let loadedUsers = loadFromLocalStorage();
+if (loadedUsers) {
+    loadedUsers.forEach(user => createTable(user));
+}
 let editMode = false;
 let selectedForDelete = [];
 class UserDetails {
@@ -15,6 +19,7 @@ function submitForm(event) {
     let password = document.querySelector(".password").value;
     let user = new UserDetails(email, username, password);
     createTable(user);
+    saveToLocalStorage(user);
 }
 function createButton(value, clickHandler) {
     const button = document.createElement("input");
@@ -94,12 +99,23 @@ function updateButtonHandler(event) {
         usernameCell.textContent = username;
         passwordCell.textContent = password;
         removeEditButtons(cancel, target, buttonsCell);
+        saveToLocalStorage(new UserDetails(email, username, password));
     }
 }
 function deleteHandler(event) {
-    var _a;
+    var _a, _b;
     let target = event.target;
-    (_a = target.parentElement) === null || _a === void 0 ? void 0 : _a.parentElement.remove();
+    const userId = (_a = target.parentElement) === null || _a === void 0 ? void 0 : _a.parentElement;
+    const usernameCell = userId.querySelector("td:nth-child(2)");
+    if (usernameCell) {
+        const username = usernameCell.textContent;
+        const index = loadedUsers.findIndex(user => user.username === username);
+        if (index !== -1) {
+            loadedUsers.splice(index, 1);
+            localStorage.setItem("users", JSON.stringify(loadedUsers));
+        }
+    }
+    (_b = userId.parentNode) === null || _b === void 0 ? void 0 : _b.removeChild(userId);
 }
 function addToCheckedList(checkBox) {
     const deleteSelectedButton = document.querySelector(".deleteSelected");
@@ -132,5 +148,18 @@ function toggleDeleteButton(deleteSelectedButton) {
         deleteSelectedButton === null || deleteSelectedButton === void 0 ? void 0 : deleteSelectedButton.classList.add("hidden");
     }
 }
-// Use user id to delete and update
-// Relocate the overused vairables
+function saveToLocalStorage(user) {
+    let users = loadFromLocalStorage();
+    if (!users) {
+        users = [];
+    }
+    users.push(user);
+    localStorage.setItem("users", JSON.stringify(users));
+}
+function loadFromLocalStorage() {
+    let users = localStorage.getItem("users");
+    if (users) {
+        return JSON.parse(users);
+    }
+    return [];
+}

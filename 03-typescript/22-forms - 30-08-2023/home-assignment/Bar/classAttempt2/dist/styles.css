@@ -97,6 +97,11 @@ form input {
   background-color: #ddd;
 }
 
+input::before {
+  content: "<= Delete";
+  margin-left: 20px;
+}
+
 .hidden {
   display: none;
 }

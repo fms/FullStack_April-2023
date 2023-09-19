@@ -1,9 +1,14 @@
+let loadedUsers: UserDetails[] = loadFromLocalStorage();
+if (loadedUsers) {
+    loadedUsers.forEach(user => createTable(user));
+}
 let editMode = false;
 let selectedForDelete: HTMLInputElement[] = []
 
 class UserDetails {
     constructor(public email: string, public username: string, public password: string) { }
 }
+
 
 function submitForm(event: SubmitEvent) {
     event.preventDefault();
@@ -14,6 +19,7 @@ function submitForm(event: SubmitEvent) {
     let user = new UserDetails(email, username, password);
 
     createTable(user);
+    saveToLocalStorage(user)
 }
 
 function createButton(value: string, clickHandler: any) {
@@ -110,18 +116,33 @@ function updateButtonHandler(event: MouseEvent) {
     let username = (document.querySelector(".username") as HTMLInputElement).value;
     let password = (document.querySelector(".password") as HTMLInputElement).value;
 
-
     if (emailCell && usernameCell && passwordCell) {
         emailCell.textContent = email;
         usernameCell.textContent = username;
         passwordCell.textContent = password;
         removeEditButtons(cancel, target, buttonsCell)
+
+        saveToLocalStorage(new UserDetails(email, username, password));
     }
 }
 
 function deleteHandler(event: MouseEvent) {
     let target = event.target as HTMLInputElement;
-    target.parentElement?.parentElement!.remove()
+    const userId = target.parentElement?.parentElement as HTMLTableRowElement;
+
+    const usernameCell = userId.querySelector("td:nth-child(2)") as HTMLTableCellElement;
+
+    if (usernameCell) {
+        const username = usernameCell.textContent;
+
+        const index = loadedUsers.findIndex(user => user.username === username);
+        if (index !== -1) {
+            loadedUsers.splice(index, 1);
+            localStorage.setItem("users", JSON.stringify(loadedUsers));
+        }
+    }
+
+    userId.parentNode?.removeChild(userId);
 }
 
 function addToCheckedList(checkBox: HTMLInputElement) {
@@ -157,5 +178,22 @@ function toggleDeleteButton(deleteSelectedButton: HTMLInputElement) {
     }
 }
 
-// Use user id to delete and update
-// Relocate the overused vairables
+function saveToLocalStorage(user: UserDetails) {
+    let users = loadFromLocalStorage();
+    if (!users) {
+        users = [];
+    }
+    users.push(user);
+
+    localStorage.setItem("users", JSON.stringify(users));
+}
+
+
+function loadFromLocalStorage() {
+    let users = localStorage.getItem("users");
+    if (users) {
+        return JSON.parse(users);
+    }
+    return [];
+}
+
