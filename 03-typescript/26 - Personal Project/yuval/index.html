@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch List</title>
+    <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="dist/style.css">
+    <script src="dist/index.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <h1>WATCH LISTS</h1>
+    </div>
+
+    
+    <div class="forms">
+        <div class="forms__newWatchList">
+            <form id="start-form">
+                <h3>Make a new list!</h3>
+                <input type="text" required>
+                <input id="newListSub"  type="submit" value="Create list">
+                <a href="lists.html"><button id="lists">My watch lists</button></a>
+            </form>
+        </div>
+        
+        <div class="forms__watchList hide">
+            <form id="add-movies">
+                <h3>Add movies!</h3>
+                <label>Watch List:
+                    <select id="selectList" required>
+                        <option value="" disabled selected>-------</option>
+                    </select>
+                </label>
+                <input id="addNewList" type="submit" value="New list">
+                <br><br>
+    
+                <label>Movie:
+                    <input type="text" id="movie" required>
+                </label>
+                <br><br>
+    
+                <label>Year:
+                    <input type="number" id="year" min="1985" max="2023" required>
+                </label>
+                <br><br>
+    
+                <input id="submitMovie" type="submit" class="" value="Add movie">
+                <input id="updateTask" type="submit" class="hide" value="Update">
+                <input id="cancelEdit" type="submit" class="hide" value="Cancel">
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
