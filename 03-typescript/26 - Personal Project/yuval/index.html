@@ -15,16 +15,16 @@
 
     
     <div class="forms">
-        <div class="forms__newWatchList">
+        <div class="forms__newWatchList" id="newWatchListDiv">
             <a href="lists.html"><button id="lists">My watch lists</button></a>
             <form id="start-form">
                 <h3>Make a new list!</h3>
-                <input type="text" required>
+                <input type="text" id="listNames" required>
                 <input id="newListSub"  type="submit" value="Create list">
             </form>
         </div>
         
-        <div class="forms__watchList hide">
+        <div class="forms__watchList hide" id="watchListDiv">
             <form id="add-movies">
                 <h3>Add movies!</h3>
                 <label>Watch List:
