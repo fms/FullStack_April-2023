@@ -1,0 +1,33 @@
+body {
+  background-image: url("../images/background.png");
+  background-size: cover;
+}
+
+.header {
+  position: relative;
+  left: 35%;
+}
+.header h1 {
+  font-family: Georgia, serif;
+  color: goldenrod;
+  font-size: 8vh;
+}
+
+.forms {
+  margin-top: 20px;
+}
+.forms * {
+  font-family: Georgia, serif;
+}
+.forms #lists {
+  position: relative;
+  left: 70%;
+}
+.forms__watchList {
+  display: flex;
+  flex-direction: column;
+}
+
+.hide {
+  display: none;
+}
