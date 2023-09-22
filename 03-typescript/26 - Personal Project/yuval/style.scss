@@ -1,6 +1,7 @@
 body {
     background-image: url("../images/background.png");
-    background-size: cover;
+    background-size: 100%;
+    width: 940px;
 }
 
 .header {
@@ -24,7 +25,8 @@ body {
     
     #lists {
         position: relative;
-        left: 70%;
+        left: 110%;
+        top: 77px;
     }
 
     &__watchList {
