@@ -25,14 +25,14 @@
         </div>
         
         <div class="forms__watchList hide" id="watchListDiv">
-            <form id="add-movies">
+            <form id="add-movies" onsubmit="formSubmit(ev)">
                 <h3>Add movies!</h3>
                 <label>Watch List:
                     <select id="selectList" required>
                         <option value="" disabled selected>-------</option>
                     </select>
                 </label>
-                <input id="addNewList" type="submit" value="New list">
+                <input id="addNewList" type="button" value="New list">
                 <br><br>
     
                 <label>Movie:
