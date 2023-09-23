@@ -15,8 +15,9 @@ const form1div = document.getElementById('newWatchListDiv') as HTMLElement;
 const form2div = document.getElementById('watchListDiv') as HTMLElement;
 const select = document.getElementById('selectList') as HTMLSelectElementWithId;
 const form1 = document.getElementById('start-form') as HTMLFormElement;
-const form2 = document.getElementById('add-savedMovies') as HTMLFormElement;
+const form2 = document.getElementById('add-movies') as HTMLFormElement;
 const newListButton = document.getElementById('addNewList') as HTMLButtonElement;
+const submitMovieButton = document.getElementById('submitMovie') as HTMLButtonElement;
 
 let fieldName = "movies";
 let movies = loadMovies();
@@ -40,15 +41,33 @@ newListButton.addEventListener('click', () => {
     form1.reset();
 });
 
-function formSubmit(ev: SubmitEvent){
-    ev.preventDefault();
-    const elements = form2.elements as FormElements;
-    const watchList = new WatchList(elements.listName.value);
-    const newMovie = new Movie(elements.movieName.value, elements.year.valueAsNumber);
-    let newWatchListMovie = new WatchListMovie(watchList, newMovie);
+// submitMovieButton.addEventListener('click', () => {
+//     const elements = form2?.elements as FormElements;
+//     const watchList = new WatchList(elements.listName.value);
+//     const newMovie = new Movie(elements.movieName.value, elements.year.valueAsNumber);
+//     let newWatchListMovie = new WatchListMovie(watchList, newMovie);
+//     movies.push(newWatchListMovie);
+//     localStorage.setItem('movies', JSON.stringify(movies));
+//     form2.reset();
+// });
+
+form2.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const watchList = new WatchList(
+        (form2.querySelector('[name="listName"]') as HTMLInputElement).value
+    );
+    const newMovie = new Movie(
+        (form2.querySelector('[name="movieName"]') as HTMLInputElement).value,
+        (form2.querySelector('[name="year"]') as HTMLInputElement).valueAsNumber
+    );
+    const newWatchListMovie = new WatchListMovie(watchList, newMovie);
     movies.push(newWatchListMovie);
-    localStorage.setItem('movies', JSON.stringify(movies));
-}
+
+    // Save data to localStorage
+    localStorage.setItem(fieldName, JSON.stringify(movies));
+    form2.reset();
+});
+
 
 
 function saveMovies() {
@@ -57,7 +76,7 @@ function saveMovies() {
 }
 
 function loadMovies(): WatchListMovie[] {
-    const savedMovies = localStorage.getItem(fieldName);
+    const savedMovies = localStorage.getItem('movies');
     if (savedMovies) {
         return JSON.parse(savedMovies);
     }

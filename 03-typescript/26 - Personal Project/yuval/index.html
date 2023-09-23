@@ -28,7 +28,7 @@
             <form id="add-movies" onsubmit="formSubmit(ev)">
                 <h3>Add movies!</h3>
                 <label>Watch List:
-                    <select id="selectList" required>
+                    <select id="selectList" name="listName" required>
                         <option value="" disabled selected>-------</option>
                     </select>
                 </label>
@@ -36,12 +36,12 @@
                 <br><br>
     
                 <label>Movie:
-                    <input type="text" id="movie" required>
+                    <input type="text" id="movie" name="movieName" required>
                 </label>
                 <br><br>
     
                 <label>Year:
-                    <input type="number" id="year" min="1985" max="2023" required>
+                    <input type="number" id="year" name="year" min="1985" max="2023" required>
                 </label>
                 <br><br>
     
