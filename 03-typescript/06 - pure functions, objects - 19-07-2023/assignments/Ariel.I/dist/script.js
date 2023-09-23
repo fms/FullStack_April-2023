@@ -8,19 +8,15 @@
 //   fuelConsumption: number;
 //   totalFuelConsumption: Function;
 // }
-function carMethoda(maker, model, hatcback, year, milage, fuelConsumption) {
-    let carDetailsIn = {
-        maker,
-        model,
-        hatcback,
-        year,
-        milage,
-        fuelConsumption,
-        totalFuelConsumptionCalc() {
-            return this.milage / this.fuelConsumption;
-        },
-    };
-    return carDetailsIn;
-}
-let ArielsCar = carMethoda("Honda", "Civic", true, 2011, 148000, 13 / 100);
-console.log(ArielsCar);
+let myBride = {
+    maker: "Honda",
+    model: "Civic",
+    year: 2011,
+    milage: 148000,
+    fuelConsumption: 12.9,
+    calcFuelConsumption() {
+        return this.milage / this.fuelConsumption;
+    },
+    hatchback: true,
+    color: "Blue metalic",
+};

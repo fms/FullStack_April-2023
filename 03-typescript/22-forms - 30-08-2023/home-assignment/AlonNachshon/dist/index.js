@@ -1,39 +1,157 @@
 "use strict";
-class TaksList {
-    constructor(name) {
-        this.name = name;
-        this.tasks = new Map();
+let TaskList = /** @class */ (() => {
+    class TaskList {
+        constructor(name) {
+            this.name = name;
+            this.tasks = new Array();
+            TaskList.listsNames.set(name, this);
+            this.createTaskList();
+            console.log(this);
+        }
+        // public copyConstructor(taskList:TaskList){
+        //     this.name = TaskList.name;
+        //     this.tasks = TaskList.tasks;
+        //     TaksList.listsNames.set(this.name, this);
+        //     this.createTaskList();
+        // }
+        addTaskToList(task) {
+            var _a, _b;
+            this.tasks.push(task);
+            (_a = Task.tasksMap.get(task.id)) === null || _a === void 0 ? void 0 : _a.list = this.name;
+            console.log("added task to list: " + ((_b = Task.tasksMap.get(task.id)) === null || _b === void 0 ? void 0 : _b.list));
+            console.log(this.name);
+            localStorage.setItem(this.name, JSON.stringify(this));
+        }
+        deleteTaskFromList(task) {
+            this.tasks = this.tasks.filter((t) => t != task);
+            // console.log("delete task from list: "+ this.tasks)
+            localStorage.setItem(this.name, JSON.stringify(this));
+        }
+        addDeleteEventListener() {
+            /**
+             * Del a task event listener
+             */
+            const deleteTask = document.querySelector(`#delSelected-${this.name}`);
+            // console.log(`#delSelected-${this.name}`);
+            // console.log(deleteTask);
+            deleteTask === null || deleteTask === void 0 ? void 0 : deleteTask.addEventListener("click", (ev) => {
+                ev.preventDefault();
+                // console.log("del");
+                const tasksToDelete = document.querySelectorAll(`.tasktslist__task__actions-${this.name} input`);
+                let first = true;
+                tasksToDelete.forEach((task) => {
+                    var _a, _b, _c;
+                    if (task.checked) {
+                        if (first) {
+                            first = false;
+                            if (prompt("You are going to delete tasks please type 'DELETE TASKS' to confirm") != "DELETE")
+                                return;
+                        }
+                        const parent = (_a = task.parentElement) === null || _a === void 0 ? void 0 : _a.parentElement;
+                        // console.log(parent);
+                        const taskIdDiv = parent === null || parent === void 0 ? void 0 : parent.querySelector(".tasktslist__task__id");
+                        const taskId = taskIdDiv === null || taskIdDiv === void 0 ? void 0 : taskIdDiv.textContent;
+                        (_b = TaskList.listsNames.get(this.name)) === null || _b === void 0 ? void 0 : _b.deleteTaskFromList(Task.tasksMap.get(parseInt(taskId)));
+                        (_c = Task.tasksMap.get(parseInt(taskId))) === null || _c === void 0 ? void 0 : _c.deleteTask(parseInt(taskId));
+                        parent === null || parent === void 0 ? void 0 : parent.remove();
+                    }
+                });
+            });
+        }
+        createTaskList() {
+            const newTaskList = document.createElement("div");
+            newTaskList.classList.add(`tasktslist-${this.name}`);
+            const taskDiv = document.createElement("div");
+            taskDiv.classList.add("tasktslist__task");
+            taskDiv.classList.add("titles");
+            const taskDetails = [
+                "Time Created",
+                "Task Id",
+                "Task Title",
+                "Task Description",
+                "Task Date",
+                "Delete",
+                "Edit",
+                "done?"
+            ];
+            const taskClasses = [
+                "tasktslist__task__created",
+                "tasktslist__task__id",
+                "tasktslist__task__title",
+                "tasktslist__task__description",
+                "tasktslist__task__date",
+                "tasktslist__task__actions",
+                "tasktslist__task__edit",
+                "tasktslist__task__done"
+            ];
+            for (const detail of taskDetails) {
+                const detailDiv = document.createElement("div");
+                detailDiv.classList.add(`${taskClasses[taskDetails.indexOf(detail)]}`);
+                detailDiv.textContent = detail;
+                taskDiv.appendChild(detailDiv);
+            }
+            const h2 = document.createElement("h2");
+            const hr1 = document.createElement("hr");
+            const hr2 = document.createElement("hr");
+            const deleteSelectedButton = document.createElement("input");
+            deleteSelectedButton.type = "submit";
+            deleteSelectedButton.value = "Delete Selected";
+            deleteSelectedButton.id = `delSelected-${this.name}`;
+            h2.textContent = this.name;
+            newTaskList.appendChild(h2);
+            // newTaskList.appendChild(hr1);
+            newTaskList.appendChild(taskDiv);
+            newTaskList.appendChild(hr2);
+            newTaskList.appendChild(deleteSelectedButton);
+            const main = document.querySelector(".listContainer");
+            main === null || main === void 0 ? void 0 : main.appendChild(newTaskList);
+            this.addDeleteEventListener();
+            localStorage.setItem(this.name, JSON.stringify(this));
+        }
     }
-    addTask(task) {
-        this.tasks.set(task.id, task);
-        console.log(this.tasks);
-    }
-    deleteTask(taskId) {
-        this.tasks.delete(taskId);
-        console.log(this.tasks);
-    }
-}
+    TaskList.listsNames = new Map(); /* Map of Task lists*/
+    return TaskList;
+})();
 let Task = /** @class */ (() => {
     class Task {
-        // (Task.idCounter++, title, description, dateAndTime, new Date().toLocaleString(), privateList);
-        constructor(id, title, description, taskDayTime, dateStemp, taskList) {
+        constructor(id, title, description, taskDayTime, dateStemp, list, status) {
             this.id = id;
             this.title = title;
             this.description = description;
             this.taskDayTime = taskDayTime;
             this.dateStemp = dateStemp;
             this.status = false;
-            taskList.addTask(this);
-            this.setTask();
+            this.list = "";
+            this.addTask(id);
+            console.log("Added new task");
+            console.log(this);
         }
-        setTask() {
+        addTask(id) {
+            Task.tasksMap.set(this.id, this);
+            console.log(Task.tasksMap.get(this.id));
+            // localStorage.setItem(this.id.toString(),JSON.stringify(this));
+        }
+        deleteTask(id) {
+            Task.tasksMap.delete(this.id);
+            console.log(Task.tasksMap.get(this.id));
+            // localStorage.removeItem(this.id.toString());
+        }
+        setTask(selectedList) {
+            var _a;
+            /**
+             * Task row
+             */
             const taskContainer = document.createElement("div");
             taskContainer.className = "tasktslist__task";
+            /**
+             * Tasks fields start
+             */
             const timeCreated = document.createElement("div");
             timeCreated.className = "tasktslist__task__created";
             timeCreated.textContent = this.dateStemp;
             const taskId = document.createElement("div");
             taskId.className = "tasktslist__task__id";
+            taskId.id = `${this.id}`;
             taskId.textContent = this.id.toString();
             const taskTitle = document.createElement("div");
             taskTitle.className = "tasktslist__task__title";
@@ -45,7 +163,8 @@ let Task = /** @class */ (() => {
             taskDate.className = "tasktslist__task__date";
             taskDate.textContent = this.taskDayTime;
             const taskActions = document.createElement("div");
-            taskActions.className = "tasktslist__task__actions";
+            taskActions.className = `tasktslist__task__actions-${selectedList}`;
+            taskActions.classList.add(`tasktslist__task__actions`);
             const shouldDelete = document.createElement("input");
             shouldDelete.type = "checkbox";
             taskActions.appendChild(shouldDelete);
@@ -58,9 +177,11 @@ let Task = /** @class */ (() => {
             const editBtn = document.createElement("input");
             editBtn.type = "submit";
             editBtn.value = "Edit";
-            editBtn.className = "editBtn";
+            editBtn.className = `editBtn`;
             editTask.className = "tasktslist__task__edit";
             editTask.appendChild(editBtn);
+            /** End */
+            /** appending task to container*/
             taskContainer.appendChild(timeCreated);
             taskContainer.appendChild(taskId);
             taskContainer.appendChild(taskTitle);
@@ -69,37 +190,31 @@ let Task = /** @class */ (() => {
             taskContainer.appendChild(taskActions);
             taskContainer.appendChild(editTask);
             taskContainer.appendChild(markAsDone);
-            /*
-            ...Need to check if null if any problems while uploading page
-             */
-            const lastTask = document.querySelector(".tasktslist");
-            lastTask === null || lastTask === void 0 ? void 0 : lastTask.appendChild(taskContainer);
-            editBtn.addEventListener("click", (ev) => {
-                var _a;
+            /** Appending the last task to the list */
+            const lastTask = document.querySelector(`.tasktslist-${selectedList}`);
+            const titleTasks = lastTask === null || lastTask === void 0 ? void 0 : lastTask.querySelector(".tasktslist__task");
+            titleTasks === null || titleTasks === void 0 ? void 0 : titleTasks.insertAdjacentElement("afterend", taskContainer);
+            editBtn.addEventListener("click", function (ev) {
                 ev.preventDefault();
-                const parent = (_a = editBtn.parentElement) === null || _a === void 0 ? void 0 : _a.parentElement;
+                editMode(true);
                 const title = document.getElementById("title");
                 const description = document.getElementById("description");
                 const dateAndTime = document.getElementById("dateAndTime");
-                title.value = this.title;
-                description.value = this.description;
-                dateAndTime.value = this.taskDayTime;
-                editMode(true);
-                const update = document.getElementById("updateTask");
-                update === null || update === void 0 ? void 0 : update.addEventListener("click", (ev) => {
-                    var _a, _b, _c, _d;
-                    this.title = title === null || title === void 0 ? void 0 : title.value;
-                    this.description = description === null || description === void 0 ? void 0 : description.value;
-                    this.taskDayTime = dateAndTime === null || dateAndTime === void 0 ? void 0 : dateAndTime.value;
-                    (_a = parent === null || parent === void 0 ? void 0 : parent.querySelector(".tasktslist__task__title")) === null || _a === void 0 ? void 0 : _a.textContent = this.title;
-                    (_b = parent === null || parent === void 0 ? void 0 : parent.querySelector(".tasktslist__task__description")) === null || _b === void 0 ? void 0 : _b.textContent = this.description;
-                    (_c = parent === null || parent === void 0 ? void 0 : parent.querySelector(".tasktslist__task__date")) === null || _c === void 0 ? void 0 : _c.textContent = this.taskDayTime;
-                    editMode(false);
-                    const addNewTask = (_d = document.getElementById("addNewTask")) === null || _d === void 0 ? void 0 : _d.reset();
-                });
+                const taskLine = editBtn.closest(".tasktslist__task");
+                const taskIdDiv = taskLine === null || taskLine === void 0 ? void 0 : taskLine.querySelector(".tasktslist__task__id");
+                const taskId = taskIdDiv === null || taskIdDiv === void 0 ? void 0 : taskIdDiv.textContent;
+                Task.updateTask = Task.tasksMap.get(parseInt(taskId));
+                title.value = Task.updateTask.title;
+                console.log(title.value);
+                description.value = Task.updateTask.description;
+                dateAndTime.value = Task.updateTask.taskDayTime;
+                // selectTask.value = "*";
             });
+            /*
+            *  Added event listener to mark down and move it down.
+            */
             isDone.addEventListener("change", (ev) => {
-                var _a, _b, _c, _d, _e, _f, _g;
+                var _a, _b, _c, _d, _e, _f;
                 const parent = (_a = isDone.parentElement) === null || _a === void 0 ? void 0 : _a.parentElement;
                 (_b = parent === null || parent === void 0 ? void 0 : parent.querySelector(".tasktslist__task__title")) === null || _b === void 0 ? void 0 : _b.classList.toggle("--done");
                 (_c = parent === null || parent === void 0 ? void 0 : parent.querySelector(".tasktslist__task__description")) === null || _c === void 0 ? void 0 : _c.classList.toggle("--done");
@@ -107,42 +222,46 @@ let Task = /** @class */ (() => {
                 (_e = parent === null || parent === void 0 ? void 0 : parent.querySelector(".tasktslist__task__id")) === null || _e === void 0 ? void 0 : _e.classList.toggle("--done");
                 (_f = parent === null || parent === void 0 ? void 0 : parent.querySelector(".tasktslist__task__created")) === null || _f === void 0 ? void 0 : _f.classList.toggle("--done");
                 this.status ? false : true;
-                (_g = parent === null || parent === void 0 ? void 0 : parent.parentElement) === null || _g === void 0 ? void 0 : _g.appendChild(parent);
+                parent === null || parent === void 0 ? void 0 : parent.insertAdjacentElement("afterend", parent);
             });
+            (_a = document.getElementById("adsdNewTask")) === null || _a === void 0 ? void 0 : _a.classList.toggle('hide');
         }
     }
     Task.idCounter = 1000;
+    Task.tasksMap = new Map(); /* Map of Task lists*/
     return Task;
 })();
+/**
+ * Adding  event listener for new task
+ */
 const addNewTask = document.getElementById("addNewTask");
 addNewTask === null || addNewTask === void 0 ? void 0 : addNewTask.addEventListener("submit", (ev) => {
     ev.preventDefault();
     const title = document === null || document === void 0 ? void 0 : document.getElementById("title").value;
     const description = document.getElementById("description").value;
     const dateAndTime = document.getElementById("dateAndTime").value;
-    const t1 = new Task(Task.idCounter++, title, description, dateAndTime, new Date().toLocaleString(), privateList);
+    const selectTask = document.getElementById("chooseTaskList");
+    const selectedList = selectTask === null || selectTask === void 0 ? void 0 : selectTask.value;
+    const list = TaskList.listsNames.get(selectedList);
+    // const formatedDate = new Date(dateAndTime);
+    // let dateString = formatedDate.getDate() + "/" + (formatedDate.getMonth() + 1) + "/" + formatedDate.getFullYear();
+    // console.log(dateString);
+    // dateString.
+    const t1 = new Task(Task.idCounter++, title, description, dateAndTime.toLocaleString(), new Date().toLocaleString());
+    t1.setTask(selectedList);
+    list === null || list === void 0 ? void 0 : list.addTaskToList(t1);
     addNewTask.reset();
+    // addNewTask.classList.toggle('hide');
+    /*If it's the first List and first task=>  show titles */
+    if ((list === null || list === void 0 ? void 0 : list.tasks.length) == 1 && TaskList.listsNames.size == 1) {
+        /**/
+        const listContainer = document.querySelector(".listContainer");
+        listContainer === null || listContainer === void 0 ? void 0 : listContainer.classList.remove('hide');
+    }
 });
-const deleteTask = document.getElementById("delSelected");
-deleteTask === null || deleteTask === void 0 ? void 0 : deleteTask.addEventListener("click", (ev) => {
-    ev.preventDefault();
-    const tasksToDelete = document.querySelectorAll(".tasktslist__task__actions input");
-    let first = true;
-    tasksToDelete.forEach((task) => {
-        var _a, _b;
-        if (task.checked) {
-            if (first) {
-                first = false;
-                if (prompt("You are going to delete tasks please type 'DELETE TASKS' to confirm") != "DELETE")
-                    return;
-            }
-            const parent = (_a = task.parentElement) === null || _a === void 0 ? void 0 : _a.parentElement;
-            let getId = (_b = parent === null || parent === void 0 ? void 0 : parent.querySelector(".tasktslist__task__id")) === null || _b === void 0 ? void 0 : _b.textContent;
-            privateList.deleteTask(parseInt(getId));
-            parent === null || parent === void 0 ? void 0 : parent.remove();
-        }
-    });
-});
+/**
+ * Cancel edit
+ */
 const cancel = document.getElementById("cancelEdit");
 cancel.addEventListener("click", (ev) => {
     ev.preventDefault();
@@ -150,6 +269,11 @@ cancel.addEventListener("click", (ev) => {
     addNewTask.reset();
     editMode(false);
 });
+/**
+ *
+ *  edit mode , disable buttons and show update and cancel
+ *
+ */
 function editMode(status) {
     const submit = document.getElementById("submitTask");
     submit === null || submit === void 0 ? void 0 : submit.classList.toggle('hide');
@@ -161,7 +285,156 @@ function editMode(status) {
         btn.disabled = (status);
     });
 }
-const privateList = new TaksList("Private");
-const t1 = new Task(Task.idCounter++, "title1", "description1", "dateAndTime1", new Date().toLocaleString(), privateList);
-const t2 = new Task(Task.idCounter++, "title2", "description2", "dateAndTime2", new Date().toLocaleString(), privateList);
-const t3 = new Task(Task.idCounter++, "title3", "description3", "dateAndTime3", new Date().toLocaleString(), privateList);
+/**
+ * Add new task list, first use of system
+ */
+const newTaskList = document.getElementById("newTaskList");
+newTaskList === null || newTaskList === void 0 ? void 0 : newTaskList.addEventListener("submit", (ev) => {
+    ev.preventDefault();
+    const listName = document.getElementById("taskListName");
+    const newList = new TaskList(listName.value);
+    newTaskList.reset();
+    const addNewTask = document.getElementById("addNewTask");
+    addNewTask === null || addNewTask === void 0 ? void 0 : addNewTask.classList.toggle('hide');
+    newTaskList.classList.toggle('hide');
+    // console.log(TaskList.listsNames);
+    const selectTask = document.getElementById("chooseTaskList");
+    const option = document.createElement("option");
+    option.value = newList.name;
+    option.textContent = newList.name;
+    selectTask === null || selectTask === void 0 ? void 0 : selectTask.appendChild(option);
+});
+/*
+* Add new Task list when already in tasks
+*/
+const addAnotherList = document.getElementById("addNewTaskList");
+addAnotherList === null || addAnotherList === void 0 ? void 0 : addAnotherList.addEventListener("click", (ev) => {
+    ev.preventDefault();
+    const newTaskList = document.getElementById("newTaskList");
+    newTaskList === null || newTaskList === void 0 ? void 0 : newTaskList.classList.toggle('hide');
+    const addNewTask = document.getElementById("addNewTask");
+    addNewTask === null || addNewTask === void 0 ? void 0 : addNewTask.classList.toggle('hide');
+});
+const editbtns = document.querySelectorAll('.editBtn');
+const update = document.getElementById("updateTask");
+update === null || update === void 0 ? void 0 : update.addEventListener("click", (ev) => {
+    var _a;
+    ev.preventDefault();
+    if (Task.updateTask == null)
+        return;
+    /**
+     * Getting elements value from form
+     */
+    const title = document.getElementById("title");
+    const description = document.getElementById("description");
+    const dateAndTime = document.getElementById("dateAndTime");
+    const selectTask = document.getElementById("chooseTaskList");
+    const selectedList = selectTask === null || selectTask === void 0 ? void 0 : selectTask.value;
+    const taskId = document.getElementById(Task.updateTask.id.toString());
+    const task = taskId.closest(".tasktslist__task");
+    const titleDiv = task === null || task === void 0 ? void 0 : task.querySelector(".tasktslist__task__title");
+    const descriptionDiv = task === null || task === void 0 ? void 0 : task.querySelector(".tasktslist__task__description");
+    const dateAndTimeDiv = task === null || task === void 0 ? void 0 : task.querySelector(".tasktslist__task__date");
+    const list = TaskList.listsNames.get(selectedList);
+    if (selectedList != "") { /* Selected list is not an empty string, so need to change between lists (assuming) in the future take care of same list choosen*/
+        (_a = TaskList.listsNames.get(Task.updateTask.list)) === null || _a === void 0 ? void 0 : _a.deleteTaskFromList(Task.updateTask);
+        Task.updateTask.list = selectedList;
+        list === null || list === void 0 ? void 0 : list.addTaskToList(Task.updateTask);
+        const taskList = document === null || document === void 0 ? void 0 : document.querySelector(`.tasktslist-${Task.updateTask.list}`);
+        const lastTask = taskList === null || taskList === void 0 ? void 0 : taskList.querySelector('.tasktslist__task');
+        lastTask === null || lastTask === void 0 ? void 0 : lastTask.insertAdjacentElement("afterend", task);
+    }
+    // const formatedDate = new Date(dateAndTime);
+    // let dateString = formatedDate.getDate() + "/" + (formatedDate.getMonth() + 1) + "/" + formatedDate.getFullYear();
+    // console.log(dateString);
+    titleDiv.textContent = title.value;
+    descriptionDiv.textContent = description.value;
+    dateAndTimeDiv === null || dateAndTimeDiv === void 0 ? void 0 : dateAndTimeDiv.textContent = dateAndTime.value.toLocaleString();
+    // const taskId = taskIdDiv.textContent;
+    Task.updateTask.title = title.value;
+    Task.updateTask.description = description.value;
+    Task.updateTask.taskDayTime = dateAndTime.toLocaleString();
+    addNewTask.reset();
+    editMode(false);
+    // addNewTask.classList.toggle('hide');
+    /*If it's the first List and first task=>  show titles */
+    if ((list === null || list === void 0 ? void 0 : list.tasks.length) == 1 && TaskList.listsNames.size == 1) {
+        /**/
+        const listContainer = document.querySelector(".listContainer");
+        listContainer === null || listContainer === void 0 ? void 0 : listContainer.classList.remove('hide');
+    }
+});
+function initPage() {
+    let tasklist = new Array();
+    let tasks = new Array();
+    for (let i = 0; i < localStorage.length; i++) {
+        /**
+         * https://developer.mozilla.org/en-US/docs/Web/API/Storage/key
+         */
+        // console.log(localStorage.getItem(localStorage.key(i)));
+        const objects = Array();
+        objects.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
+        console.log(objects);
+        // console.log(obj);
+        objects.forEach((list) => {
+            // console.log(list.name);
+            // console.log("in new task from localStorage");
+            // console.log(list);
+            const newList = new TaskList(list.name);
+            tasklist.push(newList);
+            // console.log(list);
+            // const newTask = new Task(111, "newList", "newList", "newList", "newList", list.name, false);
+            list.tasks.forEach((task) => {
+                const newTask = new Task(task.id, task.title, task.description, task.taskDayTime, task.dateStemp, task.list, task.status);
+                newTask.setTask(list.name);
+                console.log(list.name);
+                // TaskList.listsNames.get(list.name).addTaskToList(newTask);
+                addNewTask.reset();
+                // newTask.setTask(list.name);
+                // console.log(task);
+                // list?.addTaskToList(t1);
+            });
+        });
+    }
+    // tasklist.push(object);
+    // else tasks.push(object);
+    // console.log("tasks: ");
+    // console.log({tasks});
+    // console.log("taskslist: ");
+    // console.log({tasklist});
+    /**
+     * Maybe keep the tasks not in local storage? since i have all the object information in task list?
+     *
+    */
+    if (localStorage.length > 0) {
+        addNewTask === null || addNewTask === void 0 ? void 0 : addNewTask.classList.toggle('hide');
+        newTaskList.classList.toggle('hide');
+    }
+}
+document.addEventListener('DOMContentLoaded', function () {
+    initPage();
+});
+/**
+ * TODO:
+ * First system use should show the lists...
+ *
+ * Fix Add new List after first use.
+ *
+ * remove list if all tasks are deleted
+ *
+ * change the task date format to be like the date format in a task
+ *
+ * add all information of a task in storage like thought in the class
+ *
+ * use find where evere i can with objects.
+ *  *
+ * Deleted items will be removed from list, but will stay in task object as archives
+ *
+ * Check if list name already exsist before creating it.
+ *
+ * Do MVC Model , so the view will be only the view and the model will be the model.
+ * Also seperate controler from view.
+ * The localStorage should be updated only from the Controler(specific on this app).
+ *
+ *
+ */

@@ -1,8 +1,8 @@
-interface Entry {
-    firstName: string;
-    lastName: string;
-    eMail: string;
-    markedForDeletion: boolean;
+class Entry {
+    constructor(public firstName: string,
+        public lastName: string,
+        public eMail: string,
+        public markedForDeletion: boolean) { }
 }
 
 interface FormElements extends HTMLFormControlsCollection {
@@ -14,7 +14,7 @@ interface FormElements extends HTMLFormControlsCollection {
     cancel: HTMLInputElement;
 }
 
-let editMode = false;
+let activeItemIndex: number | null = null;
 let entries = new Array<Entry>();
 
 function submitForm(event: SubmitEvent) {
@@ -34,85 +34,83 @@ function submitForm(event: SubmitEvent) {
         markedForDeletion: false,
     };
 
-    if (editMode) {
-        const elements = form.elements as FormElements;
-        let index = getId(elements.update);
-        entries[index] = newEntry;
-        toggleEditControls(elements);
-        editMode = false;
+    if (inEditMode()) {
+       // @ts-expect-error: inEditMode makes sure activeItemIndex is not null
+        entries[activeItemIndex] = newEntry;
+        exitEditMode();
     } else {
         entries.push(newEntry);
     }
 
     form.reset();
-    showEntries();
+    updateEntriesList();
 }
 
-function showEntries() {
-    const location = document.querySelector(".entries");
-    if (location) {
+function updateEntriesList() {
+    const entriesDiv = document.querySelector(".entries");
+    if (entriesDiv) {
+        entriesDiv.replaceChildren();
         if (entries.length !== 0) {
-            location.replaceChildren(...createHeader());
-            entries.forEach((entry, index) =>
-                createEntryDom(location, entry, index)
-            );
-            location.appendChild(createInputElement("button", "button", deleteSelected, "Delete selected"));
-        }
-        else {
-            location.replaceChildren();
+            createHeader(entriesDiv);
+            entries.forEach((entry, index) => createEntryRow(entriesDiv, entry, index));
+            entriesDiv.appendChild(createInputElement("button", "button", deleteSelected, "Delete selected"));
         }
     }
 }
 
-function createEntryDom(body: Element, entry: Entry, index: number) {
-    body.appendChild(createElement("div", "entry", entry.firstName));
-    body.appendChild(createElement("div", "entry", entry.lastName));
-    body.appendChild(createElement("div", "entry", entry.eMail));
-    const checkbox = createInputElement("checkbox", "checkbox", markSelected);
-    checkbox.dataset["id"] = index.toString();
-    body.appendChild(checkbox);
-
-    const editButton = createInputElement("button", "button", editItem, "Edit");
-    editButton.dataset["id"] = index.toString();
-    body.appendChild(editButton);
+function createEntryRow(container: Element, entry: Entry, index: number) {
+    const entryDiv = document.createElement("div");
+    entryDiv.className = "entry__header";
+    entryDiv.dataset['id'] = `${index}`;
+    entryDiv.appendChild(createElement("div", "entry", entry.firstName));
+    entryDiv.appendChild(createElement("div", "entry", entry.lastName));
+    entryDiv.appendChild(createElement("div", "entry", entry.eMail));
+    entryDiv.appendChild(createInputElement("checkbox", "checkbox", markSelected));
+    entryDiv.appendChild(createInputElement("button", "button", editItem, "Edit"));
+    container.appendChild(entryDiv);
 }
 
-function createHeader(): Node[] {
-    return [
-        createElement("div", "header", "First Name"),
-        createElement("div", "header", "Last Name"),
-        createElement("div", "header", "E-Mail address"),
-        createElement("div", "header", "Delete?"),
-        createElement("div", "header", ""),
-    ];
+function createHeader(container: Element) {
+    const entryDiv = document.createElement("div");
+    entryDiv.className = "entry__header";
+    entryDiv.appendChild(createElement("div", "header", "First Name"));
+    entryDiv.appendChild(createElement("div", "header", "Last Name"));
+    entryDiv.appendChild(createElement("div", "header", "E-Mail address"));
+    entryDiv.appendChild(createElement("div", "header", "Delete?"));
+    container.appendChild(entryDiv);
 }
 
-function createElement(tagName: string, className: string, content: string): HTMLElement {
+function createElement(tagName: string, className: string, content: string = ""): HTMLElement {
     const element = document.createElement(tagName);
     element.className = className;
-    element.textContent = content;
+    if (content) {
+        element.textContent = content;
+    }
+
     return element;
 }
 
 function createInputElement(inputType: string, className: string, handler: (event: Event) => void, content: string = ""): HTMLElement {
-    const element = document.createElement("input");
-    element.type = inputType;
-    element.className = className;
-    element.addEventListener("click", handler);
+    const element = createElement("div", className);
+    const input = document.createElement("input");
+    input.type = inputType;
+    input.addEventListener("click", handler);
     if (content) {
-        element.value = content;
+        input.value = content;
     }
+
+    element.appendChild(input);
     return element;
 }
 
 function deleteSelected(event: Event): void {
     if (entries.some((entry) => entry.markedForDeletion)) {
-        if (editMode) {
+        if (inEditMode()) {
             exitEditMode();
         }
 
         entries = entries.filter((entry) => !entry.markedForDeletion);
-        showEntries();
+        updateEntriesList();
     }
     else {
         alert("Nothing marked for deletion!");
@@ -122,7 +120,9 @@ function markSelected(event: Event): void {
     const checkbox = event.target as HTMLInputElement;
 
     let index = getId(checkbox);
-    entries[index].markedForDeletion = !entries[index].markedForDeletion;
+    if (index !== -1) {
+        entries[index].markedForDeletion = checkbox.checked;
+    }
 }
 
 function editItem(event: Event): void {
@@ -130,17 +130,19 @@ function editItem(event: Event): void {
     let index = getId(button);
 
     const form = document.querySelector<HTMLFormElement>("#inputForm");
-    if (form) {
+    if (form && index !== -1) {
         const elements = form.elements as FormElements;
-        elements.firstName.value = entries[index].firstName;
-        elements.lastName.value = entries[index].lastName;
-        elements.eMail.value = entries[index].eMail;
-        elements.update.dataset.id = index.toString();
-        if (!editMode) {
+        const entry = entries[index];
+
+        elements.firstName.value = entry.firstName;
+        elements.lastName.value = entry.lastName;
+        elements.eMail.value = entry.eMail;
+
+        if (!inEditMode()) {
             toggleEditControls(elements);
         }
 
-        editMode = true;
+        activeItemIndex = index;
     }
 }
 
@@ -151,7 +153,7 @@ function exitEditMode() {
         const elements = form.elements as FormElements;
         toggleEditControls(elements);
         form.reset();
-        editMode = false;
+        activeItemIndex = null;
     }
 }
 
@@ -162,5 +164,11 @@ function toggleEditControls(elements: FormElements) {
 }
 
 function getId(element: HTMLInputElement): number {
-    return parseInt(element.dataset['id'] ?? "0", 10);
+    const target = element.closest<HTMLElement>("[data-id]");
+    return parseInt(target?.dataset['id'] ?? "-1");
+}
+
+
+function inEditMode() {
+    return activeItemIndex !== null;
 }

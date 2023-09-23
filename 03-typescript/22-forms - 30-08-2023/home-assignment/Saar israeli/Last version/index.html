@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="dist/index.js" defer></script>
+    <link rel="stylesheet" href="dist/style.css">
+    <title>To Do List</title>
+</head>
+
+<body>
+    <header>
+        <h1>To Do List</h1>
+        <form id="new-task-form" onsubmit="return submitTask(event)">
+            <input id="task" type="text" placeholder="Task" required>
+            <input id="details" type="text" placeholder="Details" required>
+            <input id="deadline" type="datetime-local" required>
+
+            <input id="submit" type="submit" value="Submit" class="button">
+            <input id="add" type="button" value="Add" class="hidden button">
+            <input id="update" type="button" value="Update" class="button hidden" onclick="updateSubmit(event)">
+            <input id="delete" type="button" value="Delete Selected" class="button" onclick="deleteTasks()">
+            <input id="cancel" type="reset" value="Cancel" class="hidden button" onclick="cancelEdit(event)">
+
+        </form>
+    </header>
+
+    <main>
+
+        <section>
+
+            <h2>Tasks</h2>
+            <div id="tasks-wrapper">
+                <div class="task-name hidden">
+                    <!-- <div class="task-name-new">
+                        <p class="task-name-text">asdasdasdsaasdsasasadsaddasdasdasdsaasdsasasadsadd</p>
+                        <input type="button" value="Select" class="button">
+                        <input type="button" value="Edit" class="button">
+                        <input type="checkbox" class="checkbox">
+                    </div> -->
+                </div>
+                <div class="task-details hidden">
+                    <!-- <div class="task-details-new">
+                        <p class="task-details-text">asdasdasdsaasdsasasadsaddasdasdasdsaasdsasasadsadd</p>
+                        <input type="datetime-local" readonly class="data-time">
+                        <input type="button" value="Edit" class="button">
+                        <input type="checkbox" class="checkbox">
+                    </div> -->
+                </div>
+
+        </section>
+
+    </main>
+</body>
+
+</html>

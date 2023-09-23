@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(0, 88, 123);
+}
+
+#new-task-form {
+    input:not(.button){
+        background-color: rgb(1, 65, 90);
+        padding: 1rem;
+        border-radius: 1rem;
+        font-size: 1.25rem;
+        color: white;
+    }
+}
+
+input::placeholder {
+    color: white;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+
+input:not(.checkbox) {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+input {
+    &.button {
+        padding: 10px;
+        margin: 5px;
+        font-size: 1rem;
+        font-weight: 700;
+        color: rgb(0, 0, 0);
+        max-height: 50px;
+        border-radius: 15px;
+        background-color: rgb(0, 39, 61);
+        cursor: pointer;
+    }
+}
+
+#tasks-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+
+
+
+    .task-details {
+        height: 70vh;
+        width: 22vw;
+        background-color: rgb(0, 142, 198);
+        position: relative;
+
+        .data-time {
+            position: absolute;
+            left: 8vw;
+            bottom: 2vh;
+        }
+
+        .checkbox {
+            margin-top: .4vh;
+        }
+    }
+}
+
+.task-name-new {
+    height: fit-content;
+    padding: 1rem;
+    font-size: 1.25rem;
+
+    .task-name-text {
+        background-color: rgb(1, 65, 90);
+        padding: 1rem;
+        border-radius: 1rem;
+        font-size: 1.25rem;
+        color: white;
+    }
+
+}
+
+.task-details-new {
+    display: flex;
+    padding: 1rem;
+    font-size: 1.25rem;
+
+
+    .task-details-text {
+        background-color: rgb(1, 65, 90);
+        padding: 1rem;
+        border-radius: 1rem;
+        font-size: 1.25rem;
+        max-width: 15vw;
+        color: white;
+        word-wrap: break-word;
+        white-space: initial;
+    }
+
+    .button {
+        margin-top: 2rem;
+        padding-inline: .7vw;
+    }
+    .checkbox {
+        margin-left: .6vw;
+    }
+}
+
+
+.task-name {
+    height: 70vh;
+    max-height: 70vh;
+    overflow: auto;
+    background-color: rgb(2, 93, 129);
+    padding: 1rem;
+    font-size: 1.25rem;
+}
+
+.task-name::-webkit-scrollbar {
+    width: 5px;
+}
+
+.task-name::-webkit-scrollbar-thumb {
+    background: black;
+}

@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #00587b;
+}
+
+#new-task-form input:not(.button) {
+  background-color: #01415a;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-size: 1.25rem;
+  color: white;
+}
+
+input::placeholder {
+  color: white;
+}
+
+.hidden {
+  display: none !important;
+}
+
+input:not(.checkbox) {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+input.button {
+  padding: 10px;
+  margin: 5px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: black;
+  max-height: 50px;
+  border-radius: 15px;
+  background-color: #00273d;
+  cursor: pointer;
+}
+
+#tasks-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+#tasks-wrapper .task-details {
+  height: 70vh;
+  width: 22vw;
+  background-color: #008ec6;
+  position: relative;
+}
+#tasks-wrapper .task-details .data-time {
+  position: absolute;
+  left: 8vw;
+  bottom: 2vh;
+}
+#tasks-wrapper .task-details .checkbox {
+  margin-top: 0.4vh;
+}
+
+.task-name-new {
+  height: fit-content;
+  padding: 1rem;
+  font-size: 1.25rem;
+}
+.task-name-new .task-name-text {
+  background-color: #01415a;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-size: 1.25rem;
+  color: white;
+}
+
+.task-details-new {
+  display: flex;
+  padding: 1rem;
+  font-size: 1.25rem;
+}
+.task-details-new .task-details-text {
+  background-color: #01415a;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-size: 1.25rem;
+  max-width: 15vw;
+  color: white;
+  word-wrap: break-word;
+  white-space: initial;
+}
+.task-details-new .button {
+  margin-top: 2rem;
+  padding-inline: 0.7vw;
+}
+.task-details-new .checkbox {
+  margin-left: 0.6vw;
+}
+
+.task-name {
+  height: 70vh;
+  max-height: 70vh;
+  overflow: auto;
+  background-color: #025d81;
+  padding: 1rem;
+  font-size: 1.25rem;
+}
+
+.task-name::-webkit-scrollbar {
+  width: 5px;
+}
+
+.task-name::-webkit-scrollbar-thumb {
+  background: black;
+}

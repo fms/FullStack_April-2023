@@ -29,10 +29,12 @@
 // }
 
 
-interface Data {
-    task: string,
-    details: string,
-    deadLine: string,
+class Data {
+    constructor(
+        public task: string,
+        public details: string,
+        public deadLine: string,
+    ) {}
 }
 
 interface FormElements extends HTMLFormControlsCollection {
@@ -54,13 +56,6 @@ function submitInfo(event: SubmitEvent) {
     let deadLine = (elements.namedItem("f3") as HTMLInputElement).value;
     let tabulated: any[] = [task, details, deadLine];
 
-    let newData: Data = {
-        task: task,
-        details: details,
-        deadLine: deadLine,
-    }
-
-
     const tRow = document.createElement("tr");
     tRow.classList.add("tRow");
 
@@ -74,45 +69,46 @@ function submitInfo(event: SubmitEvent) {
             let td = document.createElement("td") as HTMLTableCellElement;
             td.classList.add("td-body");
             td.style.width = "19vw";
-            let p = document.createElement("p") as HTMLParagraphElement;
-            p.classList.add("p-content");
-            p.style.marginLeft = "7.5vw"
-            p.textContent = element;
+            td.textContent = element;
+            // let p = document.createElement("p") as HTMLParagraphElement;
+            // p.classList.add(`p-content`);
+            // p.style.marginLeft = "7.5vw"
+            // p.textContent = element;
             tRow.appendChild(td);
-            td.appendChild(p);
+            // td.appendChild(p);
         } else {
             let td = document.createElement("td") as HTMLTableCellElement;
             td.classList.add("td-body");
             td.style.width = "48vw"
-            let p = document.createElement("p") as HTMLParagraphElement;
-            p.classList.add("p-content");
-            p.style.maxWidth = "900px";
-            p.style.overflowWrap = "break-word";
-            p.textContent = element;
+            td.textContent = element;
+            // let p = document.createElement("p") as HTMLParagraphElement;
+            // p.classList.add(`p-content`);
+            // p.style.maxWidth = "900px";
+            // p.style.overflowWrap = "break-word";
+            // p.textContent = element;
             tRow.appendChild(td);
-            td.appendChild(p);
+            // td.appendChild(p);
         }
     })
 
-    let checkTd = document.createElement("td") as HTMLTableCellElement;
+    // let checkTd = document.createElement("td") as HTMLTableCellElement;
     let checkbox = document.createElement("input") as HTMLInputElement;
     checkbox.type = "checkbox";
     checkbox.classList.add("checkbox-delete");
     checkbox.style.marginLeft = "30px"
-    checkTd.style.width = "4vw";
-    tRow.appendChild(checkTd);
-    checkTd.appendChild(checkbox);
+    // checkTd.style.width = "4vw";
+    tRow.appendChild(checkbox);
+    // checkTd.appendChild(checkbox);
 
 
-    let editTd = document.createElement("td") as HTMLTableCellElement;
+    // let editTd = document.createElement("td") as HTMLTableCellElement;
     let editButton = document.createElement("input");
     editButton.type = "button";
     editButton.classList.add("edit-button");
-    // editButton.addEventListener("click", editButtonn)
-    editTd.style.width = "10vw";
+    // editTd.style.width = "10vw";
     editButton.value = "Edit";
-    tRow.appendChild(editTd);
-    editTd.appendChild(editButton)
+    tRow.appendChild(editButton);
+    // editTd.appendChild(editButton)
 
     tableBody.appendChild(tRow);
 
@@ -135,5 +131,3 @@ function deleteSelected() {
         alert("there is no lines selected.");
     }
 }
-
-

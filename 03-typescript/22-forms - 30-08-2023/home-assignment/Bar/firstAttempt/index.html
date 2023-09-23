@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap" rel="stylesheet">
-    <script src="dist/index.js" defer></script>
+    <script src="dist/v2.js" defer></script>
     <link rel="stylesheet" href="dist/styles.css">
     <title>Document</title>
 </head>
@@ -20,8 +20,14 @@
             <input class="password" type="password" placeholder="Password">
             <input type="submit" id="submit-btn" value="Submit">
             <input id="update" class="hidden" type="button" value="Update">
-            <input id="cancel" class="hidden" type="reset" value="Cancel" onclick="toggleButtons(event)">
-            <div class="details"></div>
+            <input id="cancel" class="hidden" type="reset" value="Cancel">
+            <div class="container-details">
+                <table border="4">
+                    <th class="email">E-mail</th>
+                    <th class="userName">Username</th>
+                    <th class="password">Password</th>
+                </table>
+            </div>
             <input type="button" value="Delete selected" onclick="deleteCheckboxes(event)">
     </div>
     </form>

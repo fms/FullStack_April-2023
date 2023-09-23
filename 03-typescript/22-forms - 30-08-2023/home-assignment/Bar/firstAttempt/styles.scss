@@ -16,7 +16,7 @@ body {
   }
 }
 
-.details {
+.container-details {
   margin-top: 10vh;
   display: flex;
   justify-content: center;
@@ -34,6 +34,10 @@ body {
   .checkbox::before {
     content: "Delete =>";
     margin-top: 10px;
+  }
+
+  table{
+    margin-bottom: 8vh;
   }
 }
 

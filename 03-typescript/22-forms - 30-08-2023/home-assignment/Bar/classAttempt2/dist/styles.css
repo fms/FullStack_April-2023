@@ -1,0 +1,107 @@
+body {
+  margin: 0 auto;
+  background-color: aliceblue;
+  font-family: "Montserrat", sans-serif;
+}
+
+input[type=submit] {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #ffffff;
+  transition: background-color 0.3s;
+  border-radius: 10px;
+}
+
+input[type=submit]:hover {
+  background-color: #0056b3;
+}
+
+input[type=button] {
+  margin-left: 0.5vw;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #ffffff;
+  transition: background-color 0.3s;
+  border-radius: 10px;
+}
+
+input[type=button]:hover {
+  background-color: #0056b3;
+}
+
+input[type=checkbox] {
+  margin-left: 2vw;
+  cursor: pointer;
+}
+
+form {
+  margin-top: 5vh;
+  display: flex;
+  justify-content: center;
+}
+form input {
+  padding: 1vw;
+  margin-left: 1vw;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.userDetailsTable {
+  display: flex;
+  justify-content: center;
+}
+
+.userDetailsTable table {
+  width: 80%;
+  border-collapse: collapse;
+  margin-top: 5vh;
+}
+
+.userDetailsTable th,
+.userDetailsTable td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 12px;
+}
+
+.userDetailsTable th {
+  background-color: #f2f2f2;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.userDetailsTable tr {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.userDetailsTable tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.userDetailsTable tr:hover {
+  background-color: #ddd;
+}
+
+input::before {
+  content: "<= Delete";
+  margin-left: 20px;
+}
+
+.hidden {
+  display: none;
+}

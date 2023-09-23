@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <script src="dist/index.js" defer></script>
+    <link rel="stylesheet" href="dist/index.css">
+</head>
+
+<body>
+    <div class="title">
+        <h1>המתנס שלנו</h1>
+        <img src="/03-typescript/22-forms - 30-08-2023/home-assignment/yelena/images/helenfromsparta_summer_pixar_style_kids_coloring_nature_4434cecb-b80e-4960-a5ee-d8ff601fea37.png" alt="painted kid">
+    </div>
+    <form id="dairyCheck" onsubmit="return onsubmit (event);">
+        <label> שם הילד:
+            <input name="childName" type="text" required size="10" minlength="2" maxlength="10"">
+        </label>
+        <label>שם משפחה:
+            <input name="familyName" type="text" required size="10" minlength="2" maxlength="10"">
+        </label>
+        <label>
+            האם נרשמת בעבר?
+            <input type="checkbox" name="checked" />
+        </label>
+        <label>גיל:
+            <input name="age" type="number" required size="10" minlength="3" maxlength="10">
+        </label>
+        <label>שם החוג:
+            <input name="kidClass" type="text" required size="10" minlength="4" maxlength="10">
+        </label>
+        <label>תאריך התחלה:
+            <input name="dateStart" type="date"/>
+        </label>
+        <input id="add" type="submit" value="Add">
+        <input id="update" class="hidden" type="submit" value="Update">
+        <input id="cancel" class="hidden" type="reset" value="Cancel" onclick="exitEditMode()">
+        <p><button>submit</button></p>
+    </form>
+    <hr>
+    <div class="entries"></div>    
+</body>

@@ -8,13 +8,14 @@ let username = "";
 let password = "";
 let email = "";
 let isEditing = false;
+loadFromLocalStorage();
 function handleSubmit(event) {
     event.preventDefault();
     let userDetailsDiv = document.createElement("div");
     let userDetails = document.createElement("li");
     let checkBox = document.createElement("input");
     let editButton = document.createElement("input");
-    userDetails.textContent = `Email: ${email} Username: ${username} Password: ${password}`;
+    userDetails.textContent = `Email: {${email}} Username: {${username}} Password: {${password}}`;
     checkBox.type = "checkbox";
     checkBox.className = "checkbox";
     checkBox.addEventListener("change", () => {
@@ -29,6 +30,7 @@ function handleSubmit(event) {
     userDetailsDiv.appendChild(checkBox);
     userDetailsDiv.appendChild(editButton);
     detailsDiv.appendChild(userDetailsDiv);
+    saveToLocalStorage();
 }
 function handleKeyup(event) {
     let target = event.target;
@@ -66,13 +68,22 @@ function editDetails(event, userDetailsDiv, userDetails, editButton) {
     editButton.disabled = true;
     toggleButtons(event);
     function updateClickHandler() {
-        userDetails.textContent = `Email: ${email} Username: ${username} Password: ${password}`;
+        userDetails.textContent = `Email: {${email}} Username: {${username}} Password: {${password}}`;
         toggleButtons(event);
         isEditing = false;
         editButton.disabled = false;
         update.removeEventListener("click", updateClickHandler);
+        cancel.removeEventListener("click", cancelClickHandler);
+    }
+    function cancelClickHandler() {
+        isEditing = false;
+        editButton.disabled = false;
+        toggleButtons(event);
+        update.removeEventListener("click", updateClickHandler);
+        cancel.removeEventListener("click", cancelClickHandler);
     }
     update.addEventListener("click", updateClickHandler);
+    cancel.addEventListener("click", cancelClickHandler);
 }
 function toggleButtons(event) {
     let target = event.target;
@@ -80,5 +91,17 @@ function toggleButtons(event) {
         update === null || update === void 0 ? void 0 : update.classList.toggle("hidden");
         cancel === null || cancel === void 0 ? void 0 : cancel.classList.toggle("hidden");
         submit === null || submit === void 0 ? void 0 : submit.classList.toggle("hidden");
+    }
+}
+function saveToLocalStorage() {
+    let detailsDivHtml = detailsDiv.innerHTML;
+    if (detailsDivHtml) {
+        localStorage.setItem("detailsDivHtml", detailsDivHtml);
+    }
+}
+function loadFromLocalStorage() {
+    let savedDetailsDiv = localStorage.getItem("detailsDivHtml");
+    if (savedDetailsDiv) {
+        detailsDiv.innerHTML = savedDetailsDiv;
     }
 }

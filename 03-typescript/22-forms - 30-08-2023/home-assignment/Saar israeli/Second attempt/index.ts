@@ -17,6 +17,7 @@ form.addEventListener("submit", (event) => {
 
 })
 
+
 function createDom(task: string) {
 
     const divTask = document.createElement("div") as HTMLDivElement;
@@ -100,4 +101,6 @@ function createDom(task: string) {
         editButton.textContent = "Edit";
         editMode = false;
     })
+
+
 }

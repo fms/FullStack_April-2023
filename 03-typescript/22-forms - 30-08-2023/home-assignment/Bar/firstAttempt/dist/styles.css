@@ -15,7 +15,7 @@ body {
   height: 30px;
 }
 
-.details {
+.container-details {
   margin-top: 10vh;
   display: flex;
   justify-content: center;
@@ -23,15 +23,18 @@ body {
   font-size: 20px;
   font-weight: 900;
 }
-.details .checkbox {
+.container-details .checkbox {
   height: 30px;
   display: flex;
   margin-left: -8vw;
   margin-top: -3vh;
 }
-.details .checkbox::before {
+.container-details .checkbox::before {
   content: "Delete =>";
   margin-top: 10px;
+}
+.container-details table {
+  margin-bottom: 8vh;
 }
 
 .hidden {

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="dist/index.js" defer></script>
+    <title>Data Entry System</title>
+    <style>
+        body {
+            background-image: url('https://thumbs.dreamstime.com/b/landscape-nature-view-background-view-window-landscape-nature-view-background-view-window-wonderful-landscape-121459679.jpg');
+            background-position: center;
+            background-size: cover;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .wrapper {
+            background-color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            padding: 20px;
+            border: 1px solid black;
+            max-width: 80%;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+        }
+
+        input, select {
+            padding: 6px;
+            border-radius: 10px;
+            border: 1px gray solid;
+            text-align: center;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        input:hover, button:hover {
+            opacity: 0.6;
+        }
+
+        button {
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid gray;
+            background-color: black;
+            color: white;
+            width: 90%;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px auto;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 20px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .delete-button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .edit-button, .update-button, .cancel-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Welcome, please fill the details</h1>
+        <form id="data-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <br><br>
+            <label for="lastname">Last Name:</label>
+            <input type="text" id="lastname" required>
+            <br><br>
+            <label for="age">Age:</label>
+            <input type="number" id="age" required>
+            <br><br>
+            <label for="birthday">Birthday:</label>
+            <input type="date" id="birthday" required>
+            <br><br>
+            <label for="gender">Gender:</label>
+            <select id="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <br><br>
+            <button type="submit">Submit</button>
+        </form>
+
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Last name</th>
+                    <th>Age</th>
+                    <th>Birthday</th>
+                    <th>Gender</th>
+                    <th>Delete?</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
