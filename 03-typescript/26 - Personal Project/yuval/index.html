@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="dist/style.css">
     <script src="dist/index.js" defer></script>
+    <script src="dist/classes.js" defer></script>
 </head>
 <body>
     <div class="header">
@@ -25,7 +26,7 @@
         </div>
         
         <div class="forms__watchList hide" id="watchListDiv">
-            <form id="add-movies" onsubmit="formSubmit(ev)">
+            <form id="add-movies">
                 <h3>Add movies!</h3>
                 <label>Watch List:
                     <select id="selectList" name="listName" required>
@@ -45,9 +46,7 @@
                 </label>
                 <br><br>
     
-                <input id="submitMovie" type="submit" class="" value="Add movie">
-                <input id="updateTask" type="submit" class="hide" value="Update">
-                <input id="cancelEdit" type="submit" class="hide" value="Cancel">
+                <input id="submitMovie" type="submit" value="Add movie">
             </form>
         </div>
     </div>

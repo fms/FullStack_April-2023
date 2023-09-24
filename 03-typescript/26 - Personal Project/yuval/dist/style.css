@@ -33,3 +33,15 @@ body {
 .hide {
   display: none;
 }
+
+.secPage-watchLists {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+}
+.secPage-watchLists td {
+  border: 1px solid #333;
+  width: 150px;
+  height: 18px;
+}

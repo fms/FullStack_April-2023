@@ -1,16 +1,4 @@
-interface HTMLSelectElementWithId extends HTMLSelectElement {
-    add(option: HTMLOptionElement, before?: HTMLElement | null): void;
-}
-
-interface FormElements extends HTMLFormControlsCollection {
-    listName: HTMLInputElement;
-    movieName: HTMLInputElement;
-    year: HTMLInputElement;
-    add: HTMLInputElement;
-    update: HTMLInputElement;
-    cancel: HTMLInputElement;
-}
-
+// 'index.html' elements
 const form1div = document.getElementById('newWatchListDiv') as HTMLElement;
 const form2div = document.getElementById('watchListDiv') as HTMLElement;
 const select = document.getElementById('selectList') as HTMLSelectElementWithId;
@@ -18,13 +6,20 @@ const form1 = document.getElementById('start-form') as HTMLFormElement;
 const form2 = document.getElementById('add-movies') as HTMLFormElement;
 const newListButton = document.getElementById('addNewList') as HTMLButtonElement;
 const submitMovieButton = document.getElementById('submitMovie') as HTMLButtonElement;
+const myListsButton = document.getElementById('lists') as HTMLButtonElement;
 
 let fieldName = "movies";
 let movies = loadMovies();
 
-form1.addEventListener('submit', createList);
+// functions for 'index.html'
+form1?.addEventListener('submit', createList);
 
-function createList(ev: Event){
+// interface to help adding options to select element
+interface HTMLSelectElementWithId extends HTMLSelectElement {
+    add(option: HTMLOptionElement): void;
+}
+
+function createList(ev: Event) {
     ev.preventDefault();
     const name = (document.getElementById('listNames') as HTMLInputElement).value;
     const op = document.createElement('option');
@@ -35,23 +30,13 @@ function createList(ev: Event){
     form2div.classList.toggle('hide');
 }
 
-newListButton.addEventListener('click', () => {
+newListButton?.addEventListener('click', () => {
     form1div.classList.toggle('hide');
     form2div.classList.toggle('hide');
     form1.reset();
 });
 
-// submitMovieButton.addEventListener('click', () => {
-//     const elements = form2?.elements as FormElements;
-//     const watchList = new WatchList(elements.listName.value);
-//     const newMovie = new Movie(elements.movieName.value, elements.year.valueAsNumber);
-//     let newWatchListMovie = new WatchListMovie(watchList, newMovie);
-//     movies.push(newWatchListMovie);
-//     localStorage.setItem('movies', JSON.stringify(movies));
-//     form2.reset();
-// });
-
-form2.addEventListener('submit', (event) => {
+form2?.addEventListener('submit', (event) => {
     event.preventDefault();
     const watchList = new WatchList(
         (form2.querySelector('[name="listName"]') as HTMLInputElement).value
@@ -68,15 +53,16 @@ form2.addEventListener('submit', (event) => {
     form2.reset();
 });
 
+// myListsButton.addEventListener('click', showLists);
 
 
-function saveMovies() {
-    const moviesStringified = JSON.stringify(movies);
-    localStorage.setItem(fieldName, moviesStringified);
-}
+// function saveMovies() {
+//     const moviesStringified = JSON.stringify(movies);
+//     localStorage.setItem(fieldName, moviesStringified);
+// }
 
 function loadMovies(): WatchListMovie[] {
-    const savedMovies = localStorage.getItem('movies');
+    const savedMovies = localStorage.getItem(fieldName);
     if (savedMovies) {
         return JSON.parse(savedMovies);
     }
@@ -84,21 +70,64 @@ function loadMovies(): WatchListMovie[] {
     return new Array<WatchListMovie>();
 }
 
-class WatchList {
-    constructor(public listName: string){}
+// functions for 'lists.html'
+const movieEntries = document.querySelector('.secPage-watchLists');
 
+function getMoviesWithSameListName(watchListMovies: WatchListMovie[], listName: string): WatchListMovie[] {
+    return watchListMovies.filter((watchListMovie) => watchListMovie.watchList.listName === listName);
 }
-class Movie {
-    constructor(public movieName: string, public year: number, public seen: boolean = false){}
+const uniqueListNames = Array.from(new Set(movies.map(wlm => wlm.watchList.listName)));
+
+
+// need to change that to form onsubmit
+window.addEventListener('load', () => {
+    if (document.location.pathname === '/03-typescript/26%20-%20Personal%20Project/yuval/lists.html') {
+        const uniqueListNames = Array.from(new Set(movies.map(wlm => wlm.watchList.listName)));
+        
+        // Prompt the user to choose a list
+        const chosenList = prompt(`Choose a list from: ${uniqueListNames.join(', ')}`);
+        
+        if (chosenList && uniqueListNames.indexOf(chosenList) !== -1) {
+            const moviesWithSameListName = getMoviesWithSameListName(movies, chosenList);
+            showList(chosenList, moviesWithSameListName);
+        }
+    }
+});
+
+function showList(listName: string, moviesWithSameListName: WatchListMovie[]) {
+        const table = document.createElement('table');
+        const headerRowList = table.insertRow();
+        const listCell = headerRowList.insertCell();
+        listCell.colSpan = 3;
+        listCell.style.backgroundColor = "#333";
+        listCell.style.color = "#fff";
+        listCell.textContent = listName;
+        const headerRowMovie = table.insertRow();
+        const headerCell1 = headerRowMovie.insertCell();
+        const headerCell2 = headerRowMovie.insertCell();
+        const headerCell3 = headerRowMovie.insertCell();
+        headerCell1.textContent = 'Movie';
+        headerCell2.textContent = 'Year';
+        headerCell3.textContent = 'Seen?';
+    
+    
+        for (const movie of moviesWithSameListName) {
+            const row = table.insertRow();
+            const cell1 = row.insertCell();
+            const cell2 = row.insertCell();
+            const cell3 = row.insertCell();
+            cell1.textContent = movie.movie.movieName;
+            cell2.textContent = movie.movie.year.toString();
+            cell3.innerHTML = `<input id="seen" name="seen" type="checkbox">`
+        }
+    
+        movieEntries?.appendChild(table);
+    
 }
 
-class WatchListMovie {
-    constructor(public watchList: WatchList, public movie: Movie){}
-}
 
-class WatchListMovieRelationship {
-    private relation = new Array<WatchListMovie>();
-}
+
+
 
 
 
