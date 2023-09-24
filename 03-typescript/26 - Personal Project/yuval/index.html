@@ -17,11 +17,11 @@
     
     <div class="forms">
         <div class="forms__newWatchList" id="newWatchListDiv">
-            <a href="lists.html"><button id="lists">My watch lists</button></a>
+            <a href="lists.html"><button class="buttons" id="lists">My watch lists</button></a>
             <form id="start-form">
                 <h3>Make a new list!</h3>
                 <input type="text" id="listNames" required>
-                <input id="newListSub"  type="submit" value="Create list">
+                <input class="buttons" id="newListSub"  type="submit" value="Create list">
             </form>
         </div>
         
@@ -29,11 +29,11 @@
             <form id="add-movies">
                 <h3>Add movies!</h3>
                 <label>Watch List:
-                    <select id="selectList" name="listName" required>
-                        <option value="" disabled selected>-------</option>
+                    <select class="buttons" id="selectList" name="listName" required>
+                        <option class="buttons" value="" disabled selected>-------</option>
                     </select>
                 </label>
-                <input id="addNewList" type="button" value="New list">
+                <input class="buttons" id="addNewList" type="button" value="New list">
                 <br><br>
     
                 <label>Movie:
@@ -46,7 +46,7 @@
                 </label>
                 <br><br>
     
-                <input id="submitMovie" type="submit" value="Add movie">
+                <input class="buttons" id="submitMovie" type="submit" value="Add movie">
             </form>
         </div>
     </div>

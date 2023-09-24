@@ -23,6 +23,7 @@ function createList(ev: Event) {
     ev.preventDefault();
     const name = (document.getElementById('listNames') as HTMLInputElement).value;
     const op = document.createElement('option');
+    op.classList.add('buttons');
     op.value = name;
     op.textContent = name;
     select.add(op);
@@ -72,6 +73,8 @@ function loadMovies(): WatchListMovie[] {
 
 // functions for 'lists.html'
 const movieEntries = document.querySelector('.secPage-watchLists');
+const headerDiv = document.querySelector('.header');
+const secPageH1 = document.getElementById('lists-header');
 
 function getMoviesWithSameListName(watchListMovies: WatchListMovie[], listName: string): WatchListMovie[] {
     return watchListMovies.filter((watchListMovie) => watchListMovie.watchList.listName === listName);
@@ -80,16 +83,43 @@ const uniqueListNames = Array.from(new Set(movies.map(wlm => wlm.watchList.listN
 
 
 // need to change that to form onsubmit
+// window.addEventListener('load', () => {
+//     if (document.location.pathname === '/03-typescript/26%20-%20Personal%20Project/yuval/lists.html') {
+//         const uniqueListNames = Array.from(new Set(movies.map(wlm => wlm.watchList.listName)));
+        
+//         // Prompt the user to choose a list
+//         const chosenList = prompt(`Choose a list from: ${uniqueListNames.join(', ')}`);
+        
+//         if (chosenList && uniqueListNames.indexOf(chosenList) !== -1) {
+//             const moviesWithSameListName = getMoviesWithSameListName(movies, chosenList);
+//             showList(chosenList, moviesWithSameListName);
+//         }
+//     }
+// });
+
 window.addEventListener('load', () => {
     if (document.location.pathname === '/03-typescript/26%20-%20Personal%20Project/yuval/lists.html') {
-        const uniqueListNames = Array.from(new Set(movies.map(wlm => wlm.watchList.listName)));
-        
-        // Prompt the user to choose a list
-        const chosenList = prompt(`Choose a list from: ${uniqueListNames.join(', ')}`);
-        
-        if (chosenList && uniqueListNames.indexOf(chosenList) !== -1) {
-            const moviesWithSameListName = getMoviesWithSameListName(movies, chosenList);
-            showList(chosenList, moviesWithSameListName);
+        if(movies.length !== 0) {
+            const uniqueListNames = Array.from(new Set(movies.map(wlm => wlm.watchList.listName)));
+            const listElementDiv = document.createElement('div');
+            listElementDiv.classList.add('listNames-list');
+            movieEntries?.appendChild(listElementDiv);
+            for (const listName of uniqueListNames) {
+                const listElement = document.createElement('div');
+                listElement.textContent = listName;
+                listElement.style.cursor = 'pointer';
+    
+                listElement.addEventListener('click', () => {
+                    const moviesWithSameListName = getMoviesWithSameListName(movies, listName);
+                    showList(listName, moviesWithSameListName);
+                });
+                
+                listElementDiv?.appendChild(listElement);
+            }
+        }
+        else {
+            headerDiv?.classList.toggle('hide');
+            document.body.innerHTML = `<div class="header"><h1>Your Watch Lists Are Empty!</h1></div>`;
         }
     }
 });
@@ -125,6 +155,14 @@ function showList(listName: string, moviesWithSameListName: WatchListMovie[]) {
     
 }
 
+
+//Left to do:
+// - make something happen when checkbox is checked
+// - make it so you can only see one list at a time
+// - add the "My watch lists" button when the second form is showing
+// - add delete (and edit?) button
+// - check if there's a way to search youtube for trailers of the movies
+// - finish style
 
 
 

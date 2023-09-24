@@ -1,12 +1,12 @@
 body {
-  background-image: url("../images/background.png");
+  background-image: url("../images/cinema.png");
   background-size: 100%;
   width: 940px;
 }
 
 .header {
   position: relative;
-  left: 35%;
+  margin-left: 35vw;
 }
 .header h1 {
   font-family: Georgia, serif;
@@ -16,14 +16,19 @@ body {
 
 .forms {
   margin-top: 20px;
+  position: relative;
 }
 .forms * {
   font-family: Georgia, serif;
+  color: goldenrod;
+}
+.forms .buttons {
+  color: black;
 }
 .forms #lists {
   position: relative;
   left: 110%;
-  top: 77px;
+  top: 80px;
 }
 .forms__watchList {
   display: flex;
@@ -44,4 +49,19 @@ body {
   border: 1px solid #333;
   width: 150px;
   height: 18px;
+  background-color: white;
+}
+
+.listNames-list {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 10px;
+  font-size: 25px;
+  color: whitesmoke;
+}
+.listNames-list * {
+  border: 1px solid grey;
+  background-color: black;
 }
