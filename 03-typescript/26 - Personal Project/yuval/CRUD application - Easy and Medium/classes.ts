@@ -3,7 +3,7 @@ class WatchList {
 
 }
 class Movie {
-    constructor(public movieName: string, public year: number, public seen: boolean = false){}
+    constructor(public movieName: string, public year: number, public seen: boolean){}
 }
 
 class WatchListMovie {

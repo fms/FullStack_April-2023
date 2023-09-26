@@ -16,12 +16,12 @@
 
     
     <div class="forms">
+        <a href="lists.html" id="lists"><button class="black">My watch lists</button></a>
         <div class="forms__newWatchList" id="newWatchListDiv">
-            <a href="lists.html"><button class="buttons" id="lists">My watch lists</button></a>
             <form id="start-form">
                 <h3>Make a new list!</h3>
-                <input type="text" id="listNames" required>
-                <input class="buttons" id="newListSub"  type="submit" value="Create list">
+                <input class="black" type="text" id="listNames" required>
+                <input class="black" id="newListSub"  type="submit" value="Create list">
             </form>
         </div>
         
@@ -29,24 +29,24 @@
             <form id="add-movies">
                 <h3>Add movies!</h3>
                 <label>Watch List:
-                    <select class="buttons" id="selectList" name="listName" required>
-                        <option class="buttons" value="" disabled selected>-------</option>
+                    <select class="black" id="selectList" name="listName" required>
+                        <option class="black" value="" disabled selected>-------</option>
                     </select>
                 </label>
-                <input class="buttons" id="addNewList" type="button" value="New list">
+                <input class="black" id="addNewList" type="button" value="New list">
                 <br><br>
     
                 <label>Movie:
-                    <input type="text" id="movie" name="movieName" required>
+                    <input class="black" type="text" id="movie" name="movieName" required>
                 </label>
                 <br><br>
     
                 <label>Year:
-                    <input type="number" id="year" name="year" min="1985" max="2023" required>
+                    <input class="black" type="number" id="year" name="year" min="1985" max="2023" required>
                 </label>
                 <br><br>
     
-                <input class="buttons" id="submitMovie" type="submit" value="Add movie">
+                <input class="black" id="submitMovie" type="submit" value="Add movie">
             </form>
         </div>
     </div>

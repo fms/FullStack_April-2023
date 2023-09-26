@@ -27,7 +27,7 @@ body {
         color: $fontColor;
     }
 
-    .buttons {
+    .black {
         color: black
     }
     
@@ -35,6 +35,7 @@ body {
         position: relative;
         left: 110%;
         top: 80px;
+        text-decoration: none;
     }
 
     &__watchList {
@@ -61,12 +62,22 @@ body {
     }
 }
 
+a:visited {
+    color: blue;
+}
+
+.go-back {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
 .listNames-list {
     position: relative;
+    left: 20%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    gap: 10px;
     font-size: 25px;
     color: whitesmoke;
 
@@ -74,4 +85,15 @@ body {
         border: 1px solid grey;
         background-color: black;
     }
+}
+
+.table-div {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.line-through {
+    text-decoration: line-through;
 }

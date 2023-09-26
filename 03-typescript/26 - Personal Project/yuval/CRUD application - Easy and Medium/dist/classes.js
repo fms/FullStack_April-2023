@@ -5,7 +5,7 @@ class WatchList {
     }
 }
 class Movie {
-    constructor(movieName, year, seen = false) {
+    constructor(movieName, year, seen) {
         this.movieName = movieName;
         this.year = year;
         this.seen = seen;
