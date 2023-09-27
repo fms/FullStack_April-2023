@@ -12,17 +12,18 @@ let moviesFieldName = "movies";
 let optionsFieldName = "savedOptions";
 let listsFieldName = "listNamesSet";
 let movies = loadMovies();
-let listNamesSet = new Set;
+let listNamesSet = loadListNames();
 // functions for 'index.html'
 form1 === null || form1 === void 0 ? void 0 : form1.addEventListener('submit', createList);
 window.addEventListener('load', () => {
-    if (document.location.pathname === "/03-typescript/26%20-%20Personal%20Project/yuval/index.html") {
+    if (document.location.pathname === "/03-typescript/26%20-%20Personal%20Project/yuval/CRUD%20application%20-%20Easy%20and%20Medium/index.html") {
         const checkButton = localStorage.getItem('clicked');
         checkButton && toggleHide();
         const savedOptions = localStorage.getItem(optionsFieldName);
         if (savedOptions) {
             select.innerHTML = savedOptions;
         }
+        loadListNames();
         // savedOptions && (select.innerHTML = savedOptions);
         localStorage.removeItem('clicked');
     }
@@ -84,7 +85,7 @@ function getMoviesWithSameListName(watchListMovies, listName) {
 }
 const uniqueListNames = Array.from(new Set(movies.map(wlm => wlm.watchList.listName)));
 window.addEventListener('load', () => {
-    if (document.location.pathname === '/03-typescript/26%20-%20Personal%20Project/yuval/lists.html') {
+    if (document.location.pathname === '/03-typescript/26%20-%20Personal%20Project/yuval/CRUD%20application%20-%20Easy%20and%20Medium/lists.html') {
         if (movies.length !== 0) {
             const uniqueListNames = Array.from(new Set(movies.map(wlm => wlm.watchList.listName)));
             const listElementDiv = document.createElement('div');
@@ -106,16 +107,13 @@ window.addEventListener('load', () => {
         }
         else {
             headerDiv.innerHTML = `<h1>No Watch Lists!</h1>`;
-            const savedListNames = localStorage.getItem(listsFieldName);
-            if (savedListNames) {
-                listNamesSet = new Set(JSON.parse(savedListNames));
-            }
+            loadListNames();
             if (listNamesSet.size == 0) {
-                addList.style.position = 'relative';
-                addList.style.left = '48%';
-                addList.firstChild.style.width = '150px';
+                document.body.style.backgroundImage = 'url("images/jim.gif")';
+                document.body.style.backgroundSize = '100%';
+                addList.firstChild.style.width = '120px';
                 addList.firstChild.style.height = '30px';
-                addList.firstChild.style.fontSize = 'larger';
+                addList.firstChild.style.fontSize = '15px';
                 addMovies.classList.toggle('hide');
             }
         }
@@ -183,6 +181,13 @@ function showList(listName, moviesWithSameListName, element) {
     }
     element === null || element === void 0 ? void 0 : element.appendChild(table);
 }
+function loadListNames() {
+    const savedListNames = localStorage.getItem(listsFieldName);
+    if (savedListNames) {
+        return new Set(JSON.parse(savedListNames));
+    }
+    return new Set;
+}
 function replaceSpacesAndSymbols(inputString) {
     return inputString.replace(/[^a-zA-Z0-9-]+/g, '-');
 }
@@ -196,6 +201,5 @@ function toggleHide() {
 }
 addMovies === null || addMovies === void 0 ? void 0 : addMovies.addEventListener('click', () => localStorage.setItem('clicked', 'add movies'));
 //Left to do:
-// fix bug - כשמכניסים רשימה ללא סרטים ואז עוברים לדף של הרשימות וחוזרים זה לא מראה שגיאה אם מכניסים שוב אותה רשימה
 // - add delete (and edit?) button
 // - finish style
