@@ -13,6 +13,7 @@ let optionsFieldName = "savedOptions";
 let listsFieldName = "listNamesSet";
 let movies = loadMovies();
 let listNamesSet = loadListNames();
+let movieNamesSet = new Set();
 // functions for 'index.html'
 form1 === null || form1 === void 0 ? void 0 : form1.addEventListener('submit', createList);
 window.addEventListener('load', () => {
@@ -59,12 +60,22 @@ form2 === null || form2 === void 0 ? void 0 : form2.addEventListener('submit', (
     event.preventDefault();
     const watchList = new WatchList(form2.querySelector('[name="listName"]').value);
     const newMovie = new Movie(form2.querySelector('[name="movieName"]').value, form2.querySelector('[name="year"]').valueAsNumber, false);
-    const newWatchListMovie = new WatchListMovie(watchList, newMovie);
-    movies.push(newWatchListMovie);
-    // Save data to localStorage
+    // const newWatchListMovie = new WatchListMovie(watchList, newMovie);
+    // movies.push(newWatchListMovie);
+    addMovieToList(watchList, newMovie);
     localStorage.setItem(moviesFieldName, JSON.stringify(movies));
     form2.reset();
 });
+function getUniqueIdentifier(watchList, movie) {
+    return `${watchList.listName}-${movie.movieName}-${movie.year}`;
+}
+function addMovieToList(watchList, movie) {
+    const identifier = getUniqueIdentifier(watchList, movie);
+    if (!movieNamesSet.has(identifier)) {
+        movieNamesSet.add(identifier);
+        movies.push(new WatchListMovie(watchList, movie));
+    }
+}
 function loadMovies() {
     const savedMovies = localStorage.getItem(moviesFieldName);
     if (savedMovies) {
@@ -124,7 +135,7 @@ function showList(listName, moviesWithSameListName, element) {
     const table = document.createElement('table');
     const headerRowList = table.insertRow();
     const listCell = headerRowList.insertCell();
-    listCell.colSpan = 5;
+    listCell.colSpan = 6;
     listCell.style.backgroundColor = "#333";
     listCell.style.color = "#fff";
     listCell.textContent = listName;
@@ -169,14 +180,16 @@ function showList(listName, moviesWithSameListName, element) {
         const letterboxdLink = document.createElement('a');
         let linkInfo = replaceSpacesAndSymbols(cell1.textContent.toLowerCase());
         letterboxdLink.href = `https://letterboxd.com/film/${linkInfo}/`;
-        letterboxdLink.textContent = 'Film info on Letterboxd';
+        letterboxdLink.innerHTML = '<img id=letterboxd src="images/letterboxd.png">';
         letterboxdLink.target = '_blank';
         cell4.appendChild(letterboxdLink);
+        cell4.classList.add('cell');
         const youtubeLink = document.createElement('a');
         youtubeLink.href = `https://www.youtube.com/results?search_query=${linkInfo}+${cell2.textContent}+trailer`;
-        youtubeLink.textContent = 'Watch trailer';
+        youtubeLink.innerHTML = '<img id=youtube src="images/youtube.png">';
         youtubeLink.target = "_blank";
         cell5.appendChild(youtubeLink);
+        cell5.classList.add('cell');
         counter++;
     }
     element === null || element === void 0 ? void 0 : element.appendChild(table);
@@ -201,5 +214,8 @@ function toggleHide() {
 }
 addMovies === null || addMovies === void 0 ? void 0 : addMovies.addEventListener('click', () => localStorage.setItem('clicked', 'add movies'));
 //Left to do:
-// - add delete (and edit?) button
+// - fix a href size
+// - fix bug: you can put the same movie twice for the same list
+// - responsive
+// - mvc
 // - finish style

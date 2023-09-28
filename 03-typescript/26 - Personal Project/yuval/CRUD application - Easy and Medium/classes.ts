@@ -1,3 +1,4 @@
+//Model
 class WatchList {
     constructor(public listName: string){}
 
@@ -8,8 +9,4 @@ class Movie {
 
 class WatchListMovie {
     constructor(public watchList: WatchList, public movie: Movie){}
-}
-
-class WatchListMovieRelationship {
-    private relation = new Array<WatchListMovie>();
 }

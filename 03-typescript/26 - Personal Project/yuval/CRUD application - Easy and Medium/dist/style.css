@@ -87,3 +87,24 @@ a:visited {
 .line-through {
   text-decoration: line-through;
 }
+
+tr {
+  cursor: move;
+  user-select: none;
+}
+tr :active {
+  opacity: 0.5;
+}
+
+#letterboxd, #youtube {
+  margin-left: 40%;
+  height: 20px;
+}
+
+#letterboxd {
+  width: 20px;
+}
+
+#youtube {
+  width: 30px;
+}

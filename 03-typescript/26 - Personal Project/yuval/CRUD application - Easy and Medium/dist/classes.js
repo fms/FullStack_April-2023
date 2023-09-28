@@ -1,4 +1,5 @@
 "use strict";
+//Model
 class WatchList {
     constructor(listName) {
         this.listName = listName;
@@ -15,10 +16,5 @@ class WatchListMovie {
     constructor(watchList, movie) {
         this.watchList = watchList;
         this.movie = movie;
-    }
-}
-class WatchListMovieRelationship {
-    constructor() {
-        this.relation = new Array();
     }
 }
