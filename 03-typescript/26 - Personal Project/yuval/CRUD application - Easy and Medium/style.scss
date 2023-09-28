@@ -1,18 +1,20 @@
 $fontColor: goldenrod;
+$fontFamily: Georgia, serif;
 
 body {
     background-image: url("../images/cinema.png");
     background-size: 100%;
-    width: 940px;
 }
 
 .header {
     position: relative;
     margin-left: 35vw;
 
-    h1 {
-        font-family: Georgia, serif;
+    * {
+        font-family: $fontFamily;
         color: $fontColor;
+    }
+    h1 {
         font-size: 8vh;
     }
 }
@@ -20,10 +22,9 @@ body {
 .forms {
     margin-top: 20px;
     position: relative;
-    // margin-left: 35vw;
     
     * {
-        font-family: Georgia, serif;
+        font-family: $fontFamily;
         color: $fontColor;
     }
 
@@ -33,7 +34,7 @@ body {
     
     #lists {
         position: relative;
-        left: 110%;
+        left: 80%;
         top: 80px;
         text-decoration: none;
     }
@@ -51,7 +52,7 @@ body {
 .secPage-watchLists {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
 
     td {
@@ -70,11 +71,17 @@ a:visited {
     display: flex;
     flex-direction: column;
     gap: 5px;
+
+    * {
+        width: 120px;
+        font-family: $fontFamily;
+    }
+
 }
 
 .listNames-list {
     position: relative;
-    left: 20%;
+    // left: 20%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -96,16 +103,6 @@ a:visited {
 
 .line-through {
     text-decoration: line-through;
-}
-
-//drag
-tr {
-    cursor: move;
-    user-select: none;
-
-    & :active {
-        opacity: 0.5;
-    }
 }
 
 #letterboxd, #youtube {

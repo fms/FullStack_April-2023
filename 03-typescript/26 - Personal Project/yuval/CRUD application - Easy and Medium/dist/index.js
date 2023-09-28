@@ -7,13 +7,14 @@ const form1 = document.getElementById('start-form');
 const form2 = document.getElementById('add-movies');
 const newListButton = document.getElementById('addNewList');
 const submitMovieButton = document.getElementById('submitMovie');
-const myListsButton = document.getElementById('lists');
+// const myListsButton = document.getElementById('lists') as HTMLButtonElement;
 let moviesFieldName = "movies";
 let optionsFieldName = "savedOptions";
 let listsFieldName = "listNamesSet";
+let wlmFieldName = "MoviesForList";
 let movies = loadMovies();
 let listNamesSet = loadListNames();
-let movieNamesSet = new Set();
+let movieNamesSet = loadMoviesName();
 // functions for 'index.html'
 form1 === null || form1 === void 0 ? void 0 : form1.addEventListener('submit', createList);
 window.addEventListener('load', () => {
@@ -21,11 +22,8 @@ window.addEventListener('load', () => {
         const checkButton = localStorage.getItem('clicked');
         checkButton && toggleHide();
         const savedOptions = localStorage.getItem(optionsFieldName);
-        if (savedOptions) {
-            select.innerHTML = savedOptions;
-        }
+        savedOptions && (select.innerHTML = savedOptions);
         loadListNames();
-        // savedOptions && (select.innerHTML = savedOptions);
         localStorage.removeItem('clicked');
     }
 });
@@ -47,9 +45,7 @@ function createList(ev) {
         toggleHide();
     }
     catch (error) {
-        if (error instanceof Error) {
-            alert(error.message);
-        }
+        error instanceof Error && alert(error.message);
     }
 }
 newListButton === null || newListButton === void 0 ? void 0 : newListButton.addEventListener('click', () => {
@@ -60,8 +56,6 @@ form2 === null || form2 === void 0 ? void 0 : form2.addEventListener('submit', (
     event.preventDefault();
     const watchList = new WatchList(form2.querySelector('[name="listName"]').value);
     const newMovie = new Movie(form2.querySelector('[name="movieName"]').value, form2.querySelector('[name="year"]').valueAsNumber, false);
-    // const newWatchListMovie = new WatchListMovie(watchList, newMovie);
-    // movies.push(newWatchListMovie);
     addMovieToList(watchList, newMovie);
     localStorage.setItem(moviesFieldName, JSON.stringify(movies));
     form2.reset();
@@ -74,7 +68,18 @@ function addMovieToList(watchList, movie) {
     if (!movieNamesSet.has(identifier)) {
         movieNamesSet.add(identifier);
         movies.push(new WatchListMovie(watchList, movie));
+        localStorage.setItem(wlmFieldName, JSON.stringify(Array.from(movieNamesSet)));
     }
+    else {
+        alert(`"${movie.movieName}" is already in "${watchList.listName}"`);
+    }
+}
+function loadMoviesName() {
+    const savedMovieNames = localStorage.getItem(wlmFieldName);
+    if (savedMovieNames) {
+        return new Set(JSON.parse(savedMovieNames));
+    }
+    return new Set;
 }
 function loadMovies() {
     const savedMovies = localStorage.getItem(moviesFieldName);
@@ -82,6 +87,13 @@ function loadMovies() {
         return JSON.parse(savedMovies);
     }
     return new Array();
+}
+function loadListNames() {
+    const savedListNames = localStorage.getItem(listsFieldName);
+    if (savedListNames) {
+        return new Set(JSON.parse(savedListNames));
+    }
+    return new Set;
 }
 //'lists.html' elements
 const movieEntries = document.querySelector('.secPage-watchLists');
@@ -91,6 +103,7 @@ const seen = document.getElementById('seen');
 const addList = document.getElementById('home');
 const addMovies = document.getElementById('home2');
 // functions for 'lists.html'
+addMovies === null || addMovies === void 0 ? void 0 : addMovies.addEventListener('click', () => localStorage.setItem('clicked', 'add movies'));
 function getMoviesWithSameListName(watchListMovies, listName) {
     return watchListMovies.filter((watchListMovie) => watchListMovie.watchList.listName === listName);
 }
@@ -119,13 +132,20 @@ window.addEventListener('load', () => {
         else {
             headerDiv.innerHTML = `<h1>No Watch Lists!</h1>`;
             loadListNames();
-            if (listNamesSet.size == 0) {
+            if (movies.length == 0) {
                 document.body.style.backgroundImage = 'url("images/jim.gif")';
                 document.body.style.backgroundSize = '100%';
-                addList.firstChild.style.width = '120px';
-                addList.firstChild.style.height = '30px';
-                addList.firstChild.style.fontSize = '15px';
-                addMovies.classList.toggle('hide');
+                if (listNamesSet.size == 0) {
+                    addList.firstChild.style.width = '120px';
+                    addList.firstChild.style.height = '30px';
+                    addList.firstChild.style.fontSize = '15px';
+                    addMovies.classList.toggle('hide');
+                }
+                else {
+                    let listNamesInHeader = localStorage.getItem(listsFieldName); // Can't be null
+                    listNamesInHeader = JSON.parse(listNamesInHeader).join(', ');
+                    headerDiv.innerHTML = `<h1>No Watch Lists!</h1><h2>Add to existing lists ${listNamesInHeader}</h2>`;
+                }
             }
         }
     }
@@ -194,13 +214,6 @@ function showList(listName, moviesWithSameListName, element) {
     }
     element === null || element === void 0 ? void 0 : element.appendChild(table);
 }
-function loadListNames() {
-    const savedListNames = localStorage.getItem(listsFieldName);
-    if (savedListNames) {
-        return new Set(JSON.parse(savedListNames));
-    }
-    return new Set;
-}
 function replaceSpacesAndSymbols(inputString) {
     return inputString.replace(/[^a-zA-Z0-9-]+/g, '-');
 }
@@ -212,10 +225,7 @@ function toggleHide() {
     form1div.classList.toggle('hide');
     form2div.classList.toggle('hide');
 }
-addMovies === null || addMovies === void 0 ? void 0 : addMovies.addEventListener('click', () => localStorage.setItem('clicked', 'add movies'));
 //Left to do:
-// - fix a href size
-// - fix bug: you can put the same movie twice for the same list
 // - responsive
 // - mvc
 // - finish style

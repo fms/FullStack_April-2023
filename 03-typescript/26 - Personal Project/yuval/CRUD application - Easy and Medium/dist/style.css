@@ -1,16 +1,17 @@
 body {
   background-image: url("../images/cinema.png");
   background-size: 100%;
-  width: 940px;
 }
 
 .header {
   position: relative;
   margin-left: 35vw;
 }
-.header h1 {
+.header * {
   font-family: Georgia, serif;
   color: goldenrod;
+}
+.header h1 {
   font-size: 8vh;
 }
 
@@ -27,7 +28,7 @@ body {
 }
 .forms #lists {
   position: relative;
-  left: 110%;
+  left: 80%;
   top: 80px;
   text-decoration: none;
 }
@@ -43,7 +44,7 @@ body {
 .secPage-watchLists {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
 }
 .secPage-watchLists td {
@@ -62,10 +63,13 @@ a:visited {
   flex-direction: column;
   gap: 5px;
 }
+.go-back * {
+  width: 120px;
+  font-family: Georgia, serif;
+}
 
 .listNames-list {
   position: relative;
-  left: 20%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -86,14 +90,6 @@ a:visited {
 
 .line-through {
   text-decoration: line-through;
-}
-
-tr {
-  cursor: move;
-  user-select: none;
-}
-tr :active {
-  opacity: 0.5;
 }
 
 #letterboxd, #youtube {
