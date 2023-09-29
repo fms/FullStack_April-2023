@@ -1,119 +1,15 @@
-$fontColor: goldenrod;
-$fontFamily: Georgia, serif;
+@import 'config';
 
-body {
-    background-image: url("../images/cinema.png");
-    background-size: 100%;
-}
-
-.header {
-    position: relative;
-    margin-left: 35vw;
-
-    * {
-        font-family: $fontFamily;
-        color: $fontColor;
-    }
-    h1 {
-        font-size: 8vh;
-    }
-}
-
-.forms {
-    margin-top: 20px;
-    position: relative;
-    
-    * {
-        font-family: $fontFamily;
-        color: $fontColor;
-    }
-
-    .black {
-        color: black
-    }
-    
-    #lists {
-        position: relative;
-        left: 80%;
-        top: 80px;
-        text-decoration: none;
-    }
-
-    &__watchList {
-        display: flex;
-        flex-direction: column;
-    }
-}
-
-.hide {
-    display: none;
-}
-
-.secPage-watchLists {
+@mixin flexed($direction:column) {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-
-    td {
-        border: 1px solid #333;
-        width: 150px;
-        height: 18px;
-        background-color: white;
-    }
+    flex-direction: $direction;
 }
 
-a:visited {
-    color: blue;
-}
-
-.go-back {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-
-    * {
-        width: 120px;
-        font-family: $fontFamily;
-    }
-
-}
-
-.listNames-list {
+@mixin position($left:40%) {
     position: relative;
-    // left: 20%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    font-size: 25px;
-    color: whitesmoke;
-
-    * {
-        border: 1px solid grey;
-        background-color: black;
-    }
+    left: $left;
 }
 
-.table-div {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-}
-
-.line-through {
-    text-decoration: line-through;
-}
-
-#letterboxd, #youtube {
-    margin-left: 40%;
-    height: 20px;
-}
-
-#letterboxd {
-    width: 20px;
-}
-
-#youtube {
-    width: 30px;
-}
+@import 'components/desktop.scss';
+@import 'components/tablet.scss';
+@import 'components/phone.scss';

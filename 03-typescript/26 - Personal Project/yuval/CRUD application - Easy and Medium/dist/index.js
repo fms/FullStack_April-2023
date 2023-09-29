@@ -113,10 +113,10 @@ window.addEventListener('load', () => {
         if (movies.length !== 0) {
             const uniqueListNames = Array.from(new Set(movies.map(wlm => wlm.watchList.listName)));
             const listElementDiv = document.createElement('div');
-            listElementDiv.classList.add('listNames-list');
+            listElementDiv.classList.add('secPage-watchLists__listNames-list');
             movieEntries === null || movieEntries === void 0 ? void 0 : movieEntries.appendChild(listElementDiv);
             const tableDiv = document.createElement('div');
-            tableDiv.classList.add('table-div');
+            tableDiv.classList.add('secPage-watchLists__table-div');
             for (const listName of uniqueListNames) {
                 const listElement = document.createElement('div');
                 listElement.textContent = listName;
@@ -132,20 +132,18 @@ window.addEventListener('load', () => {
         else {
             headerDiv.innerHTML = `<h1>No Watch Lists!</h1>`;
             loadListNames();
-            if (movies.length == 0) {
-                document.body.style.backgroundImage = 'url("images/jim.gif")';
-                document.body.style.backgroundSize = '100%';
-                if (listNamesSet.size == 0) {
-                    addList.firstChild.style.width = '120px';
-                    addList.firstChild.style.height = '30px';
-                    addList.firstChild.style.fontSize = '15px';
-                    addMovies.classList.toggle('hide');
-                }
-                else {
-                    let listNamesInHeader = localStorage.getItem(listsFieldName); // Can't be null
-                    listNamesInHeader = JSON.parse(listNamesInHeader).join(', ');
-                    headerDiv.innerHTML = `<h1>No Watch Lists!</h1><h2>Add to existing lists ${listNamesInHeader}</h2>`;
-                }
+            document.body.style.backgroundImage = 'url("images/homer.gif")';
+            document.body.style.backgroundSize = '100%';
+            if (listNamesSet.size == 0) {
+                addList.firstChild.style.width = '120px';
+                addList.firstChild.style.height = '30px';
+                addList.firstChild.style.fontSize = '15px';
+                addMovies.classList.toggle('hide');
+            }
+            else {
+                let listNamesInHeader = localStorage.getItem(listsFieldName); // Can't be null
+                listNamesInHeader = JSON.parse(listNamesInHeader).join(', ');
+                headerDiv.innerHTML = `<h1>No Watch Lists!</h1><h2>Add to existing lists ${listNamesInHeader}</h2>`;
             }
         }
     }
@@ -155,7 +153,7 @@ function showList(listName, moviesWithSameListName, element) {
     const table = document.createElement('table');
     const headerRowList = table.insertRow();
     const listCell = headerRowList.insertCell();
-    listCell.colSpan = 6;
+    listCell.colSpan = 5;
     listCell.style.backgroundColor = "#333";
     listCell.style.color = "#fff";
     listCell.textContent = listName;
@@ -170,6 +168,8 @@ function showList(listName, moviesWithSameListName, element) {
     headerCell3.textContent = 'Seen?';
     headerCell4.textContent = 'Film info';
     headerCell5.textContent = 'Trailer';
+    headerCell4.classList.add('film-info-cell');
+    headerCell5.classList.add('trailer-cell');
     let counter = 0;
     for (const movie of moviesWithSameListName) {
         let outerCounter = movies.indexOf(moviesWithSameListName[counter]);
@@ -179,6 +179,8 @@ function showList(listName, moviesWithSameListName, element) {
         const cell3 = row.insertCell();
         const cell4 = row.insertCell();
         const cell5 = row.insertCell();
+        cell4.classList.add('film-info-cell');
+        cell5.classList.add('trailer-cell');
         cell1.textContent = movie.movie.movieName;
         cell2.textContent = movie.movie.year.toString();
         const checkboxSeen = document.createElement('input');
@@ -226,6 +228,4 @@ function toggleHide() {
     form2div.classList.toggle('hide');
 }
 //Left to do:
-// - responsive
 // - mvc
-// - finish style

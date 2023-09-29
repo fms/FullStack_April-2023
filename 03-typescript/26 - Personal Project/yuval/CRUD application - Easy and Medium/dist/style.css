@@ -1,106 +1,318 @@
-body {
-  background-image: url("../images/cinema.png");
-  background-size: 100%;
-}
+@media screen and (min-width: 1025px) {
+  body {
+    background-image: url("../images/cinema.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 
-.header {
-  position: relative;
-  margin-left: 35vw;
-}
-.header * {
-  font-family: Georgia, serif;
-  color: goldenrod;
-}
-.header h1 {
-  font-size: 8vh;
-}
+  .header {
+    position: relative;
+    left: 0%;
+    margin-left: 35vw;
+  }
+  .header * {
+    font-family: Georgia, serif;
+    color: goldenrod;
+  }
+  .header h1 {
+    font-size: 8vh;
+  }
 
-.forms {
-  margin-top: 20px;
-  position: relative;
-}
-.forms * {
-  font-family: Georgia, serif;
-  color: goldenrod;
-}
-.forms .black {
-  color: black;
-}
-.forms #lists {
-  position: relative;
-  left: 80%;
-  top: 80px;
-  text-decoration: none;
-}
-.forms__watchList {
-  display: flex;
-  flex-direction: column;
-}
+  .forms {
+    position: relative;
+    left: 0%;
+    margin-top: 20px;
+  }
+  .forms * {
+    font-family: Georgia, serif;
+    color: goldenrod;
+  }
+  .forms .black {
+    color: black;
+  }
+  .forms #lists {
+    position: relative;
+    left: 80%;
+    top: 80px;
+    text-decoration: none;
+  }
+  .forms__watchList {
+    display: flex;
+    flex-direction: column;
+  }
 
-.hide {
-  display: none;
-}
+  .hide {
+    display: none;
+  }
 
-.secPage-watchLists {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
-}
-.secPage-watchLists td {
-  border: 1px solid #333;
-  width: 150px;
-  height: 18px;
-  background-color: white;
-}
+  .secPage-watchLists {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40px;
+  }
+  .secPage-watchLists__listNames-list {
+    position: relative;
+    left: 0%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    gap: 5px;
+    font-size: 25px;
+    color: whitesmoke;
+  }
+  .secPage-watchLists__listNames-list * {
+    border: 1px solid grey;
+    background-color: black;
+  }
+  .secPage-watchLists__table-div {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  .secPage-watchLists__table-div td {
+    border: 1px solid #333;
+    width: 150px;
+    height: 18px;
+    background-color: white;
+  }
+  .secPage-watchLists .line-through {
+    text-decoration: line-through;
+  }
+  .secPage-watchLists #letterboxd, .secPage-watchLists #youtube {
+    margin-left: 40%;
+    height: 20px;
+  }
+  .secPage-watchLists #letterboxd {
+    width: 20px;
+  }
+  .secPage-watchLists #youtube {
+    width: 30px;
+  }
+  .secPage-watchLists a:visited {
+    color: blue;
+  }
 
-a:visited {
-  color: blue;
+  .go-back {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .go-back * {
+    width: 120px;
+    font-family: Georgia, serif;
+  }
 }
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  body {
+    background-image: url("../images/popcorn.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 
-.go-back {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-.go-back * {
-  width: 120px;
-  font-family: Georgia, serif;
-}
+  .header {
+    position: relative;
+    left: 30%;
+  }
+  .header * {
+    font-family: Georgia, serif;
+    color: goldenrod;
+  }
+  .header h1 {
+    font-size: 5vh;
+  }
 
-.listNames-list {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  font-size: 25px;
-  color: whitesmoke;
-}
-.listNames-list * {
-  border: 1px solid grey;
-  background-color: black;
-}
+  .forms {
+    margin-top: 20px;
+    position: relative;
+    left: 0%;
+  }
+  .forms * {
+    font-family: Georgia, serif;
+    color: goldenrod;
+  }
+  .forms .black {
+    color: black;
+  }
+  .forms #lists {
+    position: relative;
+    left: 80%;
+    top: 80px;
+    text-decoration: none;
+  }
+  .forms__watchList {
+    display: flex;
+    flex-direction: column;
+  }
 
-.table-div {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%);
-}
+  .hide {
+    display: none;
+  }
 
-.line-through {
-  text-decoration: line-through;
-}
+  .secPage-watchLists {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40px;
+  }
+  .secPage-watchLists__listNames-list {
+    position: relative;
+    left: 0%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    gap: 5px;
+    font-size: 25px;
+    color: whitesmoke;
+  }
+  .secPage-watchLists__listNames-list * {
+    border: 1px solid grey;
+    background-color: black;
+  }
+  .secPage-watchLists__table-div {
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  .secPage-watchLists__table-div td {
+    border: 1px solid #333;
+    width: 150px;
+    height: 18px;
+    background-color: white;
+  }
+  .secPage-watchLists .line-through {
+    text-decoration: line-through;
+  }
+  .secPage-watchLists #letterboxd, .secPage-watchLists #youtube {
+    margin-left: 40%;
+    height: 20px;
+  }
+  .secPage-watchLists #letterboxd {
+    width: 20px;
+  }
+  .secPage-watchLists #youtube {
+    width: 30px;
+  }
+  .secPage-watchLists a:visited {
+    color: blue;
+  }
 
-#letterboxd, #youtube {
-  margin-left: 40%;
-  height: 20px;
+  .go-back {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .go-back * {
+    width: 120px;
+    font-family: Georgia, serif;
+  }
 }
+@media screen and (max-width: 600px) {
+  body {
+    background-image: url("../images/theater.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 
-#letterboxd {
-  width: 20px;
-}
+  .header {
+    position: relative;
+    left: 40%;
+  }
+  .header * {
+    font-family: Georgia, serif;
+    color: goldenrod;
+  }
+  .header h1 {
+    font-size: 3vh;
+  }
 
-#youtube {
-  width: 30px;
+  .forms {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: 0%;
+    margin-top: 20px;
+  }
+  .forms * {
+    font-family: Georgia, serif;
+    color: goldenrod;
+  }
+  .forms .black {
+    color: black;
+  }
+  .forms #lists {
+    position: relative;
+    left: 40%;
+    top: 300px;
+    height: 20px;
+    text-decoration: none;
+  }
+  .forms__newWatchList, .forms__watchList {
+    position: relative;
+    left: 0%;
+  }
+  .forms__watchList {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .secPage-watchLists {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+  }
+  .secPage-watchLists__listNames-list {
+    position: relative;
+    left: 0%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    gap: 5px;
+    font-size: 20px;
+    color: whitesmoke;
+  }
+  .secPage-watchLists__listNames-list * {
+    border-left: 1px solid grey;
+    background-color: black;
+  }
+  .secPage-watchLists__table-div {
+    position: absolute;
+    left: 70%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: calc(50% + 20px);
+  }
+  .secPage-watchLists__table-div td {
+    border: 1px solid #333;
+    width: 150px;
+    height: 18px;
+    background-color: white;
+  }
+  .secPage-watchLists .line-through {
+    text-decoration: line-through;
+  }
+  .secPage-watchLists .film-info-cell, .secPage-watchLists .trailer-cell, .secPage-watchLists #letterboxd, .secPage-watchLists #youtube {
+    display: none;
+  }
+
+  .go-back {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .go-back * {
+    width: 120px;
+    font-family: Georgia, serif;
+  }
 }
