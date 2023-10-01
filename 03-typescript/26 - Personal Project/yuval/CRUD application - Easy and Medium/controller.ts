@@ -1,21 +1,28 @@
-"use strict";
 // 'index.html' elements
-const form1div = document.getElementById('newWatchListDiv');
-const form2div = document.getElementById('watchListDiv');
-const select = document.getElementById('selectList');
-const form1 = document.getElementById('start-form');
-const form2 = document.getElementById('add-movies');
-const newListButton = document.getElementById('addNewList');
-const submitMovieButton = document.getElementById('submitMovie');
+const form1div = document.getElementById('newWatchListDiv') as HTMLElement;
+const form2div = document.getElementById('watchListDiv') as HTMLElement;
+const select = document.getElementById('selectList') as HTMLSelectElementWithId;
+const form1 = document.getElementById('start-form') as HTMLFormElement;
+const form2 = document.getElementById('add-movies') as HTMLFormElement;
+const newListButton = document.getElementById('addNewList') as HTMLButtonElement;
+const submitMovieButton = document.getElementById('submitMovie') as HTMLButtonElement;
+
 let moviesFieldName = "movies";
 let optionsFieldName = "savedOptions";
 let listsFieldName = "listNamesSet";
-let wlmFieldName = "MoviesForList";
+let wlmFieldName = "MoviesForList"
 let movies = loadMovies();
 let listNamesSet = loadListNames();
 let movieNamesSet = loadMoviesName();
+
 // functions for 'index.html'
-form1 === null || form1 === void 0 ? void 0 : form1.addEventListener('submit', createList);
+form1?.addEventListener('submit', createList);
+
+// interface to help adding options to select element
+interface HTMLSelectElementWithId extends HTMLSelectElement {
+    add(option: HTMLOptionElement): void;
+}
+
 window.addEventListener('load', () => {
     if (document.location.pathname === "/03-typescript/26%20-%20Personal%20Project/yuval/CRUD%20application%20-%20Easy%20and%20Medium/index.html") {
         const checkButton = localStorage.getItem('clicked');
@@ -26,19 +33,24 @@ window.addEventListener('load', () => {
         localStorage.removeItem('clicked');
     }
 });
-function createList(ev) {
+
+function createList(ev: Event) {
     ev.preventDefault();
+
     try {
-        const name = document.getElementById('listNames').value;
+        const name = (document.getElementById('listNames') as HTMLInputElement).value;
+
         if (listNamesSet.has(name)) {
             throw new Error('List Already exists');
         }
+
         listNamesSet.add(name);
         const op = document.createElement('option');
         op.classList.add('black');
         op.value = name;
         op.textContent = name;
         select.add(op);
+
         localStorage.setItem(optionsFieldName, select.innerHTML);
         localStorage.setItem(listsFieldName, JSON.stringify(Array.from(listNamesSet)));
         toggleHide();
@@ -47,22 +59,33 @@ function createList(ev) {
         error instanceof Error && alert(error.message);
     }
 }
-newListButton === null || newListButton === void 0 ? void 0 : newListButton.addEventListener('click', () => {
+
+
+newListButton?.addEventListener('click', () => {
     toggleHide();
     form1.reset();
 });
-form2 === null || form2 === void 0 ? void 0 : form2.addEventListener('submit', (event) => {
+
+form2?.addEventListener('submit', (event) => {
     event.preventDefault();
-    const watchList = new WatchList(form2.querySelector('[name="listName"]').value);
-    const newMovie = new Movie(form2.querySelector('[name="movieName"]').value, form2.querySelector('[name="year"]').valueAsNumber, false);
+    const watchList = new WatchList(
+        (form2.querySelector('[name="listName"]') as HTMLInputElement).value
+    );
+    const newMovie = new Movie(
+        (form2.querySelector('[name="movieName"]') as HTMLInputElement).value,
+        (form2.querySelector('[name="year"]') as HTMLInputElement).valueAsNumber,
+        false
+    );
     addMovieToList(watchList, newMovie);
     localStorage.setItem(moviesFieldName, JSON.stringify(movies));
     form2.reset();
 });
-function getUniqueIdentifier(watchList, movie) {
+
+function getUniqueIdentifier(watchList: WatchList, movie: Movie): string {
     return `${watchList.listName}-${movie.movieName}-${movie.year}`;
 }
-function addMovieToList(watchList, movie) {
+
+function addMovieToList(watchList: WatchList, movie: Movie) {
     const identifier = getUniqueIdentifier(watchList, movie);
     if (!movieNamesSet.has(identifier)) {
         movieNamesSet.add(identifier);
@@ -73,60 +96,70 @@ function addMovieToList(watchList, movie) {
         alert(`"${movie.movieName}" is already in "${watchList.listName}"`);
     }
 }
-function loadMoviesName() {
+
+function loadMoviesName(): Set<string> {
     const savedMovieNames = localStorage.getItem(wlmFieldName);
     if (savedMovieNames) {
         return new Set(JSON.parse(savedMovieNames));
     }
-    return new Set;
+    return new Set<string>;
 }
-function loadMovies() {
+
+function loadMovies(): WatchListMovie[] {
     const savedMovies = localStorage.getItem(moviesFieldName);
     if (savedMovies) {
         return JSON.parse(savedMovies);
     }
-    return new Array();
+
+    return new Array<WatchListMovie>();
 }
-function loadListNames() {
+
+function loadListNames(): Set<string> {
     const savedListNames = localStorage.getItem(listsFieldName);
     if (savedListNames) {
         return new Set(JSON.parse(savedListNames));
     }
-    return new Set;
+    return new Set<string>;
 }
+
 //'lists.html' elements
-const movieEntries = document.querySelector('.secPage-watchLists');
-const headerDiv = document.querySelector('.header');
-const secPageH1 = document.getElementById('lists-header');
-const seen = document.getElementById('seen');
-const back = document.querySelector('.go-back');
-const addList = document.getElementById('home');
-const addMovies = document.getElementById('home2');
+const movieEntries = document.querySelector('.secPage-watchLists') as HTMLElement;
+const headerDiv = document.querySelector('.header') as HTMLElement;
+const secPageH1 = document.getElementById('lists-header') as HTMLElement;
+const seen = document.getElementById('seen') as HTMLInputElement;
+const back = document.querySelector('.go-back') as HTMLElement;
+const addList = document.getElementById('home') as HTMLButtonElement;
+const addMovies = document.getElementById('home2') as HTMLButtonElement;
+
 // functions for 'lists.html'
-addMovies === null || addMovies === void 0 ? void 0 : addMovies.addEventListener('click', () => localStorage.setItem('clicked', 'add movies'));
-function getMoviesWithSameListName(watchListMovies, listName) {
+addMovies?.addEventListener('click', () => localStorage.setItem('clicked', 'add movies'));
+
+function getMoviesWithSameListName(watchListMovies: WatchListMovie[], listName: string): WatchListMovie[] {
     return watchListMovies.filter((watchListMovie) => watchListMovie.watchList.listName === listName);
 }
 const uniqueListNames = Array.from(new Set(movies.map(wlm => wlm.watchList.listName)));
+
 window.addEventListener('load', () => {
     if (document.location.pathname === '/03-typescript/26%20-%20Personal%20Project/yuval/CRUD%20application%20-%20Easy%20and%20Medium/lists.html') {
         if (movies.length !== 0) {
             const uniqueListNames = Array.from(new Set(movies.map(wlm => wlm.watchList.listName)));
             const listElementDiv = document.createElement('div');
             listElementDiv.classList.add('secPage-watchLists__listNames-list');
-            movieEntries === null || movieEntries === void 0 ? void 0 : movieEntries.appendChild(listElementDiv);
+            movieEntries?.appendChild(listElementDiv);
             const tableDiv = document.createElement('div');
             tableDiv.classList.add('secPage-watchLists__table-div');
             for (const listName of uniqueListNames) {
                 const listElement = document.createElement('div');
                 listElement.textContent = listName;
                 listElement.style.cursor = 'pointer';
+
                 listElement.addEventListener('click', () => {
-                    movieEntries === null || movieEntries === void 0 ? void 0 : movieEntries.appendChild(tableDiv);
+                    movieEntries?.appendChild(tableDiv);
                     const moviesWithSameListName = getMoviesWithSameListName(movies, listName);
                     showList(listName, moviesWithSameListName, tableDiv);
                 });
-                listElementDiv === null || listElementDiv === void 0 ? void 0 : listElementDiv.appendChild(listElement);
+
+                listElementDiv?.appendChild(listElement);
             }
         }
         else {
@@ -135,22 +168,23 @@ window.addEventListener('load', () => {
             document.body.style.backgroundImage = 'url("images/homer.gif")';
             document.body.style.backgroundSize = '100%';
             if (listNamesSet.size == 0) {
-                addList.firstChild.style.width = '120px';
-                addList.firstChild.style.height = '30px';
-                addList.firstChild.style.fontSize = '15px';
+                (addList.firstChild as HTMLButtonElement).style.width = '120px';
+                (addList.firstChild as HTMLButtonElement).style.height = '30px';
+                (addList.firstChild as HTMLButtonElement).style.fontSize = '15px';
                 back.classList.toggle('go-back');
                 addMovies.classList.toggle('hide');
             }
             else {
-                let listNamesInHeader = localStorage.getItem(listsFieldName); // Can't be null
+                let listNamesInHeader = localStorage.getItem(listsFieldName)!; // Can't be null
                 listNamesInHeader = JSON.parse(listNamesInHeader).join(', ');
                 headerDiv.innerHTML = `<h1>No Watch Lists!</h1><h3>Add to existing lists:</h3><p>${listNamesInHeader}</p>`;
             }
         }
     }
 });
-function showList(listName, moviesWithSameListName, element) {
-    element === null || element === void 0 ? void 0 : element.replaceChildren();
+
+function showList(listName: string, moviesWithSameListName: WatchListMovie[], element: Element) {
+    element?.replaceChildren();
     const table = document.createElement('table');
     const headerRowList = table.insertRow();
     const listCell = headerRowList.insertCell();
@@ -188,7 +222,7 @@ function showList(listName, moviesWithSameListName, element) {
         checkboxSeen.type = 'checkbox';
         checkboxSeen.dataset['id'] = `${outerCounter}`;
         checkboxSeen.addEventListener('click', (ev) => {
-            const checkbox = ev.target;
+            const checkbox = ev.target as HTMLInputElement;
             movies[outerCounter].movie.seen = checkbox.checked;
             cell1.classList.toggle('line-through');
             cell2.classList.toggle('line-through');
@@ -215,18 +249,30 @@ function showList(listName, moviesWithSameListName, element) {
         cell5.classList.add('cell');
         counter++;
     }
-    element === null || element === void 0 ? void 0 : element.appendChild(table);
+    
+    element?.appendChild(table);
 }
-function replaceSpacesAndSymbols(inputString) {
+
+function replaceSpacesAndSymbols(inputString: string): string {
     return inputString.replace(/[^a-zA-Z0-9-]+/g, '-');
 }
-function getId(element) {
-    var _a;
-    return parseInt((_a = element.dataset['id']) !== null && _a !== void 0 ? _a : "0", 10);
+
+function getId(element: HTMLInputElement): number {
+    return parseInt(element.dataset['id'] ?? "0", 10);
 }
+
 function toggleHide() {
     form1div.classList.toggle('hide');
     form2div.classList.toggle('hide');
 }
+
+
+
 //Left to do:
 // - mvc
+
+
+
+
+
+
