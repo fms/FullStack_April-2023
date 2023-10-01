@@ -1,4 +1,3 @@
-//Model
 class WatchList {
     constructor(public listName: string){}
 

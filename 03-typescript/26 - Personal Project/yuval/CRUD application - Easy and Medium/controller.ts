@@ -1,12 +1,3 @@
-// 'index.html' elements
-const form1div = document.getElementById('newWatchListDiv') as HTMLElement;
-const form2div = document.getElementById('watchListDiv') as HTMLElement;
-const select = document.getElementById('selectList') as HTMLSelectElementWithId;
-const form1 = document.getElementById('start-form') as HTMLFormElement;
-const form2 = document.getElementById('add-movies') as HTMLFormElement;
-const newListButton = document.getElementById('addNewList') as HTMLButtonElement;
-const submitMovieButton = document.getElementById('submitMovie') as HTMLButtonElement;
-
 let moviesFieldName = "movies";
 let optionsFieldName = "savedOptions";
 let listsFieldName = "listNamesSet";
@@ -14,146 +5,38 @@ let wlmFieldName = "MoviesForList"
 let movies = loadMovies();
 let listNamesSet = loadListNames();
 let movieNamesSet = loadMoviesName();
-
-// functions for 'index.html'
-form1?.addEventListener('submit', createList);
+const uniqueListNames = Array.from(new Set(movies.map(wlm => wlm.watchList.listName))); // Array of all list names
 
 // interface to help adding options to select element
 interface HTMLSelectElementWithId extends HTMLSelectElement {
     add(option: HTMLOptionElement): void;
 }
 
-window.addEventListener('load', () => {
+// The background image and the elements on both pages can change based on the data in localStorage
+function loadPage() {
+    //index.html
     if (document.location.pathname === "/03-typescript/26%20-%20Personal%20Project/yuval/CRUD%20application%20-%20Easy%20and%20Medium/index.html") {
         const checkButton = localStorage.getItem('clicked');
-        checkButton && toggleHide();
+        checkButton && toggleHide(); // checkButton won't be null only if addMovies was pressed
         const savedOptions = localStorage.getItem(optionsFieldName);
         savedOptions && (select.innerHTML = savedOptions);
         loadListNames();
         localStorage.removeItem('clicked');
     }
-});
-
-function createList(ev: Event) {
-    ev.preventDefault();
-
-    try {
-        const name = (document.getElementById('listNames') as HTMLInputElement).value;
-
-        if (listNamesSet.has(name)) {
-            throw new Error('List Already exists');
-        }
-
-        listNamesSet.add(name);
-        const op = document.createElement('option');
-        op.classList.add('black');
-        op.value = name;
-        op.textContent = name;
-        select.add(op);
-
-        localStorage.setItem(optionsFieldName, select.innerHTML);
-        localStorage.setItem(listsFieldName, JSON.stringify(Array.from(listNamesSet)));
-        toggleHide();
-    }
-    catch (error) {
-        error instanceof Error && alert(error.message);
-    }
-}
-
-
-newListButton?.addEventListener('click', () => {
-    toggleHide();
-    form1.reset();
-});
-
-form2?.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const watchList = new WatchList(
-        (form2.querySelector('[name="listName"]') as HTMLInputElement).value
-    );
-    const newMovie = new Movie(
-        (form2.querySelector('[name="movieName"]') as HTMLInputElement).value,
-        (form2.querySelector('[name="year"]') as HTMLInputElement).valueAsNumber,
-        false
-    );
-    addMovieToList(watchList, newMovie);
-    localStorage.setItem(moviesFieldName, JSON.stringify(movies));
-    form2.reset();
-});
-
-function getUniqueIdentifier(watchList: WatchList, movie: Movie): string {
-    return `${watchList.listName}-${movie.movieName}-${movie.year}`;
-}
-
-function addMovieToList(watchList: WatchList, movie: Movie) {
-    const identifier = getUniqueIdentifier(watchList, movie);
-    if (!movieNamesSet.has(identifier)) {
-        movieNamesSet.add(identifier);
-        movies.push(new WatchListMovie(watchList, movie));
-        localStorage.setItem(wlmFieldName, JSON.stringify(Array.from(movieNamesSet)));
-    }
-    else {
-        alert(`"${movie.movieName}" is already in "${watchList.listName}"`);
-    }
-}
-
-function loadMoviesName(): Set<string> {
-    const savedMovieNames = localStorage.getItem(wlmFieldName);
-    if (savedMovieNames) {
-        return new Set(JSON.parse(savedMovieNames));
-    }
-    return new Set<string>;
-}
-
-function loadMovies(): WatchListMovie[] {
-    const savedMovies = localStorage.getItem(moviesFieldName);
-    if (savedMovies) {
-        return JSON.parse(savedMovies);
-    }
-
-    return new Array<WatchListMovie>();
-}
-
-function loadListNames(): Set<string> {
-    const savedListNames = localStorage.getItem(listsFieldName);
-    if (savedListNames) {
-        return new Set(JSON.parse(savedListNames));
-    }
-    return new Set<string>;
-}
-
-//'lists.html' elements
-const movieEntries = document.querySelector('.secPage-watchLists') as HTMLElement;
-const headerDiv = document.querySelector('.header') as HTMLElement;
-const secPageH1 = document.getElementById('lists-header') as HTMLElement;
-const seen = document.getElementById('seen') as HTMLInputElement;
-const back = document.querySelector('.go-back') as HTMLElement;
-const addList = document.getElementById('home') as HTMLButtonElement;
-const addMovies = document.getElementById('home2') as HTMLButtonElement;
-
-// functions for 'lists.html'
-addMovies?.addEventListener('click', () => localStorage.setItem('clicked', 'add movies'));
-
-function getMoviesWithSameListName(watchListMovies: WatchListMovie[], listName: string): WatchListMovie[] {
-    return watchListMovies.filter((watchListMovie) => watchListMovie.watchList.listName === listName);
-}
-const uniqueListNames = Array.from(new Set(movies.map(wlm => wlm.watchList.listName)));
-
-window.addEventListener('load', () => {
-    if (document.location.pathname === '/03-typescript/26%20-%20Personal%20Project/yuval/CRUD%20application%20-%20Easy%20and%20Medium/lists.html') {
+    //lists.html
+    else if (document.location.pathname === '/03-typescript/26%20-%20Personal%20Project/yuval/CRUD%20application%20-%20Easy%20and%20Medium/lists.html') {
         if (movies.length !== 0) {
-            const uniqueListNames = Array.from(new Set(movies.map(wlm => wlm.watchList.listName)));
             const listElementDiv = document.createElement('div');
             listElementDiv.classList.add('secPage-watchLists__listNames-list');
             movieEntries?.appendChild(listElementDiv);
             const tableDiv = document.createElement('div');
             tableDiv.classList.add('secPage-watchLists__table-div');
-            for (const listName of uniqueListNames) {
+            for (const listName of uniqueListNames) { // Creating an element for each watch list
                 const listElement = document.createElement('div');
                 listElement.textContent = listName;
                 listElement.style.cursor = 'pointer';
 
-                listElement.addEventListener('click', () => {
+                listElement.addEventListener('click', () => { // Table will appear with movies on that list
                     movieEntries?.appendChild(tableDiv);
                     const moviesWithSameListName = getMoviesWithSameListName(movies, listName);
                     showList(listName, moviesWithSameListName, tableDiv);
@@ -181,8 +64,69 @@ window.addEventListener('load', () => {
             }
         }
     }
-});
+}
 
+function createList(ev: Event) {
+    ev.preventDefault();
+    try {
+        const name = (document.getElementById('listNames') as HTMLInputElement).value;
+
+        if (listNamesSet.has(name)) {
+            throw new Error('List Already exists');
+        }
+
+        listNamesSet.add(name);
+        const op = document.createElement('option');
+        op.classList.add('black');
+        op.value = name;
+        op.textContent = name;
+        select.add(op);
+
+        localStorage.setItem(optionsFieldName, select.innerHTML);
+        localStorage.setItem(listsFieldName, JSON.stringify(Array.from(listNamesSet)));
+        toggleHide();
+    }
+    catch (error) {
+        error instanceof Error && alert(error.message);
+    }
+}
+
+function SubmitNewMovie(ev: SubmitEvent) {
+    ev.preventDefault();
+    const watchList = new WatchList(
+        (form2.querySelector('[name="listName"]') as HTMLInputElement).value
+    );
+    const newMovie = new Movie(
+        (form2.querySelector('[name="movieName"]') as HTMLInputElement).value,
+        (form2.querySelector('[name="year"]') as HTMLInputElement).valueAsNumber,
+        false
+    );
+    addMovieToList(watchList, newMovie);
+    localStorage.setItem(moviesFieldName, JSON.stringify(movies));
+    form2.reset();
+}
+
+// Functions to help prevent entering the same movie twice in the same list
+function getUniqueIdentifier(watchList: WatchList, movie: Movie): string {
+    return `${watchList.listName}-${movie.movieName}-${movie.year}`;
+}
+
+function addMovieToList(watchList: WatchList, movie: Movie) {
+    try {
+        const identifier = getUniqueIdentifier(watchList, movie);
+        if (movieNamesSet.has(identifier)) {
+            throw new Error (`"${movie.movieName}" is already in "${watchList.listName}"`);
+        }
+        movieNamesSet.add(identifier);
+        movies.push(new WatchListMovie(watchList, movie));
+        localStorage.setItem(wlmFieldName, JSON.stringify(Array.from(movieNamesSet)));
+    }
+    catch (error) {
+        error instanceof Error && alert(error.message);
+    }
+}
+
+// Create table element for each list
 function showList(listName: string, moviesWithSameListName: WatchListMovie[], element: Element) {
     element?.replaceChildren();
     const table = document.createElement('table');
@@ -229,13 +173,13 @@ function showList(listName: string, moviesWithSameListName: WatchListMovie[], el
             localStorage.setItem(moviesFieldName, JSON.stringify(movies));
         });
         cell3.appendChild(checkboxSeen);
-        if (movies[outerCounter].movie.seen) {
+        if (movies[outerCounter].movie.seen) { // Will keep it crossed even after refreshing the page
             cell1.classList.toggle('line-through');
             cell2.classList.toggle('line-through');
             checkboxSeen.checked = true;
         }
         const letterboxdLink = document.createElement('a');
-        let linkInfo = replaceSpacesAndSymbols(cell1.textContent.toLowerCase());
+        const linkInfo = cell1.textContent.toLowerCase().replace(/[^a-zA-Z0-9-]+/g, '-'); // Replace spaces and symbols with '-'
         letterboxdLink.href = `https://letterboxd.com/film/${linkInfo}/`;
         letterboxdLink.innerHTML = '<img id=letterboxd src="images/letterboxd.png">';
         letterboxdLink.target = '_blank';
@@ -249,30 +193,41 @@ function showList(listName: string, moviesWithSameListName: WatchListMovie[], el
         cell5.classList.add('cell');
         counter++;
     }
-    
+
     element?.appendChild(table);
 }
 
-function replaceSpacesAndSymbols(inputString: string): string {
-    return inputString.replace(/[^a-zA-Z0-9-]+/g, '-');
+// Get all the movies of a certain watch list in an array
+function getMoviesWithSameListName(watchListMovies: WatchListMovie[], listName: string): WatchListMovie[] {
+    return watchListMovies.filter((watchListMovie) => watchListMovie.watchList.listName === listName);
 }
 
-function getId(element: HTMLInputElement): number {
-    return parseInt(element.dataset['id'] ?? "0", 10);
+function loadMoviesName(): Set<string> {
+    const savedMovieNames = localStorage.getItem(wlmFieldName);
+    if (savedMovieNames) {
+        return new Set(JSON.parse(savedMovieNames));
+    }
+    return new Set<string>;
+}
+
+function loadMovies(): WatchListMovie[] {
+    const savedMovies = localStorage.getItem(moviesFieldName);
+    if (savedMovies) {
+        return JSON.parse(savedMovies);
+    }
+
+    return new Array<WatchListMovie>();
+}
+
+function loadListNames(): Set<string> {
+    const savedListNames = localStorage.getItem(listsFieldName);
+    if (savedListNames) {
+        return new Set(JSON.parse(savedListNames));
+    }
+    return new Set<string>;
 }
 
 function toggleHide() {
     form1div.classList.toggle('hide');
     form2div.classList.toggle('hide');
 }
-
-
-
-//Left to do:
-// - mvc
-
-
-
-
-
-

@@ -1,5 +1,4 @@
 "use strict";
-//Model
 class WatchList {
     constructor(listName) {
         this.listName = listName;

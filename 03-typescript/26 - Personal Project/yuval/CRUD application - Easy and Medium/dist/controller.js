@@ -1,12 +1,4 @@
 "use strict";
-// 'index.html' elements
-const form1div = document.getElementById('newWatchListDiv');
-const form2div = document.getElementById('watchListDiv');
-const select = document.getElementById('selectList');
-const form1 = document.getElementById('start-form');
-const form2 = document.getElementById('add-movies');
-const newListButton = document.getElementById('addNewList');
-const submitMovieButton = document.getElementById('submitMovie');
 let moviesFieldName = "movies";
 let optionsFieldName = "savedOptions";
 let listsFieldName = "listNamesSet";
@@ -14,110 +6,27 @@ let wlmFieldName = "MoviesForList";
 let movies = loadMovies();
 let listNamesSet = loadListNames();
 let movieNamesSet = loadMoviesName();
-// functions for 'index.html'
-form1 === null || form1 === void 0 ? void 0 : form1.addEventListener('submit', createList);
-window.addEventListener('load', () => {
+const uniqueListNames = Array.from(new Set(movies.map(wlm => wlm.watchList.listName))); // Array of all list names
+// The background image and the elements on both pages can change based on the data in localStorage
+function loadPage() {
+    //index.html
     if (document.location.pathname === "/03-typescript/26%20-%20Personal%20Project/yuval/CRUD%20application%20-%20Easy%20and%20Medium/index.html") {
         const checkButton = localStorage.getItem('clicked');
-        checkButton && toggleHide();
+        checkButton && toggleHide(); // checkButton won't be null only if addMovies was pressed
         const savedOptions = localStorage.getItem(optionsFieldName);
         savedOptions && (select.innerHTML = savedOptions);
         loadListNames();
         localStorage.removeItem('clicked');
     }
-});
-function createList(ev) {
-    ev.preventDefault();
-    try {
-        const name = document.getElementById('listNames').value;
-        if (listNamesSet.has(name)) {
-            throw new Error('List Already exists');
-        }
-        listNamesSet.add(name);
-        const op = document.createElement('option');
-        op.classList.add('black');
-        op.value = name;
-        op.textContent = name;
-        select.add(op);
-        localStorage.setItem(optionsFieldName, select.innerHTML);
-        localStorage.setItem(listsFieldName, JSON.stringify(Array.from(listNamesSet)));
-        toggleHide();
-    }
-    catch (error) {
-        error instanceof Error && alert(error.message);
-    }
-}
-newListButton === null || newListButton === void 0 ? void 0 : newListButton.addEventListener('click', () => {
-    toggleHide();
-    form1.reset();
-});
-form2 === null || form2 === void 0 ? void 0 : form2.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const watchList = new WatchList(form2.querySelector('[name="listName"]').value);
-    const newMovie = new Movie(form2.querySelector('[name="movieName"]').value, form2.querySelector('[name="year"]').valueAsNumber, false);
-    addMovieToList(watchList, newMovie);
-    localStorage.setItem(moviesFieldName, JSON.stringify(movies));
-    form2.reset();
-});
-function getUniqueIdentifier(watchList, movie) {
-    return `${watchList.listName}-${movie.movieName}-${movie.year}`;
-}
-function addMovieToList(watchList, movie) {
-    const identifier = getUniqueIdentifier(watchList, movie);
-    if (!movieNamesSet.has(identifier)) {
-        movieNamesSet.add(identifier);
-        movies.push(new WatchListMovie(watchList, movie));
-        localStorage.setItem(wlmFieldName, JSON.stringify(Array.from(movieNamesSet)));
-    }
-    else {
-        alert(`"${movie.movieName}" is already in "${watchList.listName}"`);
-    }
-}
-function loadMoviesName() {
-    const savedMovieNames = localStorage.getItem(wlmFieldName);
-    if (savedMovieNames) {
-        return new Set(JSON.parse(savedMovieNames));
-    }
-    return new Set;
-}
-function loadMovies() {
-    const savedMovies = localStorage.getItem(moviesFieldName);
-    if (savedMovies) {
-        return JSON.parse(savedMovies);
-    }
-    return new Array();
-}
-function loadListNames() {
-    const savedListNames = localStorage.getItem(listsFieldName);
-    if (savedListNames) {
-        return new Set(JSON.parse(savedListNames));
-    }
-    return new Set;
-}
-//'lists.html' elements
-const movieEntries = document.querySelector('.secPage-watchLists');
-const headerDiv = document.querySelector('.header');
-const secPageH1 = document.getElementById('lists-header');
-const seen = document.getElementById('seen');
-const back = document.querySelector('.go-back');
-const addList = document.getElementById('home');
-const addMovies = document.getElementById('home2');
-// functions for 'lists.html'
-addMovies === null || addMovies === void 0 ? void 0 : addMovies.addEventListener('click', () => localStorage.setItem('clicked', 'add movies'));
-function getMoviesWithSameListName(watchListMovies, listName) {
-    return watchListMovies.filter((watchListMovie) => watchListMovie.watchList.listName === listName);
-}
-const uniqueListNames = Array.from(new Set(movies.map(wlm => wlm.watchList.listName)));
-window.addEventListener('load', () => {
-    if (document.location.pathname === '/03-typescript/26%20-%20Personal%20Project/yuval/CRUD%20application%20-%20Easy%20and%20Medium/lists.html') {
+    //lists.html
+    else if (document.location.pathname === '/03-typescript/26%20-%20Personal%20Project/yuval/CRUD%20application%20-%20Easy%20and%20Medium/lists.html') {
         if (movies.length !== 0) {
-            const uniqueListNames = Array.from(new Set(movies.map(wlm => wlm.watchList.listName)));
             const listElementDiv = document.createElement('div');
             listElementDiv.classList.add('secPage-watchLists__listNames-list');
             movieEntries === null || movieEntries === void 0 ? void 0 : movieEntries.appendChild(listElementDiv);
             const tableDiv = document.createElement('div');
             tableDiv.classList.add('secPage-watchLists__table-div');
-            for (const listName of uniqueListNames) {
+            for (const listName of uniqueListNames) { // Creating an element for each watch list
                 const listElement = document.createElement('div');
                 listElement.textContent = listName;
                 listElement.style.cursor = 'pointer';
@@ -148,7 +57,55 @@ window.addEventListener('load', () => {
             }
         }
     }
-});
+}
+function createList(ev) {
+    ev.preventDefault();
+    try {
+        const name = document.getElementById('listNames').value;
+        if (listNamesSet.has(name)) {
+            throw new Error('List Already exists');
+        }
+        listNamesSet.add(name);
+        const op = document.createElement('option');
+        op.classList.add('black');
+        op.value = name;
+        op.textContent = name;
+        select.add(op);
+        localStorage.setItem(optionsFieldName, select.innerHTML);
+        localStorage.setItem(listsFieldName, JSON.stringify(Array.from(listNamesSet)));
+        toggleHide();
+    }
+    catch (error) {
+        error instanceof Error && alert(error.message);
+    }
+}
+function SubmitNewMovie(ev) {
+    ev.preventDefault();
+    const watchList = new WatchList(form2.querySelector('[name="listName"]').value);
+    const newMovie = new Movie(form2.querySelector('[name="movieName"]').value, form2.querySelector('[name="year"]').valueAsNumber, false);
+    addMovieToList(watchList, newMovie);
+    localStorage.setItem(moviesFieldName, JSON.stringify(movies));
+    form2.reset();
+}
+// Functions to help prevent entering the same movie twice in the same list
+function getUniqueIdentifier(watchList, movie) {
+    return `${watchList.listName}-${movie.movieName}-${movie.year}`;
+}
+function addMovieToList(watchList, movie) {
+    try {
+        const identifier = getUniqueIdentifier(watchList, movie);
+        if (movieNamesSet.has(identifier)) {
+            throw new Error(`"${movie.movieName}" is already in "${watchList.listName}"`);
+        }
+        movieNamesSet.add(identifier);
+        movies.push(new WatchListMovie(watchList, movie));
+        localStorage.setItem(wlmFieldName, JSON.stringify(Array.from(movieNamesSet)));
+    }
+    catch (error) {
+        error instanceof Error && alert(error.message);
+    }
+}
+// Create table element for each list
 function showList(listName, moviesWithSameListName, element) {
     element === null || element === void 0 ? void 0 : element.replaceChildren();
     const table = document.createElement('table');
@@ -195,13 +152,13 @@ function showList(listName, moviesWithSameListName, element) {
             localStorage.setItem(moviesFieldName, JSON.stringify(movies));
         });
         cell3.appendChild(checkboxSeen);
-        if (movies[outerCounter].movie.seen) {
+        if (movies[outerCounter].movie.seen) { // Will keep it crossed even after refreshing the page
             cell1.classList.toggle('line-through');
             cell2.classList.toggle('line-through');
             checkboxSeen.checked = true;
         }
         const letterboxdLink = document.createElement('a');
-        let linkInfo = replaceSpacesAndSymbols(cell1.textContent.toLowerCase());
+        const linkInfo = cell1.textContent.toLowerCase().replace(/[^a-zA-Z0-9-]+/g, '-'); // Replace spaces and symbols with '-'
         letterboxdLink.href = `https://letterboxd.com/film/${linkInfo}/`;
         letterboxdLink.innerHTML = '<img id=letterboxd src="images/letterboxd.png">';
         letterboxdLink.target = '_blank';
@@ -217,16 +174,32 @@ function showList(listName, moviesWithSameListName, element) {
     }
     element === null || element === void 0 ? void 0 : element.appendChild(table);
 }
-function replaceSpacesAndSymbols(inputString) {
-    return inputString.replace(/[^a-zA-Z0-9-]+/g, '-');
+// Get all the movies of a certain watch list in an array
+function getMoviesWithSameListName(watchListMovies, listName) {
+    return watchListMovies.filter((watchListMovie) => watchListMovie.watchList.listName === listName);
 }
-function getId(element) {
-    var _a;
-    return parseInt((_a = element.dataset['id']) !== null && _a !== void 0 ? _a : "0", 10);
+function loadMoviesName() {
+    const savedMovieNames = localStorage.getItem(wlmFieldName);
+    if (savedMovieNames) {
+        return new Set(JSON.parse(savedMovieNames));
+    }
+    return new Set;
+}
+function loadMovies() {
+    const savedMovies = localStorage.getItem(moviesFieldName);
+    if (savedMovies) {
+        return JSON.parse(savedMovies);
+    }
+    return new Array();
+}
+function loadListNames() {
+    const savedListNames = localStorage.getItem(listsFieldName);
+    if (savedListNames) {
+        return new Set(JSON.parse(savedListNames));
+    }
+    return new Set;
 }
 function toggleHide() {
     form1div.classList.toggle('hide');
     form2div.classList.toggle('hide');
 }
-//Left to do:
-// - mvc
