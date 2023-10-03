@@ -1,0 +1,107 @@
+@media screen and (max-width: 600px) {
+    body {
+        background-image: url("../images/theater.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .header {
+        @include position();
+
+        * {
+            font-family: $fontFamily;
+            color: $fontColor;
+        }
+        h1 {
+            font-size: 3vh;
+        }
+    }
+
+    .forms {
+        @include flexed(row);
+        @include position(0%);
+        margin-top: 20px;
+        
+        * {
+            font-family: $fontFamily;
+            color: $fontColor;
+        }
+
+        .black {
+            color: black
+        }
+        
+        #lists {
+            @include position();
+            top: 300px;
+            height: 20px;
+            text-decoration: none;
+        }
+
+        &__newWatchList, &__watchList {
+            @include position(0%);
+        }
+
+        &__watchList {
+            @include flexed();
+        }
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .secPage-watchLists {
+        @include flexed();
+        justify-content: space-between;
+        width: 30px;
+
+        &__listNames-list {
+            @include position(0%);
+            @include flexed();
+            margin-top: 10px;
+            flex-wrap: wrap;
+            gap: 5px;
+            font-size: 20px;
+            color: whitesmoke;
+            
+            * {
+                border-left: 1px solid grey;
+                background-color: black;
+            }
+        }
+        
+        &__table-div {
+            position: absolute;
+            left: 70%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            width: calc(50% + 20px);
+            
+            td {
+                border: 1px solid #333;
+                width: 150px;
+                height: 18px;
+                background-color: white;
+            }
+        }
+    
+        .line-through {
+            text-decoration: line-through;
+        }
+    
+        .film-info-cell, .trailer-cell, #letterboxd, #youtube {
+            display: none;
+        }
+    }
+
+    .go-back {
+        @include flexed(row);
+        justify-content: space-between;
+
+        * {
+            width: 120px;
+            font-family: $fontFamily;
+        }
+    }
+}
