@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="dist/login_style.css">
+
+    <script src="dist/index.js" defer></script>
+
+
+    <title>my login page</title>
+
+
+
+</head>
+
+<body>
+
+    <!-- <h1 style="color: red;" id="id_h1" class="h1_car">The car center </h1> -->
+    <section>
+        <form>
+            <h1>Login</h1>
+            <div class="inputbox">
+                <ion-icon name="mail-outline"></ion-icon>
+                <input id="mail_input"  type="email" required>
+                <label for="">Email</label>
+            </div>
+            <div class="inputbox">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input type="password" required>
+                <label for="">Password</label>
+            </div>
+            <div class="forget">
+                <label for=""><input type="checkbox">Remember Me</label>
+              <a href="#">Forget Password</a>
+            </div>
+            <button id="log_in_btn" onclick="view_events()" >Log in</button>
+            <div class="register">
+                <p>Don't have a account <a href="#">Register</a></p>
+            </div>
+        </form>
+    </section>
+    <h1 id="id_h1" class="h1_car">The car center </h1>
+
+</body>
+</html>

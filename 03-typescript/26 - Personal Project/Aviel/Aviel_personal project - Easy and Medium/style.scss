@@ -1,0 +1,115 @@
+
+body{
+  background-image: url(https://hips.hearstapps.com/hmg-prod/images/22c0387-028-1670825222.jpg?crop=0.674xw:0.840xh;0.167xw,0.160xh&resize=1200:*);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+table{
+  width: 80%;
+  margin: 40px auto;
+  background: rgb(124,154,167);
+
+  background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(55px);
+
+    color: white;
+    font-size: 20px;
+
+
+}
+
+table.list{
+  text-align: center;
+  width: 100%;
+}
+
+td{
+  border: 1px solid rgb(204,200,200);
+  text-align: left;
+  padding: 8px 15px;
+}
+
+tr:nth-child(even), table.list thread> tr{
+  background-color: rgb(204,200,200);
+}
+
+
+
+input[type="submit"]:hover{
+  background: #4b99d8;
+}
+
+input[type="reset"]:hover{
+  background: #4b99d8;
+  
+}
+
+input{
+  background: #eee;
+  padding:6px 12px;
+  margin:15px 0 10px;
+  display: inline-block;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+}
+
+button{
+  background: #eee;
+  padding:6px 12px;
+  margin:15px 0 10px;
+  display: inline-block;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover{
+  background:#4b99d8 ;
+}
+
+.h1_car {
+color: rgb(255, 255, 255);
+
+  margin:15px 900px 10px;
+}
+
+
+.select_combobox , .select_car{
+  width: 300px;
+    height: 35px;
+  background: #eee;
+  padding:6px 12px;
+  margin:15px 0 10px;
+  display: inline-block;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+ 
+  }
+
+  .select_car {
+    width: 320px;
+      height: 45px;
+    background: #eee;
+    padding:6px 12px;
+    margin:15px 0 10px;
+    display: inline-block;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+   
+    }
+  
+
