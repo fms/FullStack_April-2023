@@ -165,6 +165,7 @@ function deleteSelected(event: MouseEvent) {
             if (checkbox.checked) {
                 checkbox.parentElement?.parentElement?.remove();
                 deleteSelectedButton?.classList.add("hidden")
+
             }
         })
     }
