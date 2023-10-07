@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="form.js"></script>
+    <link rel="stylesheet" href="./dist/form.css">
+    <script src="./dist/form.js" defer></script>
+    <title>form</title>
+</head>
+<body>
+    <div class="container">
+        <form id="form">
+            <div class="contact-form">
+                <h1>REGISTRATION</h1>
+                <div class="form-group">
+                    <label for="name">Child Name</label>
+                    <input type="text" id="name" placeholder="Child Name">
+                </div>
+                <div class="form-group">
+                    <label for="">Age</label>
+                    <input type="text" id="age" placeholder="number">
+                </div>
+                <div class="form-group">
+                    <label for="class-select">choose your class:</label>
+                    <select id="class-select">
+                        <option value="">--please choose an option--</option>
+                        <option value="hip-hop">hip-hop</option>
+                        <option value="karate">karate</option>
+                        <option value="poetry">poetry</option>
+                        <option value="teater">teater</option>
+                        <option value="hip-hop">ballroom dancing</option>
+                    </select>
+                </div>           
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" required>
+                </div>
+                <div>
+                    <label for="phone">Enter your phone number:</label>
+                    <input type="text" id="phone" name="phone" required />
+                </div>
+            </div>
+            <button class="pulse" type="submit">Submit</button>
+        </form>
+    </div>
+  </div>
+</body>
+</html>
