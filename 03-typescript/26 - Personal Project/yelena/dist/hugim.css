@@ -5,20 +5,18 @@
   box-sizing: border-box;
 }
 
-body {
-  hanging-punctuation: 100vh;
+html, body {
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
   font-family: "Raleway", sans-serif;
-  background-color: #434747;
-}
-
-.container {
-  margin: 30px;
+  background-color: #2f3232;
 }
 
 @media (max-width: 1080px) {
   .container {
     display: block;
-    max-width: 480px;
+    max-width: 1000px;
   }
 }
 .row {
@@ -118,18 +116,4 @@ body {
 
 .more .read-more span {
   font-weight: 900;
-}
-
-.more .icon-links i {
-  color: #000;
-  font-size: 20px;
-}
-
-.more .icon-links a:not(:last-child) i {
-  margin-right: 20px;
-}
-
-/* reposive css */
-.more .read-more, .more .icon-links a i {
-  font-size: 18px;
 }
