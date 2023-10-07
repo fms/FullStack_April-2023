@@ -6,3 +6,4 @@
 // Beneath the form display a tabulated list of the details. This list is initially empty.
 
 // When the form is submitted, add a line to the list with the details.
+let add = document.querySelector('')

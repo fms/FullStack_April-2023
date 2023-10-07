@@ -7,6 +7,13 @@ body {
   padding: 0;
   margin: 3rem;
   background-color: #5b687a;
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  margin-left: 4rem;
+  font-size: larger;
 }
 
 .section {

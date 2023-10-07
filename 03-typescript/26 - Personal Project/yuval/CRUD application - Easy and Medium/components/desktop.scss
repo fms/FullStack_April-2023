@@ -1,0 +1,115 @@
+@media screen and (min-width: 1025px) {
+    body {
+        background-image: url("../images/cinema.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .header {
+        @include position(0%);
+        margin-left: 35vw;
+
+        * {
+            font-family: $fontFamily;
+            color: $fontColor;
+        }
+        h1 {
+            font-size: 8vh;
+        }
+    }
+
+    .forms {
+        @include position(0%);
+        margin-top: 20px;
+        
+        * {
+            font-family: $fontFamily;
+            color: $fontColor;
+        }
+
+        .black {
+            color: black
+        }
+        
+        #lists {
+            @include position(80%);
+            top: 80px;
+            text-decoration: none;
+        }
+
+        &__watchList {
+            @include flexed();
+        }
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .secPage-watchLists {
+        @include flexed();
+        justify-content: space-between;
+        width: 40px;
+
+        &__listNames-list {
+            @include position(0%);
+            @include flexed();
+            margin-top: 10px;
+            flex-wrap: wrap;
+            gap: 5px;
+            font-size: 25px;
+            color: whitesmoke;
+    
+            * {
+                border: 1px solid grey;
+                background-color: black;
+            }
+        }
+    
+        &__table-div {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+
+            td {
+                border: 1px solid #333;
+                width: 150px;
+                height: 18px;
+                background-color: white;
+            }
+        }
+    
+        .line-through {
+            text-decoration: line-through;
+        }
+    
+        #letterboxd, #youtube {
+            margin-left: 40%;
+            height: 20px;
+        }
+    
+        #letterboxd {
+            width: 20px;
+        }
+    
+        #youtube {
+            width: 30px;
+        }
+
+        a:visited {
+            color: blue;
+        }
+    }
+
+
+    .go-back {
+        @include flexed();
+        gap: 5px;
+
+        * {
+            width: 120px;
+            font-family: $fontFamily;
+        }
+    }
+}

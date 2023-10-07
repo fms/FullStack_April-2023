@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="dist/style.css">
+
+    <script src="dist/index.js" defer></script>
+
+    <title>- my team jobs list</title>
+
+ 
+    <script>
+
+        function init () {
+    
+            id_h1.innerHTML = "WELLCOM" + " " +  localStorage.user
+    
+            
+        }
+    
+    
+    
+    </script>
+
+  </head>
+
+
+  
+
+
+
+<body onload="init()">
+
+
+    <h1 id="id_h1" class="h1_car">The car center </h1>
+
+    <table>
+      <tr>
+          <td>
+              <form >
+                  <div>
+                      <label for="Sales_agent">Sales agent</label> <br>
+                      <select name="Sales_agent" id="Sales_agent" class="select_combobox">
+                        <option value=""></option>
+                        <option value="AVIEL">AVIEL</option>
+                        <option value="Efrat">Efrat</option>
+                      <option value="Agam">Agam</option>
+                      <option value="Eila">Eila</option>
+                      <option value="Maor">Maor</option>
+                     </select>
+                  </div>
+                  <br>
+
+                  <div>
+                      <label for="client_name">client name</label> <br>
+                      <input type="text" name="client_name" id="client_name" class="select_combobox">
+                  </div>
+                  <br>
+               
+                  <div>
+                      <label for="Car_type">Car type</label> <br>
+                      <select name="Car_type" id="Car_type"class="select_car">
+                        <option value=""></option>
+                        <option value="Mercedes">Mercedes</option>
+                        <option value="Bmw">Bmw</option>
+                        <option value="Audi">Audi</option>
+                        <option value="Volvo">Volvo</option>
+                        <option value="Toyota">Toyota</option>
+                        <option value="Mazda">Mazda</option>
+
+                     </select>
+                  </div>
+                  <br>
+
+                  <div>
+                    <label for="Car_price">Car price</label> <br>
+                    <input type="number" name="Car_price" id="Car_price" class="select_combobox">
+                </div>
+                <br>
+
+                    
+                    <div>
+                        <label for="Date_of_meeting">Date of meeting</label>
+                    </div>
+                  
+                 
+                        <div>
+                    <input type="date" name="Date_of_meeting" id="Date_of_meeting" class="select_combobox">
+                    <br>
+                    <br>
+                </div>
+
+
+                  <div class="form_action--button">
+                    <button id="add_data_btn" onclick="add_data()">Add Data</button>
+                    <!-- <button id="reset_data_btn" onclick="resetForm()">reset form</button> -->
+                      <input type="reset" value="Reset">
+                  </div>
+
+              </form>
+
+              <td id="my_store">
+
+                <input type="text" id="myInput" onkeyup="SearchFunction()" placeholder="Search for agents.." title="Type in a name">
+
+                  <table class="list" id="storeList">
+                      <thead>
+                          <tr>
+                              <th>Sales agent</th>
+                              <th>client name</th>
+                              <th>Car type</th>
+                              <th>Car price</th>
+                              <th>Date of meeting</th>
+                              
+                          </tr>
+                      </thead>
+
+                      <tbody>
+
+                      </tbody>
+                    
+                  </table>
+              </td>
+          </td>
+      </tr>
+  </table>
+   
+  <!-- <p><a href="https://api.whatsapp.com/send?phone=504722252&text=%D7%90%D7%91%D7%A7%D7%A9%20%D7%A9%D7%99%D7%97%D7%96%D7%A8%D7%95%20%D7%90%D7%9C%D7%99%20%D7%91%D7%A2%D7%A7%D7%91%D7%95%D7%AA%20%D7%A7%D7%9E%D7%A4%D7%99%D7%99%D7%9F%20%D7%94%D7%A4%D7%99%D7%99%D7%A1%D7%91%D7%95%D7%A7">Visit W3Schools.com!</a></p>
+  <p><a href="mailto:aviel0040@gmail.com">Visit W3Schools.com!</a></p> -->
+
+
+
+
+        
+
+</body>
+</html>

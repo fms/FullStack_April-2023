@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch List</title>
+    <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="dist/style.css">
+    <script src="dist/controller.js" defer></script>
+    <script src="dist/model.js" defer></script>
+    <script src="dist/view.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <h1>WATCH LISTS</h1>
+    </div>
+
+    <div class="forms">
+        <a href="lists.html" id="lists"><button class="black">My watch lists</button></a>
+        <div class="forms__newWatchList" id="newWatchListDiv">
+            <form id="start-form">
+                <h3>Make a new list!</h3>
+                <input class="black" type="text" id="listNames" required>
+                <input class="black" id="newListSub"  type="submit" value="Create list">
+            </form>
+        </div>
+        
+        <div class="forms__watchList hide" id="watchListDiv">
+            <form id="add-movies">
+                <h3>Add movies!</h3>
+                <label>Watch List:
+                    <select class="black" id="selectList" name="listName" required>
+                        <option class="black" value="" disabled selected>-------</option>
+                    </select>
+                </label>
+                <input class="black" id="addNewList" type="button" value="New list">
+                <br><br>
+    
+                <label>Movie:
+                    <input class="black" type="text" id="movie" name="movieName" required>
+                </label>
+                <br><br>
+    
+                <label>Year:
+                    <input class="black" type="number" id="year" name="year" min="1985" max="2025" required>
+                </label>
+                <br><br>
+    
+                <input class="black" id="submitMovie" type="submit" value="Add movie">
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

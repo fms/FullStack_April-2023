@@ -130,29 +130,29 @@ function loadFromLocalStorage() {
         attachEventListeners();
     }
 }
-// function saveToLocalStorage() {
-//     let userDetails = {
-//         email,
-//         username,
-//         password
-//     }
-//     let users = localStorage.getItem("users");
-//     let parsedUsers = users ? JSON.parse(users) : [];
-//     if (users) {
-//         parsedUsers.push(userDetails)
-//     }
-//     else {
-//         parsedUsers = [userDetails]
-//     }
-//     localStorage.setItem("users", JSON.stringify(parsedUsers))
-// }
-// function loadFromLocalStorage() {
-//     let users = localStorage.getItem("users")
-//     let parsedUsers = JSON.parse(users!)
-//     parsedUsers.forEach((user) => {
-//         email = user.email
-//         username = user.username
-//         password = user.password
-//         handleSubmit()
-//     })
-// }
+function saveToLocalStorage() {
+    let userDetails = {
+        email,
+        username,
+        password
+    };
+    let users = localStorage.getItem("users");
+    let parsedUsers = users ? JSON.parse(users) : [];
+    if (users) {
+        parsedUsers.push(userDetails);
+    }
+    else {
+        parsedUsers = [userDetails];
+    }
+    localStorage.setItem("users", JSON.stringify(parsedUsers));
+}
+function loadFromLocalStorage() {
+    let users = localStorage.getItem("users");
+    let parsedUsers = JSON.parse(users);
+    parsedUsers.forEach((user) => {
+        email = user.email;
+        username = user.username;
+        password = user.password;
+        handleSubmit();
+    });
+}

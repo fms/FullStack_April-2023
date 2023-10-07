@@ -1,0 +1,15 @@
+@import 'config';
+
+@mixin flexed($direction:column) {
+    display: flex;
+    flex-direction: $direction;
+}
+
+@mixin position($left:40%) {
+    position: relative;
+    left: $left;
+}
+
+@import 'components/desktop.scss';
+@import 'components/tablet.scss';
+@import 'components/phone.scss';
