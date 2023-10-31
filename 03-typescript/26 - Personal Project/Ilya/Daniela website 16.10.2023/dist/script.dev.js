@@ -52,8 +52,8 @@ for (var i = 0; i < navLinks.length; i++) {
 
 
 function toggleText() {
-  var text = document.querySelector('.text');
-  text.classList.toggle('text-showing');
+  var text = document.querySelector(".text");
+  text.classList.toggle("text-showing");
 }
 /*slider*/
 
@@ -92,4 +92,10 @@ function showSlides(n) {
 
   slides[slideIndex - 1].style.display = "block";
   dots[slideIndex - 1].className += " active";
-}
+} // scroll
+
+
+var homeButton = document.querySelector("#homeButton");
+homeButton.addEventListener("click", function () {
+  window.scrollTo(0, 420);
+});
