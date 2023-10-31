@@ -1,0 +1,513 @@
+/* Google Font CDN Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  footer a {
+    height: 0;
+  }
+}
+
+
+/* Custom Scroll Bar CSS */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #b7b7b8;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #b5b3bd;
+}
+/* navbar styling */
+nav{
+  position: fixed;
+  width: 100%;
+  padding: 20px 0;
+  z-index: 998;
+  transition: all 0.3s ease;
+  font-family: 'Ubuntu', sans-serif;
+}
+nav.sticky{
+  background: #100f0f;
+  padding: 13px 0;
+}
+nav .navbar{
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+nav .navbar .logo a{
+  width: 0%;
+  display: left;
+  position: relative;
+  
+}
+nav.sticky .navbar .logo a{
+  color: #fff;
+  width: 10%;
+  display: center;
+  position: relative;
+}
+nav .navbar .menu{
+  display: flex;
+  position: relative;
+}
+nav .navbar .menu li{
+  list-style: none;
+  margin: 0 8px;
+}
+.navbar .menu a{
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  padding: 6px 0;
+  transition: all 0.4s ease;
+}
+.navbar .menu a:hover{
+  color: #c6ea98;
+}
+nav.sticky .menu a{
+  color: #FFF;
+}
+nav.sticky .menu a:hover{
+  color: #ffffff;
+}
+.navbar .media-icons a{
+  color: #ffffff;
+  font-size: 18px;
+  margin: 0 6px;
+}
+nav.sticky .media-icons a{
+  color: #FFF;
+}
+
+/* Side Navigation Menu Button CSS */
+nav .menu-btn,
+.navbar .menu .cancel-btn{
+  position: absolute;
+  color: #fff;
+  right: 30px;
+  top: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: none;
+}
+nav .menu-btn{
+  color: #9b6e8c;
+}
+nav.sticky .menu-btn{
+  color: #FFF;
+}
+.navbar .menu .menu-btn{
+  color: #fff;
+}
+.logo{
+  width: 22%;
+  display: left;
+  position: relative;
+}
+/* Scroll TO Top Button CSS */
+.scroll-button a{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: #fff;
+    background:#9b6e8c;
+    padding: 7px 12px;;
+    font-size: 18px;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.15);
+    display: none;
+  }
+  
+  /* Responsive Media Query */  
+@media (max-width: 750px) {
+    nav .navbar{
+      width: 90%;
+    }
+    nav .navbar .menu{
+      position: fixed;
+      left: -100%;
+      top: 0;
+      background: #585d25;
+      height: 100vh;
+      max-width: 400px;
+      width: 100%;
+      padding-top: 60px;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.5s ease;
+    }
+    .navbar.active .menu{
+      left: 0;
+    }
+    nav .navbar .menu a{
+      font-size: 23px;
+      display: block;
+      color: #fdefef;
+      margin: 10px 0;
+    }
+    nav.sticky .menu a:hover{
+      color: #ffffff;
+    }
+    nav .navbar .media-icons{
+      display: none;
+    }
+    nav .menu-btn,
+    .navbar .menu .cancel-btn{
+      display: block;
+    }
+    footer a {
+      height: 0;
+    }
+}
+
+body {
+    background-color: #222;
+    color: white;
+}
+/*home*/
+.home {
+    max-width: 800px;
+    margin: -20px auto;
+    padding: 0 20px;
+    text-align: left;  
+    position: relative;
+    top: 150px;
+
+}
+
+.image-container-home {
+  width: 100%;
+  text-align: center;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: 15px;
+}
+
+.image-container-home img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;   
+}
+
+/*read more*/
+.text-hiding {
+    overflow: hidden;
+    height: 100px; /* Initial height to show */
+    transition: height 0.5s ease;
+}
+
+.text-showing {
+    height: auto; /* Expanded height to show all content */
+}
+
+.continue-button {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/*about*/
+.about {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+    text-align: left;  
+    position: relative;
+    top: 200px;
+    background-color: #222;
+   ;
+  
+}
+
+.about__description { 
+  margin-top: 20px;
+}
+
+
+.image-container {
+    width: 100%;
+    text-align: center;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    
+    
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    
+}
+h2 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 90%;
+    color: #414141;
+   
+}
+.text {
+    margin-top: 20px;
+    line-height: 1.5;
+}
+
+#dots {
+    display: none;
+  }
+
+ 
+
+
+
+/*Rückmeldungen*/
+.ruckmeldungen {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    text-align: left;  
+    position: relative;
+    top: 250px;
+    
+}
+
+.ruckmeldungen__description { 
+  margin-top: 20px;
+}
+
+
+.gallery {
+  display: flex;
+  overflow-x: scroll;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-family: cursive;
+  font-size: small;
+  top: 250px;
+}
+
+.gallery-item {
+  flex-shrink: 0;
+  width: calc(100% / 3);
+  margin-right: 10px;
+}
+
+.gallery-item img {
+  width: 50%;
+}
+
+/*kosten*/
+.kosten {
+  max-width: 800px;
+  margin: -20px auto;
+  padding: 0 20px;
+  text-align: left;  
+  position: relative;
+  top: 310px;
+}
+
+/*Co - Regulation*/
+.coregulation {
+  max-width: 800px;
+  margin: -20px auto;
+  padding: 0 20px;
+  text-align: left;  
+  position: relative;
+  top: 380px; 
+}
+.buttons {
+  text-align: center;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgb(107, 107, 104);
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: background-color 0.3s, color 0.3s;
+  top: 100px;
+  padding: 10px;
+  margin-left: 20px;
+  margin-top: 20px;
+  
+}
+
+.button:hover {
+  background-color: black;
+}
+
+  
+ /* Slideshow container */
+.slideshow-container {
+  position: relative;
+  background: #222;
+}
+
+/*abnehmen-leicht-gemacht*/
+.abnehmen-leicht-gemacht {
+  max-width: 800px;
+  margin: -20px auto;
+  padding: 0 20px;
+  text-align: left;  
+  position: relative;
+  top: 480px;
+}
+
+/*kosten*/
+.kosten {
+  max-width: 800px;
+  margin: -20px auto;
+  padding: 0 20px;
+  text-align: left;  
+  position: relative;
+  top: 310px;
+}
+
+.kosten__description { 
+  margin-top: 20px;
+}
+
+/*tantra*/
+.tantra {
+  max-width: 800px;
+  margin: -20px auto;
+  padding: 0 20px;
+  text-align: left;  
+  position: relative;
+  top: 550px;
+}
+
+.tantra__description { 
+  margin-top: 20px;
+}
+
+/*privacy*/
+.privacy {
+  max-width: 800px;
+  margin: -20px auto;
+  padding: 0 20px;
+  text-align: left;  
+  position: relative;
+  top: 120px;
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 80px;
+  text-align: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #888;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+  text-align: center;
+  padding: 2px;
+  background: ;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+  background-color: #454343;
+}
+
+/* Add an italic font style to all quotes */
+q {font-style: italic;}
+
+/* Add a blue color to the author */
+.author {color: rgb(228, 119, 72);}
+
+/*footer*/
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #000;
+  padding: 20px 0;
+  margin-top: 600px;
+}
+
+footer div {
+  padding: 0 10px;
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  
+  
+}
+
+footer span {
+  color: #fff;
+  margin-left: 0px;
+  
+}
+
+
+footer a {
+  padding: 0;
+  margin-right: 40px;
+}
