@@ -1,13 +1,13 @@
-let DB;
+let DB: IDBDatabase;
 
-let form = document.querySelector('form');
-let patientName = document.querySelector('#patient-name');
-let contact = document.querySelector('#contact');
-let date = document.querySelector('#date');
-let time = document.querySelector('#time');
-let symptoms = document.querySelector('#symptoms');
-let consultations = document.querySelector('#consultations');
-let services = document.querySelector('#services');
+let form = document.querySelector('form') as HTMLFormElement;
+let patientName = document.querySelector('#patient-name') as HTMLInputElement;
+let contact = document.querySelector('#contact') as HTMLInputElement;
+let date = document.querySelector('#date') as HTMLInputElement;
+let time = document.querySelector('#time') as HTMLInputElement;
+let symptoms = document.querySelector('#symptoms') as HTMLInputElement;
+let consultations = document.querySelector('#consultations') as HTMLUListElement;
+let services = document.querySelector('#services') as HTMLParagraphElement;
 
 document.addEventListener('DOMContentLoaded', () => {
      // create the database
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
           // console.log('Database Ready');
 
           
-          DB = ScheduleDB.result;
+          DB = ScheduleDB.result as IDBDatabase;
 
           showConsultations();
      }
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
    
      ScheduleDB.onupgradeneeded = function(e) {
           
-          let db = e.target.result;
+          let db = e.target.result as IDBDatabase;
           
           let objectStore = db.createObjectStore('consultations', { keyPath: 'key', autoIncrement: true } );
 
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
      form.addEventListener('submit', addConsultations);
 
-     function addConsultations(e) {
+     function addConsultations(e: Event) {
           e.preventDefault();
           let newConsultation = {
                patientname : patientName.value,
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
           objectStore.openCursor().onsuccess = function(e) {
                
-               let cursor = e.target.result;
+               let cursor = e.target.result as IDBCursorWithValue;
                if(cursor) {
                     let ConsultationHTML = document.createElement('li');
                     ConsultationHTML.setAttribute('data-consultation-id', cursor.value.key);
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }
      }
 
-          function removeConsultation(e) {
+          function removeConsultation(e: Event) {
        
           let scheduleID = Number( e.target.parentElement.getAttribute('data-consultation-id') );
          
