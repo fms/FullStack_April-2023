@@ -38,7 +38,7 @@ const schoolClasses = [
     },
     {
         title: "theater",
-        description: "this is a karate class",
+        description: "Children's theater is a wonderful and enriching hobby that involves the participation of young individuals in various aspects of theatrical performance.",
         time: "sunday 18:00-19:00",
         teacher: "Vin Diesel",
         image: "./dist/images/teater_small.png",
