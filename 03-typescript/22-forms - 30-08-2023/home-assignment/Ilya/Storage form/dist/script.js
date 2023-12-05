@@ -10,7 +10,7 @@ function addCustomer() {
     const customerList = document.getElementById('customer-list');
     const listItem = document.createElement('li');
     listItem.innerHTML = `
-  <div>
+  <div style="display: grid; grid-template-columns: repeat(7,1fr)">
     <div class='header'>Fullname</div>
     <div class='header'>Dob</div>
     <div class='header'>Gender</div>
@@ -18,15 +18,17 @@ function addCustomer() {
     <div class='header'>Telephone</div>
     <div class='header'>Country</div>
     <div class='header'>Address</div>
-  </div>
-  <div>
-  <div class='entry'>${fullName}</div>
+
+    <div class='entry'>${fullName}</div>
   <div class='entry'>${dob}</div>
   <div class='entry'>${gender}</div>
   <div class='entry'>${email}</div>
   <div class='entry'>${telephone}</div>
   <div class='entry'>${country}</div>
   <div class='entry'>${address}</div>
+  </div>
+  <div>
+  
   
 </div>
   `;

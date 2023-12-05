@@ -1,10 +1,12 @@
 "use strict";
 function handleClick(event) {
+    console.log(event);
     console.log(`click`);
 }
 const validValues = ["Hello", "There"];
 function printValue(event) {
     const target = event.target;
+    console.log(event);
     if (target) {
         console.log(`key up ${target.value} ${target.valueAsNumber}`);
     }

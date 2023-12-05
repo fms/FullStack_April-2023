@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Young+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kurale&family=Raleway:wght@300;400;500;600;700;800&family=Young+Serif&display=swap');
+
+body {
+    display: grid;
+    place-items: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    font-size: 20px;
+    line-height: 15px;
+    color: #281c1c; 
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+.container{
+    h1{
+        font-family: 'Kurale', serif;
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 50px;
+    }
+    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+    min-width: 150px;
+    background-color: white;
+    padding: 10px; 
+
+}
+* {
+    box-sizing: border-box;
+}
+
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 15px;
+  margin-bottom: 40px;
+  //resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pulse:hover .pulse:focus{
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em transparent;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 var(--hover); }
+}
+
+

@@ -1,4 +1,5 @@
 function handleClick(event: MouseEvent) {
+    console.log(event)
     console.log(`click`);
 }
 
@@ -6,6 +7,7 @@ const validValues = [ "Hello", "There"];
 
 function printValue(event: KeyboardEvent) {
     const target: HTMLInputElement | null = event.target;
+    console.log(event)
     if (target) {
         console.log(`key up ${target.value} ${target.valueAsNumber}`);
     }
