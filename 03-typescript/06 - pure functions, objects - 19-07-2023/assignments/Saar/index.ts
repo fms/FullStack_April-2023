@@ -2,38 +2,30 @@
 // Properties include: maker, model, year, milage, fuel consumption (km/l)
 // Add a method for calculating total fuel consumption (milage / fuel consunmption)
 
-interface car 
-{
+interface car {
     maker :string,
     model :string,
     year :number,
     milage :number,
-    fuelConsunmption : number,
-    totalFuelConsumtion : Function,
-};
-
-let bugatti :car = {
-    maker: `Bugatti`,
-    model:`Divo`,
-    year: 2018,
-    milage: 75000,
-    fuelConsunmption: 50.0007232,
-    totalFuelConsumtion () {
-        return (this.milage / this.fuelConsunmption)
-    }
+    fuel : number,
 }
 
-console.log(bugatti)
-console.log(bugatti.totalFuelConsumtion());
+let bugatti = carObjects(`Bugatti`,`Divo`,2018,75000,50.0007232,)
 
 
-function carObjects(maker :string , model :string, year :number, milage :number , fuelConsunmption :number)
-{
-    let totalFuelConsumtion :number = (milage / fuelConsunmption)
-    let carProperties :any = `Car maker: ${maker}, Car model: ${model}, Car year: ${year}, Car milage ${milage}, Car fuelConsunmption ${fuelConsunmption}.`;
+function carObjects(maker :string , model :string, year :number, milage :number , fuel :number) {
+    let totalFuelConsumtion :number = (milage / fuel)
+    let carProperties :any = `Car maker: ${maker}, Car model: ${model}, Car year: ${year}, Car milage ${milage}, Car fuel ${fuel}.`;
+    let newCar :car = {
+        maker,
+        model,
+        year,
+        milage,
+        fuel,
+    }
     return `${carProperties}, your total Fuel Consumtion is ${totalFuelConsumtion}`
-};
+}
 
-console.log(carObjects('Mazda', 'Mazda 3', 2023 , 100000 , 60.008388));
+console.log(carObjects('Mazda', 'Mazda 3', 2023 , 100000 , 60.008388))      // log car propreties, get back "total fuel consumtion".
 
-
+console.log(bugatti)
