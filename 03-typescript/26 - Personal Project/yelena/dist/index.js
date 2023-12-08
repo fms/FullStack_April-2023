@@ -44,6 +44,14 @@ const schoolClasses = [
         image: "./dist/images/teater_small.png",
     },
 ];
+// TypeScript code (assumes you are working within a web context)
+const element = document.getElementById('time');
+if (element) {
+    element.style.lineHeight = '2';
+}
+else {
+    console.error('Element with ID "yourElementId" not found.');
+}
 //  Output school class card for each class inside their container
 const classesContainer = document.querySelector("#schoolClassesContainer");
 if (classesContainer) {
