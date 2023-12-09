@@ -1,0 +1,636 @@
+@charset "UTF-8";
+/* Google Font CDN Link */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+/* Custom Scroll Bar CSS */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5c1250;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b2d599;
+}
+
+/* navbar styling */
+nav {
+  position: fixed;
+  width: 100%;
+  padding: 20px 0;
+  z-index: 998;
+  transition: all 0.3s ease;
+  font-family: "Ubuntu", sans-serif;
+}
+
+nav.sticky {
+  background: #5c124a;
+  padding: 13px 0;
+}
+
+nav .navbar {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+
+nav .navbar .logo a {
+  font-weight: 500;
+  font-size: 35px;
+  color: #000000;
+}
+
+nav.sticky .navbar .logo a {
+  color: #fff;
+}
+
+nav .navbar .menu {
+  display: flex;
+  position: relative;
+}
+
+nav .navbar .menu li {
+  list-style: none;
+  margin: 0 8px;
+}
+
+.navbar .menu a {
+  font-size: 18px;
+  font-weight: 500;
+  color: #0d1a3b;
+  padding: 6px 0;
+  transition: all 0.4s ease;
+}
+
+.navbar .menu a:hover {
+  color: #000000;
+}
+
+nav.sticky .menu a {
+  color: #FFF;
+}
+
+nav.sticky .menu a:hover {
+  color: #0d1a3b;
+}
+
+.navbar .media-icons a {
+  color: #85679f;
+  font-size: 18px;
+  margin: 0 6px;
+}
+
+nav.sticky .media-icons a {
+  color: #FFF;
+}
+
+/* Side Navigation Menu Button CSS */
+nav .menu-btn, .navbar .menu .cancel-btn {
+  position: absolute;
+  color: #fff;
+  right: 30px;
+  top: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: none;
+}
+
+nav .menu-btn {
+  color: #000000;
+}
+
+nav.sticky .menu-btn {
+  color: #FFF;
+}
+
+.navbar .menu .menu-btn {
+  color: #fff;
+}
+
+/* home */
+.home {
+  background: #ffd6d6;
+}
+
+.content {
+  margin: 0 auto;
+  padding: 30px 0;
+  margin-top: -1000px;
+}
+
+.text {
+  width: 80%;
+  text-align: left;
+  margin: auto;
+}
+
+.image-container {
+  width: 100%;
+  text-align: center;
+  border-radius: 10%;
+  overflow: hidden;
+  margin-top: 15px;
+}
+
+.image-container img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5%;
+}
+
+#content1 {
+  max-width: 800px;
+  padding: 20px;
+  margin: 0 auto;
+  max-height: 180px;
+  overflow: hidden;
+  /* Set Transitions */
+  transition: max-height 0.7s;
+}
+
+#content1.open {
+  max-height: 2900px;
+  /* Set Transitions */
+  transition: max-height 0.7s;
+}
+
+#show-more {
+  width: 20%;
+  color: #fd009c;
+  font-family: sans-serif;
+  display: block;
+  cursor: pointer;
+  text-align: center;
+  padding: 1px;
+  margin: 10px auto;
+}
+
+/* About*/
+section {
+  padding-top: 40px;
+}
+
+section .content {
+  width: 80%;
+  margin: 40px auto;
+  font-family: "Poppins", sans-serif;
+}
+
+.about .about-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+section .title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+section .title span {
+  color: #0E2431;
+  font-size: 20px;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+section .title span::before, section .title span::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #000000;
+  left: 0;
+  bottom: 0;
+}
+
+section .title span::after {
+  bottom: -7px;
+  width: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.about .about-details .left {
+  width: 45%;
+}
+
+.about .left img {
+  height: 400px;
+  width: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.about-details .right {
+  width: 55%;
+}
+
+section .topic {
+  color: #0E2431;
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.about-details .right p {
+  text-align: justify;
+  color: #0E2431;
+}
+
+section .button {
+  margin: 16px 0;
+}
+
+section .button button {
+  outline: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 25px;
+  font-weight: 400;
+  background: #000000;
+  color: #fff;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+section .button button:hover {
+  border-color: #dafda0;
+  background-color: #fff;
+  color: #dcfab9;
+}
+
+.memorygame .image-container {
+  width: 100%;
+  text-align: center;
+  border-radius: 5%;
+  overflow: hidden;
+  margin-top: 15px;
+}
+.memorygame .image-container img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5%;
+}
+
+.content5 {
+  margin: 0 auto;
+  padding: 30px 0;
+  margin-top: -1000px;
+}
+
+.text5 {
+  width: 80%;
+  text-align: left;
+  margin: auto;
+}
+
+/* Rückmeldungen */
+.ruckmeldungen {
+  background: #f1fde1;
+}
+
+.ruckmeldungen .content {
+  padding: 40px 0;
+}
+
+.ruckmeldungen .ruckmeldungen-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ruckmeldungen-details .text {
+  width: 50%;
+}
+
+.gallery {
+  display: flex;
+  overflow-x: scroll;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-family: cursive;
+  font-size: small;
+  top: 250px;
+}
+
+.gallery-item {
+  flex-shrink: 0;
+  width: calc(100% / 3);
+  margin-right: 10px;
+}
+
+.gallery-item img {
+  width: 50%;
+}
+
+/* Slideshow container */
+.slideshow-container1 {
+  position: relative;
+  background: #f1fde1;
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 50px;
+  text-align: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 10px;
+  color: #888;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(215, 215, 215, 0.8);
+  color: white;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+  text-align: center;
+  padding: 2px;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+  background-color: #454343;
+}
+
+/* Add an italic font style to all quotes */
+q {
+  font-style: italic;
+}
+
+/* Add color to the author */
+.author {
+  color: #e47748;
+}
+
+/* Co - Regulation */
+.coregulation {
+  background: #f1fde1;
+}
+
+.buttons {
+  text-align: center;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #5c772e;
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: background-color 0.3s, color 0.3s;
+  top: 100px;
+  padding: 10px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.button:hover {
+  background-color: black;
+}
+
+/*tantra*/
+.tantra {
+  background: #f1fde1;
+}
+
+/* Contact */
+.contact .content {
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.contact .text {
+  width: 80%;
+  text-align: left;
+  margin: auto;
+}
+
+/*contact2*/
+.contact2 {
+  background: #f1fde1;
+}
+
+.contact2 .content {
+  margin: 0 auto;
+  padding: 300px 0;
+}
+
+/*Datenschutzrichtlinie*/
+.Datenschutzrichtlinie {
+  background: #f1fde1;
+}
+
+.Datenschutzrichtlinie .content {
+  margin: 0 auto;
+  padding: 70px 0;
+}
+
+/* Footer CSS */
+footer {
+  background: black;
+  padding: 15px 0;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+footer a:link {
+  color: red;
+}
+
+footer .text span {
+  font-size: 17px;
+  font-weight: 400;
+  color: #fff;
+}
+
+footer .text span a {
+  font-weight: 500;
+  color: #FFF;
+}
+
+footer .text span a:hover {
+  text-decoration: underline;
+}
+
+/* Scroll TO Top Button CSS */
+.scroll-button a {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: #fff;
+  background: #3c5c12;
+  padding: 7px 12px;
+  font-size: 18px;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.15);
+  display: none;
+}
+
+/* Responsive Media Query */
+@media (max-width: 1190px) {
+  section .content {
+    width: 85%;
+  }
+}
+@media (max-width: 1000px) {
+  .about .about-details {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .about .about-details .left {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .about-details .right {
+    width: 90%;
+    margin: 40px 0;
+  }
+
+  .services .boxes .box {
+    margin: 20px 0;
+    width: calc(100% / 2 - 20px);
+  }
+}
+@media (max-width: 900px) {
+  .about .left img {
+    height: 350px;
+    width: 350px;
+  }
+}
+@media (max-width: 750px) {
+  nav .navbar {
+    width: 90%;
+  }
+
+  nav .navbar .menu {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    background: #25125cb7;
+    height: 100vh;
+    max-width: 400px;
+    width: 100%;
+    padding-top: 60px;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s ease;
+  }
+
+  .navbar.active .menu {
+    left: 0;
+  }
+
+  nav .navbar .menu a {
+    font-size: 23px;
+    display: block;
+    color: #fff;
+    margin: 10px 0;
+  }
+
+  nav.sticky .menu a:hover {
+    color: #0e1504;
+  }
+
+  nav .navbar .media-icons {
+    display: none;
+  }
+
+  nav .menu-btn, .navbar .menu .cancel-btn {
+    display: block;
+  }
+
+  .skills .skills-details {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .skills-details .text {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .skills-details .boxes {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .services .boxes .box {
+    margin: 20px 0;
+    width: 100%;
+  }
+
+  .contact .text {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .skills-details .boxes .per {
+    font-size: 50px;
+    color: #17021a;
+  }
+}
