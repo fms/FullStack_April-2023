@@ -1,18 +1,18 @@
 {
-  "name": "nodejslesson1-10.12",
+  "name": "intro2backend",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "bamba": "echo \"Bamba is in the house\" && exit 1"
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "nodemon": "^3.0.2"
-  }
+  },
+  "description": ""
 }
