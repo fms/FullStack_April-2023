@@ -23,8 +23,8 @@
                     <input type="text" id="age" placeholder="number">
                 </div>
                 <div class="form-group">
-                    <label for="class-select">choose your class:</label>
-                    <select id="class-select">
+                    <label for="classes">choose your class:</label>
+                    <select id="classes">
                         <option value="">--please choose an option--</option>
                         <option value="hip-hop">hip-hop</option>
                         <option value="karate">karate</option>
@@ -35,7 +35,7 @@
                 </div>           
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="text" id="email" required>
+                    <input type="email" id="email" pattern=".+@example\.com" size="30" required />
                 </div>
                 <div>
                     <label for="phone">Enter your phone number:</label>

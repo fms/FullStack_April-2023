@@ -44,7 +44,6 @@ const schoolClasses = [
         image: "./dist/images/teater_small.png",
     },
 ];
-// TypeScript code (assumes you are working within a web context)
 const element = document.getElementById('time');
 if (element) {
     element.style.lineHeight = '2';

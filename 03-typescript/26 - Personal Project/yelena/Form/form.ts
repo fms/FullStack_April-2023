@@ -2,7 +2,9 @@
 interface FormObject extends HTMLFormControlsCollection {
     name: HTMLInputElement;
     email: HTMLInputElement;
-    add: HTMLInputElement;
+    age: HTMLInputElement;
+    classes: HTMLInputElement;
+    phone: HTMLInputElement;
     update: HTMLInputElement;
     cancel: HTMLInputElement;
 }
@@ -14,14 +16,18 @@ if (form) {
         event.preventDefault();
         debugger;
 
-        /**
-         * TODO: add age, class-select, and phone
-         */
+        
         const nameField = document.getElementById("name") as HTMLInputElement;
         const emailField = document.getElementById("email") as HTMLInputElement;
+        const ageField = document.getElementById("age") as HTMLInputElement;
+        const classesField = document.getElementById("classes") as HTMLInputElement;
+        const phoneField =  document.getElementById("phone") as HTMLInputElement;
 
         const name = nameField ? nameField.value : "";
         const email = emailField ? emailField.value : "";
+        const age = ageField ? ageField.value : "";
+        const classes = classesField ? classesField.value : "";
+
 
         /**
          * Create an Object with all the data
@@ -35,8 +41,7 @@ if (form) {
          * I gave you an example in WhatsApp
          */
 
-        // alert(`Name: ${name}\nEmail: ${email}`);
 
-        // Or you can send the data to a server using AJAX or fetch.
+
     });
 }
