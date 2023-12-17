@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+@mixin flexCenterd {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+}
+@import 'components/mediaConfig.scss';
+@import 'components/navBar.scss';
+@import 'components/about.scss';
+@import 'components/contact.scss';
+@import 'components/home.scss';
+@import 'components/posts.scss';
+@import 'components/profile.scss';
+
+.hidden {
+    display: none !important; 
+}
+
+.opacity {
+    opacity: 0;
+    transition: all 1s;
+    filter: blur(5px);
+    transform: translateX(-100%);
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.visible {
+    display: block;
+}

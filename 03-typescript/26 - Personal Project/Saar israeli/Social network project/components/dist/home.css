@@ -1,0 +1,258 @@
+.home {
+  color: white;
+  background-image: url("../Images/backGround.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.home section {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 101vh;
+}
+.home-header__section--title {
+  text-align: center;
+  font-size: 80px;
+}
+.home-header__section--p {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+}
+
+.home-main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 512px;
+  height: 420px;
+  overflow: hidden;
+  z-index: 2;
+}
+.home-main__sign-up-form {
+  position: absolute;
+  right: -520px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: 0.5s ease-in-out;
+}
+.home-main__sign-up-form__checkbox {
+  display: flex;
+  gap: 5px;
+}
+.home-main__sign-up-form__input-box {
+  display: flex;
+  gap: 20px;
+  position: relative;
+}
+.home-main__sign-up-form__input-box i {
+  position: absolute;
+  top: 1.7vh;
+  left: 0.5vw;
+  color: black;
+}
+.home-main__sign-up-form__input-box input:not(.submit) {
+  font-size: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: black;
+  height: 50px;
+  width: 100%;
+  padding: 0 10px 0 45px;
+  border: none;
+  border-radius: 30px;
+  outline: none;
+}
+.home-main__sign-up-form__input-box input::placeholder {
+  color: black;
+}
+.home-main__sign-up-form__input-box .submit {
+  font-size: 15px;
+  font-weight: 500;
+  color: black;
+  height: 45px;
+  width: 100%;
+  border: none;
+  border-radius: 30px;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.home-main__sign-up-form__input-box .submit:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+}
+.home-main__sign-up-form input:hover,
+.home-main__sign-up-form input:focus {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.home-main__header h2 {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  padding: 10px 0 30px 0;
+}
+.home-main__header span {
+  color: white;
+  font-size: small;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+.home-main__header span a {
+  font-weight: 500;
+  color: white;
+  margin-left: 5px;
+}
+
+.two-forms {
+  display: flex;
+  gap: 10px;
+}
+.two-forms .home-main__sign-up-form__input-box {
+  position: relative;
+}
+.two-forms .home-main__sign-up-form__input-box i {
+  position: absolute;
+  top: 1.7vh;
+  left: 0.5vw;
+}
+.two-forms .home-main__sign-up-form__input-box input:not(.submit) {
+  font-size: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: black;
+  height: 50px;
+  width: 100%;
+  padding: 0 10px 0 45px;
+  border: none;
+  border-radius: 30px;
+  outline: none;
+}
+
+.home-main__login-form {
+  position: absolute;
+  right: 4px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: 0.5s ease-in-out;
+}
+.home-main__login-form__checkbox {
+  display: flex;
+  gap: 5px;
+}
+.home-main__login-form__input-box {
+  display: flex;
+  gap: 20px;
+  position: relative;
+}
+.home-main__login-form__input-box i {
+  position: absolute;
+  top: 1.7vh;
+  left: 0.5vw;
+  color: black;
+}
+.home-main__login-form__input-box input:not(.submit) {
+  font-size: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: black;
+  height: 50px;
+  width: 100%;
+  padding: 0 10px 0 45px;
+  border: none;
+  border-radius: 30px;
+  outline: none;
+}
+.home-main__login-form__input-box input::placeholder {
+  color: black;
+}
+.home-main__login-form__input-box .submit {
+  font-size: 15px;
+  font-weight: 500;
+  color: black;
+  height: 45px;
+  width: 100%;
+  border: none;
+  border-radius: 30px;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.home-main__login-form__input-box .submit:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+}
+.home-main__login-form input:hover,
+.home-main__login-form input:focus {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+@media only screen and (max-width: 479px) and (min-width: 250px) {
+  .home-header__section--title {
+    font-size: 50px;
+    margin-bottom: 30px;
+  }
+  .home-header__section--p {
+    font-size: 20px;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    max-width: 80vw;
+  }
+
+  .home-main {
+    width: 100vw;
+    height: 100vh;
+  }
+  .home-main__sign-up-form__input-box i {
+    position: absolute;
+    top: 2.3vh;
+    left: 1.5vw;
+    color: black;
+  }
+  .home-main__sign-up-form__input-box input:not(.submit) {
+    width: 99vw;
+    padding: 0 10px 0 30px;
+  }
+  .home-main__sign-up-form__input-box .submit {
+    width: 99vw;
+  }
+  .home-main__header {
+    margin-right: 30vw;
+  }
+  .home-main__header h2 {
+    font-size: 25px;
+  }
+
+  .two-forms .home-main__sign-up-form__input-box i {
+    top: 2.3vh;
+    left: 1.5vw;
+  }
+  .two-forms .home-main__sign-up-form__input-box input:not(.submit) {
+    width: 48.5vw;
+    padding: 0 10px 0 30px;
+  }
+
+  .home-main__login-form {
+    width: 100vw;
+  }
+  .home-main__login-form__input-box i {
+    top: 2.3vh;
+    left: 1.5vw;
+  }
+  .home-main__login-form__input-box input:not(.submit) {
+    width: 99vw;
+    padding: 0 10px 0 30px;
+  }
+  .home-main__login-form__input-box .submit {
+    width: 99vw;
+  }
+}
