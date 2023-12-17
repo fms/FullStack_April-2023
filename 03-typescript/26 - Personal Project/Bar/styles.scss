@@ -1,0 +1,275 @@
+$primary-color: #007bff;
+$secondary-color: #ff3265;
+$my-box-shadow: 3px 8px 10px rgb(59, 97, 224);
+$my-border: 1.5px solid $secondary-color;
+$font-family: "Montserrat", sans-serif;
+
+body {
+  background-image: url("bluep.png");
+  background-size: cover;
+}
+
+.container {
+  text-align: center;
+  font-family: $font-family;
+
+  &__title {
+    background-color: $primary-color;
+    color: white;
+    padding: 0.6vw;
+    border: $my-border;
+    border-radius: 10px;
+    box-shadow: $my-box-shadow;
+    margin-top: 0;
+  }
+  label {
+    display: block;
+    margin-bottom: 0.5vw;
+    font-weight: bold;
+  }
+  input {
+    font-family: $font-family;
+    font-weight: bold;
+  }
+
+  input,
+  textarea {
+    width: 80%;
+    padding: 0.5vw;
+    border: 1px solid $primary-color;
+    border-radius: 5px;
+    margin-bottom: 0.5vw;
+    resize: none;
+  }
+
+  input[type="button"] {
+    width: 10vw;
+    padding: 0.5vw 1.5vw;
+    background-color: $primary-color;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1vh;
+  }
+
+  input[type="button"]:hover {
+    background-color: darken($primary-color, 40%);
+  }
+
+  input[type="submit"] {
+    padding: 1vh 1vw;
+    background-color: rgba(8, 163, 253, 0.959);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-top: 0.3vh;
+  }
+
+  input[type="submit"]:hover {
+    background-color: darken(rgba(8, 163, 253, 0.959), 20%);
+  }
+}
+
+.form-container {
+  float: left;
+  padding-right: 2vw;
+  padding-left: 2vw;
+  margin-right: 2vw;
+  border-radius: 10px;
+  box-shadow: $my-box-shadow;
+  border: $my-border;
+  font-weight: bold;
+
+  &__subtitle {
+    color: $primary-color;
+    text-shadow: 1px 1px 2px $primary-color;
+  }
+}
+
+.exercises-div {
+  &__subtitle {
+    color: $primary-color;
+    text-shadow: 1px 1px 2px $primary-color;
+  }
+}
+
+.pending-exercises {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: fit-content;
+  gap: 1vw;
+
+  .exercises-to-add {
+    flex: 0 0 10%;
+    h3 {
+      color: $primary-color;
+    }
+    font-weight: bold;
+    box-shadow: $my-box-shadow;
+    border: $my-border;
+    border-radius: 10px;
+    padding: 1vw;
+    margin: 0.5vw;
+
+    .deleteExercise {
+      background-color: $secondary-color;
+    }
+  }
+}
+
+.workout-box,
+.exercises-to-add {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.workout-box.show,
+.exercises-to-add.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.workout-box.hide,
+.exercises-to-add.hide {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.my-workouts {
+  &__subtitle {
+    text-align: left;
+    color: $primary-color;
+    text-shadow: 1px 1px 2px $primary-color;
+  }
+  .workout-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .workout-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 22vw;
+    padding: 1vw;
+    box-shadow: $my-box-shadow;
+    border: $my-border;
+    border-radius: 5px;
+    margin: 0.5vw;
+    border-radius: 10px;
+
+    .exersices-area-div {
+      width: 18vw;
+      height: max-content;
+      padding: 2vw;
+      border: 2px solid $primary-color;
+      border-radius: 10px;
+      margin-bottom: 2vh;
+      max-height: 30vh;
+      overflow-y: auto;
+
+      .exerciseWithButtonsDiv {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        align-items: center;
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.5s, transform 0.5s;
+
+        p {
+          min-width: 11vw;
+          margin-left: 2vw;
+        }
+      }
+      .exerciseWithButtonsDiv.removing {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      .xExercise,
+      .changeExercise {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.6rem;
+        cursor: pointer;
+        width: 2vw;
+        height: 5vh;
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .xExercise {
+        background-color: $secondary-color;
+      }
+
+      .changeExercise {
+        background-color: $primary-color;
+      }
+
+      .addExercise {
+        justify-content: center;
+        align-items: center;
+        width: 4.5vw;
+        margin-top: -3vh;
+        margin-bottom: 1vh;
+        margin-left: 7vw;
+      }
+
+      .xExercise:hover,
+      .changeExercise:hover {
+        background-color: darken($secondary-color, 10%);
+      }
+
+      &::-webkit-scrollbar {
+        width: 0.3vw;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: #f1f1f1;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #007bff;
+        border-radius: 5px;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background-color: #0056b3;
+      }
+    }
+
+    .temp-input {
+      width: 10vw;
+      height: 1vh;
+    }
+
+    p {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-top: 0;
+      margin-bottom: 1vh;
+    }
+
+    .deleteButton {
+      background-color: $secondary-color;
+    }
+
+    .cancelButton {
+      background-color: $secondary-color;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
