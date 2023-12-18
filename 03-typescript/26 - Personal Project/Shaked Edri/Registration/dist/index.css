@@ -1,0 +1,128 @@
+.cover {
+  background-color: rgba(1, 1, 1, 0.6);
+  border-radius: 30px;
+  box-shadow: 1px 1px 15px #ffb834;
+  padding: 5%;
+}
+
+.cover form {
+  background-color: transparent;
+}
+
+#textarea {
+  font-size: 20px;
+  width: 60%;
+  height: 140px;
+}
+
+#delete-button {
+  transform: scale(2);
+}
+
+figcaption {
+  background-color: black;
+}
+
+input {
+  border-radius: 10px;
+  border: 1px white solid;
+  font-size: 100%;
+}
+
+input:hover {
+  opacity: 0.7;
+}
+
+table {
+  margin-top: 4%;
+  display: flex;
+  justify-content: center;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+tr,
+td {
+  font-size: 20px;
+  padding: 25px;
+  white-space: nowrap;
+  width: 100%;
+}
+
+table,
+th,
+td,
+tr {
+  border: 1px #fcb74f solid;
+}
+
+th {
+  font-size: 28px;
+  background-color: black;
+}
+
+#editButton {
+  font-size: 16px;
+  padding: 10px;
+}
+
+button {
+  font-size: 20px;
+  padding: 15px;
+  background-color: black;
+  color: #ffbb46;
+  border-radius: 10px;
+  border: 1px black solid;
+  box-shadow: #ffb32f 1px 2px 10px;
+}
+
+button:hover {
+  opacity: 0.4;
+}
+
+#header {
+  font-family: "Great Vibes", cursive;
+  font-size: 4rem;
+  margin-top: 8%;
+}
+
+label {
+  display: inline-block;
+  border-radius: 10px;
+}
+
+.phone-images {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.phone-images img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 1px gray solid;
+  padding: 15px;
+}
+
+.phone-images img:hover {
+  opacity: 0.6;
+  transform: scale(1.1);
+  box-shadow: #ffc14f 1px 1px 10px;
+}
+
+@media (max-width: 768px) {
+  table {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  th,
+tr,
+td {
+    width: 100%;
+    display: block;
+  }
+}

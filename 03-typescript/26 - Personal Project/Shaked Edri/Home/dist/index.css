@@ -1,0 +1,108 @@
+#header {
+  color: #ffb46e;
+  color: inherit !important;
+  text-shadow: 1px 1px 10px black;
+  display: inline-block;
+  animation: typing 3s steps(80) forwards;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+#header-phone {
+  width: 200px;
+  height: 200px;
+  animation: rotatee 1.5s alternate;
+  animation-iteration-count: infinite;
+}
+
+#header-phone:hover {
+  opacity: 0.6;
+}
+
+@keyframes rotatee {
+  from {
+    transform: rotate(0deg);
+    transform: scale(0.7);
+  }
+  to {
+    transform: rotate(-30deg);
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+    color: white;
+    transform: scale(0.1);
+    right: 70%;
+  }
+  to {
+    width: 100%;
+    right: 1%;
+  }
+}
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 2rem;
+}
+
+.grid img {
+  border-radius: 20px;
+  width: 250px;
+  height: 200px;
+  border: 1px #5d5d5d solid;
+}
+
+.grid img:hover {
+  opacity: 0.5;
+  box-shadow: white 1px 1px 10px;
+  transform: scale(0.9);
+  transition: transform 0.5s ease;
+}
+
+.back-button {
+  margin-bottom: 3%;
+}
+
+.collection img {
+  border-radius: 20px;
+  width: 250px;
+  height: 250px;
+  border: 1px #b0b0b0 solid;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.item {
+  border: 1px #b2b2b2 solid;
+  border-radius: 20px;
+  background-color: #dddddd;
+  color: black;
+}
+
+.item:hover {
+  transform: scale(0.9);
+  transition: transform 0.5s ease;
+  opacity: 0.5;
+}
+
+#btitle {
+  font-size: 30px;
+  color: #ffa939;
+  background-color: black;
+}
+
+#liltitle {
+  font-size: 20px;
+  color: #ff9090;
+}
+
+#notAvailable {
+  color: red;
+}

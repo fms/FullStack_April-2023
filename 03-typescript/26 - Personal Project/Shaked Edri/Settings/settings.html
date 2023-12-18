@@ -1,0 +1,107 @@
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../Settings/settings.scss">
+  <link rel="stylesheet" href="../Home/navBar/dist/navigation.css">
+  <link rel="stylesheet" href="../Registration/dist/index.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Dela+Gothic+One&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+  <script src="dist/settings.js" defer></script>
+  <script src="../Home/dist/sharedFile.js" defer></script>
+  <title>User Interface</title>
+</head>
+
+<body>
+  <nav id="navigation">
+    <ul>
+      <li><a id="home" href="../Home/index.html">Home</a></li>
+      <li><a href="../Registration/index.html">Phones</a></li>
+      <li><a href="../AboutUS/about.html">About</a></li>
+      <li><a href="../Contact/contact.html">Contact</a></li>
+      <li><a href="../Settings/settings.html"><img style="width: 30px;" src="../Images/setting.png"></a></li>
+    </ul>
+  </nav>
+  <div class="wrapper">
+    <p id="header">User interface:</p>
+    <hr>
+    <div class="cover">
+      <p>Change font color:<br>
+        <select id="colorSelect">
+          <option>Choose a color</option>
+          <option id="redColor" value="red" style="color: red;">Red</option>
+          <option id="whiteColor" value="white">White (Default)</option>
+          <option id="blueColor" value="blue" style="color: blue;">Blue</option>
+          <option id="greenColor" value="green" style="color: green;">Green</option>
+          <option id="yellowColor" value="yellow" style="color: yellow;">Yellow</option>
+          <option id="grayColor" value="gray" style="color: gray;">Gray</option>
+          <option id="orangeColor" value="orange" style="color: orange;">Orange</option>
+          <option id="purpleColor" value="purple" style="color: purple;">Purple</option>
+          <hr>
+          <hr>
+          <option id="lightGoldColor" value="lightgoldenrodyellow" style="color: lightgoldenrodyellow;">Light Gold
+          </option>
+          <option id="lightPinkColor" value="lightpink" style="color: lightpink;">Light Pink</option>
+          <option id="lightBlueColor" value="lightblue" style="color: lightblue;">Light Blue</option>
+          <option id="lightSeaGreenColor" value="lightseagreen" style="color: lightseagreen;">Light Green</option>
+        </select>
+      </p>
+      <button id="selectButton">Change Font Color</button>
+      <hr>
+      <p>Change Background image:
+        <select id="BGSelect">
+          <option value="https://img.freepik.com/free-vector/premium-black-gold-lines-abstract_1017-25647.jpg?w=360">
+            Choose a BackGround:</option>
+          <option id="option1"
+            value="https://img.freepik.com/free-vector/premium-black-gold-lines-abstract_1017-25647.jpg?w=360">Option 1 (Default)
+          </option>
+          <option id="option2"
+            value="https://t3.ftcdn.net/jpg/03/16/58/08/360_F_316580848_m7lZhhWQ43JrsEsBQQToJ8g73ALcv78Y.jpg">Option 2
+          </option>
+          <option id="option3"
+            value="https://img.lovepik.com/background/20211021/large/lovepik-high-end-black-gold-background-image_401435265.jpg">
+            Option 3</option>
+          <option id="option4"
+            value="https://png.pngtree.com/background/20210710/original/pngtree-award-ceremony-black-gold-style-background-material-picture-image_978546.jpg">
+            Option 4</option>
+          <option id="option5"
+            value="https://img.freepik.com/free-vector/abstract-premium-black-gold-geometric-background_1017-24783.jpg?size=626&ext=jpg&ga=GA1.1.1826414947.1699833600&semt=ais">
+            Option 5</option>
+          <option id="option6"
+            value="https://videohive.img.customer.envatousercontent.com/files/9b711d09-8537-4144-90ed-bd9b8d015d47/inline_image_preview.jpg?auto=compress%2Cformat&fit=crop&crop=top&max-h=8000&max-w=590&s=7db74d467ed004566696317004a4f189">
+            Option 6</option>
+          <option id="option7"
+            value="https://static.vecteezy.com/ti/vecteur-libre/p1/11138253-lumiere-abstraite-de-cercle-d-etincelle-d-or-illustrationle-vectoriel.jpg">
+            Option 7</option>
+          <option id="option8"
+            value="https://img.freepik.com/premium-vector/abstract-black-gold-luxury-background_260559-115.jpg">
+            Option 8</option>
+          <option id="option9"
+            value="https://static.vecteezy.com/system/resources/previews/002/138/811/non_2x/black-and-gold-luxury-background-free-vector.jpg">
+            Option 9</option>
+        </select>
+      </p>
+      <button id="BGButton">Change BackGround Image</button>
+      <hr>
+      <p>Change Font-Size:
+        <select id="FSSelect">
+          <option value="null">Choose Font-Size:</option>
+          <option id="14px" value="14" style="font-size: 14px;">14 Pixels(Too small)</option>
+          <option id="18px" value="18" style="font-size: 18px;">18 Pixels</option>
+          <option id="20px" value="20" style="font-size: 20px;">20 Pixels</option>
+          <option id="22px" value="22" style="font-size: 22px;">22 Pixels</option>
+          <option id="24px" value="24" style="font-size: 24px;">24 Pixels</option>
+          <option id="26px" value="26" style="font-size: 26px;">26 Pixels (Default)</option>
+          <option id="30px" value="30" style="font-size: 30px;">30 Pixels</option>
+          <option id="34px" value="34" style="font-size: 34px;">34 Pixels(Big)</option>
+          <option id="40px" value="40" style="font-size: 40px;">40 Pixels(Too big)</option>
+        </select>
+      </p>
+      <button id="FSButton">Change Font-Size</button>
+    </div>
+  </div>
+  <button id="topButton">⇡</button>
+</body>
+
+</html>

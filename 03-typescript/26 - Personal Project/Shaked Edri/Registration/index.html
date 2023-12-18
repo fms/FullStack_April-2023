@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase a phone</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bellefair&family=Dela+Gothic+One&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+    <link href="dist/index.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../Home/navBar/dist/navigation.css">
+
+    <script src="dist/controller.js" defer></script>
+    <script src="dist/model.js" defer></script>
+    <script src="../Home/dist/sharedFile.js" defer></script>
+</head>
+
+<body>
+    <!-- view = <div>, <form>, <table>, <button> -->
+    <nav id="navigation">
+        <ul>
+            <li><a href="../Home/index.html">Home</a></li>
+            <li><a href="../Registration/index.html">Phones</a></li>
+            <li><a href="../AboutUS/about.html">About</a></li>
+            <li><a href="../Contact/contact.html">Contact</a></li>
+            <li><a href="../Settings/settings.html"><img style="width: 30px;" src="../Images/setting.png"></a></li>
+        </ul>
+    </nav>
+    
+    <p id="header">Please select a product:</p>
+    <div class="phone-images">
+        <figure>
+            <img id="iphone" src="../Images/Registration-Images/iPhone.png" title="iPhone">
+            <figcaption>iPhone</figcaption>
+        </figure>
+        <figure>
+            <img id="galaxy" src="../Images/Registration-Images/Galaxy.png" title="Galaxy">
+            <figcaption>Galaxy</figcaption>
+        </figure>
+        <figure>
+            <img id="xiaomi" src="../Images/Registration-Images/Xiaomi.png" title="Xiaomi">
+            <figcaption>Xiaomi</figcaption>
+        </figure>
+        <figure>
+            <img id="ipad" src="../Images/Registration-Images/iPad.png" title="iPad">
+            <figcaption>iPad</figcaption>
+        </figure>
+        <figure>
+            <img id="lg" src="../Images/Registration-Images/LG.png" title="LG">
+            <figcaption>LG</figcaption>
+        </figure>
+    </div>
+    <form id="fill-user-details" style="display: none;">
+        <div class="cover">
+            <p>I see you've chosen one, <br>Please fill out the following details:</p>
+            <label>Your name:<br>
+                <input type="text" id="name" minlength="2" maxlength="10" required>
+            </label><br><br>
+            <label>Last name:<br>
+                <input type="text" id="lastname" minlength="2" maxlength="12" required>
+            </label><br><br>
+            <label>Your eMail:<br>
+                <input type="email" id="email" maxlength="30" required>
+            </label><br><br>
+            <label>Phone number:<br>
+                <input type="number" id="phonenumber" required>
+            </label><br><br>
+            <label>Please write here, which model you would like to buy:</label>
+            <br><textarea id="textarea" required></textarea><br><br>
+            <button type="button" id="submitButton">Submit</button>
+            <br>
+        </div>
+        </div>
+    </form>
+    <table id="columnTable" style="display: none;">
+        <tr>
+            <th>Name</th>
+            <th>Last name</th>
+            <th>Email</th>
+            <th>Phone number</th>
+            <th>Your request</th>
+            <th>Edit</th>
+            <th>Delete?</th>
+        </tr>
+    </table>
+    <p id='formAddition' style="display: none;">Do you want to add another buyer?</p>
+    <button id='addForm' style="display: none;">Yes, add another one</button>
+    <br>
+    <button id='removeForm' style="display: none;">No, thank you</button>
+    <button id="topButton">⇡</button>
+
+</body>
+
+</html>
