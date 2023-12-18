@@ -1,8 +1,10 @@
+
 $primary-color: #007bff;
 $secondary-color: #ff3265;
 $my-box-shadow: 3px 8px 10px rgb(59, 97, 224);
 $my-border: 1.5px solid $secondary-color;
 $font-family: "Montserrat", sans-serif;
+$my-text-shadow: 1px 1px 2px $primary-color;
 
 body {
   background-image: url("bluep.png");
@@ -86,14 +88,21 @@ body {
 
   &__subtitle {
     color: $primary-color;
-    text-shadow: 1px 1px 2px $primary-color;
+    text-shadow: $my-text-shadow;
   }
-}
+  .exercises-div {
+    &__subtitle {
+      color: $primary-color;
+      text-shadow: $my-text-shadow;
+    }
+    .form-container__add-exercise-btn {
+      width: 55%;
+    }
 
-.exercises-div {
-  &__subtitle {
-    color: $primary-color;
-    text-shadow: 1px 1px 2px $primary-color;
+    .form__submit-btn {
+      width: 20%;
+      margin-bottom: 3vh;
+    }
   }
 }
 
@@ -143,9 +152,9 @@ body {
 
 .my-workouts {
   &__subtitle {
-    text-align: left;
+    text-align: center;
     color: $primary-color;
-    text-shadow: 1px 1px 2px $primary-color;
+    text-shadow: $my-text-shadow;
   }
   .workout-details {
     display: flex;
@@ -218,7 +227,6 @@ body {
 
       .addExercise {
         justify-content: center;
-        align-items: center;
         width: 4.5vw;
         margin-top: -3vh;
         margin-bottom: 1vh;
@@ -254,7 +262,7 @@ body {
     }
 
     p {
-      font-size: 1.2rem;
+      font-size: 1rem;
       font-weight: bold;
       margin-top: 0;
       margin-bottom: 1vh;
@@ -269,7 +277,11 @@ body {
     }
   }
 }
-
 .hidden {
   display: none;
 }
+
+@import 'media200px.scss';
+@import 'media600px.scss';
+@import 'media900px.scss';
+@import 'media1400px.scss';

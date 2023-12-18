@@ -1,0 +1,93 @@
+@media (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .form-container {
+    width: 80%;
+    margin-left: 7vw;
+    margin-bottom: 2vh;
+  }
+  .form-container label {
+    display: flex !important;
+    flex-direction: column !important;
+    margin-bottom: 1em !important;
+    font-weight: bold;
+  }
+  .form-container input {
+    margin-right: 15vw;
+  }
+  .form-container input,
+.form-container textarea {
+    width: 60% !important;
+    height: 2em;
+    margin-left: 15vw;
+  }
+
+  .pending-exercises {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 100%;
+    gap: 1vw;
+  }
+  .pending-exercises .exercises-to-add {
+    flex: 0 0 25%;
+    padding: 1.3vw;
+    margin: 0;
+  }
+  .pending-exercises .exercises-to-add input {
+    width: 15vw;
+  }
+
+  .my-workouts__subtitle {
+    text-align: center;
+    margin-top: 5vh;
+  }
+  .my-workouts .workout-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .my-workouts .workout-details p {
+    font-size: 1em;
+  }
+  .my-workouts .workout-box {
+    width: 45%;
+    margin-bottom: 2vh;
+  }
+  .my-workouts .workout-box input {
+    width: 20vw;
+    font-size: 0.8em;
+  }
+  .my-workouts .workout-box p {
+    width: 50vw;
+    font-size: 0.9em;
+  }
+  .my-workouts .workout-box .exersices-area-div {
+    width: 80%;
+    max-height: 20vh;
+  }
+  .my-workouts .workout-box .exersices-area-div .exerciseWithButtonsDiv {
+    display: flex;
+    justify-content: center;
+  }
+  .my-workouts .workout-box .exersices-area-div .exerciseWithButtonsDiv input {
+    width: 6vw;
+    font-size: 0.4em;
+  }
+  .my-workouts .workout-box .exersices-area-div .addExercise {
+    justify-content: center;
+    margin-top: 0.1vh;
+    margin-left: 26vw;
+    width: 20vw;
+    height: 3vh;
+    font-size: 0.7em;
+  }
+  .my-workouts .workout-box .temp-input {
+    width: 25vw;
+    height: 3vh;
+  }
+}
