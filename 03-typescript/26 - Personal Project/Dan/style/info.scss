@@ -1,0 +1,64 @@
+.top-navbar {
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.toggle {
+    display: none;
+    cursor: pointer;
+    color: rgb(159, 223, 245);
+}
+
+.logo {
+    position: fixed;
+    left: 15px;
+    top: 10px;
+    
+    img {
+        height: 40px;
+    }
+}
+
+.company {
+    font-size: 4vh;
+    font-weight: bold;
+}
+
+.menu {
+    text-align: center;
+    // margin: auto;
+    justify-content: flex-end;
+}
+
+ul {
+    display: flex;
+    gap: 30px;
+    color: white;
+    font-size: 3vh;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+    text-align: center;
+}
+
+a {
+    color: white;
+    font-size: 3vh;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.subtitle {
+    margin: 0 auto;
+    font-size: 3.5vh;
+    text-align: center;
+    width: 60%;
+}
+

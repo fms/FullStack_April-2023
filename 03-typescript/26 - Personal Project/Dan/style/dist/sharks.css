@@ -1,0 +1,53 @@
+#sharks {
+  padding-top: 20px;
+  font-size: 4vh;
+  font-weight: bold;
+  text-align: center;
+}
+
+.team {
+  padding: 35px 0 35px 0;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.shark {
+  position: relative;
+  cursor: pointer;
+}
+
+.image {
+  display: block;
+  width: 15vw;
+  height: 40vh;
+  border-radius: 20px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 15vw;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: #008CBA;
+  border-radius: 20px;
+}
+
+.shark:hover .overlay {
+  opacity: 0.8;
+}
+
+.name {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}

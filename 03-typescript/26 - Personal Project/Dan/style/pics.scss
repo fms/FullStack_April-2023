@@ -1,0 +1,73 @@
+$radius: 20px;
+
+.gallery {
+    padding: 20px 0 35px 0;
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: relative; 
+}
+
+.pics {
+    position: relative;
+    margin: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.pic {
+    border-radius: 20px;
+    width: 35vw;
+    height: 50vh;
+    margin: auto;
+    display: block; 
+}
+
+.overlay1 {
+    position: absolute;
+    width: 35vw;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #008CBA;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: $radius;
+}
+
+.pics:hover .overlay1 {
+    opacity: 0.8;
+}
+
+.name {
+    font-size: 18px;
+    text-align: center;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nextImg, .pastImg {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    border-radius: 40px;
+    color: white;
+    transition: 0.5s;
+    cursor: pointer;
+
+   &:hover {
+       background-color: rgb(67, 36, 243);
+       box-shadow: 0 0 20px rgb(130, 84, 255) ;
+   }
+}
