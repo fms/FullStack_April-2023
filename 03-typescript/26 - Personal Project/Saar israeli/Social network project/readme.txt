@@ -1,0 +1,1 @@
+get in the website and try to make 2 users, change profile picture for each of them and make a new post, after that try to comment to each other post.
