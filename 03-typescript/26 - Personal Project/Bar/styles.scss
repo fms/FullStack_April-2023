@@ -1,4 +1,3 @@
-
 $primary-color: #007bff;
 $secondary-color: #ff3265;
 $my-box-shadow: 3px 8px 10px rgb(59, 97, 224);
@@ -281,7 +280,7 @@ body {
   display: none;
 }
 
-@import 'media200px.scss';
-@import 'media600px.scss';
-@import 'media900px.scss';
-@import 'media1400px.scss';
+@import "media200px.scss";
+@import "media600px.scss";
+@import "media900px.scss";
+@import "media1400px.scss";
