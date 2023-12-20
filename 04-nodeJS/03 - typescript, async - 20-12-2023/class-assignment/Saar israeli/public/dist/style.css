@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100vw;
+}
+
+body {
+  background-color: black;
+}
+
+.header-container-title {
+  color: red;
+}
+
+.main-container {
+  width: 100%;
+}
+.main-container-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.header-button {
+  background-color: white;
+  color: black;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
