@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/03-typescript/26 - Personal Project/Dan/style/main.scss">
+    <script src="https://kit.fontawesome.com/d682a19937.js" crossorigin="anonymous"></script>
+    <script src="/03-typescript/26 - Personal Project/Dan/alive/pic.ts" defer></script>
+    <script src="/03-typescript/26 - Personal Project/Dan/alive/table.ts" defer></script>
+    <script src="/03-typescript/26 - Personal Project/Dan/alive/toggle.ts" defer></script>
+    <title>Swim with the Sharks</title>
+</head>
+<body>
+    
+<div id="info">
+
+    <div class="toggle">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <div class="dropdown">
+            <ul>
+                <li><a href="#info">
+                    Info
+                </a></li>
+
+                <li><a href="#sharks">
+                    Our Sharks
+                </a></li>
+
+                <li><a href="#idea">
+                    Your Idea
+                </a></li>
+                
+                <li><a href="#tank">
+                    Sharks' Tank
+                </a></li>
+            </ul>
+        </div>
+
+    <div class="top-navbar">
+        <div class="logo">
+            <a href="#info">
+                <img src="images/logo.png">
+            </a>
+        </div>
+
+        <div class="company">
+            Sharks Community
+        </div>
+
+        <div class="menu">
+            <ul>
+                <li><a href="#info">
+                    Info
+                </a></li>
+
+                <li><a href="#sharks">
+                    Our Sharks
+                </a></li>
+
+                <li><a href="#idea">
+                    Your Idea
+                </a></li>
+                
+                <li><a href="#tank">
+                    Sharks' Tank
+                </a></li>
+            </ul>
+        </div>
+</div>
+
+    <div class="subtitle">
+        A platform which gives you the opportunity <b>"to swim with the sharks"</b> and earn knowledge, ideas and opinions from the rest & best sharks in the business. 
+    </div>
+</div>
+
+<p class="line">jvnfdjkvndfjk</p>
+
+<div id="sharks">
+    Our Sharks
+</div>    
+
+<div class="gallery">
+
+    <div class="navigation">
+        <span class="pastImg" onclick="showPreviousImage()">&#10094;</span>
+    </div>
+
+    <div class="pics">
+        <img class="pic" src="/images/dubi.jpg" alt="Image 1">
+        <div class="overlay1">
+            <div class="name">Dovi Frances</div>
+        </div>
+    </div>
+        
+
+    <div class="pics">
+        <img class="pic" src="/images/amir.jpeg" alt="Image 2">
+        <div class="overlay1">
+            <div class="name">Amir<br>Eyal</div>
+        </div>
+    </div>
+
+    <div class="pics">
+        <img class="pic" src="/images/oren.jpg" alt="Image 2">
+        <div class="overlay1">
+            <div class="name">Oren Dobronsky</div>
+        </div>
+    </div>
+
+    <div class="pics">
+        <img class="pic" src="/images/yasmin.jpg" alt="Image 2">
+        <div class="overlay1">
+            <div class="name">Yasmin Lukatz</div>
+        </div>
+    </div>
+
+    <div class="pics">
+        <img class="pic" src="/images/zohar.jpeg" alt="Image 2">
+        <div class="overlay1">
+            <div class="name">Zohar Levkovitz</div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <span class="nextImg" onclick="showNextImage()">&#10095;</span>    
+    </div>
+
+
+</div>
+
+<div class="team">
+
+    <div class="shark">
+        <img class="image" src="/images/zohar.jpeg">
+        <div class="overlay">
+            <div class="name">Zohar Levkovitz</div>
+        </div>     
+    </div>
+
+    <div class="shark">
+        <img class="image" src="/images/amir.jpeg">
+        <div class="overlay">
+            <div class="name">Amir<br>Eyal</div>
+        </div>     
+    </div>
+
+    <div class="shark">
+        <img class="image" src="/images/yasmin.jpg">
+        <div class="overlay">
+            <div class="name">Yasmin Lukatz</div>
+        </div>     
+    </div>
+
+    <div class="shark">
+        <img class="image" src="/images/oren.jpg">
+        <div class="overlay">
+            <div class="name">Oren Dobronsky</div>
+        </div>     
+    </div>
+
+    <div class="shark">
+        <img class="image" src="/images/dubi.jpg">
+        <div class="overlay">
+            <div class="name">Dovi Frances</div>
+        </div>     
+    </div>
+
+</div>
+
+<p class="line">jvnfdjkvndfjk</p>
+
+<div id="idea">
+
+    <div class="title">
+        What's Your Idea?
+    </div>
+
+    <form id="userForm">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <label for="description">Description:</label>
+        <textarea id="description" rows="4" required></textarea>
+
+        <button type="button" onclick="addUserInfo()">Add</button>
+    </form>
+    
+    <p class="line">jvnfdjkvndfjk</p>
+
+<div id="tank">
+
+    <div class="title">
+        The Tank
+    </div>
+    
+    <table id="userTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- User information will be displayed here -->
+        </tbody>
+    </table>
+
+</body>
+</html>

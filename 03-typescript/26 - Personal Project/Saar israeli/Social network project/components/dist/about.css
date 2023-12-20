@@ -1,0 +1,127 @@
+.about {
+  background-image: url("../Images/aboutBackGround.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+.about__section {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 101vh;
+}
+.about h2 {
+  position: relative;
+  text-align: center;
+  font-size: 3rem;
+  bottom: 17vh;
+  padding-bottom: 1vh;
+  color: white;
+}
+.about h1 {
+  position: relative;
+  text-align: center;
+  font-size: 5rem;
+  bottom: 17vh;
+  color: white;
+}
+.about p {
+  position: relative;
+  text-align: start;
+  bottom: 17vh;
+  max-width: 45vw;
+  color: white;
+}
+
+@media only screen and (max-width: 479px) and (min-width: 250px) {
+  .about__section {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    min-height: 101vh;
+    padding-top: 30vh;
+  }
+  .about h2 {
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    bottom: 17vh;
+    padding-bottom: 1vh;
+    color: white;
+  }
+  .about h1 {
+    position: relative;
+    text-align: center;
+    font-size: 55px;
+    bottom: 17vh;
+    color: white;
+  }
+  .about p {
+    position: relative;
+    text-align: start;
+    bottom: 17vh;
+    max-width: 85vw;
+    color: white;
+  }
+}
+@media screen and (max-width: 767px) and (min-width: 479px) {
+  .about {
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .about__section {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    min-height: 101vh;
+  }
+  .about h2 {
+    position: relative;
+    text-align: center;
+    font-size: 55px;
+    bottom: 17vh;
+    padding-bottom: 1vh;
+    color: white;
+  }
+  .about h1 {
+    position: relative;
+    text-align: center;
+    font-size: 80px;
+    bottom: 17vh;
+    color: white;
+  }
+  .about p {
+    position: relative;
+    text-align: start;
+    bottom: 17vh;
+    max-width: 85vw;
+    color: white;
+  }
+}
+@media screen and (max-width: 1281px) and (min-width: 767px) {
+  .about__section {
+    padding-top: 15vh;
+  }
+  .about h2 {
+    position: relative;
+    text-align: center;
+    font-size: 55px;
+    bottom: 17vh;
+    padding-bottom: 1vh;
+    color: white;
+  }
+  .about h1 {
+    position: relative;
+    text-align: center;
+    font-size: 80px;
+    bottom: 17vh;
+    color: white;
+  }
+  .about p {
+    position: relative;
+    text-align: start;
+    bottom: 17vh;
+    max-width: 85vw;
+    color: white;
+  }
+}

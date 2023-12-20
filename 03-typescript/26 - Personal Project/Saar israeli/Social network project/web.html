@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/main.css">
+    <link rel="shortcut icon" type="x-icon" href="./Images/webLogo.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="./dist/main.js" defer></script>
+    <title>Frameds</title>
+</head>
+
+<!-------------------------------- NavBar Section -------------------------------->
+
+<body>
+    <div class="nav-wrapper">
+        <nav class="navbar">
+            <div class="navbar-left__logo">
+                <a href="./web.html"><img src="./Images/webLogo.png" alt="blog logo"></a></img>
+            </div>
+
+            <div class="navbar-right">
+                <ul>
+                    <li><a href="#" class="navbar-right__link navbar-right__link--home active">Home</a></li>
+                    <li><a href="#" class="navbar-right__link navbar-right__link--posts hidden">Posts</a></li>
+                    <li><a href="#" class="navbar-right__link navbar-right--about">About</a></li>
+                    <li><a href="#" class="navbar-right__link navbar-right__link--contact">Contact</a></li>
+                    <li><a href="#" class="navbar-right__link navbar-right__link--my-profile hidden">My Profile</a></li>
+                    <li><a href="#" class="navbar-right__link--log-out hidden" onclick="logOut(event)">Log out</a></li>
+                    <li><a href="./web.html" class="navbar-right__link--log-in">Log in</a></li>
+                </ul>
+            </div>
+
+        </nav>
+    </div>
+
+    <!-------------------------------- NavBar Section -------------------------------->
+
+    <!-------------------------------- Home Section -------------------------------->
+
+    <main class="home visible" id="home">
+
+        <section class="home-header__section opacity">
+
+            <h1 class="home-header__section--title">Welcome to Frameds</h1>
+            <p class="home-header__section--p">A website where you can talk with your friends and posts everything you
+                would like!</p>
+            <p>Log in to see your profile and Posts!</p>
+
+        </section>
+
+        <section class="home-main">
+
+
+            <form class="home-main__login-form" id="login" onsubmit="newJoinForm(event)">
+
+                <div class="home-main__header">
+                    <span>You dont have account? <a href="#" onclick="register(event)">Sign Up</a></span>
+                    <h2 class="home-main__header--log-in">Login</h2>
+                </div>
+
+                <div class="home-main__login-form__input-box">
+                    <input type="text" placeholder="Email"
+                        class="home-main__login-form__input-box__input home-main__login-form__input-box__input--email"
+                        id="emailLogin">
+                    <i class="bx bx-user"></i>
+                </div>
+
+                <div class="home-main__login-form__input-box">
+                    <input type="password" placeholder="Password"
+                        class="home-main__login-form__input-box__input home-main__login-form__input-box__input--password"
+                        id="passwordLogin">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+
+                <div class="home-main__login-form__input-box">
+                    <input type="submit" class="home-main__login-form__input-box--register submit" value="Sign in">
+                </div>
+
+                <div class="home-main__login-form__checkbox">
+                    <input type="checkbox" id="login-check">
+                    <label for="login-check"> Remember Me</label>
+                </div>
+
+            </form>
+
+            <form class="home-main__sign-up-form" id="register" onsubmit="newRegisterForm(event)">
+
+                <div class="home-main__header">
+                    <span>Allready have an account? <a href="#" onclick="login(event)">Login</a></span>
+                    <h2 class="home-main__header--log-in">Sign Up</h2>
+                </div>
+
+                <div class="two-forms">
+                    <div class="home-main__sign-up-form__input-box">
+                        <input type="text" placeholder="FirstName"
+                            class="home-main__sign-up-form__input-box__input home-main__sign-up-form__input-box__input--first-name"
+                            id="name" required>
+                        <i class="bx bx-user"></i>
+                    </div>
+
+                    <div class="home-main__sign-up-form__input-box">
+                        <input type="text" placeholder="LastName"
+                            class="home-main__sign-up-form__input-box__input home-main__sign-up-form__input-box__input--last-name"
+                            id="lastName" required>
+                        <i class="bx bx-user"></i>
+                    </div>
+                </div>
+
+                <div class="home-main__sign-up-form__input-box">
+                    <input type="text" placeholder="Email"
+                        class="home-main__sign-up-form__input-box__input home-main__sign-up-form__input-box__input--email"
+                        id="emailRegister" required>
+                    <i class="bx bx-envelope"></i>
+                </div>
+
+                <div class="home-main__sign-up-form__input-box">
+                    <input type="password" placeholder="Password"
+                        class="home-main__sign-up-form__input-box__input home-main__sign-up-form__input-box__input--password"
+                        id="passwordRegister" required>
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+
+                <div class="home-main__sign-up-form__input-box">
+                    <input type="submit" class="home-main__sign-up-form__input-box--register submit" value="register"
+                        id="register-button">
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <!-------------------------------- Home Section -------------------------------->
+
+    <!-------------------------------- Posts Section -------------------------------->
+
+    <main class="posts hidden">
+        <div class="posts-wrapper">
+
+            <section class="posts__section">
+                <form class="posts__section__form" onsubmit="submitPost(event)">
+                    <input id="post" class="posts__section__form--text post-text" type="text"
+                        placeholder="How do you feel today?">
+                    <input class="posts__section__form--submit post-submit" type="submit" value="Submit">
+                </form>
+            </section>
+
+            <div class="posts-wrapper__main">
+
+                <!-- <section class="posts__main__section">
+                    <div class="posts__main__section__posts">
+                        <div class="posts__main__section__posts__textarea">
+                            <textarea class="posts__main__section__posts--textarea" cols="30" rows="10"
+                                readonly></textarea>
+                            <div class="posts__main__section__posts__comment-section">
+                                <input type="text" class="posts__main__section__posts__comment--text"
+                                    placeholder="Comment here">
+                                <input type="submit" class="posts__main__section__posts__comment--submit">
+                            </div>
+
+                            <div class="posts__main__section__posts__wrapper">
+                            <div class="posts__main__section__posts__wrapper__comments">
+                                <input type="text" value="asdasdasd"
+                                    class="posts__main__section__posts__wrapper__comments--comment" readonly>
+                                <div class="posts__main__section__posts__wrapper__comments__buttons">
+                                    <button class="posts__main__section__comments__posts--editbtn"><i
+                                            class='bx bxs-edit-alt'></i></button>
+                                    <button class="posts__main__section__comments__posts--updatebtn hidden-buttons"><i
+                                            class='bx bx-check'></i></button>
+                                    <button class="posts__main__section__comments__posts--cancelbtn hidden-buttons"
+                                        type="reset"><i class='bx bx-x-circle'></i></i></button>
+                                    <button class="posts__main__section__comments__posts--removebtn"><i
+                                            class='bx bxs-trash'></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="posts__main__section__posts__buttons">
+                            <button class="posts__main__section__posts__buttons--editbtn"><i
+                                    class='bx bxs-edit-alt'></i></button>
+                            <button class="posts__main__section__posts__buttons--updatebtn hidden-buttons"><i
+                                    class='bx bx-check'></i></button>
+                            <button class="posts__main__section__posts__buttons--cancelbtn hidden-buttons" type="reset"><i
+                                    class='bx bx-x-circle'></i></i></button>
+                            <button class="posts__main__section__posts__buttons--removebtn"><i class='bx bxs-trash'></i></button>
+                        </div>
+                    </div>
+                </section> -->
+
+            </div>
+        </div>
+    </main>
+
+    <!-------------------------------- Posts Section -------------------------------->
+
+    <!-------------------------------- About Section -------------------------------->
+
+    <main class="about hidden">
+        <section class="about__section about-header__section opacity">
+            <h1 class="about-header__section--header">About Us</h1>
+            <p class="about-header__section--para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas
+                incidunt quas neque natus odit accusamus pariatur quo illo reprehenderit distinctio voluptates laborum
+                perspiciatis labore, ea similique velit quod sequi dignissimos!Lorem ipsum dolor sit amet consectetur,
+                adipisicing elit. Voluptas incidunt quas neque natus odit accusamus pariatur quo illo reprehenderit
+                distinctio voluptates laborum perspiciatis labore, ea similique velit quod sequi dignissimos!Lorem ipsum
+                dolor sit amet consectetur, adipisicing elit. Voluptas incidunt quas neque natus odit accusamus pariatur
+                quo illo reprehenderit distinctio voluptates laborum perspiciatis labore, ea similique velit quod sequi
+                dignissimos!Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas incidunt quas neque natus
+                odit accusamus pariatur quo illo reprehenderit distinctio voluptates laborum perspiciatis labore, ea
+                similique velit quod sequi dignissimos!</p>
+        </section>
+        <section class="about__section about-main__section opacity">
+            <h2 class="about-main__section--header">What is so good about this social media?</h1>
+                <p class="about-main__section--para">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi
+                    magnam harum soluta, officia consectetur tenetur cumque alias? Dolorum doloribus laudantium, tenetur
+                    quae beatae odio adipisci voluptate repellendus quisquam ipsa molestias. Lorem ipsum dolor sit, amet
+                    consectetur adipisicing elit. Nisi magnam harum soluta, officia consectetur tenetur cumque alias?
+                    Dolorum doloribus laudantium, tenetur quae beatae odio adipisci voluptate repellendus quisquam ipsa
+                    molestias. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi magnam harum soluta,
+                    officia consectetur tenetur cumque alias? Dolorum doloribus laudantium, tenetur quae beatae odio
+                    adipisci voluptate repellendus quisquam ipsa molestias.</p>
+        </section>
+        <section class="about__section about-under-main__section opacity">
+            <h2 class="about-under-main__section--header">one more thing about the web</h1>
+                <p class="about-under-main__section--para">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Nisi magnam harum soluta, officia consectetur tenetur cumque alias? Dolorum doloribus laudantium,
+                    tenetur quae beatae odio adipisci voluptate repellendus quisquam ipsa molestias. Lorem ipsum dolor
+                    sit, amet consectetur adipisicing elit. Nisi magnam harum soluta, officia consectetur tenetur cumque
+                    alias? Dolorum doloribus laudantium, tenetur quae beatae odio adipisci voluptate repellendus
+                    quisquam ipsa molestias. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi magnam harum
+                    soluta, officia consectetur tenetur cumque alias? Dolorum doloribus laudantium, tenetur quae beatae
+                    odio adipisci voluptate repellendus quisquam ipsa molestias.</p>
+        </section>
+    </main>
+
+    <!-------------------------------- About Section -------------------------------->
+
+    <!-------------------------------- Contact Section -------------------------------->
+
+    <main class="contact hidden">
+
+        <div class="contact__header">
+            <h1>We will contact with you!</h1>
+            <p>Submit your information down below and we will contact with you.</p>
+        </div>
+
+        <section class="contact__section">
+
+            <form class="contact__section__form" onsubmit="contactSubmit(event)">
+                <h1>Get in touch!</h1>
+                <p>if you have any question or need help, please fill out the form below. we do our best to respond
+                    within 1 business day</p>
+                <div class="contact__section__form__input-box">
+                    <input type="text" placeholder="First Name" required>
+                    <i class="bx bx-user"></i>
+                </div>
+                <div class="contact__section__form__input-box">
+                    <input type="text" placeholder="Last Name" required>
+                    <i class="bx bx-user"></i>
+                </div>
+                <div class="contact__section__form__input-box">
+                    <input type="email" placeholder="Email" required>
+                    <i class="bx bx-envelope"></i>
+                </div>
+                <div class="contact__section__form__input-box">
+                    <input type="tel" placeholder="Number" required>
+                    <i class='bx bxs-phone'></i>
+                </div>
+                <div class="contact__section__form__input-box__submit">
+                    <input type="submit" value="Submit" class="submit">
+                </div>
+            </form>
+
+            <div class="contact__section__social-media">
+                <div class="contact__section__social-media__box">
+                    <p>You can send us a massage on whatsapp!</p>
+                    <a href=""><i class='bx bxl-whatsapp'></i></a>
+                </div>
+                <div class="contact__section__social-media__box">
+                    <p>You can contact us on facebook!</p>
+                    <a href=""><i class='bx bxl-facebook-circle'></i></a>
+                </div>
+                <div class="contact__section__social-media__box">
+                    <p>You can send us a massage via instagram!</p>
+                    <a href=""><i class='bx bxl-instagram-alt'></i></a>
+                </div>
+                <div class="contact__section__social-media__box">
+                    <p>You can come to our business!</p>
+                    <a href=""><i class='bx bxs-building-house'></i></a>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-------------------------------- Contact Section -------------------------------->
+
+    <!-------------------------------- Profile Section -------------------------------->
+
+    <main class="profile hidden">
+        <section class="profile__section">
+            <div class="profile__section__header">
+                <h1 class="profile__section__header--text"></h1>
+            </div>
+            <div class="profile__section__img">
+                <img class="profile__section__img--img" src="./Images/Logo.png" alt="profileImage" id="profileImage">
+            </div>
+            <div class="profile__section__buttons">
+                <button class="profile__section__buttons--button">
+                    <i class='bx bx-image-add'></i>
+                    <input class="profile__section__buttons--button--save-file" type="file" accept="image/*">
+                </button>
+                <input class="profile__section__buttons--button--save-image" type="button" value="Upload image"
+                    onclick="uploadImg()">
+            </div>
+        </section>
+    </main>
+
+    <!-------------------------------- Profile Section -------------------------------->
+
+</body>
+
+</html>

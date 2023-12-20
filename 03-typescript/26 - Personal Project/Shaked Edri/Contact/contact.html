@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Contact/dist/contact.css">
+    <link rel="stylesheet" href="../Home/navBar/dist/navigation.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bellefair&family=Dela+Gothic+One&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+    <script src="dist/contact.js" defer></script>
+    <script src="../Home/dist/sharedFile.js" defer></script>
+    <title>Contact</title>
+</head>
+<body>
+    <nav id="navigation">
+        <ul>
+            <li><a id="home" href="../Home/index.html">Home</a></li>
+            <li><a href="../Registration/index.html">Phones</a></li>
+            <li><a href="../AboutUS/about.html">About</a></li>
+            <li><a href="../Contact/contact.html">Contact</a></li>
+            <li><a href="../Settings/settings.html"><img style="width: 30px;" src="../Images/setting.png"></a></li>
+        </ul>
+    </nav>
+    <div class="wrapper">
+        <div class="headwrapper">
+            <div class="head">Shaked-Store</div>
+            <div class="airplane">✈</div>
+            <div class="israel">✡</div>
+            <div class="triplebar">☰</div>
+        </div>
+        <img id="customer-service" src="../Images/customer-service.png">
+        <div class="our-message1" id="our-message1" style="display: none;">Greetings from Shaked's Team!</div>
+        <div class="box-animation">
+            <div class="our-message2" id="our-message2" style="display: none;">
+                <p id="shakedteam">Shaked's Team:</p>
+                Let's start by getting to know you
+                better.
+                <br>
+                What's your
+                name? 😊
+                <br><br><input type="text" id="message-name">
+                <button id="inputName"></button>
+                <br><br>
+                <div class="timing-messages">12:19</div>
+            </div>
+        </div>
+        <img id="guest-picture" src="../Images/guest-image.png" alt="Guest">
+        <div class="customer-message1" id="customer-message1" style="display: none;">
+        </div>
+        <img id="customer-service2" src="../Images/customer-service.png" style="display: none;">
+        <div class="our-message3" id="our-message3" style="display: none;">
+            <p id="shakedteam">Shaked's Team:</p>
+            Nice to meet you !
+            <br>Please write here your phone number:
+            <br><br><input type="number" id="phone-number" required>
+            <button id="confirmPN">Send</button>
+            <br><br>
+            <div class="timing-messages">12:21</div>
+        </div>
+        <div class="customer-message2" id="customer-message2" style="display: none;">
+        </div>
+        <div class="our-message4" id="our-message4" style="display: none;">
+            <p id="shakedteam">Shaked's Team:</p>
+            So, i have your name & your phone number,
+            <br>I just need your email in case the phone is unavailable
+            <br>Please write here your email:
+            <br><br><input type="email" id="costumer-email" required>
+            <button id="confirmEmail">Send</button>
+            <br><br>
+            <div class="timing-messages">12:22</div>
+        </div>
+        <div class="customer-message3" id="customer-message3" style="display: none;"></div>
+        <div class="finishMessage" id="finishMessage" style="display: none;"></div>
+    </div>
+    <button id="topButton">⇡</button>
+</body>
+
+</html>
