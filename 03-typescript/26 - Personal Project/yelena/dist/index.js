@@ -66,9 +66,7 @@ if (classesContainer) {
       </div>`);
     });
 }
-/**
- * Popup (Modal) functionality
- */
+/*Popup (Modal) functionality*/
 const popup = document.querySelector('#popup');
 const popupText = document.querySelector('#popup_text');
 // Display the popup after user clicks on a school class

@@ -1,5 +1,4 @@
 "use strict";
-console.log("shalom");
 const form = document.querySelector("#form");
 if (form) {
     const nameField = document.getElementById("name");
@@ -15,27 +14,15 @@ if (form) {
         const age = ageField ? +ageField.value : "";
         const classes = classesField ? classesField.value : "";
         const phone = phoneField ? phoneField.value : "";
-        const fromData = {
+        const formData = {
             name,
             email,
             age,
             classes,
             phone,
         };
-        debugger;
-        /**
-         * Create an Object with all the data
-         * the properties in the object should be like the interface above
-         * the object will be of type FormObject
-         */
-        // const formData: FormObject = {}
-        /**
-         * Adding the object to localStorage
-         * I gave you an example in WhatsApp
-         */
+        const formDataJSON = JSON.stringify(formData);
+        localStorage.setItem("formData", formDataJSON);
     });
-    local;
-    storage;
-    set;
-    item;
+    debugger;
 }

@@ -70,14 +70,12 @@ const schoolClasses = [
       </div>`
     );
   });
-}
+}  
 
-  /**
-   * Popup (Modal) functionality
-   */
-  
-  const popup = document.querySelector('#popup');
-  const popupText = document.querySelector <HTMLDivElement> ('#popup_text');
+/*Popup (Modal) functionality*/
+   
+const popup = document.querySelector('#popup');
+const popupText = document.querySelector <HTMLDivElement> ('#popup_text');
   
   // Display the popup after user clicks on a school class
   if(classesContainer){

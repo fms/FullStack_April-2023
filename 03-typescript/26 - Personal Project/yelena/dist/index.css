@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 @import url("https://fonts.googleapis.com/css2?family=Kurale&family=Raleway:wght@300;400;500;600;700;800&family=Young+Serif&display=swap");
 .content {
-  background: url("/dist/images/city_2.jpeg") no-repeat center center;
+  background: url("../dist/images/city_2.jpg") no-repeat center center;
   background-size: cover;
   display: flex;
   justify-content: center;
