@@ -14,9 +14,13 @@ class Person {
     }
 }
 
-function submitPerson(event: SubmitEvent) {
+async function submitPerson(event: SubmitEvent) {
     event.preventDefault();
     const formPersonElements = formPerson.elements as FormElements;
+
+
+    const nameFromServer = await getFullName(`${firstName.value} ` + `${lastName.value}`);
+    console.log(nameFromServer);
 
     let newPerson :Person = {
         firstName: formPersonElements.firstName.value,
@@ -55,4 +59,10 @@ function creatingDom(newPerson: Person) {
     newDiv.appendChild(firstNameDiv)
     newDiv.appendChild(lastNameDiv);
     newNamesContainer.appendChild(newDiv);
+}
+
+async function getFullName(fullName: string = "") : Promise<string> {
+    const response = await(fullName ? fetch(`/echo/${fullName}`) : fetch("/echo"))
+    const name = await response.json();
+    return name;
 }
