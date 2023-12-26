@@ -1,21 +1,26 @@
-import { rejects } from 'assert';
 import express from 'express';
 import fs from 'fs';
+import liveDate from '../components/time'
 
+const israelCurrentDate = liveDate('Asia/Jerusalem');
 const app = express();
 const options = process.cwd();
 const port = 3000;
 
 app.use(express.static('public'));
 
-app.get('/name/:first', (req, res) =>{
+app.get('/echo/:text', (req, res) =>{
 console.log(req.params);
-res.send({name: req.params.first});
+res.send({message: req.params.text});
 })
 
-app.use((req,res) => {
-    res.status(404).sendFile('./public/index.html', {root: options});
+app.get('/now', (req, res) => {
+    res.send({date: israelCurrentDate});
 })
+
+// app.use((req,res) => {
+//     res.status(404).sendFile('./public/index.html', {root: options});
+// })
 
 app.listen(port , () => {
     console.log("server is runing")
