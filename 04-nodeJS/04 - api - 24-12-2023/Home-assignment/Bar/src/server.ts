@@ -8,12 +8,12 @@ const string = "random";
 
 app.use(express.static("public"));
 
-app.get("/:random", (req, res) => {
+app.get("/something/:random", (req, res) => {
   console.log(req.params);
   res.send({ something: req.params.random });
 });
 
-app.get("/", (req, res) => {
+app.get("/something", (req, res) => {
   res.send({ something: string });
 });
 
