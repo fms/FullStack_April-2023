@@ -14,7 +14,7 @@ app.get("/:random", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.send({ random: string });
+  res.send({ something: string });
 });
 
 app.get("/now", (req, res) => {
