@@ -1,8 +1,8 @@
 import express from 'express';
 import fs from 'fs';
-import liveDate from '../components/time'
+// import liveDate from '../components/time'
 
-const israelCurrentDate = liveDate('Asia/Jerusalem');
+// const israelCurrentDate = liveDate('Asia/Jerusalem');
 const app = express();
 const options = process.cwd();
 const port = 3000;
@@ -15,7 +15,7 @@ res.send({message: req.params.text});
 })
 
 app.get('/now', (req, res) => {
-    res.send({date: israelCurrentDate});
+    res.sendFile('./public/now.html', {root: options});
 })
 
 // app.use((req,res) => {
