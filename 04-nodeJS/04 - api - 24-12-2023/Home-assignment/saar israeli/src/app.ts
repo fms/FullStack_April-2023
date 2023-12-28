@@ -1,8 +1,8 @@
 import express from 'express';
 import fs from 'fs';
-// import liveDate from '../components/time'
+import liveDateComp from '../components/time'
 
-// const israelCurrentDate = liveDate('Asia/Jerusalem');
+const israelCurrentDate = liveDateComp('Asia/Jerusalem');
 const app = express();
 const options = process.cwd();
 const port = 3000;
@@ -14,8 +14,12 @@ console.log(req.params);
 res.send({message: req.params.text});
 })
 
-app.get('/now', (req, res) => {
+app.get('/nowhtml', (req, res) => {
     res.sendFile('./public/now.html', {root: options});
+})
+
+app.get('/now', (req,res) => {
+    res.send({date: israelCurrentDate})
 })
 
 // app.use((req,res) => {
@@ -69,5 +73,5 @@ async function readTwoFilesAsync() {
     }
 }
 
-readTwoFilesAsync()
-readTwoFilesUsingPromises();
+// readTwoFilesAsync()
+// readTwoFilesUsingPromises();

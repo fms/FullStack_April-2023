@@ -1,3 +1,4 @@
+
 const firstName = document.querySelector("#firstName") as HTMLInputElement;
 const lastName = document.querySelector("#lastName") as HTMLInputElement;
 const submitButton = document.querySelector("#submit") as HTMLInputElement;
@@ -9,7 +10,7 @@ interface FormElements extends HTMLFormControlsCollection {
 }
 
 class Person {
-    constructor(public firstName: string, public lastName :string) {
+    constructor(public firstName: string, public lastName: string) {
 
     }
 }
@@ -22,7 +23,7 @@ async function submitPerson(event: SubmitEvent) {
     const nameFromServer = await getFullName(`${firstName.value} ` + `${lastName.value}`);
     console.log(nameFromServer);
 
-    let newPerson :Person = {
+    let newPerson: Person = {
         firstName: formPersonElements.firstName.value,
         lastName: formPersonElements.lastName.value,
     }
@@ -61,8 +62,20 @@ function creatingDom(newPerson: Person) {
     newNamesContainer.appendChild(newDiv);
 }
 
-async function getFullName(fullName: string = "") : Promise<string> {
-    const response = await(fullName ? fetch(`/echo/${fullName}`) : fetch("/echo"))
+async function getFullName(fullName: string = ""): Promise<string> {
+    const response = await (fullName ? fetch(`/echo/${fullName}`) : fetch("/echo"))
     const name = await response.json();
     return name;
+}
+
+async function dateClickRed(event: MouseEvent) {
+    try {
+        const response = await (fetch("/now"));
+        const move = await response.json();
+        console.log(move)
+        return move;
+    }
+    catch (error) {
+        throw console.error(error)
+    }
 }
