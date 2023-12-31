@@ -16,5 +16,5 @@ router
     .put("/product/:name",   controller.overwriteProductQuery)
     .delete('/product',      controller.deleteProduct);
 
-export { router };
+export default router;
 
