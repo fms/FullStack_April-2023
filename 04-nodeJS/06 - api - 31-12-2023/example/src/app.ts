@@ -4,6 +4,9 @@ import productsRouter from './routes/products';
 const app = express();
 const port = 3000;
 
+// Enable static files
+app.use(express.static('public'));
+
 // Enable JSON body parsing
 app.use(express.json());
 
