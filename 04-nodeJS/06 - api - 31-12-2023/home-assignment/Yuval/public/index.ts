@@ -37,13 +37,15 @@ function renderProducts(element: HTMLDivElement, products: Product[]) {
     productsButton.style.display = "none";
     backButton.style.display = "block";
     element.innerHTML = "<h1>Products</h1>" +                                                                   products.map(product => {
-        return `<p>${product.name}, price: ${product.price}</p> <button>Update Name</button> <button>Update Price</button> <button>Replace</button> <button>Delete</button>`
+        return `<p>${product.name}, price: ${product.price}</p> <button>Update Name</button> <button>Update Price</button> <button>Replace</button> <button onclick="deleteProduct('${product.name}')">Delete</button>`
     }).join('<hr>');
 }
 
 async function addProduct() {
     console.log('addProduct function is called');
     try {
+        //     const formData = new FormData(form);
+        // let newEntry: Entry = Object.fromEntries(formData);
         const pName = (form.querySelector('[name="name"]') as HTMLInputElement).value;
         const pPrice = (form.querySelector('[name="price"]') as HTMLInputElement).valueAsNumber;
         const newProduct: Product = {name: pName, price: pPrice};
@@ -79,4 +81,28 @@ function goBack() {
     </form>`;
     productsButton.style.display = "block";
     backButton.style.display = "none";
+}
+
+async function deleteProduct(name: string) {
+    try {
+        console.log(name);
+        const response = await fetch("/api/products/product", {
+            method: "DELETE",
+            headers: {"content-type": "application/json"},
+            body: JSON.stringify({name})
+        });
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        console.log(data);
+        renderProducts(rootElement, data.products); // {products: []}
+    }
+    catch (error) {
+        if (error instanceof Error) {
+        console.error(error.message);
+        }
+    }
+    
 }
