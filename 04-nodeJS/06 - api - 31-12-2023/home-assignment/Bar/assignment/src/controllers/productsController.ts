@@ -78,6 +78,8 @@ export function updateProductPriceQuery(
   try {
     const { name } = req.params;
     const { price, newName } = req.body;
+    console.log("Received request body:", req.body);
+
 
     // Basic verification of the input
     if (!name || !price || !newName) {
