@@ -97,7 +97,7 @@ export function overwriteProductQuery(req: express.Request, res: express.Respons
 
 export function deleteProduct(req: express.Request, res: express.Response){
     try {
-        const { name } = req.params;
+        const { name } = req.body;
 
         if(!name) {
             throw new Error("Missing product to delete");

@@ -35,17 +35,13 @@ function renderProducts(element: HTMLDivElement, products: Product[]) {
     products.map(product => {
         const productName: HTMLSpanElement = createSpanElement("productSpanName", product.name);
         const productPrice: HTMLSpanElement = createSpanElement("productSpanPrice", product.price);
-        const changeNameButton: HTMLButtonElement = createButtonElement("spanChangeName", "Change Name", updateProductName)
-        const changePriceButton: HTMLButtonElement = createButtonElement("spanChangePrice", "Change Price", updateProductPrice)
-        const overRideButton: HTMLButtonElement = createButtonElement("spanChangeProd", "Change Product", overRideProduct)
-        const deleteButton: HTMLButtonElement = createButtonElement("spanDeleteButton", "Delete Product", () => deleteProduct(product.name))
+        const deleteButton: HTMLButtonElement = createButtonElement("spanDeleteButton", "Delete Product", () => deleteProduct(product.name));
         const productDiv = document.createElement("div") as HTMLDivElement;
+        const editProductButton: HTMLButtonElement = createButtonElement("spaneEditProduct", "EditProduct", () => editProduct(productDiv, product.name,product.price));
         productDiv.classList.add("productDiv");
         productDiv.appendChild(productName);
         productDiv.appendChild(productPrice);
-        productDiv.appendChild(changeNameButton);
-        productDiv.appendChild(changePriceButton);
-        productDiv.appendChild(overRideButton);
+        productDiv.appendChild(editProductButton);
         productDiv.appendChild(deleteButton);
         element.appendChild(productDiv);
     })
@@ -101,12 +97,19 @@ function createSpanElement(className: string, textContent: string | number): HTM
     return span;
 }
 
+function createInputElement(className:string,textContent:string|number): HTMLInputElement {
+    const input = document.createElement("input") as HTMLInputElement;
+    input.classList.add(className);
+    input.value = `${textContent}`;
+    return input;
+}
+
 async function deleteProduct(name: string) {
     try {
-        const response = await fetch(`/api/products/product`, {
+        const response = await fetch("/api/products/product", {
             method: "DELETE",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify({name})
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name })
         });
 
         if (!response.ok) {
@@ -122,25 +125,68 @@ async function deleteProduct(name: string) {
     }
 }
 
-function updateProductName() {
-    try{
+async function updateProductPrice(div:HTMLDivElement,name: string) {
+    try {
+        const newPriceInput = div.children[1] as HTMLInputElement;
+        const newPriceValue = newPriceInput.value;
+        const response = await fetch("/api/products/product", {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({name: name , price: newPriceValue})
+        });
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        renderProducts(productContainer, data.products);
 
-    }catch(error){
 
+    } catch (error) {
+        if (error instanceof Error) {
+            console.error(error.message);
+        }
+    }
+}
+async function overRideProduct(div:HTMLDivElement,name: string) {
+    try {
+        const newNameInput = div.children[0] as HTMLInputElement;
+        const newNameValue = newNameInput.value;
+        const newPriceInput = div.children[1] as HTMLInputElement;
+        const newPriceValue = newPriceInput.value;
+        const response = await fetch(`/api/products/product/${name}`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({name : newNameValue, price: newPriceValue })
+        });
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        renderProducts(productContainer, data.products);
+
+
+    } catch (error) {
+        if (error instanceof Error) {
+            console.error(error.message);
+        }
     }
 }
 
-function updateProductPrice() {
-    try{
+function editProduct(div: HTMLDivElement, name: string, price:number) {
+    try {
+        const newNameInput = createInputElement("productNewInputName",name);
+        const newPriceInput = createInputElement("productNewInputPrice",price);
+        const changePriceButton: HTMLButtonElement = createButtonElement("spanChangePrice", "Change Price", () => updateProductPrice(div,name));
+        const changeProdButton: HTMLButtonElement = createButtonElement("spanChangeProd", "Change Product", () => overRideProduct(div,name));
+        div.replaceChildren()
+        div.appendChild(newNameInput);
+        div.appendChild(newPriceInput);
+        div.appendChild(changePriceButton);
+        div.appendChild(changeProdButton);
 
-    }catch(error){
-        
-    }
-}
-function overRideProduct() {
-    try{
-
-    }catch(error){
-        
+    } catch (error) {
+        if (error instanceof Error) {
+            console.error(error.message);
+        }
     }
 }
