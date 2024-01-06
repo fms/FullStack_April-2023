@@ -24,5 +24,4 @@ if (form) {
         const formDataJSON = JSON.stringify(formData);
         localStorage.setItem("formData", formDataJSON);
     });
-    debugger;
 }
