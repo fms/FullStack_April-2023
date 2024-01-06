@@ -1,10 +1,12 @@
 import express, { Express, Request, Response } from "express";
-
 const app: Express = express();
 const port = 3000;
 
+app.use(express.json());
+app.use(express.static('public'));
+
 app.get("/", (req: Request, res: Response) => {
-  res.send("Express + TypeScript Server");
+
 });
 
 app.listen(port, () => {

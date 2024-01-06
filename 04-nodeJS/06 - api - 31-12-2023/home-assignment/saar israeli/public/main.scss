@@ -1,0 +1,56 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: aqua;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#product-form {
+    input[type=submit] {
+        margin-left: 6px;
+        width: 75px;
+    }
+
+    input{
+        height: 30px;
+    }
+}
+
+.productDiv {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    overflow-x: hidden;
+    
+    button {
+        width: 75px;
+        height: 40px;
+    }
+    span {
+        font-size: 20px;
+        max-width: 20px;
+        margin-right: 140px;
+    }
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Manager</title>
+    <script src="dist/index.js" defer></script>
+    <link rel="stylesheet" href="dist/style.css">
+</head>
+<body>
+    <div id="root">
+        <form class="form">
+            <label>Name:
+                <input class="text_block" type="text" id="name" name="name" required>
+            </label>
+            <label>Price:
+                <input class="text_block" type="number" id="price" name="price" required>
+            </label>
+            <button class="button" type="button" id="submit">Add</button>
+        </form>
+    </div>
+    <button class="button" id="show_products">Your Products</button>
+    <button class="button" id="back">Back</button>
+</body>
+</html>
