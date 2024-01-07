@@ -1,0 +1,24 @@
+.Form {
+	position: sticky;
+	top: 0px;
+	text-align: center;
+	background-color: rgb(39, 34, 34);
+	padding: 3px 0;
+	z-index: 3;
+
+	.button {
+		background-color: white;
+		color: black;
+		border: 0;
+		border-radius: 10px;
+		padding: 3px;
+		transition: opacity 0.3s, color 0.3s, background-color 0.3s;
+		&:hover{
+			opacity: 80%;
+		}
+		&:active{
+			background-color: rgb(39, 34, 34);
+			color: white;
+		}
+	}
+}

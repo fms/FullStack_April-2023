@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AP Inventory</title>
+    <script src="typescript/dist/index.js"></script>
+    <link rel="stylesheet" href="scss/dist/index.css">
+    <link rel="icon" href="resources/iconImageAP.png">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Wireless Access Points invetory </h1>
+        </nav>
+    </header>
+    <form class="Form" onsubmit="submitForm(event)">
+        <label for="vendorName">Vendor name</label>
+        <input type="text" id="vendorName" name="vendorName" required>
+        <label for="modelName">Model name</label>
+        <input type="text" id="modelName" name="modelName" required>
+        <label for="hostName">Host name</label>
+        <input type="text" id="hostName" name="hostName" required>
+        <label for="macAddr">Mac address</label>
+        <input type="text" id="macAddr" name="macAddr" required>
+        <label for="ipAddr">IP address</label>
+        <input type="text" id="ipAddr" name="ipAddr" required>
+        <label for="Version">Version</label>
+        <input type="text" id="Version" name="Version" required>
+        <input type="submit" class="button" value="Submit">
+        <input type="button" onclick="deleteRow(event)" value="delete selected?" class="button">
+    </form>
+    <table class="apTable">
+        <tr>
+            <th>Vendor name</th>
+            <th>Model name</th>
+            <th>Host name</th>
+            <th>Mac address</th>
+            <th>IP address</th>
+            <th>Version</th>
+            <th>Delete</th>
+        </tr>
+
+
+    </table>
+</body>
+
+</html>
