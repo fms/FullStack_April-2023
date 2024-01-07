@@ -72,10 +72,10 @@ export function updateProductPriceBody (req: express.Request, res: express.Respo
 export function updateProductPriceQuery(req: express.Request, res: express.Response) {
     try {
         const { name } = req.params;
-        const { price, newName } = req.body;
+        const { price } = req.body;
 
         // Basic verification of the input
-        if (!name || !price || !newName) {
+        if (!name || !price) {
             throw new Error("Missing product details to update");
         }
 
@@ -89,7 +89,6 @@ export function updateProductPriceQuery(req: express.Request, res: express.Respo
         console.log("Before:", oldProduct);
 
         // Updates by reference directly inside the array
-        oldProduct.name = newName;
         oldProduct.price = price;
 
         console.log("After :", oldProduct);

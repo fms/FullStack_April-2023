@@ -1,13 +1,13 @@
 import { Product } from '../models/Product';
-import express from 'express';
+import express, {Request, Response} from 'express';
 
 // The current products
 const products: Product[] = [];
 
-export function createProduct(req: express.Request, res: express.Response) {
+export function createProduct(req: Request, res: Response) {
     try {
         const newProduct: Product = req.body;
-
+        console.log(newProduct)
         // Basic verification of the input
         if (!newProduct.name || !newProduct.price) {
             throw new Error("Missing product details to add");
@@ -34,15 +34,15 @@ export function createProduct(req: express.Request, res: express.Response) {
     }
 }
 
-export function getProducts(req: express.Request, res: express.Response) {
+export function getProducts(req:Request, res: Response) {
     // Just return the list of products to the client
     res.send({ products });
 }
 
-export function updateProductPriceBody (req: express.Request, res: express.Response) {
+export function updateProductPriceBody (req: Request, res: Response) {
     try {
         const { name, price } = req.body;
-
+        console.log(name, price)
         // Basic verification of the input
         if (!name || !price) {
             throw new Error("Missing product details to update");
@@ -69,13 +69,13 @@ export function updateProductPriceBody (req: express.Request, res: express.Respo
     }
 }
 
-export function updateProductPriceQuery(req: express.Request, res: express.Response) {
+export function updateProductPriceQuery(req: Request, res: Response) {
     try {
         const { name } = req.params;
-        const { price, newName } = req.body;
+        const { price } = req.body;
 
         // Basic verification of the input
-        if (!name || !price || !newName) {
+        if (!name || !price) {
             throw new Error("Missing product details to update");
         }
 
@@ -89,7 +89,6 @@ export function updateProductPriceQuery(req: express.Request, res: express.Respo
         console.log("Before:", oldProduct);
 
         // Updates by reference directly inside the array
-        oldProduct.name = newName;
         oldProduct.price = price;
 
         console.log("After :", oldProduct);
@@ -102,7 +101,7 @@ export function updateProductPriceQuery(req: express.Request, res: express.Respo
     }
 }
 
-export function overwriteProductBody(req: express.Request, res: express.Response) {
+export function overwriteProductBody(req: Request, res: Response) {
     try {
         const newProduct: Product = req.body;
 
@@ -133,7 +132,7 @@ export function overwriteProductBody(req: express.Request, res: express.Response
     }
 }
 
-export function overwriteProductQuery(req: express.Request, res: express.Response) {
+export function overwriteProductQuery(req: Request, res: Response) {
     try {
         const { name } = req.params;
         const newProduct: Product = req.body;
@@ -176,7 +175,7 @@ export function overwriteProductQuery(req: express.Request, res: express.Respons
     }
 }
 
-export function deleteProduct(req: express.Request, res: express.Response) {
+export function deleteProduct(req: Request, res: Response) {
         try {
             const { name } = req.body;
 

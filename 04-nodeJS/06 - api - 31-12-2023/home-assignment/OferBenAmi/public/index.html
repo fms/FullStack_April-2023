@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Products Manager</title>
+        <script src="dist/index.js" defer></script>
+        <link rel="stylesheet" href="dist/style.css" />
+    </head>
+    <body>
+        <h1>Add Products</h1>
+        <form>
+            <label
+                >name:
+                <input id="name" type="text" />
+            </label>
+            <label
+                >price:
+                <input id="price" type="text" />
+            </label>
+            <input
+                value="submit"
+                type="button"
+                onclick="handleAddProducts(event)"
+            />
+        </form>
+        <div id="root"></div>
+    </body>
+</html>
+

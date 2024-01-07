@@ -39,5 +39,4 @@ if (form) {
     
   });
   
-  debugger;
 }
