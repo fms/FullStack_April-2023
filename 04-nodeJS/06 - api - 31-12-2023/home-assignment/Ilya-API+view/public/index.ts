@@ -42,7 +42,7 @@ function renderProducts(element: HTMLDivElement, products: Product[]) {
     editButton.textContent = "Edit";
 
     editButton.addEventListener("click", (event) =>
-      handleEditButton(event, productOutputDiv,product.name)
+      handleEditButton(event, productOutputDiv, product.name)
     );
     deleteButton.addEventListener("click", () => deleteProduct(product.name));
 
@@ -111,7 +111,7 @@ async function deleteProduct(name: string) {
   }
 }
 
-function handleEditButton(event: MouseEvent, div: HTMLDivElement,productName:string) {
+function handleEditButton(event: MouseEvent, div: HTMLDivElement, productName: string) {
   let target = event.target as HTMLButtonElement;
 
   if (target) {
@@ -123,8 +123,8 @@ function handleEditButton(event: MouseEvent, div: HTMLDivElement,productName:str
     patch.textContent = "Patch";
     put.textContent = "Put";
 
-    patch.addEventListener("click", () => handlePatchButton(productName,newNameInput.value,Number(newPriceInput.value)));
-    put.addEventListener("click", () => handlePutButton(productName,newNameInput.value,Number(newPriceInput.value)));
+    patch.addEventListener("click", () => handlePatchButton(productName, newNameInput.value, Number(newPriceInput.value)));
+    put.addEventListener("click", () => handlePutButton(productName, newNameInput.value, Number(newPriceInput.value)));
 
     div.appendChild(newNameInput);
     div.appendChild(newPriceInput);

@@ -2,7 +2,12 @@ import { Product } from '../models/Product';
 import express from 'express';
 
 // The current products
-const products: Product[] = [];
+const products: Product[] = [
+    {
+        name: "gili",
+        price: 5
+    }
+];
 
 export function createProduct(req: express.Request, res: express.Response) {
     try {
@@ -39,7 +44,7 @@ export function getProducts(req: express.Request, res: express.Response) {
     res.send({ products });
 }
 
-export function updateProductPriceBody (req: express.Request, res: express.Response) {
+export function updateProductPriceBody(req: express.Request, res: express.Response) {
     try {
         const { name, price } = req.body;
 
@@ -176,29 +181,29 @@ export function overwriteProductQuery(req: express.Request, res: express.Respons
 }
 
 export function deleteProduct(req: express.Request, res: express.Response) {
-        try {
-            const { name } = req.body;
+    try {
+        const { name } = req.body;
 
-            if (!name) {
-                throw new Error("Missing old product name to delete");
-            }
+        if (!name) {
+            throw new Error("Missing old product name to delete");
+        }
 
-            // Does the product exist?
-            const index = products.findIndex(item => item.name === name);
-            if (index === -1) {
-                throw new Error("Item to delete not found");
-            }
+        // Does the product exist?
+        const index = products.findIndex(item => item.name === name);
+        if (index === -1) {
+            throw new Error("Item to delete not found");
+        }
 
-            // splice() returns an array, in this case with just one item.
-            // use oldProduct[0] for the actual item.
-            const oldProduct = products.splice(index, 1);
-            console.log("Deleted:", oldProduct[0]);
+        // splice() returns an array, in this case with just one item.
+        // use oldProduct[0] for the actual item.
+        const oldProduct = products.splice(index, 1);
+        console.log("Deleted:", oldProduct[0]);
 
-            res.send({ products });
+        res.send({ products });
 
-        } catch (error) {
-            if (error instanceof Error) {
-                res.status(404).send({ error: error.message });
-            }
+    } catch (error) {
+        if (error instanceof Error) {
+            res.status(404).send({ error: error.message });
         }
     }
+}

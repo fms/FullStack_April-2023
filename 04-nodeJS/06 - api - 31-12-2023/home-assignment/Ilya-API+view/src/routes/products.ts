@@ -7,9 +7,11 @@ const router = express.Router();
 // R - Read   - app.get()
 // U - Update - app.put()  /  app.patch()
 // D - Delete - app.delete()
+
+// /api/products
 router
-    .post("/product",        controller.createProduct)
-    .get("/products",        controller.getProducts)
+    .post("",        controller.createProduct)
+    .get("",        controller.getProducts)
     .patch("/product",       controller.updateProductPriceBody)
     .patch("/product/:name", controller.updateProductPriceQuery)
     .put("/product",         controller.overwriteProductBody)
