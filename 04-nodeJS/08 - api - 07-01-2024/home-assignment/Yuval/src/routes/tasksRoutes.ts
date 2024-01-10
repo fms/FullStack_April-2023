@@ -3,10 +3,10 @@ import * as controller from '../controllers/tasksController';
 
 const router = express.Router();
 
-router
-    .post("/add",            controller.createTask)
-    .get("",                 controller.getTasks)
-    .patch("/status/:id",    controller.updateStatus)
-    .delete("/delete/:id",   controller.deleteTask);
+
+router.post("/add",            controller.createTask, controller.getTasks)
+router.get("",                 controller.getTasks)
+router.patch("/status",    controller.updateStatus, controller.getTasks)
+router.delete("/delete",   controller.deleteTask, controller.getTasks);
 
 export default router;

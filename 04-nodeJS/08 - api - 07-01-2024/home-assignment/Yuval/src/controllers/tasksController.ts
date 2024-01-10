@@ -1,10 +1,10 @@
 import { Task, Status } from '../models/tasks';
-import express from 'express';
+import express, { NextFunction, Request, Response } from "express";
 
 const tasks: Task[] = [];
 
-export function createTask(req: express.Request, res: express.Response) {
-    try {
+export function createTask(req: express.Request, res: express.Response, next: NextFunction) {
+    
         const newTaskDetails = req.body;
 
         if(!newTaskDetails.title || !newTaskDetails.description) {
@@ -31,22 +31,18 @@ export function createTask(req: express.Request, res: express.Response) {
         console.log("Adding:", newTask);
         tasks.push(newTask);
         res.send({ tasks });
-    } 
-    catch (error) {
-        if (error instanceof Error) {
-            res.statusMessage = error.message;
-            res.status(404).send({ error: error.message });
-        }
-    }
+    
+    
+    next();
 }
 
-export function getTasks(req: express.Request, res: express.Response) {
+export function getTasks(req: express.Request, res: express.Response, next: NextFunction) {
     res.send({ tasks });
+    next();
 }
 
-export function updateStatus(req: express.Request, res: express.Response) {
-    try {
-        const { id } = req.params;
+export function updateStatus(req: express.Request, res: express.Response, next: NextFunction) {
+        const { id } = req.body;
 
         if(!id) {
             throw new Error(`ID not valid. id: ${id}`);
@@ -71,18 +67,12 @@ export function updateStatus(req: express.Request, res: express.Response) {
 
         console.log("After :", taskToUpdate);
         res.send({ tasks });
-    }
-    catch (error) {
-        if (error instanceof Error) {
-            res.statusMessage = error.message;
-            res.status(404).send({ error: error.message });
-        }
-    }
+        next();
 }
 
-export function deleteTask(req: express.Request, res: express.Response) {
-    try {
-        const { id } = req.params;
+export function deleteTask(req: express.Request, res: express.Response, next: NextFunction) {
+    
+        const { id } = req.body;
 
         if(!id) {
             throw new Error(`ID not valid. id: ${id}`);
@@ -97,13 +87,7 @@ export function deleteTask(req: express.Request, res: express.Response) {
         console.log("Delete:", taskToDelete);
 
         res.send({ tasks });
-    }
-    catch (error) {
-        if (error instanceof Error) {
-            res.statusMessage = error.message;
-            res.status(404).send({ error: error.message });
-        }
-    }
+    next();
 }
 
 function generateUniqueId(): number {

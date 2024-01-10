@@ -1,11 +1,11 @@
-export interface Task {
+interface Task {
     id: number,
     title: string,
     description: string,
     status: Status
 }
 
-export enum Status {
+enum Status {
     TO_DO = "To-Do",
     DONE = "Done"
 }
@@ -26,7 +26,7 @@ async function getTasks() {
 
         const data = await response.json();
         console.log(data);
-        renderProducts(taskListElement, data.tasks);
+        renderTasks(taskListElement, data.tasks);
 
     }
     catch (error) {
@@ -36,7 +36,7 @@ async function getTasks() {
     }
 }
 
-function renderProducts(element: HTMLDivElement, tasks: Task[]) {
+function renderTasks(element: HTMLDivElement, tasks: Task[]) {
     element.replaceChildren();
     const header = document.createElement("h3");
     header.innerText = "Your Tasks:";
@@ -48,14 +48,15 @@ function renderProducts(element: HTMLDivElement, tasks: Task[]) {
         }
         const taskButtons = document.createElement("div");
         taskButtons.innerHTML = `
-        <button onclick="changeStatus()">Change task status</button> 
-        <button onclick="deleteProduct()">Delete</button>`
+        <button onclick="changeStatus('${task.id}')">Change task status</button> 
+        <button onclick="deleteProduct('${task.id}')">Delete</button>`
         element.appendChild(taskLine);
         element.appendChild(taskButtons);
     }).join('<hr>');
 }
 
-async function addTask() {
+async function addTask(ev: Event) {
+    ev.preventDefault();
     try {
         const taskTitle = (form.querySelector('[name="title"]') as HTMLInputElement).value;
         const taskDescription = (form.querySelector('[name="description"]') as HTMLInputElement).value;
@@ -69,8 +70,9 @@ async function addTask() {
         }
 
         const data = await response.json();
+        form.reset();
         console.log(data);
-        renderProducts(taskListElement, data.tasks);
+        renderTasks(taskListElement, data.tasks);
     }
     catch (error) {
         if (error instanceof Error) {
@@ -79,3 +81,49 @@ async function addTask() {
     }
 }
 
+async function changeStatus(id: number) {
+    try {
+        console.log(id);
+        const response = await fetch(`/api/tasks/status`, {
+            method: "PATCH",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(id)
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log(data);
+        renderTasks(rootElement, data.tasks);
+    }
+    catch (error) {
+        if (error instanceof Error) {
+            console.error(error.message);
+        }    
+    }
+}
+
+async function deleteProduct(id: number) {
+    try {
+        console.log(id);
+        const response = await fetch("/api/tasks/delete", {
+            method: "DELETE",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({ id })
+        });
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log(data);
+        renderTasks(rootElement, data.tasks);
+    }
+    catch (error) {
+        if (error instanceof Error) {
+            console.error(error.message);
+        }
+    }
+}
