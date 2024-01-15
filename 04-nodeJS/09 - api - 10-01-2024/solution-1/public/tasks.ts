@@ -20,6 +20,13 @@ handleGetTasks();
 async function processResponse(response: Response) {
     try {
         if (!response.ok) {
+            if (response.statusText === "Validation error") {
+                // There's no real method for checking for a failed validation - we rely on the status message.
+                // Use the response body (JSON) to get the actual list of errors.
+                const { errors } = await response.json();
+                throw new Error(errors.join("\n"));
+            }
+
             throw new Error(response.statusText)
         }
 
@@ -101,7 +108,7 @@ function renderTask(body: HTMLDivElement, task: Task) {
             title.classList.add("task-done");
             description.classList.add("task-done");
         }
-        
+
         body.appendChild(title);
         body.appendChild(description);
 

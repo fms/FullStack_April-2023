@@ -1,5 +1,11 @@
 // Express
 import express from 'express';
+
+// This is a special import that alters the functionality of express to add support
+// for catching throw() from async middleware. No code changes are required except
+// importing this module.
+import 'express-async-errors';
+import tasksRouter from './routes/tasks';
 import { globalErrorHandler } from './handlers/ErrorHandler';
 import { logRequest } from './handlers/Logger';
 
@@ -16,7 +22,6 @@ app.use(express.json());
 app.use(logRequest);
 
 // API: Tasks
-import tasksRouter from './routes/tasks';
 app.use('/api/tasks', tasksRouter);
 
 // Handle errors not handled by the built-in error handler
