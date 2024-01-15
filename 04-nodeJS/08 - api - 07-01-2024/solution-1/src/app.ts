@@ -1,5 +1,6 @@
 // Express
 import express from 'express';
+import { logRequest } from './handlers/Logger';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -9,6 +10,9 @@ app.use(express.static("public"));
 
 // Auto-parse JSON body
 app.use(express.json());
+
+// Logger
+app.use(logRequest);
 
 // API: Tasks
 import tasksRouter from './routes/tasks';
