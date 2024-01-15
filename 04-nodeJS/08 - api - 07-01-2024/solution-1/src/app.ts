@@ -1,5 +1,6 @@
 // Express
 import express from 'express';
+import { globalErrorHandler } from './handlers/ErrorHandler';
 import { logRequest } from './handlers/Logger';
 
 const app = express();
@@ -23,12 +24,3 @@ app.use(globalErrorHandler);
 
 app.listen(port, () => console.log(`Server started on http://localhost:${port}`));
 
-function globalErrorHandler(error: any, req: express.Request, res: express.Response, next: express.NextFunction) {
-    if (error instanceof Error){
-        res.statusMessage = error.message;
-        res.status(500).send({ error: error.message });
-    }
-    else {
-        res.status(500).send({ error });
-    }
-}
