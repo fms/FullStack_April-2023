@@ -1,20 +1,38 @@
-h1, h2, p{
-    text-align: center;
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 0.8rem;
 }
 
-form{
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    margin: 0 auto;
-    input{
-        display: block;
-        margin: 10px 0;
-        padding: 1rem;
+form {
+    input {
+        margin: 5px 0;
+        padding: 0.5rem;
         border-radius: 5px;
+        flex: 1;
+    }
 
+    button {
+        padding: 5px;
     }
-    button{
-        padding: 20px;
-    }
+}
+
+.tasks {
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    gap: 0.2rem 1rem;
+}
+
+.header {
+    background-color: lightgray;
+    padding: 0.2rem 0;
+    margin: 5px 0;
+}
+
+.task-done {
+    text-decoration: line-through;
+}
+
+.errors {
+    font-weight: bold;
+    color: red;
 }
