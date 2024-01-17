@@ -30,8 +30,8 @@ function createTaskTemplate(task: Task) {
   editButton.textContent = "Edit";
   checkbox.type = "checkbox";
   checkbox.checked = (task.status === true);
-
   taskDetails.classList.add("todo");
+  
   if (checkbox.checked){
     taskDetails.classList.add("completed");
     taskDetails.classList.remove("todo");
