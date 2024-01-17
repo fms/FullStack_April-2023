@@ -68,7 +68,7 @@ export function deleteTask(req: Request, res: Response, next: NextFunction) {
     next()
 }
 
-function getTaskById(id: string | null | undefined) {
+function getTaskById(id: string) {
     const index = tasks.findIndex(task => task.id === id);
     if (index == -1) {
         throw new Error("Can't find a task for the specified ID");
