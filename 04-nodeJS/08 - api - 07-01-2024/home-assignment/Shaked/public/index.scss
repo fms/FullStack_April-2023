@@ -1,0 +1,57 @@
+.task {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper {
+
+    background-color: gray;
+    border-radius: 15px;
+    color: white;
+    padding: 15px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top:1%;
+    margin-bottom: 1%;
+
+}
+
+button {
+    padding: 5px;
+
+}
+
+.task {
+    margin-top: 20px;
+    text-align: center;
+}
+
+h1,
+h2,
+h3 {
+    margin-bottom: 5px;
+}
+
+#taskdes {
+    padding: 5%;
+}
+
+#taskdes::placeholder {
+    font-size: 25px;
+}
+
+input,
+select {
+    margin-bottom: 5px;
+}
+
+.showDiv {
+    display: flex;
+    gap: 10px;
+}
