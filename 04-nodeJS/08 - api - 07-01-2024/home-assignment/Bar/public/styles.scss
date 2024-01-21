@@ -9,3 +9,11 @@ body {
 .todo {
   background-color: rgb(235, 133, 133);
 }
+
+.chooseUser{
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2px;
+}

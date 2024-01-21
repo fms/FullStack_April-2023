@@ -3,16 +3,70 @@ interface Task {
   description: string;
   id: string;
   status:boolean;
+  userId:string
 }
 
+interface User {
+  userId: string
+  username:string,
+  email:string
+}
+
+let currentUserId:string;
+
+async function getUsers() {
+  let response;
+    response = await fetch("/api/users", {});
+    await processResponse(response);
+}
+
+
 const taskOutput = document.querySelector(".taskOutput") as HTMLDivElement;
+const chooseUser = document.querySelector(".chooseUser") as HTMLDivElement;
+getUsers();
 getTasks();
+
+async function renderUsers(users:User[]){
+chooseUser.innerHTML = "";
+users.forEach((user) => {
+  createUserTemplate(user);
+});
+}
 
 async function renderTasks(tasks: Task[]) {
   taskOutput.innerHTML = "";
   tasks.forEach((task) => {
-    createTaskTemplate(task);
+    if (task.userId === currentUserId) {
+      createTaskTemplate(task);
+    }
   });
+}
+
+function createUserTemplate(user:User){
+  const userDiv = document.createElement("div") as HTMLDivElement;
+  const userArea = document.createElement("div") as HTMLDivElement;
+  const usernameParagarph = document.createElement("p") as HTMLParagraphElement;
+  const chooseButton = document.createElement("button") as HTMLButtonElement;
+
+  usernameParagarph.textContent = user.username;
+  chooseButton.textContent = "Choose";
+  chooseButton.addEventListener("click",(event) => chooseButtonHandler(event,user) )
+
+  userArea.appendChild(usernameParagarph);
+  userDiv.appendChild(userArea);
+  userDiv.appendChild(chooseButton);
+  chooseUser.appendChild(userDiv);
+}
+
+async function chooseButtonHandler(event:MouseEvent,user:User){
+  event.preventDefault();
+
+  if (event.target){
+    currentUserId = user.userId
+    console.log(user.userId);
+    const response = await fetch(`/api/user/${user.userId}/tasks`, {});
+    await processResponse(response);
+  }
 }
 
 function createTaskTemplate(task: Task) {
@@ -66,6 +120,7 @@ async function createTask(event: MouseEvent) {
       title: titleValue,
       description: descriptionValue,
       status: false,
+      userId:currentUserId
     };
 
     console.log(newTask);
@@ -151,15 +206,25 @@ async function processResponse(response: Response) {
       if (!response.ok) {
           throw new Error(response.statusText)
       }
+      
+      const responseData = await response.json();
+      
+      if ('users' in responseData) {
+          const { users }: { users: User[] } = responseData;
+          renderUsers(users);
+      }
 
-      const { tasks }: { tasks: Task[] } = await response.json();
-      renderTasks(tasks);
+      if ('tasks' in responseData) {
+          const { tasks }: { tasks: Task[] } = responseData;
+          renderTasks(tasks);
+      }
+
   } catch (error) {
       if (error instanceof Error) {
           console.error(error.message);
-      }
-      else {
+      } else {
           console.error(error);
       }
   }
 }
+

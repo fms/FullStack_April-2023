@@ -5,7 +5,8 @@ export class Task {
   constructor(
     public title: string,
     public description: string,
-    public status: boolean
+    public status: boolean,
+    public userId:string
   ) {
     this.id = crypto.randomUUID();
   }

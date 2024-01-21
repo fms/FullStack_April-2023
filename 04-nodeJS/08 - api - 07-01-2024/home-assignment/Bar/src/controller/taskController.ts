@@ -1,8 +1,34 @@
 import { Task } from "../model/taskModel";
+import {User} from "../model/userModel"
 import { NextFunction, Request, Response } from "express";
 
-
 const tasks: Task[] = [];
+const users: User[] = [];
+
+export function getUsers (req: Request, res: Response ,next: NextFunction){
+ res.send({users});
+next();
+}
+
+export function createUser(req: Request, res: Response ,next: NextFunction){
+
+  if (!("username" in req.body && "email" in req.body)){
+    throw new Error ("missing details");
+  }
+
+  const {username,email}:User = req.body;
+  const user = new User(crypto.randomUUID(),username, email);
+  users.push(user);
+  next();
+}
+
+export function getUserTasks(req: Request, res: Response, next: NextFunction) {
+  const userId = req.params.userId;
+  const userTasks = tasks.filter(task => task.userId === userId);
+
+  res.send({ tasks: userTasks });
+  next();
+}
 
 export function getTasks(req: Request, res: Response ,next: NextFunction) {
   res.send({ tasks });  
@@ -14,8 +40,8 @@ export function createTask(req: Request, res: Response ,next: NextFunction) {
     throw new Error("Missing properties");
 }
 
-  const { title, description }: Task = req.body;
-  const newTask = new Task(title, description, false);
+  const { title, description, userId }: Task = req.body;
+  const newTask = new Task(title, description, false, userId);
   tasks.push(newTask);
   next();
 }
@@ -58,7 +84,7 @@ export function overwriteTaskQuery(req: Request, res: Response ,next: NextFuncti
     let changed = false;
 
     if ('title' in req.body && 'description' in req.body ) {
-      const newTask = new Task(req.body.title, req.body.description,req.body.status)
+      const newTask = new Task(req.body.title, req.body.description,req.body.status, req.body.userId)
       
         tasks[taskIndex].title = req.body.title;
         changed = true;

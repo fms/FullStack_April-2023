@@ -31,6 +31,9 @@ const route = express.Router();
 
 route
   .get("/tasks", controller.getTasks)
+  .get("/users", controller.getUsers)
+  .get("/user/:userId/tasks",controller.getUserTasks)
+  .post("/user", controller.createUser)
   .post("/task",validate, controller.createTask, controller.getTasks)
   .patch("/task",oneOf([titleValidation, descriptionValidation, statusValidation],{message: "Must include at least one of title, description or status" }), controller.updateTaskBody, controller.getTasks)
   .patch("/task/:id",oneOf([titleValidation, descriptionValidation, statusValidation],{message: "Must include at least one of title, description or status" }), controller.updateTaskStatus, controller.getTasks)
