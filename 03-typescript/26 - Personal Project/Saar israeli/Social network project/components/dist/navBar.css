@@ -1,0 +1,117 @@
+.nav-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  height: 7vh;
+  background-color: transparent;
+}
+.navbar-right ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar-right ul li {
+  list-style-type: none;
+}
+.navbar-right__link {
+  margin-inline: 1vw;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding-bottom: 15px;
+}
+.navbar-right__link--log-out, .navbar-right__link--log-in {
+  margin-right: 2vw;
+  margin-inline: 1vw;
+  text-decoration: underline;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+}
+.navbar-right__link:hover,
+.navbar .active {
+  border-bottom: 2px solid white;
+}
+.navbar-left__logo {
+  margin-left: 3vw;
+}
+.navbar-left__logo img {
+  width: 3vw;
+  height: 3vw;
+  cursor: pointer;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+@media only screen and (max-width: 479px) and (min-width: 250px) {
+  .nav-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    height: 7vh;
+    background-color: transparent;
+  }
+  .navbar-right {
+    margin-right: 3vw;
+  }
+  .navbar-right ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .navbar-right ul li {
+    list-style-type: none;
+  }
+  .navbar-right__link {
+    margin-inline: 1vw;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 10px;
+    padding-bottom: 15px;
+  }
+  .navbar-right__link--log-out, .navbar-right__link--log-in {
+    margin-right: 0;
+    margin-inline: 1vw;
+    text-decoration: underline;
+    text-align: center;
+    font-size: 15px;
+    color: white;
+  }
+  .navbar-right__link:hover,
+.navbar .active {
+    border-bottom: 2px solid white;
+  }
+  .navbar-left__logo {
+    margin-left: 3vw;
+  }
+  .navbar-left__logo img {
+    width: 7vw;
+    height: 7vw;
+    cursor: pointer;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}

@@ -1,0 +1,1 @@
+console.log("This is Javascript!!! in the frontend")

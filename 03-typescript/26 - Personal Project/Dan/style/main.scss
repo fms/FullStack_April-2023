@@ -1,0 +1,89 @@
+$font: Arial;
+
+@import "/style/dist/sharks.css";
+@import "/style/dist/info.css";
+@import "/style/dist/idea.css";
+@import "/style/dist/tank.css";
+@import "/style/dist/pics.css";
+@import "/style/dist/dropdown.css";
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: rgb(16, 0, 165);
+    color: white;
+    font-family: $font;
+    width: 80%;
+    margin: auto;
+}
+
+.line {
+    background-color: white;
+    height: 2px;
+    font-size: 0;
+    margin: 20px;
+}
+
+.title {
+    padding: 20px 0 35px 0;
+    font-size: 4vh;
+    font-weight: bold;
+    text-align: center;
+}
+
+@media (max-width: 965px) {
+    .team {
+        display: none;
+    }
+
+    .gallery {
+        display: flex;
+    }
+
+    .toggle {
+        display: block;
+        position: fixed;
+        right: 35px;
+        top: 20px;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .company {
+        padding: 20px;
+        margin: 0 auto;
+    }
+
+    .pic {
+        height: 40vh;
+        width: 35vw;
+    }
+
+}
+
+@media (max-width: 610px) {
+    .company, .sharks {
+        font-size: 3.5vh;
+    }
+
+    .subtitle {
+        font-size: 3vh;
+    }
+
+    .title {
+        font-size: 3.5vh;
+    }
+
+    .pic {
+        height: 30vh;
+        width: 45vw;
+    }
+
+    .overlay1 {
+        width: 45vw;
+    }
+}

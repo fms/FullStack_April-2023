@@ -1,0 +1,16 @@
+.apTable{
+    border-collapse: collapse;
+    width: 100%;
+    padding: 1rem;
+
+    th,td{
+        padding: 1rem;
+        text-align: left;
+    }
+    th{
+        background-color: hsl(0  0% 0% / 0.5);
+    }
+    tr:nth-of-type(2n){
+        background-color: hsl(0  0% 0% / 0.1);
+    }
+}

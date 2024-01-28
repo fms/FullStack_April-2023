@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Manager</title>
+    <script src="dist/index.js" defer></script>
+    <link rel="stylesheet" href="dist/style.css">
+</head>
+
+<body>
+    <center>
+        <input type="text" id="productname" placeholder="Product Name">
+        <input type="number" id="productprice" placeholder="Product Price">
+        <button id="addProductButton">Add Product</button>
+        <div class="wrapper">
+        <div id="root"></div>
+    </div>
+        <button id="changedetails">Change Details</button>
+        <button style="display: none;" id="UpdateButton">Update Price</button>
+        <button style="display: none;" id="DeleteButton">Delete</button>
+        <button style="display: none;" id="PutButton">Put (replace product)</button>
+        <input type="text" id="changeName" placeholder="New Name" style="display: none;">
+        <input type="number" id="changePrice" placeholder="New Price" style="display: none;">
+    </center>
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+.wrapper {
+  margin-top: 10%;
+  opacity: 0.9;
+  background-color: rgba(1, 1, 1, 0.2);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 15px #ffb834;
+  width: 50%;
+  height: auto;
+}
+
+input[type] {
+  margin-left: 2%;
+  padding: 8px;
+  margin-right: 1%;
+  border-radius: 10px;
+  border: 1px gray solid;
+  width: 60%;
+}
+
+button {
+  padding: 8px;
+  font-size: 1rem;
+  background-color: black;
+  color: #ffb330;
+  border-radius: 10px;
+  border: 1px gray solid;
+  margin-bottom: 4%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.headwrapper {
+  display: flex;
+  box-shadow: 0px 1px 0px #ffb834;
+  margin-bottom: 10%;
+  gap: 10px;
+}
+
+.triplebar {
+  color: #ffba39;
+  margin-top: 1%;
+  margin-left: auto;
+}
+
+.airplane,
+.israel {
+  margin-top: 1%;
+  color: #ffba39;
+}
+
+@media (max-width: 996px) {
+  .airplane,
+.israel,
+.triplebar {
+    display: none;
+  }
+}
+.head {
+  text-align: left;
+  margin-right: 49%;
+  padding: 15px;
+  animation-name: headd;
+  color: #fdf1dc;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes headd {
+  0% {
+    letter-spacing: -0.2em;
+    -webkit-filter: blur(10px);
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    color: #ffba39;
+  }
+}
+.our-message1,
+.our-message2,
+.our-message3,
+.our-message4,
+.finishMessage {
+  background-color: #ececec;
+  color: black;
+  padding: 15px;
+  border-radius: 10px;
+  width: 50%;
+  margin-left: 37%;
+  margin-top: 2%;
+  text-align: left;
+  font-size: 1.2rem !important;
+}
+
+.customer-message1 {
+  background-color: white;
+  color: black;
+  padding: 15px;
+  border-radius: 10px;
+  width: 50%;
+  margin-top: 2%;
+  margin-left: 10%;
+  text-align: left;
+  font-size: 1.2rem !important;
+}
+
+#customer-service, #customer-service2 {
+  width: 50px;
+  height: 50px;
+  float: right;
+}
+
+.timing-messages {
+  display: flex;
+  font-size: 0.8rem;
+  text-align: left;
+  color: red;
+}
+
+#blueV {
+  width: 20px;
+  height: 12px;
+  margin-left: auto;
+}
+
+#shakedteam {
+  color: red;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#guest-picture {
+  width: 75px;
+  height: 75px;
+  float: left;
+}
+
+.guest {
+  color: blue;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.box-animation {
+  animation-name: fade-in;
+  animation-duration: 6s;
+}

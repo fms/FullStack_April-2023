@@ -1,0 +1,118 @@
+$border-radius: 20px;
+$opacity: 0.5;
+
+#header {
+    color: rgb(255, 180, 110);
+    color: inherit !important;
+    text-shadow: 1px 1px 10px rgb(0, 0, 0);
+    display: inline-block;
+    animation: typing 3s steps(80) forwards;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+}
+
+#header-phone {
+    width: 200px;
+    height: 200px;
+    animation: rotatee 1.5s alternate;
+    animation-iteration-count: infinite;
+}
+
+#header-phone:hover {
+    opacity: 0.6;
+}
+
+@keyframes rotatee {
+    from {
+        transform: rotate(0deg);
+        transform: scale(0.7);
+
+    }
+
+    to {
+        transform: rotate(-30deg);
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+        color: white;
+        transform: scale(0.1);
+        right: 70%;
+    }
+
+    to {
+        width: 100%;
+        right: 1%;
+    }
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 2rem;
+}
+
+.grid img {
+    border-radius: $border-radius;
+    width: 250px;
+    height: 200px;
+    border: 1px rgb(93, 93, 93) solid;
+}
+
+.grid img:hover {
+    opacity: $opacity;
+    box-shadow: rgb(255, 255, 255) 1px 1px 10px;
+    transform: scale(0.9);
+    transition: transform 0.5s ease;
+}
+
+.back-button {
+    margin-bottom: 3%;
+
+}
+  
+
+.collection img {
+    border-radius: 20px;
+    width: 250px;
+    height: 250px;
+    border: 1px rgb(176, 176, 176) solid;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.item {
+    border: 1px rgb(178, 178, 178) solid;
+    border-radius: $border-radius;
+    background-color: rgb(221, 221, 221);
+    color: black;
+}
+
+.item:hover {
+    transform: scale(0.9);
+    transition: transform 0.5s ease;
+    opacity: $opacity;
+}
+
+#btitle {
+    font-size: 30px;
+    color: rgb(255, 169, 57);
+    background-color: rgb(0, 0, 0);
+}
+
+#liltitle {
+    font-size: 20px;
+    color: rgb(255, 144, 144);
+}
+
+#notAvailable {
+    color: red;
+}

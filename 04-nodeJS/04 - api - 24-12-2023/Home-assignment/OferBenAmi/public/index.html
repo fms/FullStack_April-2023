@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="dist/style.css">
+    <script src="dist/index.js" defer></script>
+</head>
+<body>
+    <div class="nowDiv">
+        <button onclick="dateNow()">get date</button>
+        <p class="parag"></p>
+    </div>
+    <form class="mainForm" action="/submit" method="POST">
+        <label for="userName">Username</label>
+        <input type="text" id="userName" name="userName"><br>
+        <label for="password">password</label>
+        <input type="password" id="password" name="password"><br>
+        <input type="submit" value="Submit">
+    </form>
+    <div class="response">
+
+    </div>
+
+</body>
+</html>

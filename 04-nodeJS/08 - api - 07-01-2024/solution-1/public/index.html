@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Task Manager</title>
+        <link rel="stylesheet" href="dist/index.css" />
+        <script src="dist/tasks.js" defer></script>
+    </head>
+    <body>
+        <form onsubmit="handleAddTask(event)">
+            <input name="title" type="text" required placeholder="task title">
+            <input name="description" type="text" required placeholder="task description">
+            <button type="submit">Add</button>
+        </form>
+        <hr>
+        
+        <div id="errors" class="errors"></div>
+        <div id="tasks" class="tasks"></div>
+    </body>
+</html>

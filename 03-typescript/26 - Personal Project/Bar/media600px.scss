@@ -1,0 +1,108 @@
+@media (min-width: 601px) and (max-width: 900px) {
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  
+    .form-container {
+      width: 60%;
+      margin-left: 17vw;
+      margin-bottom: 2vh;
+  
+      label {
+        display: flex !important;
+        flex-direction: column !important;
+        margin-bottom: 1em !important;
+        font-weight: bold;
+      }
+  
+      input {
+        margin-right: 15vw;
+      }
+      input,
+      textarea {
+        width: 50% !important;
+        height: 2em;
+        margin-left: 15vw;
+      }
+  
+      .form-container__add-exercise-btn {
+        width: 35% !important;
+      }
+  
+      .form__submit-btn {
+        width: 40% !important;
+        margin-bottom: 3vh;
+      }
+    }
+  
+    .pending-exercises {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 100%;
+      gap: 1vw;
+  
+      .exercises-to-add {
+        flex: 0 0 25%;
+        padding: 1.3vw;
+        margin: 0;
+  
+        input {
+          width: 15vw;
+        }
+      }
+    }
+    .my-workouts {
+      &__subtitle {
+        text-align: center;
+        margin-top: 5vh;
+      }
+      .workout-details {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        p {
+          font-size: 1em;
+        }
+      }
+      .workout-box {
+        width: 40vw;
+  
+        input {
+          width: 13vw;
+          font-size: 0.8em;
+        }
+  
+        p {
+          width: 50vw;
+          font-size: 0.9em;
+        }
+  
+        .exersices-area-div {
+          width: 80%;
+          max-height: 20vh;
+  
+          .exerciseWithButtonsDiv {
+            margin-right: 4vw;
+            input {
+              width: 6vw;
+              font-size: 0.4em;
+            }
+          }
+          .addExercise {
+            justify-content: center;
+            margin-top: 0.1vh;
+            width: 12vw;
+            height: 3vh;
+            font-size: 0.5em;
+          }
+        }
+        .temp-input {
+          width: 25vw;
+          height: 3vh;
+        }
+      }
+    }
+  }

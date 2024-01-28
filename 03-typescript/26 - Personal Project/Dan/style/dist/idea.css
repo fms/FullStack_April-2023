@@ -1,0 +1,37 @@
+#userForm {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+label {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+input, textarea {
+  width: 50%;
+  padding: 20px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
+
+button {
+  padding: 15px;
+  border: solid 1px blue;
+  border-radius: 20px;
+  background-color: white;
+  color: blue;
+  font-weight: bold;
+  transition: 0.5s;
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.7;
+}
+button:active {
+  opacity: 0.4;
+}

@@ -1,0 +1,366 @@
+.posts {
+  background-image: url("../Images/postsBackGround.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: rgba(51, 44, 44, 0.7);
+  max-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+.posts-wrapper {
+  padding-top: 9vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4vh;
+}
+
+.posts__section__form {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  width: 40vw;
+}
+.posts__section__form input:not(.posts__section__form--text) {
+  border: none;
+  border-radius: 25px;
+  width: 4vw;
+  height: 4vh;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+
+.posts__main__section__posts {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 2px 7px 1px black;
+  padding-bottom: 1vh;
+  margin-bottom: 4vh;
+  border-radius: 10px 25px 25px 25px;
+  position: relative;
+}
+.posts__main__section__posts--img {
+  width: 2.5vw;
+  height: 2.5vw;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: -55px;
+}
+.posts__main__section__posts--text {
+  color: white;
+  position: absolute;
+  top: -25px;
+  left: -48px;
+}
+.posts__main__section__posts__textarea textarea {
+  width: 40vw;
+  height: 20vh;
+  resize: none;
+  border: none;
+  box-shadow: 1px 2px 7px 1px black;
+  border-radius: 10px 25px 25px 10px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 1vw;
+}
+.posts__main__section__posts__comment-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1.5vh;
+}
+.posts__main__section__posts__comment-section input[type=text] {
+  border: none;
+  width: 32vw;
+  height: 3.5vh;
+  border-radius: 25px;
+  padding-left: 1vw;
+  padding-right: 10px;
+}
+.posts__main__section__posts__comment-section input[type=submit] {
+  border: none;
+  border-radius: 25px;
+  width: 4vw;
+  height: 4vh;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+.posts__main__section__posts__wrapper__comments {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 1vw;
+}
+.posts__main__section__posts__wrapper__comments input[type=text] {
+  border: none;
+  width: 32vw;
+  height: 3.5vh;
+  border-radius: 25px;
+  padding-left: 1vw;
+  padding-right: 10px;
+  margin-top: 2vh;
+}
+.posts__main__section__posts__wrapper__comments--img {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  top: 30px;
+  left: -17px;
+}
+.posts__main__section__posts__wrapper__comments--text {
+  font-size: 12px;
+  color: white;
+  position: absolute;
+  top: 27px;
+  left: -48px;
+}
+.posts__main__section__posts__wrapper__comments__buttons {
+  position: absolute;
+  top: 2.3vh;
+  right: 0.3vw;
+}
+.posts__main__section__posts__wrapper__comments__buttons input {
+  font-size: 12px;
+  background: inherit;
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 1vw;
+}
+.posts__main__section__posts textarea {
+  padding-top: 1vh;
+  padding-left: 1vw;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.post-buttons-div {
+  position: absolute;
+  top: -3.2vh;
+  left: 0.3vw;
+}
+.post-buttons-div input {
+  font-size: 12px;
+  background: inherit;
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 1vw;
+}
+
+.post-text {
+  border: none;
+  width: 35vw;
+  height: 5vh;
+  border-radius: 25px;
+  padding-left: 1vw;
+  box-shadow: 10px 0px 20px white;
+  background-color: transparent;
+  color: white;
+}
+
+@media only screen and (max-width: 479px) and (min-width: 250px) {
+  .posts-wrapper {
+    padding-top: 10vh;
+  }
+
+  .posts__section__form {
+    gap: 10px;
+  }
+  .posts__section__form input:not(.posts__section__form--text) {
+    width: 30vw;
+  }
+  .posts__section__form input:not(.posts__section__form--submit) {
+    width: 60vw;
+  }
+
+  .posts__main__section__posts {
+    margin-left: 7vw;
+    margin-top: 5vh;
+  }
+  .posts__main__section__posts--img {
+    width: 4vw;
+    height: 4vw;
+    left: -7vw;
+    top: 1.5vh;
+  }
+  .posts__main__section__posts--text {
+    color: white;
+    position: absolute;
+    top: -2.5vh;
+    left: -11vw;
+  }
+  .posts__main__section__posts__textarea textarea {
+    width: 80vw;
+  }
+  .posts__main__section__posts__comment-section input[type=text] {
+    width: 60vw;
+    height: 3.5vh;
+  }
+  .posts__main__section__posts__comment-section input[type=submit] {
+    width: 15vw;
+  }
+  .posts__main__section__posts__wrapper__comments--img {
+    top: 2.8vh;
+    left: -5vw;
+  }
+  .posts__main__section__posts__wrapper__comments--text {
+    font-size: 10px;
+    top: 2.8vh;
+    left: -12vw;
+  }
+  .posts__main__section__posts__wrapper__comments input[type=text] {
+    width: 55vw;
+  }
+  .posts__main__section__posts__wrapper__comments__buttons input {
+    font-size: 10px;
+    margin-right: 2vw;
+  }
+
+  .post-buttons-div {
+    position: absolute;
+    top: -3.2vh;
+    left: 0.3vw;
+  }
+  .post-buttons-div input {
+    font-size: 10px;
+    margin-right: 2vw;
+  }
+}
+@media screen and (max-width: 767px) and (min-width: 479px) {
+  .posts-wrapper {
+    padding-top: 10vh;
+  }
+
+  .posts__section__form {
+    gap: 10px;
+  }
+  .posts__section__form input:not(.posts__section__form--text) {
+    width: 30vw;
+  }
+  .posts__section__form input:not(.posts__section__form--submit) {
+    width: 700px;
+  }
+
+  .posts__main__section__posts {
+    margin-left: 7vw;
+  }
+  .posts__main__section__posts--img {
+    width: 5vw;
+    height: 5vw;
+    left: -45px;
+  }
+  .posts__main__section__posts__textarea textarea {
+    width: 80vw;
+  }
+  .posts__main__section__posts__comment-section input[type=text] {
+    width: 60vw;
+    height: 3.5vh;
+  }
+  .posts__main__section__posts__comment-section input[type=submit] {
+    width: 15vw;
+  }
+  .posts__main__section__posts__wrapper__comments--img {
+    top: 3vh;
+    left: -3vw;
+  }
+  .posts__main__section__posts__wrapper__comments--text {
+    font-size: 10px;
+    top: 3vh;
+    left: -8vw;
+  }
+  .posts__main__section__posts__wrapper__comments input[type=text] {
+    width: 55vw;
+  }
+  .posts__main__section__posts__wrapper__comments__buttons input {
+    font-size: 10px;
+    margin-right: 2vw;
+  }
+
+  .post-buttons-div {
+    position: absolute;
+    top: -3.2vh;
+    left: 0.3vw;
+  }
+  .post-buttons-div input {
+    font-size: 10px;
+    margin-right: 2vw;
+  }
+}
+@media screen and (max-width: 1281px) and (min-width: 767px) {
+  .posts-wrapper {
+    padding-top: 10vh;
+  }
+
+  .posts__section__form {
+    gap: 10px;
+  }
+  .posts__section__form input:not(.posts__section__form--text) {
+    width: 15vw;
+  }
+  .posts__section__form input:not(.posts__section__form--submit) {
+    width: 700px;
+  }
+
+  .posts__main__section__posts {
+    margin-left: 7vw;
+  }
+  .posts__main__section__posts--img {
+    width: 5vw;
+    height: 5vw;
+    left: -6vw;
+  }
+  .posts__main__section__posts--text {
+    left: -5vw;
+  }
+  .posts__main__section__posts__textarea textarea {
+    width: 80vw;
+  }
+  .posts__main__section__posts__comment-section input[type=text] {
+    width: 60vw;
+    height: 3.5vh;
+  }
+  .posts__main__section__posts__comment-section input[type=submit] {
+    width: 15vw;
+  }
+  .posts__main__section__posts__wrapper__comments--img {
+    top: 2.5vh;
+    left: -3vw;
+  }
+  .posts__main__section__posts__wrapper__comments--text {
+    font-size: 10px;
+    top: 2.5vh;
+    left: -6vw;
+  }
+  .posts__main__section__posts__wrapper__comments input[type=text] {
+    width: 60vw;
+  }
+  .posts__main__section__posts__wrapper__comments__buttons input {
+    font-size: 14px;
+    margin-right: 3vw;
+  }
+
+  .post-buttons-div {
+    position: absolute;
+    top: -3.2vh;
+    left: 0.3vw;
+  }
+  .post-buttons-div input {
+    font-size: 10px;
+    margin-right: 2vw;
+  }
+}

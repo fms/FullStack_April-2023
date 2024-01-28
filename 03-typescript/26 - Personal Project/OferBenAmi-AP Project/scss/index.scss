@@ -1,0 +1,15 @@
+@import "styles/fonts";
+@import "styles/mixins";
+@import "styles/config";
+
+body{
+    background-color: rgb(59, 64, 70);
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    position: relative;
+}
+
+
+@import "styles/header.scss";
+@import "styles/submitForm.scss";
+@import "styles/ApTable.scss";

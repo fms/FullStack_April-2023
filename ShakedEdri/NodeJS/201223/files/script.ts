@@ -1,0 +1,1 @@
+alert('TypeScript is workingg!');

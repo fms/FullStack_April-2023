@@ -1,0 +1,28 @@
+#tank {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+th {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+  font-size: 20px;
+}
+
+td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}

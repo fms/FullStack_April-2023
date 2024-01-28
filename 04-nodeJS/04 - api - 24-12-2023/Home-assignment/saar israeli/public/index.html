@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/style.css">
+    <script src="dist/frontend.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <main class="wrapper">
+
+        <div class="container">
+            <div class="time-container">
+                <h1 class="title">Time</h1>
+                <button class="button" onclick="dateClickRed(event)">Click for current date</button>
+            </div>
+            <form id="name-form" onsubmit="submitPerson(event)">
+                <label for="name">First Name: <input type="text" id="firstName"></label>
+                <label for="last-name">Last Name: <input type="text" id="lastName"></label>
+                <input type="submit" value="Submit" id="submit">
+            </form>
+        </div>
+
+        <div class="submited-names">
+
+        </div>
+    </main>
+</body>
+
+</html>
