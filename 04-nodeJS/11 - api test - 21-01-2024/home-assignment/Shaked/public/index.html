@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <script src="dist/taskmanager.js" defer></script>
+    <link rel="stylesheet" href="dist/index.css">
+</head>
+
+<body>
+    <div class="task">
+        <h1>Task Manager</h1>
+        <input type="text" id="taskname" placeholder="Task Name">
+        <h2 style="display: none;">Description</h2>
+        <textarea style="display: none;" id="taskdes" placeholder="Description"></textarea>
+        <h3 style="display: none;">Done?</h3>
+        <select style="display: none;" id="status">
+            <option value="ToDo">To-Do</option>
+            <option value="DONE">Done</option>
+        </select><br>
+        <button id="addTask">Add Task</button>
+        <h1>Tasks</h1>
+        <div class="showDiv"></div><br>
+        <button id="changeDetails">Change Details</button>
+        <div class="buttons">
+            <button style="display: none;" id="updateNameButton">Update Name</button>
+            <button style="display: none;" id="deleteButton">Delete</button>
+            <button style="display: none;" id="replaceButton">Replace Product</button>
+            <button style="display: none;" id="changeStatusButton">Change Status</button>
+        </div>
+        <input style="display: none;" id="newtaskName" type="text" placeholder="New Task Name">
+        <textarea style="display: none;" id="newtaskDes" placeholder="New Task Description"></textarea>
+    </div>
+</body>
+
+</html>
