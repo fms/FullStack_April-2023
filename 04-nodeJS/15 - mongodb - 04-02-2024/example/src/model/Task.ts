@@ -22,10 +22,20 @@ const TaskSchema = new Schema({
         required: true
     },
     status: {
-        type: String,
+        type: Number,
         enum: [TaskStatus.done, TaskStatus.todo],
         default: TaskStatus.todo
     }
+// }
+// , {
+//     // An override to the global (mongoose level) toObject():
+//     toObject: {
+//         versionKey: false,
+//         transform: (doc, ret) => {
+//             ret.id = ret._id;
+//             // delete ret._id;
+//         }
+//     }
 })
 
 export const TaskModel = model("Tasks", TaskSchema);
