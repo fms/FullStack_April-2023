@@ -70,10 +70,12 @@ export async function deleteTask(req: Request, res: Response, next: NextFunction
 }
 
 async function getTaskById(id: string) {
-    const task = await TaskModel.findById(id);
-    if (!task) {
-        throw new Error("Can't find a task for the specified ID");
+    if (isValidObjectId(id)) {
+        const task = await TaskModel.findById(id);
+        if (task) {
+            return task;
+        }
     }
 
-    return task;
+    throw new Error("Can't find a task for the specified ID");
 }
