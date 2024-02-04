@@ -62,10 +62,8 @@ export async function updateTask(req: Request, res: Response, next: NextFunction
 export async function deleteTask(req: Request, res: Response, next: NextFunction) {
     const { id } = req.body;
     // Try to delete using the ID. The deleted object is returned, or null if not found.
-    const result = await TaskModel.findByIdAndDelete(id);
-    if (result === null) {
-        throw new Error("Can't find a task for the specified ID");
-    }
+    const task = await getTaskById(id);
+    await task.deleteOne();
     next();
 }
 
