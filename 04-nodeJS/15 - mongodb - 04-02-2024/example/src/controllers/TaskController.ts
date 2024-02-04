@@ -4,7 +4,15 @@ import { matchedData } from "express-validator";
 
 // Read
 export async function getTasks(req: Request, res: Response, next: NextFunction) {
-    const tasks = await TaskModel.find();
+    const tasks = (await TaskModel.find()).map(task => task.toObject());
+    // return {
+    //     id: task._id,
+    //     title: task.title,
+    //     description: task.description,
+    //     status: task.status,
+    //     alias: task.alias,
+    // }
+    // );
     res.send({ tasks });
     next();
 }
