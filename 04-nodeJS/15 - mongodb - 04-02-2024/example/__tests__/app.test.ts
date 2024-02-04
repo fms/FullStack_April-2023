@@ -1,10 +1,30 @@
+import mongoose from 'mongoose';
 import { TaskStatus } from '../src/model/TaskStatus';
 import createServer from '../src/server';
 import request from 'supertest';
+import { connectToDatabase, setDatabaseDefaults } from '../src/database';
+import { MongoMemoryServer } from 'mongodb-memory-server';
+
 
 const app = createServer();
 
 describe('app', () => {
+    let mongoServer: MongoMemoryServer;
+
+    beforeAll(async () => {
+        mongoServer = await MongoMemoryServer.create();
+        await mongoose.connect(mongoServer.getUri());
+        setDatabaseDefaults();
+    });
+
+    afterAll(async () => {
+        await mongoose.disconnect();
+        await mongoose.connection.close();
+        if (mongoServer) {
+            await mongoServer.stop();
+        }
+    })
+
     describe('initial get', () => {
         test('should be empty', async () => {
             const { status, body } = await request(app).get('/api/tasks/get');
