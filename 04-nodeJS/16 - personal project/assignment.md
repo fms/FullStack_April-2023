@@ -1,6 +1,6 @@
-Create a personal project using mongoose, express, and node, and a client in typescript.
+Create a personal project using mongoose, express, node, and a client in typescript.
 
-Create something new which interests you.
+Create something new that interests you.
 
 Difficulty levels:
 1. Create a project with one entity.
