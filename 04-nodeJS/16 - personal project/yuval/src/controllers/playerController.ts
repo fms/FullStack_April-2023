@@ -1,7 +1,19 @@
 import { NextFunction, Request, Response } from "express";
 import { Player, PlayerModel } from "../model/player";
-import { Person } from "../model/person";
+import { Person, PersonModel } from "../model/person";
 import { matchedData } from "express-validator";
+
+export async function addPerson(req: Request, res: Response, next: NextFunction) {
+    const { firstName, lastName, age }: Person = req.body;
+    const newPerson = new PersonModel({firstName, lastName, age});
+    await newPerson.save();
+    next();
+}
+
+export async function getPerson(req: Request, res: Response, next: NextFunction) {
+    const newPerson = (await PersonModel.findOne().sort({ _id: -1 }));
+    res.send({ newPerson });
+}
 
 export async function getPlayers(req: Request, res: Response, next: NextFunction) {
     const players = (await PlayerModel.find()).map((player) => player.toObject());
@@ -9,9 +21,9 @@ export async function getPlayers(req: Request, res: Response, next: NextFunction
 }
 
 export async function addPlayer(req: Request, res: Response, next: NextFunction) {
-    const { person, jerseyNumber, height, position }: Player = req.body;
-    const newPlayer = new PlayerModel({person, jerseyNumber, height, position});
-    await newPlayer.save();
+    const { personId, jerseyNumber, height, position }: Player = req.body;
+    const player = new PlayerModel({ personId, jerseyNumber, height, position });
+    await player.save();
     next();
 }
 
@@ -23,17 +35,17 @@ export async function updatePlayer(req: Request, res: Response, next: NextFuncti
 
     const payload = matchedData(req);
     if ('jerseyNumber' in payload) {
-        player.jerseyNumber = payload.jerseyNumber;
+        await PlayerModel.findOneAndUpdate({personId: player.personId}, {jerseyNumber: payload.jerseyNumber});
         changed = true;
     }
 
     if ('height' in payload) {
-        player.height = payload.height;
+        await PlayerModel.findOneAndUpdate({personId: player.personId}, {height: payload.height});
         changed = true;
     }
 
     if ('position' in payload) {
-        player.position = payload.position;
+        await PlayerModel.findOneAndUpdate({personId: player.personId}, {position: payload.position});
         changed = true;
     }
 
@@ -52,13 +64,14 @@ export async function deletePlayer(req: Request, res: Response, next: NextFuncti
     next();
 }
 
-async function getPlayerByPerson(personParam: Person) {
-    if (personParam) {
-        const player = await PlayerModel.findOne({person: { firstName: personParam.firstName, lastName: personParam.lastName, age: personParam.age}});
+async function getPlayerByPerson(personId: string) {
+    if (personId) {
+        const player = await PlayerModel.findOne({ personId }).populate('person');
         if (player) {
-            return player;
+            return player as unknown as Player;
         }
     }
 
-    throw new Error("Can't find a player by that name");
+    throw new Error("Can't find a player associated with that person");
 }
+

@@ -1,23 +1,34 @@
-import { Person } from "./person";
+import { Person, PersonModel } from "./person";
 import { Position } from "./position";
-import { Schema, model } from "mongoose";
+import { Schema, model, Document } from "mongoose";
 
-export class Player {
-    constructor(
-        public person: Person,
-        public jerseyNumber: number,
-        public height: number,
-        public position: Position){}
+// export class Player {
+//     constructor(
+//         public person: Person,
+//         public jerseyNumber: number,
+//         public height: number,
+//         public position: Position){}
+// }
+
+export interface Player extends Document {
+    personId: string,
+    person: Person,
+    jerseyNumber: number,
+    height: number,
+    position: Position
 }
 
 const PlayerSchema = new Schema({
-    person: {
-        type: new Schema({
-            firstName: String,
-            lastName: String,
-            age: Number
-        }),
+    personId: {
+        type: Schema.Types.ObjectId,
+        ref: 'Person',
         required: true
+    },
+
+    person: {
+        type: Schema.Types.ObjectId,
+        ref: 'Person',
+        // default: { firstName: "firstName", lastName: "lastName", age: 0} 
     },
 
     jerseyNumber: {

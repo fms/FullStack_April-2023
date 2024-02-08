@@ -1,6 +1,12 @@
 import { body, checkExact } from 'express-validator';
 import { Position } from '../model/position'
 
+export const personIdValidation =
+    body('personId').trim()
+                .exists()
+                .withMessage("Person not found")
+                .escape();
+
 export const personValidation = [
     body('firstName').trim()
                 .notEmpty()
@@ -39,13 +45,12 @@ export const positionValidation =
                     .isIn(Object.values(Position)).withMessage("Invalid status");
 
 export const addPlayerSchema = [
-    personValidation,
+    personIdValidation,
     jerseyNumberValidation,
     heightValidation,
     positionValidation
 ];
 
-export const updatePlayerSchema = [
-    personValidation,
-];
+export const addPersonSchema = personValidation;
 
+export const updatePlayerSchema = personValidation;

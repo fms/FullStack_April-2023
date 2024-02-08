@@ -1,2 +1,3 @@
-- continue tests and figure out why it won't show the extension
-- public
+- Try to get person and player to work together (if not, delete person and use one entity)
+- finish public
+- finish tests (based on controller and validation)
