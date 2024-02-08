@@ -1,0 +1,42 @@
+@mixin random-border(){
+    // border:1px solid;
+    // border-color: rgb(random(255), random(255), random(255));
+  }
+
+@mixin self-flex($jc:center, $ai:center, $ta:center){
+  display:flex;
+  justify-content: $jc;
+  align-items: $ai;
+  text-align: $ta;
+
+}
+
+@mixin createOval($height:40px, $width:50px, $borderRadius:50px, $backColor:white){
+  background-color: $backColor;
+  height:$height;
+  width:$width;
+  border-radius: $borderRadius;
+
+}
+
+
+@mixin btn(){
+
+
+  width: 245px;
+  box-sizing: border-box;
+  border-radius: 50px;
+  border: 1px solid $col-light;
+  background-color: white;
+  background-image: url('../imgs/search-icon-png-18.png') ;
+  background-repeat: no-repeat;
+  background-size: 18px;
+  background-position: 10% 50%; 
+
+  background-repeat: no-repeat;
+  padding: 6px 5px 6px 35px;
+  color: $col-prim-text;
+
+}
+
+$clip-it:("rtl": polygon(0 35%, 100% 0, 100% 100%, 0% 100%), "ltr": polygon(0 0, 100% 0%, 100% 100%, 0 91%));
