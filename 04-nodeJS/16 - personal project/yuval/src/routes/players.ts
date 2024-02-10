@@ -1,6 +1,6 @@
 import express from 'express';
 import * as Controller from '../controllers/playerController';
-import { addPlayerSchema, addPersonSchema, updatePlayerSchema, personIdValidation, personValidation, jerseyNumberValidation, heightValidation, positionValidation} from '../validation/playersValidationSchema';
+import { addPlayerSchema, updatePlayerSchema, nameValidation, ageValidation, jerseyNumberValidation,  heightValidation, positionValidation} from '../validation/playersValidationSchema';
 import { ValidationChain, checkExact, oneOf } from 'express-validator';
 import { validate, validateSchema } from '../validation/validateSchema';
 
@@ -11,22 +11,26 @@ router.post("/add/player", checkExact(addPlayerSchema, { message: "Extra fields 
                     Controller.addPlayer,
                     Controller.getPlayers);
 
-router.post("/add/person", checkExact(addPersonSchema, { message: "Extra fields found" }),
-                    validate,
-                    Controller.addPerson,
-                    Controller.getPerson);
+// router.post("/add/person", checkExact(addPersonSchema, { message: "Extra fields found" }),
+//                     validate,
+//                     Controller.addPerson,
+//                     Controller.getPerson);
 
 router.get("/get/players", Controller.getPlayers);
 
-router.get("/get/person", Controller.getPerson);
+// router.get("/get/person", Controller.getPerson);
 
-router.patch("/update", oneOf([jerseyNumberValidation, heightValidation, positionValidation],
-                            {message: "Must include at least one of jersey number, height or position" }),
+router.patch("/updateJerseyNumber", jerseyNumberValidation,
                         validateSchema(updatePlayerSchema),
-                        Controller.updatePlayer,
+                        Controller.updateJerseyNumber,
                         Controller.getPlayers);
 
-router.delete("/delete", personValidation,
+router.patch("/updatePosition", positionValidation,
+                        validateSchema(updatePlayerSchema),
+                        Controller.updatePosition,
+                        Controller.getPlayers);
+
+router.delete("/delete", nameValidation,
                         validate,
                         Controller.deletePlayer,
                         Controller.getPlayers);

@@ -1,28 +1,42 @@
 import { body, checkExact } from 'express-validator';
 import { Position } from '../model/position'
 
-export const personIdValidation =
-    body('personId').trim()
-                .exists()
-                .withMessage("Person not found")
-                .escape();
+// export const personIdValidation =
+//     body('personId').trim()
+//                 .exists()
+//                 .withMessage("Person not found")
+//                 .escape();
 
-export const personValidation = [
-    body('firstName').trim()
-                .notEmpty()
-                .withMessage("First name must always be specified")
-                .escape(),
-    body('lastName').trim()
-                .notEmpty()
-                .withMessage("Last name must always be specified")
-                .escape(),
+// export const personValidation = [
+//     body('firstName').trim()
+//                 .notEmpty()
+//                 .withMessage("First name must always be specified")
+//                 .escape(),
+//     body('lastName').trim()
+//                 .notEmpty()
+//                 .withMessage("Last name must always be specified")
+//                 .escape(),
+//     body('age').trim()
+//                 .notEmpty()
+//                 .withMessage("Age must always be specified")
+//                 .isInt({ min: 18 })
+//                 .withMessage("Age must be a number greater than or equal to 18")
+//                 .toInt()
+// ];
+
+export const nameValidation = 
+    body('name').trim()
+                    .notEmpty()
+                    .withMessage("Name must always be specified")
+                    .escape();
+
+export const ageValidation =
     body('age').trim()
-                .notEmpty()
-                .withMessage("Age must always be specified")
-                .isInt({ min: 18 })
-                .withMessage("Age must be a number greater than or equal to 18")
-                .toInt()
-];
+                    .notEmpty()
+                    .withMessage("Age must always be specified")
+                    .isInt({ min: 18 })
+                    .withMessage("Age must be a number greater than or equal to 18")
+                    .toInt()
 
 export const jerseyNumberValidation = 
     body('jerseyNumber').trim()
@@ -45,12 +59,17 @@ export const positionValidation =
                     .isIn(Object.values(Position)).withMessage("Invalid status");
 
 export const addPlayerSchema = [
-    personIdValidation,
+    // personIdValidation,
+    // personValidation,
+    nameValidation,
+    ageValidation,
     jerseyNumberValidation,
     heightValidation,
     positionValidation
 ];
 
-export const addPersonSchema = personValidation;
+// export const addPersonSchema = personValidation;
 
-export const updatePlayerSchema = personValidation;
+export const updatePlayerSchema = [
+    nameValidation
+];

@@ -1,3 +1,3 @@
-- Try to get person and player to work together (if not, delete person and use one entity)
-- finish public
-- finish tests (based on controller and validation)
+- Fix update
+- finish style
+- finish tests

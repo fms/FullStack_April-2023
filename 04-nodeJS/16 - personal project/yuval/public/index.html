@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Basketball Team</title>
     <link rel="stylesheet" href="dist/style.css" />
-    <script src="dist/index.js" defer></script>
+    <script src="dist/controller.js" defer></script>
+    <script src="dist/model.js" defer></script>
+    <script src="dist/view.js" defer></script>
 </head>
 
 <body>
-    <form id="person_form" onsubmit="handleAddPerson(event)">
-        <input name="first_name" type="text" required placeholder="First name"/>
-        <input name="last_name" type="text" required placeholder="Last name"/>
-        <input name="age" type="number" required min="18" placeholder="Age"/>
-        <button type="submit">Continue to create a player</button>
-    </form>
-    <form id="player_form" onsubmit="handleAddPlayer(event)">
-        <input name="jersey_number" type="number" required min="0" max="99" placeholder="Jersey number"/>
-        <input name="height" type="number" required placeholder="Height in centimeters"/>
-        <input name="position" type="text" required placeholder="Position"/>
-        <button type="submit">Continue to create a player</button>
-    </form>
-    <hr/>
+    <div class="form_div">
+        <form id="player_form" onsubmit="handleAddPlayer(event)">
+            <input name="name" type="text" required placeholder="Name" />
+            <input name="age" type="number" required min="18" placeholder="Age" />
+            <input name="jerseyNumber" type="number" required min="0" max="99" placeholder="Jersey number" />
+            <input name="height" type="number" required placeholder="Height in centimeters" />
+            <input name="position" type="text" required placeholder="Position" />
+            <button id="add_button" type="submit">Add Player</button>
+        </form>
+    </div>
+    <hr />
 
     <div id="errors" class="errors"></div>
     <div id="players" class="players"></div>
-    
+
 </body>
+
 </html>
