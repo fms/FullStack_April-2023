@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/index.css">
+    <script src="./dist/tasks.js" defer></script>
+    <script src="./dist/users.js" defer></script>
+    <title>Task Manager</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <header id="tasks-header">
+            <div class="submit-wrapper invisible">
+                <h1>Add new task</h1>
+                <form action="">
+                    <input type="text" placeholder="Title" name="title">
+                    <input type="text" placeholder="Description" name="description">
+                    <input type="submit" placeholder="Submit" onclick="submitTask(event)">
+                </form>
+            </div>
+            <div class="login-wrapper">
+                <h1>Log in</h1>
+                <form action="" id="login-form">
+                    <label for="login-email">Email:</label>
+                    <input type="email" name="login-email">
+                    <button class="login-button" onclick="updateUserStatus(event)">Login</button>
+                    <a href="">Create user</a>
+                </form>
+            </div>
+            <div class="register-wrapper">
+                <h1>register</h1>
+                <form action="" id="register-form">
+                    <label for="register-email">New Email:</label>
+                    <input type="email" name="register-email">
+                    <button class="Register-button" onclick="newUser(event)">Register</button>
+                    <a href="">Login in</a>
+                </form>
+            </div>
+        </header>
+        <main id="tasks-main">
+            <div id="" class="tasks-main-header invisible">
+                <h2>My Tasks</h2>
+                <button onclick="getTasks()" id="show-tasks">Show Tasks</button>
+                <button onclick="hideTasks()" id="hide-tasks" class="invisible">Hide Tasks</button>
+                <button onclick="clearTasks()" id="clear-tasks">Clear Tasks</button>
+            </div>
+            <div id="" class="tasks-main-body invisible">
+                <!-- <div class="task-div">
+                <span name="" class="span-title">
+                <span name="" class="span-description">
+                <button onclick="">Delete</button>
+                <button onclick="">Update</button>
+            </div> -->
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>
