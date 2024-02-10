@@ -1,0 +1,103 @@
+.main {
+  border: solid 1px;
+  border-radius: 15px;
+  width: 20%;
+  margin: auto;
+}
+.main .title {
+  margin-top: 30px;
+  border-bottom: solid grey 1px;
+  padding-bottom: 10px;
+  display: flex;
+}
+.main .mainicon {
+  height: 30px;
+  width: 30px;
+  margin-left: 15px;
+  margin-top: 2px;
+}
+.main .Search {
+  height: 30px;
+  width: 30px;
+  margin-left: 130px;
+  border: grey solid 1px;
+  border-radius: 50%;
+  margin-top: 2px;
+}
+.main .border {
+  border: solid 1px gray;
+  border-radius: 30px;
+  margin-left: 15px;
+  margin-top: 2px;
+  display: flex;
+}
+.main .menu {
+  height: 30px;
+  width: 30px;
+  margin-left: 15px;
+}
+.main .profile {
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+  margin-left: 7px;
+  background-color: grey;
+  border-radius: 50%;
+  margin-top: 2px;
+}
+.main .path {
+  margin-left: 10px;
+}
+.main .Line3 {
+  display: flex;
+}
+.main .line3-text {
+  width: 190px;
+  font-size: 25px;
+  margin-left: 10px;
+  font-weight: 700;
+}
+.main .line3-share {
+  height: 50px;
+  width: 50px;
+  background-color: #F5F7F9;
+  border-radius: 50%;
+  margin-left: 50px;
+}
+.main .line3-share .share {
+  height: 25px;
+  margin-left: 10px;
+  margin-top: 12px;
+}
+.main .line3-like {
+  height: 50px;
+  width: 50px;
+  background-color: #F5F7F9;
+  border-radius: 50%;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.main .line3-like .like {
+  height: 25px;
+  margin-left: 10px;
+  margin-top: 12px;
+}
+.main .Line4 {
+  margin-top: 20px;
+  color: grey;
+  display: flex;
+  flex-wrap: wrap;
+}
+.main .Line4 .Line4-img2 {
+  margin-left: 10px;
+}
+.main .Line4 .Line4-img3 {
+  margin-left: 80px;
+}
+.main .bigpicture {
+  margin-left: 15px;
+}
+.main .Photos {
+  display: flex;
+  gap: 5px;
+}
