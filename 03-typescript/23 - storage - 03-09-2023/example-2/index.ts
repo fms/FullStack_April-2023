@@ -12,6 +12,7 @@ interface FormElements extends HTMLFormControlsCollection {
     add: HTMLInputElement;
     update: HTMLInputElement;
     cancel: HTMLInputElement;
+
 }
 
 const fieldName = "entries";
