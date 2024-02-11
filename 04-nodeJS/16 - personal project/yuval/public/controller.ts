@@ -69,18 +69,25 @@ async function handleDelete(name: string) {
     await renderPlayerButton();
 }
 
-async function handleUpdate(propertyToUpdate: string, name: string) {
-    const updateForm = document.querySelector(".update_form") as HTMLFormElement;
-    const newValue = (updateForm.querySelector(`[name="${propertyToUpdate}"]`) as HTMLInputElement).valueAsNumber;
-    const response = await fetch(`/api/players/update${propertyToUpdate}`, {
+async function handleUpdate(propertyToUpdate: string, name: string, newValue: number) {
+    let bodyJSON;
+    if(propertyToUpdate === "JerseyNumber") {
+        bodyJSON = JSON.stringify({ name, jerseyNumber: newValue });
+    }
+    else if(propertyToUpdate === "Position") {
+        bodyJSON = bodyJSON = JSON.stringify({ name, position: newValue });
+    }
+    
+    const response = await fetch(`/api/players/update/${propertyToUpdate}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({name, newValue})
+        body: bodyJSON
     });
 
     await processResponse(response);
+    getAddForm();
 }
 
 function renderPlayer(body: HTMLDivElement, player: Player) {
@@ -122,19 +129,37 @@ function renderPlayer(body: HTMLDivElement, player: Player) {
 }
 
 function callForUpdate(propertyToUpdate: string, name: string) {
-    if(propertyToUpdate === "jerseyNumber") {
+    console.log("entered callForUpdate, propertyToUpdate: " + propertyToUpdate);
+
+    if (propertyToUpdate === "JerseyNumber") {
         formDiv.innerHTML = `
             <form id="update_form">
-                <input name="${propertyToUpdate}" type="number" required min="0" max="99" placeholder="Jersey number" />
+                <input id="jerseyNumberInput" type="number" required min="0" max="99" placeholder="Jersey number" />
             </form>
-            <button id="add_button" onclick="handleUpdate('${propertyToUpdate}', '${name}')">Update</button>`
+            <button id="update_button">Update</button>`;
+
+        const jerseyNumberInput = document.getElementById('jerseyNumberInput') as HTMLInputElement;
+        const updateButton = document.getElementById('update_button') as HTMLButtonElement;
+
+        updateButton.addEventListener('click', () => {
+            const newValue = jerseyNumberInput.valueAsNumber;
+            handleUpdate(propertyToUpdate, name, newValue);
+        });
     }
-    else if(propertyToUpdate === "position") {
+    else if (propertyToUpdate === "Position") {
         formDiv.innerHTML = `
             <form id="update_form">
-                <input name="${propertyToUpdate}" type="number" required placeholder="Position" />
+                <input id="positionInput" type="number" required placeholder="Position" />
             </form>
-            <button id="add_button" onclick="handleUpdate('${propertyToUpdate}', '${name}')">Update</button>`
+            <button id="update_button">Update</button>`;
+
+        const positionInput = document.getElementById('positionInput') as HTMLInputElement;
+        const updateButton = document.getElementById('update_button') as HTMLButtonElement;
+
+        updateButton.addEventListener('click', () => {
+            const newValue = positionInput.valueAsNumber;
+            handleUpdate(propertyToUpdate, name, newValue);
+        });
     }
 }
 
@@ -157,7 +182,11 @@ function renderPlayers(players: Player[], div: HTMLDivElement | null) {
 async function fetchPlayerCount(): Promise<number> {
     try {
         const response = await fetch('/playerCount');
+        if (!response.ok) {
+            throw new Error('Failed to fetch player count');
+        }
         const data = await response.json();
+        console.log(data, data.count);
         return data.count;
     }
     catch (error) {
@@ -165,6 +194,7 @@ async function fetchPlayerCount(): Promise<number> {
         return -1;
     }
 }
+
 
 async function renderPlayerButton() {
     const playerCount = await fetchPlayerCount();
@@ -205,6 +235,31 @@ function createInputElement(inputType: string, className: string, handler: ((eve
         element.value = content;
     }
     return element;
+}
+
+async function getAddForm() {
+    if(await fetchPlayerCount() == 15) {
+        formDiv.innerHTML = `
+            <form id="player_form" onsubmit="handleAddPlayer(event)">
+                <input name="name" type="text" required placeholder="Name" />
+                <input name="age" type="number" required min="18" placeholder="Age" />
+                <input name="jerseyNumber" type="number" required min="0" max="99" placeholder="Jersey number" />
+                <input name="height" type="number" required placeholder="Height in centimeters" />
+                <input name="position" type="text" required placeholder="Position" />
+            </form>`;
+        let message = document.createElement('p');
+        message.textContent = 'Maximum limit reached. You cannot add more players.';
+        form.appendChild(message);
+    }
+    formDiv.innerHTML = `
+            <form id="player_form" onsubmit="handleAddPlayer(event)">
+                <input name="name" type="text" required placeholder="Name" />
+                <input name="age" type="number" required min="18" placeholder="Age" />
+                <input name="jerseyNumber" type="number" required min="0" max="99" placeholder="Jersey number" />
+                <input name="height" type="number" required placeholder="Height in centimeters" />
+                <input name="position" type="text" required placeholder="Position" />
+                <button id="add_button" type="submit">Add Player</button>
+            </form>`;
 }
 
 // function createHeader(): Node[] {

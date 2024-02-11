@@ -1,3 +1,3 @@
-- Fix update
+- Fix problem with showing renderPlayerButton after update when there are 15 players
 - finish style
 - finish tests

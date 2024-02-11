@@ -31,7 +31,10 @@ export async function addPlayer(req: Request, res: Response, next: NextFunction)
 }
 
 export async function updateJerseyNumber(req: Request, res: Response, next: NextFunction) {
-    const { name, jerseyNumber } = req.body;
+    const data = matchedData(req);
+        console.log("Received data:", data);
+
+        const { name, jerseyNumber } = data;
     let changed = false;
     const player = await getPlayerByName(name)
     if(player) {
@@ -47,7 +50,10 @@ export async function updateJerseyNumber(req: Request, res: Response, next: Next
 }
 
 export async function updatePosition(req: Request, res: Response, next: NextFunction) {
-    const { name, position } = req.body;
+    const data = matchedData(req);
+        console.log("Received data:", data);
+
+        const { name, position } = data;
     let changed = false;
     const player = await getPlayerByName(name)
     if(player) {

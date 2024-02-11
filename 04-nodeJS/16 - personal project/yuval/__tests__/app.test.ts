@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import { Player } from '../src/model/player';
-import { Person } from '../src/model/person';
+// import { Person } from '../src/model/person';
 import { Position } from '../src/model/position';
 import createServer from '../src/server';
 import request from 'supertest';
@@ -35,25 +35,25 @@ describe('app', () => {
         });
     });
 
-    const personToUse: Person = {
-        firstName: 'Luka',
-        lastName: 'Doncic',
-        age: 25
-    };
+    // const personToUse: Person = {
+    //     firstName: 'Luka',
+    //     lastName: 'Doncic',
+    //     age: 25
+    // };
     const lebron = {firstName: 'LeBron', lastName: 'James', age: 39}
     const noFirstName = {lastName: "Smith", age: 22}
-    const noNamePlayer = {person: (noFirstName as Person), jerseyNumber: 34, height: 215, position: Position.C};
-    const firstPlayer = {person: personToUse, jerseyNumber: 77, height: 201, position: Position.PG};
+    // const noNamePlayer = {person: (noFirstName as Person), jerseyNumber: 34, height: 215, position: Position.C};
+    // const firstPlayer = {person: personToUse, jerseyNumber: 77, height: 201, position: Position.PG};
     const playerToAdd = {person: lebron, jerseyNumber: 23, height: 206, position: 3};
     const expectedPerson = {...lebron};
     const expectedPlayer = {...playerToAdd};
     let playerToDelete = {person: {firstName: "", lastName: "", age: 0}, jerseyNumber: 0, height: 0, position: 1};
 
     describe('started with one existing player', () => {
-        beforeAll(async () => {
-            const { status, body } = await request(app).post('/api/players/add/player').send(firstPlayer);
-            playerToDelete.person = firstPlayer.person;
-        });
+        // beforeAll(async () => {
+        //     const { status, body } = await request(app).post('/api/players/add/player').send(firstPlayer);
+        //     playerToDelete.person = firstPlayer.person;
+        // });
 
         test('add a single valid player', async () => {
             const { status, body } = await request(app).post('/api/players/add/person').send(lebron);

@@ -56,7 +56,7 @@ export const heightValidation =
 
 export const positionValidation = 
     body('position').exists()
-                    .isIn(Object.values(Position)).withMessage("Invalid status");
+                    .isIn(Object.values(Position)).withMessage("Invalid position");
 
 export const addPlayerSchema = [
     // personIdValidation,

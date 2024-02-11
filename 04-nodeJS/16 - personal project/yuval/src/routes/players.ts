@@ -20,12 +20,12 @@ router.get("/get/players", Controller.getPlayers);
 
 // router.get("/get/person", Controller.getPerson);
 
-router.patch("/updateJerseyNumber", jerseyNumberValidation,
+router.patch("/update/JerseyNumber", jerseyNumberValidation,
                         validateSchema(updatePlayerSchema),
                         Controller.updateJerseyNumber,
                         Controller.getPlayers);
 
-router.patch("/updatePosition", positionValidation,
+router.patch("/update/Position", positionValidation,
                         validateSchema(updatePlayerSchema),
                         Controller.updatePosition,
                         Controller.getPlayers);
