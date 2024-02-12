@@ -19,4 +19,3 @@ interface Player {
     //     lastName: string,
     //     age: number
     // }
-    

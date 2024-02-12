@@ -1,10 +1,7 @@
-// import { Person, PersonModel } from "./person";
 import { Position } from "./position";
 import { Schema, model, Document } from "mongoose";
 
 export interface Player extends Document {
-    // personId: string,
-    // person: Person,
     name: string,
     age: number,
     jerseyNumber: number,
@@ -13,18 +10,6 @@ export interface Player extends Document {
 }
 
 const PlayerSchema = new Schema({
-    // personId: {
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'Person',
-    //     required: true
-    // },
-
-    // person: {
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'Person',
-    //     // default: { firstName: "firstName", lastName: "lastName", age: 0} 
-    // },
-
     name: {
         type: String,
         required: true
@@ -67,5 +52,3 @@ PlayerSchema.pre('save', async function(this: Player, next) {
 });
 
 export const PlayerModel = model("Players", PlayerSchema);
-
-

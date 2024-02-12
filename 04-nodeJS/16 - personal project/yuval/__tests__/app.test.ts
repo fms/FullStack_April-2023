@@ -1,14 +1,9 @@
-import { Response } from 'express';
 import mongoose from 'mongoose';
-import { Player, PlayerModel } from '../src/model/player';
 import { Position } from '../src/model/position';
-import * as Controller from '../src/controllers/playerController';
-import { nameValidation, ageValidation, jerseyNumberValidation, heightValidation, positionValidation, addPlayerSchema, updatePlayerSchema } from '../src/validation/playersValidationSchema';
 import createServer from '../src/server';
 import request from 'supertest';
-import { connectToDatabase, setDatabaseDefaults } from '../src/database';
+import { setDatabaseDefaults } from '../src/database';
 import { MongoMemoryServer } from 'mongodb-memory-server';
-// import { Person } from '../src/model/person';
 
 const app = createServer();
 
@@ -32,7 +27,6 @@ describe('app', () => {
     describe('initial get', () => {
         test('should be empty', async () => {
             const { status, body } = await request(app).get('/api/players/get/players');
-
             expect(status).toBe(200);
             expect(body.players).toEqual([]);
         });
@@ -94,7 +88,7 @@ describe('app', () => {
             const playerData = { name: "Russell Westbrook", position: 4 };
             const { status, body } = await request(app).patch('/api/players/update/Position').send(playerData);
             expect(status).toBe(500);
-            expect(body.error).toEqual("Noting to update!");
+            expect(body.error).toEqual("Nothing to update!");
         });
     });
 

@@ -1,4 +1,4 @@
-import { body, checkExact } from 'express-validator';
+import { body } from 'express-validator';
 import { Position } from '../model/position'
 
 export const nameValidation = 
@@ -48,12 +48,6 @@ export const addPlayerSchema = [
 export const updatePlayerSchema = [
     nameValidation
 ];
-
-// export const personIdValidation =
-//     body('personId').trim()
-//                 .exists()
-//                 .withMessage("Person not found")
-//                 .escape();
 
 // export const personValidation = [
 //     body('firstName').trim()

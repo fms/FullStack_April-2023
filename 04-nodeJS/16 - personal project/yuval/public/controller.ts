@@ -27,7 +27,6 @@ async function processResponse(response: Response) {
 
 async function handleGetPlayers() {
     const response = await fetch('/api/players/get/players');
-
     await processResponse(response);
 }
 
@@ -137,19 +136,19 @@ function renderPlayer(body: HTMLDivElement, player: Player) {
         let position;
         switch (player.position) {
             case Position.PG:
-                position = createElement("div", "player", "PG");
+                position = createElement("div", "player", "Point Guard");
                 break;
             case Position.SG:
-                position = createElement("div", "player", "SG");
+                position = createElement("div", "player", "Shooting Guard");
                 break;
             case Position.SF:
-                position = createElement("div", "player", "SF");
+                position = createElement("div", "player", "Small Forward");
                 break;
             case Position.PF:
-                position = createElement("div", "player", "PF");
+                position = createElement("div", "player", "Power Forward");
                 break;
             case Position.C:
-                position = createElement("div", "player", "C");
+                position = createElement("div", "player", "Center");
                 break;
         }
 
@@ -238,7 +237,7 @@ function createInputElement(inputType: string, className: string, handler: ((eve
 }
 
 async function getAddForm() {
-    if(await fetchPlayerCount() == 15) {
+    if(await fetchPlayerCount() >= 15) {
         formDiv.innerHTML = `
             <h1>Welcome to MY BASKETBALL TEAM</h1>
             <form id="player_form" onsubmit="handleAddPlayer(event)">

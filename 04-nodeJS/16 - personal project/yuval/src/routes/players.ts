@@ -1,7 +1,7 @@
 import express from 'express';
 import * as Controller from '../controllers/playerController';
 import { addPlayerSchema, updatePlayerSchema, nameValidation, jerseyNumberValidation, positionValidation} from '../validation/playersValidationSchema';
-import { ValidationChain, checkExact, oneOf } from 'express-validator';
+import { checkExact } from 'express-validator';
 import { validate, validateSchema } from '../validation/validateSchema';
 
 const router = express.Router();

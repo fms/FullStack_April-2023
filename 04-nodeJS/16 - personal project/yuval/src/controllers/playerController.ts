@@ -17,36 +17,31 @@ export async function addPlayer(req: Request, res: Response, next: NextFunction)
     next();
 }
 
-export async function updateJerseyNumber(req: Request, res: Response, next: NextFunction) {
-    const data = matchedData(req);
+export async function updatePlayerProperty(req: Request, res: Response, next: NextFunction, propertyName: string) {
+    const data = matchedData(req) as { name: string; [key: string]: any };
     console.log("Received data:", data);
-    const { name, jerseyNumber } = data;
+    const { name } = data;
     let changed = false;
     const player = await getPlayerByName(name)
-    if(player && player.jerseyNumber !== jerseyNumber) {
-        await PlayerModel.findOneAndUpdate({ name: player.name }, { jerseyNumber: jerseyNumber });
-        changed = true;
+    if(player) {
+        if((propertyName === 'jerseyNumber' || propertyName === 'position') && player[propertyName] !== data[propertyName]) {
+            const update = { [propertyName]: data[propertyName] };
+            await PlayerModel.findOneAndUpdate({ name: player.name }, update);
+            changed = true;
+        }
     }
     if (!changed) {
-        throw new Error("Noting to update!");
+        throw new Error("Nothing to update!");
     }
     next();
 }
 
+export async function updateJerseyNumber(req: Request, res: Response, next: NextFunction) {
+    await updatePlayerProperty(req, res, next, 'jerseyNumber');
+}
+
 export async function updatePosition(req: Request, res: Response, next: NextFunction) {
-    const data = matchedData(req);
-    console.log("Received data:", data);
-    const { name, position } = data;
-    let changed = false;
-    const player = await getPlayerByName(name)
-    if(player && player.position !== position) {
-        await PlayerModel.findOneAndUpdate({ name: player.name }, { position: position });
-        changed = true;
-    }
-    if (!changed) {
-        throw new Error("Noting to update!");
-    }
-    next();
+    await updatePlayerProperty(req, res, next, 'position');
 }
 
 export async function deletePlayer(req: Request, res: Response, next: NextFunction) {
@@ -63,7 +58,6 @@ async function getPlayerByName(name: string) {
             return player as unknown as Player;
         }
     }
-
     throw new Error("Can't find a player with this name");
 }
 
