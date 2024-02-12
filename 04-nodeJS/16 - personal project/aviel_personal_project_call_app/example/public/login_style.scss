@@ -1,0 +1,91 @@
+
+body{
+  background-image: url(https://media0.giphy.com/media/m2i3YUStCuRIpSop4Y/giphy.webp?cid=790b7611vnx897z4pckj98bly8fyzlirj9dcn8qiioqxv3qp&ep=v1_stickers_search&rid=giphy.webp&ct=s);
+  background-repeat: no-repeat;
+  background-position:top -130px center;
+  background-size:auto;
+  background-color: rgb(121, 137, 240);
+  // background-color: black;
+}
+
+table{
+  width: 80%;
+  margin: 40px auto;
+  background: rgb(124,154,167);
+
+  background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(55px);
+
+    color: white;
+    font-size: 20px;
+
+
+}
+
+table.list{
+  text-align: center;
+  width: 100%;
+}
+
+td{
+  border: 1px solid rgb(204,200,200);
+  text-align: left;
+  padding: 8px 15px;
+}
+
+tr:nth-child(even), table.list thread> tr{
+  background-color: rgb(204,200,200);
+}
+
+
+
+input[type="submit"]:hover{
+  background: #4b99d8;
+}
+
+input[type="reset"]:hover{
+  background: #4b99d8;
+  
+}
+
+input{
+  background: #eee;
+  padding:6px 12px;
+  margin:15px 0 10px;
+  display: inline-block;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+}
+
+button{
+  background: #eee;
+  padding:6px 12px;
+  margin:15px 0 10px;
+  display: inline-block;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover{
+  background:#4b99d8 ;
+}
+
+
+#reg_form {
+  position:relative;
+  top: 300px;
+  left: 650px;
+}
+
+#log_in_btn {
+  position:relative;
+  top: 300px;
+  left: 720px;
+}
