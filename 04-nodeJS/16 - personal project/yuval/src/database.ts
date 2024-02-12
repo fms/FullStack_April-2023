@@ -11,9 +11,6 @@ export function setDatabaseDefaults() {
     mongoose.set({
         toObject: {
             versionKey: false,
-            // transform: async (doc, ret) => {
-            //     delete ret._id;
-            // }
         }
     });
 }

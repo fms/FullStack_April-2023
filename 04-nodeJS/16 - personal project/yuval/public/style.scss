@@ -1,34 +1,75 @@
+$primary-color: #007bff;
+$background-color: #0ce1ba;
+$error-color: #dc3545;
+
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 0.8rem;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: $background-color;
+}
+
+h1 {
+    position: relative;
+    margin-left: 32%;
+    color: $primary-color;
 }
 
 form {
-    input {
+    margin-bottom: 20px;
+
+    input[type="text"],
+    input[type="number"] {
         margin: 5px 0;
-        padding: 0.5rem;
+        padding: 0.35rem;
+        border: 1px solid #ced4da;
         border-radius: 5px;
         flex: 1;
+        transition: border-color 0.3s ease;
+
+        &:focus {
+            outline: none;
+            border-color: $primary-color;
+        }
     }
 
-    button {
-        padding: 5px;
+    button[type="submit"] {
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 5px;
     }
 }
 
 .players {
     display: grid;
-    grid-template-columns: repeat(8, max-content);
-    gap: 0.2rem 1rem;
+    grid-template-columns: repeat(8, minmax(125px, 1fr));
+    gap: 1rem;
+    padding: 20px;
 }
 
 .header {
-    background-color: lightgray;
-    padding: 0.2rem 0;
-    margin: 5px 0;
+    background-color: cornflowerblue;
+    padding: 0.2rem;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
 }
 
 .errors {
     font-weight: bold;
-    color: red;
+    color: $error-color;
+    margin-bottom: 10px;
+}
+
+button, .player_button {
+    background-color: $primary-color;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: darken($primary-color, 10%);
+    }
 }

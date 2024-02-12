@@ -52,6 +52,7 @@ async function handleAddPlayer(event: SubmitEvent) {
     });
 
     await processResponse(response);
+    form.reset();
     await renderPlayerButton();
 }
 
@@ -90,6 +91,43 @@ async function handleUpdate(propertyToUpdate: string, name: string, newValue: nu
     getAddForm();
 }
 
+async function fetchPlayerCount(): Promise<number> {
+    try {
+        const response = await fetch('/playerCount');
+        if (!response.ok) {
+            throw new Error('Failed to fetch player count');
+        }
+        const data = await response.json();
+        console.log(data, data.count);
+        return data.count;
+    }
+    catch (error) {
+        console.error('Error fetching player count:', error);
+        return -1;
+    }
+}
+
+async function renderPlayerButton() {
+    const playerCount = await fetchPlayerCount();
+    console.log(playerCount);
+
+    let message = document.getElementById('message');
+    if (!message) {
+        message = document.createElement('p');
+        message.id = 'message';
+        form.appendChild(message);
+    }
+    if (playerCount >= 15) {
+        addButton.style.display = "none";
+        message.textContent = 'Maximum limit reached. You cannot add more players.';
+        message.style.display = "block";
+    }
+    else {
+        addButton.style.display = "block";
+        message.style.display = "none";
+    }
+}
+
 function renderPlayer(body: HTMLDivElement, player: Player) {
     try {
         const name = createElement("div", "player", player.name);
@@ -120,9 +158,9 @@ function renderPlayer(body: HTMLDivElement, player: Player) {
         body.appendChild(jerseyNumber);
         body.appendChild(height);
         body.appendChild(position);
-        body.appendChild(createInputElement("button", "player", () => callForUpdate("JerseyNumber", player.name), "Update Jersey Number"));
-        body.appendChild(createInputElement("button", "player", () => callForUpdate("Position", player.name), "Update Position"));
-        body.appendChild(createInputElement("button", "player", () => handleDelete(player.name), "Delete"));
+        body.appendChild(createInputElement("button", "player_button", () => callForUpdate("JerseyNumber", player.name), "Change Jersey"));
+        body.appendChild(createInputElement("button", "player_button", () => callForUpdate("Position", player.name), "Change Position"));
+        body.appendChild(createInputElement("button", "player_button", () => handleDelete(player.name), "Delete"));
     } catch (error) {
         console.error(error);
     }
@@ -171,49 +209,11 @@ function renderPlayers(players: Player[], div: HTMLDivElement | null) {
 
         div.replaceChildren();
         if (players.length !== 0) {
-            // div.append(...createHeader());
+            div.append(...createHeader());
             players.forEach(player => renderPlayer(div, player));
         }
     } catch (error) {
         console.error(error);
-    }
-}
-
-async function fetchPlayerCount(): Promise<number> {
-    try {
-        const response = await fetch('/playerCount');
-        if (!response.ok) {
-            throw new Error('Failed to fetch player count');
-        }
-        const data = await response.json();
-        console.log(data, data.count);
-        return data.count;
-    }
-    catch (error) {
-        console.error('Error fetching player count:', error);
-        return -1;
-    }
-}
-
-
-async function renderPlayerButton() {
-    const playerCount = await fetchPlayerCount();
-    console.log(playerCount);
-
-    let message = document.getElementById('message');
-    if (!message) {
-        message = document.createElement('p');
-        message.id = 'message';
-        form.appendChild(message);
-    }
-    if (playerCount >= 15) {
-        addButton.style.display = "none";
-        message.textContent = 'Maximum limit reached. You cannot add more players.';
-        message.style.display = "block";
-    }
-    else {
-        addButton.style.display = "block";
-        message.style.display = "none";
     }
 }
 
@@ -240,18 +240,19 @@ function createInputElement(inputType: string, className: string, handler: ((eve
 async function getAddForm() {
     if(await fetchPlayerCount() == 15) {
         formDiv.innerHTML = `
+            <h1>Welcome to MY BASKETBALL TEAM</h1>
             <form id="player_form" onsubmit="handleAddPlayer(event)">
                 <input name="name" type="text" required placeholder="Name" />
                 <input name="age" type="number" required min="18" placeholder="Age" />
                 <input name="jerseyNumber" type="number" required min="0" max="99" placeholder="Jersey number" />
                 <input name="height" type="number" required placeholder="Height in centimeters" />
                 <input name="position" type="text" required placeholder="Position" />
-            </form>`;
-        let message = document.createElement('p');
-        message.textContent = 'Maximum limit reached. You cannot add more players.';
-        form.appendChild(message);
-    }
-    formDiv.innerHTML = `
+            </form>
+            <p>Maximum limit reached. You cannot add more players.</p>`;
+    } 
+    else {
+        formDiv.innerHTML = `
+            <h1>Welcome to MY BASKETBALL TEAM</h1>
             <form id="player_form" onsubmit="handleAddPlayer(event)">
                 <input name="name" type="text" required placeholder="Name" />
                 <input name="age" type="number" required min="18" placeholder="Age" />
@@ -260,14 +261,18 @@ async function getAddForm() {
                 <input name="position" type="text" required placeholder="Position" />
                 <button id="add_button" type="submit">Add Player</button>
             </form>`;
+    }
 }
 
-// function createHeader(): Node[] {
-//     return [
-//         createElement("div", "header", "Name"),
-//         createElement("div", "header", "Age"),
-//         createElement("div", "header", "Jersey Number"),
-//         createElement("div", "header", "Height"),
-//         createElement("div", "header", "Position")
-//     ];
-// }
+function createHeader(): Node[] {
+    return [
+        createElement("div", "header", "Name"),
+        createElement("div", "header", "Age"),
+        createElement("div", "header", "Jersey Number"),
+        createElement("div", "header", "Height"),
+        createElement("div", "header", "Position"),
+        createElement("div", "header", "Change Jersey"),
+        createElement("div", "header", "Change Position"),
+        createElement("div", "header", "Delete Player"),
+    ];
+}

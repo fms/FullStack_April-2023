@@ -1,19 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import { Player, PlayerModel } from "../model/player";
-// import { Person, PersonModel } from "../model/person";
 import { matchedData } from "express-validator";
-
-// export async function addPerson(req: Request, res: Response, next: NextFunction) {
-//     const { firstName, lastName, age }: Person = req.body;
-//     const newPerson = new PersonModel({firstName, lastName, age});
-//     await newPerson.save();
-//     next();
-// }
-
-// export async function getPerson(req: Request, res: Response, next: NextFunction) {
-//     const newPerson = (await PersonModel.findOne().sort({ _id: -1 }));
-//     res.send({ newPerson });
-// }
 
 export async function getPlayers(req: Request, res: Response, next: NextFunction) {
     const players = (await PlayerModel.find()).map((player) => player.toObject());
@@ -32,66 +19,35 @@ export async function addPlayer(req: Request, res: Response, next: NextFunction)
 
 export async function updateJerseyNumber(req: Request, res: Response, next: NextFunction) {
     const data = matchedData(req);
-        console.log("Received data:", data);
-
-        const { name, jerseyNumber } = data;
+    console.log("Received data:", data);
+    const { name, jerseyNumber } = data;
     let changed = false;
     const player = await getPlayerByName(name)
-    if(player) {
+    if(player && player.jerseyNumber !== jerseyNumber) {
         await PlayerModel.findOneAndUpdate({ name: player.name }, { jerseyNumber: jerseyNumber });
         changed = true;
     }
     if (!changed) {
         throw new Error("Noting to update!");
     }
-
-    player.save();
     next();
 }
 
 export async function updatePosition(req: Request, res: Response, next: NextFunction) {
     const data = matchedData(req);
-        console.log("Received data:", data);
-
-        const { name, position } = data;
+    console.log("Received data:", data);
+    const { name, position } = data;
     let changed = false;
     const player = await getPlayerByName(name)
-    if(player) {
+    if(player && player.position !== position) {
         await PlayerModel.findOneAndUpdate({ name: player.name }, { position: position });
         changed = true;
     }
     if (!changed) {
         throw new Error("Noting to update!");
     }
-
-    player.save();
     next();
 }
-
-// export async function updatePlayer(req: Request, res: Response, next: NextFunction) {
-    // const { name } = req.body;
-    // const player = await getPlayerByName(name);
-    
-    // let changed = false;
-
-    // const payload = matchedData(req);
-    // if ('jerseyNumber' in payload) {
-    //     await PlayerModel.findOneAndUpdate({name: player.name}, {jerseyNumber: payload.jerseyNumber});
-    //     changed = true;
-    // }
-
-    // if ('position' in payload) {
-    //     await PlayerModel.findOneAndUpdate({name: player.name}, {position: payload.position});
-    //     changed = true;
-    // }
-
-    // if (!changed) {
-    //     throw new Error("Noting to update!");
-    // }
-
-    // player.save();
-    // next();
-// }
 
 export async function deletePlayer(req: Request, res: Response, next: NextFunction) {
     const { name } = req.body;
@@ -111,3 +67,16 @@ async function getPlayerByName(name: string) {
     throw new Error("Can't find a player with this name");
 }
 
+// import { Person, PersonModel } from "../model/person";
+
+// export async function addPerson(req: Request, res: Response, next: NextFunction) {
+//     const { firstName, lastName, age }: Person = req.body;
+//     const newPerson = new PersonModel({firstName, lastName, age});
+//     await newPerson.save();
+//     next();
+// }
+
+// export async function getPerson(req: Request, res: Response, next: NextFunction) {
+//     const newPerson = (await PersonModel.findOne().sort({ _id: -1 }));
+//     res.send({ newPerson });
+// }

@@ -1,29 +1,6 @@
 import { body, checkExact } from 'express-validator';
 import { Position } from '../model/position'
 
-// export const personIdValidation =
-//     body('personId').trim()
-//                 .exists()
-//                 .withMessage("Person not found")
-//                 .escape();
-
-// export const personValidation = [
-//     body('firstName').trim()
-//                 .notEmpty()
-//                 .withMessage("First name must always be specified")
-//                 .escape(),
-//     body('lastName').trim()
-//                 .notEmpty()
-//                 .withMessage("Last name must always be specified")
-//                 .escape(),
-//     body('age').trim()
-//                 .notEmpty()
-//                 .withMessage("Age must always be specified")
-//                 .isInt({ min: 18 })
-//                 .withMessage("Age must be a number greater than or equal to 18")
-//                 .toInt()
-// ];
-
 export const nameValidation = 
     body('name').trim()
                     .notEmpty()
@@ -56,11 +33,11 @@ export const heightValidation =
 
 export const positionValidation = 
     body('position').exists()
-                    .isIn(Object.values(Position)).withMessage("Invalid position");
+                    .withMessage("Position must always be specified")
+                    .isIn(Object.values(Position))
+                    .withMessage("Invalid position");
 
 export const addPlayerSchema = [
-    // personIdValidation,
-    // personValidation,
     nameValidation,
     ageValidation,
     jerseyNumberValidation,
@@ -68,8 +45,29 @@ export const addPlayerSchema = [
     positionValidation
 ];
 
-// export const addPersonSchema = personValidation;
-
 export const updatePlayerSchema = [
     nameValidation
 ];
+
+// export const personIdValidation =
+//     body('personId').trim()
+//                 .exists()
+//                 .withMessage("Person not found")
+//                 .escape();
+
+// export const personValidation = [
+//     body('firstName').trim()
+//                 .notEmpty()
+//                 .withMessage("First name must always be specified")
+//                 .escape(),
+//     body('lastName').trim()
+//                 .notEmpty()
+//                 .withMessage("Last name must always be specified")
+//                 .escape(),
+//     body('age').trim()
+//                 .notEmpty()
+//                 .withMessage("Age must always be specified")
+//                 .isInt({ min: 18 })
+//                 .withMessage("Age must be a number greater than or equal to 18")
+//                 .toInt()
+// ];

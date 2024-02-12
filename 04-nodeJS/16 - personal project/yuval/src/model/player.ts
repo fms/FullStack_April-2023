@@ -49,7 +49,7 @@ const PlayerSchema = new Schema({
         type: Number,
         enum: [Position.PG, Position.SG, Position.SF, Position.PF, Position.C],
         required: true
-    }
+    },
 });
 
 async function isLimitReached(maxLimit: number): Promise<boolean> {
