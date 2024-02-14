@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Task Manager</title>
+        <script src="./dist/index.js" defer></script>
+        <!-- <script src="./index.ts" defer></script> -->
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="dist/style.css">
+    </head>
+    <body>
+            <form id="myForm" onsubmit="handleAddTask(event)">
+            <input type="text" placeholder="Title" name="title" required><br>
+            <input type="text" placeholder="Description" name="description" required><br>
+            <input type="submit" value="SAVE">
+        </form> 
+        <div class="container">
+            <table class="table table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Edit / Delete</th>
+                    </tr>
+                </thead>
+                <tbody class="table_body">
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

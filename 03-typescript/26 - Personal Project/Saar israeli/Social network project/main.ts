@@ -1,4 +1,36 @@
 // -----------------------------------------------> Model <----------------------------------------------- //
+enum Mains {
+    home = 0,
+    posts,
+    about,
+    contact,
+    profile,
+}
+
+const registerLink = document.querySelector("#register") as HTMLFormElement;
+const loginLink = document.querySelector("#login") as HTMLFormElement;
+const navLinks = document.querySelectorAll(".navbar-right__link") as NodeListOf<HTMLLinkElement>;
+const homeSection = document.querySelector(".home") as HTMLDivElement;
+const profileSection = document.querySelector(".profile") as HTMLDivElement;
+const postsSection = document.querySelector(".posts") as HTMLLinkElement;
+const homeNavLink = document.querySelector(".navbar-right__link--home") as HTMLLinkElement;
+const profileNavLink = document.querySelector(".navbar-right__link--my-profile") as HTMLLinkElement;
+const postsNavLink = document.querySelector(".navbar-right__link--posts") as HTMLLinkElement;
+const profileImage = document.querySelector('.profile__section__img--img') as HTMLImageElement;
+const contactNavLink = document.querySelector(".navbar-right__link--contact") as HTMLLinkElement;
+const contactSection = document.querySelector(".contact") as HTMLDivElement;
+const aboutSection = document.querySelector(".about") as HTMLDivElement;
+const aboutNavLink = document.querySelector(".navbar-right--about") as HTMLLinkElement;
+let userIdOut: number = 0;
+let userLoggedIn: boolean;
+
+const registerForm = document.querySelector("#register") as HTMLFormElement;
+const joinForm = document.querySelector("#login") as HTMLFormElement;
+const registerButton = document.querySelector("#register-button") as HTMLButtonElement;
+const logInButton = document.querySelector(".navbar-right__link--log-in") as HTMLLinkElement;
+const logOutButton = document.querySelector(".navbar-right__link--log-out") as HTMLLinkElement;
+const profileName = document.querySelector(".profile__section__header--text") as HTMLParagraphElement;
+
 
 interface FormElements extends HTMLFormControlsCollection {
     name: HTMLInputElement;
@@ -293,42 +325,12 @@ function uploadImg() {
 
 // -----------------------------------------------> Controller <----------------------------------------------- //
 
-enum Mains {
-    home = 0,
-    posts,
-    about,
-    contact,
-    profile,
-}
-
-const registerLink = document.querySelector("#register") as HTMLFormElement;
-const loginLink = document.querySelector("#login") as HTMLFormElement;
-const navLinks = document.querySelectorAll(".navbar-right__link") as NodeListOf<HTMLLinkElement>;
-const homeSection = document.querySelector(".home") as HTMLDivElement;
-const profileSection = document.querySelector(".profile") as HTMLDivElement;
-const postsSection = document.querySelector(".posts") as HTMLLinkElement;
-const homeNavLink = document.querySelector(".navbar-right__link--home") as HTMLLinkElement;
-const profileNavLink = document.querySelector(".navbar-right__link--my-profile") as HTMLLinkElement;
-const postsNavLink = document.querySelector(".navbar-right__link--posts") as HTMLLinkElement;
-const profileImage = document.querySelector('.profile__section__img--img') as HTMLImageElement;
-const contactNavLink = document.querySelector(".navbar-right__link--contact") as HTMLLinkElement;
-const contactSection = document.querySelector(".contact") as HTMLDivElement;
-const aboutSection = document.querySelector(".about") as HTMLDivElement;
-const aboutNavLink = document.querySelector(".navbar-right--about") as HTMLLinkElement;
 
 function randomNumber() {
     return Math.floor(Math.random() * 1000000);
 }
 
-let userIdOut: number = 0;
-let userLoggedIn: boolean;
 
-const registerForm = document.querySelector("#register") as HTMLFormElement;
-const joinForm = document.querySelector("#login") as HTMLFormElement;
-const registerButton = document.querySelector("#register-button") as HTMLButtonElement;
-const logInButton = document.querySelector(".navbar-right__link--log-in") as HTMLLinkElement;
-const logOutButton = document.querySelector(".navbar-right__link--log-out") as HTMLLinkElement;
-const profileName = document.querySelector(".profile__section__header--text") as HTMLParagraphElement;
 let usersList = loadUsers();
 rememberMeUser();
 
