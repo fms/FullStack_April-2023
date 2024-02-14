@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./dist/login.js" defer></script>
+    <link rel="stylesheet" href="./dist/login.css">
+
+    <title>Notelist Project-Login</title>
+</head>
+
+<body>
+
+    <main class="user" id="user">
+        <header class="user__login__header">
+
+            <h1 class="user__login__header--title">Login or Register to see your NoteList</h1>
+
+        </header>
+
+        <section class="user__main">
+
+            <form class="user__main__login-form" id="login" onsubmit="newJoinForm(event)">
+
+
+                <div class="user__main__login-form__input-box">
+                    <input name ="emailLogin" type="text" placeholder="Email" class="user__main__login-form__input-box--email"
+                        id="emailLogin" required>
+                    <i class="bx bx-user"></i>
+                </div>
+
+                <div class="user__main__login-form__input-box">
+                    <input name ="passwordLogin" type="password" placeholder="Password" class="user__main__login-form__input-box--password"
+                        id="passwordLogin" required>
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+
+                <div class="user__main__login-form__input-box">
+                    <input type="submit" class="user__main__login-form__input-box--submit submit" value="Sign in">
+                </div>
+
+            </form>
+
+            <form class="user__main__register-form" id="register" onsubmit="newRegisterForm(event)">
+
+                <div class="user__main__register-form__input-box">
+                    <input name ="fullNameRegister" type="text" placeholder="Fullname"
+                        class="user__main__register-form__dobule-form__input-box--fullname" id="fullNameRegister" required>
+                    <i class="bx bx-user"></i>
+                </div>
+
+                <div class="user__main__register-form__input-box">
+                    <input name ="emailRegister" type="text" placeholder="Email" class="user__main__register-form__input-box--email"
+                        id="emailRegister" required>
+                    <i class="bx bx-envelope"></i>
+                </div>
+
+                <div class="user__main__register-form__input-box">
+                    <input name ="passwordRegister" type="password" placeholder="Password" class="user__main__register-form__input-box--password"
+                        id="passwordRegister" required>
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+
+                <div class="user__main__register-form__input-box">
+                    <input type="submit" class="user__main__register-form__input-box--submit submit" value="register"
+                        id="register-button">
+                </div>
+            </form>
+        </section>
+
+    </main>
+    <div class="error">
+        <div class="error__main">
+            <h2 class="error__main--h2"></h2>
+            <p class="error__main--p"></p>
+            <button class="error__main--button">Ok</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
