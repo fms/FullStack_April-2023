@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <script src="dist/queueManager.js" defer></script>
+    <link rel="stylesheet" href="dist/index.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="queue">
+            <h1>Hey there and welcome to queue managment!</h1>
+            <h2>Would you like to schedule an appointment at the barber shop?</h2>
+            <button id="yes">Yes</button>
+            <button id="no">No thanks</button>
+            <div class="request" style="display: none;">
+                <p>Please write here your request</p>
+                <p>Name:
+                    <input id="nameinput" type="text" placeholder="Write here your name">
+                </p>
+                <p>Phone Number:
+                    <input id="phoneinput" type="number" placeholder="Write here your phone">
+                </p>
+                <p>Choose City:
+                    <select id="cities">
+                        <option value="Gedera">Gedera</option>
+                        <option value="Ashdod">Ashdod</option>
+                        <option value="Yavne">Yavne</option>
+                    </select>
+                </p>
+                <p>Choose date: <input type="date" id="dateinput"></p>
+                <p>Choose Time: <input type="time" id="timeinput"></p>
+                <br>
+                    <button id="submitButton" type="submit">Send</button>
+            </div>
+            <table id="queues">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone Number</th>
+                        <th>City</th>
+                        <th>Date</th>
+                        <th>An hour to queue</th>
+                    </tr>
+                </thead>
+            </table><br>
+            <button id="deleteName">Delete One</button>
+            <button id="deleteAll">Delete All</button>
+            <button id="updateQueue">Update Queue</button>
+            <button id="updateName">Update Name</button>
+            <input style="display: none;" type="text" id="newName" placeholder="Write here a name to delete">
+        </div>
+    </div>
+</body>
+
+</html>

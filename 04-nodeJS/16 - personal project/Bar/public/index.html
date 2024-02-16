@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="dist/animals.js" defer></script>
+    <link rel="stylesheet" href="dist/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Animals</h1>
+        <div class="formDiv">
+            <form class="form">
+                <label>Name:
+                    <input class="animalName" type="text" placeholder="Animal's Name">
+                </label>
+                <label>Age:
+                    <input class="animalAge" type="number" placeholder="Animal's Age">
+                </label>
+                <label>Species:
+                    <input class="animalSpecies" type="text" placeholder="Animal's Species">
+                </label>
+                <button onclick="handleAddAnimal(event)" type="submit"> Add Animal</button>
+            </form>
+        </div>
+        <div class="animals">
+
+        </div>
+    </div>
+</body>
+
+</html>
