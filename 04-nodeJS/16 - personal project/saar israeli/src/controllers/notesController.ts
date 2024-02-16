@@ -19,6 +19,18 @@ export async function addNote(req: Request, res: Response, next: NextFunction) {
     next();
 }
 
+export async function getMyNotes(req: Request, res: Response, next: NextFunction) {
+    const userId = req.cookies.userId;
+    if(userId) {
+        const notes = (await NotesModel.find({noteOwner: userId})).map(note => note.toObject());
+        res.send({notes});
+        next();
+    }
+    else {
+        return res.status(400).json({error: "none"})
+    }
+}
+
 export async function updateNote(req: Request, res: Response, next: NextFunction) {
     const { id } = req.body;
     const note = await getNoteById(id);

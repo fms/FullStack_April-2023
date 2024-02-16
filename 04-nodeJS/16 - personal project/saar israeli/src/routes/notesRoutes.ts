@@ -10,15 +10,15 @@ const router = express.Router();
 router.post("/add", checkExact(addNoteSchema, {message:"Too much fields"}),
                     validate,
                     Controller.addNote,
-                    Controller.getNote);
+                    Controller.getMyNotes);
 
-router.get("/get", Controller.getNote);
+router.get("/get", Controller.getMyNotes);
 
 
 router.patch("/updateTitle", checkExact(updateNoteTitleSchema),
                         validate,
                         Controller.updateNote,
-                        Controller.getNote);
+                        Controller.getMyNotes);
 
 router.patch("/updateDescription", checkExact(updateNoteDescriptionSchema),
                         validate,
@@ -28,7 +28,7 @@ router.patch("/updateDescription", checkExact(updateNoteDescriptionSchema),
 router.delete("/delete",idValidation,
                         validate,
                         Controller.deleteNote,
-                        Controller.getNote);
+                        Controller.getMyNotes);
 
 router.post("/note", Controller.findNote);
 
