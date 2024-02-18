@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="dist/login.css">
+    <script src="dist/loginPage.js"></script>
+    <script src="dist/animals.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Login</h1>
+        <form class="loginForm">
+            <label>Username:
+                <input class="username" type="text" placeholder="Username">
+            </label>
+            <label>Password:
+                <input class="password" type="password" placeholder="Password">
+            </label>
+            <button type="submit" onclick="handleLoginSubmit(event)">Sign In</button>
+        </form>
+        <h1>Register</h1>
+        <form class="registerForm">
+            <label>Username:
+                <input class="registerUsername" type="text" placeholder="Username">
+            </label>
+            <label>Password:
+                <input class="registerPassword" type="password" placeholder="Password">
+            </label>
+            <button type="submit" onclick="handleRegisterSubmit(event)">Sign Up</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
