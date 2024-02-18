@@ -11,7 +11,11 @@ export async function getAnimals(req: Request, res: Response, next: NextFunction
 
 export async function addAnimal(req: Request, res: Response, next: NextFunction) {
   const { name, age, species }: Animal = req.body;
-  const animal = new animalModel({ name, age, species });
+  console.log(name);
+
+  const ownerId = req.cookies.userId;
+
+  const animal = new animalModel({ name, age, species, ownerId });
 
   console.log(animal);
 
@@ -24,47 +28,61 @@ export async function deleteAnimal(req: Request, res: Response, next: NextFuncti
   const { id } = req.body;
 
   const animal = await getAnimalById(id);
-  await animal.deleteOne();
+  if (animal) {
+    await animal.deleteOne();
+  }
   next();
 }
 
 export async function updateAnimal(req: Request, res: Response, next: NextFunction) {
   const { id } = req.body;
   const animal = await getAnimalById(id);
+  if (animal) {
+    let changed = false;
 
-  let changed = false;
+    const payload = matchedData(req);
+    if ("name" in payload) {
+      animal.name = payload.name;
+      changed = true;
+    }
 
-  const payload = matchedData(req);
-  if ("name" in payload) {
-    animal.name = payload.name;
-    changed = true;
+    if ("age" in payload) {
+      animal.age = payload.age;
+      changed = true;
+    }
+
+    if ("species" in payload) {
+      animal.species = payload.species;
+      changed = true;
+    }
+
+    if (!changed) {
+      throw new Error("There is nothing to update");
+    }
+
+    animal.save();
   }
-
-  if ("age" in payload) {
-    animal.age = payload.age;
-    changed = true;
-  }
-
-  if ("species" in payload) {
-    animal.species = payload.species;
-    changed = true;
-  }
-
-  if (!changed) {
-    throw new Error("There is nothing to update");
-  }
-
-  animal.save();
   next();
 }
 
-async function getAnimalById(id: string) {
-  if (isValidObjectId(id)) {
-    const animal = await animalModel.findById(id);
+export async function getUserAnimals(req: Request, res: Response, next: NextFunction) {
+  const userId = req.cookies.userId;
 
-    if (animal) {
-      return animal;
-    }
+  if (userId) {
+    const animals = (await animalModel.find({ ownerId: userId })).map((animal) => animal.toObject());
+    console.log(animals);
+
+    res.send({ animals });
+    next();
+  } else {
+    return res.status(400).json({ error: "invalid animals" });
   }
-  throw new Error("No existing animal with specified ID");
+}
+
+async function getAnimalById(id: string) {
+  if (!isValidObjectId(id)) {
+    console.log("Invalid ID");
+  }
+  const animal = await animalModel.findById(id);
+  return animal;
 }

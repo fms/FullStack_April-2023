@@ -27,3 +27,6 @@ export const validateSpecies = body("species")
   .notEmpty()
   .withMessage("Must be a species")
   .escape();
+
+export const validateOwnerId = body("ownerId").trim().escape();
+export const animalDetails = [validateName, validateAge, validateSpecies, validateOwnerId];

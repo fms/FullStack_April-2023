@@ -3,12 +3,13 @@ interface Animal {
   name: string;
   age: number;
   species: string;
+  ownerId: string;
 }
 
 const animals = document.querySelector(".animals") as HTMLDivElement;
 handleGetAnimal();
 
-async function processResponse(response: Response) {
+async function processAnimalsResponse(response: Response) {
   try {
     if (!response.ok) {
       if (response.statusText === "Validation error") {
@@ -18,6 +19,7 @@ async function processResponse(response: Response) {
       throw new Error(response.statusText);
     }
     const { animals }: { animals: Animal[] } = await response.json();
+    console.log(animals);
 
     renderAnimals(animals);
   } catch (error) {
@@ -33,9 +35,11 @@ function renderAnimals(animalsArray: Animal[]) {
 }
 
 async function handleGetAnimal() {
-  const response = await fetch("/api/animals/get");
+  const response = await fetch("/api/animals/find");
 
-  processResponse(response);
+  console.log(response);
+
+  await processAnimalsResponse(response);
 }
 
 function animalTemplate(animal: Animal) {
@@ -60,11 +64,12 @@ function animalTemplate(animal: Animal) {
 
 async function handleAddAnimal(event: SubmitEvent) {
   event.preventDefault();
-
+  const animalForm = document.querySelector(".animalForm") as HTMLFormElement;
   const nameValue = (document.querySelector(".animalName") as HTMLInputElement).value;
   const ageValue = Number((document.querySelector(".animalAge") as HTMLInputElement).value);
   const speciesValue = (document.querySelector(".animalSpecies") as HTMLInputElement).value;
-
+  animalForm.reset();
+  
   const newAnimal = { name: nameValue, age: ageValue, species: speciesValue };
 
   const response = await fetch("/api/animals/post", {
@@ -73,7 +78,7 @@ async function handleAddAnimal(event: SubmitEvent) {
     body: JSON.stringify(newAnimal),
   });
 
-  processResponse(response);
+  processAnimalsResponse(response);
 }
 
 async function handleDeleteAnimal(id: String) {
@@ -84,7 +89,7 @@ async function handleDeleteAnimal(id: String) {
     body: JSON.stringify(body),
   });
 
-  processResponse(response);
+  processAnimalsResponse(response);
 }
 
 async function handleUpdateAnimal(id: string, nameValue: string, ageValue: number, speciesValue: string) {
@@ -96,7 +101,22 @@ async function handleUpdateAnimal(id: string, nameValue: string, ageValue: numbe
     body: JSON.stringify(updatedAnimal),
   });
 
-  processResponse(response);
+  processAnimalsResponse(response);
+}
+
+async function handleLogoutButton(event: MouseEvent) {
+  event.preventDefault();
+
+  if (event.target) {
+    const response = await fetch("/api/users/logout", {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    });
+    window.location.href = "index.html";
+    console.log(response);
+
+    processAnimalsResponse(response);
+  }
 }
 
 function createUpdateFormElement(div: HTMLDivElement, id: string) {

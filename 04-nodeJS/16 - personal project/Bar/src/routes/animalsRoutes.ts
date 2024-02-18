@@ -4,26 +4,36 @@ import { checkExact, oneOf } from "express-validator";
 import * as Validation from "../validation/animalsValidationSchema";
 import { validate } from "../validation/validationSchema";
 
-const router = express.Router();
+const animalRouter = express.Router();
 
-router.get("/get", Controller.getAnimals);
+animalRouter.get("/get", Controller.getAnimals);
 
-router.post(
+animalRouter.post(
   "/post",
-  checkExact([Validation.validateAge, Validation.validateName, Validation.validateSpecies]),
+  checkExact(Validation.animalDetails),
   validate,
   Controller.addAnimal,
-  Controller.getAnimals
+  Controller.getUserAnimals
 );
 
-router.delete("/delete", checkExact(Validation.validateId), validate, Controller.deleteAnimal, Controller.getAnimals);
+animalRouter.delete(
+  "/delete",
+  checkExact(Validation.validateId),
+  validate,
+  Controller.deleteAnimal,
+  Controller.getUserAnimals
+);
 
-router.patch(
+animalRouter.patch(
   "/update",
   oneOf([Validation.validateAge, Validation.validateName, Validation.validateSpecies]),
   validate,
   Controller.updateAnimal,
-  Controller.getAnimals
+  Controller.getUserAnimals
 );
 
-export default router;
+animalRouter.get("/find", Controller.getUserAnimals);
+
+
+
+export default animalRouter;

@@ -1,8 +1,7 @@
-import { randomUUID } from "crypto";
 import { Schema, model } from "mongoose";
 
 export class Animal {
-  constructor(public name: string, public age: number, public species: string) {}
+  constructor(public name: string, public age: number, public species: string, public ownerId: Schema.Types.ObjectId) {}
 }
 
 const animalSchema = new Schema({
@@ -18,6 +17,7 @@ const animalSchema = new Schema({
     type: String,
     required: true,
   },
+  ownerId: { type: Schema.Types.ObjectId, ref: "Users" },
 });
 
-export const animalModel = model("Animals", animalSchema);
+export const animalModel = model("Animal", animalSchema);
