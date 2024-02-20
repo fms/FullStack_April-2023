@@ -1,5 +1,38 @@
 "use strict";
 // -----------------------------------------------> Model <----------------------------------------------- //
+<<<<<<< HEAD
+=======
+var Mains;
+(function (Mains) {
+    Mains[Mains["home"] = 0] = "home";
+    Mains[Mains["posts"] = 1] = "posts";
+    Mains[Mains["about"] = 2] = "about";
+    Mains[Mains["contact"] = 3] = "contact";
+    Mains[Mains["profile"] = 4] = "profile";
+})(Mains || (Mains = {}));
+const registerLink = document.querySelector("#register");
+const loginLink = document.querySelector("#login");
+const navLinks = document.querySelectorAll(".navbar-right__link");
+const homeSection = document.querySelector(".home");
+const profileSection = document.querySelector(".profile");
+const postsSection = document.querySelector(".posts");
+const homeNavLink = document.querySelector(".navbar-right__link--home");
+const profileNavLink = document.querySelector(".navbar-right__link--my-profile");
+const postsNavLink = document.querySelector(".navbar-right__link--posts");
+const profileImage = document.querySelector('.profile__section__img--img');
+const contactNavLink = document.querySelector(".navbar-right__link--contact");
+const contactSection = document.querySelector(".contact");
+const aboutSection = document.querySelector(".about");
+const aboutNavLink = document.querySelector(".navbar-right--about");
+let userIdOut = 0;
+let userLoggedIn;
+const registerForm = document.querySelector("#register");
+const joinForm = document.querySelector("#login");
+const registerButton = document.querySelector("#register-button");
+const logInButton = document.querySelector(".navbar-right__link--log-in");
+const logOutButton = document.querySelector(".navbar-right__link--log-out");
+const profileName = document.querySelector(".profile__section__header--text");
+>>>>>>> 1911ed530d7039e6af8385c02f520e68a6349185
 function newRegisterForm(event) {
     event.preventDefault();
     const user = registerForm.elements;
@@ -220,6 +253,7 @@ function uploadImg() {
 }
 // -----------------------------------------------> Model <----------------------------------------------- //
 // -----------------------------------------------> Controller <----------------------------------------------- //
+<<<<<<< HEAD
 var Mains;
 (function (Mains) {
     Mains[Mains["home"] = 0] = "home";
@@ -253,6 +287,11 @@ const registerButton = document.querySelector("#register-button");
 const logInButton = document.querySelector(".navbar-right__link--log-in");
 const logOutButton = document.querySelector(".navbar-right__link--log-out");
 const profileName = document.querySelector(".profile__section__header--text");
+=======
+function randomNumber() {
+    return Math.floor(Math.random() * 1000000);
+}
+>>>>>>> 1911ed530d7039e6af8385c02f520e68a6349185
 let usersList = loadUsers();
 rememberMeUser();
 function rememberMeUser() {

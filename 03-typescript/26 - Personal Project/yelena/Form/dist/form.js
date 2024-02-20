@@ -1,28 +1,27 @@
 "use strict";
 const form = document.querySelector("#form");
 if (form) {
+    const nameField = document.getElementById("name");
+    const emailField = document.getElementById("email");
+    const ageField = document.getElementById("age");
+    const classesField = document.getElementById("classes");
+    const phoneField = document.getElementById("phone");
     form.addEventListener("submit", function (event) {
         // Prevent the default form submission behavior
         event.preventDefault();
-        debugger;
-        /**
-         * TODO: add age, class-select, and phone
-         */
-        const nameField = document.getElementById("name");
-        const emailField = document.getElementById("email");
         const name = nameField ? nameField.value : "";
         const email = emailField ? emailField.value : "";
-        /**
-         * Create an Object with all the data
-         * the properties in the object should be like the interface above
-         * the object will be of type FormObject
-         */
-        // const formData: FormObject = {}
-        /**
-         * Adding the object to localStorage
-         * I gave you an example in WhatsApp
-         */
-        // alert(`Name: ${name}\nEmail: ${email}`);
-        // Or you can send the data to a server using AJAX or fetch.
+        const age = ageField ? +ageField.value : "";
+        const classes = classesField ? classesField.value : "";
+        const phone = phoneField ? phoneField.value : "";
+        const formData = {
+            name,
+            email,
+            age,
+            classes,
+            phone,
+        };
+        const formDataJSON = JSON.stringify(formData);
+        localStorage.setItem("formData", formDataJSON);
     });
 }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="dist/index.css" />
+    <script src="dist/tasks.js" defer></script>
+
+    <script>
+
+      function init () {
+  
+          id_h1.innerHTML = "WELCOM" + " " +  localStorage.user
+          id_h1.innerHTML = localStorage.user
+  
+          
+      }
+  
+  
+  
+  </script>
+
+
+  </head>
+
+
+  <body onload="init()">
+
+
+    <h1 id="id_h1" class="h1_user">The call center </h1>
+    <h1 id="id_h2" class="h2_user">Welcom to The call center </h1>
+    <h1 id="id_h2" class="h2_user">Please enter tasks for work </h1>
+
+
+    <form onsubmit="handleAddTask(event)">
+      <input name="title" type="text" required placeholder="task title" />
+      <input name="description" type="text" required placeholder="task description" />
+      <button type="submit">add</button>
+    </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr />
+
+
+
+
+    <div id="errors" class="errors"></div>
+    <div id="tasks" class="tasks"></div>
+  </body>
+</html>

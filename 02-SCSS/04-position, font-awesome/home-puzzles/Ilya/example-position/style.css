@@ -1,0 +1,102 @@
+.wrapper {
+  background-color: rgb(0, 0, 0);
+  position: relative;
+}
+
+.box {
+  position: static;
+  height: 150px;
+  width: 150px;
+  background-color: rgb(172, 170, 180);
+  opacity: 0.7;
+}
+
+.relative {
+  position: relative;
+  top: -80px;
+  left: 80px;
+  bottom: 0px;
+  right: 10px;
+  background-color: rgb(158, 104, 77);
+}
+
+.relative1 {
+  position: relative;
+  top: -300px;
+  left: 180px;
+  bottom: 0px;
+  right: 10px;
+  background-color: rgb(255, 45, 22);
+}
+
+.relative2 {
+  position: relative;
+  top: -350px;
+  left: 280px;
+  bottom: 0px;
+  right: 10px;
+  background-color: rgb(239, 70, 180);
+}
+
+.relative3 {
+  position: relative;
+  top: -600px;
+  left: 380px;
+  bottom: 0px;
+  right: 10px;
+  background-color: rgb(124, 89, 193);
+}
+
+.relative4 {
+  position: relative;
+  top: -450px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  background-color: rgb(71, 163, 109);
+}
+
+.relative5 {
+  position: relative;
+  top: -650px;
+  left: 80px;
+  bottom: 0px;
+  right: 0px;
+  background-color: rgb(9, 44, 125);
+}
+
+.relative6 {
+  position: relative;
+  top: -690px;
+  left: 170px;
+  bottom: 0px;
+  right: 0px;
+  background-color: rgb(156, 138, 36);
+}
+
+.relative7 {
+  position: relative;
+  top: -930px;
+  left: 320px;
+  bottom: 0px;
+  right: 0px;
+  background-color: rgb(8, 90, 95);
+}
+
+.relative8 {
+  position: relative;
+  top: -1050px;
+  left: 280px;
+  bottom: 0px;
+  right: 0px;
+  background-color: rgb(58, 52, 16);
+}
+
+.relative9 {
+  position: relative;
+  top: -1140px;
+  left: 340px;
+  bottom: 0px;
+  right: 0px;
+  background-color: rgb(240, 230, 173);
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,226 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: bisque;
+    height: 100vh;
+}
+
+.hidden {
+    display: none !important; 
+}
+
+.btn {
+    border-radius: 20px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+    background-color: inherit;
+    height: fit-content;
+    width: fit-content;
+    box-shadow: 0px 0px 10px rgb(255, 255, 255);
+}
+
+
+.wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    &--logOut-button{
+        position: fixed;
+        padding: 0.5rem;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        background-color: rgb(245, 201, 147);
+        box-shadow: 1px 2px 10px rgb(77, 63, 45);
+        margin: 5px 0 0 5px;
+    }
+
+    &__header {
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    &__notelist {
+        margin-top: 5vh;
+
+        &__form {
+
+            &--submit {
+                padding: 0.5rem;
+                border: none;
+                border-radius: 20px;
+                cursor: pointer;
+                background-color: rgb(245, 201, 147);
+                box-shadow: 1px 2px 10px rgb(77, 63, 45);
+            }
+        }
+    }
+
+    &__line-break {
+        margin-top: 5vh;
+    }
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-content: flex-start;
+        flex-wrap: wrap;
+        gap: 1vh;
+        margin-top: 6px;
+        overflow-y: auto;
+        padding-bottom: 5px;
+        padding-top: 5px;
+
+        &__notediv {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1vh;
+            border-radius: 20px;
+            height: fit-content;
+            width: fit-content;
+            padding: 6px;
+            z-index: 0;
+            background-color: rgb(245, 201, 147);
+            box-shadow: 1px 2px 10px rgb(77, 63, 45);
+
+            &__title {
+                display: flex;
+                align-items: center;
+                gap: .3vw;
+                margin-left: .4vw;
+
+                &--title {
+                    border-radius: 20px;
+                }
+            }
+        }
+    }
+}
+
+.title-nonEdit {
+    background-color: inherit;
+    border: none;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+
+.error {
+    background-color: black;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__main {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+        padding: 15px 25px;
+        text-align: center;
+        width: 380px;
+        position: relative;
+
+        h2 {
+            margin: 0;
+        }
+
+        p {
+            line-height: 24px;
+            margin: 10px 0;
+        }
+
+        &--button {
+            border-radius: 20px;
+            border: 0;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+            color: black;
+            cursor: pointer;
+            padding: 10px 25px;
+        }
+
+        button:active {
+            opacity: 0.8;
+        }
+    }
+}
+
+.open {
+    opacity: 0.8;
+    z-index: 999;
+}
+
+.note-tab {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    &__header {
+        display: flex;
+        flex: 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        &--closebtn {
+            position: absolute;
+            right: 0;
+            top: 0;
+            margin-right: 5px;
+            margin-top: 5px;
+            border: none;
+            background-color: rgb(245, 201, 147);
+            box-shadow: 1px 2px 10px rgb(77, 63, 45);
+            padding: 10px;
+        }
+    }
+
+    &__main {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        &--description{
+            resize: none;
+            width: 90%;
+            height: 90%;
+            z-index: 1;
+            background-color: rgb(245, 201, 147);
+            border-radius: 30px;
+            padding-top: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        &--savebtn {
+            position: absolute;
+            border-radius: 50px;
+            border: none;
+            padding: 15px;
+            bottom: 0;
+            cursor: pointer;
+            z-index: 2;
+            background-color: inherit;
+            height: fit-content;
+            width: fit-content;
+            box-shadow: 0px 0px 30px rgb(255, 255, 255);
+        }
+    }
+}

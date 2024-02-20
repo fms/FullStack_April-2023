@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./dist/notelist.js" defer></script>
+    <link rel="stylesheet" href="./dist/notelist.css">
+    <title>Notelist Project Main</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <button class="wrapper--logOut-button" onclick="logOut()">Log Out</button>
+        <header class="wrapper__header">
+            <h1 class="wrapper__header--h1">Welcome to Your NoteList</h1>
+        </header>
+        <hr class="wrapper__line-break">
+        </hr>
+        <section class="wrapper__notelist">
+            <form class="wrapper__notelist__form" id="notelist__form" onsubmit="addNote(event)">
+                <label for="form-title">Title</label>
+                <input name="title" type="text" class="wrapper__notelist__form--title" id="form-title"
+                    placeholder="Your Title"></input>
+                <input type="submit" class="wrapper__notelist__form--submit" id="submit-title"></input>
+            </form>
+        </section>
+        <hr class="wrapper__line-break">
+        </hr>
+        <main class="wrapper__main">
+            <!-- <div class="wrapper__main__notediv">
+                <div class="wrapper__main__notediv__title">
+                    <a href="" class="wrapper__main__notediv__title--title">asdsad</a>
+                    <button class="wrapper__main__notediv__title--editbtn btn">Edit</button>
+                    <button class="wrapper__main__notediv__title--savebtn btn hidden">Save</button>
+                    <button class="wrapper__main__notediv__title--deletebtn btn">Delete</button>
+                </div>
+                <div class="wrapper__main__notediv__description">
+                    <p class="wrapper__main__notediv--description">asdad</p>
+                    <button class="wrapper__main__notediv__description--editbtn btn">Edit</button>
+                    <button class="wrapper__main__notediv__description--savebtn btn">Save</button>
+                </div>
+            </div>
+            <div class="wrapper__main__notediv">
+                <div class="wrapper__main__notediv__title">
+                    <a href="" class="wrapper__main__notediv__title--title">hello</a>
+                    <button class="wrapper__main__notediv__title--editbtn btn">Edit</button>
+                    <button class="wrapper__main__notediv__title--savebtn btn hidden">Save</button>
+                    <button class="wrapper__main__notediv__title--deletebtn btn">Delete</button>
+                </div>
+                <div class="wrapper__main__notediv__description">
+                    <p class="wrapper__main__notediv--description">asdad</p>
+                    <button class="wrapper__main__notediv__title--editbtn btn">Edit</button>
+                    <button class="wrapper__main__notediv__title--savebtn btn">Save</button>
+                </div>
+            </div> -->
+        </main>
+    </div>
+    <div class="error">
+        <div class="error__main">
+            <h2 class="error__main--h2">Error!</h2>
+            <p class="error__main--p"></p>
+            <button class="error__main--button">Ok</button>
+        </div>
+    </div>
+    <div class="note-tab hidden">
+        <!-- <div class="note-tab__header">
+            <h1 href="" class="note-tab__header--title">hello</h1>
+            <button class="note-tab__header--closebtn">X</button>
+        </div>
+        <div class="note-tab__main">
+            <textarea class="note-tab__main--description">asdad</textarea>
+            <button class="note-tab__main--savebtn">Save</button>
+        </div> -->
+    </div>
+</body>
+
+</html>
