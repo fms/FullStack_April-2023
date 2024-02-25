@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="handleLoad()">
+    <h3>To Do List</h3>
+    <form id="formTask" onsubmit="handleSubmit(event)">
+    <!-- <form id="formTask""> -->
+        <input type="text" name="task" id="task">
+        <button type="submit">OK</button>
+       
+    </form>
+    <button onclick="handleDelete()">DELETE</button>
+    <button onclick="handleAdd()">GO BACK</button>
+    <div class="root"></div>
+</body>
+<script src="./dist/app.js"></script>
+</html>

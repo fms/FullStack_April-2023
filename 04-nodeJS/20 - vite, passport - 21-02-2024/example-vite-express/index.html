@@ -1,0 +1,37 @@
+<!-- <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/client/main.ts"></script>
+  </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="src/client/index.scss" />
+  <script src="src/client/tasks.ts" defer></script>
+</head>
+
+<body>
+  <form onsubmit="handleAddTask(event)">
+    <input name="title" type="text" required placeholder="task title" />
+    <input name="description" type="text" required placeholder="task description" />
+    <button type="submit">Add</button>
+  </form>
+  <hr />
+
+  <div id="errors" class="errors"></div>
+  <div id="tasks" class="tasks"></div>
+</body>
+
+</html>

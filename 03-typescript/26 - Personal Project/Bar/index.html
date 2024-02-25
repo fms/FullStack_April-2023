@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -69,4 +70,77 @@
     </div>
 </body>
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap" rel="stylesheet">
+    <script src="dist/index.js" defer></script>
+    <link rel="stylesheet" href="dist/styles.css">
+    <title>Workout Tracker</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="container__title">Workout Tracker</h1>
+        <div class="form-container">
+            <h2 class="form-container__subtitle">What Is Your Workout?</h2>
+            <form class="form form-container__form" onsubmit="addWorkout(event)">
+                <label>
+                    Name:
+                    <input class="form__workout-name" type="text" placeholder="Name" >
+                </label>
+                <label>
+                    Date:
+                    <input class="form__workout-date" type="date" placeholder="Date" >
+                </label>
+                <label>
+                    Duration (Mins):
+                    <input class="form__workout-duration" type="number" placeholder="Duration" >
+                </label>
+                <br>
+                <div class="exercises-div form-container__exercises">
+                    <h3 class="exercises-div__subtitle">Which Exercises Did You Do?</h3>
+                    <label>
+                        Exercise:
+                        <input class="form__exercise-name" type="text" placeholder="Name">
+                    </label>
+                    <label>
+                        Sets:
+                        <input class="form__exercise-sets" type="number" placeholder="Sets">
+                    </label>
+                    <label>
+                        Reps:
+                        <input class="form__exercise-reps" type="number" placeholder="Reps">
+                    </label>
+                    <label>
+                        Weight (KG):
+                        <input class="form__exercise-weight" type="number" placeholder="Weight">
+                    </label>
+
+                    <input type="button" value="Add Exercise" class="form-container__add-exercise-btn"
+                        onclick="addPendingExercise()">
+                </div>
+                <br>
+                <input type="submit" value="Add Workout" class="form__submit-btn">
+            </form>
+        </div>
+        <div class="pending-exercises container__pending-exercises">
+
+        </div>
+        <div class="my-workouts container__my-workouts">
+            <h2 class="my-workouts__subtitle">My Workouts:</h2>
+            <div class="workout-details my-workouts__details">
+
+            </div>
+        </div>
+    </div>
+</body>
+
+>>>>>>> 1911ed530d7039e6af8385c02f520e68a6349185
 </html>
