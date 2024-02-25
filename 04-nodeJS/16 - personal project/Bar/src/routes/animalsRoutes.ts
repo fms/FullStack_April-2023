@@ -34,6 +34,4 @@ animalRouter.patch(
 
 animalRouter.get("/find", Controller.getUserAnimals);
 
-
-
 export default animalRouter;
