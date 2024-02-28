@@ -32,10 +32,8 @@ export const heightValidation =
                     .toInt();
 
 export const positionValidation = 
-    body('position').exists()
-                    .withMessage("Position must always be specified")
-                    .isIn(Object.values(Position))
-                    .withMessage("Invalid position");
+    body('position').isIn(Object.values(Position))
+                    .withMessage("Position must always be specified");
 
 export const addPlayerSchema = [
     nameValidation,

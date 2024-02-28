@@ -20,7 +20,14 @@
             <input name="age" type="number" required min="18" placeholder="Age" />
             <input name="jerseyNumber" type="number" required min="0" max="99" placeholder="Jersey number" />
             <input name="height" type="number" required placeholder="Height in centimeters" />
-            <input name="position" type="text" required placeholder="Position" />
+            <select name="position" id="position-select">
+                <option value="" style="color: gray;">Position</option>
+                <option value="1">Point Guard</option>
+                <option value="2">Shooting Guard</option>
+                <option value="3">Small Forward</option>
+                <option value="4">Power Forward</option>
+                <option value="5">Center</option>
+            </select>
             <button id="add_button" type="submit">Add Player</button>
         </form>
     </div>
