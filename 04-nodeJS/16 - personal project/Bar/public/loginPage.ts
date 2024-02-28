@@ -16,7 +16,9 @@ async function handleRegisterSubmit(event: MouseEvent) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newUser),
     });
-    console.log("Registered successfully");
+    const responseData = await response.json();
+
+    alert(responseData.message);
 
     processUsersResponse(response);
   }
@@ -35,18 +37,17 @@ async function handleLoginSubmit(event: MouseEvent) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(credentials),
   });
-
   const loginResponse = await response.json();
-  console.log(loginResponse);
 
   if (response.ok) {
     window.location.href = "animalForm.html";
     await handleGetAnimal();
   } else {
+    alert(loginResponse.error);
+
     processUsersResponse(response);
   }
 }
-
 
 async function processUsersResponse(response: Response) {
   try {
