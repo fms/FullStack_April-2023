@@ -25,7 +25,17 @@ export function addTask(req: Request, res: Response, next: NextFunction) {
 export function updateTask(req: Request, res: Response, next: NextFunction) {
     const { id } = req.body;
     const taskIndex = getTaskById(id);
-    let changed = false;
+    let changed = false;            // Did we update any property?
+
+    if ('status' in req.body) {
+        const newStatus = req.body.status;
+        if (!(newStatus in TaskStatus)) {
+            throw new Error("Invalid new status");
+        }
+
+        tasks[taskIndex].status = newStatus;
+        changed = true;
+    }
 
     if ('title' in req.body) {
         tasks[taskIndex].title = req.body.title;
@@ -37,15 +47,6 @@ export function updateTask(req: Request, res: Response, next: NextFunction) {
         changed = true;
     }
 
-    if ('status' in req.body) {
-        const newStatus = req.body.status;
-        if (!(newStatus in TaskStatus)) {
-            throw new Error("Invalid new status");
-        }
-
-        tasks[taskIndex].status = newStatus;
-        changed = true;
-    }
 
     if (!changed) {
         throw new Error("Noting to update!");
