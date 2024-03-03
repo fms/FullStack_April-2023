@@ -4,18 +4,18 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Task Manager</title>
-        <link rel="stylesheet" href="dist/style.css" />
+        <link rel="stylesheet" href="dist/index.css" />
         <script src="dist/tasks.js" defer></script>
     </head>
     <body>
-        <h2>Add Task</h2>
         <form onsubmit="handleAddTask(event)">
-            <input type="text" name="title" placeholder="task title" />
-            <input type="text" name="description" placeholder="task description" />
-            <button type="submit">ADD</button>
+            <input name="title" type="text" required placeholder="task title">
+            <input name="description" type="text" required placeholder="task description">
+            <button type="submit">Add</button>
         </form>
-    
-        <button onclick="handleGetTasks()">Get Tasks</button>
-        <div id="tasks"></div>
+        <hr>
+        
+        <div id="errors" class="errors"></div>
+        <div id="tasks" class="tasks"></div>
     </body>
 </html>
