@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+  background-color: var(--body_background);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: var(--body_color);
+  transition: all 0.5s ease-in-out;
+}
+
+.App-link {
+  color: var(--link_color);
+}
