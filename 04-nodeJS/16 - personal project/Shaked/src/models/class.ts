@@ -7,17 +7,18 @@ export class Queue {
         public city: City,
         public date: Date,
         public time: Time,
-        ) {
+        public user: string,
+    ) {
     }
 }
 
 export class Time {
     constructor(public hours: number, public minutes: number) {
-        }
+    }
 }
 
 export enum City {
-    Gedera = "Gedera", 
+    Gedera = "Gedera",
     Ashdod = "Ashdod",
     Yavne = "Yavne"
 }
@@ -30,7 +31,8 @@ const QueueSchema = new Schema({
     time: {
         hours: { type: Number, required: true },
         minutes: { type: Number, required: true }
-    }
+    },
+    user: { type: Schema.Types.ObjectId, ref: "Users" },
 });
 
 export const QueueModel = model<Queue>('Queue', QueueSchema);

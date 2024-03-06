@@ -40,6 +40,7 @@ const buttons: Record<string, HTMLButtonElement | null> = {
     deleteAll: document.querySelector('#deleteAll'),
     updateQueue: document.querySelector('#updateQueue'),
     updateName: document.querySelector('#updateName'),
+    logOutButton: document.querySelector('#logoutButton'),
 };
 let hours: number;
 let minutes: number;
@@ -51,8 +52,9 @@ buttons.send?.addEventListener('click', () => { createQueueTable(); })
 buttons.deleteOne?.addEventListener('click', () => { showElements(inputValues.newNameInput), deleteByName(inputValues.newNameInput.value) })
 buttons.deleteAll?.addEventListener('click', deleteAll)
 buttons.updateQueue?.addEventListener('click', () => { showElements(userRequest), replaceQueue() })
-buttons.updateName?.addEventListener('click', () => { showElements(userRequest, inputValues.newNameInput), updateName(inputValues.newNameInput.value, inputValues.nameInput.value), inputValues.newNameInput.setAttribute('placeholder', 'Old Name');
-})
+buttons.updateName?.addEventListener('click', () => { showElements(userRequest, inputValues.newNameInput), updateName(inputValues.newNameInput.value, inputValues.nameInput.value), inputValues.newNameInput.setAttribute('placeholder', 'Old Name') })
+buttons.logOutButton?.addEventListener('click', logOut)
+
 
 function deleteAll() {
     const result = confirm('Are you sure you want to delete all of them?');
@@ -95,25 +97,29 @@ function getCityFromSelectValue(value: string): City {
             throw new Error(`Unknown city: ${value}`);
     }
 }
-
-function showData(element: HTMLDivElement, dataOfQueue: Queue[] | undefined, hours: number, minutes: number) {
-    if (Array.isArray(dataOfQueue)) {
-        element.innerHTML += `
-            <tbody>
-                ${dataOfQueue.map((user: Queue) => `
-                    <tr>
-                        <td>${user.name}</td>
-                        <td>${user.phonenumber}</td>
-                        <td>${user.city}</td>
-                        <td>${new Date(user.date).toISOString().split('T')[0]}</td>
-                        <td>${user.time ? user.time.hours + ':' + user.time.minutes : ''}</td>
-                    </tr>
-                `).join('')}
-            </tbody>`;
+function showData(element: HTMLDivElement, dataOfQueue: any[], hours: number, minutes: number) {
+    if (dataOfQueue !== undefined) {
+        if (Array.isArray(dataOfQueue)) {
+            element.innerHTML += `
+                <tbody>
+                    ${dataOfQueue.map((user: any) => `
+                        <tr>
+                            <td>${user.name}</td>
+                            <td>${user.phonenumber}</td>
+                            <td>${user.city}</td>
+                            <td>${new Date(user.date).toISOString().split('T')[0]}</td>
+                            <td>${user.time ? user.time.hours + ':' + user.time.minutes : ''}</td>
+                        </tr>
+                    `).join('')}
+                </tbody>`;
+        } else {
+            console.error('Data of queue is not an array:', dataOfQueue);
+        }
     } else {
-        console.error('Data of queue is undefined or not an array.' + dataOfQueue);
+        console.error('Data of queue is undefined');
     }
 }
+
 
 
 
@@ -137,11 +143,11 @@ async function replaceQueueByName(oldname: string, phonenumber: number, city: Ci
     }
 
     const data = await response.json();
-    if (!data || !data.queues) {
+    if (!data || !data.userqueues) {
         console.error('Missing queues in the response:', data);
     }
 
-    showData(queueTable, data.queues, hours, minutes);
+    showData(queueTable, data.userqueues, hours, minutes);
 }
 
 async function createQueueTable() {
@@ -168,13 +174,13 @@ async function createQueueTable() {
         }
 
         const data = await response.json();
-        if (!data || !data.queues) {
+        if (!data || !data.userqueues) {
             console.error('Missing new queue data in the response:', data);
             return;
         }
 
         queues.push(newUser);
-        showData(queueTable, data.queues, hours, minutes);
+        showData(queueTable, data.userqueues, hours, minutes);
         console.log(hours, minutes);
 
     } catch (error: any) {
@@ -208,10 +214,9 @@ async function getQueues() {
         throw new Error(`Failed to fetch queues. Status: ${response.status}`);
     }
     const data = await response.json();
-    if (!data || !data.queues)
+    if (!data || !data.userQueues)
         console.error('Missing products in the response:', data);
-    showData(queueTable, data.queues, hours, minutes);
-
+    showData(queueTable, data.userQueues, hours, minutes);
 }
 
 getQueues();
@@ -231,17 +236,18 @@ async function deleteByName(customerName: string) {
         const data = await response.json();
         console.log("Response from server:", data);
 
-        if (!data || !data.queues) {
+        if (!data || !data.userqueues) {
             console.error('Missing queues in the response:', data);
-            return; 
+            return;
         }
 
-        showData(queueTable, data.queues, hours, minutes);
+        showData(queueTable, data.userqueues, hours, minutes);
     } catch (error) {
         console.error("Error deleting customer:", error);
         alert("Error deleting customer. Please try again later.");
     }
 }
+
 async function deleteAllQueues() {
     try {
         const response = await fetch(`/api/queues/deleteall`, {
@@ -255,17 +261,31 @@ async function deleteAllQueues() {
 
         const data = await response.json();
         console.log("Response from server:", data);
-        alert(data.message); 
-        if (!data || !data.queues) {
+        alert(data.message);
+        if (!data || !data.userqueues) {
             console.error('Missing queues in the response:', data);
-            return; 
+            return;
         }
 
-        showData(queueTable, data.queues, hours, minutes);
+        showData(queueTable, data.userqueues, hours, minutes);
     } catch (error) {
         console.error("Error deleting all queues:", error);
         alert("Error deleting all queues. Please try again later.");
     }
+}
+
+
+async function logOut() {
+    const response = await fetch('/api/user/logout', {
+        method: "POST",
+        headers: { "content-type": "application/json" }
+    });
+    if (!response.ok) {
+        throw new Error(`Failed to fetch logout. Status: ${response.status}`);
+    }
+    
+    alert('Loggedout succesfuly!')
+    window.location.href = 'http://localhost:3000/';
 }
 
 function findByName(customerName: string) {
@@ -290,8 +310,8 @@ async function updateName(name: string, newName: string) {
 
     const data = await response.json();
 
-    if (!data || !data.queues) {
+    if (!data || !data.userqueues) {
         console.error('Missing queues in the response:', data);
     }
-    showData(queueTable, data.queues, hours, minutes);
+    showData(queueTable, data.userqueues, hours, minutes);
 }

@@ -13,5 +13,4 @@ router
   .delete("/delete/:name", checkExact(checkName), validate, controller.deleteByName)
   .delete("/deleteall", controller.deleteAll)
   .put("/replace/:name", checkExact(createQueueSchema), validate, controller.replaceQueueByName);
-
 export default router;

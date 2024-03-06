@@ -8,34 +8,34 @@ export const checkName = [
 ];
 
 export const checkPhoneNumber = [
-    body('phonenumber').trim()
-      .exists().withMessage('Phone number does not exist')
-      .isLength({ max: 10 }).withMessage('Phone length must be up to 10 numbers')
-  ];
+  body('phonenumber').trim()
+    .exists().withMessage('Phone number does not exist')
+    .isLength({ max: 10 }).withMessage('Phone length must be up to 10 numbers')
+];
 
-  export const checkTime = [
-    body('time').custom((value: Time) => {
-      const time = new Time(value.hours, value.minutes);
-  
-      function isValidTime(time: Time): boolean {
-        return time.hours >= 8 && time.hours <= 16 && (time.minutes === 0 || time.minutes === 30);
-      }
-  
-      if (!isValidTime(time)) {
-        throw new Error('Invalid time selected, time must be between 8 am to 16 pm in intervals of 30 minutes');
-      }
-  
-      return true;
-    })
+export const checkTime = [
+  body('time').custom((value: Time) => {
+    const time = new Time(value.hours, value.minutes);
+
+    function isValidTime(time: Time): boolean {
+      return time.hours >= 8 && time.hours <= 16 && (time.minutes === 0 || time.minutes === 30);
+    }
+
+    if (!isValidTime(time)) {
+      throw new Error('Invalid time selected, time must be between 8 am to 16 pm in intervals of 30 minutes');
+    }
+
+    return true;
+  })
 ];
 
 export const checkDate = [
-    body('date').exists().withMessage('Date does not exist')
-  ];
+  body('date').exists().withMessage('Date does not exist')
+];
 
-  export const checkCity = [
-    body('city').exists().withMessage('City does not exist')
-  ];
+export const checkCity = [
+  body('city').exists().withMessage('City does not exist')
+];
 
 
 
