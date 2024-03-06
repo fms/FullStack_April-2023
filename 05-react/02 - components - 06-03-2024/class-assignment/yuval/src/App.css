@@ -47,7 +47,12 @@
     gap: 5px;
 }
 
-.cody {
+.image {
     height: 100px;
     width: 100px;
+}
+
+h3 {
+    background-color: black;
+    color: white;
 }
