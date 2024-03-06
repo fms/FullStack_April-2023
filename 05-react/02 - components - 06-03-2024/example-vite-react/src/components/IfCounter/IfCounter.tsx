@@ -1,17 +1,20 @@
 import { useState } from "react";
-import logo from "../../assets/react.svg";
-import colors from "./counter.module.scss";
+import colors from "./IfCounter.module.scss";
 
-function Counter() {
+function IfCounter() {
   const [count, setCount] = useState(0);
   console.log("rendered useState");
 
+  let color = colors.odd;
+  if (count % 2 === 0) {
+    color = colors.even;
+  }
+
   return (
     <>
-      <button className={colors.colorred} onClick={handleClick}>
-        count is {count}
+      <button className={color} onClick={handleClick}>
+        If count is {count}
       </button>
-      <img src={logo} alt="" />
     </>
   );
 
@@ -21,4 +24,4 @@ function Counter() {
   }
 }
 
-export default Counter;
+export default IfCounter;

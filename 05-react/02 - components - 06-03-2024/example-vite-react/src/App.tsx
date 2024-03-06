@@ -3,6 +3,9 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import Counter from "./components/Counter/Counter";
 import StatelessCounter from "./components/StatelessCounter/StatelessCounter";
+import FunctionCounter from "./components/FunctionCounter/FunctionCounter";
+import IfCounter from "./components/IfCounter/IfCounter";
+import TrinaryCounter from "./components/TrinaryCounter/TrinaryCounter";
 
 function App() {
   return (
@@ -19,6 +22,9 @@ function App() {
       <h1>Vite + React</h1>
       <div className="card">
         <Counter />
+        <FunctionCounter />
+        <IfCounter />
+        <TrinaryCounter />
         <StatelessCounter />
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR

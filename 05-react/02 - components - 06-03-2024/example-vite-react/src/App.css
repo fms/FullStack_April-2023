@@ -6,6 +6,10 @@
   border: solid 1px black;
 }
 
+.colorred {
+  background-color: green;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
