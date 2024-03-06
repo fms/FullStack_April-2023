@@ -10,6 +10,7 @@ function Article() {
                 <img src={cody} className='cody' />
                 <p>Cody Rhodes warns The Rock not to talk his about dog ever again 👀 <br />
                 The Rock previously referred to Cody’s dog as a “goofy ass dog”</p>
+                <p>asfadfa</p>
             </div>
         </div>
         </>
