@@ -1,5 +1,5 @@
 import { useState } from "react";
-import logo from "../../assets/react.svg";
+import logo from "@assets/react.svg";
 import colors from "./counter.module.scss";
 
 function Counter() {
