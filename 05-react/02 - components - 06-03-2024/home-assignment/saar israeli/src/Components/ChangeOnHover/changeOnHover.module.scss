@@ -1,0 +1,19 @@
+.changeOnHover {
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+}
+
+.changeOnHover:hover{ 
+    background-color: red;
+}
+
+.changeOnHoverRoot{
+    background-color: green;
+    width: 100px;
+    height: 100px;
+}
+
+.changeOnHoverRoot:hover {
+    background-color: red;
+}
