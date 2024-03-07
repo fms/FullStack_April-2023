@@ -1,0 +1,17 @@
+.counterButtonsWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    
+    .counterButtonDiv{
+        display: flex;
+        gap: 40px;
+        
+        .buttonCounter {
+            width: 100px;
+            height: 50px;
+        }
+    }
+}
