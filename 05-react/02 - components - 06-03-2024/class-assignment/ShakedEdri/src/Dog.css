@@ -1,0 +1,18 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.dog {
+  border: 1px solid black;
+  width: 400px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+#pekinese {
+  width: 100%;
+  height: 100%;
+}
