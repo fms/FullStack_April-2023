@@ -1,0 +1,16 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+}
+
+.follower {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  pointer-events: none;
+}
