@@ -1,0 +1,17 @@
+.counter{
+    background-color: rgb(58, 210, 111);
+    height: 150px;
+    width: 280px;
+    border-radius: 25px;
+    margin-left: 420px;
+    button{
+        width: 100px;
+        margin: 20px;
+    }
+    p{
+        margin-left: 110px;
+        margin-top: 2px;
+        font-size: 20px;
+        
+    }
+}

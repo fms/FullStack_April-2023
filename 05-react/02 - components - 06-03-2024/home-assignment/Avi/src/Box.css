@@ -1,0 +1,16 @@
+.redBox {
+    height: 150px;
+    width: 150px;
+    background-color: rgb(183, 0, 255);
+    position: absolute;
+    top: 10%;
+    left: 50%;
+
+    p {
+        margin: 55px;
+    }
+}
+
+.redBox:hover {
+    background-color: greenyellow;
+}
