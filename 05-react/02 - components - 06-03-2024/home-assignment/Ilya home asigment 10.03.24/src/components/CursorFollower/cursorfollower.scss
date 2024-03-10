@@ -1,0 +1,9 @@
+.cursor-follower {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(243, 191, 159);
+    border-radius: 50%;
+    pointer-events: none; /* Allows the cursor to still interact with elements below */
+    z-index: 9999; /* Ensures it appears on top of other elements */
+}
