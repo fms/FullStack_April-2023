@@ -1,0 +1,40 @@
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.restart {
+    margin-left: 100%;
+    border: solid 1px black;
+}
+
+.main-box {
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    color: white;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.colored-boxes {
+    display: flex;
+    justify-content: center;
+}
+
+.click-count {
+    position: relative;
+    top: 25%;
+    color: white;
+}
