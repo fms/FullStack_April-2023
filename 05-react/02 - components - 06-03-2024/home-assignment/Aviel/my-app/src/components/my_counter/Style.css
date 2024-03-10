@@ -1,0 +1,15 @@
+.body {
+    background-color: blue;
+  }
+
+  .button{
+    background-color: blueviolet;
+  }
+
+  .color-red {
+    background-color: red;
+  }
+
+  .color-red:hover {
+    background-color: yellow;
+  }
