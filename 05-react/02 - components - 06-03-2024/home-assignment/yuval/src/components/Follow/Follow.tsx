@@ -6,7 +6,7 @@ function Follow() {
 
         useEffect(() => {
             const updateMousePosition = (ev: { clientX: any; clientY: any; }) => {
-                setPosition({ x: ev.clientX -550 , y: ev.clientY -650 });
+                setPosition({ x: ev.clientX + 5, y: ev.clientY });
             };
         
             document.addEventListener('mousemove', updateMousePosition);
@@ -19,7 +19,7 @@ function Follow() {
         return (
             <div
                 className={follower.follower}
-                style={{ transform: `translate(${position.x}px, ${position.y}px)` }}
+                style={{ left: position.x, top: position.y }}
             />
         );
 }
