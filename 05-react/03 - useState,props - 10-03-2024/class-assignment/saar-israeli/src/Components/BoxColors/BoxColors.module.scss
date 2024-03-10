@@ -1,14 +1,15 @@
 .wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     margin: 0 auto;
+    max-width: 200px;
+    max-height: 400px;
 
     .smallBoxes {
         display: flex;
-        justify-content: center;
-        align-items: center;
+        max-width: 200px;
+        max-height: 65px;
     }
 
     .mainBox {
