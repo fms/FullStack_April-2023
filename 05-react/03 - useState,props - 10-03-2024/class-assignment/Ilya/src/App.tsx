@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import Box1 from "./components/Box1/Box1";
-import ColoredBox from './components/ColoredBox/ColoredBox';
+import ColoredBox from "./components/ColoredBox/ColoredBox";
 import './App.css'
 
 
