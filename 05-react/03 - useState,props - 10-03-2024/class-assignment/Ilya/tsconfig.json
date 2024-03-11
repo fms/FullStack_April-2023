@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "src/components/Box1", "src/components/ColoredBox"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
