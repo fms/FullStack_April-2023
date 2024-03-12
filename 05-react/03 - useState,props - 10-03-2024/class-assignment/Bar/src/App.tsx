@@ -3,15 +3,15 @@ import "./styles.scss"
 import Box from "./components/Box/Box"
 
 function App() {
-  const [color, setColor] = useState("redBox")
+  const [color, setColor] = useState("red")
 
-  function handleClick(className: string) {
-    setColor(className);
+  function handleClick(backgroundColor: string) {
+    setColor(backgroundColor);
   }
 
   return (
     <>
-      <div className={color}>
+      <div style={{ backgroundColor: color }} className="mainBox">
       </div>
       <Box handleClick={handleClick} />
     </>

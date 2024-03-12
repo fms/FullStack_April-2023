@@ -1,22 +1,11 @@
-.blueBox {
-  background-color: rgb(4, 0, 255);
-  height: 5rem;
-  width: 5rem;
-  margin-bottom: 5px ;
+.boxContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.purpleBox {
-  background-color: rgb(255, 0, 242);
+.box {
   height: 5rem;
   width: 5rem;
-  margin-bottom: 5px ;
-
-}
-
-.yellowBox {
-  background-color: rgb(238, 255, 0);
-  height: 5rem;
-  width: 5rem;
-  margin-bottom: 5px ;
-
+  margin-bottom: 5px;
+  margin-left: 2rem;
 }
