@@ -1,6 +1,11 @@
-.redBox {
-  background-color: red;
-  height: 5rem;
-  width: 5rem;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainBox {
+  height: 10rem;
+  width: 10rem;
   margin-bottom: 5px;
+  margin-left: 6.5em;
 }
