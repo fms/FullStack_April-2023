@@ -1,0 +1,40 @@
+body{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(197, 197, 197);
+}
+.wrapper {
+    border: 1px solid black;
+    background-color: rgb(206, 206, 206);
+    padding: 15px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    img{
+        width: 100%;
+    }
+}
+.wrapper.opacity {
+    opacity: 0.5;
+  }
+
+hr{
+    width: 100%;
+    background-color: black;
+}
+button {
+    padding: 10px;
+    border: 1px rgb(155, 155, 155) solid;
+    border-radius: 5px;
+    background-color: white;
+}
+button:hover{
+    opacity: 0.5;
+}
+
+textarea{
+    padding: 10%;
+}
