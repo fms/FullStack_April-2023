@@ -1,8 +1,36 @@
+.smartphones, .laptops, .fragrances, .skincare, .groceries, .home-decoration {
+    height: 600px;
+    width: 575px;
+    border: solid 1px black;
+}
+
 .smartphones {
-    background-color: green;
-    border: solid black 1px;
+    background-color: rgb(65, 130, 130);
 }
 
 .laptops {
-    background-color: red;
+    background-color: rgba(190, 190, 34, 0.743);
+}
+
+.fragrances {
+    background-color: rgb(239, 123, 123);
+}
+
+.skincare {
+    background-color: pink;
+}
+
+.groceries {
+    background-color: rgb(24, 164, 199);
+}
+
+.home-decoration {
+    background-color: rgb(175, 135, 175);
+}
+
+.priceDetails {
+    img {
+        height: 250px;
+        width: 250px;
+    }
 }

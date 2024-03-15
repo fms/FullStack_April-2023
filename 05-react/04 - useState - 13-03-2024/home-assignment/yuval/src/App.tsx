@@ -6,7 +6,7 @@ function App() {
         <>
             <ProductsList />
         </>
-    )
+    );
 }
 
 export default App
