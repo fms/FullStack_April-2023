@@ -16,9 +16,9 @@ function MainProductWrapper() {
     setProductsDom(productsDom.filter((product) => product.id !== id));
   };
 
-  const backToProducts = () => {
-    setInProduct(!inProduct);
-  };
+  // const backToProducts = () => {
+  //   setInProduct(!inProduct);
+  // };
 
   const getProducts = () => {
     {
