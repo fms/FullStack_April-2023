@@ -2,23 +2,31 @@ import Style from "./MainProductWrapper.module.scss";
 import { ProductsData } from "../../Data/ProductsData/ProductsData";
 import Products from "../Products/Products";
 import { useState } from "react";
+import ProductModule from "../../Module/ProductModule/ProductModule";
+
+let oldData :ProductModule[];
 
 function MainProductWrapper() {
   const [productsDom, setProductsDom] = useState(ProductsData);
   const [inProduct, setInProduct] = useState(false);
 
+
+
   const getProduct = (id: number): any => {
     setInProduct(!inProduct);
+    oldData = productsDom;
     setProductsDom(productsDom.filter((product) => product.id === id));
   };
 
   const removeProduct = (id: number): any => {
+    oldData = productsDom;
     setProductsDom(productsDom.filter((product) => product.id !== id));
   };
 
-  // const backToProducts = () => {
-  //   setInProduct(!inProduct);
-  // };
+  const backToProducts = () :any => {
+    setProductsDom(oldData);
+    setInProduct(!inProduct);
+  };
 
   const getProducts = () => {
     {
@@ -48,7 +56,7 @@ function MainProductWrapper() {
     <>
       {!inProduct && getProducts()}
 
-      {inProduct && <Products product={productsDom[0]} />}
+      {inProduct && <Products product={productsDom[0]} backToProducts={ backToProducts} />}
     </>
   );
 }
