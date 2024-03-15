@@ -1,0 +1,39 @@
+.imageSlider{
+    width: 400px;
+    height: 400px;
+    position: relative;
+    margin: 0 auto;
+    z-index: 0;
+}
+
+.imageItem{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    background-position: center;
+    position: relative;
+    background-size: cover;
+    z-index: 0;
+}
+
+.leftArrow{
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+    left: 32px;
+    font-size: 45px;
+    color: #fff;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.rightArrow{
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+    right: 32px;
+    font-size: 45px;
+    color: #fff;
+    z-index: 1;
+    cursor: pointer;
+}
