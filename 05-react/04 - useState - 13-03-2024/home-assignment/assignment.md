@@ -8,6 +8,7 @@ The original data was fetched from https://dummyjson.com/
 
 3. Add a button for filtering products by rating. Only show products with a 4.5 rating or above.
 
-4. Styling: Set a different background color for different product categories.
+4. 
+Styling: Set a different background color for different product categories.
 
 5. Styling: make the cards presentable using SCSS.
