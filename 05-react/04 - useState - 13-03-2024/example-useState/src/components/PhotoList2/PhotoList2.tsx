@@ -15,8 +15,9 @@ export default function PhotoList() {
       setPhotosArray(
         photosArray.map((photo) => {
           if (photo.id === id) {
-            photo.title = newName;
-            // return {...photo, title: newName};
+            // This will mutate the original photo. We get the same effect by creating a new Photo object
+            // photo.title = newName;
+            return {...photo, title: newName};
           }
 
           return photo;
