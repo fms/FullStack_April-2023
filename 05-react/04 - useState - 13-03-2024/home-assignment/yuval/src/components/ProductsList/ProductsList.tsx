@@ -7,7 +7,7 @@ export default function ProductsList () {
     const [productsArray, setProductsArray] = useState(products);
     const [isFiltered, setIsFiltered] = useState(false);
 
-    const notFilteredArr = productsArray.map((product) => (
+    const notFilteredArr = productsArray.filter((product) => !(product.isRemoved)).map((product) => (
         <ProductItem
             key={product.id}
             product={product}
@@ -15,7 +15,7 @@ export default function ProductsList () {
         />
     ));
 
-    const filteredArr = productsArray.filter((product) => product.rating >= 4.5).map((product) => (
+    const filteredArr = productsArray.filter((product) => product.rating >= 4.5 && !(product.isRemoved)).map((product) => (
         <ProductItem
             key={product.id}
             product={product}
@@ -24,6 +24,8 @@ export default function ProductsList () {
     ));
 
     function handleDelete(id: number) {
+        const index = productsArray.findIndex((product) => product.id === id);
+        productsArray[index].isRemoved = true;
         setProductsArray(productsArray.filter((product) => product.id !== id));
     }
 
