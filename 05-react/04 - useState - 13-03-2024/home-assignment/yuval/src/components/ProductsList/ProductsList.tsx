@@ -5,26 +5,43 @@ import style from './ProductsList.module.scss'
 
 export default function ProductsList () {
     const [productsArray, setProductsArray] = useState(products);
+    const [isFiltered, setIsFiltered] = useState(false);
+
+    const notFilteredArr = productsArray.map((product) => (
+        <ProductItem
+            key={product.id}
+            product={product}
+            onDelete={handleDelete}
+        />
+    ));
+
+    const filteredArr = productsArray.filter((product) => product.rating >= 4.5).map((product) => (
+        <ProductItem
+            key={product.id}
+            product={product}
+            onDelete={handleDelete}
+        />
+    ));
 
     function handleDelete(id: number) {
         setProductsArray(productsArray.filter((product) => product.id !== id));
     }
 
     function filter () {
-        setProductsArray(productsArray.filter((product) => product.rating >= 4.5));
+        if(isFiltered) {
+            setProductsArray(products);
+        }
+        else {
+            setProductsArray(productsArray.filter((product) => product.rating >= 4.5));
+        }
+        setIsFiltered((prev) => !prev);
     }
 
     return (
         <>
-            <button onClick={filter}>Show Best Items Only</button>
+            <button onClick={filter}>{isFiltered ? "Show All Items" : "Show Best Items Only"}</button>
             <div className={style.ProductsList}>
-                {productsArray.map((product) => (
-                            <ProductItem
-                                key={product.id}
-                                product={product}
-                                onDelete={handleDelete}
-                            />
-                ))}
+                {isFiltered ? filteredArr : notFilteredArr}
             </div>
         </>    
     );
