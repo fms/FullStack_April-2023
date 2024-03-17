@@ -1,0 +1,83 @@
+.product-card {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    display: flex;
+
+    &.smartphones {
+        background-color: rgb(129, 164, 175);
+    }
+
+    &.laptops {
+        background-color: rgb(116, 189, 116);
+    }
+
+    &.fragrances {
+        background-color: rgb(203, 150, 158);
+    }
+
+    &.skincare {
+        background-color: rgb(202, 174, 132);
+    }
+
+    &.fragrances {
+        background-color: rgb(203, 150, 158);
+    }
+
+    &.fragrances {
+        background-color: rgb(203, 150, 158);
+    }
+
+    &.groceries {
+        background-color: rgb(133, 117, 161);
+    }
+
+    &.home-decoration {
+        background-color: rgb(152, 148, 113);
+    }
+
+    .image-gallery {
+        margin-right: 20px;
+
+        img {
+            max-width: 300px;
+            cursor: pointer;
+        }
+
+        .thumbnails {
+            display: flex;
+            margin-top: 10px;
+
+            img {
+                width: 50px;
+                cursor: pointer;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .description-box {
+        flex: 1;
+
+        h3 {
+            font-size: 20px;
+        }
+    }
+
+    .large-image-view {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        img {
+            max-width: 50%;
+            max-height: 50%;
+        }
+    }
+}
