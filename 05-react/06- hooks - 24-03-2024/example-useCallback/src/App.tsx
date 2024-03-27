@@ -36,7 +36,6 @@ function App() {
         type="number"
         onChange={(e) => {
           setStartNumber((e.target as HTMLInputElement).valueAsNumber);
-          createItems();
         }}
         value={startNumber}
       />
