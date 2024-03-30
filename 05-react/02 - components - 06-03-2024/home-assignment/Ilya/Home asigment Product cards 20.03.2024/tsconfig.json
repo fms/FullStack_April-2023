@@ -6,11 +6,6 @@
     "module": "ESNext",
     "skipLibCheck": true,
 
-    /* path aliases */
-    "paths": {
-      "@assets/*": ["./src/assets/*"]
-    },
-
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
