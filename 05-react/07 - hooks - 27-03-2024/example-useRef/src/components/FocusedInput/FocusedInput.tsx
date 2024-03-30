@@ -1,8 +1,9 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function FocusedInput() {
   const [name, setName] = useState("");
   const inputElement = useRef(null);
+  const prevName = useRef("");
 
   function focusText(ev: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     const target: HTMLInputElement = inputElement.current!;
@@ -11,6 +12,9 @@ export default function FocusedInput() {
     target.focus();
   }
 
+  useEffect(() => {
+    prevName.current = name;
+  }, [name]);
   return (
     <div>
       <input
@@ -18,7 +22,9 @@ export default function FocusedInput() {
         value={name}
         onChange={(ev) => setName(ev.target.value)}
       />
-      <div>The name is {name}</div>
+      <div>
+        The name is {name} and it used to be {prevName.current}
+      </div>
       <button onClick={focusText}>Set Focus to text</button>
     </div>
   );
