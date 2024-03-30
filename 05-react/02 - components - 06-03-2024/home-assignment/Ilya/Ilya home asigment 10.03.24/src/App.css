@@ -2,8 +2,11 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: left;
-  background-color: aliceblue;
+  text-align: center;
+}
+
+.colorred {
+  background-color: green;
 }
 
 .logo {
@@ -36,9 +39,11 @@
 
 .card {
   padding: 2em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
 }
 
 .read-the-docs {
   color: #888;
 }
-
