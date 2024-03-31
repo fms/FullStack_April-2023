@@ -2,8 +2,7 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: left;
-  background-color: aliceblue;
+  text-align: center;
 }
 
 .logo {
@@ -41,4 +40,3 @@
 .read-the-docs {
   color: #888;
 }
-

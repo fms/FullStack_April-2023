@@ -1,5 +1,5 @@
 {
-  "name": "example-usestate",
+  "name": "products",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,19 +10,25 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@asuikit/modals": "^6.0.34",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-confirm-alert": "^3.0.6",
+    "react-dialog-confirm": "^1.0.3",
+    "react-dom": "^18.2.0",
+    "saas": "^1.0.0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.64",
-    "@types/react-dom": "^18.2.21",
-    "@typescript-eslint/eslint-plugin": "^7.1.1",
-    "@typescript-eslint/parser": "^7.1.1",
+    "@types/react": "^18.2.56",
+    "@types/react-dom": "^18.2.19",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "@typescript-eslint/parser": "^7.0.2",
     "@vitejs/plugin-react": "^4.2.1",
-    "eslint": "^8.57.0",
+    "eslint": "^8.56.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
+    "sass": "^1.72.0",
     "typescript": "^5.2.2",
-    "vite": "^5.1.6"
+    "vite": "^5.1.4"
   }
 }
