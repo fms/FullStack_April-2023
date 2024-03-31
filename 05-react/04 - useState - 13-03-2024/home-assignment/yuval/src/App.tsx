@@ -1,7 +1,8 @@
 import ProductsList from './components/ProductsList/ProductsList'
-import './App.css'
+import './App.css';
 
 function App() {
+
     return (
         <>
             <ProductsList />
