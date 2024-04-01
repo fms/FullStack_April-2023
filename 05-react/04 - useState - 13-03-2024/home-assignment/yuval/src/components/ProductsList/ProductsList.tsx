@@ -10,11 +10,14 @@ export default function ProductsList () {
 
     return (
         <>
-            <input
+            <label> Filter Products {" "}
+                <input
                 type="text"
                 value={search}
                 onChange={(ev) => setSearch(ev.target.value)}
-            />
+                />
+            </label>
+            {" "}
             <SearchPanel query={query} />
         </>    
     );

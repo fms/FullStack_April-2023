@@ -15,7 +15,7 @@ export default function SearchPanel({ query }: SearchPanelProps) {
 
     useEffect(() => {
         const controller = new AbortController();
-        fetch(`https://dummyjson.com/products/search?q=${query}`, {
+        fetch(`https://dummyjson.com/products/search?q=${query}&limit=100`, {
         signal: controller.signal,
         })
         .then((res) => res.json())
