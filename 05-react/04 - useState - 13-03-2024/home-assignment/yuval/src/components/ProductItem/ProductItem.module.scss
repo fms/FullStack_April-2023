@@ -1,31 +1,31 @@
-.smartphones, .laptops, .fragrances, .skincare, .groceries, .home-decoration {
-    height: 600px;
-    width: 575px;
-    border: solid 1px black;
+$categories: smartphones, laptops, fragrances, skincare, groceries, home-decoration, furniture, tops, womens-dresses, womens-shoes, mens-shirts, mens-shoes, mens-watches, womens-watches, womens-bags, womens-jewellery, sunglasses, automotive, motorcycle, lighting;
+
+@mixin random-color() {
+    $minBrightness: 60%;
+    
+    $r: random(256);
+    $g: random(256);
+    $b: random(256);
+    
+    $brightness: 0.299 * $r + 0.587 * $g + 0.114 * $b;
+
+    @while $brightness < $minBrightness {
+        $r: random(256);
+        $g: random(256);
+        $b: random(256);
+        $brightness: 0.299 * $r + 0.587 * $g + 0.114 * $b;
+    }
+
+    background-color: rgb($r, $g, $b);
 }
 
-.smartphones {
-    background-color: rgb(65, 130, 130);
-}
-
-.laptops {
-    background-color: rgba(190, 190, 34, 0.743);
-}
-
-.fragrances {
-    background-color: rgb(239, 123, 123);
-}
-
-.skincare {
-    background-color: pink;
-}
-
-.groceries {
-    background-color: rgb(24, 164, 199);
-}
-
-.home-decoration {
-    background-color: rgb(175, 135, 175);
+@each $category in $categories {
+    .#{$category} {
+        height: 600px;
+        width: 575px;
+        border: solid 1px black;
+        @include random-color();
+    }
 }
 
 .priceDetails {

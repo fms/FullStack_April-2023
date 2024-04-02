@@ -4,6 +4,11 @@
     align-items: center;
     position: relative;
 }
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
+}
 
 .thumbnailImage {
     width: 100%;
@@ -15,6 +20,13 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
+}
+
+.headerWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1vh;
 }
 
 .thumbnailTitle {
