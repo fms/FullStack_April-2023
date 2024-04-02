@@ -1,10 +1,11 @@
-import { Products } from "./components/productsList/Products"
+import { ProductList } from "./components/productList/ProductList"
+import "./product.scss"
 
 function App() {
 
   return (
     <>
-      <Products />
+      <ProductList />
     </>
   )
 }
