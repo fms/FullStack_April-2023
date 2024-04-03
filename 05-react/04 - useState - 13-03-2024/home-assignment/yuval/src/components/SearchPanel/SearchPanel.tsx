@@ -13,6 +13,7 @@ export default function SearchPanel({ query }: SearchPanelProps) {
     const [removedItemIds, setRemovedItemIds] = useState<number[]>([]);
     const [isFiltered, setIsFiltered] = useState(false);
     const [skip, setSkip] = useState(0);
+    const [total, setTotal] = useState<number>();
 
     useEffect(() => {
         const controller = new AbortController();
@@ -23,6 +24,7 @@ export default function SearchPanel({ query }: SearchPanelProps) {
         .then((obj) => {
             setProducts(obj.products);
             setProductsArray(obj.products);
+            setTotal(obj.total);
         })
 
         return () => {
@@ -73,7 +75,7 @@ export default function SearchPanel({ query }: SearchPanelProps) {
         setIsFiltered((prev) => !prev);
     }
 
-    function nextPage (buttonPressed: string) {
+    function changePage (buttonPressed: string) {
         if(buttonPressed === "next") {
             setSkip((prev) => prev + 20);
         }
@@ -84,13 +86,13 @@ export default function SearchPanel({ query }: SearchPanelProps) {
 
     return (
         <>
-            <button onClick={filter}>{isFiltered ? "Show All Items" : "Show Best Items Only"}</button>
+            <button onClick={filter}>{isFiltered ? "Show All" : "Show Best"}</button>
             <br/>
-            { skip == 0 || products.length < 20 ? "" :
-                <button onClick={() => nextPage("prev")}>Previous Page</button>
+            { skip == 0 || (products.length < 20 && skip == 0) ? "" :
+                <button onClick={() => changePage("prev")}>Previous Page</button>
             }
-            { skip == 80 || products.length < 20 ? "" :
-                <button onClick={() => nextPage("next")}>Next Page</button>
+            { skip == total! - 20 || (products.length < 20 && skip != total! - 20) ? "" :
+                <button onClick={() => changePage("next")}>Next Page</button>
             }
             <div className={style.ProductsList}>
                 {isFiltered ? filteredArr : notFilteredArr}
