@@ -12,10 +12,11 @@ export default function SearchPanel({ query }: SearchPanelProps) {
     const [productsArray, setProductsArray] = useState(products);
     const [removedItemIds, setRemovedItemIds] = useState<number[]>([]);
     const [isFiltered, setIsFiltered] = useState(false);
+    const [skip, setSkip] = useState(0);
 
     useEffect(() => {
         const controller = new AbortController();
-        fetch(`https://dummyjson.com/products/search?q=${query}&limit=100`, {
+        fetch(`https://dummyjson.com/products/search?q=${query}&skip=${skip}&limit=20`, {
         signal: controller.signal,
         })
         .then((res) => res.json())
@@ -27,7 +28,7 @@ export default function SearchPanel({ query }: SearchPanelProps) {
         return () => {
         controller.abort();
         };
-    }, [query]);
+    }, [query, skip]);
 
     const filteredArr = useMemo(() => {
         return productsArray.filter((product) => product.rating >= 4.5 && !product.isRemoved && !removedItemIds.includes(product.id)).map((product) => (
@@ -72,9 +73,25 @@ export default function SearchPanel({ query }: SearchPanelProps) {
         setIsFiltered((prev) => !prev);
     }
 
+    function nextPage (buttonPressed: string) {
+        if(buttonPressed === "next") {
+            setSkip((prev) => prev + 20);
+        }
+        else if(buttonPressed === "prev") {
+            setSkip((prev) => prev - 20);
+        }
+    }
+
     return (
         <>
             <button onClick={filter}>{isFiltered ? "Show All Items" : "Show Best Items Only"}</button>
+            <br/>
+            { skip == 0 || products.length < 20 ? "" :
+                <button onClick={() => nextPage("prev")}>Previous Page</button>
+            }
+            { skip == 80 || products.length < 20 ? "" :
+                <button onClick={() => nextPage("next")}>Next Page</button>
+            }
             <div className={style.ProductsList}>
                 {isFiltered ? filteredArr : notFilteredArr}
             </div>
