@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import User from "../../types/user";
+import NavBar from "../../components/NavBar/NavBar";
 
 export default function UserPage() {
     const [user, setUser] = useState<User>();
@@ -17,9 +18,11 @@ export default function UserPage() {
         return () => {
         controller.abort();
         };
-    })
+    }, [id])
+
     return (
         <>
+            <NavBar />
             {!user ? "" : 
                 <div>
                     <h1>{user.firstName} {user.lastName} - {user.username}</h1>
