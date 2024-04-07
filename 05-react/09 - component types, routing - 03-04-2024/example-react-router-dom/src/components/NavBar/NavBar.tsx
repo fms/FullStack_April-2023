@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import HiddenNavLink from "../HiddenNavLink/HiddenNavLink";
 
 export default function NavBar() {
   return (
@@ -19,6 +20,7 @@ export default function NavBar() {
       <NavLink to="/user/3" className="Link">
         User 3
       </NavLink>
+      <HiddenNavLink to="/about">Hidden when active</HiddenNavLink>
     </div>
   );
 }
