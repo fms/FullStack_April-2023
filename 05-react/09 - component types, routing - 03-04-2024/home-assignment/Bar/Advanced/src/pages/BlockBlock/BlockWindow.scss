@@ -1,0 +1,30 @@
+.blocker {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: burlywood;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+  p {
+    font-size: 3rem;
+  }
+
+  button {
+    background-color: beige;
+    border: none;
+    width: 10rem;
+    height: 4rem;
+    border-radius: 10px;
+  }
+
+  .blockerButtons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+}
