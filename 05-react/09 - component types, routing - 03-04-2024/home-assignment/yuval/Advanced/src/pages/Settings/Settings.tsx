@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useBlocker, useNavigate } from "react-router-dom";
 import { ChangeEvent, useState } from "react";
 import Confirm from "../../components/Confirm/Confirm";
 import "../App.css";
@@ -8,6 +8,12 @@ export default function Settings() {
     const [lastName, setLastName] = useState("");
     const [showConfirmation, setShowConfirmation] = useState(false);
     const navigate = useNavigate();
+
+    let blocker = useBlocker(
+        ({ currentLocation, nextLocation }) =>
+            (firstName !== "" || lastName !== "") &&
+            currentLocation.pathname !== nextLocation.pathname
+        );
 
     function goHome(ev: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
         ev.preventDefault();
@@ -40,10 +46,10 @@ export default function Settings() {
                 <br/>
                 <button onClick={goHome}>Home</button>
             </form>
-            {showConfirmation && (
+            { blocker && (
                 <Confirm
-                    onConfirm={() => navigate("/")}
-                    onCancel={() => setShowConfirmation(false)}
+                    onConfirm={() => blocker?.proceed()}
+                    onCancel={() => blocker?.reset()}
                     />
             )}
         </>
