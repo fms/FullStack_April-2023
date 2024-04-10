@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useBlocker } from 'react-router-dom'
-import BlockWindow from '../BlockBlock/BlockWindow'
+import BlockWindow from '../BlockWindow/BlockWindow'
 import "./settings.scss"
 
 function Settings() {
