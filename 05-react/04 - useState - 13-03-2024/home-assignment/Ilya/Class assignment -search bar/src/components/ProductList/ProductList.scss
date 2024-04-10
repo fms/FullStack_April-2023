@@ -1,0 +1,12 @@
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  
+    .product-card {
+      border: 1px solid #ccc;
+      padding: 15px;
+      height: 450px;
+      text-align: center;
+    }
+  }

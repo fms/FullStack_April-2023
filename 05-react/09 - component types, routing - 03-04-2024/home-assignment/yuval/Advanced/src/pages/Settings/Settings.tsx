@@ -6,7 +6,6 @@ import "../App.css";
 export default function Settings() {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
-    const [showConfirmation, setShowConfirmation] = useState(false);
     const navigate = useNavigate();
 
     let blocker = useBlocker(
@@ -17,12 +16,7 @@ export default function Settings() {
 
     function goHome(ev: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
         ev.preventDefault();
-        if(!firstName && !lastName) {
-            navigate("/");
-        }
-        else {
-            setShowConfirmation(true);
-        }
+        navigate("/");
     }
 
     function handleChange(ev: ChangeEvent<HTMLInputElement>, key: "first" | "last") {
@@ -44,12 +38,14 @@ export default function Settings() {
                     <input name="last" type="text" onChange={(ev) => handleChange(ev, "last")} />
                 </div>
                 <br/>
-                <button onClick={goHome}>Home</button>
+                {blocker.state == "unblocked" &&
+                    <button onClick={goHome}>Home</button>
+                }
             </form>
-            { blocker && (
+            {blocker.state == "blocked" && (
                 <Confirm
-                    onConfirm={() => blocker?.proceed()}
-                    onCancel={() => blocker?.reset()}
+                    onConfirm={() => blocker.proceed()}
+                    onCancel={() => blocker.reset()}
                     />
             )}
         </>
