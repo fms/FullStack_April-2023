@@ -9,7 +9,7 @@ function NavBar() {
 
     useEffect(() => {
         if (counter > 0) {
-            navigate(`/users/${counter}`, { replace: true });
+            navigate(`/users/${counter}`);
         }
     }, [counter]);
 

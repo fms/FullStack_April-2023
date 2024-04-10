@@ -1,0 +1,117 @@
+.product-card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  .carousel {
+    width: 100%;
+    margin-top: 20px;
+    
+
+    //.thumbnails //
+
+    img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+  }
+
+  &__info {
+    padding: 20px;
+  }
+  &__title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #333;
+  }
+  &__description {
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  &__price {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: rgb(2, 2, 2);
+    margin-bottom: 10px;
+  }
+  &__discount {
+    background-color: #f00;
+    color: #fff;
+    font-size: 0.8rem;
+    padding: 2px 5px;
+    border-radius: 3px;
+    margin-left: 10px;
+  }
+  &__rating {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #f00;
+    font-weight: 600;
+  }
+  .star-icon {color: #ffae00;
+    font-size: 20px;
+  }
+  
+  &__out-of {
+    font-size: 0.8rem;
+    color: #666;
+    margin-left: 10px;
+  }
+  &__stock {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #333;
+  }
+  &__brand {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  &__category {
+    font-size: 0.9rem;
+    color: #333;
+  }
+  &__actions {
+    padding: 10px;
+    text-align: right;
+  }
+  &--smartphones{
+    background-color: #bab8f0;
+  }
+  &--laptops {
+    background-color: #e6e6fa;
+  }
+  &--fragrances{
+    background-color: #e3efd0;
+  }
+  &--skincare {
+    background-color: #faf6e6;
+  }
+  &--groceries {
+    background-color: #fae6e6;
+  }
+  &--home-decoration{
+    background-color: #cec5c5;
+  }
+  
+}
+
+.rating-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: rgb(255, 217, 0);
+  color: #333;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
