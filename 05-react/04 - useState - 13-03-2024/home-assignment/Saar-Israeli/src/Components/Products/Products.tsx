@@ -13,7 +13,7 @@ const Products = ({ product , backToProducts }: ProductProps) => {
   const inProduct = true;
   return (
     <>
-      <div className = {Style.productContainer}>
+      <div className = {Style.productContainer} key={product.id}>
         <button className={Style.backToProducts} onClick={() => backToProducts(!inProduct)}>{"<"}</button>
         <h1 className={Style.productTitle}>{product.title}</h1>
         <CategoryComp

@@ -1,0 +1,45 @@
+// .MainDiv {
+//     margin-top: -250px;
+//     background-color: green;
+//     display: flex;
+//     flex-direction: column;
+// }
+
+// p {
+//     color: blue;
+//     font-weight: bold;
+// }
+
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .MainDiv {
+        background-color: rgb(194, 184, 184);
+        border-radius: 10px;
+        width: 450px;
+        height: 280px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        display: grid;
+        grid-auto-flow: column;
+        grid-column-gap: 10px;
+
+        &__Navigation {
+            width: 150px;
+            // margin-bottom: 10px;
+            // position: absolute;
+        }
+
+        // h3{
+        //     margin: 15px;
+        // }
+    }
+}

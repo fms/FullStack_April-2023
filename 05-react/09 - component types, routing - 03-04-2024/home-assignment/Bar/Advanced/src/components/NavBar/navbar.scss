@@ -1,0 +1,17 @@
+.navBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  background-color: blanchedalmond;
+  font-size: 2rem;
+  height: 4rem;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  a:hover {
+    background-color: rgb(164, 201, 201);
+    border-radius: 5px;
+  }
+}

@@ -1,0 +1,33 @@
+.search-box {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .search-box__input {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  .search-box__text {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 0 5px;
+    font-size: 16px;
+    user-select: none;
+    pointer-events: none;
+  }
+  
+  .product-cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
