@@ -1,0 +1,29 @@
+// SettingsPage.module.scss
+.settings-page {
+    //background-color: $secondary-color;
+    padding: 2rem;
+    text-align: center;
+  
+    .button {
+      //background-color: $primary-color;
+      border: none;
+      border-radius: 0.25rem;
+      color: white;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      margin-top: 1rem;
+      display: inline-block;
+    }
+  
+    .form {
+      margin-top: 2rem;
+  
+      .input {
+        //border: 1px solid $secondary-color;
+        border-radius: 0.25rem;
+        padding: 0.5rem 1rem;
+        margin-bottom: 1rem;
+        width: 50%;
+      }
+    }
+  }

@@ -1,0 +1,36 @@
+$categories: smartphones, laptops, fragrances, skincare, groceries, home-decoration, furniture, tops, womens-dresses, womens-shoes, mens-shirts, mens-shoes, mens-watches, womens-watches, womens-bags, womens-jewellery, sunglasses, automotive, motorcycle, lighting;
+
+@mixin random-color() {
+    $minBrightness: 60%;
+    
+    $r: random(256);
+    $g: random(256);
+    $b: random(256);
+    
+    $brightness: 0.299 * $r + 0.587 * $g + 0.114 * $b;
+
+    @while $brightness < $minBrightness {
+        $r: random(256);
+        $g: random(256);
+        $b: random(256);
+        $brightness: 0.299 * $r + 0.587 * $g + 0.114 * $b;
+    }
+
+    background-color: rgb($r, $g, $b);
+}
+
+@each $category in $categories {
+    .#{$category} {
+        height: 600px;
+        width: 575px;
+        border: solid 1px black;
+        @include random-color();
+    }
+}
+
+.priceDetails {
+    img {
+        height: 250px;
+        width: 250px;
+    }
+}
