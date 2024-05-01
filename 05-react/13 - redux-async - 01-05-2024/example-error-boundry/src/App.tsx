@@ -1,4 +1,3 @@
-import { useSelector } from "react-redux";
 import "./App.css";
 
 import Toolbar from "./components/Toolbar";
@@ -8,6 +7,8 @@ import Input from "./components/Input";
 import Output from "./components/Output";
 import OutputList from "./components/OutputList";
 import { Quotes } from "./features/quotes/Quotes";
+import { ErrorBoundary } from "react-error-boundary";
+import Error from "./components/Error";
 
 function App() {
   const count = useAppSelector(countValue); // useState
@@ -23,7 +24,11 @@ function App() {
           <button onClick={() => dispatch(addAmount(10))}>Add 10</button>
         </div> */}
         <Input />
-        <Output />
+
+        {/* All the error handling (showing and clearing is in the Error component */}
+        <ErrorBoundary FallbackComponent={Error}>
+          <Output />
+        </ErrorBoundary>
         <OutputList />
         <Quotes />
       </div>

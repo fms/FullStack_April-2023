@@ -1,10 +1,11 @@
-import React from "react"
-import { useAppSelector } from "../app/hooks"
-import { textValue } from "../features/text/textSlice"
+import { useAppSelector } from "../app/hooks";
+import { textValue } from "../features/text/textSlice";
 
 export default function Output() {
-  // useState
-  const text = useAppSelector(textValue)
+  const text = useAppSelector(textValue);
+  if (text === "aa") {
+    throw "We have an aa error";
+  }
 
-  return <div>Output: {text}</div>
+  return <div>Output: {text}</div>;
 }
