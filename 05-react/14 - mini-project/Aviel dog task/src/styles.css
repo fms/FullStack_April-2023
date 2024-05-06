@@ -1,0 +1,298 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #b6b6b6;
+  font-family: sans-serif;
+  
+}
+
+.navbar {
+  /* position: sticky;
+  top: 10px; */
+  /* text-align: center; */
+  /* border: 5px solid; */
+  margin: auto;
+  width: 100%;
+  padding: 5px;
+}
+
+.navbar nav {
+  position: sticky;
+  width: 100%;
+  top: 10px;
+  background-color: #000000;
+  margin: 2px;
+}
+
+nav ul li{
+
+  padding : 0 10px 0 10px;
+  
+  }
+
+
+.navbar nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1em 0;
+  list-style-type: none;
+}
+
+.navbar nav ul a {
+  color: #fff;
+  text-decoration: none;
+  font-family: inter;
+}
+
+
+
+
+.logo-section {
+  display: flex;
+  justify-content: center;
+  margin: 2em 0;
+}
+
+.logo-section img {
+  width: 50px;
+  height: 50px;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.welcome-section {
+  text-align: center;
+}
+
+.welcome-section p {
+  font-family: inter;
+  color: red;
+}
+
+.welcome-section p:first-child {
+  font-size: 2em;
+}
+
+.welcome-section p:last-child {
+  font-family: monospace;
+  font-size: 18px;
+  background-color: yellow;
+}
+
+.welcome-section h1 {
+  font-family: inter;
+  color:red ;
+  font-size: 3em;
+  margin: 0.1em 0 1em 0;
+  font-weight: 780p;
+}
+
+.content {
+  width: 58%;
+  margin: 8% auto;
+}
+
+/* Blog Section */
+.blog-content {
+  width: 58%;
+  margin: 0 auto;
+}
+
+.blog-section .card {
+  background-color: #fff;
+  padding: 1em;
+  display: flex;
+  justify-content: start;
+  gap: 1em;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  margin-top: 15px;
+  text-decoration: none;
+}
+
+.blog-section .card span {
+  display: inline-block;
+  font-family: inter;
+  text-align: center;
+  width: 40px;
+  line-height: 40px;
+  background-color: #f60b0b;
+  color: #fff;
+  border-radius: 50%;
+}
+
+.blog-section .card p {
+  display: inline-block;
+  font-family: inter;
+  line-height: 40px;
+  background-color: inherit;
+  color: #2f2e2e;
+}
+
+footer {
+  width: 100%;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  /* position: absolute; */
+  bottom: 0;
+}
+
+footer p {
+  color: #fff;
+  font-family: inter;
+  font-size: 18px;
+  padding: 1em 0;
+  
+}
+
+.mylogo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-width: 100%;
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  overflow-clip-margin: content-box;
+    overflow: clip;
+    /* border-radius: 100%; */
+    position:relative;
+    top: -50px;
+    left: 10px;
+
+    
+}
+/* 
+.logo-icon {
+    position:relative;
+    top: 90px;
+    left: 150px;
+    width: 200px;
+height: 150px;
+    cursor: pointer;
+} */
+
+
+
+.aviel-title {
+  font-size: 60px;
+  color: #000000 ;
+  font-weight: bold;
+  position:relative;
+    top: -90px;
+    left: 60px;
+    /* background-color: #f60b0b */
+    
+}
+
+.aviel-title1{
+  /* background-color: aqua; */
+  /* width: 1500px; */
+}
+
+.Football-img {
+  position:relative;
+    left: 100px;
+}
+
+
+.Training-img {
+  position:relative;
+    left: 170px;
+}
+
+
+
+.Runing-img {
+  position:relative;
+    left: 400px;
+    bottom: -20px;
+}
+
+
+.Football-img-page {
+  position:relative;
+    left: 470px;
+}
+
+
+.Training-img-page {
+  position:relative;
+    left: 470px;
+}
+
+
+.Runing-img-page {
+  position:relative;
+  left: 470px;
+}
+
+.nav-icons-mail {
+  position:relative;
+  left: 100px;
+  width: 50px;
+  height: 50px;
+}
+
+.nav-icons-phone {
+  position:relative;
+  left: -50px;
+  width: 50px;
+  height: 50px;
+}
+
+
+.nav-icons-what {
+  position:relative;
+  left: -200px;
+  width: 50px;
+  height: 50px;
+}
+
+
+
+.login-section{
+
+  position:relative;
+  left: 630px;
+  font-size: 30px;
+  top: -100px;
+
+}
+
+.username , .password  {
+  position:relative;
+  left: 25px;
+  font-size: 20px;
+  
+}
+
+
+.rememberme-checkbox{
+  position:relative;
+  left: 20px;
+}
+
+.rememberme {
+  position:relative;
+  left: 50px;
+  font-size: 15px;
+}
+
+.login {
+  position:relative;
+  left: -20px;
+  top: 10px;
+  font-size: 15px;
+  width: 250px;
+height: 60px;
+    cursor: pointer;
+}
