@@ -1,0 +1,44 @@
+.dogs-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dog-card-container {
+  margin: 10px;
+  box-shadow: 1px 1px 10px gray;
+  border-radius: 10px;
+  
+}
+
+.dog-card h3 {
+ margin: 10px;
+}
+
+h3 {
+  text-shadow: 1px 1px 15px black;
+}
+.dog-card img {
+  border-radius: 10px;
+  width: 250px;
+  height: 250px; 
+  object-fit: cover; 
+}
+
+button {
+  border: 1px solid rgb(250, 250, 250);
+  border-radius: 10px;
+}
+
+.dog-card-container:hover, button:hover {
+  opacity: 0.8;
+  transform: scale(0.9);
+}
+
+
+input {
+  padding: 10px;
+  width: 30%;
+  border-radius: 10px;
+  border: 1px gray solid;
+}
