@@ -11,49 +11,49 @@ import toy from '../images/toy-poodle.jpg';
 export const breeds: Breed[] = [
     {
         id: 1,
-        name: "basenji",
+        name: "Basenji",
         imgUrl: basenji
     },
 
     {
         id: 2,
-        name: "beagle",
+        name: "Beagle",
         imgUrl: beagle
     },
 
     {
         id: 3,
-        name: "boxer",
+        name: "Boxer",
         imgUrl: boxer
     },
 
     {
         id: 4,
-        name: "frise-bichon",
+        name: "Bichon Frise",
         imgUrl: bichon
     },
 
     {
         id: 5,
-        name: "husky",
+        name: "Husky",
         imgUrl: husky
     },
 
     {
         id: 6,
-        name: "mix",
+        name: "Mix",
         imgUrl: mix
     },
 
     {
         id: 7,
-        name: "pitbull",
+        name: "Pitbull",
         imgUrl: pitbull
     },
 
     {
         id: 8,
-        name: "toy-poodle",
+        name: "Poodle Toy",
         imgUrl: toy
     },
 ];
