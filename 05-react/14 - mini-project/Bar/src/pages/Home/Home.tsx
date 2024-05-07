@@ -1,5 +1,5 @@
 import { ChangeEvent, SetStateAction, useEffect, useState } from "react";
-import DogCard from "../DogCard/DogCard";
+import DogCard from "../../components/DogCard/DogCard";
 import Search from "../../components/Search/Search";
 
 function Home() {
@@ -24,10 +24,9 @@ function Home() {
 
                 const allBreeds = Object.keys(breedsData.message);
 
-                const filteredBreeds: SetStateAction<string[]> = allBreeds.filter(breed =>
+                const filteredBreeds: string[] = allBreeds.filter(breed =>
                     breed.toLowerCase().includes(search.toLowerCase())
                 );
-                console.log(filteredBreeds);
 
                 setDogBreeds(filteredBreeds);
             }
