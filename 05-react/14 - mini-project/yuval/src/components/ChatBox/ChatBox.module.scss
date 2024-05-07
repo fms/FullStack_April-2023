@@ -20,21 +20,29 @@
     overflow-y: auto;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 
-.message {
-    padding: 5px;
+.messageWrapper {
+    display: flex;
+    align-items: flex-start;
     margin-bottom: 5px;
-    align-self: flex-start;
+}
+
+.messageText {
+    word-break: break-word;
+    flex-grow: 1;
+    margin-right: 5px;
 }
 
 .timestamp {
     font-size: xx-small;
-    margin-left: calc(100% + 2vw);
+    margin-left: auto;
 }
 
 .sender {
     font-weight: bold;
+    margin-right: 5px;
 }
 
 .inputContainer {
@@ -59,4 +67,4 @@
     color: #fff;
     border: none;
     border-radius: 5px;
-}  
+}

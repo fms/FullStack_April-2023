@@ -37,11 +37,10 @@ export default function ChatBox() {
             </div>
             <div ref={messageContainerRef} className={styles.messageContainer}>
                 {messages.map((message, index) => (
-                    <div key={index} className={styles.message}>
-                        <span className={styles.sender}>{message.sender}:</span> {message.text}
-                        {/* <div>
-                            <span className={styles.timestamp}>{message.timestamp}</span>
-                        </div> */}
+                    <div key={index} className={styles.messageWrapper}>
+                        <span className={styles.sender}>{message.sender}:</span>
+                        <div className={styles.messageText}>{message.text}</div>
+                        <span className={styles.timestamp}>{message.timestamp}</span>
                     </div>
                 ))}
             </div>
