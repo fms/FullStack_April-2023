@@ -11,10 +11,13 @@
 .title {
     border-bottom: solid 1px black;
     background-color: lightgray;
+    flex: 0 0 auto;
+    overflow: hidden;
 }
 
 .messageContainer {
     flex: 1;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
 }
@@ -23,6 +26,11 @@
     padding: 5px;
     margin-bottom: 5px;
     align-self: flex-start;
+}
+
+.timestamp {
+    font-size: xx-small;
+    margin-left: calc(100% + 2vw);
 }
 
 .sender {
@@ -35,6 +43,8 @@
     margin-top: 10px;
     gap: 5px;
     align-self: flex-end;
+    flex: 0 0 auto;
+    overflow: hidden;
 }
 
 .messageInput {
