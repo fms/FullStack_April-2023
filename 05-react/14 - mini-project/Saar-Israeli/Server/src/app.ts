@@ -18,6 +18,10 @@ io.on("connection", (socket) => {
     socket.on("disconnect", () => {
         console.log("user disconnected");
     })
+
+    socket.on("chatMessage", (arg) => {
+        io.emit("chatMessage",arg)
+    })
 })
 
 server.listen(port, () => console.log(`Server started on http://localhost:${port}`));
