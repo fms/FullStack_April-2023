@@ -10,6 +10,8 @@
 
 .title {
     border-bottom: solid 1px black;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
     background-color: lightgray;
     flex: 0 0 auto;
     overflow: hidden;
