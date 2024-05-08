@@ -1,0 +1,12 @@
+.dogSectionWrapper{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    row-gap: 5vh;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
+}
