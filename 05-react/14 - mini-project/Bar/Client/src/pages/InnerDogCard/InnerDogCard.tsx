@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import ChatHistory from "../../types/chatHistoryType";
 import { io } from "socket.io-client";
-import { Socket } from "socket.io";
 
 const socket = io("http://localhost:3000", {
     reconnectionDelayMax: 10000,
