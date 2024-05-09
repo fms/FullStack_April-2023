@@ -1,4 +1,4 @@
-import { ChangeEvent, SetStateAction, useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import DogCard from "../../components/DogCard/DogCard";
 import Search from "../../components/Search/Search";
 
