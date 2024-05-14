@@ -1,0 +1,25 @@
+.dogWebWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+    height: 94vh;
+    width: 100vw;
+    margin-top: 2vh;
+
+    .dogDetails {
+        height: 90%;
+        width: 50%;
+
+        .dogTitle {
+            position: absolute;
+            font-size: 6vh;
+            top: 0;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+}

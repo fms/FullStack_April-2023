@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    margin-left: 15%;
+    gap: 10px;
+    margin-top: 5%;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px rgb(183, 183, 183);
+    width: 70%;
+}
+.smallContainer {
+    position:absolute;
+}
+.back {
+    width: 60px;
+    height: 40px;
+    text-decoration: none;
+    color: white;
+}
+.back:hover{
+    text-decoration: underline;
+    color: white;
+}
+button {
+    padding: 10px;
+    color: white;
+}
+
+input,
+textarea {
+    margin-bottom: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+img {
+    border-radius: 10px;
+    width: 500px;
+    height: 500px;
+}
+
+img:hover{
+    scale: 0.9;
+    opacity: 0.7;
+}
+
