@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Socket.IO chat</title>
+    <style>
+        body {
+            margin: 0;
+            padding-bottom: 3rem;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        #form {
+            padding: 0.25rem;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: none;
+            height: 3rem;
+            box-sizing: border-box;
+            backdrop-filter: blur(10px);
+        }
+
+        #input {
+            border: 0.5px solid rgb(200, 197, 197);
+            padding: 0 1rem;
+            flex-grow: 1;
+            border-radius: 7px;
+            margin: 0.25rem;
+        }
+
+        #input:focus {
+            outline: none;
+        }
+
+        #form > button {
+            background: #1B70D5;
+            border: none;
+            margin: 0.25rem;
+            border-radius: 7px;
+            outline: none;
+            color: #fff;
+        }
+
+        #messages {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #messages > li {
+            padding: 0.5rem 1rem;
+        }
+
+        #messages > li:nth-child(odd) {
+            background: #efefef;
+        }
+
+        #title {
+            background-color: rgb(171, 169, 169);
+            height: 30px;
+            text-align: center;
+        }
+
+        #name-input-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        #name-input {
+            border: 1px solid #ccc;
+            padding: 0.5rem;
+            border-radius: 7px;
+        }
+        #name-submit{
+            background: #1B70D5;
+            border: none;
+            margin: 0.25rem;
+            border-radius: 7px;
+            outline: none;
+            color: #fff;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="title"><p>Chat</p></div>
+    <div id="name-input-container">
+        <input id="name-input" type="text" placeholder="Enter your name">
+        <button id="name-submit">Submit</button>
+    </div>
+    <ul id="messages"></ul>
+    <form id="form" action>
+        <input id="input" autocomplete="off" placeholder="Type your message here" /><button>Send</button>
+    </form>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+        const form = document.getElementById('form');
+        const input = document.getElementById('input');
+        const messages = document.getElementById('messages');
+        const nameInput = document.getElementById('name-input');
+        const nameSubmitBtn = document.getElementById('name-submit');
+
+        let userName = '';
+
+        nameSubmitBtn.addEventListener('click', () => {
+            userName = nameInput.value;
+            if (userName.trim() !== '') {
+                document.getElementById('name-input-container').style.display = 'none';
+                document.getElementById('form').style.display = 'flex';
+            }
+        });
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (input.value && userName) {
+                socket.emit('chat message', { name: userName, message: input.value });
+                input.value = '';
+            }
+        });
+
+        socket.on('chat message', (data) => {
+            const item = document.createElement('li');
+            item.textContent = `${data.name}: ${data.message}`;
+            messages.appendChild(item);
+            window.scrollTo(0, document.body.scrollHeight);
+        });
+    </script>
+</body>
+</html>

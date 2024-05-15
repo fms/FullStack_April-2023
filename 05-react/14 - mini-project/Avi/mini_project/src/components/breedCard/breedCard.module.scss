@@ -1,0 +1,23 @@
+.breedCard {
+    height: 380px;
+    width: 300px;
+    margin: 25px;
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3);
+    border-radius: 5px;
+}
+.breedImg{
+width:300px;
+height: 250px;
+}
+.breedTitle{
+    position: absolute;
+    margin-top:0px;
+    margin-left: 15px;
+}
+.loremTxt{
+    font-size: 14px;
+    font-weight: 500;
+    margin-top:40px;
+    margin-left:15px;
+    width: 100%;
+}
