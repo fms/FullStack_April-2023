@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    width: 120rem;
+}
+
+.breedInfo {
+    margin: 10px;
+    padding: 10px;
+    width: 70%;
+    max-height: 800px;
+}
+
+.breedTitle {
+    font-size: 40px;
+    margin-bottom: 15px;
+    margin-left: 50px;
+}
+
+.breedPhoto {
+    width: 100%;
+    max-height: 85%;
+    margin-left: 50px;
+}
+
+.chat {
+    padding: 10px;
+    margin-left: 50px;
+    margin-top: 120px; 
+    height: 675px;
+    border-radius: 10px;
+}
+.chat_iframe {
+    border: 1.5px solid rgb(173, 172, 172);
+    border-radius: 10px;
+}
