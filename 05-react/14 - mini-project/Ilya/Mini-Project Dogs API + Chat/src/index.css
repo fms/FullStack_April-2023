@@ -1,0 +1,30 @@
+.breed-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 20px; /* Optional: adds space between cards */
+    padding: 50px; 
+    text-transform: capitalize;
+    
+  }
+
+  .card-img-top {
+    width: 100%; /* ensure the image covers the width of the card */
+    height: 280px; /* fixed height */
+    object-fit: cover; /* maintain the aspect ratio and cover the space */
+    object-position: top;
+     /* align the top of the image with the top of the container */
+  }
+
+  .breedCard {
+    text-align: center;
+    margin: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .breedCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  

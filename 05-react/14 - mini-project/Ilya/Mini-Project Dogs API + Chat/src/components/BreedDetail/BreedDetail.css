@@ -1,0 +1,15 @@
+.breedDetail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .breed-image {
+    margin-bottom: 2rem;
+  }
+  
+  .breed-name {
+    text-align: left;
+    margin-bottom: 1rem;
+  }

@@ -1,0 +1,19 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    padding: 80px;
+}
+
+.search {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 25px;
+    height: 35px;
+    border-radius: 18px;
+    position: fixed;
+    
+}

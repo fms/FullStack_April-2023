@@ -39,25 +39,24 @@ const DogsList = () => {
     </div>
   );
 };
+import { useNavigate } from 'react-router-dom';
 
 const DogCard = ({ breed }: DogCardProps) => {
   const { data: images, error: imagesError, isLoading: isLoadingImages } = useGetBreedImagesQuery(breed);
+  const navigate = useNavigate(); 
+  const handleChatClick = () => {
+    navigate(`/selected-dog/${encodeURIComponent(breed)}`);
+  };
 
   if (isLoadingImages) return <div>Loading...</div>;
   if (imagesError) return <div>Error: {imagesError.message}</div>;
   if (!images || !Array.isArray(images.message)) return null;
   
-  const openNewPage = () => {
-    const selectedDogURL = `/selected-dog/${breed}`;
-    window.open(selectedDogURL, '_blank');
-  }
-
   return (
-    <button className="dog-card" onClick={openNewPage}>
+    <button className="dog-card" onClick={handleChatClick}>
       <img src={images.message[0]} alt={breed} />
       <h3 style={{ color: randomColor() }}>{capitalizeFirstLetter(breed)}</h3>
     </button>
   );
 };
-
 export default DogsList;
