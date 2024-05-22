@@ -44,7 +44,7 @@ export const ProductList = () => {
     const filteredProducts = productsList.filter(product => product.title.toLowerCase().includes(search.toLowerCase()));
 
     return (
-        <>
+        <> 
             <SearchOutput setSearch={setSearch} />
             <button onClick={() => filterByRating()} type='button'>Filter By Rating</button>
             <ul className="productList">

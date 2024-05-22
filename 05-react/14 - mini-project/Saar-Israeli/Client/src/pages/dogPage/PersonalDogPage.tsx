@@ -18,8 +18,8 @@ function PersonalDogPage() {
     fetch(`https://dog.ceo/api/breed/${breed}/images/random`, {})
       .then((res) => res.json())
       .then((data) => setDogImage(data.message));
-      
-    return () => {};
+
+    return () => { };
   }, [breed]);
 
 
@@ -31,7 +31,7 @@ function PersonalDogPage() {
         <img src={dogImage} alt="" />
       </div>
 
-      <DogChat socket={socket}/>
+      <DogChat socket={socket} />
     </div>
   );
 }

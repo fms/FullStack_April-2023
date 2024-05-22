@@ -38,7 +38,7 @@ const ProductDetails = ({ product, productsList, setProductsList }: ProductProps
             <div className="productPrice">{`Price: ${product.price}`}</div>
             <div className="productCategory">{`Category: ${product.category}`}</div>
             <div className="productDiscount">{`Discount: ${product.discountPercentage}`}</div>
-            <div className="productRating">{`Raiting: ${product.rating}`}</div>
+            <div className="productRating">{`Rating: ${product.rating}`}</div>
             <img src={product.thumbnail} alt="Thumbnail" className="productImage" />
             <div className="productImages">
                 {product.images.map((img, index) => (
