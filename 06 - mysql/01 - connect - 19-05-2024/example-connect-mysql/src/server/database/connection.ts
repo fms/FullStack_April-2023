@@ -1,11 +1,13 @@
+import ViteExpress from "vite-express";
 import mysql from "mysql2/promise";
 
+const { env } = await ViteExpress.getViteConfig();
 const pool = mysql.createPool({
   host: "localhost",
   port: 3306,
   database: "sakila",
   user: "fms",
-  password: "fmspass", // import.meta.env.VITE_MYSQLPASSWORD,
+  password: env.VITE_MYSQLPASSWORD,
   //   connectionLimit: 5,
 });
 
