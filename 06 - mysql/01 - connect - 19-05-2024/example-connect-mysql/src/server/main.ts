@@ -1,12 +1,13 @@
 import express from "express";
 import ViteExpress from "vite-express";
-import actorRouter from "./routes/actorRoute.js";
+import actorRouter from "./routes/actorRoute";
 
 const app = express();
+app.use(express.json());
 
-app.get("/hello", (_, res) => {
-  res.send("Hello Vite + React + TypeScript!");
-});
+// app.get("/hello", (_, res) => {
+//   res.send("Hello Vite + React + TypeScript!");
+// });
 
 app.use("/api/actors", actorRouter);
 
