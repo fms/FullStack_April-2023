@@ -6,5 +6,5 @@ export async function getAllFilms() {
 }
 
 export async function getFilmsByQuery(title: string | undefined, description: string | undefined) {
-  return runSelect<Film>("select * from film where title = ? AND description = ?", [title, description]);
+  return runSelect<Film>("select * from film where title = ? OR description = ?", [title, description]);
 }

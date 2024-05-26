@@ -10,10 +10,11 @@ export async function getFilmsByDetails(req: Request, res: Response, next: NextF
   const title = req.query.title as string | undefined;
   const description = req.query.description as string | undefined;
 
-  if (!title) {
-    return res.status(400).json({ error: "Missing title query parameter" });
+  if (!title && !description) {
+    return res.status(400).json({ error: "Missing title or description query parameter" });
   }
 
   const films = await getFilmsByQuery(title, description);
+  
   res.json({ films });
 }
