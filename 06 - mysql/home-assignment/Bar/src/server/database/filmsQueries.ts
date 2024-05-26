@@ -5,6 +5,6 @@ export async function getAllFilms() {
   return runSelect<Film>("select * from film");
 }
 
-export async function getFilmsByQuery(query: string | undefined) {
-  return runSelect<Film>("select * from film where title = ?", query);
+export async function getFilmsByQuery(title: string | undefined, description: string | undefined) {
+  return runSelect<Film>("select * from film where title = ? AND description = ?", [title, description]);
 }

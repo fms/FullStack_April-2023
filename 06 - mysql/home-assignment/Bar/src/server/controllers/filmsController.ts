@@ -6,13 +6,14 @@ export async function getFilms(req: Request, res: Response, next: NextFunction) 
   return res.send({ films });
 }
 
-export async function getFilmsByTitle(req: Request, res: Response, next: NextFunction) {
+export async function getFilmsByDetails(req: Request, res: Response, next: NextFunction) {
   const title = req.query.title as string | undefined;
+  const description = req.query.description as string | undefined;
 
   if (!title) {
     return res.status(400).json({ error: "Missing title query parameter" });
   }
 
-  const films = await getFilmsByQuery(title);
+  const films = await getFilmsByQuery(title, description);
   res.json({ films });
 }

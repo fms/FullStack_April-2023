@@ -1,9 +1,9 @@
 import express from "express";
-import { getFilms, getFilmsByTitle } from "../controllers/filmsController";
+import { getFilms, getFilmsByDetails } from "../controllers/filmsController";
 
 const router = express.Router();
 
 router.get("/", getFilms);
-router.get("/title", getFilmsByTitle);
+router.get("/query", getFilmsByDetails);
 
 export default router;
