@@ -7,14 +7,13 @@ export async function getFilms(req: Request, res: Response, next: NextFunction) 
 }
 
 export async function getFilmsByDetails(req: Request, res: Response, next: NextFunction) {
-  const title = req.query.title as string | undefined;
-  const description = req.query.description as string | undefined;
+  const { title, description, language, category } = req.query;
 
-  if (!title && !description) {
-    return res.status(400).json({ error: "Missing title or description query parameter" });
+  if (!title && !description && !language && !category) {
+    return res.status(400).json({ error: "Missing title/description/language/category query parameter" });
   }
 
-  const films = await getFilmsByQuery(title, description);
-  
+  const films = await getFilmsByQuery(title, description, language, category);
+
   res.json({ films });
 }
