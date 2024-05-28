@@ -1,9 +1,11 @@
 import express from "express";
-import { getAll, getFiltered } from "../controllers/filmsController";
+import { getActorsFromFilm, getAll, getFiltered } from "../controllers/filmsController";
 
 const router = express.Router();
 
-router.get("/all", getAll);
-router.get("/filtered", getFiltered);
+router
+    .get("/all", getAll)
+    .get("/filtered", getFiltered)
+    .get("/film-actors", getActorsFromFilm)
 
 export default router;
