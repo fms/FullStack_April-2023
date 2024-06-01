@@ -42,3 +42,10 @@ export async function updateById(id: number, fields: object) {
   const result = await runModify(`update actor set ${updates.join(",")} where actor_id = ?`, binds);
   return result;
 }
+export async function getActorsFilm(id: any) {
+  let query = `
+  SELECT * FROM sakila.actor
+  WHERE actor_id IN (SELECT actor_id FROM sakila.film_actor WHERE film_id = ?)`;
+
+  return runSelect<Actor>(query, [id]);
+}
