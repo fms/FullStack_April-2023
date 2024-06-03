@@ -1,0 +1,706 @@
+  /* LOGIN page */
+ 
+  
+
+
+.welcom{
+  /* background-color: blueviolet; */
+  width: 180px;
+  position:relative;
+  top: 80px; 
+  left: 300px;
+  font-size: 50px;
+  color: white;
+}
+
+
+
+ .login_form{
+  background-color: black;
+  position:relative;
+  top: 80px; 
+  left: 300px;
+  width:  1500px;
+    height: 800px;
+    /* padding: 50px;  */
+    /* margin: 30px;
+    row-gap: 30px; */
+    
+}
+
+.login_btn{
+  position:relative;
+  top: 200px; 
+  left: 400px;
+  width: 150px;
+  /* height: 120px; */
+  background-color: white;
+  cursor: pointer;
+
+
+  
+}
+
+
+.all_input{
+  /* background-color: red; */
+  position:relative;
+  top: 150px; 
+  left: 8x;
+  width: 800px;
+ text-align: center;
+
+}
+
+
+ 
+.all_input input{
+  /* background-color: brown; */
+  position:relative;
+  top: 0px; 
+  left: 4px;
+  width: 600px;
+  height: 100px;
+}
+ 
+
+
+.login_img_site{
+  width: 500px;
+  height:  500px;
+
+  position:relative;
+  top: -260px; 
+  left: 900px;
+}
+
+
+
+.input_img_profile{
+  background-color: black;
+  color: black;
+  height: 20px;
+}
+
+
+
+ /* main page */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+  /* background-color:rgb(171, 171, 198); */
+
+
+  * img {
+/* 
+    float: left;
+    width:  500px;
+    height: 500px;
+    object-fit: cover; */
+  }
+  
+  
+}
+
+
+body {
+  width: 1500px;
+  background-color:#c5d3f1;
+  /* margin: auto; */
+ }
+
+
+.footer{
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  position:relative;
+  top: 6px; 
+  left: 0px;
+  width: 2050px;
+
+}
+
+
+.aviel_the_header_of_the_site{
+  background-color: black;
+  height: 150px;
+  width: 2100px;
+  color: white;
+}
+
+.aviel_logo_site{
+
+  position:relative;
+  top: 10px; 
+  left: 30px;
+
+}
+
+
+.aviel_title_site{
+  position:relative;
+  top: -90px; 
+  /* left: 900px; */
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.aviel_link_to_home_page{
+  position:relative;
+  top: -134px; 
+  left: 580px;
+  cursor: pointer;
+ 
+}
+
+
+.aviel_shoping_bag{
+  position:relative;
+  top: -171px; 
+  left: 720px;
+  width: 100px;
+  cursor: pointer;
+
+}
+
+.cart_bug_count{
+color: red;
+position:relative;
+    top: 50px; 
+    left: 40px;
+}
+
+
+.shoping_bag_img{
+  width: 10px;
+  height: 10x;
+  position:relative;
+    top: 50px; 
+    left: 90px;
+    cursor: pointer;
+    /* background-color: white; */
+  }
+
+
+
+.aviel_user{
+  position:relative;
+  top: -185px; 
+  left: 880px;
+  cursor: pointer;
+  /* background-color: red; */
+}
+
+
+.aviel_home_cart_user{
+  position:relative;
+  top: 50px; 
+  left: 950px;
+width: 80px;
+/* background-color: red; */
+cursor: pointer;
+
+
+}
+
+
+
+
+.slider {
+  background-color: blue;
+}
+
+.slider_img_1{
+  width: 2050px;
+  height: 900px;
+  position:relative;
+  top: -2px; 
+  left: 0px;
+  
+}
+
+
+
+
+.text_on_slider_img{
+font-size: 40px;
+color: white;
+position:relative;
+  top: -220px; 
+  left: 300px;
+  font-weight: bold;
+}
+
+.slider_run_img{
+  position:relative;
+  top: 100px; 
+  left: 500px;
+  background-color: blue;
+  size: 90px;
+  color: red;
+}
+
+.top_buttuns{
+  background-color:#c5d3f1;
+  position:relative;
+  top: 100px; 
+  left: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50 25px;
+  gap: 90px;
+  position:relative;
+  top: 250px; 
+  left: 700px; 
+  cursor: pointer;
+
+  
+}
+
+.top_button_txt{
+  color: black;
+  /* background-color: red; */
+  cursor: pointer;
+}
+
+
+
+.bdika_1{
+  background-color: black;
+  position:relative;
+  top: 20px; 
+  left: 220px; 
+  
+}
+
+.button_1_test{
+  background-color: red;
+  color: white;
+  position:relative;
+  top: -500px; 
+  left: 2000px;
+  width: 80px;
+  cursor: pointer;
+
+}
+
+.button_2_test{
+  background-color: red;
+  color: white;
+  position:relative;
+  top: -500px; 
+  left: 50px;
+  width: 80px;
+  cursor: pointer;
+
+}
+
+
+
+.sales_up_to_50{
+background-color: white;
+color: black;
+width: 800px;
+height: 50px;
+position:relative;
+  top: -5px; 
+  left: 600px; 
+  font-size: 60px;
+  text-align: center;
+}
+
+.img1{
+  width: 2000px;
+  height: 800px;
+
+  position:relative;
+  top: 40px; 
+  left: 0px; 
+}
+
+.SUMMER_T_Shirt_SALE_30{
+  background-color: coral;
+  width: 130px;
+  height: 100px;
+}
+
+
+.img1sale{
+  width: 550px;
+  height: 550px;
+}
+
+*{box-sizing: border-box; -webkit-box-sizing: border-box}
+.my_gallery {
+  /* background: url(https://res.cloudinary.com/malaika/image/upload/v1564327185/parallax-h-img-1_2.jpg) no-repeat center center fixed;  */
+  position:relative;
+  top: 40px; 
+  left: 160px; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;	
+}
+
+
+/* body{
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;	
+} */
+
+
+.wrap{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  -webkit-perspective: 2500px;
+  perspective: 2500px;    
+  -webkit-perspective-origin: 100% 50%;
+  perspective-origin: 100% 50%;
+  
+	.girl {
+		border:  #fffefe 10px solid;
+		background: url("https://res.cloudinary.com/malaika/image/upload/e_grayscale/v1564579524/d7isyf5-137c7a98-d161-496f-9753-f96f530be3be_1.png") no-repeat ;
+		margin-left: 0;
+		width: 450px;
+		height: 600px;
+ 		bottom: 0%;
+		top: 10%;
+		position: absolute;
+	}
+	h1{
+		left: -5%;
+		transform: rotate(-49deg);
+		color:red;
+		font-size: 4em;
+		font-family: Raleway, sans-serif;
+		top: 25%;
+		position: absolute;
+		span{
+			color: black;
+			font-weight: 1000;
+		}
+	}
+  .list{
+    width: 80%;
+    height: 150vh;
+    overflow-x: hidden;
+    webkit-transform: rotateX(35deg) rotateY(3deg) rotateZ(27deg);
+    transform: rotateX(35deg) rotateY(3deg) rotateZ(27deg);
+    margin: 0 0 0 200px;
+    padding: 150px 100px 500px 0;
+    scrollbar-width: none;
+    &::-webkit-scrollbar { 
+      display: none; 
+    }
+    &::-webkit-scrollbar { 
+      display: none; 
+    }
+    &::-webkit-scrollbar { 
+      display: block; 
+    }
+.item{
+	
+			/* filter: grayscale(100%); */
+      width: 30%;
+      height: 400px;
+      margin: 20px;
+      display: inline-block;
+      position: relative;
+	&::after {
+    content: '';
+    position: absolute;
+    z-index: 150;
+    width: 100%;
+		top: 0px;
+		left: -0px;
+    height: 100%;
+    background: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3960c8e1-d90e-4e60-8522-816b41b93892/d84vq6v-5985a860-c6c3-453c-a0ae-e80e5e5abf06.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzM5NjBjOGUxLWQ5MGUtNGU2MC04NTIyLTgxNmI0MWI5Mzg5MlwvZDg0dnE2di01OTg1YTg2MC1jNmMzLTQ1M2MtYTBhZS1lODBlNWU1YWJmMDYucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.G2ljZtN3fPs4NhvF-fCGxl_97BA4w8kvt_qGyJH1RNI");
+    opacity: .1;
+  }
+      .img{
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center center;
+        box-shadow: 1px 1px 50px 0 #000;
+        -webkit-transform-origin: 100% 50%;
+        -ms-transform-origin: 100% 50%;
+        transform-origin: 100% 50%;
+        z-index: 10;
+        position: relative;
+        
+			}
+		}
+  }
+}
+button{
+	border: 2px solid black;
+	padding: 10px;
+	z-index:9999;
+	top:-300px;
+	position: relative;
+	display: inline;
+	margin-left:-60px;
+	outline: none;
+}
+@media only screen and (max-width: 768px) {
+  .girl{  background:url(https://res.cloudinary.com/malaika/image/upload/v1564328867/Gabriella-Wilde-PNG-HD_1_2.png) no-repeat cover fixed; 
+  }
+	h1{
+		display:none;
+	}
+}
+
+
+
+
+
+/* FilteredProducts */
+
+
+
+.main_grid{
+
+  display: flex;
+  flex-direction: row;
+  grid-gap: 30px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 100px;
+  /* padding: 50px; */
+  /* gap: 20px; */
+  row-gap: 400px;
+ 
+  
+
+}
+
+.main_grid img{
+  
+  width:  500px;
+  height: 500px;
+  /* float: left;
+  object-fit: cover; 
+  position:relative; */
+  top: 40px; 
+  left: 160px; 
+ 
+}
+
+/* 
+.test-img{
+  height: 50px;
+  
+} */
+
+.product_card{
+  width:  330px;
+  height: 330px;
+  position:relative;
+  top: 40px; 
+  left: 160px; 
+  color: black;
+}
+
+.product_card text {
+  color: black;
+}
+
+
+
+
+
+.pl-14{
+  position:relative;
+  top: 300px; 
+  left: 900px; 
+
+}
+
+.all_filters{
+  position:relative;
+  top: 90px; 
+  left: -90px; 
+
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+}
+
+.clear_filter{
+  position:relative;
+  top: 120px; 
+  left: 160px; 
+}
+
+.cataguria_title {
+  position:relative;
+  top: -300px; 
+  left: -600px; 
+  font-size: 50px;
+}
+
+.color_list{
+  position:relative;
+  top: -130px; 
+  left: -50px; 
+  margin: 20px;
+}
+
+.size_list{
+  position:relative;
+  top: -130px; 
+  left: 90px; 
+  margin: 20px;
+ color: red;
+
+}
+
+
+
+
+
+/* singelProduct */
+
+.img_and_name{
+
+  width:  50px;
+  height: 50px;
+
+}
+
+.img_and_name img{
+
+  width:  650px;
+  height: 650px;
+
+  position:relative;
+  top: 50px; 
+  left: 1200px; 
+
+}
+
+.item_name{
+  position:relative;
+  top: 200px; 
+  left: 80px; 
+  font-size: 30px;
+}
+
+.item_count{
+  position:relative;
+  top: 220px; 
+  left: 80px; 
+}
+
+.item_text{
+  position:relative;
+  top: 240px;
+  left: 80px; 
+}
+
+.item_size{
+  position:relative;
+  top: 260px;
+  left: 80px; 
+}
+
+.item_color{
+  position:relative;
+  top: 280px;
+  left: 80px; 
+}
+
+.all_single_product Button {
+background-color: red;
+position:relative;
+  top: 300px; 
+  left: 150px; 
+}
+
+
+
+
+
+
+
+/* cart */
+
+
+
+.cart_empty_add{
+  background-color: red;
+  width:  300px;
+  height: 300px;
+
+  position:relative;
+  top: 70px; 
+  left: 850px; 
+
+  text-align: center;
+}
+
+.cart_all_grid  {
+  position:relative;
+  top: 60px; 
+  left: 140px; 
+  width:  400px;
+  height: 400px;
+  background-color: red;
+}
+
+
+.cart_all_grid img  {
+  width:  150px;
+  height: 150px;
+  /* position:relative;
+  top: 70px; 
+  left: 850px;  */
+}
+
+.cart_test_1{
+  background-color: black;
+  width:  700px;
+  height: 100%;
+
+  position:relative;
+  top: 70px; 
+  left: 850px; 
+
+  border: 10px solid red;
+}
+
+
+.cart_remov{
+  position:relative;
+  top: 320px; 
+ left: 100px;
+
+  
+}
+
+.cart_total_price{
+  background-color: black;
+  position:relative;
+  top: 40px; 
+  /* bottom: 1200px; */
+  left: 165px; 
+  width: 350px;
+  text-align: center;
+  color: white;
+}
+
