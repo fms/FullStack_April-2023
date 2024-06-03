@@ -12,24 +12,38 @@ export async function getFilteredFilms(title: string, description: string) {
         WHERE title LIKE ? AND description LIKE ?
     `;
 
-    const query1 = `
-        SELECT film.*, language.name as language_name
-        FROM film
-        JOIN language ON film.language_id = language.language_id
-        WHERE film.title LIKE ? AND film.description LIKE ?
-    `;
+    const params = [`%${title}%`, `%${description}%`];
+    
+    const films = await runSelect<Film>(query, params);
+    return films;
+}
 
-    const query2 = `
-        SELECT film.*, category.name as category_name
-        FROM film
-        Join film_category ON film.film_id = film_category.film_id
-        Join category ON film_category.category_id = category.category_id
-        WHERE film.title LIKE ? AND film.description LIKE ?
+export async function getFilteredFilmsJoinLanguage(title: string, description: string) {
+    const query = `
+    SELECT film.*, language.name as language_name
+    FROM film
+    JOIN language ON film.language_id = language.language_id
+    WHERE film.title LIKE ? AND film.description LIKE ?
+    `;
+    
+    const params = [`%${title}%`, `%${description}%`];
+    
+    const films = await runSelect<Film>(query, params);
+    return films;
+}
+
+export async function getFilteredFilmsJoinCategory(title: string, description: string) {
+    const query = `
+    SELECT film.*, category.name as category_name
+    FROM film
+    Join film_category ON film.film_id = film_category.film_id
+    Join category ON film_category.category_id = category.category_id
+    WHERE film.title LIKE ? AND film.description LIKE ?
     `;
 
     const params = [`%${title}%`, `%${description}%`];
-
-    const films = await runSelect<Film>(query2, params);
+    
+    const films = await runSelect<Film>(query, params);
     return films;
 }
 
