@@ -1,7 +1,7 @@
 import { PoolConnection } from "mysql2/promise";
 import Actor from "./Actor.js";
 import pool from "./connection.js";
-import { runModify, runSelect, transactionModify } from "./dbUtils";
+import { runModify, runSelect, transactionModify, transactionSelect } from "./dbUtils";
 
 export async function getAllActors() {
   return runSelect<Actor>("select * from actor");
@@ -37,7 +37,8 @@ export async function insertActors(actors: Actor[]) {
         first_name,
         last_name,
       ]);
-      // console.log(result);
+      const [dummy] = await transactionSelect<Actor>(connection, "select * from actor where actor_id = ?", result.insertId);
+      console.log(dummy);
     }
 
     // Everything was inserted successfully, commit the changes.
