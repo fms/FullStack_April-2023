@@ -44,4 +44,5 @@ Implement:
 > <details>
 > <summary>Spoiler</summary>
 > Query results caching is built into Redux Toolkit Query API (createAPI).
+> Another option is to use [useQuery](https://tanstack.com/query/latest)
 > </details>
