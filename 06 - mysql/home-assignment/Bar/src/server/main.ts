@@ -2,6 +2,7 @@ import express from "express";
 import ViteExpress from "vite-express";
 import actorRouter from "./routes/actorRoute";
 import filmRouter from "./routes/filmRoute";
+import cors from "cors";
 
 const app = express();
 app.use(express.json());
@@ -9,7 +10,11 @@ app.use(express.json());
 // app.get("/hello", (_, res) => {
 //   res.send("Hello Vite + React + TypeScript!");
 // });
-
+app.use(
+  cors({
+    origin: "http://localhost:3000/",
+  })
+);
 app.use("/api/actors", actorRouter);
 app.use("/api/films", filmRouter);
 

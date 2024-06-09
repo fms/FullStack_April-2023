@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { getActor, getAllActors, insertActor, deleteById, updateById } from "../database/actorsQueries";
+import { getActor, getAllActors, insertActor, deleteById, updateById, getActorsFilm } from "../database/actorsQueries";
 
 export async function getAll(req: Request, res: Response, next: NextFunction) {
   const actors = await getAllActors();
@@ -59,4 +59,15 @@ export async function updateActor(req: Request, res: Response, next: NextFunctio
 
   const result = await updateById(num, req.body);
   return res.send({ result });
+}
+
+export async function getActorsByFilm(req: Request, res: Response, next: NextFunction) {
+  const { id } = req.params;
+
+  if (!id || isNaN(Number(id))) {
+    return res.status(400).json({ error: "Invalid movie ID parameter" });
+  }
+
+  const actors = await getActorsFilm(id);
+  return res.send({ actors });
 }

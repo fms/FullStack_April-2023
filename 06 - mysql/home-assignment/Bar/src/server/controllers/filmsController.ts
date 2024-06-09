@@ -15,5 +15,5 @@ export async function getFilmsByDetails(req: Request, res: Response, next: NextF
 
   const films = await getFilmsByQuery(title, description, language, category);
 
-  res.json({ films });
+  res.send({ films });
 }
