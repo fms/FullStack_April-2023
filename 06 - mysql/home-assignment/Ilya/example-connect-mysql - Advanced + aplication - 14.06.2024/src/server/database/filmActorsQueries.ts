@@ -7,5 +7,5 @@ interface FilmActor extends RowDataPacket {
 }
 
 export async function getActorsForFilm(filmId: number) {
-    return runSelect<FilmActor>("select a.actor_id, a.first_name, a.last_name from film_actor fa inner join actor a on fa.actor_id = a.actor_id where fa.film_id =?", filmId);
-  }
+  return runSelect<FilmActor>("select a.actor_id, a.first_name, a.last_name from film_actor fa inner join actor a on fa.actor_id = a.actor_id where fa.film_id =?", filmId);
+}

@@ -6,7 +6,7 @@ interface Film extends RowDataPacket {
   film_id: number;
   title: string;
   description: string;
-  // ... other columns ...
+  //... other columns...
 }
 
 export async function getAllFilms() {
@@ -48,10 +48,10 @@ export async function getFilteredFilms(title: string, description: string) {
 
     }
     export async function getFilmDetails(filmId: number) {
-      const film = await runSelect<Film>("select * from film where film_id =?", filmId);
+      const film = await runSelect<Film>("select * from film where film_id = ?", filmId);
       if (!film) {
         throw new Error(`Film not found with ID ${filmId}`);
       }
-      const actors = await getActorsForFilm(filmId);
-      return {...film, actors };
+      const actorNames = await getActorsForFilm(filmId);
+      return { ...film, actorNames };
     }

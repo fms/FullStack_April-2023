@@ -6,7 +6,12 @@ import { getActorsForFilm } from "../database/filmActorsQueries";
 export async function getAll(req: Request, res: Response, next: NextFunction) {
   try {
     const films = await getAllFilms();
-    res.json(films);
+    const filmList = [];
+    for (const film of films) {
+      const actorNames = await getActorsForFilm(film.film_id);
+      filmList.push({...film, actorNames });
+    }
+    res.json(filmList);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Error getting all films" });
@@ -39,3 +44,4 @@ export async function getFilmActors(req: Request, res: Response, next: NextFunct
     res.status(500).json({ message: "Error getting film actors" });
   }
 }
+

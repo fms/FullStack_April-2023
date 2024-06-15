@@ -1,4 +1,4 @@
-import Actor from "./Actor.js";
+import Actor from "./Actor";
 import { runModify, runSelect } from "./dbUtils";
 
 export async function getAllActors() {
