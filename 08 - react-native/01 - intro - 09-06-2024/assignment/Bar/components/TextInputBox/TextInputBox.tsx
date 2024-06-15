@@ -16,10 +16,9 @@ const style = StyleSheet.create({
         width: "90%",
         padding: 20,
         flex: 0,
-        flexDirection: "row",
         textAlign: "left",
         backgroundColor: "#ffff",
-        borderRadius: 60,
+        borderRadius: 30,
     },
 })
 
