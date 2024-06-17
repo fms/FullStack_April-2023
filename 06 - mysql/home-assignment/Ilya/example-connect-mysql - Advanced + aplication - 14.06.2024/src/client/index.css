@@ -1,0 +1,34 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.movie-card {
+  margin-bottom: 20px;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.movie-card h2 {
+  margin-top: 0;
+}
+
+.movie-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.movie-card li {
+  margin-bottom: 10px;
+}
