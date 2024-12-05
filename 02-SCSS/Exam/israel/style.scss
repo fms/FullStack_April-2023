@@ -1,0 +1,139 @@
+@mixin titel {
+    height: 30px;
+    width: 30px;
+}
+
+.main {
+    border: solid 1px;
+    border-radius: 15px;
+    width: 20%;
+    margin: auto;
+
+
+
+    .title {
+        margin-top: 30px;
+        border-bottom: solid grey 1px;
+        padding-bottom: 10px;
+        display: flex;
+
+
+    }
+
+    .mainicon {
+        @include titel;
+        margin-left: 15px;
+        margin-top: 2px;
+
+    }
+
+    .Search {
+        @include titel;
+        margin-left: 130px;
+        border: grey solid 1px;
+        border-radius: 50%;
+        margin-top: 2px;
+
+    }
+
+    .border {
+        border: solid 1px gray;
+        border-radius: 30px;
+        margin-left: 15px;
+        margin-top: 2px;
+        display: flex
+    }
+
+    .menu {
+        @include titel;
+        margin-left: 15px;
+
+    }
+
+    .profile {
+        @include titel;
+        margin-right: 10px;
+        margin-left: 7px;
+        background-color: grey;
+        border-radius: 50%;
+        margin-top: 2px;
+
+    }
+
+    .path {
+        margin-left: 10px;
+    }
+
+    .Line3 {
+
+        display: flex;
+
+    }
+
+    .line3-text {
+        width: 190px;
+        font-size: 25px;
+        margin-left: 10px;
+        font-weight: 700;
+    }
+
+    .line3-share {
+        height: 50px;
+        width: 50px;
+        background-color: #F5F7F9;
+        border-radius: 50%;
+        margin-left: 50px;
+
+        .share {
+            height: 25px;
+            margin-left: 10px;
+            margin-top: 12px;
+        }
+    }
+
+    .line3-like {
+        height: 50px;
+        width: 50px;
+        background-color: #F5F7F9;
+        border-radius: 50%;
+        margin-left: 5px;
+        margin-right: 5px;
+
+        .like {
+            height: 25px;
+            margin-left: 10px;
+            margin-top: 12px;
+        }
+
+
+    }
+
+    .Line4 {
+        margin-top: 20px;
+        color: grey;
+        display: flex;
+        flex-wrap: wrap;
+
+        .Line4-img2 {
+            margin-left: 10px;
+
+
+        }
+
+        .Line4-img3 {
+            margin-left: 80px;
+
+
+        }
+    }
+
+    .bigpicture {
+        margin-left: 15px;
+    }
+
+    .Photos{
+        display: flex;
+        gap: 5px;
+    }
+
+}
