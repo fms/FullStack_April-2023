@@ -1,0 +1,473 @@
+@import '_mixin';
+@import  '_constants.scss';
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap');
+
+// * {border-color: rgbas(random(255), random(255), random(255));}
+
+i::after{
+    font-family: Verdana,sans-serif !important;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+body{
+    margin:0;
+    display:grid;
+    grid-template-columns: 1fr 10fr 1fr;   
+    grid-template-rows: 3rem 5rem auto ;
+    grid-template-areas: ". nav ."
+    " . header ."
+    ". main .";
+
+    @media only screen and (max-width: 600px) {
+        grid-template-columns:12fr;   
+        grid-template-rows: 3rem auto ;
+        grid-template-areas: "nav"
+        "main";
+        gap:$gap;
+        
+    }
+}
+.nav{
+    // * {        @include random-border;}
+    
+        @include self-flex;
+        align-items:center;
+        justify-content:space;
+
+    grid-area:nav;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr 4fr 2fr 1fr 1fr;
+    grid-template-areas: "logo nav-items . where currency like profile";
+
+    @media only screen and (max-width: 600px) {
+
+        background-color: black;;
+        grid-template-columns: 1fr 3fr 1fr 1fr;
+        grid-template-areas: "logo  . where profile";
+        gap:$gap;
+
+        ul{
+            visibility: hidden;
+        }
+        &__select{
+            visibility: hidden;
+        }
+        &__search-btn{      
+            width: 45px !important;;
+
+            background-position: 50% 50% !important; 
+            &::placeholder{
+                padding-left: 0px;
+            }
+        }
+
+        &__like{
+            visibility: hidden;
+
+        }
+
+      }
+
+    &__logo{
+        grid-area: logo;
+        filter:  brightness(0) saturate(100%) invert(52%) sepia(67%) saturate(303%) hue-rotate(108deg) brightness(96%) contrast(87%);
+
+        &__active{
+            color: black !important;
+        }
+    }
+    ul{
+        @include self-flex;
+    }
+    li{
+        color:$col-prim-text;
+        list-style-type: none;
+        padding-right: 2.5vw;
+        grid-area: nav-items;
+        a{
+            text-decoration: none;
+        }
+    
+        
+    }
+    
+    &__search-btn{      
+         
+        grid-area: where;
+        @include btn;
+        &::placeholder{
+            color:#999;
+            padding-left: 10px;
+        }
+        
+        
+    }
+
+    &__select{
+        @include createOval(35px,120px,50px,white);
+        @include self-flex;
+        color:#999;
+        box-sizing: border-box;
+        border: 1px solid $col-light;
+
+        grid-area: currency;
+        > img {
+            object-fit: cover;
+            max-height:1.6rem;
+            border-radius: 50px;;
+            
+        }
+    }
+    &__like{
+        @include createOval(35px,45px,50px,white);
+        @include self-flex;
+        color:#999;
+        box-sizing: border-box;
+        border: 1px solid $col-light;
+        grid-area: like;
+    }
+    &__profile{
+        @include createOval(35px,75px,50px,white);
+        @include self-flex;
+        color:#999;
+        box-sizing: border-box;
+        border: 1px solid $col-light;
+
+        grid-area: profile;
+        > img {
+            object-fit: cover;
+            max-height:1.8rem;
+            clip-path: circle(50% at 50% 50%);
+            
+        }
+    
+
+    }
+
+}
+
+.header{
+    @media only screen and (max-width: 600px) {
+        visibility: hidden;
+    }
+    @include random-border;
+    grid-area:header;
+    @include self-flex;
+    display: grid;
+    grid-template-columns: repeat( 17, 1fr);
+    grid-template-areas: "choose choose  choose choose . loc loc loc date date date date ppl ppl ppl  price book";
+    gap:$gap;
+
+    &__back{
+        grid-area: choose;
+        
+        i{
+            height:fit-content;
+            max-width: fit-content;
+            background-color:$col-light;
+            padding: 5px 7px;
+            border-radius: 50%;
+            margin-right: 15px;
+            color: #999;
+            
+            
+            
+        }
+    }
+    &__button--loc{
+
+        @include createOval(30px ,100%, 40px, white);
+        border: 1px solid $col-light;
+        grid-area: loc;
+        overflow: hidden;
+        color: $col-prim-text;
+    }
+    &__button--date{
+        @include createOval(30px ,100%, 40px, white);
+        border: 1px solid $col-light;
+        grid-area: date;
+        overflow: hidden;
+        color: $col-prim-text;
+    }
+    &__button--ppl{
+        @include createOval(30px ,100%, 40px,white);
+        border: 1px solid $col-light;
+        grid-area: ppl;
+        overflow: hidden;
+        color: $col-prim-text;
+    }
+    &__price{
+        @include random-border;
+
+        grid-area: price;
+        color: $col-primary;
+
+    }
+    &__book{
+        @include createOval(45px ,120px, 40px, $col-primary);
+        @include self-flex;
+        color:$light;
+        grid-area: book;
+    }
+
+}
+.main{
+    
+    @include random-border;
+    grid-area:main;
+    gap:$gap;
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: auto auto auto auto auto auto ;
+    grid-template-areas: "bc bc bc . . . . . " 
+                        "h1 h1 h1 h1 . . share save "
+                        "review review review review . . . . "
+                        "gallery gallery gallery gallery gallery gallery gallery gallery "
+                        "more-nav more-nav more-nav more-nav more-nav data data data"
+                        "more-det more-det more-det more-det more-det data data data "
+                        ;
+
+    align-items:baseline;
+
+
+    &__bradcrumbs{
+        @include random-border;
+        grid-area: bc;
+        &--active{
+            color:$col-prim-text;
+        }
+    }
+
+    h1{
+        @include random-border;
+        grid-area: h1;
+        margin:0;
+
+
+  
+    }
+    &__save{
+        @include random-border;
+        @include createOval(30px ,80px, 40px, $col-light);
+        @include self-flex;
+        color:#333;
+        grid-area: save;
+    }
+    &__share{
+        @include random-border;
+        @include createOval(30px ,80px, 40px,  $col-light);
+        @include self-flex;
+        justify-self: right;
+        color:#333;
+        grid-area: share;
+    }
+
+    &__rating{
+        @include random-border;
+        color:grey;
+        grid-area: review;
+    }
+    
+
+    &__gallery{
+        @include random-border;
+        grid-area: gallery;
+        
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: $max-gal-img $max-gal-img;
+        gap:$gap;
+        grid-template-areas: "cover-pic cover-pic sec-pic sec-pic "
+                                "cover-pic cover-pic  small-pic1 small-pic2";
+        
+        img{
+            @include random-border;
+            border-radius:$radius;
+        }
+        &__cover{
+            grid-area: cover-pic;
+
+             > img{
+                object-fit: cover;
+                width: 100%;
+                max-height: 100%;
+
+            }
+        }
+        &__sec-pic{
+            grid-area: sec-pic;
+            > img{
+                object-fit: cover;
+                width: 100%;
+                max-height: 100%;
+
+            }
+
+        }
+        &__small--1{
+            grid-area: small-pic1;
+            > img{
+                object-fit: cover;
+                width: 100%;
+                max-height: $max-gal-img;
+
+            }
+        }
+        &__small--2{
+            grid-area: small-pic2;
+            > img{
+                object-fit: cover;
+                width: 100%;
+                max-height: $max-gal-img;;
+
+            }
+
+        }
+    }
+
+    &__more-details-nav{
+        @include random-border;
+        grid-area: more-nav;
+
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap:$gap;
+
+
+        &__overview{
+            @include createOval(40px ,100%, 40px, black);
+            color:white;
+            @include self-flex;
+            border: 1px solid $col-light;
+
+
+        }
+
+        &__included{
+            @include createOval(40px ,100%, 40px, white);
+            @include self-flex;
+        border: 1px solid $col-light;
+        color:$col-prim-text;
+
+
+
+        }
+
+        &__faqs{
+            @include createOval(40px ,100%, 40px, white);
+            @include self-flex;
+        border: 1px solid $col-light;
+        color:$col-prim-text;
+
+
+        }
+
+        &__room{
+            @include createOval(40px ,100%, 40px, white);
+            @include self-flex;
+        border: 1px solid $col-light;
+        color:$col-prim-text;
+
+
+
+        }
+    }
+    &__more-details-content{
+        @include random-border;
+        grid-area: more-det;
+    }
+    &__more-details-review{
+        padding:10px;
+        @include random-border;
+        grid-area: data;
+        border:1px solid $col-light;
+        border-radius: $radius;
+
+
+        &__raiting{
+            
+
+            @include random-border;
+            
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;  
+            grid-template-areas: "score star ." 
+                                "pro pro pro"
+                                "pro1 pro1 pro1"
+                                "pro2 pro2 pro2"
+                                "pro3  pro3 pro3 ";
+            gap:$gap;
+            
+            &__btn{
+                @include createOval(45px ,80%, 40px, $col-primary-light);
+                @include self-flex;
+                justify-self: center;
+                color:$col-primary;
+                grid-area: pro3;
+            }
+            &__star{
+                grid-area: star;
+                @include random-border;
+                align-self: center;
+                
+
+                &__tag-line{
+                    color:$col-prim-text;
+                    font-size:10px;;
+                }
+            }
+            &__score{
+                @include random-border;
+                @include self-flex;
+                grid-area: score;
+                font-size:34px;
+                font-weight: 500;
+            
+    
+            }
+            .pro{
+                grid-area: pro;
+                div:nth-child(1){
+                    width:95%;
+                }
+            }
+            .pro1{
+                grid-area: pro1;
+            }
+            .pro2{
+                grid-area: pro2;
+                div:nth-child(1){
+                    width:50%;
+                }
+            }
+
+            &__progress-section{
+                
+                span{
+                   display: block;
+                   margin-bottom: 10px;;
+                }
+
+                &__progress-bar{
+                    width: 100%;
+                    height: 10px;
+                    background-color: $col-btn;
+                    border-radius: 5px;
+  
+                    &__progress{
+                        width: 80%;
+                        height: 100%;
+                        background-color:$col-primary;
+                        border-radius: 5px;                 
+                    }
+                }   
+            }
+        }
+    }
+}
+.fa-star{
+    color:rgb(255, 204, 0);
+    width:15px;
+
+}
